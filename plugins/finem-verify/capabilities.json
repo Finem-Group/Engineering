@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 2,
+  "plugin": "finem-verify",
+  "kind": "phase",
+  "version": "0.6.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "phase": "verify",
+  "options": [
+    "browser-playwright",
+    "advanced-testing",
+    "terraform",
+    "observability",
+    "expo",
+    "product-delivery",
+    "intent-audit",
+    "agent-engineering",
+    "vue",
+    "svelte",
+    "angular",
+    "next-cache",
+    "gsap",
+    "react-native-performance",
+    "swiftui",
+    "android-ui",
+    "kotlin-mobile",
+    "backend-fastify",
+    "backend-fastapi",
+    "backend-django",
+    "backend-apollo",
+    "backend-rust",
+    "jobs-inngest",
+    "api-contract-testing",
+    "search-algolia",
+    "kubernetes",
+    "security-audit",
+    "xylex-code-audit"
+  ],
+  "capabilities": [
+    {
+      "id": "ci",
+      "title": "CI",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "github"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:ci-cd-and-automation",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/ci-cd-and-automation/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "title": "Testing",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "context7"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "superpowers:test-driven-development",
+          "source": "superpowers",
+          "plugin": "finem-core",
+          "path": "upstream/superpowers/skills/test-driven-development/SKILL.md"
+        },
+        {
+          "skill": "wshobson:e2e-testing-patterns",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/developer-essentials/skills/e2e-testing-patterns/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "browser-qa",
+      "title": "Browser QA",
+      "phase": "verify",
+      "requires": [
+        "frontend"
+      ],
+      "connectors": [],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "gstack:qa-only",
+          "source": "gstack",
+          "plugin": "finem-core",
+          "path": "upstream/gstack/qa-only/SKILL.md"
+        },
+        {
+          "skill": "addy:browser-testing-with-devtools",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/browser-testing-with-devtools/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "accessibility",
+      "title": "Accessibility",
+      "phase": "verify",
+      "requires": [
+        "ux"
+      ],
+      "connectors": [],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:wcag-audit-patterns",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/accessibility-compliance/skills/wcag-audit-patterns/SKILL.md"
+        },
+        {
+          "skill": "vercel:web-design-guidelines",
+          "source": "vercel",
+          "plugin": "finem-core",
+          "path": "upstream/vercel/skills/web-design-guidelines/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "title": "Security",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "github",
+        "context7"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:security-and-hardening",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/security-and-hardening/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "performance",
+      "title": "Performance",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "sentry"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:performance-optimization",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/performance-optimization/SKILL.md"
+        },
+        {
+          "skill": "vercel:react-best-practices",
+          "source": "vercel",
+          "plugin": "finem-core",
+          "path": "upstream/vercel/skills/react-best-practices/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "code-review-quality-gates",
+      "title": "Code review/quality gates",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "github"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:code-review-and-quality",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/code-review-and-quality/SKILL.md"
+        },
+        {
+          "skill": "superpowers:verification-before-completion",
+          "source": "superpowers",
+          "plugin": "finem-core",
+          "path": "upstream/superpowers/skills/verification-before-completion/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": []
+}

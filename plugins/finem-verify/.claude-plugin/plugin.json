@@ -1,0 +1,27 @@
+{
+  "name": "finem-verify",
+  "version": "0.6.0",
+  "description": "Engineering phase verify: ci, testing, browser qa, accessibility, security, performance, code review/quality gates. Uses the shared original skill library in finem-core.",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "ci",
+    "testing",
+    "browser-qa",
+    "accessibility",
+    "security",
+    "performance",
+    "code-review-quality-gates"
+  ],
+  "skills": "./skills",
+  "dependencies": [
+    "finem-core"
+  ]
+}

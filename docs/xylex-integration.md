@@ -24,9 +24,9 @@ For an existing L11 project, preserve its other settings and add the wanted pack
 
 ## Native Finem plugin mode
 
-The Finem marketplace generator produces `finem-xylex-architecture`, `finem-xylex-code-audit` and `finem-xylex-ui-polish`. Each depends on `finem-core`; install the core explicitly in Codex. Native plugin mode uses its installed capability maps and does not require `.l11/` or the L11 CLI. Installed packs are selected per project/task rather than all activated together.
+Since Finem 0.6, these three IDs are internal technology options, not separate native plugins. Install the phase plugins and select the desired options through the core coordinator. Architecture belongs to Design; UI polish to Design/Build; code audit to Design/Verify/Evolve.
 
-Each selected pack carries the complete 66-file XYLEX source bundle. Its capability map exposes only that pack's specialists. This deliberate source-level sharing keeps references complete; it is not ten native routers. Repeated copies in different packs are not additional unique skills.
+The complete 66-file XYLEX bundle lives once in `finem-core/upstream/xylex/`. Phase entrypoints reference that shared library. Original bytes, supporting references and selection conflicts are unchanged. Native mode needs no `.l11/` or L11 CLI. See [phase architecture and migration](phase-plugins.md).
 
 ## Scope and prerequisites
 

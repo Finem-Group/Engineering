@@ -1,0 +1,387 @@
+{
+  "schemaVersion": 1,
+  "from": "technology-plugins",
+  "to": "phase-plugins",
+  "core": "finem-core",
+  "extensions": {
+    "finem-discovery": {
+      "extension": "discovery",
+      "phases": [
+        "finem-context",
+        "finem-design"
+      ]
+    },
+    "finem-react-ui": {
+      "extension": "react-ui",
+      "phases": [
+        "finem-design",
+        "finem-build"
+      ]
+    },
+    "finem-browser-playwright": {
+      "extension": "browser-playwright",
+      "phases": [
+        "finem-verify"
+      ]
+    },
+    "finem-advanced-testing": {
+      "extension": "advanced-testing",
+      "phases": [
+        "finem-verify",
+        "finem-evolve"
+      ]
+    },
+    "finem-cloudflare": {
+      "extension": "cloudflare",
+      "phases": [
+        "finem-build",
+        "finem-deliver"
+      ]
+    },
+    "finem-terraform": {
+      "extension": "terraform",
+      "phases": [
+        "finem-build",
+        "finem-verify"
+      ]
+    },
+    "finem-observability": {
+      "extension": "observability",
+      "phases": [
+        "finem-verify",
+        "finem-operate"
+      ]
+    },
+    "finem-expo": {
+      "extension": "expo",
+      "phases": [
+        "finem-design",
+        "finem-build",
+        "finem-verify"
+      ]
+    },
+    "finem-product-validation": {
+      "extension": "product-validation",
+      "phases": [
+        "finem-context"
+      ]
+    },
+    "finem-product-delivery": {
+      "extension": "product-delivery",
+      "phases": [
+        "finem-context",
+        "finem-verify"
+      ]
+    },
+    "finem-product-analytics": {
+      "extension": "product-analytics",
+      "phases": [
+        "finem-evolve"
+      ]
+    },
+    "finem-intent-audit": {
+      "extension": "intent-audit",
+      "phases": [
+        "finem-verify",
+        "finem-evolve"
+      ]
+    },
+    "finem-agent-engineering": {
+      "extension": "agent-engineering",
+      "phases": [
+        "finem-design",
+        "finem-verify"
+      ]
+    },
+    "finem-vue": {
+      "extension": "vue",
+      "phases": [
+        "finem-build",
+        "finem-verify"
+      ]
+    },
+    "finem-nuxt": {
+      "extension": "nuxt",
+      "phases": [
+        "finem-build"
+      ]
+    },
+    "finem-svelte": {
+      "extension": "svelte",
+      "phases": [
+        "finem-build",
+        "finem-verify"
+      ]
+    },
+    "finem-angular": {
+      "extension": "angular",
+      "phases": [
+        "finem-build",
+        "finem-verify"
+      ]
+    },
+    "finem-next-cache": {
+      "extension": "next-cache",
+      "phases": [
+        "finem-build",
+        "finem-verify"
+      ]
+    },
+    "finem-tanstack-router": {
+      "extension": "tanstack-router",
+      "phases": [
+        "finem-build"
+      ]
+    },
+    "finem-tanstack-start": {
+      "extension": "tanstack-start",
+      "phases": [
+        "finem-build"
+      ]
+    },
+    "finem-tanstack-table": {
+      "extension": "tanstack-table",
+      "phases": [
+        "finem-build"
+      ]
+    },
+    "finem-redux-toolkit": {
+      "extension": "redux-toolkit",
+      "phases": [
+        "finem-build"
+      ]
+    },
+    "finem-web-animation": {
+      "extension": "web-animation",
+      "phases": [
+        "finem-build"
+      ]
+    },
+    "finem-gsap": {
+      "extension": "gsap",
+      "phases": [
+        "finem-build",
+        "finem-verify"
+      ]
+    },
+    "finem-react-native-performance": {
+      "extension": "react-native-performance",
+      "phases": [
+        "finem-verify"
+      ]
+    },
+    "finem-swiftui": {
+      "extension": "swiftui",
+      "phases": [
+        "finem-build",
+        "finem-verify"
+      ]
+    },
+    "finem-android-ui": {
+      "extension": "android-ui",
+      "phases": [
+        "finem-build",
+        "finem-verify"
+      ]
+    },
+    "finem-kotlin-mobile": {
+      "extension": "kotlin-mobile",
+      "phases": [
+        "finem-verify",
+        "finem-evolve"
+      ]
+    },
+    "finem-backend-hono": {
+      "extension": "backend-hono",
+      "phases": [
+        "finem-design",
+        "finem-build"
+      ]
+    },
+    "finem-backend-fastify": {
+      "extension": "backend-fastify",
+      "phases": [
+        "finem-design",
+        "finem-build",
+        "finem-verify"
+      ]
+    },
+    "finem-backend-fastapi": {
+      "extension": "backend-fastapi",
+      "phases": [
+        "finem-design",
+        "finem-build",
+        "finem-verify"
+      ]
+    },
+    "finem-backend-django": {
+      "extension": "backend-django",
+      "phases": [
+        "finem-build",
+        "finem-verify"
+      ]
+    },
+    "finem-api-graphql": {
+      "extension": "api-graphql",
+      "phases": [
+        "finem-design"
+      ]
+    },
+    "finem-backend-apollo": {
+      "extension": "backend-apollo",
+      "phases": [
+        "finem-build",
+        "finem-verify"
+      ]
+    },
+    "finem-backend-rust": {
+      "extension": "backend-rust",
+      "phases": [
+        "finem-design",
+        "finem-build",
+        "finem-verify"
+      ]
+    },
+    "finem-auth-auth0": {
+      "extension": "auth-auth0",
+      "phases": [
+        "finem-build"
+      ]
+    },
+    "finem-data-prisma": {
+      "extension": "data-prisma",
+      "phases": [
+        "finem-build"
+      ]
+    },
+    "finem-migration-prisma-v7": {
+      "extension": "migration-prisma-v7",
+      "phases": [
+        "finem-build",
+        "finem-evolve"
+      ]
+    },
+    "finem-migration-prisma-mongodb": {
+      "extension": "migration-prisma-mongodb",
+      "phases": [
+        "finem-build",
+        "finem-evolve"
+      ]
+    },
+    "finem-data-neon": {
+      "extension": "data-neon",
+      "phases": [
+        "finem-build"
+      ]
+    },
+    "finem-storage-neon": {
+      "extension": "storage-neon",
+      "phases": [
+        "finem-build"
+      ]
+    },
+    "finem-jobs-inngest": {
+      "extension": "jobs-inngest",
+      "phases": [
+        "finem-design",
+        "finem-build",
+        "finem-verify"
+      ]
+    },
+    "finem-jobs-trigger": {
+      "extension": "jobs-trigger",
+      "phases": [
+        "finem-design",
+        "finem-build"
+      ]
+    },
+    "finem-cache-upstash": {
+      "extension": "cache-upstash",
+      "phases": [
+        "finem-build"
+      ]
+    },
+    "finem-jobs-upstash": {
+      "extension": "jobs-upstash",
+      "phases": [
+        "finem-design",
+        "finem-build"
+      ]
+    },
+    "finem-search-upstash": {
+      "extension": "search-upstash",
+      "phases": [
+        "finem-build"
+      ]
+    },
+    "finem-email-resend": {
+      "extension": "email-resend",
+      "phases": [
+        "finem-build"
+      ]
+    },
+    "finem-api-contract-testing": {
+      "extension": "api-contract-testing",
+      "phases": [
+        "finem-design",
+        "finem-verify"
+      ]
+    },
+    "finem-search-algolia": {
+      "extension": "search-algolia",
+      "phases": [
+        "finem-build",
+        "finem-verify"
+      ]
+    },
+    "finem-kubernetes": {
+      "extension": "kubernetes",
+      "phases": [
+        "finem-build",
+        "finem-verify",
+        "finem-deliver"
+      ]
+    },
+    "finem-security-audit": {
+      "extension": "security-audit",
+      "phases": [
+        "finem-verify"
+      ]
+    },
+    "finem-finops": {
+      "extension": "finops",
+      "phases": [
+        "finem-build",
+        "finem-operate"
+      ]
+    },
+    "finem-aws-containers": {
+      "extension": "aws-containers",
+      "phases": [
+        "finem-build",
+        "finem-deliver"
+      ]
+    },
+    "finem-xylex-architecture": {
+      "extension": "xylex-architecture",
+      "phases": [
+        "finem-design"
+      ]
+    },
+    "finem-xylex-code-audit": {
+      "extension": "xylex-code-audit",
+      "phases": [
+        "finem-design",
+        "finem-verify",
+        "finem-evolve"
+      ]
+    },
+    "finem-xylex-ui-polish": {
+      "extension": "xylex-ui-polish",
+      "phases": [
+        "finem-design",
+        "finem-build"
+      ]
+    }
+  }
+}

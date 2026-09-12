@@ -1,4 +1,4 @@
-"""Exercise per-project selection with the real shipped pack metadata."""
+"""Internal technology selection stays independent of native phase containers."""
 import json
 import subprocess
 import unittest
@@ -8,10 +8,18 @@ from test_marketplace import ROOT
 
 class SelectionTests(unittest.TestCase):
     def select(self, installed, selected):
-        command = ['node', str(ROOT / 'plugins/finem-core/scripts/resolve-packs.js'), '--core', str(ROOT / 'plugins/finem-core')]
-        for name in installed:
-            command.extend(['--pack', str(ROOT / 'plugins' / name)])
-        command.extend(['--select', ','.join(selected)])
+        program = r'''
+const fs = require('node:fs');
+const path = require('node:path');
+const root = process.argv[1];
+const core = {...JSON.parse(fs.readFileSync(path.join(root,'capabilities.json'),'utf8')),root};
+const {resolveSelection} = require(path.join(root,'scripts/resolve-packs.js'));
+const installed = JSON.parse(process.argv[2]);
+const packs = core.technologyOptions.filter(pack => installed.includes(pack.plugin)).map(pack => ({...pack,root}));
+try { console.log(JSON.stringify(resolveSelection(core,packs,JSON.parse(process.argv[3])))); }
+catch (error) { console.error(error.message); process.exitCode=1; }
+'''
+        command = ['node', '-e', program, str(ROOT / 'plugins/finem-core'), json.dumps(installed), json.dumps(selected)]
         return subprocess.run(command, capture_output=True, text=True, encoding='utf-8')
 
     def success(self, installed, selected):
@@ -92,7 +100,8 @@ class SelectionTests(unittest.TestCase):
         self.assertEqual(first, second)
 
     def test_every_pack_can_activate_with_its_available_dependencies(self):
-        installed = sorted(p.name for p in (ROOT / 'plugins').iterdir() if p.name != 'finem-core')
+        core = json.loads((ROOT / 'plugins/finem-core/capabilities.json').read_text(encoding='utf-8'))
+        installed = sorted(option['plugin'] for option in core['technologyOptions'])
         for name in installed:
             with self.subTest(pack=name):
                 result = self.success(installed, [name])

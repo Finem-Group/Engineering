@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "plugin": "finem-deliver",
+  "kind": "phase",
+  "version": "0.6.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "phase": "deliver",
+  "options": [
+    "cloudflare",
+    "kubernetes",
+    "aws-containers"
+  ],
+  "capabilities": [
+    {
+      "id": "release",
+      "title": "Release",
+      "phase": "deliver",
+      "requires": [
+        "testing",
+        "code-review-quality-gates"
+      ],
+      "connectors": [
+        "github"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "gstack:ship",
+          "source": "gstack",
+          "plugin": "finem-core",
+          "path": "upstream/gstack/ship/SKILL.md"
+        },
+        {
+          "skill": "addy:git-workflow-and-versioning",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/git-workflow-and-versioning/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "deployment",
+      "title": "Deployment",
+      "phase": "deliver",
+      "requires": [
+        "release"
+      ],
+      "connectors": [
+        "cloud-provider",
+        "github"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:deployment-pipeline-design",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/cicd-automation/skills/deployment-pipeline-design/SKILL.md"
+        },
+        {
+          "skill": "pulumi:pulumi-best-practices",
+          "source": "pulumi",
+          "plugin": "finem-core",
+          "path": "upstream/pulumi/pulumi/skills/pulumi-best-practices/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "rollback",
+      "title": "Rollback",
+      "phase": "deliver",
+      "requires": [
+        "release"
+      ],
+      "connectors": [
+        "cloud-provider",
+        "db-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:deployment-pipeline-design",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/cicd-automation/skills/deployment-pipeline-design/SKILL.md"
+        },
+        {
+          "skill": "wshobson:database-migration",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/framework-migration/skills/database-migration/SKILL.md"
+        },
+        {
+          "skill": "addy:deprecation-and-migration",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/deprecation-and-migration/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": []
+}

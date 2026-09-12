@@ -51,18 +51,33 @@ class GeneratorTests(unittest.TestCase):
         for file in (self.output / 'plugins').glob('*/skills/*/SKILL.md'):
             header = yaml.safe_load(file.read_text(encoding='utf-8').split('---', 2)[1])
             self.assertIsInstance(header['description'], str)
-            if header['name'] == 'finem-migration-prisma-mongodb':
-                self.assertIn('assessment: preserve # hashes and "quotes"', header['description'])
+        metadata = json.loads((self.output / 'plugins/finem-core/capabilities.json').read_text())
+        self.assertIn('assessment: preserve # hashes and "quotes"', metadata['technologyOptions'][0]['description'])
 
-    def test_transitive_support_sources_ship_with_core_and_pack(self):
+    def test_transitive_support_sources_ship_once_with_core(self):
         result = self.generate()
         self.assertEqual(result.returncode, 0, result.stderr)
-        for name in ['finem-core', 'finem-migration-prisma-mongodb']:
+        for name in ['finem-core']:
             plugin = self.output / 'plugins' / name
             self.assertEqual((plugin / 'upstream/web-guidelines/command.md').read_bytes(), b'Original offline guidelines.\r\n')
             self.assertEqual((plugin / 'upstream/support/LICENSE').read_bytes(), b'MIT fixture\n')
             sources = json.loads((plugin / 'upstream.lock.json').read_text())['sources']
             self.assertEqual({s['id'] for s in sources}, {'vercel', 'web-guidelines', 'support'})
+        phase = self.output / 'plugins/finem-build'
+        self.assertFalse((phase / 'upstream').exists())
+        metadata = json.loads((phase / 'capabilities.json').read_text())
+        self.assertEqual(metadata['capabilities'][0]['entrypoints'][0]['plugin'], 'finem-core')
+        self.assertTrue((self.output / 'docs/phase-plugins.md').is_file())
+
+    def test_invalid_phase_ownership_fails_before_overwriting_plugins(self):
+        self.stack['phases'] = ['design']
+        marker = self.output / 'plugins/existing/keep.txt'
+        marker.parent.mkdir(parents=True)
+        marker.write_text('keep me')
+        result = self.generate()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('Unknown phase build', result.stderr)
+        self.assertEqual(marker.read_text(), 'keep me')
 
     def test_unknown_support_dependency_fails_before_overwriting_plugins(self):
         self.sources[1]['dependencies'] = ['missing']

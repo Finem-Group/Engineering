@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.6.0
+
+- Consolidate 57 native plugins into one Core and seven existing lifecycle phases: Context, Design, Build, Verify, Deliver, Operate and Evolve.
+- Preserve all 180 original skills, 50 pinned sources and 56 technology options. Store the complete original library once in Core, removing 871 duplicate file copies.
+- Select phases and their capability prerequisites independently of framework/provider options. Validate shared-library paths, matching versions, conflicts and replacement ordering.
+- Keep existing L11 CLI configuration compatible; provide all 56 old-plugin mappings and accept legacy option IDs through `--extensions`.
+
+Native marketplace 0.6 uses the unchanged L11 0.5 catalog. Update Core and phase plugins together; disable old native technology entries after migrating.
+
+## 0.5.0
+
+- Add ten selected original XYLEX architecture, code-audit and UI-polish skills, including supporting references and their original license.
+- Retain source and runtime caveats, including the original Windows blast-zone metrics limitation.
+
 ## 0.4.1
 
 - Serialize native skill descriptions as quoted YAML scalars, fixing the core and MongoDB migration skill headers.

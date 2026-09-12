@@ -1,0 +1,25 @@
+{
+  "name": "finem-operate",
+  "version": "0.6.0",
+  "description": "Engineering phase operate: observability, slos, incident response, postmortem, cost/finops. Uses the shared original skill library in finem-core.",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "observability",
+    "slos",
+    "incident-response",
+    "postmortem",
+    "cost-finops"
+  ],
+  "skills": "./skills",
+  "dependencies": [
+    "finem-core"
+  ]
+}

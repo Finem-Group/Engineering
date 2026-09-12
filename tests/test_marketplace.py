@@ -57,7 +57,8 @@ class MarketplaceTests(unittest.TestCase):
                 self.assertIn(dep, expected)
             for cap in capabilities['capabilities']:
                 for entry in cap['entrypoints']:
-                    self.assertTrue(long_path(plugin / entry['path']).is_file(), (name, entry))
+                    owner = ROOT / 'plugins' / entry.get('plugin', name)
+                    self.assertTrue(long_path(owner / entry['path']).is_file(), (name, entry))
 
     def test_original_bytes_and_support_dependencies_are_complete(self):
         for plugin in (ROOT / 'plugins').iterdir():

@@ -1,0 +1,6 @@
+{
+  "catalogVersion": "0.5.0",
+  "catalogCommit": "82d5f89bfd607df1e239bf52c9272d07a73e8269",
+  "description": "Frozen source ledger before phase compaction: all sources, revisions, licenses, dependencies, skills, file hashes and original modes. Excludes distribution root paths.",
+  "sha256": "e138b8d50aa9e9ba8a61ec7e1ae625b407f39f7e178bbdf991168b6e129ce1df"
+}

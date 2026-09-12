@@ -9,8 +9,8 @@
  * from the l11-engineering-stack catalog (catalog/, vendor/, skills/).
  *
  * Output: plugins/<name>/ shared by both marketplaces.
- *   finem-core          coordinator skill + the capability base originals
- *   finem-<extension>   one entry skill + that pack's originals
+ *   finem-core          coordinator + one complete shared original library
+ *   finem-<phase>       one scoped entry skill + capability/option references
  *
  * Only entry skills are native. Upstream originals are copied byte for byte
  * into <plugin>/upstream/<source>/ and opened on demand.
@@ -25,6 +25,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const { groupByPhase, migrationMap } = require('./scripts/phase-layout.js');
 
 // ---------------------------------------------------------------------------
 // Branding. Changing these regenerates every manifest, skill and install
@@ -40,7 +41,7 @@ const REPO_SLUG = 'Finem-Group/Engineering';
 const REPO_URL = `https://github.com/${REPO_SLUG}`;
 const OWNER = { name: 'Finem Group', url: 'https://github.com/Finem-Group' };
 // Marketplace fixes can be released independently of the pinned L11 catalog.
-const PLUGIN_VERSION = '0.5.0';
+const PLUGIN_VERSION = '0.6.0';
 const CODEX_CATEGORY = 'Developer Tools';
 const CODEX_POLICY = { installation: 'AVAILABLE', authentication: 'ON_USE' };
 
@@ -162,7 +163,7 @@ function locate(catalog, skillId) {
 function entrypoints(catalog, skillIds) {
   return skillIds.map(id => {
     const { source, path: rel } = locate(catalog, id);
-    return { skill: id, source, path: `upstream/${source}/${rel}` };
+    return { skill: id, source, plugin: CORE, path: `upstream/${source}/${rel}` };
   });
 }
 
@@ -237,7 +238,11 @@ function describePack(catalog, extension) {
 }
 
 function describeAll(catalog) {
-  return [describeCore(catalog), ...catalog.stack.extensions.map(e => describePack(catalog, e))];
+  const core = describeCore(catalog);
+  const options = catalog.stack.extensions.map(e => describePack(catalog, e));
+  core.sources = resolveSources(catalog, catalog.sources.keys());
+  core.skillCount = catalog.skills.size;
+  return groupByPhase(core, options, catalog.stack.phases);
 }
 
 // ---------------------------------------------------------------------------
@@ -278,7 +283,7 @@ Check whether \`${CLI_STATE_DIR}/config.json\` exists in the project root.
   \`${CLI_STATE_DIR}/config.json\`, \`${CLI_STATE_DIR}/capabilities.json\` and \`${CLI_STATE_DIR}/tools.json\`,
   and resolve originals under \`${CLI_STATE_DIR}/upstream/<source>/\`. The CLI owns the selection; follow
   "Project mode" below.
-- **Absent — plugin mode.** Selection comes from which ${PREFIX} plugins are installed. Follow
+- **Absent — plugin mode.** Select relevant installed phases and the module's technology options. Follow
   "Plugin mode" below. Do not invent a \`${CLI_STATE_DIR}/\` directory and do not run \`${CLI_BIN}\`
   commands; they are not installed in this mode.
 
@@ -291,43 +296,37 @@ This plugin root is \`\${CLAUDE_PLUGIN_ROOT}\` when the host sets it; otherwise 
 levels above this \`SKILL.md\` (\`<plugin root>/skills/${COORDINATOR}/SKILL.md\`). Resolve every relative
 path below against that root.
 
-Read \`capabilities.json\` in this plugin root. It lists all ${capabilityCount} capabilities with their
-phase, \`requires\` edges, connectors and the base \`entrypoints\` — the original \`SKILL.md\` files that
-cover the capability without any technology pack.
+The read-only helper below loads \`capabilities.json\` in this plugin root. It contains the base registry,
+\`phasePlugins\` and \`technologyOptions\`. Inspect the selected helper result and relevant phase metadata
+to keep task context compact. Every original lives here under \`upstream/\`, once, and opens on demand.
 
-Installed technology packs are available plugins, not automatically active project choices. Each carries
-its own \`capabilities.json\` and \`upstream/\`. Find their actual roots from the host's available skill
-paths; caches can put plugins under separate version directories, so do not guess sibling paths.
+Find the installed phase plugin roots from the host's available skill paths. Each phase has one scoped
+entry skill and capability map. Never guess sibling paths: host caches use separate version directories.
+Select phases relevant to the current task and technology options from the module's manifests, lockfiles,
+existing project choices and user instructions. Keep different monorepo modules' selections separate.
 
-Select active packs from the user's task, the current module's manifests, lockfiles and configuration.
-For example, if Vue and Svelte are both installed but this module uses Vue, select only Vue. Resolve
-heterogeneous monorepo modules separately. If evidence leaves the framework ambiguous, ask for that
-choice before applying framework-specific replacements; continue unrelated work in the meantime.
-
-Read selected packs' \`dependencies\`, \`conflicts\` and \`exclusiveGroup\`. Dependencies must also be
-installed and active; report missing plugins instead of silently installing them. Reject a conflict or
-more than one active pack in an exclusive group. Installing packs for different projects is allowed;
-activating incompatible packs in one module is not. \`${CORE}\` alone owns coordination.
-
-Use this plugin's read-only selection helper (Node 18+) to check the selection and obtain original file
-paths. Pass this core's actual root, one \`--pack\` per available pack root, and a comma-separated list
-of explicitly selected names. For example, substituting the discovered absolute paths:
+Run the read-only helper (Node 18+) with this core's actual root, one \`--phase\` for each available phase
+root, \`--select\` for the requested phase plugin names and optional \`--extensions\` for technology IDs:
 
 \`\`\`text
-node "<core root>/scripts/resolve-packs.js" --core "<core root>" --pack "<vue root>" --pack "<nuxt root>" --select ${PREFIX}-nuxt
+node "<core root>/scripts/resolve-packs.js" --core "<core root>" --phase "<context root>" --phase "<design root>" --phase "<build root>" --select ${PREFIX}-build --extensions nuxt
 \`\`\`
 
-The helper includes installed dependencies, rejects incompatible selections, applies at most one
-replacement per capability, then adds specialists in stable order. Only its \`active\` plugins and
-resolved \`capabilities\` apply to this module. Unselected installed packs remain inactive. It neither
-installs plugins nor writes project state. If Node is unavailable, apply those same metadata checks
-manually and state that automated selection validation was not run. Never interpret a missing helper
-or an error as permission to apply every installed pack.
+The helper resolves capability prerequisites across installed phases, rejects missing phases or mixed
+plugin versions, then validates technology dependencies, conflicts and exclusive groups. Nuxt includes
+Vue as an internal option; neither is a separate native plugin. Replacements run before additions.
+Installing Build does not activate React, Vue, Svelte and every backend together. With no phase selection,
+no capability is active. Extra installed phases stay inactive unless a capability prerequisite needs them.
 
-Choose the capabilities relevant to the user's outcome, open the resolved original \`SKILL.md\` files and
-the references, examples or helpers they require. Do not substitute a summary for reading the source. If a
-relevant technology has no pack installed, say which pack covers it rather than improvising from a
-neighbouring framework's guidance.
+Only the result's \`active\` phase plugins, \`extensions\` and resolved \`capabilities\` apply. A prerequisite
+adds the required capability, not every task in its phase. Reuse existing artifacts; a small fix does not
+require repeating discovery or running the entire lifecycle. Open the resolved original \`SKILL.md\` and
+its references when relevant; never substitute a short wrapper for its body.
+
+Report missing phase plugins instead of silently installing them. If a framework choice is ambiguous,
+ask for that choice while continuing unrelated work. If Node is unavailable, apply the same metadata
+checks manually and say the helper was not run. A helper error must never activate everything.
+These plugins do not create project configuration or install framework/provider runtimes.
 
 ## Project mode
 
@@ -359,7 +358,7 @@ Only ${BRAND} is registered as the native workflow. Upstream routers, hooks, ins
 agent metadata inside \`upstream/\` are inert source. Do not install or activate their global entrypoints.
 Invoke a selected specialist within the current task, then return its findings, changes and evidence here.
 
-When the \`${PREFIX}-browser-playwright\` pack is active for this module, use the Playwright browser-QA entrypoint.
+When the \`browser-playwright\` internal option is active for this module, use the Playwright browser-QA entrypoint.
 In project mode, follow the browser-QA entrypoints selected by the CLI capability map.
 gstack source may remain present for discovery, engineering review or shipping roles; that does not make its
 browser QA active. Do not silently build a second browser stack or switch backend because another bundle
@@ -424,7 +423,7 @@ Connector names in \`capabilities.json\` are desired integrations, not connectio
 host and discover actual tools and scope before use. Keep secrets out of configuration and reports.
 
 Respect upstream licensing and notices when sharing source or adaptations. These plugins carry
-${skillTotal} original skills from ${sourceCount} pinned Git sources across ${packCount} technology packs;
+${skillTotal} original skills from ${sourceCount} pinned Git sources with ${packCount} internal technology options;
 see \`NOTICE.md\` in each plugin. The library includes MIT, Apache-2.0, CC-BY-SA-4.0 and MPL-2.0 material;
 ${BRAND}'s own MIT terms do not replace upstream licenses. A \`coverage: partial\` capability remains a real
 limitation: retirement composes deprecation, data handling and cost guidance rather than a complete
@@ -432,57 +431,35 @@ universal decommissioning procedure.
 `;
 }
 
-/** One native entry skill per technology pack. */
-function packSkill(catalog, pack) {
-  const capabilityList = pack.capabilities.map(c => c.title.toLowerCase()).join(', ');
-  const sourceList = pack.sources.join(', ');
+/** Phase entrypoints carry scope; the shared core owns routing and source bodies. */
+function phaseSkill(catalog, phase) {
+  const capabilities = phase.capabilities.map(cap => `- ${cap.title} (\`${cap.id}\`)`).join('\n');
+  return frontmatter(phase.name, `Use for the ${phase.phase} phase: ${phase.capabilities.map(cap => cap.title.toLowerCase()).join(', ')}. Work through the Finem core using original upstream specialists.`) + `
+# ${phase.displayName}
 
-  const description = `Use when this project's work involves ${pack.description.replace(/\.$/, '')} —
-    covers ${capabilityList}. Loads the original ${sourceList} skills bundled with this pack.`;
+${phase.description}
 
-  const sections = pack.capabilities.map(cap => {
-    const mode = cap.replace
-      ? `Replaces the ${CORE} base for this capability.`
-      : `Adds to the ${CORE} base for this capability.`;
-    const rows = cap.entrypoints
-      .map(e => `- \`${e.skill}\` → \`${e.path}\``)
-      .join('\n');
-    return `### ${cap.title}\n\n${mode}\n\n${rows}`;
-  }).join('\n\n');
+## Phase scope
 
-  const dependsOn = pack.dependencies.map(d => `\`${d}\``).join(', ');
-  const conflicts = pack.conflicts.length
-    ? `\nDo not combine with ${pack.conflicts.map(c => `\`${c}\``).join(', ')}; they cover the same capability differently.\n`
-    : '';
+${capabilities}
 
-  return frontmatter(pack.name, description) + `
-# ${pack.displayName}
+## Use the shared workflow
 
-${pack.description}
+Locate the installed \`${CORE}\` using the host's available skill path; do not assume it is a sibling
+folder. Open its \`skills/${COORDINATOR}/SKILL.md\`. If the core is missing or its version differs from
+this plugin, report that dependency before proceeding with this entrypoint.
 
-This is an entry skill. It names originals; it does not restate them. Before opening originals, let
-\`${CORE}\` select this pack for the current project's task and validate its dependencies, conflicts
-and exclusive group. Installation or a matching trigger alone does not activate a pack. In CLI project
-mode follow the existing \`${CLI_STATE_DIR}/config.json\` selection. If this pack is inactive, return to
-the coordinator without applying its replacements. Once active, open the listed \`SKILL.md\` files and
-the references they require, and follow their procedure.
+In plugin mode, supply this phase root to the core helper using \`--phase\` and select \`${phase.name}\`.
+Include installed prerequisite phase roots; the helper reports any required one that is absent. In CLI
+project mode, preserve the existing \`${CLI_STATE_DIR}/config.json\` profile and extension selection.
 
-## Resolve paths
+This phase's \`capabilities.json\` lists its baseline capabilities and related internal option IDs.
+Its entrypoint paths explicitly belong to \`${CORE}\`, which contains the complete original source
+bodies, support files and licenses. Read the originals resolved by the core for the actual module.
+Framework/provider options activate only when selected; installation alone activates none of them.
 
-Paths below are relative to this plugin's root — \`\${CLAUDE_PLUGIN_ROOT}\` when the host sets it, otherwise
-the directory two levels above this \`SKILL.md\`. Inside an original, \`{baseDir}\` means the directory
-containing that original, not this plugin's root.
-
-## Originals this pack activates
-
-${sections}
-
-## Coordination
-
-${BRAND}'s \`${COORDINATOR}\` skill in \`${CORE}\` owns capability selection, evidence and limits. Depends
-on: ${dependsOn}.${conflicts}
-Upstream sources bundled here: ${sourceList}. Their licenses and pinned revisions are recorded in
-\`NOTICE.md\` and \`upstream.lock.json\` in this plugin root.
+Return work and evidence to the single coordinator. This phase has no global router, hooks or automatic
+runtime installation. Review relevant requirements and evidence without restarting earlier completed work.
 `;
 }
 
@@ -491,6 +468,9 @@ Upstream sources bundled here: ${sourceList}. Their licenses and pinned revision
 // ---------------------------------------------------------------------------
 
 function noticeFile(catalog, plugin) {
+  if (plugin.kind === 'phase') {
+    return `# Third-party notices — ${plugin.name}\n\nOriginals referenced by this phase are stored in the shared \`${CORE}\` plugin.\nIts \`NOTICE.md\` and \`upstream.lock.json\` record the original licenses, source revisions and hashes.\nThis phase's own entrypoint and metadata are MIT licensed.\n`;
+  }
   const blocks = plugin.sources.map(id => {
     const source = catalog.sources.get(id);
     const files = (source.licenseFiles ?? []).map(f => `\`upstream/${id}/${f}\``).join(', ') || '—';
@@ -567,7 +547,7 @@ function codexManifest(catalog, plugin) {
       ]
     : [
         `Use the ${plugin.displayName} guidance for this change.`,
-        `Review this code against ${plugin.sources.join(' and ')} practice.`,
+        `Review this change against the ${plugin.phase} phase guidance.`,
       ];
 
   return {
@@ -584,12 +564,11 @@ function codexManifest(catalog, plugin) {
       displayName: plugin.displayName,
       shortDescription: plugin.shortDescription,
       longDescription: plugin.kind === 'core'
-        ? oneLine(`Coordinates ${catalog.stack.capabilities.length} engineering capabilities and the base
-            original skills behind them. Technology packs plug into this core; every ${PREFIX} pack depends
-            on it. Originals stay unmodified under upstream/ and are opened on demand.`)
-        : oneLine(`${plugin.description} Bundles the original ${plugin.sources.join(', ')} skills
-            unmodified and activates them for ${plugin.capabilities.map(c => c.title.toLowerCase()).join(', ')}.
-            Requires ${plugin.dependencies.join(', ')}.`),
+        ? oneLine(`Coordinates ${catalog.stack.capabilities.length} engineering capabilities. Stores the
+            complete shared original library; phase plugins expose scoped entrypoints and technology
+            options activate only when selected for the current module.`)
+        : oneLine(`${plugin.description} Requires ${plugin.dependencies.join(', ')}. Framework choices
+            remain internal options validated by the single core coordinator.`),
       developerName: OWNER.name,
       category: CODEX_CATEGORY,
       // Skill-only plugins: they read project files and the bundled originals,
@@ -602,12 +581,14 @@ function codexManifest(catalog, plugin) {
 
 function capabilitiesFile(catalog, plugin) {
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     plugin: plugin.name,
     kind: plugin.kind,
     version: catalog.version,
     dependencies: plugin.dependencies,
-    ...(plugin.kind === 'pack' ? { extension: plugin.extension, conflicts: plugin.conflicts, exclusiveGroup: plugin.exclusiveGroup } : {}),
+    ...(plugin.kind === 'core'
+      ? { layout: 'phases', phasePlugins: plugin.phasePlugins, technologyOptions: plugin.technologyOptions }
+      : { phase: plugin.phase, options: plugin.options }),
     capabilities: plugin.capabilities,
     sources: plugin.sources.map(id => {
       const s = catalog.sources.get(id);
@@ -638,7 +619,7 @@ function lockSubset(catalog, plugin) {
 function pluginReadme(catalog, plugin) {
   const capRows = plugin.capabilities
     .filter(c => c.entrypoints.length)
-    .map(c => `| ${c.title} | ${c.replace ? 'replaces base' : plugin.kind === 'core' ? 'base' : 'adds to base'} | ${c.entrypoints.length} |`)
+    .map(c => `| ${c.title} | ${plugin.kind === 'core' ? 'shared library' : 'phase baseline'} | ${c.entrypoints.length} |`)
     .join('\n');
 
   const codexInstall = [...plugin.dependencies, plugin.name]
@@ -651,7 +632,9 @@ function pluginReadme(catalog, plugin) {
         in order.`) + '\n\n'
     : '';
 
-  const bundled = oneLine(`Native skills: 1. Bundled originals: ${plugin.skillCount} from
+  const bundled = plugin.kind === 'phase'
+    ? `Native phase entries: 1. Original bodies live in the shared \`${CORE}\` dependency; this plugin contains no copied originals. Internal options: ${plugin.options.map(id => `\`${id}\``).join(', ') || 'none'}.`
+    : oneLine(`Native skills: 1. Bundled originals: ${plugin.skillCount} from
     ${plugin.sources.length} source ${plugin.sources.length === 1 ? 'repository' : 'repositories'}
     (${plugin.sources.join(', ')}), unmodified under \`upstream/\`. See \`NOTICE.md\` for licenses and
     pinned revisions.`);
@@ -694,7 +677,7 @@ function writePlugin(catalog, plugin, outRoot) {
   }
 
   const skillName = plugin.kind === 'core' ? COORDINATOR : plugin.name;
-  const body = plugin.kind === 'core' ? coordinatorSkill(catalog, plugin) : packSkill(catalog, plugin);
+  const body = plugin.kind === 'core' ? coordinatorSkill(catalog, plugin) : phaseSkill(catalog, plugin);
   writeText(path.join(root, 'skills', skillName, 'SKILL.md'), body);
 
   writeJSON(path.join(root, '.claude-plugin', 'plugin.json'), claudeManifest(catalog, plugin));
@@ -714,8 +697,8 @@ function writeMarketplaces(catalog, plugins, outRoot) {
   writeJSON(path.join(outRoot, '.claude-plugin', 'marketplace.json'), {
     name: MARKETPLACE,
     owner: OWNER,
-    description: oneLine(`${BRAND} engineering: one coordinator plus ${catalog.stack.extensions.length}
-      technology packs carrying ${catalog.skills.size} original skills from ${catalog.sources.size} pinned
+    description: oneLine(`${BRAND} engineering: one coordinator plus ${plugins.length - 1}
+      lifecycle phases sharing ${catalog.skills.size} original skills from ${catalog.sources.size} pinned
       Git sources.`),
     version: catalog.version,
     plugins: plugins.map(p => ({
@@ -726,8 +709,8 @@ function writeMarketplaces(catalog, plugins, outRoot) {
       author: OWNER,
       homepage: REPO_URL,
       license: 'MIT',
-      category: p.kind === 'core' ? 'workflow' : 'technology',
-      keywords: [PREFIX, ...(p.kind === 'pack' ? [p.extension] : ['core'])],
+      category: 'workflow',
+      keywords: [PREFIX, p.phase ?? 'core'],
     })),
   });
 
@@ -744,124 +727,115 @@ function writeMarketplaces(catalog, plugins, outRoot) {
 }
 
 function rootReadme(catalog, plugins) {
-  const packs = plugins.filter(p => p.kind === 'pack');
-  const rows = packs
-    .map(p => `| \`${p.name}\` | ${p.description} | ${p.sources.join(', ')} |`)
-    .join('\n');
-
+  const phases = plugins.filter(plugin => plugin.kind === 'phase');
+  const rows = phases.map(phase => `| \`${phase.name}\` | ${phase.capabilities.map(cap => cap.title).join(', ')} |`).join('\n');
+  const installs = host => plugins.map(plugin => `${host === 'claude' ? 'claude plugin install' : 'codex plugin add'} ${plugin.name}@${MARKETPLACE}`).join('\n');
   return `# ${BRAND} Engineering
 
-A plugin marketplace for **Claude Code** and **Codex**: one engineering coordinator plus
-${packs.length} technology packs, carrying ${catalog.skills.size} original skills from
-${catalog.sources.size} pinned Git sources across ${catalog.stack.capabilities.length} capabilities.
+**${plugins.length} native plugins: one Core + ${phases.length} lifecycle phases.**
+${catalog.stack.capabilities.length} capabilities, ${catalog.skills.size} complete selected original skills,
+${catalog.sources.size} pinned Git sources and ${catalog.stack.extensions.length} internal technology options.
 
-Originals are bundled **unmodified** under each plugin's \`upstream/\`. Only the entry skills are native,
-so installing a pack exposes the coordinator and that pack's entry; original specialists load on demand.
+Version ${catalog.version} groups the previous technology plugins by their existing engineering phases.
+The number follows the lifecycle; it is not a target. Every original source body is stored **once** in
+\`${CORE}/upstream/\`, with its references, helpers, license, pinned revision and file hashes. Phase plugins
+provide scoped entrypoints and metadata. They use the same single coordinator.
 
-## Install
+## Phase plugins
+
+| Plugin | Scope |
+| --- | --- |
+| \`${CORE}\` | One workflow, shared original library, technology selection and compatibility checks |
+${rows}
+
+Build keeps frontend/mobile, backend/data and platform choices separate internally. A Vue project selects
+Vue/Nuxt guidance; installing Build does not activate all frameworks or providers. The phases scope the
+work; they do not impose a waterfall process. Existing discovery, architecture and test evidence can be reused.
+
+## Install the full stack
 
 ### Claude Code
 
-\`\`\`bash
+\`\`\`sh
 claude plugin marketplace add ${REPO_SLUG}
-claude plugin install ${CORE}@${MARKETPLACE}
-\`\`\`
-
-Then add the packs the project actually uses. Packs declare \`${CORE}\` as a dependency, so Claude Code
-pulls it — and any required sibling pack — in automatically:
-
-\`\`\`bash
-claude plugin install ${PREFIX}-vue@${MARKETPLACE}
-claude plugin install ${PREFIX}-nuxt@${MARKETPLACE}    # also installs ${PREFIX}-vue and ${CORE}
+${installs('claude')}
 \`\`\`
 
 ### Codex
 
-\`\`\`bash
+\`\`\`sh
 codex plugin marketplace add ${REPO_SLUG}
-codex plugin add ${CORE}@${MARKETPLACE}
+${installs('codex')}
 \`\`\`
 
-**Codex does not resolve plugin dependencies.** \`codex plugin add\` installs exactly the plugin you name.
-Install \`${CORE}\` yourself, plus any pack listed under *Depends on* in the pack's README — without the
-coordinator a pack's entry skill has nothing to hand its findings back to:
+For local validation, add the path to this checkout as the marketplace instead of the GitHub repository.
+Claude declares the Core dependency for every phase. Codex requires Core to be installed explicitly.
+The full-stack commands install all phases; the coordinator only activates those relevant to the task.
+For a subset, install Core plus the required phases. Capability prerequisites may require another phase:
+Build uses Design and Context; a missing phase is reported by the selection helper.
 
-\`\`\`bash
-codex plugin add ${CORE}@${MARKETPLACE}
-codex plugin add ${PREFIX}-vue@${MARKETPLACE}
-codex plugin add ${PREFIX}-nuxt@${MARKETPLACE}
+## Selection and layout
+
+\`\`\`text
+plugins/finem-core/
+  skills/finem-engineering/SKILL.md   single coordinator
+  capabilities.json                 phase registry + internal technology options
+  scripts/resolve-packs.js           read-only selection and validation
+  upstream.lock.json                 all source pins, hashes and original file modes
+  upstream/<source>/...              complete selected originals, stored once
+plugins/finem-<phase>/
+  skills/finem-<phase>/SKILL.md       scoped phase entry
+  capabilities.json                 phase capabilities + related option IDs
+.claude-plugin/marketplace.json      Claude Code; same plugin files
+.agents/plugins/marketplace.json     Codex; same plugin files
 \`\`\`
 
-## What is in here
+Use actual host-discovered plugin paths rather than guessing cache siblings:
 
-| Plugin | Covers | Upstream |
-| --- | --- | --- |
-| \`${CORE}\` | The coordinator and the base originals for all ${catalog.stack.capabilities.length} capabilities | ${plugins[0].sources.join(', ')} |
-${rows}
-
-## Layout
-
-\`\`\`
-.claude-plugin/marketplace.json     Claude Code marketplace
-.agents/plugins/marketplace.json    Codex marketplace
-plugins/<name>/
-  .claude-plugin/plugin.json        Claude Code manifest (with dependencies)
-  .codex-plugin/plugin.json         Codex manifest
-  skills/<name>/SKILL.md            the one native skill
-  capabilities.json                 capability -> original entrypoints
-  upstream.lock.json                SHA-256 per bundled file
-  upstream/<source>/...             unmodified originals
-  NOTICE.md                         licenses and pinned revisions
+\`\`\`text
+node "<core>/scripts/resolve-packs.js" --core "<core>" --phase "<context>" --phase "<design>" --phase "<build>" --select finem-build --extensions nuxt,xylex-ui-polish
 \`\`\`
 
-Both marketplace files point at the same \`plugins/\` directory, so the two hosts install identical bytes.
+The helper expands capability prerequisites, validates matching plugin versions and resolves required
+internal options. It rejects conflicts and competing replacements before returning guidance. All resolved
+original paths point to the shared Core library. No selection means no active capabilities.
 
-## Known limits
+The existing \`l11\` CLI remains compatible: \`--profile fullstack\` and \`--extensions nuxt,...\` still use
+the same internal IDs. The CLI package version and the native marketplace version are independent.
+An existing \`.l11/config.json\` remains authoritative in project mode.
 
-${catalog.sources.has('xylex') ? 'The three optional XYLEX packs and their ten complete original skills are documented in\n[XYLEX integration](docs/xylex-integration.md), including source provenance, prerequisites and web/native scope.\n' : ''}
+## Migration and limits
 
-- **Codex has no dependency resolution.** See the install section — install \`${CORE}\` and any required
-  pack explicitly.
-- **Windows path length.** The deepest bundled original is ~192 characters below the repository root.
-  Clone or install under a short path, and enable long paths if a checkout fails:
-  \`git config --global core.longpaths true\`.
-- **These plugins install no runtimes.** They carry source, not a toolchain. An original that expects
-  Playwright, uv, Terraform or a provider CLI will say so; the coordinator reports the missing requirement
-  rather than installing it. The \`${CLI_BIN}\` npm CLI is what provides a managed toolchain.
-- **Installed is not active.** The coordinator selects packs for the current project/module, checks
-  dependencies, conflicts and exclusive groups, and leaves other installed frameworks inactive. Its
-  bundled Node helper validates selection without installing anything or writing project state.
-- **Bundled originals are pinned snapshots.** \`upstream.lock.json\` records the commit and a SHA-256 per
-  file. They do not track their upstream repositories; regenerate from an updated catalog to move them.
+See [migration and architecture](docs/phase-plugins.md) and the complete
+[old-plugin to phase mapping](docs/plugin-migration.json). Old option names such as \`finem-nuxt\` are
+accepted by \`--extensions\` as aliases. Old plugin folders are not phase roots: upgrade Core and install
+the new phases together, then disable the old technology plugin entries in the host. No local installed
+plugin cache is changed by building this repository.
 
-## Regenerating
+${catalog.sources.has('xylex') ? 'All ten XYLEX originals remain available through internal options; see [provenance and prerequisites](docs/xylex-integration.md). The old three native XYLEX entries are now covered by Design, Build, Verify and Evolve according to their capability mappings.\n' : ''}
+The plugins carry guidance and original helper sources; they do not install runtimes or connect MCP
+accounts. Real browser/provider execution depends on the project environment. Known upstream limitations,
+including partial retirement coverage and the XYLEX Windows metrics caveat, remain in source notices.
+Use a short checkout path on Windows when original support paths exceed host path limits.
 
-\`\`\`bash
+## Regenerate and verify
+
+Node 18+ and Python 3.11+:
+
+\`\`\`sh
 node build-marketplace.js --catalog <path-to-l11-engineering-stack> --out .
-\`\`\`
-
-The generator is the source of truth: \`plugins/\`, both marketplace files and this table are derived from
-the catalog. Edit the catalog, \`build-marketplace.js\` or the canonical helper under \`scripts/\`, never
-the generated tree. \`PLUGIN_VERSION\` versions this marketplace independently of the upstream catalog.
-
-## Validation
-
-Node 18+ and Python 3.11+ are required for the checks:
-
-\`\`\`bash
 python -m pip install -r requirements-test.txt
 python -m unittest discover -s tests -v
 \`\`\`
 
-Tests parse every native YAML header, check both marketplaces and original hashes, exercise the generator
-with small standalone catalogs, and test project selection with incompatible installed frameworks.
-GitHub Actions runs these checks on Windows and Linux. Original upstream scripts are not executed by
-these checks. Native interactive discovery and real provider/tool execution remain separate checks.
+Edit the catalog, generator or canonical helpers; generated plugin files are derived artifacts. Tests
+cover phase ownership, complete original bytes, shared-library paths, prerequisites, framework conflicts,
+selection order and migration aliases. GitHub Actions runs on Windows/Linux and Node 22/24.
 
 ## Licensing
 
-${BRAND}'s own files are MIT. Bundled originals keep their own licenses — MIT, Apache-2.0, CC-BY-SA-4.0 and
-MPL-2.0 — recorded per plugin in \`NOTICE.md\` with repository and pinned revision.
+Finem's own files are MIT. Originals retain their MIT, Apache-2.0, CC-BY-SA-4.0 and MPL-2.0 licenses,
+recorded in \`${CORE}/NOTICE.md\` and \`upstream.lock.json\`.
 `;
 }
 
@@ -892,7 +866,8 @@ function verify(catalog, plugins, outRoot) {
     // Every entrypoint the manifests promise must exist.
     for (const cap of plugin.capabilities) {
       for (const e of cap.entrypoints) {
-        if (!fs.existsSync(path.join(root, e.path))) problems.push(`missing entrypoint ${plugin.name}/${e.path}`);
+        const ownerRoot = path.join(outRoot, 'plugins', e.plugin ?? plugin.name);
+        if (!fs.existsSync(path.join(ownerRoot, e.path))) problems.push(`missing entrypoint ${plugin.name}/${e.path}`);
       }
     }
 
@@ -921,8 +896,11 @@ function main() {
 
   const catalog = loadCatalog(catalogRoot);
   const plugins = describeAll(catalog);
+  const phaseDoc = fs.readFileSync(path.join(__dirname, 'docs/phase-plugins.md'), 'utf8');
   const xylexDoc = catalog.sources.has('xylex')
-    ? fs.readFileSync(path.join(catalogRoot, 'docs/xylex-integration.md'), 'utf8') : null;
+    ? fs.readFileSync(path.join(catalogRoot, 'docs/xylex-integration.md'), 'utf8').replace(
+      /## Native Finem plugin mode[\s\S]*?(?=## Scope and prerequisites)/,
+      '## Native Finem plugin mode\n\nSince Finem 0.6, these three IDs are internal technology options, not separate native plugins. Install the phase plugins and select the desired options through the core coordinator. Architecture belongs to Design; UI polish to Design/Build; code audit to Design/Verify/Evolve.\n\nThe complete 66-file XYLEX bundle lives once in `finem-core/upstream/xylex/`. Phase entrypoints reference that shared library. Original bytes, supporting references and selection conflicts are unchanged. Native mode needs no `.l11/` or L11 CLI. See [phase architecture and migration](phase-plugins.md).\n\n') : null;
 
   rmrf(path.join(outRoot, 'plugins'));
   for (const plugin of plugins) {
@@ -931,6 +909,8 @@ function main() {
   }
 
   writeMarketplaces(catalog, plugins, outRoot);
+  writeJSON(path.join(outRoot, 'docs/plugin-migration.json'), migrationMap(plugins[0]));
+  writeText(path.join(outRoot, 'docs/phase-plugins.md'), phaseDoc);
   writeText(path.join(outRoot, 'README.md'), rootReadme(catalog, plugins));
   if (xylexDoc !== null) writeText(path.join(outRoot, 'docs/xylex-integration.md'), xylexDoc);
   // Pure MIT text at the root so GitHub's licence detection picks it up; the

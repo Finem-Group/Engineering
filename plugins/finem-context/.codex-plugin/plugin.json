@@ -1,0 +1,37 @@
+{
+  "name": "finem-context",
+  "version": "0.6.0",
+  "description": "Engineering phase context: product discovery, requirements, feasibility, planning/task decomposition. Uses the shared original skill library in finem-core.",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "product-discovery",
+    "requirements",
+    "feasibility",
+    "planning-task-decomposition"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Context",
+    "shortDescription": "Engineering context phase; original specialists through the shared core.",
+    "longDescription": "Engineering phase context: product discovery, requirements, feasibility, planning/task decomposition. Uses the shared original skill library in finem-core. Requires finem-core. Framework choices remain internal options validated by the single core coordinator.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use the Finem Context guidance for this change.",
+      "Review this change against the context phase guidance."
+    ]
+  }
+}

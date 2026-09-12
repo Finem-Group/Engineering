@@ -1,7 +1,7 @@
 {
   "name": "finem-core",
-  "version": "0.5.0",
-  "description": "The Finem engineering coordinator and the base original skills for all 43 capabilities. Every finem technology pack depends on it.",
+  "version": "0.6.0",
+  "description": "The single engineering coordinator and shared original skill library for every lifecycle phase.",
   "author": {
     "name": "Finem Group",
     "url": "https://github.com/Finem-Group"

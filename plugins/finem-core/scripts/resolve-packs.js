@@ -78,20 +78,90 @@ function resolveSelection(core, packs, selected) {
   return { active: names, capabilities: [...capabilities.values()] };
 }
 
+function resolvePhases(core, phases, selected, extensions = []) {
+  if (core.kind !== 'core' || core.schemaVersion !== 2 || core.layout !== 'phases') {
+    throw new Error('Phase selection requires the 0.6+ core; update the core and phase plugins together');
+  }
+  const expected = new Map(core.phasePlugins.map(phase => [phase.plugin, phase]));
+  const available = new Map();
+  for (const phase of phases) {
+    const definition = expected.get(phase.plugin);
+    if (phase.kind !== 'phase' || !definition || available.has(phase.plugin)) {
+      throw new Error(`Invalid or duplicate phase plugin: ${phase.plugin}`);
+    }
+    if (phase.version !== core.version || phase.schemaVersion !== core.schemaVersion) {
+      throw new Error(`Plugin version mismatch: ${phase.plugin}; update it together with ${core.plugin}`);
+    }
+    if (phase.phase !== definition.phase || JSON.stringify(phase.capabilities) !== JSON.stringify(core.capabilities.filter(cap => cap.phase === definition.phase))) {
+      throw new Error(`Phase capability mismatch: ${phase.plugin}`);
+    }
+    available.set(phase.plugin, phase);
+  }
+  const byCapability = new Map(core.capabilities.map(cap => [cap.id, cap]));
+  const owner = new Map(core.phasePlugins.flatMap(phase => phase.capabilities.map(id => [id, phase.plugin])));
+  const active = new Set([core.plugin]);
+  const included = new Set();
+  const visiting = new Set();
+  function include(id) {
+    if (visiting.has(id)) throw new Error(`Capability dependency cycle: ${id}`);
+    if (included.has(id)) return;
+    const cap = byCapability.get(id);
+    if (!cap) throw new Error(`Unknown capability dependency: ${id}`);
+    const plugin = owner.get(id);
+    if (!available.has(plugin)) throw new Error(`Required phase plugin is not available: ${plugin} (for ${id})`);
+    visiting.add(id);
+    for (const dependency of cap.requires ?? []) include(dependency);
+    visiting.delete(id);
+    included.add(id);
+    active.add(plugin);
+  }
+  for (const name of [...new Set(selected)].sort()) {
+    if (name === core.plugin) continue;
+    const phase = available.get(name);
+    if (!phase) throw new Error(`Selected phase plugin is not available: ${name}`);
+    for (const cap of phase.capabilities) include(cap.id);
+  }
+  const prefix = core.plugin.replace(/core$/, '');
+  const normalize = name => name.startsWith(prefix) ? name : prefix + name;
+  const scopedCore = { ...core, capabilities: core.capabilities.filter(cap => included.has(cap.id)) };
+  const options = core.technologyOptions.map(option => ({
+    ...option, root: core.root,
+    capabilities: option.capabilities.filter(cap => included.has(cap.id)),
+  }));
+  const resolved = resolveSelection(scopedCore, options, extensions.map(normalize));
+  // Paths always belong to the shared library, even when an option supplied them.
+  for (const cap of resolved.capabilities) {
+    for (const entry of cap.entrypoints) {
+      if (entry.plugin !== core.plugin) entry.extension = entry.plugin.slice(prefix.length);
+      entry.plugin = core.plugin;
+    }
+  }
+  return {
+    active: [...active].sort(),
+    extensions: resolved.active.filter(name => name !== core.plugin).map(name => name.slice(prefix.length)),
+    capabilities: resolved.capabilities,
+  };
+}
+
 function main(args) {
   let coreRoot;
   const packRoots = [];
   let selected = [];
+  let extensions = [];
+  const seen = new Set();
   for (let i = 0; i < args.length; i += 2) {
     const [option, value] = args.slice(i, i + 2);
     if (value === undefined || value.startsWith('--')) throw new Error(`Missing value for ${option}`);
+    if (seen.has(option) && option !== '--phase') throw new Error(`Repeated option: ${option}`);
+    seen.add(option);
     if (option === '--core' && coreRoot === undefined) coreRoot = value;
-    else if (option === '--pack') packRoots.push(value);
+    else if (option === '--phase') packRoots.push(value);
     else if (option === '--select') selected = value.split(',').map(name => name.trim()).filter(Boolean);
+    else if (option === '--extensions') extensions = value.split(',').map(name => name.trim()).filter(Boolean);
     else throw new Error(`Unknown or repeated option: ${option}`);
   }
-  if (!coreRoot) throw new Error('Usage: resolve-packs.js --core PATH [--pack PATH ...] [--select NAME,NAME]');
-  const result = resolveSelection(readPlugin(coreRoot), packRoots.map(readPlugin), selected);
+  if (!coreRoot) throw new Error('Usage: resolve-packs.js --core PATH [--phase PATH ...] [--select finem-PHASE,...] [--extensions ID,...]');
+  const result = resolvePhases(readPlugin(coreRoot), packRoots.map(readPlugin), selected, extensions);
   process.stdout.write(JSON.stringify(result, null, 2) + '\n');
 }
 
@@ -100,4 +170,4 @@ if (require.main === module) {
   catch (error) { process.stderr.write(error.message + '\n'); process.exitCode = 1; }
 }
 
-module.exports = { resolveSelection };
+module.exports = { resolveSelection, resolvePhases };

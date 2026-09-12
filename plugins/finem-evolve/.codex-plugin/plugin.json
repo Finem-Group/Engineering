@@ -1,0 +1,39 @@
+{
+  "name": "finem-evolve",
+  "version": "0.6.0",
+  "description": "Engineering phase evolve: maintenance, dependencies, migration/deprecation, retirement, documentation/runbooks, product analytics/feedback. Uses the shared original skill library in finem-core.",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "maintenance",
+    "dependencies",
+    "migration-deprecation",
+    "retirement",
+    "documentation-runbooks",
+    "product-analytics-feedback"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Evolve",
+    "shortDescription": "Engineering evolve phase; original specialists through the shared core.",
+    "longDescription": "Engineering phase evolve: maintenance, dependencies, migration/deprecation, retirement, documentation/runbooks, product analytics/feedback. Uses the shared original skill library in finem-core. Requires finem-core. Framework choices remain internal options validated by the single core coordinator.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use the Finem Evolve guidance for this change.",
+      "Review this change against the evolve phase guidance."
+    ]
+  }
+}

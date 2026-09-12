@@ -17,7 +17,7 @@ Check whether `.l11/config.json` exists in the project root.
   `.l11/config.json`, `.l11/capabilities.json` and `.l11/tools.json`,
   and resolve originals under `.l11/upstream/<source>/`. The CLI owns the selection; follow
   "Project mode" below.
-- **Absent — plugin mode.** Selection comes from which finem plugins are installed. Follow
+- **Absent — plugin mode.** Select relevant installed phases and the module's technology options. Follow
   "Plugin mode" below. Do not invent a `.l11/` directory and do not run `l11`
   commands; they are not installed in this mode.
 
@@ -30,43 +30,37 @@ This plugin root is `${CLAUDE_PLUGIN_ROOT}` when the host sets it; otherwise it 
 levels above this `SKILL.md` (`<plugin root>/skills/finem-engineering/SKILL.md`). Resolve every relative
 path below against that root.
 
-Read `capabilities.json` in this plugin root. It lists all 43 capabilities with their
-phase, `requires` edges, connectors and the base `entrypoints` — the original `SKILL.md` files that
-cover the capability without any technology pack.
+The read-only helper below loads `capabilities.json` in this plugin root. It contains the base registry,
+`phasePlugins` and `technologyOptions`. Inspect the selected helper result and relevant phase metadata
+to keep task context compact. Every original lives here under `upstream/`, once, and opens on demand.
 
-Installed technology packs are available plugins, not automatically active project choices. Each carries
-its own `capabilities.json` and `upstream/`. Find their actual roots from the host's available skill
-paths; caches can put plugins under separate version directories, so do not guess sibling paths.
+Find the installed phase plugin roots from the host's available skill paths. Each phase has one scoped
+entry skill and capability map. Never guess sibling paths: host caches use separate version directories.
+Select phases relevant to the current task and technology options from the module's manifests, lockfiles,
+existing project choices and user instructions. Keep different monorepo modules' selections separate.
 
-Select active packs from the user's task, the current module's manifests, lockfiles and configuration.
-For example, if Vue and Svelte are both installed but this module uses Vue, select only Vue. Resolve
-heterogeneous monorepo modules separately. If evidence leaves the framework ambiguous, ask for that
-choice before applying framework-specific replacements; continue unrelated work in the meantime.
-
-Read selected packs' `dependencies`, `conflicts` and `exclusiveGroup`. Dependencies must also be
-installed and active; report missing plugins instead of silently installing them. Reject a conflict or
-more than one active pack in an exclusive group. Installing packs for different projects is allowed;
-activating incompatible packs in one module is not. `finem-core` alone owns coordination.
-
-Use this plugin's read-only selection helper (Node 18+) to check the selection and obtain original file
-paths. Pass this core's actual root, one `--pack` per available pack root, and a comma-separated list
-of explicitly selected names. For example, substituting the discovered absolute paths:
+Run the read-only helper (Node 18+) with this core's actual root, one `--phase` for each available phase
+root, `--select` for the requested phase plugin names and optional `--extensions` for technology IDs:
 
 ```text
-node "<core root>/scripts/resolve-packs.js" --core "<core root>" --pack "<vue root>" --pack "<nuxt root>" --select finem-nuxt
+node "<core root>/scripts/resolve-packs.js" --core "<core root>" --phase "<context root>" --phase "<design root>" --phase "<build root>" --select finem-build --extensions nuxt
 ```
 
-The helper includes installed dependencies, rejects incompatible selections, applies at most one
-replacement per capability, then adds specialists in stable order. Only its `active` plugins and
-resolved `capabilities` apply to this module. Unselected installed packs remain inactive. It neither
-installs plugins nor writes project state. If Node is unavailable, apply those same metadata checks
-manually and state that automated selection validation was not run. Never interpret a missing helper
-or an error as permission to apply every installed pack.
+The helper resolves capability prerequisites across installed phases, rejects missing phases or mixed
+plugin versions, then validates technology dependencies, conflicts and exclusive groups. Nuxt includes
+Vue as an internal option; neither is a separate native plugin. Replacements run before additions.
+Installing Build does not activate React, Vue, Svelte and every backend together. With no phase selection,
+no capability is active. Extra installed phases stay inactive unless a capability prerequisite needs them.
 
-Choose the capabilities relevant to the user's outcome, open the resolved original `SKILL.md` files and
-the references, examples or helpers they require. Do not substitute a summary for reading the source. If a
-relevant technology has no pack installed, say which pack covers it rather than improvising from a
-neighbouring framework's guidance.
+Only the result's `active` phase plugins, `extensions` and resolved `capabilities` apply. A prerequisite
+adds the required capability, not every task in its phase. Reuse existing artifacts; a small fix does not
+require repeating discovery or running the entire lifecycle. Open the resolved original `SKILL.md` and
+its references when relevant; never substitute a short wrapper for its body.
+
+Report missing phase plugins instead of silently installing them. If a framework choice is ambiguous,
+ask for that choice while continuing unrelated work. If Node is unavailable, apply the same metadata
+checks manually and say the helper was not run. A helper error must never activate everything.
+These plugins do not create project configuration or install framework/provider runtimes.
 
 ## Project mode
 
@@ -98,7 +92,7 @@ Only Finem is registered as the native workflow. Upstream routers, hooks, instal
 agent metadata inside `upstream/` are inert source. Do not install or activate their global entrypoints.
 Invoke a selected specialist within the current task, then return its findings, changes and evidence here.
 
-When the `finem-browser-playwright` pack is active for this module, use the Playwright browser-QA entrypoint.
+When the `browser-playwright` internal option is active for this module, use the Playwright browser-QA entrypoint.
 In project mode, follow the browser-QA entrypoints selected by the CLI capability map.
 gstack source may remain present for discovery, engineering review or shipping roles; that does not make its
 browser QA active. Do not silently build a second browser stack or switch backend because another bundle
@@ -163,7 +157,7 @@ Connector names in `capabilities.json` are desired integrations, not connections
 host and discover actual tools and scope before use. Keep secrets out of configuration and reports.
 
 Respect upstream licensing and notices when sharing source or adaptations. These plugins carry
-180 original skills from 50 pinned Git sources across 56 technology packs;
+180 original skills from 50 pinned Git sources with 56 internal technology options;
 see `NOTICE.md` in each plugin. The library includes MIT, Apache-2.0, CC-BY-SA-4.0 and MPL-2.0 material;
 Finem's own MIT terms do not replace upstream licenses. A `coverage: partial` capability remains a real
 limitation: retirement composes deprecation, data handling and cost guidance rather than a complete

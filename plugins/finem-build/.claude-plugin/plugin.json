@@ -1,0 +1,30 @@
+{
+  "name": "finem-build",
+  "version": "0.6.0",
+  "description": "Engineering phase build: frontend, backend, auth, database, migrations, async/jobs/events, infrastructure, networking, secrets/iam, configuration/environments. Uses the shared original skill library in finem-core.",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "frontend",
+    "backend",
+    "auth",
+    "database",
+    "migrations",
+    "async-jobs-events",
+    "infrastructure",
+    "networking",
+    "secrets-iam",
+    "configuration-environments"
+  ],
+  "skills": "./skills",
+  "dependencies": [
+    "finem-core"
+  ]
+}
