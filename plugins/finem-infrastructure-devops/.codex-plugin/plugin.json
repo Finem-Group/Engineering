@@ -1,6 +1,6 @@
 {
   "name": "finem-infrastructure-devops",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "Provision reproducible environments and operate the build, release, deployment and rollback path with visible infrastructure costs.",
   "author": {
     "name": "Finem Group",
@@ -25,7 +25,8 @@
   "interface": {
     "displayName": "Infrastructure",
     "shortDescription": "Cloud, CI/CD and deployment skills.",
-    "longDescription": "Provision reproducible environments and operate the build, release, deployment and rollback path with visible infrastructure costs. Requires finem-core. Framework choices remain internal options validated by the single core coordinator.",
+    "longDescription": "Provision reproducible environments and operate the build, release, deployment and rollback path with visible infrastructure costs.\n\nCovers: Infrastructure, Networking, CI, Release, Deployment, Rollback, Cost/FinOps, Configuration/environments.\n\nExpected outputs: Infrastructure and network configuration; Environment and CI configuration; Release, deployment and rollback plans; Infrastructure cost assessment.\n\nOriginal skills used through Engineering Core: pulumi:pulumi-best-practices, wshobson:hybrid-cloud-networking, addy:ci-cd-and-automation, gstack:ship, addy:git-workflow-and-versioning, wshobson:deployment-pipeline-design, wshobson:database-migration, addy:deprecation-and-migration, wshobson:cost-optimization, pulumi:pulumi-esc.\n\nOptional specialist and framework packs: cloudflare, terraform, kubernetes, security-audit, finops, aws-containers. These are selected for the project when relevant; they are not all enabled by default.\n\nDeclared integrations: cloud-provider, context7, github, db-provider. These are integration recipes, not connected services; configure the corresponding tools and accounts separately.\n\nWhy the app shows one skill: this plugin exposes one entry skill which loads the relevant original specialists from Engineering Core on demand. The Skills count in the app is not the size of the shared upstream library.\n\nRequires Engineering Core (finem-core). Tasks spanning multiple disciplines may also require the corresponding area plugins.",
+    "websiteURL": "https://github.com/Finem-Group/Engineering",
     "developerName": "Finem Group",
     "brandColor": "#111111",
     "composerIcon": "./assets/logo.png",
@@ -37,8 +38,8 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Use the Infrastructure guidance for this change.",
-      "Review this change against Infrastructure & DevOps."
+      "Inspect this project for Infrastructure & DevOps and recommend the relevant original skills and framework packs.",
+      "Review Infrastructure & DevOps in this project and prioritize concrete improvements with verification steps."
     ]
   }
 }

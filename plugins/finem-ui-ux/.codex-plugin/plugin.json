@@ -1,6 +1,6 @@
 {
   "name": "finem-ui-ux",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "Design useful, accessible interfaces with coherent visual language, interaction states and motion.",
   "author": {
     "name": "Finem Group",
@@ -20,7 +20,8 @@
   "interface": {
     "displayName": "UI Plugins",
     "shortDescription": "UI/UX, design systems and accessibility.",
-    "longDescription": "Design useful, accessible interfaces with coherent visual language, interaction states and motion. Requires finem-core. Framework choices remain internal options validated by the single core coordinator.",
+    "longDescription": "Design useful, accessible interfaces with coherent visual language, interaction states and motion.\n\nCovers: UX, Design system, Accessibility.\n\nExpected outputs: User journeys and interface flows; Layouts and interaction states; Design tokens and component guidelines; Accessibility and motion guidance.\n\nOriginal skills used through Engineering Core: impeccable:impeccable, vercel:web-design-guidelines, wshobson:wcag-audit-patterns.\n\nOptional specialist and framework packs: discovery, react-ui, expo, angular, swiftui, xylex-ui-polish. These are selected for the project when relevant; they are not all enabled by default.\n\nDeclared integrations: mobbin, paper, figma. These are integration recipes, not connected services; configure the corresponding tools and accounts separately.\n\nWhy the app shows one skill: this plugin exposes one entry skill which loads the relevant original specialists from Engineering Core on demand. The Skills count in the app is not the size of the shared upstream library.\n\nRequires Engineering Core (finem-core). Tasks spanning multiple disciplines may also require the corresponding area plugins.",
+    "websiteURL": "https://github.com/Finem-Group/Engineering",
     "developerName": "Finem Group",
     "brandColor": "#111111",
     "composerIcon": "./assets/logo.png",
@@ -32,8 +33,8 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Use the UI Plugins guidance for this change.",
-      "Review this change against UI/UX & Design System."
+      "Inspect this project for UI/UX & Design System and recommend the relevant original skills and framework packs.",
+      "Review UI/UX & Design System in this project and prioritize concrete improvements with verification steps."
     ]
   }
 }

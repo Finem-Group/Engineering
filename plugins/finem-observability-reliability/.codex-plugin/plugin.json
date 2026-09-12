@@ -1,6 +1,6 @@
 {
   "name": "finem-observability-reliability",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "Make system health measurable, design for failure and support incident diagnosis and recovery.",
   "author": {
     "name": "Finem Group",
@@ -22,7 +22,8 @@
   "interface": {
     "displayName": "Observability",
     "shortDescription": "Monitoring, reliability and incidents.",
-    "longDescription": "Make system health measurable, design for failure and support incident diagnosis and recovery. Requires finem-core. Framework choices remain internal options validated by the single core coordinator.",
+    "longDescription": "Make system health measurable, design for failure and support incident diagnosis and recovery.\n\nCovers: Observability, SLOs, Incident response, Postmortem, Reliability/resilience.\n\nExpected outputs: Logging, metrics and tracing; SLOs and alert criteria; Resilience and failure-mode analysis; Incident response and postmortems.\n\nOriginal skills used through Engineering Core: addy:observability-and-instrumentation, wshobson:slo-implementation, wshobson:incident-runbook-templates, superpowers:systematic-debugging, wshobson:postmortem-writing, wshobson:microservices-patterns, wshobson:workflow-orchestration-patterns.\n\nOptional specialist and framework packs: observability, backend-rust, jobs-inngest, jobs-trigger, jobs-upstash. These are selected for the project when relevant; they are not all enabled by default.\n\nDeclared integrations: sentry, cloud-provider. These are integration recipes, not connected services; configure the corresponding tools and accounts separately.\n\nWhy the app shows one skill: this plugin exposes one entry skill which loads the relevant original specialists from Engineering Core on demand. The Skills count in the app is not the size of the shared upstream library.\n\nRequires Engineering Core (finem-core). Tasks spanning multiple disciplines may also require the corresponding area plugins.",
+    "websiteURL": "https://github.com/Finem-Group/Engineering",
     "developerName": "Finem Group",
     "brandColor": "#111111",
     "composerIcon": "./assets/logo.png",
@@ -34,8 +35,8 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Use the Observability guidance for this change.",
-      "Review this change against Observability & Reliability."
+      "Inspect this project for Observability & Reliability and recommend the relevant original skills and framework packs.",
+      "Review Observability & Reliability in this project and prioritize concrete improvements with verification steps."
     ]
   }
 }

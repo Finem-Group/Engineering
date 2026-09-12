@@ -2,7 +2,7 @@
   "schemaVersion": 3,
   "plugin": "finem-ui-ux",
   "kind": "area",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "dependencies": [
     "finem-core"
   ],

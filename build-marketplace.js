@@ -41,7 +41,7 @@ const REPO_SLUG = 'Finem-Group/Engineering';
 const REPO_URL = `https://github.com/${REPO_SLUG}`;
 const OWNER = { name: 'Finem Group', url: 'https://github.com/Finem-Group' };
 // Marketplace fixes can be released independently of the pinned L11 catalog.
-const PLUGIN_VERSION = '0.7.1';
+const PLUGIN_VERSION = '0.7.2';
 const CODEX_CATEGORY = 'Developer Tools';
 const CODEX_POLICY = { installation: 'AVAILABLE', authentication: 'ON_USE' };
 
@@ -546,6 +546,26 @@ function claudeManifest(catalog, plugin) {
   return manifest;
 }
 
+function pluginDetails(catalog, plugin) {
+  const unique = values => [...new Set(values)];
+  const skills = unique(plugin.capabilities.flatMap(cap => cap.entrypoints.map(entry => entry.skill)));
+  const connectors = unique(plugin.capabilities.flatMap(cap => cap.connectors || []));
+  const paragraphs = [plugin.description];
+  if (plugin.kind === 'core') {
+    paragraphs.push(`Shared library: ${catalog.skills.size} original skills from ${catalog.sources.size} pinned upstream sources, covering ${catalog.stack.capabilities.length} engineering capabilities. Sources include ${[...catalog.sources.keys()].join(', ')}.`);
+    paragraphs.push('The Core coordinates capability selection, dependencies and specialist guidance across the engineering plugins. Original upstream files and their source revisions are recorded in the bundled lockfile.');
+  } else {
+    paragraphs.push(`Covers: ${plugin.capabilities.map(cap => cap.title).join(', ')}.`);
+    paragraphs.push(`Expected outputs: ${plugin.deliverables.join('; ')}.`);
+    paragraphs.push(`Original skills used through Engineering Core: ${skills.join(', ')}.`);
+    if (plugin.options.length) paragraphs.push(`Optional specialist and framework packs: ${plugin.options.join(', ')}. These are selected for the project when relevant; they are not all enabled by default.`);
+  }
+  if (connectors.length) paragraphs.push(`Declared integrations: ${connectors.join(', ')}. These are integration recipes, not connected services; configure the corresponding tools and accounts separately.`);
+  paragraphs.push('Why the app shows one skill: this plugin exposes one entry skill which loads the relevant original specialists from Engineering Core on demand. The Skills count in the app is not the size of the shared upstream library.');
+  if (plugin.kind !== 'core') paragraphs.push('Requires Engineering Core (finem-core). Tasks spanning multiple disciplines may also require the corresponding area plugins.');
+  return paragraphs.join('\n\n');
+}
+
 function codexManifest(catalog, plugin) {
   const prompts = plugin.kind === 'core'
     ? [
@@ -554,8 +574,8 @@ function codexManifest(catalog, plugin) {
         'Prepare a release candidate and a rollback plan.',
       ]
     : [
-        `Use the ${plugin.displayName} guidance for this change.`,
-        `Review this change against ${plugin.title}.`,
+        `Inspect this project for ${plugin.title} and recommend the relevant original skills and framework packs.`,
+        `Review ${plugin.title} in this project and prioritize concrete improvements with verification steps.`,
       ];
 
   return {
@@ -571,12 +591,8 @@ function codexManifest(catalog, plugin) {
     interface: {
       displayName: plugin.displayName,
       shortDescription: plugin.shortDescription,
-      longDescription: plugin.kind === 'core'
-        ? oneLine(`Coordinates ${catalog.stack.capabilities.length} engineering capabilities. Stores the
-            complete shared original library; area plugins expose scoped entrypoints and technology
-            options activate only when selected for the current module.`)
-        : oneLine(`${plugin.description} Requires ${plugin.dependencies.join(', ')}. Framework choices
-            remain internal options validated by the single core coordinator.`),
+      longDescription: pluginDetails(catalog, plugin),
+      websiteURL: REPO_URL,
       developerName: OWNER.name,
       brandColor: '#111111',
       composerIcon: './assets/logo.png',

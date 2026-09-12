@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.7.2
+
+- Expand plugin detail pages with capability coverage, expected outputs, original skill identifiers, optional framework packs and integration setup requirements derived from the catalog.
+- Explain the single entry skill and shared Core dependency, add the public website link and improve starter prompts.
+
 ## 0.7.1
 
 - Use concise marketplace names and descriptions, with Finem Group as the publisher and stable plugin IDs.

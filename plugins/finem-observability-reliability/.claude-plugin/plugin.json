@@ -1,6 +1,6 @@
 {
   "name": "finem-observability-reliability",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "Make system health measurable, design for failure and support incident diagnosis and recovery.",
   "author": {
     "name": "Finem Group",

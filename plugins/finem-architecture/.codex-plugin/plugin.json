@@ -1,6 +1,6 @@
 {
   "name": "finem-architecture",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "Define system boundaries, domain rules and clear interfaces so implementation can evolve without spreading coupling.",
   "author": {
     "name": "Finem Group",
@@ -21,7 +21,8 @@
   "interface": {
     "displayName": "Architecture",
     "shortDescription": "System design, domains and API contracts.",
-    "longDescription": "Define system boundaries, domain rules and clear interfaces so implementation can evolve without spreading coupling. Requires finem-core. Framework choices remain internal options validated by the single core coordinator.",
+    "longDescription": "Define system boundaries, domain rules and clear interfaces so implementation can evolve without spreading coupling.\n\nCovers: Architecture, ADRs, Domain modeling, API contracts.\n\nExpected outputs: System and module boundaries; Domain model and terminology; Architecture decision records; API contracts and integration boundaries.\n\nOriginal skills used through Engineering Core: gstack:plan-eng-review, wshobson:architecture-patterns, addy:documentation-and-adrs, addy:api-and-interface-design.\n\nOptional specialist and framework packs: agent-engineering, backend-hono, backend-fastify, backend-fastapi, api-graphql, api-contract-testing, xylex-architecture, xylex-code-audit. These are selected for the project when relevant; they are not all enabled by default.\n\nDeclared integrations: eraser, context7. These are integration recipes, not connected services; configure the corresponding tools and accounts separately.\n\nWhy the app shows one skill: this plugin exposes one entry skill which loads the relevant original specialists from Engineering Core on demand. The Skills count in the app is not the size of the shared upstream library.\n\nRequires Engineering Core (finem-core). Tasks spanning multiple disciplines may also require the corresponding area plugins.",
+    "websiteURL": "https://github.com/Finem-Group/Engineering",
     "developerName": "Finem Group",
     "brandColor": "#111111",
     "composerIcon": "./assets/logo.png",
@@ -33,8 +34,8 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Use the Architecture guidance for this change.",
-      "Review this change against Architecture & API Design."
+      "Inspect this project for Architecture & API Design and recommend the relevant original skills and framework packs.",
+      "Review Architecture & API Design in this project and prioritize concrete improvements with verification steps."
     ]
   }
 }

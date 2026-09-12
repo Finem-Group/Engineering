@@ -1,6 +1,6 @@
 {
   "name": "finem-core",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "The single engineering coordinator and shared original skill library for product, architecture, UI/UX, implementation, infrastructure, security and operations.",
   "author": {
     "name": "Finem Group",
@@ -27,7 +27,8 @@
   "interface": {
     "displayName": "Engineering Core",
     "shortDescription": "The shared Finem engineering workflow.",
-    "longDescription": "Coordinates 43 engineering capabilities. Stores the complete shared original library; area plugins expose scoped entrypoints and technology options activate only when selected for the current module.",
+    "longDescription": "The single engineering coordinator and shared original skill library for product, architecture, UI/UX, implementation, infrastructure, security and operations.\n\nShared library: 180 original skills from 50 pinned upstream sources, covering 43 engineering capabilities. Sources include gstack, superpowers, addy, vercel, supabase, pulumi, impeccable, wshobson, posthog, web-guidelines, pm, shadcn, playwright, trailofbits, cloudflare, terraform, grafana, expo, anthropic, vue, antfu, svelte, angular, emil, callstack, swiftui, tanstack-router, tanstack-table, redux-toolkit, gsap, next, android, kotlin, hono, fastify, fastapi, django, apollo, auth0, prisma, neon, inngest, trigger, upstash, resend, pactflow, algolia, infracost, aws, xylex.\n\nThe Core coordinates capability selection, dependencies and specialist guidance across the engineering plugins. Original upstream files and their source revisions are recorded in the bundled lockfile.\n\nDeclared integrations: mobbin, context7, cloud-provider, eraser, paper, figma, db-provider, github, sentry, posthog. These are integration recipes, not connected services; configure the corresponding tools and accounts separately.\n\nWhy the app shows one skill: this plugin exposes one entry skill which loads the relevant original specialists from Engineering Core on demand. The Skills count in the app is not the size of the shared upstream library.",
+    "websiteURL": "https://github.com/Finem-Group/Engineering",
     "developerName": "Finem Group",
     "brandColor": "#111111",
     "composerIcon": "./assets/logo.png",
