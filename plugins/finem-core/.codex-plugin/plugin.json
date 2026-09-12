@@ -26,7 +26,7 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Finem Engineering core",
-    "shortDescription": "The Finem engineering coordinator and the base original skills for all 43 capabilities. Every finem technology pack depe",
+    "shortDescription": "Coordinates 43 engineering capabilities; every finem pack builds on it.",
     "longDescription": "Coordinates 43 engineering capabilities and the base original skills behind them. Technology packs plug into this core; every finem pack depends on it. Originals stay unmodified under upstream/ and are opened on demand.",
     "developerName": "Finem Group",
     "category": "Developer Tools",

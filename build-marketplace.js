@@ -100,6 +100,15 @@ const titleize = id => id.replace(/[-:]/g, ' ').replace(/^./, c => c.toUpperCase
 /** One line, no trailing period duplication — frontmatter descriptions must stay single-line. */
 const oneLine = text => text.replace(/\s+/g, ' ').trim();
 
+/** Shorten to `max` characters on a word boundary rather than mid-word. */
+function clip(text, max) {
+  const line = oneLine(text);
+  if (line.length <= max) return line;
+  const cut = line.slice(0, max - 1);
+  const space = cut.lastIndexOf(' ');
+  return (space > max * 0.6 ? cut.slice(0, space) : cut).replace(/[,;:.\s]+$/, '') + '…';
+}
+
 // ---------------------------------------------------------------------------
 // Catalog model
 // ---------------------------------------------------------------------------
@@ -165,6 +174,8 @@ function describeCore(catalog) {
     displayName: `${BRAND} Engineering core`,
     description: oneLine(`The ${BRAND} engineering coordinator and the base original skills for all
       ${catalog.stack.capabilities.length} capabilities. Every ${PREFIX} technology pack depends on it.`),
+    shortDescription: oneLine(`Coordinates ${catalog.stack.capabilities.length} engineering capabilities;
+      every ${PREFIX} pack builds on it.`),
     dependencies: [],
     capabilities: caps,
     sources: [...sources].sort(),
@@ -196,6 +207,7 @@ function describePack(catalog, extension) {
     extension: extension.id,
     displayName: `${BRAND} ${titleize(extension.id)}`,
     description: oneLine(extension.description),
+    shortDescription: clip(extension.description, 120),
     conflicts: (extension.conflicts ?? []).map(id => `${PREFIX}-${id}`),
     exclusiveGroup: extension.exclusiveGroup ?? null,
     dependencies: [CORE, ...(extension.requires ?? []).map(id => `${PREFIX}-${id}`)],
@@ -450,6 +462,39 @@ ${blocks}
 `;
 }
 
+const MIT_TEXT = `MIT License
+
+Copyright (c) ${new Date().getFullYear()} ${OWNER.name}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+`;
+
+/**
+ * Plugin-level licence. The MIT text covers the generated files only; the
+ * bundled originals under upstream/ keep their own licences, so the scope note
+ * goes above the licence body rather than inside it.
+ */
+const pluginLicense = () =>
+  `This licence covers the files ${BRAND} generates in this plugin: the manifests, the entry\n` +
+  `skill, capabilities.json, upstream.lock.json and the documentation. Everything under\n` +
+  `upstream/ is third-party source under its own licence — see NOTICE.md.\n\n${MIT_TEXT}`;
+
 function claudeManifest(catalog, plugin) {
   const manifest = {
     name: plugin.name,
@@ -490,7 +535,7 @@ function codexManifest(catalog, plugin) {
     skills: './skills/',
     interface: {
       displayName: plugin.displayName,
-      shortDescription: plugin.description.slice(0, 120),
+      shortDescription: plugin.shortDescription,
       longDescription: plugin.kind === 'core'
         ? oneLine(`Coordinates ${catalog.stack.capabilities.length} engineering capabilities and the base
             original skills behind them. Technology packs plug into this core; every ${PREFIX} pack depends
@@ -609,6 +654,7 @@ function writePlugin(catalog, plugin, outRoot) {
   writeJSON(path.join(root, 'upstream.lock.json'), lockSubset(catalog, plugin));
   writeText(path.join(root, 'NOTICE.md'), noticeFile(catalog, plugin));
   writeText(path.join(root, 'README.md'), pluginReadme(catalog, plugin));
+  writeText(path.join(root, 'LICENSE'), pluginLicense());
   return root;
 }
 
@@ -812,6 +858,9 @@ function main() {
 
   writeMarketplaces(catalog, plugins, outRoot);
   writeText(path.join(outRoot, 'README.md'), rootReadme(catalog, plugins));
+  // Pure MIT text at the root so GitHub's licence detection picks it up; the
+  // per-plugin copies carry the scope note about upstream/.
+  writeText(path.join(outRoot, 'LICENSE'), MIT_TEXT);
 
   const { problems, checked, execBits } = verify(catalog, plugins, outRoot);
   fs.writeFileSync(path.join(outRoot, '.exec-bits'), execBits.join('\n') + '\n');
