@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-react-native-performance",
+  "sources": [
+    {
+      "id": "callstack",
+      "repository": "https://github.com/callstackincubator/agent-skills",
+      "revision": "2766baa46ca0fe7c16cc5ab4d0077ccec2e95fb9",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Adds device, native, JS-thread, memory, startup and bundle diagnosis beyond Expo UI instructions. Existing RN/Expo project and matching Hermes/toolchains; iOS profiling needs macOS/Xcode; Android profiling needs SDK/device. Callstack owns measured mobile performance; Expo owns Expo layout/router/animation implementation. No generic lifecycle takeover.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "callstack:react-native-best-practices",
+          "path": "skills/react-native-best-practices/SKILL.md",
+          "sha256": "abdbb7fc34ad739420fe43632e0baa1d646a01d097c6905211aa8b5b41957bf1",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "6b4d67d192cedc90cabeac71e2fc1e24f158638192b8bf93d639b28bc42b62f1",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/POWER.md",
+          "sha256": "7e39898ec7b7e3335fbc8d290bd3b806020435fecfbc1c5e98ebfd31b2798999",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/SKILL.md",
+          "sha256": "abdbb7fc34ad739420fe43632e0baa1d646a01d097c6905211aa8b5b41957bf1",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/agents/openai.yaml",
+          "sha256": "13d867840f5d10f87256653bc71da8de508ad13b10fd6931e1eb29cdd8ceb9e6",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/bundle-analyze-app.md",
+          "sha256": "2c43a39bdad593091b2ec6f3fb0307096feb854bf11f4187f31f237a50cf76ca",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/bundle-analyze-js.md",
+          "sha256": "4e97a27c06ea91b49cacb18230f63bad392fc949e40d348787aab39755e8da41",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/bundle-barrel-exports.md",
+          "sha256": "187ac5a80822d22dbccdf3bb07f0fa60905b494285e735b30d97e79961fdfca5",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/bundle-code-splitting.md",
+          "sha256": "4cf3cae585f9ae7f64fc55af7af71d70e5ac3acb93fa6264a3186cc79d939cd7",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/bundle-hermes-mmap.md",
+          "sha256": "5eca09ae487bce41436461cc7d8d96fa8861b39815a2b930263807591778b757",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/bundle-library-size.md",
+          "sha256": "cb87a2d8a3cddd508b524b6b627ca775f5fc5a613f29d8a0f7e037ba054e4a7e",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/bundle-native-assets.md",
+          "sha256": "766fb2d22a3cb8b5f26969fd4afc3caf1dd32fd8f2da6bf9233aac48c2bbfd42",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/bundle-r8-android.md",
+          "sha256": "9f49269531e906e25f26eeb2a77b9af76bd562065d537c3cc0155301eb7bf9c0",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/bundle-tree-shaking.md",
+          "sha256": "3033f006a07a430ca4e2381b456774e59b3ace4fe0aee38740291cd0f305e9ca",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/images/bundle-treemap-source-map-explorer.png",
+          "sha256": "280495fc828cde33b0c1a83a02031d3ab484c0af240ab6fc408a313aa445fd3b",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/images/controlled-textinput-pingpong.png",
+          "sha256": "883cc345490473110ce93536a39c224f692229f691da1203b084488569f48781",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/images/devtools-flamegraph.png",
+          "sha256": "b257c6dbf4304aa6e2ca40ec357a13441cfa2f3cb84d5653af56484861a63c94",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/images/emerge-xray-ios.png",
+          "sha256": "41d00a6e90e89bcc941daa41ad2bfc742e3817e421b4cd6e42fb7f43d304c3b2",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/images/expo-atlas-treemap.png",
+          "sha256": "3e4ef5894d949f0e6a445329b33e3346dc8bded3855e18afe500584cd4c761a2",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/images/flashlight-flatlist-vs-flashlist.png",
+          "sha256": "a9e57f2673669bed947e57c121ad85088e237f462362382008b3bb46570c72ca",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/images/fps-drop-graph.png",
+          "sha256": "bb43718e87b140307e37d66dc2a5332e882881c4f8a14629b96072913b2ca580",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/images/memory-heap-snapshot.png",
+          "sha256": "0cd36795ce16814717cad712b744ad4e523e1acef95263a3b49a8bb24ede8bad",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/images/tti-warm-start-diagram.png",
+          "sha256": "6fc7cbf22a8ce657fe8d31978e7adfec24cd88a9a58c3d2a302f86fb64ff6a8e",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/images/view-hierarchy-flattening.png",
+          "sha256": "9edaac44f464730d3f5b6c2c0ccd19d2edf24fa358b4470c6ebc4a37b61753d7",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/images/xcode-instruments-templates.png",
+          "sha256": "5d864f068bb1dc5edf9586a557260aa0f27b2b6fc96e473d8d5a8b3c2c1e836b",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/images/xcode-thread-view.png",
+          "sha256": "f3e7b75b87ce445e36293fcac070eecdb0609557fffb98a8cd000bcbe3e1b921",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/js-animations-reanimated.md",
+          "sha256": "b0912deb98d8af8b8bf97d98789e39d467466be28cab9d96def7101b6e799b16",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/js-atomic-state.md",
+          "sha256": "6005f5ba3e46c120d3c3fa38d1ea077bbc026c8c707dea0075025c84a4ff8254",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/js-bottomsheet.md",
+          "sha256": "43eca23b45f2c100d506f51c21e56d72ae501147b5acec7b9fd1cbb92e2d08df",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/js-concurrent-react.md",
+          "sha256": "0b2bab623b62136745e34ce135148f79311c3c4487068b0b0f2fa0b1fab851f2",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/js-lists-flatlist-flashlist.md",
+          "sha256": "4d62b3a9d6325fc77cdc4fc18597d9e5d241e5afd37f9284babf0fc69ce0def7",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/js-measure-fps.md",
+          "sha256": "5efca75bfbe57ebf1ec1e38df8704909e0df2e41df856715bb425d438cb48a34",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/js-memory-leaks.md",
+          "sha256": "52d0f71f0addbd6b03e8a12e46fa7405a5ae68394f106081768e2625f1ffd838",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/js-profile-react.md",
+          "sha256": "c7a283f68320de85d84940871e58c0c40b71182d704202d49a115ba98fdca716",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/js-react-compiler.md",
+          "sha256": "70f873d84646260256e01b93f504468d645a4e57ad5f88eef5d090f63358aa1a",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/js-uncontrolled-components.md",
+          "sha256": "4c27d770d1818edcb193612f141efe62f1ec907aa3aa8fbc54d15e677ffa54e7",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/native-android-16kb-alignment.md",
+          "sha256": "d61c945db16abf89c03099138febb8be2f228187b94a534eab7c385290938806",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/native-measure-tti.md",
+          "sha256": "f27bc1de4d443a9e49d372806aea91bf793bb4c7125e693db7cae3442eff57a1",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/native-memory-leaks.md",
+          "sha256": "3b69f2545bcc541b81dde55c0e0d2803a87671dd7a64da848e041af43019b4f4",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/native-memory-patterns.md",
+          "sha256": "cecf5b6eea44e3de9544976a9077b1b88d11bf5a336bf25cd27e094988ffb17d",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/native-platform-setup.md",
+          "sha256": "767b2d7ee9889fb43eccaec15ef2601cc3e25706f85cef14f264ce052789572e",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/native-profiling.md",
+          "sha256": "7830d1fd35fc52979b34d09646b8d237e895a3894d464ad16d6fd8bb32fe80c9",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/native-sdks-over-polyfills.md",
+          "sha256": "ac9ca06c1f3a3646c4b75d2ca85039ed357cc117522d4d2de112dda5bd75cf2f",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/native-threading-model.md",
+          "sha256": "7543ae88d708a382f0ec4d8fba987e7e89d8f2d2c954586a77a26c449e246b66",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/native-turbo-modules.md",
+          "sha256": "39ca96ce0b787cbff25aa649508cb64ea8bbb1c07ddd08e10c1d6a6ac932ea41",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-native-best-practices/references/native-view-flattening.md",
+          "sha256": "483a25551f4d73199156599874d21d67731dbc4d1bc241ec672f064667265c24",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/callstack"
+    }
+  ]
+}

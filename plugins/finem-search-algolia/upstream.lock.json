@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-search-algolia",
+  "sources": [
+    {
+      "id": "algolia",
+      "repository": "https://github.com/algolia/skills",
+      "revision": "ded7ff387b1099edc6218e002a7d5fda13390d26",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Full indexing contract/record-grain modeling, relevance settings, secured filter and evidence QA guides, local references and eval cases. Offline design needs sample records; live Algolia account/CLI/MCP only when relevant operations are authorized. Companion CLI/MCP/UI references are optional external capabilities; do not imply they are bundled/running. No default account provisioning, crawling or writes; selected guides explicitly delegate those operations. Do not activate for ordinary SQL domain modeling or non-Algolia search. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "algolia:algolia-data-modeling",
+          "path": "skills/algolia-data-modeling/SKILL.md",
+          "sha256": "5c73d92444bbe920e01927b3d2daaaeff76a1339eef3d76f3e24d1da83d9e894",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "algolia:algolia-index-configuration",
+          "path": "skills/algolia-index-configuration/SKILL.md",
+          "sha256": "2d160653dfc8a22c963bab72d7171f2f951325b4288bcb0b5d63ee1d9223ac87",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "algolia:algolia-release-qa",
+          "path": "skills/algolia-release-qa/SKILL.md",
+          "sha256": "aca48ca6a31130ee27d66b69840a36c315f80686b02c0fbec4833b433c35fcd4",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "724d74bebaa84c195d454026615569e6ad3e7cb284b7d6b81b1e1a560ac48f1b",
+          "mode": 420
+        },
+        {
+          "path": "skills/algolia-data-modeling/SKILL.md",
+          "sha256": "5c73d92444bbe920e01927b3d2daaaeff76a1339eef3d76f3e24d1da83d9e894",
+          "mode": 420
+        },
+        {
+          "path": "skills/algolia-data-modeling/agents/openai.yaml",
+          "sha256": "d9d4e76774dad9bf3fe6f29b5f55d5361dcd0b8b5d125c240ec1cea7d05fef4d",
+          "mode": 420
+        },
+        {
+          "path": "skills/algolia-data-modeling/evals/evals.json",
+          "sha256": "49099b1c702b3d2a38860d9c1aa01c97d43525c9dd844cbfef050d06f9002a58",
+          "mode": 420
+        },
+        {
+          "path": "skills/algolia-data-modeling/references/data-modeling-guide.md",
+          "sha256": "2e8174c18d09980d636a1195b1214ce820d2e611bed066ba87018dfff8a36e1c",
+          "mode": 420
+        },
+        {
+          "path": "skills/algolia-data-modeling/references/example-output.md",
+          "sha256": "f44f9bbfac71b4cf693027c18bb16c86f9b2eb168dc267c221d8280d88abd22f",
+          "mode": 420
+        },
+        {
+          "path": "skills/algolia-index-configuration/SKILL.md",
+          "sha256": "2d160653dfc8a22c963bab72d7171f2f951325b4288bcb0b5d63ee1d9223ac87",
+          "mode": 420
+        },
+        {
+          "path": "skills/algolia-index-configuration/agents/openai.yaml",
+          "sha256": "2e265a076175909dfd7086fab8cddca890d51ef94eb7e03186e5688442e1b36a",
+          "mode": 420
+        },
+        {
+          "path": "skills/algolia-index-configuration/evals/evals.json",
+          "sha256": "47e3facca32b65157ede4cee0a8efda44358764155481de5ad77a28e5f352d51",
+          "mode": 420
+        },
+        {
+          "path": "skills/algolia-index-configuration/references/configuration-guide.md",
+          "sha256": "047001f0635a69233e4b06061f15459c77a4965b73b2e964cb9d0012ee0da02e",
+          "mode": 420
+        },
+        {
+          "path": "skills/algolia-release-qa/SKILL.md",
+          "sha256": "aca48ca6a31130ee27d66b69840a36c315f80686b02c0fbec4833b433c35fcd4",
+          "mode": 420
+        },
+        {
+          "path": "skills/algolia-release-qa/agents/openai.yaml",
+          "sha256": "5fbd5e5dda06f006e1cf5494b0e034018a8073e66cbeee8798e0619ede60a88f",
+          "mode": 420
+        },
+        {
+          "path": "skills/algolia-release-qa/evals/evals.json",
+          "sha256": "038279a290bb90e216c7e633392a601befc3cd7c43f083c87cdc5c0b2f5b3190",
+          "mode": 420
+        },
+        {
+          "path": "skills/algolia-release-qa/references/example-output.md",
+          "sha256": "3429ebf60ca9bab1f83ee01de83fd36d767a54c03ebb3102997abfead4dcdcf1",
+          "mode": 420
+        },
+        {
+          "path": "skills/algolia-release-qa/references/release-qa-checklist.md",
+          "sha256": "bbfafb1c08d197620fb2bc9fb6041a63569bd8c67f04a56449835b74a9f05a81",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/algolia"
+    }
+  ]
+}

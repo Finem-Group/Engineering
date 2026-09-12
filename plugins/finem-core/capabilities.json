@@ -1,0 +1,1099 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-core",
+  "kind": "core",
+  "version": "0.4.0",
+  "dependencies": [],
+  "capabilities": [
+    {
+      "id": "product-discovery",
+      "title": "Product discovery",
+      "phase": "context",
+      "requires": [],
+      "connectors": [
+        "mobbin"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "gstack:office-hours",
+          "source": "gstack",
+          "path": "upstream/gstack/office-hours/SKILL.md"
+        },
+        {
+          "skill": "addy:idea-refine",
+          "source": "addy",
+          "path": "upstream/addy/skills/idea-refine/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "requirements",
+      "title": "Requirements",
+      "phase": "context",
+      "requires": [
+        "product-discovery"
+      ],
+      "connectors": [],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:spec-driven-development",
+          "source": "addy",
+          "path": "upstream/addy/skills/spec-driven-development/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "feasibility",
+      "title": "Feasibility",
+      "phase": "context",
+      "requires": [
+        "requirements"
+      ],
+      "connectors": [
+        "context7",
+        "cloud-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "gstack:plan-eng-review",
+          "source": "gstack",
+          "path": "upstream/gstack/plan-eng-review/SKILL.md"
+        },
+        {
+          "skill": "addy:constraint-driven-development",
+          "source": "addy",
+          "path": "upstream/addy/skills/constraint-driven-development/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "architecture",
+      "title": "Architecture",
+      "phase": "design",
+      "requires": [
+        "requirements"
+      ],
+      "connectors": [
+        "eraser",
+        "context7"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "gstack:plan-eng-review",
+          "source": "gstack",
+          "path": "upstream/gstack/plan-eng-review/SKILL.md"
+        },
+        {
+          "skill": "wshobson:architecture-patterns",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/backend-development/skills/architecture-patterns/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "adrs",
+      "title": "ADRs",
+      "phase": "design",
+      "requires": [
+        "architecture"
+      ],
+      "connectors": [
+        "eraser"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:documentation-and-adrs",
+          "source": "addy",
+          "path": "upstream/addy/skills/documentation-and-adrs/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "domain-modeling",
+      "title": "Domain modeling",
+      "phase": "design",
+      "requires": [
+        "requirements"
+      ],
+      "connectors": [
+        "eraser"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:architecture-patterns",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/backend-development/skills/architecture-patterns/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "ux",
+      "title": "UX",
+      "phase": "design",
+      "requires": [
+        "requirements"
+      ],
+      "connectors": [
+        "mobbin",
+        "paper",
+        "figma"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "impeccable:impeccable",
+          "source": "impeccable",
+          "path": "upstream/impeccable/.agents/skills/impeccable/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "design-system",
+      "title": "Design system",
+      "phase": "design",
+      "requires": [
+        "ux"
+      ],
+      "connectors": [
+        "paper",
+        "mobbin",
+        "figma"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "impeccable:impeccable",
+          "source": "impeccable",
+          "path": "upstream/impeccable/.agents/skills/impeccable/SKILL.md"
+        },
+        {
+          "skill": "vercel:web-design-guidelines",
+          "source": "vercel",
+          "path": "upstream/vercel/skills/web-design-guidelines/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "frontend",
+      "title": "Frontend",
+      "phase": "build",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "context7",
+        "paper"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:frontend-ui-engineering",
+          "source": "addy",
+          "path": "upstream/addy/skills/frontend-ui-engineering/SKILL.md"
+        },
+        {
+          "skill": "vercel:react-best-practices",
+          "source": "vercel",
+          "path": "upstream/vercel/skills/react-best-practices/SKILL.md"
+        },
+        {
+          "skill": "vercel:composition-patterns",
+          "source": "vercel",
+          "path": "upstream/vercel/skills/composition-patterns/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "api-contracts",
+      "title": "API contracts",
+      "phase": "design",
+      "requires": [
+        "requirements"
+      ],
+      "connectors": [
+        "context7"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:api-and-interface-design",
+          "source": "addy",
+          "path": "upstream/addy/skills/api-and-interface-design/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "backend",
+      "title": "Backend",
+      "phase": "build",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "context7"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:architecture-patterns",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/backend-development/skills/architecture-patterns/SKILL.md"
+        },
+        {
+          "skill": "addy:incremental-implementation",
+          "source": "addy",
+          "path": "upstream/addy/skills/incremental-implementation/SKILL.md"
+        },
+        {
+          "skill": "addy:api-and-interface-design",
+          "source": "addy",
+          "path": "upstream/addy/skills/api-and-interface-design/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "auth",
+      "title": "Auth",
+      "phase": "build",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "context7",
+        "db-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:auth-implementation-patterns",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/developer-essentials/skills/auth-implementation-patterns/SKILL.md"
+        },
+        {
+          "skill": "addy:security-and-hardening",
+          "source": "addy",
+          "path": "upstream/addy/skills/security-and-hardening/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "database",
+      "title": "Database",
+      "phase": "build",
+      "requires": [
+        "domain-modeling"
+      ],
+      "connectors": [
+        "db-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "supabase:supabase-postgres-best-practices",
+          "source": "supabase",
+          "path": "upstream/supabase/skills/supabase-postgres-best-practices/SKILL.md"
+        },
+        {
+          "skill": "wshobson:postgresql-table-design",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/database-design/skills/postgresql-table-design/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "migrations",
+      "title": "Migrations",
+      "phase": "build",
+      "requires": [
+        "database"
+      ],
+      "connectors": [
+        "db-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:database-migration",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/framework-migration/skills/database-migration/SKILL.md"
+        },
+        {
+          "skill": "addy:deprecation-and-migration",
+          "source": "addy",
+          "path": "upstream/addy/skills/deprecation-and-migration/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "async-jobs-events",
+      "title": "Async/jobs/events",
+      "phase": "build",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "cloud-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:workflow-orchestration-patterns",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/backend-development/skills/workflow-orchestration-patterns/SKILL.md"
+        },
+        {
+          "skill": "wshobson:microservices-patterns",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/backend-development/skills/microservices-patterns/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "infrastructure",
+      "title": "Infrastructure",
+      "phase": "build",
+      "requires": [
+        "architecture"
+      ],
+      "connectors": [
+        "cloud-provider",
+        "context7"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "pulumi:pulumi-best-practices",
+          "source": "pulumi",
+          "path": "upstream/pulumi/pulumi/skills/pulumi-best-practices/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "networking",
+      "title": "Networking",
+      "phase": "build",
+      "requires": [
+        "infrastructure"
+      ],
+      "connectors": [
+        "cloud-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:hybrid-cloud-networking",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/cloud-infrastructure/skills/hybrid-cloud-networking/SKILL.md"
+        },
+        {
+          "skill": "pulumi:pulumi-best-practices",
+          "source": "pulumi",
+          "path": "upstream/pulumi/pulumi/skills/pulumi-best-practices/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "secrets-iam",
+      "title": "Secrets/IAM",
+      "phase": "build",
+      "requires": [
+        "architecture"
+      ],
+      "connectors": [
+        "cloud-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "pulumi:pulumi-esc",
+          "source": "pulumi",
+          "path": "upstream/pulumi/pulumi/skills/pulumi-esc/SKILL.md"
+        },
+        {
+          "skill": "wshobson:secrets-management",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/cicd-automation/skills/secrets-management/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "ci",
+      "title": "CI",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "github"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:ci-cd-and-automation",
+          "source": "addy",
+          "path": "upstream/addy/skills/ci-cd-and-automation/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "title": "Testing",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "context7"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "superpowers:test-driven-development",
+          "source": "superpowers",
+          "path": "upstream/superpowers/skills/test-driven-development/SKILL.md"
+        },
+        {
+          "skill": "wshobson:e2e-testing-patterns",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/developer-essentials/skills/e2e-testing-patterns/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "browser-qa",
+      "title": "Browser QA",
+      "phase": "verify",
+      "requires": [
+        "frontend"
+      ],
+      "connectors": [],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "gstack:qa-only",
+          "source": "gstack",
+          "path": "upstream/gstack/qa-only/SKILL.md"
+        },
+        {
+          "skill": "addy:browser-testing-with-devtools",
+          "source": "addy",
+          "path": "upstream/addy/skills/browser-testing-with-devtools/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "accessibility",
+      "title": "Accessibility",
+      "phase": "verify",
+      "requires": [
+        "ux"
+      ],
+      "connectors": [],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:wcag-audit-patterns",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/accessibility-compliance/skills/wcag-audit-patterns/SKILL.md"
+        },
+        {
+          "skill": "vercel:web-design-guidelines",
+          "source": "vercel",
+          "path": "upstream/vercel/skills/web-design-guidelines/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "title": "Security",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "github",
+        "context7"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:security-and-hardening",
+          "source": "addy",
+          "path": "upstream/addy/skills/security-and-hardening/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "performance",
+      "title": "Performance",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "sentry"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:performance-optimization",
+          "source": "addy",
+          "path": "upstream/addy/skills/performance-optimization/SKILL.md"
+        },
+        {
+          "skill": "vercel:react-best-practices",
+          "source": "vercel",
+          "path": "upstream/vercel/skills/react-best-practices/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "observability",
+      "title": "Observability",
+      "phase": "operate",
+      "requires": [],
+      "connectors": [
+        "sentry"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:observability-and-instrumentation",
+          "source": "addy",
+          "path": "upstream/addy/skills/observability-and-instrumentation/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "slos",
+      "title": "SLOs",
+      "phase": "operate",
+      "requires": [
+        "observability"
+      ],
+      "connectors": [
+        "sentry"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:slo-implementation",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/observability-monitoring/skills/slo-implementation/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "release",
+      "title": "Release",
+      "phase": "deliver",
+      "requires": [
+        "testing",
+        "code-review-quality-gates"
+      ],
+      "connectors": [
+        "github"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "gstack:ship",
+          "source": "gstack",
+          "path": "upstream/gstack/ship/SKILL.md"
+        },
+        {
+          "skill": "addy:git-workflow-and-versioning",
+          "source": "addy",
+          "path": "upstream/addy/skills/git-workflow-and-versioning/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "deployment",
+      "title": "Deployment",
+      "phase": "deliver",
+      "requires": [
+        "release"
+      ],
+      "connectors": [
+        "cloud-provider",
+        "github"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:deployment-pipeline-design",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/cicd-automation/skills/deployment-pipeline-design/SKILL.md"
+        },
+        {
+          "skill": "pulumi:pulumi-best-practices",
+          "source": "pulumi",
+          "path": "upstream/pulumi/pulumi/skills/pulumi-best-practices/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "rollback",
+      "title": "Rollback",
+      "phase": "deliver",
+      "requires": [
+        "release"
+      ],
+      "connectors": [
+        "cloud-provider",
+        "db-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:deployment-pipeline-design",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/cicd-automation/skills/deployment-pipeline-design/SKILL.md"
+        },
+        {
+          "skill": "wshobson:database-migration",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/framework-migration/skills/database-migration/SKILL.md"
+        },
+        {
+          "skill": "addy:deprecation-and-migration",
+          "source": "addy",
+          "path": "upstream/addy/skills/deprecation-and-migration/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "incident-response",
+      "title": "Incident response",
+      "phase": "operate",
+      "requires": [
+        "observability"
+      ],
+      "connectors": [
+        "sentry",
+        "cloud-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:incident-runbook-templates",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/incident-response/skills/incident-runbook-templates/SKILL.md"
+        },
+        {
+          "skill": "superpowers:systematic-debugging",
+          "source": "superpowers",
+          "path": "upstream/superpowers/skills/systematic-debugging/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "postmortem",
+      "title": "Postmortem",
+      "phase": "operate",
+      "requires": [
+        "incident-response"
+      ],
+      "connectors": [],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:postmortem-writing",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/incident-response/skills/postmortem-writing/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "maintenance",
+      "title": "Maintenance",
+      "phase": "evolve",
+      "requires": [],
+      "connectors": [
+        "github"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "superpowers:systematic-debugging",
+          "source": "superpowers",
+          "path": "upstream/superpowers/skills/systematic-debugging/SKILL.md"
+        },
+        {
+          "skill": "addy:code-simplification",
+          "source": "addy",
+          "path": "upstream/addy/skills/code-simplification/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "dependencies",
+      "title": "Dependencies",
+      "phase": "evolve",
+      "requires": [],
+      "connectors": [
+        "github",
+        "context7"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:dependency-upgrade",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/framework-migration/skills/dependency-upgrade/SKILL.md"
+        },
+        {
+          "skill": "pulumi:provider-upgrade",
+          "source": "pulumi",
+          "path": "upstream/pulumi/pulumi/skills/provider-upgrade/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "migration-deprecation",
+      "title": "Migration/deprecation",
+      "phase": "evolve",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "github"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:deprecation-and-migration",
+          "source": "addy",
+          "path": "upstream/addy/skills/deprecation-and-migration/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "cost-finops",
+      "title": "Cost/FinOps",
+      "phase": "operate",
+      "requires": [
+        "observability"
+      ],
+      "connectors": [
+        "cloud-provider"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:cost-optimization",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/cloud-infrastructure/skills/cost-optimization/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "retirement",
+      "title": "Retirement",
+      "phase": "evolve",
+      "requires": [
+        "migration-deprecation"
+      ],
+      "connectors": [
+        "cloud-provider",
+        "db-provider"
+      ],
+      "coverage": "partial",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:deprecation-and-migration",
+          "source": "addy",
+          "path": "upstream/addy/skills/deprecation-and-migration/SKILL.md"
+        },
+        {
+          "skill": "wshobson:gdpr-data-handling",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/hr-legal-compliance/skills/gdpr-data-handling/SKILL.md"
+        },
+        {
+          "skill": "wshobson:cost-optimization",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/cloud-infrastructure/skills/cost-optimization/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "planning-task-decomposition",
+      "title": "Planning/task decomposition",
+      "phase": "context",
+      "requires": [
+        "requirements"
+      ],
+      "connectors": [],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:planning-and-task-breakdown",
+          "source": "addy",
+          "path": "upstream/addy/skills/planning-and-task-breakdown/SKILL.md"
+        },
+        {
+          "skill": "superpowers:writing-plans",
+          "source": "superpowers",
+          "path": "upstream/superpowers/skills/writing-plans/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "code-review-quality-gates",
+      "title": "Code review/quality gates",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "github"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:code-review-and-quality",
+          "source": "addy",
+          "path": "upstream/addy/skills/code-review-and-quality/SKILL.md"
+        },
+        {
+          "skill": "superpowers:verification-before-completion",
+          "source": "superpowers",
+          "path": "upstream/superpowers/skills/verification-before-completion/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "reliability-resilience",
+      "title": "Reliability/resilience",
+      "phase": "design",
+      "requires": [
+        "architecture"
+      ],
+      "connectors": [
+        "cloud-provider",
+        "sentry"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:microservices-patterns",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/backend-development/skills/microservices-patterns/SKILL.md"
+        },
+        {
+          "skill": "wshobson:workflow-orchestration-patterns",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/backend-development/skills/workflow-orchestration-patterns/SKILL.md"
+        },
+        {
+          "skill": "wshobson:slo-implementation",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/observability-monitoring/skills/slo-implementation/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "configuration-environments",
+      "title": "Configuration/environments",
+      "phase": "build",
+      "requires": [],
+      "connectors": [
+        "cloud-provider"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "pulumi:pulumi-esc",
+          "source": "pulumi",
+          "path": "upstream/pulumi/pulumi/skills/pulumi-esc/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "documentation-runbooks",
+      "title": "Documentation/runbooks",
+      "phase": "evolve",
+      "requires": [],
+      "connectors": [],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:documentation-and-adrs",
+          "source": "addy",
+          "path": "upstream/addy/skills/documentation-and-adrs/SKILL.md"
+        },
+        {
+          "skill": "wshobson:incident-runbook-templates",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/incident-response/skills/incident-runbook-templates/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "privacy-compliance",
+      "title": "Privacy/compliance",
+      "phase": "design",
+      "requires": [],
+      "connectors": [
+        "db-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:gdpr-data-handling",
+          "source": "wshobson",
+          "path": "upstream/wshobson/plugins/hr-legal-compliance/skills/gdpr-data-handling/SKILL.md"
+        },
+        {
+          "skill": "addy:security-and-hardening",
+          "source": "addy",
+          "path": "upstream/addy/skills/security-and-hardening/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "product-analytics-feedback",
+      "title": "Product analytics/feedback",
+      "phase": "evolve",
+      "requires": [
+        "product-discovery"
+      ],
+      "connectors": [
+        "posthog"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "posthog:instrument-product-analytics",
+          "source": "posthog",
+          "path": "upstream/posthog/skills/omnibus/instrument-product-analytics/SKILL.md"
+        },
+        {
+          "skill": "posthog:querying-posthog-data",
+          "source": "posthog",
+          "path": "upstream/posthog/skills/omnibus/querying-posthog-data/SKILL.md"
+        },
+        {
+          "skill": "posthog:creating-surveys",
+          "source": "posthog",
+          "path": "upstream/posthog/skills/omnibus/creating-surveys/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "addy",
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "revision": "6ca0cd7db39b41b1c37e26d335c507ee92382c6d",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original upstream skill directories and supporting files. Invoke selected specialists within the single L11 workflow; do not activate source bootstrap routers or global hooks."
+    },
+    {
+      "id": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "revision": "71f6048e8ada25180e61438abc1d98cb151fe9a7",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original gstack source snapshot. L11 maps upstream gstack paths to .l11/upstream/gstack and owns routing. Browser/runtime builds need Bash, Bun, dependencies and Chromium; Windows browser also needs the Node server build. Setup scripts are shipped as source, never automatically executed or registered. The legacy connect-chrome directory symlink is omitted; its open-gstack-browser target is included as source. Git ignore metadata is omitted so npm cannot suppress original runtime helpers during packaging."
+    },
+    {
+      "id": "impeccable",
+      "repository": "https://github.com/pbakaus/impeccable",
+      "revision": "cb56ed6c19a07329a9fa0cd4e657bee040156593",
+      "license": "Apache-2.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Complete compiled portable skill with references, scripts and notices. Launcher engine 0.1.5 is a separate download; invocation may download it. Windows launcher execution has not been live-tested."
+    },
+    {
+      "id": "posthog",
+      "repository": "https://github.com/PostHog/skills",
+      "revision": "a49f0145ff5d9d75b49c147a807d786d6ca8334e",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original PostHog instrumentation, query and survey skills. PostHog service operations require a separately connected optional account/MCP integration."
+    },
+    {
+      "id": "pulumi",
+      "repository": "https://github.com/pulumi/agent-skills",
+      "revision": "e57d1d117b585a3b5bf6bc612ff327acfa89bd29",
+      "license": "Apache-2.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original upstream skill directories and supporting files. Invoke selected specialists within the single L11 workflow; do not activate source bootstrap routers or global hooks."
+    },
+    {
+      "id": "supabase",
+      "repository": "https://github.com/supabase/agent-skills",
+      "revision": "8331f910845103c08d51f6ca1d86ebb7d1f745e3",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original upstream skill directories and supporting files. Invoke selected specialists within the single L11 workflow; do not activate source bootstrap routers or global hooks."
+    },
+    {
+      "id": "superpowers",
+      "repository": "https://github.com/obra/superpowers",
+      "revision": "b36e0829c6d0140e93cfef2ca599b1b07d4a7797",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original upstream skill directories and supporting files. Invoke selected specialists within the single L11 workflow; do not activate source bootstrap routers or global hooks."
+    },
+    {
+      "id": "vercel",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original React/Next, composition and web-design skill directories. Repository README and React metadata declare MIT; no standalone upstream LICENSE is tracked. Offline web guidelines are provided by the web-guidelines dependency."
+    },
+    {
+      "id": "wshobson",
+      "repository": "https://github.com/wshobson/agents",
+      "revision": "a30778f8c4e6b0a87567941b7cca4f534bf642b6",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original specialist directories with substantive references/examples. Framework/cloud examples must be adapted to the actual project. Retirement is composed partial coverage, not a complete decommissioning runbook. Established specialist skill collection; content and complete templates/scripts inspected; not Kubernetes vendor ownership. CNI must implement NetworkPolicy; YAML validity does not prove enforcement. Account/cluster operations require separately authorized credentials. Upstream examples include curl-to-sudo bootstrap, auto-prune, sync --force; never auto-run during installation. Git reversal alone does not prove data rollback. Only selected specialist directories and supporting source are shipped; no source plugin, root router, hooks, agent registration or MCP is activated. Cloud/account runtimes remain separate requirements."
+    }
+  ]
+}

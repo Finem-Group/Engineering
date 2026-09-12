@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-tanstack-router",
+  "kind": "pack",
+  "version": "0.4.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "extension": "tanstack-router",
+  "conflicts": [
+    "finem-vue",
+    "finem-svelte",
+    "finem-angular",
+    "finem-expo",
+    "finem-next-cache"
+  ],
+  "exclusiveGroup": null,
+  "capabilities": [
+    {
+      "id": "frontend",
+      "title": "Frontend",
+      "phase": "build",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "context7",
+        "paper"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "tanstack-router:router-core",
+          "source": "tanstack-router",
+          "path": "upstream/tanstack-router/packages/router-core/skills/router-core/SKILL.md"
+        },
+        {
+          "skill": "tanstack-router:react-router",
+          "source": "tanstack-router",
+          "path": "upstream/tanstack-router/packages/react-router/skills/react-router/SKILL.md"
+        },
+        {
+          "skill": "tanstack-router:router-query",
+          "source": "tanstack-router",
+          "path": "upstream/tanstack-router/packages/react-router/skills/compositions/router-query/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "tanstack-router",
+      "repository": "https://github.com/TanStack/router",
+      "revision": "f021f6d1c6dce6c9b54d70766f1d636d8fd9e184",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "First-party composable routing, Query integration and Start SSR/server boundaries with explicit dependency links. Matching project @tanstack/react-router, router-plugin and Query when selected; Start only for Start project. Version metadata differs across skill files, so inspect installed types, not only repository HEAD. Preserve full package paths. router-core auth links Start auth-server-primitives; router-plugin links virtual-file-routes. Both support closures included. Names react-router and vue-router belong to TanStack packages here; never confuse with Remix react-router or Vue Router. Prefix IDs. Router/Start are alternative primary routing/app owners to Next, Remix, Nuxt and Expo. Nested specialists load on demand, not all at once."
+    }
+  ]
+}

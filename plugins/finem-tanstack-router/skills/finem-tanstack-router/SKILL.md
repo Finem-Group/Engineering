@@ -1,0 +1,36 @@
+---
+name: finem-tanstack-router
+description: Use when this project's work involves TanStack React Router and Query composition — covers frontend. Loads the original tanstack-router skills bundled with this pack.
+---
+
+# Finem Tanstack router
+
+TanStack React Router and Query composition
+
+This is an entry skill. It names originals; it does not restate them. Open the listed `SKILL.md` files
+and the references they require, and follow their procedure.
+
+## Resolve paths
+
+Paths below are relative to this plugin's root — `${CLAUDE_PLUGIN_ROOT}` when the host sets it, otherwise
+the directory two levels above this `SKILL.md`. Inside an original, `{baseDir}` means the directory
+containing that original, not this plugin's root.
+
+## Originals this pack activates
+
+### Frontend
+
+Adds to the finem-core base for this capability.
+
+- `tanstack-router:router-core` → `upstream/tanstack-router/packages/router-core/skills/router-core/SKILL.md`
+- `tanstack-router:react-router` → `upstream/tanstack-router/packages/react-router/skills/react-router/SKILL.md`
+- `tanstack-router:router-query` → `upstream/tanstack-router/packages/react-router/skills/compositions/router-query/SKILL.md`
+
+## Coordination
+
+Finem's `finem-engineering` skill in `finem-core` owns capability selection, evidence and limits. Depends
+on: `finem-core`.
+Do not combine with `finem-vue`, `finem-svelte`, `finem-angular`, `finem-expo`, `finem-next-cache`; they cover the same capability differently.
+
+Upstream sources bundled here: tanstack-router. Their licenses and pinned revisions are recorded in
+`NOTICE.md` and `upstream.lock.json` in this plugin root.

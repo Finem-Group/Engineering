@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-react-native-performance",
+  "kind": "pack",
+  "version": "0.4.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "extension": "react-native-performance",
+  "conflicts": [],
+  "exclusiveGroup": null,
+  "capabilities": [
+    {
+      "id": "performance",
+      "title": "Performance",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "sentry"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "callstack:react-native-best-practices",
+          "source": "callstack",
+          "path": "upstream/callstack/skills/react-native-best-practices/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "callstack",
+      "repository": "https://github.com/callstackincubator/agent-skills",
+      "revision": "2766baa46ca0fe7c16cc5ab4d0077ccec2e95fb9",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Adds device, native, JS-thread, memory, startup and bundle diagnosis beyond Expo UI instructions. Existing RN/Expo project and matching Hermes/toolchains; iOS profiling needs macOS/Xcode; Android profiling needs SDK/device. Callstack owns measured mobile performance; Expo owns Expo layout/router/animation implementation. No generic lifecycle takeover."
+    }
+  ]
+}

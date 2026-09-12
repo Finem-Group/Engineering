@@ -1,0 +1,656 @@
+{
+  "name": "finem",
+  "interface": {
+    "displayName": "Finem Engineering"
+  },
+  "plugins": [
+    {
+      "name": "finem-core",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-core"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-discovery",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-discovery"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-react-ui",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-react-ui"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-browser-playwright",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-browser-playwright"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-advanced-testing",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-advanced-testing"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-cloudflare",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-cloudflare"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-terraform",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-terraform"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-observability",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-observability"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-expo",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-expo"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-product-validation",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-product-validation"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-product-delivery",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-product-delivery"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-product-analytics",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-product-analytics"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-intent-audit",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-intent-audit"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-agent-engineering",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-agent-engineering"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-vue",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-vue"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-nuxt",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-nuxt"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-svelte",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-svelte"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-angular",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-angular"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-next-cache",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-next-cache"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-tanstack-router",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-tanstack-router"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-tanstack-start",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-tanstack-start"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-tanstack-table",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-tanstack-table"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-redux-toolkit",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-redux-toolkit"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-web-animation",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-web-animation"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-gsap",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-gsap"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-react-native-performance",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-react-native-performance"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-swiftui",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-swiftui"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-android-ui",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-android-ui"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-kotlin-mobile",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-kotlin-mobile"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-backend-hono",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-backend-hono"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-backend-fastify",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-backend-fastify"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-backend-fastapi",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-backend-fastapi"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-backend-django",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-backend-django"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-api-graphql",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-api-graphql"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-backend-apollo",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-backend-apollo"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-backend-rust",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-backend-rust"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-auth-auth0",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-auth-auth0"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-data-prisma",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-data-prisma"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-migration-prisma-v7",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-migration-prisma-v7"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-migration-prisma-mongodb",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-migration-prisma-mongodb"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-data-neon",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-data-neon"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-storage-neon",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-storage-neon"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-jobs-inngest",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-jobs-inngest"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-jobs-trigger",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-jobs-trigger"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-cache-upstash",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-cache-upstash"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-jobs-upstash",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-jobs-upstash"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-search-upstash",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-search-upstash"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-email-resend",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-email-resend"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-api-contract-testing",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-api-contract-testing"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-search-algolia",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-search-algolia"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-kubernetes",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-kubernetes"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-security-audit",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-security-audit"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-finops",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-finops"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-aws-containers",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-aws-containers"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

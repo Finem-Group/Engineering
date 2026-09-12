@@ -1,0 +1,30 @@
+{
+  "name": "finem-tanstack-table",
+  "version": "0.4.0",
+  "description": "TanStack Table 9 core and React table bindings",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "frontend"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Tanstack table",
+    "shortDescription": "TanStack Table 9 core and React table bindings",
+    "longDescription": "TanStack Table 9 core and React table bindings Bundles the original tanstack-table skills unmodified and activates them for frontend. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Tanstack table guidance for this change.",
+      "Review this code against tanstack-table practice."
+    ]
+  }
+}

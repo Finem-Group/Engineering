@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-finops",
+  "sources": [
+    {
+      "id": "infracost",
+      "repository": "https://github.com/infracost/agent-skills",
+      "revision": "2ee419ceb8a9add56ba5c525d5b2a93ce0ad2e70",
+      "license": "Apache-2.0",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Official Infracost product-maintained skills; concrete typed MCP and CLI bindings, version floor, org/auth failure behavior. Do not activate hooks or automatically start MCP during source installation. MCP/CLI service requests were not run; no account ready claim. price reads IaC from stdin; use native stdin pipe rather than POSIX heredoc on Windows. Only selected specialist directories and supporting source are shipped; no source plugin, root router, hooks, agent registration or MCP is activated. Cloud/account runtimes remain separate requirements.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "infracost:scan",
+          "path": "plugins/infracost/skills/scan/SKILL.md",
+          "sha256": "c35507e0a5981d83c7f56e912f78f5bd97f19dc4092dc7364d7fe8d8747b9e21",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "infracost:iac-generation",
+          "path": "plugins/infracost/skills/iac-generation/SKILL.md",
+          "sha256": "431cc7a78a09dba769f6067f81541014564c8077cf06afe9d801ec590ef578f9",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "infracost:price-lookup",
+          "path": "plugins/infracost/skills/price-lookup/SKILL.md",
+          "sha256": "d9efa41e7c2b64f2b731895c4237c2802a6f7ff0ca39a452be872a447968099f",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "5b1300f1d91d6e730df69f0d96558204c7cf96729a5d6e489260c7f6c06e8741",
+          "mode": 420
+        },
+        {
+          "path": "plugins/infracost/BINDINGS.md",
+          "sha256": "f51da8058b02446a1846187fc4350825d11d9888af71993918ad536bf1413315",
+          "mode": 420
+        },
+        {
+          "path": "plugins/infracost/scripts/mcp.sh",
+          "sha256": "987b0e7ae6955ad309bc1af819700c79b154b4443ca6a465edb9c11c7bffe558",
+          "mode": 493
+        },
+        {
+          "path": "plugins/infracost/scripts/resolve-path.sh",
+          "sha256": "6664b2f97093c08e78b91614de5721baee4cc7668fea2bd876ccab85d6ddd1f3",
+          "mode": 420
+        },
+        {
+          "path": "plugins/infracost/scripts/validate_setup.sh",
+          "sha256": "f18b70f1dd8461f7ea81e61c26171d53e054a26eeb3fb629fec1211cad9548c7",
+          "mode": 493
+        },
+        {
+          "path": "plugins/infracost/skills/iac-generation/SKILL.md",
+          "sha256": "431cc7a78a09dba769f6067f81541014564c8077cf06afe9d801ec590ef578f9",
+          "mode": 420
+        },
+        {
+          "path": "plugins/infracost/skills/price-lookup/SKILL.md",
+          "sha256": "d9efa41e7c2b64f2b731895c4237c2802a6f7ff0ca39a452be872a447968099f",
+          "mode": 420
+        },
+        {
+          "path": "plugins/infracost/skills/scan/SKILL.md",
+          "sha256": "c35507e0a5981d83c7f56e912f78f5bd97f19dc4092dc7364d7fe8d8747b9e21",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/infracost"
+    }
+  ]
+}

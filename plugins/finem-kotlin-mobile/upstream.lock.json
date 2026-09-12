@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-kotlin-mobile",
+  "sources": [
+    {
+      "id": "kotlin",
+      "repository": "https://github.com/Kotlin/kotlin-agent-skills",
+      "revision": "c2f90697bf71966a117a13340d5fff787f004140",
+      "license": "Apache-2.0",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "First-party KMP compatibility, Java conversion and measured Native build optimization. Kotlin/Gradle/JDK and project wrapper; macOS/Xcode for native iOS builds. Bash needed for optional analyze-project.sh and audit-native-build.sh; inspect directly on Windows if absent. Separate KMP AGP9 module split from ordinary Android AGP upgrade. Preserve release build behavior and measure same command/state before and after. Skip unrelated backend JPA/toolchain experiments; no global runtime installs or CI cache mutations during source import.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "kotlin:kotlin-tooling-agp9-migration",
+          "path": "skills/kotlin-tooling-agp9-migration/SKILL.md",
+          "sha256": "eec4224102bdea5779f7a181a4f3dc946efee5b7398b207c1467f1f84aeaa0a6",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "kotlin:kotlin-tooling-java-to-kotlin",
+          "path": "skills/kotlin-tooling-java-to-kotlin/SKILL.md",
+          "sha256": "5b372715adac4df37e3261040ead2d0c937a5e06a55178fa5ff0fcc95adc1944",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "kotlin:kotlin-tooling-native-build-performance",
+          "path": "skills/kotlin-tooling-native-build-performance/SKILL.md",
+          "sha256": "948fcecafa9fd0dcd447682e1fef7046b542be710ee27c2f25eade31c182455e",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-agp9-migration/SKILL.md",
+          "sha256": "eec4224102bdea5779f7a181a4f3dc946efee5b7398b207c1467f1f84aeaa0a6",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-agp9-migration/assets/checklist.md",
+          "sha256": "bccb1adb33a00368e09b94d4cce19b3f3b60da0dab6441664249c078d3dce31c",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-agp9-migration/references/DSL-REFERENCE.md",
+          "sha256": "aeeb39d3c4ce1d901e9e4d2b5be3b815b9e43169bb488e0c6661cba0ef5220d4",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-agp9-migration/references/KNOWN-ISSUES.md",
+          "sha256": "5b15e61f34e3821f40fb26d1a5a9cdce4c9cea1915b6be147df2d43ed883027f",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-agp9-migration/references/MIGRATION-APP-SPLIT.md",
+          "sha256": "77b614b62dd495d4954414cfbafdbd1ee4c888ead08ee8c4df20db64ad23f2bb",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-agp9-migration/references/MIGRATION-FULL-RESTRUCTURE.md",
+          "sha256": "3cb0f06dd7c213603b39b086fe33685fa00d56d14bfbd59c53569a5faa1e21ef",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-agp9-migration/references/MIGRATION-LIBRARY.md",
+          "sha256": "381928ff702602d6384b3fc08402f74dc48f1b20a2085419202ce4191f8caaaf",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-agp9-migration/references/PLUGIN-COMPATIBILITY.md",
+          "sha256": "ec47b996d9459c435fb2ca0588bb35189bc81370c533fee8f38cec93755e92a8",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-agp9-migration/references/VERSION-MATRIX.md",
+          "sha256": "81537c09a682c476beec70fe7b0075799b7393857f2227164709b66a2446c256",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-agp9-migration/scripts/analyze-project.sh",
+          "sha256": "6f3929ae06341793e373f24bf868f4aa026efc3a0b819e03473e28c84da57f5d",
+          "mode": 493
+        },
+        {
+          "path": "skills/kotlin-tooling-java-to-kotlin/SKILL.md",
+          "sha256": "5b372715adac4df37e3261040ead2d0c937a5e06a55178fa5ff0fcc95adc1944",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-java-to-kotlin/assets/checklist.md",
+          "sha256": "b2cafa681d87c3d6b9ce730954943ccc306e0c3c5d96f3f7eb0d6726d108bb40",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-java-to-kotlin/references/CONVERSION-METHODOLOGY.md",
+          "sha256": "b83aaed4331d632065008872bb5db9898f4bb3c14a76b73e166b2509ab48f4ea",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-java-to-kotlin/references/KNOWN-ISSUES.md",
+          "sha256": "581cce6cb0b8c353c2f573435c9b2ba36a0f3768aee755680c652dd4067e5e34",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-java-to-kotlin/references/frameworks/DAGGER-HILT.md",
+          "sha256": "ed52d352e63f7675677fa2ffb5f37ef97554a34b5176c34861031839031ac4b9",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-java-to-kotlin/references/frameworks/GUICE.md",
+          "sha256": "7ca1991006f3e009a18f4bf5276a02873c87c75201b34ba69eb0cc5c2cdcf0f5",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-java-to-kotlin/references/frameworks/HIBERNATE.md",
+          "sha256": "02cf14d4d56cba141682bd8bfd5154d2018822a3aca6f477d8fb48bb91e08277",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-java-to-kotlin/references/frameworks/JACKSON.md",
+          "sha256": "c407201a3629f1af4117e3b6b99a0cbebb7f7b62ef14fb9c3bb7e55250ea86ef",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-java-to-kotlin/references/frameworks/JUNIT.md",
+          "sha256": "58141f5f63afe96944366bcd2e4d462f6ba4d55e2cfe5e8fd29e77ff51604c78",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-java-to-kotlin/references/frameworks/LOMBOK.md",
+          "sha256": "b7f2e11b740261ebec3a9afcd2fa4a7a0c82f082433986c4ba1ba62c64b0bf25",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-java-to-kotlin/references/frameworks/MICRONAUT.md",
+          "sha256": "4d5f9ba64acc694cdade9d374e43548f083bacb40d2995ce424c4ff8c7836edd",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-java-to-kotlin/references/frameworks/MOCKITO.md",
+          "sha256": "221bdf1fae8def5ca083e84cf829b252baceea065eca10a42fa7279d6f8be23e",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-java-to-kotlin/references/frameworks/QUARKUS.md",
+          "sha256": "d0c708e5cf05598fa04760a1696bf2ad396f67933324ebaae51f475f4ec88d5a",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-java-to-kotlin/references/frameworks/RETROFIT.md",
+          "sha256": "b79fd49230bb9cf2b9a2b05ddb772de8ba4b5d80ddc00dc7b3a33550e2988f22",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-java-to-kotlin/references/frameworks/RXJAVA.md",
+          "sha256": "87cad42db77a79c9c2a8bc24d051f0526300fb0682de239e30bbd88748608b82",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-java-to-kotlin/references/frameworks/SPRING.md",
+          "sha256": "b07412f7dbcd9cb7d543370e69e6e9d0faf4f4bd74608a0586fa0be93c881ae8",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-native-build-performance/SKILL.md",
+          "sha256": "948fcecafa9fd0dcd447682e1fef7046b542be710ee27c2f25eade31c182455e",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-native-build-performance/evals/EVALUATION.md",
+          "sha256": "f7f4a9c7412e6e40e9b9fc66f4654fbc35c790c8a89a4ec77e1f3eeaf0219e7c",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-native-build-performance/references/artifacts-and-targets.md",
+          "sha256": "5dceccd55aa6b517b1f2e48b76b585958244ee66818ecbb4cfa056c0f8cc66ff",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-native-build-performance/references/caching-and-gradle.md",
+          "sha256": "2f7f316e62d3b79adc9b80348b0f25b1ded3d9871d3a528dd1db3af3ecd792cf",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-native-build-performance/references/experimental.md",
+          "sha256": "e0e83e36ebdd41f393082680ed06ff396077540544c5723cace80a2058a5eb1f",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-native-build-performance/references/exports-and-generated-code.md",
+          "sha256": "76d94b9a08e933f09eaae66e8a613f79726dbabc65f765e2130fabf93c0f87d3",
+          "mode": 420
+        },
+        {
+          "path": "skills/kotlin-tooling-native-build-performance/scripts/audit-native-build.sh",
+          "sha256": "94af58014fb24aaf1e7757ce804ea19e4023cc778da77ac0d725bd19aa0ba9e7",
+          "mode": 493
+        }
+      ],
+      "root": "upstream/kotlin"
+    }
+  ]
+}

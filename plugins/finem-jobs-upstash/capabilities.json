@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-jobs-upstash",
+  "kind": "pack",
+  "version": "0.4.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "extension": "jobs-upstash",
+  "conflicts": [],
+  "exclusiveGroup": null,
+  "capabilities": [
+    {
+      "id": "async-jobs-events",
+      "title": "Async/jobs/events",
+      "phase": "build",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "cloud-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "upstash:upstash-qstash-js",
+          "source": "upstash",
+          "path": "upstream/upstash/skills/upstash-qstash-js/SKILL.md"
+        },
+        {
+          "skill": "upstash:upstash-workflow-js",
+          "source": "upstash",
+          "path": "upstream/upstash/skills/upstash-workflow-js/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "reliability-resilience",
+      "title": "Reliability/resilience",
+      "phase": "design",
+      "requires": [
+        "architecture"
+      ],
+      "connectors": [
+        "cloud-provider",
+        "sentry"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "upstash:upstash-workflow-js",
+          "source": "upstash",
+          "path": "upstream/upstash/skills/upstash-workflow-js/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "upstash",
+      "repository": "https://github.com/upstash/skills",
+      "revision": "dccc0521a637fcc18395c41992703337bea6baef",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Redis substantial data structures/patterns/performance references; QStash/Workflow/search smaller entrypoints backed by extensive local docs. HTTP Redis with credentials; QStash local server possible; SDK/runtime-specific. Do not substitute REST Redis for BullMQ TCP requirement. No temporary start-redis POST without explicit resource scope. Unsafe basic lock release unconditional DEL precedes safer token/Lua pattern; correctness-critical lock fixture mandatory. Upstash Search is distinct from Redis FT.SEARCH, ordinary Redis and vector database. Provider-agnostic Redis work should use installed client and official Redis docs. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow."
+    }
+  ]
+}

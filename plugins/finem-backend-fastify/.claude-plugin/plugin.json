@@ -1,0 +1,23 @@
+{
+  "name": "finem-backend-fastify",
+  "version": "0.4.0",
+  "description": "Fastify request lifecycle, schema and plugin isolation",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "backend",
+    "api-contracts",
+    "testing"
+  ],
+  "skills": "./skills",
+  "dependencies": [
+    "finem-core"
+  ]
+}

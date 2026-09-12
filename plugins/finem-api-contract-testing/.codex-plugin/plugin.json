@@ -1,0 +1,31 @@
+{
+  "name": "finem-api-contract-testing",
+  "version": "0.4.0",
+  "description": "OpenAPI parse fixtures and implementation drift checks",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "api-contracts",
+    "testing"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Api contract testing",
+    "shortDescription": "OpenAPI parse fixtures and implementation drift checks",
+    "longDescription": "OpenAPI parse fixtures and implementation drift checks Bundles the original pactflow skills unmodified and activates them for api contracts, testing. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Api contract testing guidance for this change.",
+      "Review this code against pactflow practice."
+    ]
+  }
+}

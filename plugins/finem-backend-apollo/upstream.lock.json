@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-backend-apollo",
+  "sources": [
+    {
+      "id": "apollo",
+      "repository": "https://github.com/apollographql/skills",
+      "revision": "c288eb80629dd2309eed81f23d693f66a452d043",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Schema/operation portable specialists with refs plus Apollo Server 5-specific resolvers/context/plugins/security/performance references. GraphQL schema/operations work with any GraphQL implementation. Apollo Server 5 requires Node >=20; observed @apollo/server5.5.1. Only Apollo Server module is Apollo-runtime-specific; do not force federation/router. Preserve intentional nullability and established API contracts over blanket [Type!]! preference. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow. Nine complete handbook chapters: ownership, linting, errors, testing, performance, type-state, pointers and documentation. Existing Rust toolchain/Cargo; check MSRV before copying newer lint attributes. General Rust specialist, not an Axum framework guide. Run supported feature combinations; all-features can be invalid for a given crate. Project error policy prevails over blanket no expect/unwrap advice. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "apollo:apollo-server",
+          "path": "skills/apollo-server/SKILL.md",
+          "sha256": "7e56911da905caa99e0a429ab38fb04ea06b8abd46f9fd986b92a2a04268d9d4",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "apollo:graphql-operations",
+          "path": "skills/graphql-operations/SKILL.md",
+          "sha256": "1dbec2cb28dbae3bddffb1004f00c965dbe2a70b08c43a144b91d63a0c5d14c6",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "apollo:graphql-schema",
+          "path": "skills/graphql-schema/SKILL.md",
+          "sha256": "fe1b3d836f253e3383c86c6e1aba3473d8f4b05e6e7b8f4fe066ff4dbc59f891",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "apollo:rust-best-practices",
+          "path": "skills/rust-best-practices/SKILL.md",
+          "sha256": "e2e93a95c899079e5c3391319f309a0961f4f7cdd882cf7221e2e56da9813a18",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "37fe5c19dc6b3904a11dc50b4ac4a2463625ace4d2aa3b8c417c58bd58cfb361",
+          "mode": 420
+        },
+        {
+          "path": "skills/apollo-server/SKILL.md",
+          "sha256": "7e56911da905caa99e0a429ab38fb04ea06b8abd46f9fd986b92a2a04268d9d4",
+          "mode": 420
+        },
+        {
+          "path": "skills/apollo-server/references/context-and-auth.md",
+          "sha256": "25058b58d01ba2a1a27e715f012fd4e1be07fdf909f625941f67ba5fe021d0ce",
+          "mode": 420
+        },
+        {
+          "path": "skills/apollo-server/references/data-sources.md",
+          "sha256": "f109cb30e62363fa9c09df7b28a9b03dfd8831611863248706db76939637a895",
+          "mode": 420
+        },
+        {
+          "path": "skills/apollo-server/references/error-handling.md",
+          "sha256": "b2837f6d4c0efbc1d1db704ca594c51cfa8755d2c348805dd21da435bbcfc4b0",
+          "mode": 420
+        },
+        {
+          "path": "skills/apollo-server/references/plugins.md",
+          "sha256": "c818180b4cb59ee11013352dc27d3656a481257082effa61c3922234453f7933",
+          "mode": 420
+        },
+        {
+          "path": "skills/apollo-server/references/resolvers.md",
+          "sha256": "55a33184bb8e1d4fac044523888fa8267afe40f7557fbb508c77032e9ea32ea9",
+          "mode": 420
+        },
+        {
+          "path": "skills/apollo-server/references/troubleshooting.md",
+          "sha256": "7a5c447b86949665cf8920955166607d257b1d74a8f34d47482d7ddda9b375ce",
+          "mode": 420
+        },
+        {
+          "path": "skills/graphql-operations/SKILL.md",
+          "sha256": "1dbec2cb28dbae3bddffb1004f00c965dbe2a70b08c43a144b91d63a0c5d14c6",
+          "mode": 420
+        },
+        {
+          "path": "skills/graphql-operations/references/fragments.md",
+          "sha256": "514368ccfaa4ccd4bcd279cfc66e8671bc38562541a56a1aff7d4613cd35b354",
+          "mode": 420
+        },
+        {
+          "path": "skills/graphql-operations/references/mutations.md",
+          "sha256": "59f277aa2b8fee3186483cb66f3fb24661cfa8a285f03af41d72fa01141c1807",
+          "mode": 420
+        },
+        {
+          "path": "skills/graphql-operations/references/queries.md",
+          "sha256": "2c66262d754fb4c286961fdac0a115cd2e9105710be9c3d812b6b2ac135995ee",
+          "mode": 420
+        },
+        {
+          "path": "skills/graphql-operations/references/tooling.md",
+          "sha256": "095426143e0789d31d77a9651c020cdf0346bb6329065458b83629664adbf0b9",
+          "mode": 420
+        },
+        {
+          "path": "skills/graphql-operations/references/variables.md",
+          "sha256": "14ab063500839a1fbb34f41075715edddd3f7965c02a6c48b4d1f177946321e4",
+          "mode": 420
+        },
+        {
+          "path": "skills/graphql-schema/SKILL.md",
+          "sha256": "fe1b3d836f253e3383c86c6e1aba3473d8f4b05e6e7b8f4fe066ff4dbc59f891",
+          "mode": 420
+        },
+        {
+          "path": "skills/graphql-schema/references/errors.md",
+          "sha256": "cc1d14124a9e0e2bcd6d5a840d3ee3513e15344964709e6732f47db467e1b551",
+          "mode": 420
+        },
+        {
+          "path": "skills/graphql-schema/references/naming.md",
+          "sha256": "a32b86f5d0016a456bee30cbd981767109001e2dcd730af6fc4438c177b3e1b4",
+          "mode": 420
+        },
+        {
+          "path": "skills/graphql-schema/references/pagination.md",
+          "sha256": "53e53410bb6160124a015f2604049c8f15b265982a86858ff695bfb0beea287d",
+          "mode": 420
+        },
+        {
+          "path": "skills/graphql-schema/references/security.md",
+          "sha256": "3890ef827968d131a9cf8b87458b8d38ffe60b459371e5e520fa4c444f91faef",
+          "mode": 420
+        },
+        {
+          "path": "skills/graphql-schema/references/types.md",
+          "sha256": "7dab0e654365865feeb43547cb758a74d69a395ec4e2c755c28a2f97cc7c1e5d",
+          "mode": 420
+        },
+        {
+          "path": "skills/rust-best-practices/SKILL.md",
+          "sha256": "e2e93a95c899079e5c3391319f309a0961f4f7cdd882cf7221e2e56da9813a18",
+          "mode": 420
+        },
+        {
+          "path": "skills/rust-best-practices/references/chapter_01.md",
+          "sha256": "05aed21a95cce7a97badc44f628eb7e23466f7be178a8c8ce8e3c7c1f82fd306",
+          "mode": 420
+        },
+        {
+          "path": "skills/rust-best-practices/references/chapter_02.md",
+          "sha256": "05c6495150ea1b3a038555231e1965b75dc4c2499e4c7a784a0a35640eaee579",
+          "mode": 420
+        },
+        {
+          "path": "skills/rust-best-practices/references/chapter_03.md",
+          "sha256": "160883f80db912c748cb73884942b6824be0599c98b8f16e9256f27fb9a44c6a",
+          "mode": 420
+        },
+        {
+          "path": "skills/rust-best-practices/references/chapter_04.md",
+          "sha256": "3257b7dfa06698bd59fe2d315b33b22181926d30cda3776bc16c792b51eeb239",
+          "mode": 420
+        },
+        {
+          "path": "skills/rust-best-practices/references/chapter_05.md",
+          "sha256": "7b44b4a6e245e692feb07df573162ce8b2c7ffc20716f8a5518d3d4ee2793c7c",
+          "mode": 420
+        },
+        {
+          "path": "skills/rust-best-practices/references/chapter_06.md",
+          "sha256": "c001d3dbffe3e403cfc52ad81e4fe0468416f61add2e140d0f442fee1812049c",
+          "mode": 420
+        },
+        {
+          "path": "skills/rust-best-practices/references/chapter_07.md",
+          "sha256": "a3c989e1aff99c6de53123ce97f3cf9496e0d68fe4099faabe436758ac1a5475",
+          "mode": 420
+        },
+        {
+          "path": "skills/rust-best-practices/references/chapter_08.md",
+          "sha256": "452edcd46db8bf105c9b208ffb9ee41f876ae1a26ea60c699660047861e077c6",
+          "mode": 420
+        },
+        {
+          "path": "skills/rust-best-practices/references/chapter_09.md",
+          "sha256": "6edd831122b04ee9f11c0a529a9ebddf2d34b5d1d8edef9bd6929d41693ad262",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/apollo"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-backend-fastapi",
+  "sources": [
+    {
+      "id": "fastapi",
+      "repository": "https://github.com/fastapi/fastapi",
+      "revision": "50113da16fec53b66b80d75e80a89296de4fa5a5",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "321-line skill plus six focused references covering DI, Pydantic, routers, responses, frontend assets and streaming. Python >=3.10 for observed FastAPI 0.141.1; project environment and HTTPX/TestClient. Current skill uses newer app.frontend and fastapi.sse APIs; version-gate before use. SQLModel/Asyncer preferences must not trigger a migration of an existing SQLAlchemy/AnyIO app. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "fastapi:fastapi",
+          "path": "fastapi/.agents/skills/fastapi/SKILL.md",
+          "sha256": "989e5136ad015c175cca28669d051bfef2e20dad13a8385383885648607f5eb6",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e",
+          "mode": 420
+        },
+        {
+          "path": "fastapi/.agents/skills/fastapi/SKILL.md",
+          "sha256": "989e5136ad015c175cca28669d051bfef2e20dad13a8385383885648607f5eb6",
+          "mode": 420
+        },
+        {
+          "path": "fastapi/.agents/skills/fastapi/references/dependencies.md",
+          "sha256": "8b6b71a03fa14680905a81f53f1883b90c2ab7ac65eefa77c2664c2d038de469",
+          "mode": 420
+        },
+        {
+          "path": "fastapi/.agents/skills/fastapi/references/other-tools.md",
+          "sha256": "a2c91995890274681ecd2f6621fa96e64226086b4eb203d46b8e9277cd47f8fd",
+          "mode": 420
+        },
+        {
+          "path": "fastapi/.agents/skills/fastapi/references/path-operations.md",
+          "sha256": "ed8d2a21123bcf63dd1e9aa61cc8e4e33a878cbbf1d09498a556a420302995ca",
+          "mode": 420
+        },
+        {
+          "path": "fastapi/.agents/skills/fastapi/references/pydantic.md",
+          "sha256": "840ab962739861aed2ea77805dc46979c9a96abd8fc0043f197b3bd5d638e84b",
+          "mode": 420
+        },
+        {
+          "path": "fastapi/.agents/skills/fastapi/references/responses.md",
+          "sha256": "7c921508bbd093697301ca9612038976cfb5b65bdc2dc42a0c02e2809d3652a7",
+          "mode": 420
+        },
+        {
+          "path": "fastapi/.agents/skills/fastapi/references/streaming.md",
+          "sha256": "6c76882a7c1b4e477b4d45509bfbb16a9527025106e2b76f00b57d9280f9ca92",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/fastapi"
+    }
+  ]
+}

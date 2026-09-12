@@ -1,0 +1,31 @@
+{
+  "name": "finem-search-algolia",
+  "version": "0.4.0",
+  "description": "Algolia indexing contracts and release quality checks",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "backend",
+    "testing"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Search algolia",
+    "shortDescription": "Algolia indexing contracts and release quality checks",
+    "longDescription": "Algolia indexing contracts and release quality checks Bundles the original algolia skills unmodified and activates them for backend, testing. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Search algolia guidance for this change.",
+      "Review this code against algolia practice."
+    ]
+  }
+}

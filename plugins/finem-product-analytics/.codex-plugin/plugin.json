@@ -1,0 +1,30 @@
+{
+  "name": "finem-product-analytics",
+  "version": "0.4.0",
+  "description": "Metrics definitions and cohort-based feedback alongside provider instrumentation",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "product-analytics-feedback"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Product analytics",
+    "shortDescription": "Metrics definitions and cohort-based feedback alongside provider instrumentation",
+    "longDescription": "Metrics definitions and cohort-based feedback alongside provider instrumentation Bundles the original pm skills unmodified and activates them for product analytics/feedback. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Product analytics guidance for this change.",
+      "Review this code against pm practice."
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-gsap",
+  "sources": [
+    {
+      "id": "gsap",
+      "repository": "https://github.com/greensock/gsap-skills",
+      "revision": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Official library-specific animation API/cleanup/performance guidance for projects choosing GSAP. Chosen project GSAP runtime and @gsap/react when React; matching framework packages. Gate to an actual GSAP project/request: upstream descriptions recommend GSAP generally, so avoid loading for generic motion. Preserve examples outside skills because source refers to examples/react, vue, nuxt and vanilla. All eight skills available, task-relevant entrypoint only.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "gsap:gsap-core",
+          "path": "skills/gsap-core/SKILL.md",
+          "sha256": "3887b47e050ab5afbe2a9a820f23d39fa02ab785e06a343be44c6f91d84d12b3",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "gsap:gsap-react",
+          "path": "skills/gsap-react/SKILL.md",
+          "sha256": "88e2a5312b45e8cc7b3c496637ff5bc9af2ae9c925b555c8b235b34cbc989d74",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "gsap:gsap-frameworks",
+          "path": "skills/gsap-frameworks/SKILL.md",
+          "sha256": "842d9d3659ec3ddc8abbdc524708f8facf81f468ac25d0577f48c759c4fa31e6",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "gsap:gsap-performance",
+          "path": "skills/gsap-performance/SKILL.md",
+          "sha256": "cb5408d6fba707aabcbfe3320317a14c1f8fca6070074e5261047930f50d441e",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "51b04b06556662dd817e8f4aa6d06bc7139dc73739e1319a7233cfde3e147b90",
+          "mode": 420
+        },
+        {
+          "path": "examples/README.md",
+          "sha256": "d755e9ebe4cb8f386a68ffdaa5193d24ecf19f26998de921d6b845fcfaa392ee",
+          "mode": 420
+        },
+        {
+          "path": "examples/nuxt/app/app.vue",
+          "sha256": "60d22e79db83480cb4bb77c7566187fffab1a6d8aa870f27dd061cb8dd5bf336",
+          "mode": 420
+        },
+        {
+          "path": "examples/nuxt/app/composables/useGSAP.ts",
+          "sha256": "cbd3c12d6a8d889017e2d8ff48f914b5237cb9dc58ec52bd2002a48f2c7b09f0",
+          "mode": 420
+        },
+        {
+          "path": "examples/nuxt/app/pages/index.vue",
+          "sha256": "1cd00f9919bf546b138670718acb884541f65c1226ab6fe283f2dd4e77c15fcf",
+          "mode": 420
+        },
+        {
+          "path": "examples/nuxt/nuxt.config.ts",
+          "sha256": "21e3875c7cc220aef71428109184fbe1e4f4445f9ec086385dd4038f42720e41",
+          "mode": 420
+        },
+        {
+          "path": "examples/nuxt/package.json",
+          "sha256": "f94da18c76c9826bf0e0ffc76384917a7f94a7900947991f8a803fb8bd187da3",
+          "mode": 420
+        },
+        {
+          "path": "examples/react/App.jsx",
+          "sha256": "bdad45dafd00c7bb4f34ab2baa33ad9d624a15e9b29162a3c9b0eb2dce86db4b",
+          "mode": 420
+        },
+        {
+          "path": "examples/react/index.html",
+          "sha256": "444b15f8fdd753fcd7a8f9584ba506a255bbc537d12e73acfb7d41b8eb81a37a",
+          "mode": 420
+        },
+        {
+          "path": "examples/react/main.jsx",
+          "sha256": "d23cfbb031f9db286f8d61beba85dbbb8aeca96ac6ab8f9d3b3358fdea22600f",
+          "mode": 420
+        },
+        {
+          "path": "examples/react/package.json",
+          "sha256": "f4fd0f037d82be906000b192878b405dbbc0e6d5bf8c548da7bc323a5b5b4710",
+          "mode": 420
+        },
+        {
+          "path": "examples/react/vite.config.js",
+          "sha256": "bd4a17f9ba1306dd5801e62063f448390d679230c9aa050d1ed930a40ef3774c",
+          "mode": 420
+        },
+        {
+          "path": "examples/vanilla/index.html",
+          "sha256": "b4e4f53c5b59a4bc44e13696ec72df7e0603497416f9220e56135c4b9ca283e6",
+          "mode": 420
+        },
+        {
+          "path": "examples/vanilla/main.js",
+          "sha256": "0c8c3d79a10dad596687b0013aa66b93c28581e42e1c0052e1bcbc265e40b98a",
+          "mode": 420
+        },
+        {
+          "path": "examples/vue/app.vue",
+          "sha256": "fe82f03b53be9b6ec4294c9bd831e31d59ccb2fb1cc4c9d65a7301e91a4f2529",
+          "mode": 420
+        },
+        {
+          "path": "examples/vue/index.html",
+          "sha256": "558fbcbe6e1c4c651899952c2b56e16463b30b03fd3b9b8e8b19c6d741c1c0fc",
+          "mode": 420
+        },
+        {
+          "path": "examples/vue/main.js",
+          "sha256": "524f61ad58f73e8f65068fac257f0dd526e0f8ed29bd654ef0ac9f7cb9b7d686",
+          "mode": 420
+        },
+        {
+          "path": "examples/vue/package.json",
+          "sha256": "8c4ff7a7acfc6808249a8e5921d97da0b9c6593e6f6820a233ffd9b15a5a2d83",
+          "mode": 420
+        },
+        {
+          "path": "examples/vue/vite.config.js",
+          "sha256": "159d5c167f86f273a094a3de1b3165e2db10d9b0b699cd029d06535d28747ca6",
+          "mode": 420
+        },
+        {
+          "path": "skills/gsap-core/SKILL.md",
+          "sha256": "3887b47e050ab5afbe2a9a820f23d39fa02ab785e06a343be44c6f91d84d12b3",
+          "mode": 420
+        },
+        {
+          "path": "skills/gsap-frameworks/SKILL.md",
+          "sha256": "842d9d3659ec3ddc8abbdc524708f8facf81f468ac25d0577f48c759c4fa31e6",
+          "mode": 420
+        },
+        {
+          "path": "skills/gsap-performance/SKILL.md",
+          "sha256": "cb5408d6fba707aabcbfe3320317a14c1f8fca6070074e5261047930f50d441e",
+          "mode": 420
+        },
+        {
+          "path": "skills/gsap-plugins/SKILL.md",
+          "sha256": "5838b856c74c07fbc9fa99b6dfd1eee34ea554c3e530c30e0d58014b707d70a4",
+          "mode": 420
+        },
+        {
+          "path": "skills/gsap-react/SKILL.md",
+          "sha256": "88e2a5312b45e8cc7b3c496637ff5bc9af2ae9c925b555c8b235b34cbc989d74",
+          "mode": 420
+        },
+        {
+          "path": "skills/gsap-scrolltrigger/SKILL.md",
+          "sha256": "9351b6666a4749c0740406ea363aaccb99a087ff45cc5e8b99a0f367facf3ef4",
+          "mode": 420
+        },
+        {
+          "path": "skills/gsap-timeline/SKILL.md",
+          "sha256": "1a8b0f39cc4be3ed3d834b89672e4ae2f151b901dc3450bebf10bbc45379fe02",
+          "mode": 420
+        },
+        {
+          "path": "skills/gsap-utils/SKILL.md",
+          "sha256": "1927bcc4ea95b38203404ad5ea1d060b15c4a886c65ae53e885ff1793aabe0ba",
+          "mode": 420
+        },
+        {
+          "path": "skills/llms.txt",
+          "sha256": "32dab4bde09bc822ac17ebc49ee2ff87ca8c304a1c6e0509aadde7223f78b42f",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/gsap"
+    }
+  ]
+}

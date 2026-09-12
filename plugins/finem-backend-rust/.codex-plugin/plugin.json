@@ -1,0 +1,32 @@
+{
+  "name": "finem-backend-rust",
+  "version": "0.4.0",
+  "description": "Rust ownership, errors, testing and performance conventions",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "backend",
+    "reliability-resilience",
+    "testing"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Backend rust",
+    "shortDescription": "Rust ownership, errors, testing and performance conventions",
+    "longDescription": "Rust ownership, errors, testing and performance conventions Bundles the original apollo skills unmodified and activates them for backend, reliability/resilience, testing. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Backend rust guidance for this change.",
+      "Review this code against apollo practice."
+    ]
+  }
+}

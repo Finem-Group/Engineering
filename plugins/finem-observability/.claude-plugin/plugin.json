@@ -1,0 +1,24 @@
+{
+  "name": "finem-observability",
+  "version": "0.4.0",
+  "description": "OpenTelemetry and k6",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "observability",
+    "performance",
+    "slos",
+    "incident-response"
+  ],
+  "skills": "./skills",
+  "dependencies": [
+    "finem-core"
+  ]
+}

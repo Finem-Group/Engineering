@@ -1,0 +1,40 @@
+{
+  "name": "finem-core",
+  "version": "0.4.0",
+  "description": "The Finem engineering coordinator and the base original skills for all 43 capabilities. Every finem technology pack depends on it.",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "product-discovery",
+    "requirements",
+    "feasibility",
+    "architecture",
+    "adrs",
+    "domain-modeling",
+    "ux",
+    "design-system",
+    "frontend",
+    "api-contracts"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Engineering core",
+    "shortDescription": "The Finem engineering coordinator and the base original skills for all 43 capabilities. Every finem technology pack depe",
+    "longDescription": "Coordinates 43 engineering capabilities and the base original skills behind them. Technology packs plug into this core; every finem pack depends on it. Originals stay unmodified under upstream/ and are opened on demand.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Plan this change and name the capabilities it touches.",
+      "Review this diff against the engineering quality gates.",
+      "Prepare a release candidate and a rollback plan."
+    ]
+  }
+}

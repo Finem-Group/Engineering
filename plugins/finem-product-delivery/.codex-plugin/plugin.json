@@ -1,0 +1,33 @@
+{
+  "name": "finem-product-delivery",
+  "version": "0.4.0",
+  "description": "Product strategy, outcome roadmaps, user stories and acceptance scenarios",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "product-discovery",
+    "requirements",
+    "planning-task-decomposition",
+    "testing"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Product delivery",
+    "shortDescription": "Product strategy, outcome roadmaps, user stories and acceptance scenarios",
+    "longDescription": "Product strategy, outcome roadmaps, user stories and acceptance scenarios Bundles the original pm skills unmodified and activates them for product discovery, requirements, planning/task decomposition, testing. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Product delivery guidance for this change.",
+      "Review this code against pm practice."
+    ]
+  }
+}

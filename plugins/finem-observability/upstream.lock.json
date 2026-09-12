@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-observability",
+  "sources": [
+    {
+      "id": "grafana",
+      "repository": "https://github.com/grafana/skills",
+      "revision": "51d33e71e191b409bbd25fc7be2684c610d18166",
+      "license": "Apache-2.0",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original complete OTel guidance and k6 references/examples/SETUP. k6 executable, protocol services and optional xk6 extensions are separate runtime requirements. Upstream docs CLI uses POSIX script; use documented web fallback on Windows. External example targets/cloud runs are not executed during bundling. Official Grafana product-maintained original skill repository; reused existing verified baseline pin. SLO examples reference recording rules not all defined in snippet; not a complete deployable rule file. No real alerts, contact points or paging were created. Only selected specialist directories and supporting source are shipped; no source plugin, root router, hooks, agent registration or MCP is activated. Cloud/account runtimes remain separate requirements.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "grafana:opentelemetry",
+          "path": "skills/grafana-core/opentelemetry/SKILL.md",
+          "sha256": "79c3e457dfe9083ab628eb011abd8d4084fe1cd0b7a59315be32901678796e4d",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "grafana:k6",
+          "path": "skills/grafana-k6/k6/SKILL.md",
+          "sha256": "e7c61ca691de676325b612a096f7284cd613bed02394789157e276b11db3be82",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "grafana:alerting-irm",
+          "path": "skills/grafana-core/alerting-irm/SKILL.md",
+          "sha256": "e23570f778be7f546f65930539c83bd8f6e6d984e471f9022a9474fca706daf2",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "efb4d91baa7cd9559d3452f79deb2b3d9dc819c83d7058a1f90ac70484a1a23e",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-core/alerting-irm/SKILL.md",
+          "sha256": "e23570f778be7f546f65930539c83bd8f6e6d984e471f9022a9474fca706daf2",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-core/alerting-irm/references/alerting.md",
+          "sha256": "2ed3968ba5138a1323016fa4a87d341bf03b52c5951f1a709fdb286466e5a3bd",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-core/alerting-irm/references/irm.md",
+          "sha256": "e0be2a94804c343987785a481f13f1b9f53aea804e34e03b9dea03557d546841",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-core/alerting-irm/references/slo.md",
+          "sha256": "8cd9eb3c11ce395902482f4219610115a5770f16f23e6ac0e167b784932dd624",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-core/opentelemetry/SKILL.md",
+          "sha256": "79c3e457dfe9083ab628eb011abd8d4084fe1cd0b7a59315be32901678796e4d",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-core/opentelemetry/references/collector-config.md",
+          "sha256": "0399c9b70c812564f4f10e24ec2328dc2ea9248a8dc8d218f99129dd88f20ed2",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-core/opentelemetry/references/instrumentation.md",
+          "sha256": "b1eeb422f7633aa4793d71c41a886e340398a5258bb38d1ab0429cc9485bee93",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/SETUP.md",
+          "sha256": "13fa6543788c129555b44f2b447ad457a810197c50404f2bf1362e27496762f0",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/SKILL.md",
+          "sha256": "e7c61ca691de676325b612a096f7284cd613bed02394789157e276b11db3be82",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/browser-best-practices.md",
+          "sha256": "d51e6ba70b62cfbbc99a60b688ac4315cbbf1ca6290ac1363ba7c06f112539be",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/docs-guidance.md",
+          "sha256": "dfe9413a86f0ecf7afb3a285271407f2629f2725990a9fa9e9409b2081892030",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/examples/browser.js",
+          "sha256": "b1dd61fc7821a27148d6903d8860bcf6e5256001ceabf1f976c8d7881dafee3b",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/examples/cloud.js",
+          "sha256": "3588959ffff286a7f050445ef532297e07c844cdde2a1a09da33572f8411ac26",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/examples/crypto-encoding.js",
+          "sha256": "a32b1abfc9f0e60c40526b8f4721b8320fd9cce87abfc4c322947a5c098e63b2",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/examples/executors.js",
+          "sha256": "3d7a0ca525b941c1bc44406476e5942fdb181d64b8fdba76876e4de567f3ffd0",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/examples/ext-crawler.js",
+          "sha256": "15afe7466178627356a48b107fa93ec0d2883b6539ecac77ec0484464db3b36e",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/examples/ext-dns.js",
+          "sha256": "a57e1d72755c4de129a1ae9a03d984802cc61ac739ebc6fa2190c08144034c65",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/examples/ext-exec.js",
+          "sha256": "d57a95e72d09de6cf0260200456e9dea964e8affcc63ad4a4bd42a6028ba811c",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/examples/ext-faker.js",
+          "sha256": "840c9f2948eb343cf76d91ab9c61504609231a5de6b3d150fb2826e54275556c",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/examples/ext-redis.js",
+          "sha256": "033bcb26331a0c91e194623d08ba64d5245d61826434df8a073fbd5b53889131",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/examples/ext-sql.js",
+          "sha256": "71971afcf6746a31cc74c385119c3f9fd3a9b3494b7c51d4adc78eb36e9e6c99",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/examples/ext-tcp.js",
+          "sha256": "d262e021aaae71515e1302d8a1710df4c73f9e7f8cf207ab603e5a78868244fa",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/examples/ext-tls.js",
+          "sha256": "508c5842f675fdd49d6b5bfcd8a80e17418b6cacb373cfc032848d364e436614",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/examples/functional.js",
+          "sha256": "f770476ac2f20af8b9d732ba6e9b848a286eea4bccf1c18a1a925629ef3d3e40",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/examples/grpc.js",
+          "sha256": "88f64acb6159945b56f7a101fceabbfb8ff6707ba0471dea09c4afc72bc41553",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/examples/html.js",
+          "sha256": "33037098800b6cdf5d58a1fdab2c1ad0e770fbd04b18cf50881ade24bcb4b3e9",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/examples/http.js",
+          "sha256": "e1c2489f31ca68224199aa39a516b5f5196155137c9cf3c23da5341956e512f5",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/examples/metrics.js",
+          "sha256": "12eb2eb4d7df8ac960af740549d99ddb5b5de965a86ca11f14475482e1eedc23",
+          "mode": 420
+        },
+        {
+          "path": "skills/grafana-k6/k6/examples/websocket.js",
+          "sha256": "422ee7955eedd6fef62faf63254998a058a75cc7881a457f4a391ec4245701c5",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/grafana"
+    }
+  ]
+}

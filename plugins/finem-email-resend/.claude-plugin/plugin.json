@@ -1,0 +1,22 @@
+{
+  "name": "finem-email-resend",
+  "version": "0.4.0",
+  "description": "Resend transactional email API and webhook handling",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "backend",
+    "async-jobs-events"
+  ],
+  "skills": "./skills",
+  "dependencies": [
+    "finem-core"
+  ]
+}

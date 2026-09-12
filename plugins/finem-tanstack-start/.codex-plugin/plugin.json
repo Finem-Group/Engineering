@@ -1,0 +1,30 @@
+{
+  "name": "finem-tanstack-start",
+  "version": "0.4.0",
+  "description": "TanStack Start React full-stack rendering",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "frontend"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Tanstack start",
+    "shortDescription": "TanStack Start React full-stack rendering",
+    "longDescription": "TanStack Start React full-stack rendering Bundles the original tanstack-router skills unmodified and activates them for frontend. Requires finem-core, finem-tanstack-router.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Tanstack start guidance for this change.",
+      "Review this code against tanstack-router practice."
+    ]
+  }
+}

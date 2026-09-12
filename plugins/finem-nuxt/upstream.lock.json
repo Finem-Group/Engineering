@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-nuxt",
+  "sources": [
+    {
+      "id": "antfu",
+      "repository": "https://github.com/antfu/skills",
+      "revision": "a74f281a27dadc02397bc1a174b0f2c97531b6ae",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE.md"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Adds Nuxt 4 app/server/shared layout, SSR-safe fetching, state and Pinia; complements Vue core without copying its rules. Nuxt 4 project; Pinia v3 guidance generated for 3.0.4; installed versions and current docs remain decisive. Nuxt is an alternative primary app framework to Next/Angular/SvelteKit/TanStack Start; Pinia only when already selected. Do not include antfu global preference skill, installation/meta router, or duplicated vendored Vue/web-guideline skills.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "antfu:nuxt",
+          "path": "skills/nuxt/SKILL.md",
+          "sha256": "0c7759f5201fcdd6fc149d14e4f55b29090228800a22b61f96c065b77caaff3a",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "antfu:pinia",
+          "path": "skills/pinia/SKILL.md",
+          "sha256": "fba52570068a715fef7d306e582a5993bf08a838b55465d3c3c7bff8ba70f731",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE.md",
+          "sha256": "2a596f697b619094b6f4067936e0f385027a393bce32211383db0478774c1cb2",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/GENERATION.md",
+          "sha256": "c462576e3a2d3e3ab1214f1d149851a04cde6ceb412c7bcaf983be96bac567b0",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/SKILL.md",
+          "sha256": "0c7759f5201fcdd6fc149d14e4f55b29090228800a22b61f96c065b77caaff3a",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/advanced-hooks.md",
+          "sha256": "e0ff7e1222700686b21134a9a37339746d9eb063700e2ebb77dc07cc13232d05",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/advanced-layers.md",
+          "sha256": "c9c1526503a07da55c8798307b357851ec967cafde2bab5485d914492af24ad0",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/advanced-module-authoring.md",
+          "sha256": "91850423230cdcecb5d84a1e0dbd6e7d41660f74a8c8285f1b58c754fff6aa73",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/best-practices-data-fetching.md",
+          "sha256": "d1c2c558c9b400988937f8ecbbad83c83183ef0ae4ac3da9b5d1c5a4b998d3c7",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/best-practices-ssr.md",
+          "sha256": "e26db2f9629bdee842163b78e9f79dd50ac0bbdc963f7b74ce0e0e48d0d26432",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/core-cli.md",
+          "sha256": "322660789800f525c076c847746eea7d62c9cfba14dcc17e2ea955e52ebed739",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/core-config.md",
+          "sha256": "16eb653e9b2578273dfe43c4a2788a4118d4515ad97cbba3ab9939513b4f8185",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/core-data-fetching.md",
+          "sha256": "eb6e6040b84f6db3a82a203603dd09b548771f69c85d43870491507af25524e8",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/core-deployment.md",
+          "sha256": "d5ed511b454564eb63ab2d5e2f9c07bc5e7d7a21548bb9d9a773e0729f93df2f",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/core-directory-structure.md",
+          "sha256": "0b3940e7e21524091ca6ef86024ac03c4c44e19597575049fec787bfc544d6ab",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/core-modules.md",
+          "sha256": "2a08dac47ba48fc59475b0e63a438e624d14de40e115b5e2bbe05d051b2f02cb",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/core-routing.md",
+          "sha256": "0a7059d56a3111c02631282e62aa5411c11b333ff448d5f985987c5270c21a1c",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/features-components-autoimport.md",
+          "sha256": "6842d81cc97737700542dd8b3833b029f58075fdb8d533845094541b8c817794",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/features-components.md",
+          "sha256": "ecb23d9773988b4e631ebacee85f4b25868ebda3de3649359ffaf56673c3662a",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/features-composables.md",
+          "sha256": "33d0394dc60d611312d76550dbccc598c5505480bbe0d88ff14a01d78e4ea5e7",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/features-server.md",
+          "sha256": "734143f655a8eb24c220933ce932357052bba9c96b02a13845dd8e43322b119a",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/features-state.md",
+          "sha256": "cd7f0c478cbc00b6a30bad893045f17cfea2b571be7164f941cf102fd9b10559",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/rendering-modes.md",
+          "sha256": "cd78ae74fcf223711923838e8e55537602892d0028ee475d88d580e64243490c",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/GENERATION.md",
+          "sha256": "90053e5f51c2f060aeef398125da3633ec3dc9a90169379096c7ebe3c514225d",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/SKILL.md",
+          "sha256": "fba52570068a715fef7d306e582a5993bf08a838b55465d3c3c7bff8ba70f731",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/references/advanced-hmr.md",
+          "sha256": "661ff58636eaca335805df317c93848aba710e5957aab5f921eba9b57b69192d",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/references/advanced-nuxt.md",
+          "sha256": "e12dd48df259c97c38722e87b368808188fcbc28208398505624007529b0e3a2",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/references/advanced-ssr.md",
+          "sha256": "9fbc7b11da5cb7b1d4ef8b320935712ba3d356f7847344c56b01e80a3e1e3132",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/references/best-practices-outside-component.md",
+          "sha256": "1354224a5a9e41b2b7dea712b79ec948690a0d65e90dde905298e8b17e7ed49e",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/references/best-practices-testing.md",
+          "sha256": "634ccd1d076c509af0fa9bae4ac428a536c2ba42a2ef11eda7fe7af683fa5252",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/references/core-stores.md",
+          "sha256": "41627453eb019d1755dac787924bde52be162a3bdfc555119f88a8e59dda8f21",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/references/features-composables.md",
+          "sha256": "e218809b50506ca8177eee9e3926a8e3601f636ea13b661c9a432b3af2251653",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/references/features-composing-stores.md",
+          "sha256": "2c4245338e3e3f368c6665775909eef5e062645e0252a6f760817a73f677df7e",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/references/features-plugins.md",
+          "sha256": "f5cc105231d80f1fdf5e54369f283fda3acbad7da27f3a0b61c9b0c62fd6c3d7",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/antfu"
+    }
+  ]
+}

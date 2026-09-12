@@ -1,0 +1,30 @@
+{
+  "name": "finem-browser-playwright",
+  "version": "0.4.0",
+  "description": "Use Playwright as the browser execution backend",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "browser-qa"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Browser playwright",
+    "shortDescription": "Use Playwright as the browser execution backend",
+    "longDescription": "Use Playwright as the browser execution backend Bundles the original playwright skills unmodified and activates them for browser qa. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Browser playwright guidance for this change.",
+      "Review this code against playwright practice."
+    ]
+  }
+}

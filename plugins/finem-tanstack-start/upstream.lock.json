@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-tanstack-start",
+  "sources": [
+    {
+      "id": "tanstack-router",
+      "repository": "https://github.com/TanStack/router",
+      "revision": "f021f6d1c6dce6c9b54d70766f1d636d8fd9e184",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "First-party composable routing, Query integration and Start SSR/server boundaries with explicit dependency links. Matching project @tanstack/react-router, router-plugin and Query when selected; Start only for Start project. Version metadata differs across skill files, so inspect installed types, not only repository HEAD. Preserve full package paths. router-core auth links Start auth-server-primitives; router-plugin links virtual-file-routes. Both support closures included. Names react-router and vue-router belong to TanStack packages here; never confuse with Remix react-router or Vue Router. Prefix IDs. Router/Start are alternative primary routing/app owners to Next, Remix, Nuxt and Expo. Nested specialists load on demand, not all at once.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "tanstack-router:router-core",
+          "path": "packages/router-core/skills/router-core/SKILL.md",
+          "sha256": "03fc990919c2c025704de46ef87ee8efa133f811478a7eb66e04d11714608db0",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "tanstack-router:react-router",
+          "path": "packages/react-router/skills/react-router/SKILL.md",
+          "sha256": "9a08a0e3e647b59213577c846f1516f3070f4759738f1ed3d68afd25fad28d82",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "tanstack-router:router-query",
+          "path": "packages/react-router/skills/compositions/router-query/SKILL.md",
+          "sha256": "83b8c66d29a36df2a174643566570e602fc232c2daf7fab020c26ab7d06e80ae",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "tanstack-router:react-start",
+          "path": "packages/react-start/skills/react-start/SKILL.md",
+          "sha256": "adc77388d71bd0037dbb11c0fc9a0a942f35069f5ad6fbd7588e3378c43f6b53",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "a405ee70c632bb938acb7ac5f210e814409b3760ea9d2329d8ed8ffcfd11a0e7",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-router/skills/compositions/router-query/SKILL.md",
+          "sha256": "83b8c66d29a36df2a174643566570e602fc232c2daf7fab020c26ab7d06e80ae",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-router/skills/react-router/SKILL.md",
+          "sha256": "9a08a0e3e647b59213577c846f1516f3070f4759738f1ed3d68afd25fad28d82",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/SKILL.md",
+          "sha256": "adc77388d71bd0037dbb11c0fc9a0a942f35069f5ad6fbd7588e3378c43f6b53",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/SKILL.md",
+          "sha256": "f5fbf50b30ce6dd1bfee985a60d53090dffc206d69355d435b63d7c8a282af0a",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/docs/architecture.md",
+          "sha256": "6c82356e9dec4c47ce2b2b9632937cc53580f9b5657d2d84a0a5796185b0caf7",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/docs/caching-refresh-ssr.md",
+          "sha256": "78a39fca850ad4ad3cbbafa5404a3bfaa8a83ba502275f8391a8dad5e42aa01d",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/docs/composite-components.md",
+          "sha256": "265ae0a28c58f353ed830fdc9bf162b5dec35fbf917d37a5e0426b920cdcbc56",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/docs/current-api-notes.md",
+          "sha256": "5a1451a7e07f7d1126eadc160f272222976bbb47b31d3978e73a7e10867c3a6b",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/docs/debugging-review.md",
+          "sha256": "f2c341e99417056f47e48f39b9bbf6e991fbcfd2b6f287020ea02d2e28b04849",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/docs/sources.md",
+          "sha256": "4b4bd57dd73a66d23714fc977ac193461861258bfb7ad690ab884f3aba62c92b",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/examples/01-renderable-route-loader.tsx",
+          "sha256": "0e4b929ed6cb8d83c144ae2dbf6ad5e0408015e0e76ff64bf7b0cb8810158e73",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/examples/02-composite-slots.tsx",
+          "sha256": "366810703795f713f39fa77c1db8496277d9d759ab61f8bbc01194bce87ac6db",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/examples/03-query-owned-rsc.tsx",
+          "sha256": "8826fb2c2fbfca624becfc3f6d3286e63688fede465f40ee2ca941cae54162f2",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/examples/04-selective-ssr-data-only.tsx",
+          "sha256": "1580feef5da964cf5b536efc6227c07fe5f9df92865702013c4424c96df92cf1",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/examples/05-ssr-false-browser-loader.tsx",
+          "sha256": "1991b776d7dba8dd16c4f1a30e3d92baf4bc03c8e6a0b257d3875cd4a52a0178",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/examples/06-low-level-flight-api-route.tsx",
+          "sha256": "7e5e307426e923c2019b15d9054312bf0fc5d64823167744f1d3e56d8db1f7a8",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/SKILL.md",
+          "sha256": "03fc990919c2c025704de46ef87ee8efa133f811478a7eb66e04d11714608db0",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/auth-and-guards/SKILL.md",
+          "sha256": "0a9a9dcad681dbdd52b00b530d64a8f5e4999c6d1950d74f480ccc2b7e2fe632",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/code-splitting/SKILL.md",
+          "sha256": "12604138af8a6c65ceb5f7303453bf2c62eb291bae6e89c7c6a63f789b88caf3",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/data-loading/SKILL.md",
+          "sha256": "9510f3b50763eb6a47db678accf6e25eaad0a865dd8e4658050472043e3cc9dd",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/navigation/SKILL.md",
+          "sha256": "6d024af66514645e81347100f401ba8a1e2457cbe8b5024660ae9e409700ac80",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/not-found-and-errors/SKILL.md",
+          "sha256": "b79f903049856322275bd524de982172790b06416efb54760740ee7a8156f8cb",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/path-params/SKILL.md",
+          "sha256": "caa1abefbf7751beaca3b1b55e5fe217cb56108cc037de757d7c5e8d09218b99",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/search-params/SKILL.md",
+          "sha256": "e886e5c3285309a0e95c52e30e73d4ff52cffc366f0d97d02003b9696e8a8804",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/search-params/references/validation-patterns.md",
+          "sha256": "ebf128309feaf027fbb229feffdd9bc6486bf09dedc224e903ed816abc38a1b2",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/ssr/SKILL.md",
+          "sha256": "b0ab5cc8f4315647c2b74bf5b048b6f436760de9b1dcec5dbe10a34639bd8004",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/type-safety/SKILL.md",
+          "sha256": "ed632376a36d71f4797e855ed9e42e83591a684c4ad0fc33b152f6c10fe3b5ef",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-plugin/skills/_artifacts/domain_map.yaml",
+          "sha256": "71e4a7906afe7b3ed28ca710234df97df55de3560caa25b1dffa9a6814a2d69f",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-plugin/skills/_artifacts/skill_spec.md",
+          "sha256": "61c9c6ca0f7f85eac1a086623de648c66143a5f30332e31b3581cbd42d42292e",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-plugin/skills/_artifacts/skill_tree.yaml",
+          "sha256": "ef98592b9206a36bfa4cd871eef0ede68c309181a0ef0538ca3194c500cef36b",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-plugin/skills/router-plugin/SKILL.md",
+          "sha256": "7e2791ea32e24ab47fce17a2acf1907f9ce3f5cf09e18a62aee6f887fbb0ae39",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/_artifacts/domain_map.yaml",
+          "sha256": "52e0fb5f3f782c2afd94a900368dd4df2a9f49296aa238830881d74f428cf86b",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/_artifacts/skill_spec.md",
+          "sha256": "db4b7c157373e86baa2587e2ff135eaa56201c2d011f642764dfef8a7cd1bf0b",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/_artifacts/skill_tree.yaml",
+          "sha256": "2d1e1ecc575d986c06d80cad0e71ba0e141d79340234b245e5faf35931f87a1a",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/start-core/SKILL.md",
+          "sha256": "471f83a5c2d9033a4569aef264c46d7dc0f7c4b272f4b95831dcfdb7bb725157",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/start-core/auth-server-primitives/SKILL.md",
+          "sha256": "be837d054bb8a45d2303813084207a65607a8735b8d0c9ec0e7b664bb379b3e3",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/start-core/deployment/SKILL.md",
+          "sha256": "d1614371828ccfa8c5c181e686a21bffe42614a6918dbf3544e32240b3cac0c0",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/start-core/execution-model/SKILL.md",
+          "sha256": "b2a463c0bc39317a9b479c9c5f70bc9931b6c1d89f254968907d3e253b9b379e",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/start-core/middleware/SKILL.md",
+          "sha256": "dc06346bebf09b068b2c708cee66bc6d8c0798587d26169c3997d8eb6c21fd16",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/start-core/server-functions/SKILL.md",
+          "sha256": "e76b1a3b73b176dba3c98837fbb50f65bd47f34635e7c4655b522ecffa6519d1",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/start-core/server-routes/SKILL.md",
+          "sha256": "0284e4446e7ad9a8607fec3b5bd51a163449434e77fdff88ee2cd89b42634b1d",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-server-core/skills/_artifacts/domain_map.yaml",
+          "sha256": "73b5dbd87d46c264ce512f5dc4df38af4a1edad24b15aee138bd948bc779ee55",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-server-core/skills/_artifacts/skill_spec.md",
+          "sha256": "ee00de3b610bfe352f06f6d63d97e2dc23c5d5a38567f9c09d5b0d71e1e81324",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-server-core/skills/_artifacts/skill_tree.yaml",
+          "sha256": "d8a671fdebbcb5dfdef941166db8a876dd1014a796bcad24e24f4bd535d3faf1",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-server-core/skills/start-server-core/SKILL.md",
+          "sha256": "5888595fe053143554516875c9234b0d8d9cc2ad359ce4061982fbaddb7de1fd",
+          "mode": 420
+        },
+        {
+          "path": "packages/virtual-file-routes/skills/_artifacts/domain_map.yaml",
+          "sha256": "fd3c4119cb54594b54517a9c8662f6b948c9316d522fac7c384628b4d8a0544e",
+          "mode": 420
+        },
+        {
+          "path": "packages/virtual-file-routes/skills/_artifacts/skill_spec.md",
+          "sha256": "50343273dc920044a151e6e68d3821348edf77a0742734fa3d1f6f53407c14fc",
+          "mode": 420
+        },
+        {
+          "path": "packages/virtual-file-routes/skills/_artifacts/skill_tree.yaml",
+          "sha256": "8e7e5e0b49106b74ebc96fb404f9d5fd2f783031bcb5251ba0f3cbb713dc80a0",
+          "mode": 420
+        },
+        {
+          "path": "packages/virtual-file-routes/skills/virtual-file-routes/SKILL.md",
+          "sha256": "16e141259bf660676fa0f2b86eea4fdc1b3b99d767125cac1557280900e47d04",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/tanstack-router"
+    }
+  ]
+}

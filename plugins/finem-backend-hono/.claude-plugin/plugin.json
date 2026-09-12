@@ -1,0 +1,22 @@
+{
+  "name": "finem-backend-hono",
+  "version": "0.4.0",
+  "description": "Hono API implementation for a selected project runtime",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "backend",
+    "api-contracts"
+  ],
+  "skills": "./skills",
+  "dependencies": [
+    "finem-core"
+  ]
+}

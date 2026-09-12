@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-backend-django",
+  "sources": [
+    {
+      "id": "django",
+      "repository": "https://github.com/wsvincent/django-skills",
+      "revision": "9a8420d96174f53a8d14e696e30a59927ac70fa0",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Substantive 300+ line guide plus ORM, async, views, templates, testing, deployment, admin and checklist references. New project guidance Django 6.x/Python 3.12+; preserve installed version/LTS. Background Tasks require a real production backend. Claims several 6.1 APIs: gate on actual project version; registry Django 6.1.1 observed. Generic service-layer and always-custom-user conventions should respect existing projects. Reference prose contains test examples, no standalone executable eval suite found. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "django:django",
+          "path": "SKILL.md",
+          "sha256": "fe1c4590eba4b47604743180aec763abeeb841806a5cd5791719785eb3a3e950",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "f0a30d226c1bc9a16d273c1e1b9e0d74dd5208805c4d9f7ed7f1492497811ec2",
+          "mode": 420
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "fe1c4590eba4b47604743180aec763abeeb841806a5cd5791719785eb3a3e950",
+          "mode": 420
+        },
+        {
+          "path": "references/admin.md",
+          "sha256": "0c92b715abb4f73908b43ff4e1b06684ca7b2d4fdf50cf957f4a27e5b297ceff",
+          "mode": 420
+        },
+        {
+          "path": "references/async.md",
+          "sha256": "622118347ced05a15264a83cc6e1bffdb9ccb2f7f6445c57c8781c23f260bb09",
+          "mode": 420
+        },
+        {
+          "path": "references/checklists.md",
+          "sha256": "81a3a0bddb5ad581e92260211136927103901173e95a42bea61a2ea44a815957",
+          "mode": 420
+        },
+        {
+          "path": "references/deployment.md",
+          "sha256": "844f21635e93cf2ac8156b7a68248486f0ed4f101f3f933cf5d3329355a5251c",
+          "mode": 420
+        },
+        {
+          "path": "references/orm.md",
+          "sha256": "95455388260c332f35ab777960deb38ca0abdc71e8481e3a95f2e46e5b1f2de3",
+          "mode": 420
+        },
+        {
+          "path": "references/templates.md",
+          "sha256": "f1975bc5b3a139525fc4d515a583cb8c8400d55829dac34fe7bfe03298435787",
+          "mode": 420
+        },
+        {
+          "path": "references/testing.md",
+          "sha256": "684fbd7342aa1cd3eb194341e25826886d684aa4f78e268ee9764c19bc999c37",
+          "mode": 420
+        },
+        {
+          "path": "references/views-and-forms.md",
+          "sha256": "02ca51f6db368378166ff31b9c3bf5b5be61e87a32eafdc411d08eea275d73e1",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/django"
+    }
+  ]
+}

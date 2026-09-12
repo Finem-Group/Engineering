@@ -1,0 +1,30 @@
+{
+  "name": "finem-web-animation",
+  "version": "0.4.0",
+  "description": "Purposeful CSS and chosen-library web motion",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "frontend"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Web animation",
+    "shortDescription": "Purposeful CSS and chosen-library web motion",
+    "longDescription": "Purposeful CSS and chosen-library web motion Bundles the original emil skills unmodified and activates them for frontend. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Web animation guidance for this change.",
+      "Review this code against emil practice."
+    ]
+  }
+}

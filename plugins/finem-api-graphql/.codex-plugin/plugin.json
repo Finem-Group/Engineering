@@ -1,0 +1,30 @@
+{
+  "name": "finem-api-graphql",
+  "version": "0.4.0",
+  "description": "GraphQL schema and operation contracts independent of server provider",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "api-contracts"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Api graphql",
+    "shortDescription": "GraphQL schema and operation contracts independent of server provider",
+    "longDescription": "GraphQL schema and operation contracts independent of server provider Bundles the original apollo skills unmodified and activates them for api contracts. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Api graphql guidance for this change.",
+      "Review this code against apollo practice."
+    ]
+  }
+}

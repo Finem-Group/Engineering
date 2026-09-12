@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-auth-auth0",
+  "kind": "pack",
+  "version": "0.4.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "extension": "auth-auth0",
+  "conflicts": [],
+  "exclusiveGroup": null,
+  "capabilities": [
+    {
+      "id": "auth",
+      "title": "Auth",
+      "phase": "build",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "context7",
+        "db-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "auth0:auth0",
+          "source": "auth0",
+          "path": "upstream/auth0/plugins/auth0/skills/auth0/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "auth0",
+      "repository": "https://github.com/auth0/agent-skills",
+      "revision": "f135610540ea41e4d99882dc1f06162030c7340b",
+      "license": "Apache-2.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "404-line intent/framework/tool router plus extensive integration references; activation/behavioral eval harness present in repo. Selected Auth0 tenant and SDK; CLI/MCP optional for live config. Source metadata lists macOS/Linux only; Windows CLI not validated here. Description says use even without Auth0 mention; prohibit global provider capture, select only after project/user choice. Do not import marketplace/MCP registration; auth flow code can be authored without live tenant mutation. Include selected directory intact; acquire upstream evals separately if running. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow."
+    }
+  ]
+}

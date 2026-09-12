@@ -1,0 +1,32 @@
+{
+  "name": "finem-migration-prisma-mongodb",
+  "version": "0.4.0",
+  "description": "Explicit MongoDB assessment: stay on Prisma 6 or evaluate Prisma Next; scoped separately from SQL projects",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "migrations",
+    "migration-deprecation",
+    "database"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Migration prisma mongodb",
+    "shortDescription": "Explicit MongoDB assessment: stay on Prisma 6 or evaluate Prisma Next; scoped separately from SQL projects",
+    "longDescription": "Explicit MongoDB assessment: stay on Prisma 6 or evaluate Prisma Next; scoped separately from SQL projects Bundles the original prisma skills unmodified and activates them for migrations, migration/deprecation, database. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Migration prisma mongodb guidance for this change.",
+      "Review this code against prisma practice."
+    ]
+  }
+}

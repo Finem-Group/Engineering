@@ -1,0 +1,23 @@
+{
+  "name": "finem-intent-audit",
+  "version": "0.4.0",
+  "description": "Compare documented boundaries to implemented behavior",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "documentation-runbooks",
+    "code-review-quality-gates",
+    "security"
+  ],
+  "skills": "./skills",
+  "dependencies": [
+    "finem-core"
+  ]
+}

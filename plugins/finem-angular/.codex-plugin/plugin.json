@@ -1,0 +1,32 @@
+{
+  "name": "finem-angular",
+  "version": "0.4.0",
+  "description": "Version-aware Angular application implementation",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "frontend",
+    "performance",
+    "accessibility"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Angular",
+    "shortDescription": "Version-aware Angular application implementation",
+    "longDescription": "Version-aware Angular application implementation Bundles the original addy, angular skills unmodified and activates them for frontend, performance, accessibility. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Angular guidance for this change.",
+      "Review this code against addy and angular practice."
+    ]
+  }
+}

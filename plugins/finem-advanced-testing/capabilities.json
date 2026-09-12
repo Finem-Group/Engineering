@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-advanced-testing",
+  "kind": "pack",
+  "version": "0.4.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "extension": "advanced-testing",
+  "conflicts": [],
+  "exclusiveGroup": null,
+  "capabilities": [
+    {
+      "id": "testing",
+      "title": "Testing",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "context7"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "trailofbits:property-based-testing",
+          "source": "trailofbits",
+          "path": "upstream/trailofbits/plugins/property-based-testing/skills/property-based-testing/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "dependencies",
+      "title": "Dependencies",
+      "phase": "evolve",
+      "requires": [],
+      "connectors": [
+        "github",
+        "context7"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "trailofbits:supply-chain-risk-auditor",
+          "source": "trailofbits",
+          "path": "upstream/trailofbits/plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "title": "Security",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "github",
+        "context7"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "trailofbits:supply-chain-risk-auditor",
+          "source": "trailofbits",
+          "path": "upstream/trailofbits/plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "trailofbits",
+      "repository": "https://github.com/trailofbits/skills",
+      "revision": "321ccfe628eca0d314b0ee4eaffcdd8a05639aaf",
+      "license": "CC-BY-SA-4.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original complete property-testing references and supply-chain collector/render scripts with tests, Python dependency metadata and uv.lock. CC-BY-SA-4.0 source is redistributed unchanged with attribution; it is not covered by the L11 MIT license. Collector needs Python >=3.11, uv/locked dependencies and network registries; authenticated gh improves GitHub coverage. Unavailable data must remain unassessable. Security consultancy's original auditor skills, executable helpers and test fixtures; preserve separate attribution/share-alike license. One-level cross-file limit must be reported. Static guidance, not runtime exploit assurance. Agent reference is a support dependency; ship as inert source, not registered top-level agent. Execution/probing must follow caller's task scope. Only selected specialist directories and supporting source are shipped; no source plugin, root router, hooks, agent registration or MCP is activated. Cloud/account runtimes remain separate requirements."
+    }
+  ]
+}

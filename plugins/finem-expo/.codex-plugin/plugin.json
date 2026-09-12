@@ -1,0 +1,32 @@
+{
+  "name": "finem-expo",
+  "version": "0.4.0",
+  "description": "Expo structure, native UI, routing, motion and data fetching",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "frontend",
+    "performance",
+    "design-system"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Expo",
+    "shortDescription": "Expo structure, native UI, routing, motion and data fetching",
+    "longDescription": "Expo structure, native UI, routing, motion and data fetching Bundles the original addy, expo skills unmodified and activates them for frontend, performance, design system. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Expo guidance for this change.",
+      "Review this code against addy and expo practice."
+    ]
+  }
+}

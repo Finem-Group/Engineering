@@ -1,0 +1,435 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-auth-auth0",
+  "sources": [
+    {
+      "id": "auth0",
+      "repository": "https://github.com/auth0/agent-skills",
+      "revision": "f135610540ea41e4d99882dc1f06162030c7340b",
+      "license": "Apache-2.0",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "404-line intent/framework/tool router plus extensive integration references; activation/behavioral eval harness present in repo. Selected Auth0 tenant and SDK; CLI/MCP optional for live config. Source metadata lists macOS/Linux only; Windows CLI not validated here. Description says use even without Auth0 mention; prohibit global provider capture, select only after project/user choice. Do not import marketplace/MCP registration; auth flow code can be authored without live tenant mutation. Include selected directory intact; acquire upstream evals separately if running. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "auth0:auth0",
+          "path": "plugins/auth0/skills/auth0/SKILL.md",
+          "sha256": "172e7f46ab4cfbd29c4b71fd5b381512584864b1c3e972e6b775220c9d2b7729",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/SKILL.md",
+          "sha256": "172e7f46ab4cfbd29c4b71fd5b381512584864b1c3e972e6b775220c9d2b7729",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/agents/openai.yaml",
+          "sha256": "e4957bad8cb3ac85314d69a40d2776ffc934e89e6b394a1b3be8a98cf668a190",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/acul/js-templates/login-id.js",
+          "sha256": "6642b299d1e20712db14b71fc9fe07db2d6cdf9d2900a2c9f764e4ea6310f415",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/acul/js-templates/login-password.js",
+          "sha256": "41219fef7df238abe2e6042f14f8d6a2e3f8cfce2a666f27dea6a5142a340802",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/acul/react-templates/login-id.tsx",
+          "sha256": "b0ea3da67877b6cfcfc2f58e55cd36d27422f0a387c6f82883a923bd076eadc7",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/acul/react-templates/login-password.tsx",
+          "sha256": "517c5cf00921b60376bfb17988d824a61d0cc184164747f2ea833be315d69630",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/acul/theme-templates/globals.css",
+          "sha256": "227bdd869b131c501a0016099cdd7565b0ae45a0cf85f3c4ca9449e0d2d78b33",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/acul/theme-templates/tailwind.config.ts",
+          "sha256": "d1611c95379514d5bec87822c6597c863d5d3101b0f3de441b29a8d9f6ebeb3c",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/acul/theme-templates/theme-provider.ts",
+          "sha256": "824f35e0f224f46b195fbe82f45278b9fea4f3f06071e907c879069732ba1cc6",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/acul/theme-templates/tokens.css",
+          "sha256": "57f8e850fe5156607509142204e1525fbe2d9c48ead087aede4e4c99c0a52faa",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/audit/report-template.html",
+          "sha256": "b470dcd3acd33c0953685660b71a50608ebe96bd4630ee438c2689e8ddda3976",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/audit/report-template.md",
+          "sha256": "ca65b0cc6e804bafffc530da4b242a9d0abf4fc83af9e22639e26bd63bf61599",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/healthcheck/report-template.html",
+          "sha256": "9b49a2e8f035da825a6eeb1871a99ff2bfd6add23c803b9f5f72bb9fb431add2",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/healthcheck/report-template.md",
+          "sha256": "8026a4bddb5f3678d68cc8430bdfe7beda07c7721c67ac8688441f0b618f2443",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-acul/index.md",
+          "sha256": "6be4d43fe9eafc3a3bce5ce9dacd9232fa83d731c674b5476738c67521fc1341",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-audit-pricing/index.md",
+          "sha256": "9078074a34d5414407dea883593d8dd3714a0fe7748b7aa990cee1a6e781fa71",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-audit-remediation/index.md",
+          "sha256": "97aabddcffc7a47056171c719ba4a7836d213e3c9d19d01989bd52d9bee81d3c",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-audit/index.md",
+          "sha256": "89189bd2d3b4a2c2ef4d72f659b9b2d28469122f0f113013f25a1d399f71e8cb",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-branding/index.md",
+          "sha256": "8ce30e98fcf429ecf376d79f96e49c2d1482101e5ca9760d0626311674f1cdb4",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-custom-domains/index.md",
+          "sha256": "5b89f5127371a91067853e8a58652133a377b015c92dea08f4572813ac53a3ba",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-dpop/index.md",
+          "sha256": "eb074b8ebb0b7dc0603ed3cc636c86c2c9cea14d0ec1b88e05533c8007d02cfb",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-healthcheck/index.md",
+          "sha256": "c3576ee979c47300706a65ecbebde75d9fd00d82751083e7bb266f866eefa8d3",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-mfa/index.md",
+          "sha256": "0da0628e4e2e56c23fad4e0b7fa0586267fc0fba96b03972a82bddb7a3d39655",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-migration/index.md",
+          "sha256": "41bb36f8152d93b3cee524fffce15b189eb07b7e0603fc7671b9966ca7eee480",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-organizations/index.md",
+          "sha256": "64124c3af9db68bff1731748a542c241fcb1e3d9a36f36a0ac6d545ca821696d",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-universal-portals/index.md",
+          "sha256": "e94240198f7b1106c8af6f36a8668a3aceeadd45aac83aac857b3aa6f64c8801",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-android/index.md",
+          "sha256": "55c467aa488041ea854d1975e33c574513b955103a15b7cc99395ccfb644752c",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-angular/index.md",
+          "sha256": "1e4daa8545c9cce05b1ac8706114278be38d21ab28c4eb598ba1787a98e44cbc",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-aspnetcore-api/index.md",
+          "sha256": "74e7004d74eab60a3720bae64d9c480431173d266fd8a75f433cdead62515678",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-aspnetcore-auth/index.md",
+          "sha256": "327e085557b329196b85bab02905f9d84b8e09c830105a475a09ca07caa6aa9b",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-auth0-api-js/index.md",
+          "sha256": "c1de8ee0cc34f79b5871eac109565d33d6928477e43b02259d07bf1ad1f1c9e5",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-auth0-auth-js/index.md",
+          "sha256": "4b28e62e91958c1b0d5e6e49af46d557127c3a6fef3d5a5966e202c17bd46a9a",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-auth0-server-js/index.md",
+          "sha256": "6d2ff1fbf53f5de268e36b5dcca153f512431a02337a76d64935882fa23e782f",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-expo/index.md",
+          "sha256": "52cc0410500149eeff31ff349ab987d592e71ecaf69372a43b28b5a744251c3b",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-express-jwt/index.md",
+          "sha256": "222e5cf9b970ed19515d436df70e0a1ae1565d8380ac22fa703599999d3b8f95",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-express/index.md",
+          "sha256": "dece52837bb9b39c1862102d6e5db060c971e43d6b406400aa9a3764851a5165",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-fastapi-api/index.md",
+          "sha256": "07e51247c8d517394427690b827660b6ec06fe2606d5992bad7a92c7f5000855",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-fastify-api/index.md",
+          "sha256": "9ad3bb3146c3f5c7f9624e5a8978b26faca076266a93cea7c4e7d64a7c32defa",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-fastify/index.md",
+          "sha256": "b3f822a9efc621fd4ca6e9e35a2a1b3308ea8fb7ad24296c20d91ebb2a8153a6",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-flask/index.md",
+          "sha256": "a27c9330e7c885024705cdb6692d834af95449fdcd22c8030b811e68814946d0",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-flutter-native/index.md",
+          "sha256": "3a12944e9566d76a52be2b99decbb82175ee669dfaf1a72d41a6dcba04bbc996",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-flutter-web/index.md",
+          "sha256": "bcb7b865e4cd13189a5c8bf165ea5406e85f810538cf7f94fe762abc5bab6959",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-flutter-windows/index.md",
+          "sha256": "b50b3c7c454aad396b979f700b45441a28915699196eaa695cc26ac4fadd9094",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-go/index.md",
+          "sha256": "39e77072fa9809cefede435e99302e738df99aa0db637e4bf8f6fabeac208a12",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-ionic-angular/index.md",
+          "sha256": "9557aceafb252ed16dace86db15d468d851dc7f8db2f1ba2ffacde0a51233ae1",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-ionic-react/index.md",
+          "sha256": "870514c9f2d0bc93081104cb3af7a58ce2fcd8f307212917b320db80ea6fd2b4",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-ionic-vue/index.md",
+          "sha256": "ea12ed47ad0815685701051835413b6e296cfcac3c5564fa8d3bee543bc27aed",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-java-mvc/index.md",
+          "sha256": "f12b565aa5c4ae8ac74434ec792890764d36c309f76f0aaf87be0beafed3924d",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-kmp/index.md",
+          "sha256": "c4cdef033a286b5c6d55c5824e894ee62b50aadffe264ca5c3fbfc0c521932ce",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-laravel-api/index.md",
+          "sha256": "e13c30a9e78b4e4f4133b05fe6eed1f72171b5e63ef09423bbc8dd6767d86a32",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-laravel/index.md",
+          "sha256": "a94abc949d0445e926c7f380c2a18d1fd1ac8570fa9a2e4f3d278d4cb1fc1829",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-maui/index.md",
+          "sha256": "0a940e753b12ab70309b8d52039913d4c119ab554914720d612dd2ec9fa903a4",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-net-android/index.md",
+          "sha256": "4098a88e5ec32b9e224a0ac4e8535adb4c30a75dcb033483b11efbe9b68dc93e",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-net-ios/index.md",
+          "sha256": "85c9e39eac68c8bec0432a33bacc2665329682c0af7c7457a5d47db843b111c0",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-nextjs/index.md",
+          "sha256": "0475d47c21f2e1c1ad592cffc0bc9075dc8b7a3cba7f4c98e57c81622d006890",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-node-auth0/index.md",
+          "sha256": "d8811d736246cb99855fad5649f39fc95a7cc83186eb46bddf9eac41f08a8db7",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-node-auth0/migration.md",
+          "sha256": "b794c46f10987570eef7a373dbbf43f9c67d38074b13375ad50b076e6fdf90b2",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-nuxt/index.md",
+          "sha256": "af40e2342291fc672f32f197b0232dcfae8144ad566f3019b25d2e4535f97f69",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-php-api/index.md",
+          "sha256": "96dc72915730e34992a5170ccf6b12728b1b5da412dd316b952ff1e40dbb95b8",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-php/index.md",
+          "sha256": "52e85e65727e8f657de9b865f068e3a07e993b9bf728e40a836b458f2c6c533c",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-react-native/index.md",
+          "sha256": "10e006921ecc2ef56704e35cd8b01e7e5647c59742f0decb8b2a3e2796c2c517",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-react/index.md",
+          "sha256": "f16dd116f57f318788fff8049eb5ff666610020fe769d11af55189ba0f81e8bc",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-server-python/index.md",
+          "sha256": "b181cbd2388a2d4bceaaf7b5cdd062b29f03f366809655a4b66845e0ceddd601",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-spa-js/index.md",
+          "sha256": "57bda02373393c3ad2973ce1d9ad102313a1067f2af065641d23c857266342e2",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-springboot-api/index.md",
+          "sha256": "a19b0024831aadb612943d0f57f4c4c049dd3f916900d18e092cefaf4eb12578",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-swift/index.md",
+          "sha256": "7a17acad19729dbcf352c97f88111f72aa0bf9dcb54a0fbde2641c3a3120f83f",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-vue/index.md",
+          "sha256": "9b7a917573aa7a21f2ea9fb40becd23cf28bbae8dd067852c694e8c960eb0982",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-winforms/index.md",
+          "sha256": "7c071107b59e645575dde6329972aa212694558774d4357399d7ac4aa43016f3",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-wpf/index.md",
+          "sha256": "a9c6124b975feea72c55035936ee4b150f5820fcfe8ff4e2b86cbd2efcecd773",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/pattern-common-errors/index.md",
+          "sha256": "912f8686f2a5d056e1e0bd1e60094c40eebce3194e1b1a4ab68f75c6b144ad40",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/pattern-multi-tenant/index.md",
+          "sha256": "81232a9420e8bbbd40849b23d0e44a9c4fbc6affd2d4a15aba7f8b5a39c76e3c",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/pattern-rate-limiting/index.md",
+          "sha256": "9f0433666c912bb9170672842eb6a4a563f1da8774b2c7eedb346c94f4c5a86e",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/pattern-security/index.md",
+          "sha256": "eb87697482da783910361395255edb72dfee063da1081ed97c430a5345e4e665",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/pattern-token-handling/index.md",
+          "sha256": "99b77bdd1173ad3754f94872085275add51e9ecaa9ca4495161c4d5b2edb22fe",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/tooling-cli/index.md",
+          "sha256": "63d18ab4cbf1599c1fb65655fc3483598e32a81e486e4a84bf6ef6f6f1522985",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/tooling-mcp/index.md",
+          "sha256": "5cac01a739c30a5349b6da7adee9fc42571127e070f1097f993b38ac90512bc9",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/tooling-terraform/index.md",
+          "sha256": "99e03e32ecfe71a028ee6a5a1c568a6c0e4303df44afa2c35ef639f035005b92",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/tooling-vercel/index.md",
+          "sha256": "0a398e1f96c22699c93c540c9f05747193b573c3be409bca333ff1d078e20960",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/scripts/render_pdf.sh",
+          "sha256": "30bac18efc1a7e17509d187672e5c799b782434dfc150e4796d93aefc2f7f08f",
+          "mode": 493
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/scripts/validate-skill.sh",
+          "sha256": "aa3ed4e2885819b6a208c3859013d75bc66dcd0635d3d0c57ac4c3c0a2c52aaa",
+          "mode": 493
+        }
+      ],
+      "root": "upstream/auth0"
+    }
+  ]
+}

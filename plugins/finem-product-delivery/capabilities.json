@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-product-delivery",
+  "kind": "pack",
+  "version": "0.4.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "extension": "product-delivery",
+  "conflicts": [],
+  "exclusiveGroup": null,
+  "capabilities": [
+    {
+      "id": "product-discovery",
+      "title": "Product discovery",
+      "phase": "context",
+      "requires": [],
+      "connectors": [
+        "mobbin"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "pm:product-strategy",
+          "source": "pm",
+          "path": "upstream/pm/pm-product-strategy/skills/product-strategy/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "requirements",
+      "title": "Requirements",
+      "phase": "context",
+      "requires": [
+        "product-discovery"
+      ],
+      "connectors": [],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "pm:user-stories",
+          "source": "pm",
+          "path": "upstream/pm/pm-execution/skills/user-stories/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "planning-task-decomposition",
+      "title": "Planning/task decomposition",
+      "phase": "context",
+      "requires": [
+        "requirements"
+      ],
+      "connectors": [],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "pm:outcome-roadmap",
+          "source": "pm",
+          "path": "upstream/pm/pm-execution/skills/outcome-roadmap/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "title": "Testing",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "context7"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "pm:test-scenarios",
+          "source": "pm",
+          "path": "upstream/pm/pm-execution/skills/test-scenarios/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "pm",
+      "repository": "https://github.com/phuryn/pm-skills",
+      "revision": "18468a95b427e70e258b51389796367c6f684e7d",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original three self-contained product research skills; no executable helpers. Supply actual product evidence and user context. Added product hypothesis, requirements, acceptance, reviewability and cohort specialists preserve original bytes. Inputs and example numerical targets are not measured evidence. Generic statistical A/B analysis and ambiguous confidence/risk formulas were reviewed but not selected. Cohort analysis must distinguish incomplete observation windows from churn; intent audit requires actual project documentation. Use existing project docs rather than invent evidence or register source slash-command routers."
+    }
+  ]
+}

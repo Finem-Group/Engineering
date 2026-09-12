@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-terraform",
+  "sources": [
+    {
+      "id": "terraform",
+      "repository": "https://github.com/hashicorp/agent-skills",
+      "revision": "c2d65dfe492f74d360d35b859b88932222470bd8",
+      "license": "MPL-2.0",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original Terraform style/security guidance and full test references. MPL-2.0 source remains unchanged and separately licensed. Terraform test requires >=1.6; provider mocks require >=1.7. Providers and account credentials are project/runtime requirements.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "terraform:terraform-style-guide",
+          "path": "plugins/terraform/skills/terraform-style-guide/SKILL.md",
+          "sha256": "3a5c2e06a1daa07600d03f48328d1479284e7a9d59d66b2663693ca972080e22",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "terraform:terraform-test",
+          "path": "plugins/terraform/skills/terraform-test/SKILL.md",
+          "sha256": "bba613c50727af9a8e47e690b0e16a4093f0239afec495016e016b5152c9a598",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
+          "mode": 420
+        },
+        {
+          "path": "plugins/terraform/skills/terraform-style-guide/SECURITY.md",
+          "sha256": "3dc8ffa10139e9772c5c102fee6377f66f5167bd043a7c43e6e5df682dc75f92",
+          "mode": 420
+        },
+        {
+          "path": "plugins/terraform/skills/terraform-style-guide/SKILL.md",
+          "sha256": "3a5c2e06a1daa07600d03f48328d1479284e7a9d59d66b2663693ca972080e22",
+          "mode": 420
+        },
+        {
+          "path": "plugins/terraform/skills/terraform-test/SKILL.md",
+          "sha256": "bba613c50727af9a8e47e690b0e16a4093f0239afec495016e016b5152c9a598",
+          "mode": 420
+        },
+        {
+          "path": "plugins/terraform/skills/terraform-test/references/CI_CD.md",
+          "sha256": "88fdffa4d3b8f361c570cb7c0df90a44380c70eb4471b3e27d552f32820179c8",
+          "mode": 420
+        },
+        {
+          "path": "plugins/terraform/skills/terraform-test/references/EXAMPLES.md",
+          "sha256": "e57ef65b6c6545e00f7dc6106c71d44d29e819923ea8e0040efb38fbfbc60f50",
+          "mode": 420
+        },
+        {
+          "path": "plugins/terraform/skills/terraform-test/references/MOCK_PROVIDERS.md",
+          "sha256": "788a9fcb988df8a207c1251fd971a11d1cd59b6b8e4023907b00a0fee976c001",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/terraform"
+    }
+  ]
+}

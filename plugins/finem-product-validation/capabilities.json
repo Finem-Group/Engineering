@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-product-validation",
+  "kind": "pack",
+  "version": "0.4.0",
+  "dependencies": [
+    "finem-core",
+    "finem-discovery"
+  ],
+  "extension": "product-validation",
+  "conflicts": [],
+  "exclusiveGroup": null,
+  "capabilities": [
+    {
+      "id": "feasibility",
+      "title": "Feasibility",
+      "phase": "context",
+      "requires": [
+        "requirements"
+      ],
+      "connectors": [
+        "context7",
+        "cloud-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "pm:identify-assumptions-new",
+          "source": "pm",
+          "path": "upstream/pm/pm-product-discovery/skills/identify-assumptions-new/SKILL.md"
+        },
+        {
+          "skill": "pm:pre-mortem",
+          "source": "pm",
+          "path": "upstream/pm/pm-execution/skills/pre-mortem/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "product-discovery",
+      "title": "Product discovery",
+      "phase": "context",
+      "requires": [],
+      "connectors": [
+        "mobbin"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "pm:brainstorm-experiments-new",
+          "source": "pm",
+          "path": "upstream/pm/pm-product-discovery/skills/brainstorm-experiments-new/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "pm",
+      "repository": "https://github.com/phuryn/pm-skills",
+      "revision": "18468a95b427e70e258b51389796367c6f684e7d",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original three self-contained product research skills; no executable helpers. Supply actual product evidence and user context. Added product hypothesis, requirements, acceptance, reviewability and cohort specialists preserve original bytes. Inputs and example numerical targets are not measured evidence. Generic statistical A/B analysis and ambiguous confidence/risk formulas were reviewed but not selected. Cohort analysis must distinguish incomplete observation windows from churn; intent audit requires actual project documentation. Use existing project docs rather than invent evidence or register source slash-command routers."
+    }
+  ]
+}

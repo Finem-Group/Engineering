@@ -1,0 +1,523 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-expo",
+  "sources": [
+    {
+      "id": "addy",
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "revision": "6ca0cd7db39b41b1c37e26d335c507ee92382c6d",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original upstream skill directories and supporting files. Invoke selected specialists within the single L11 workflow; do not activate source bootstrap routers or global hooks.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "addy:api-and-interface-design",
+          "path": "skills/api-and-interface-design/SKILL.md",
+          "sha256": "5dafd0c44a3aabf11cae5bcb34f6fcc24dfa5c01ba6e0d3176bce997f4d68bc8",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:browser-testing-with-devtools",
+          "path": "skills/browser-testing-with-devtools/SKILL.md",
+          "sha256": "4e3aacd6a380cd25bc6c2d67fdd1c926a9b22535b8a62109ecd33cefd909e3d9",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:ci-cd-and-automation",
+          "path": "skills/ci-cd-and-automation/SKILL.md",
+          "sha256": "a6ed8ed56456b01ff8314c44eefc69897d9905ae4e06bb2b7036286efb79b5f0",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:code-review-and-quality",
+          "path": "skills/code-review-and-quality/SKILL.md",
+          "sha256": "8f3cabca581bbf7cb5f0add3f7454e7a4523f9d4353a6a4a217e6fa515309612",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:code-simplification",
+          "path": "skills/code-simplification/SKILL.md",
+          "sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:constraint-driven-development",
+          "path": "skills/constraint-driven-development/SKILL.md",
+          "sha256": "06479d4305f286d23cfb99f5dc85695896785269664e1f6a8d800e3b71e70c10",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:deprecation-and-migration",
+          "path": "skills/deprecation-and-migration/SKILL.md",
+          "sha256": "6a624f942e09c69863a4219b9bd5d56975026b67b0c70bc83385ffd2120b6142",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:documentation-and-adrs",
+          "path": "skills/documentation-and-adrs/SKILL.md",
+          "sha256": "87ae44a0c7bb3eefc2131a9d11caabcc14e4d8dcb27d66a3a675551ee2ce1671",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:frontend-ui-engineering",
+          "path": "skills/frontend-ui-engineering/SKILL.md",
+          "sha256": "2b74ac4862be3902ec918dceac9366a6fe83b9e003601c0deaf6be09c1766aca",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:git-workflow-and-versioning",
+          "path": "skills/git-workflow-and-versioning/SKILL.md",
+          "sha256": "b7465d187935c52546d39fdc7bd6ac36d94eda25a9500ef8c18b767d2eb116ea",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:idea-refine",
+          "path": "skills/idea-refine/SKILL.md",
+          "sha256": "79e773058963adc7646b0115b4f8a4afc974c5ff95843e4ef1cafff3cb51899e",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:incremental-implementation",
+          "path": "skills/incremental-implementation/SKILL.md",
+          "sha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:observability-and-instrumentation",
+          "path": "skills/observability-and-instrumentation/SKILL.md",
+          "sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:performance-optimization",
+          "path": "skills/performance-optimization/SKILL.md",
+          "sha256": "00694d0c69bbde674d0e39de24052d90afea32d9fef9553eaee21a50a7e9b8cf",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:planning-and-task-breakdown",
+          "path": "skills/planning-and-task-breakdown/SKILL.md",
+          "sha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:security-and-hardening",
+          "path": "skills/security-and-hardening/SKILL.md",
+          "sha256": "4aa7a433a0a8042f47197f05893343bd9d1cc02a9179537ef3437c05c49b385d",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:spec-driven-development",
+          "path": "skills/spec-driven-development/SKILL.md",
+          "sha256": "89411b435fc9f45cec0dd7437419e6bac64b7ddf43108791978647d453010a61",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7",
+          "mode": 420
+        },
+        {
+          "path": "skills/api-and-interface-design/SKILL.md",
+          "sha256": "5dafd0c44a3aabf11cae5bcb34f6fcc24dfa5c01ba6e0d3176bce997f4d68bc8",
+          "mode": 420
+        },
+        {
+          "path": "skills/browser-testing-with-devtools/SKILL.md",
+          "sha256": "4e3aacd6a380cd25bc6c2d67fdd1c926a9b22535b8a62109ecd33cefd909e3d9",
+          "mode": 420
+        },
+        {
+          "path": "skills/ci-cd-and-automation/SKILL.md",
+          "sha256": "a6ed8ed56456b01ff8314c44eefc69897d9905ae4e06bb2b7036286efb79b5f0",
+          "mode": 420
+        },
+        {
+          "path": "skills/code-review-and-quality/SKILL.md",
+          "sha256": "8f3cabca581bbf7cb5f0add3f7454e7a4523f9d4353a6a4a217e6fa515309612",
+          "mode": 420
+        },
+        {
+          "path": "skills/code-simplification/SKILL.md",
+          "sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d",
+          "mode": 420
+        },
+        {
+          "path": "skills/constraint-driven-development/SKILL.md",
+          "sha256": "06479d4305f286d23cfb99f5dc85695896785269664e1f6a8d800e3b71e70c10",
+          "mode": 420
+        },
+        {
+          "path": "skills/constraint-driven-development/references/floor-guard.md",
+          "sha256": "dba15dad8f5a5cbae464ec8457e6dd014a7bcb3ad13a360a6908d54991a5415e",
+          "mode": 420
+        },
+        {
+          "path": "skills/context-engineering/SKILL.md",
+          "sha256": "1392005054efb0a5c9cbbd83811f95ac30d34e5228a1f6837baf59fb7d588017",
+          "mode": 420
+        },
+        {
+          "path": "skills/debugging-and-error-recovery/SKILL.md",
+          "sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220",
+          "mode": 420
+        },
+        {
+          "path": "skills/deprecation-and-migration/SKILL.md",
+          "sha256": "6a624f942e09c69863a4219b9bd5d56975026b67b0c70bc83385ffd2120b6142",
+          "mode": 420
+        },
+        {
+          "path": "skills/documentation-and-adrs/SKILL.md",
+          "sha256": "87ae44a0c7bb3eefc2131a9d11caabcc14e4d8dcb27d66a3a675551ee2ce1671",
+          "mode": 420
+        },
+        {
+          "path": "skills/doubt-driven-development/SKILL.md",
+          "sha256": "6fa1fcd8420c28daf7e53c5b08b0f20b907911efd2a6d9bce0b9740da20a4008",
+          "mode": 420
+        },
+        {
+          "path": "skills/frontend-ui-engineering/SKILL.md",
+          "sha256": "2b74ac4862be3902ec918dceac9366a6fe83b9e003601c0deaf6be09c1766aca",
+          "mode": 420
+        },
+        {
+          "path": "skills/git-workflow-and-versioning/SKILL.md",
+          "sha256": "b7465d187935c52546d39fdc7bd6ac36d94eda25a9500ef8c18b767d2eb116ea",
+          "mode": 420
+        },
+        {
+          "path": "skills/idea-refine/SKILL.md",
+          "sha256": "79e773058963adc7646b0115b4f8a4afc974c5ff95843e4ef1cafff3cb51899e",
+          "mode": 420
+        },
+        {
+          "path": "skills/idea-refine/examples.md",
+          "sha256": "563204bfbf2f80a444151695205af4cb759e722b3d1e5460e08f278a69c89ba1",
+          "mode": 420
+        },
+        {
+          "path": "skills/idea-refine/frameworks.md",
+          "sha256": "161ebc18fdf2d996bc62a87a2d747cf1bf53548354f8925de25c732c27f00309",
+          "mode": 420
+        },
+        {
+          "path": "skills/idea-refine/refinement-criteria.md",
+          "sha256": "1ca2973a4d01b5cb37ab7ddb2eff77fa4e792634a33d0ce44961c068fc88d51a",
+          "mode": 420
+        },
+        {
+          "path": "skills/idea-refine/scripts/idea-refine.sh",
+          "sha256": "f02a52408a4218047c032d221483abfbb48d11f090bb4915965c7419bf2e0e47",
+          "mode": 493
+        },
+        {
+          "path": "skills/incremental-implementation/SKILL.md",
+          "sha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b",
+          "mode": 420
+        },
+        {
+          "path": "skills/interview-me/SKILL.md",
+          "sha256": "1d94741d10d2c826cd0c191aea3981ee94c8abb27ef2a166f6a372117d06448f",
+          "mode": 420
+        },
+        {
+          "path": "skills/observability-and-instrumentation/SKILL.md",
+          "sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87",
+          "mode": 420
+        },
+        {
+          "path": "skills/performance-optimization/SKILL.md",
+          "sha256": "00694d0c69bbde674d0e39de24052d90afea32d9fef9553eaee21a50a7e9b8cf",
+          "mode": 420
+        },
+        {
+          "path": "skills/planning-and-task-breakdown/SKILL.md",
+          "sha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7",
+          "mode": 420
+        },
+        {
+          "path": "skills/security-and-hardening/SKILL.md",
+          "sha256": "4aa7a433a0a8042f47197f05893343bd9d1cc02a9179537ef3437c05c49b385d",
+          "mode": 420
+        },
+        {
+          "path": "skills/shipping-and-launch/SKILL.md",
+          "sha256": "af610cf4892db7eab2e91c899e33feba90e1000bac4528b2f8dde930816ac125",
+          "mode": 420
+        },
+        {
+          "path": "skills/source-driven-development/SKILL.md",
+          "sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9",
+          "mode": 420
+        },
+        {
+          "path": "skills/spec-driven-development/SKILL.md",
+          "sha256": "89411b435fc9f45cec0dd7437419e6bac64b7ddf43108791978647d453010a61",
+          "mode": 420
+        },
+        {
+          "path": "skills/test-driven-development/SKILL.md",
+          "sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca",
+          "mode": 420
+        },
+        {
+          "path": "skills/using-agent-skills/SKILL.md",
+          "sha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/addy"
+    },
+    {
+      "id": "expo",
+      "repository": "https://github.com/expo/skills",
+      "revision": "f27959a9f0ee178def45bc974a26ed9090ac4b17",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE",
+        "plugins/expo/LICENSE",
+        "plugins/expo/skills/expo-animation/LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Completes explicitly missing sibling capabilities of the already bundled project-structure and native-ui skills. Project Expo SDK/packages via expo install; many examples require SDK 56+, Reanimated 4, matching worklets and Gesture Handler. Native iOS-only surfaces, NativeTabs unstable import, iOS 18+/26-specific features must be feature/platform gated. Real device release build needed for motion verification. Retain baseline two Expo entries and pin unchanged. Expo Router owns Expo navigation; do not activate Callstack react-navigation there. Feedback submission commands contact Expo; never execute without explicit messaging authorization. Named optional expo-skill-feedback is not a required source import.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "expo:expo-project-structure",
+          "path": "plugins/expo/skills/expo-project-structure/SKILL.md",
+          "sha256": "96fd0659067e6e44bae2046bbfc779441705de0f31dadfe6d77029006f1bc5b9",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "expo:expo-native-ui",
+          "path": "plugins/expo/skills/expo-native-ui/SKILL.md",
+          "sha256": "52d8c3bdf6d466dda826a89b3d0846b5014233c1e399f01ab193be7b1baccf53",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "expo:expo-router",
+          "path": "plugins/expo/skills/expo-router/SKILL.md",
+          "sha256": "93ff75501eb74e4982a93119ad3145499d400bb613260d2eb39be8008651f500",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "expo:expo-animation",
+          "path": "plugins/expo/skills/expo-animation/SKILL.md",
+          "sha256": "0d7a4cd7189049887db42bf94f0a6bccc231746999ccd9968a4d363089f521f5",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "expo:expo-design-system",
+          "path": "plugins/expo/skills/expo-design-system/SKILL.md",
+          "sha256": "b841a830e70cf06b14ad38f6ccaf7fa1ea60c57b4b7f78de650f3157dbbc3ff0",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "expo:expo-data-fetching",
+          "path": "plugins/expo/skills/expo-data-fetching/SKILL.md",
+          "sha256": "36fd61981bae65d976c630667000176e605cd923916eaae7ff857d92a6f93838",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "49c5f9c7097c9a940ff663a54c27a4c60e379df6cc2b3052df0d37a09a85df93",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/LICENSE",
+          "sha256": "49c5f9c7097c9a940ff663a54c27a4c60e379df6cc2b3052df0d37a09a85df93",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-animation/LICENSE",
+          "sha256": "4ff5bdb7887ec1435c9cab0e8d1a7caee704d894d65c2a008ccc68b1cc2f260b",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-animation/RECIPES.md",
+          "sha256": "1193cb71334da2e2341778dd92bec9ac79d989cb07fd55d661f324ed5871e718",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-animation/SKILL.md",
+          "sha256": "0d7a4cd7189049887db42bf94f0a6bccc231746999ccd9968a4d363089f521f5",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-animation/agents/openai.yaml",
+          "sha256": "7667e1a159300ee640ffb6ed4f81281dfdc0e3a789d4f3e5179c32ab3565795a",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-data-fetching/SKILL.md",
+          "sha256": "36fd61981bae65d976c630667000176e605cd923916eaae7ff857d92a6f93838",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-data-fetching/agents/openai.yaml",
+          "sha256": "50254d420a1db8e631ee24aaf8463708a525049059ac391b0d219dce8ce82e0a",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-data-fetching/references/expo-router-loaders.md",
+          "sha256": "f842c86483a15380c44a4b49db27bf3d41e17b48b1f44b9a2bbacc563a9dcbe6",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-data-fetching/references/offline-and-cancellation.md",
+          "sha256": "750f7f25acc4e6143a6ff4daacffbcd5daf64370540a75e7b3a4f3b4b1aa462c",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-design-system/SKILL.md",
+          "sha256": "b841a830e70cf06b14ad38f6ccaf7fa1ea60c57b4b7f78de650f3157dbbc3ff0",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-design-system/agents/openai.yaml",
+          "sha256": "16d7f7f1bb47bc02fa2a816280403bfaccd24e436672cd1503670fcc2a42fd26",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-design-system/references/audit.md",
+          "sha256": "a0ead76ab904c119a1353d8d91b9138144a97da43fdff683f291f2d45d868915",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-design-system/references/native-slop.md",
+          "sha256": "5662bd04ac2d6367fc4ca3ae355ec1b970752dcd8693a099a5e0792227eb09c1",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-native-ui/SKILL.md",
+          "sha256": "52d8c3bdf6d466dda826a89b3d0846b5014233c1e399f01ab193be7b1baccf53",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-native-ui/agents/openai.yaml",
+          "sha256": "90bf5d66b1038913fea37bd6d57292eb6ecd0e0ee3b2bc3e283facc033f4b2b0",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-native-ui/references/controls.md",
+          "sha256": "6ec427731a65ffd66b745733665bb2c00992750c7d3710893d1bbf70b427d541",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-native-ui/references/gradients.md",
+          "sha256": "63ced0392f67c41bf90e726613d139a389db609799bfcb91124e6e69b9a66e70",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-native-ui/references/icons.md",
+          "sha256": "2c0622d8a3f61626a72fa7829d3044f3391cbd8ca91806f4752926cf4e66be59",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-native-ui/references/media.md",
+          "sha256": "c964182dfbcaa5eef00b947e0425f5a39ee2cfc1b2a4e251ba51fc823e87b0dc",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-native-ui/references/storage.md",
+          "sha256": "265e8bc21adcd698062f18fa442e0e07e99e67868576f18aac2112e5381ffbf1",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-native-ui/references/visual-effects.md",
+          "sha256": "dcdcaa5e0bf5c20341455e39d91312ca5f3034391908f77eb2e577044283adcc",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-native-ui/references/webgpu-three.md",
+          "sha256": "3a247a7740e4bab4aea5dec8b81c7782a5918bb221838a05f6a94c669f145679",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-project-structure/SKILL.md",
+          "sha256": "96fd0659067e6e44bae2046bbfc779441705de0f31dadfe6d77029006f1bc5b9",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-project-structure/agents/openai.yaml",
+          "sha256": "cd7a9387766af254f9d8f691c332606e71273b8dd1c99c949f0934ed693878e0",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-router/SKILL.md",
+          "sha256": "93ff75501eb74e4982a93119ad3145499d400bb613260d2eb39be8008651f500",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-router/agents/openai.yaml",
+          "sha256": "7b76d9331a33e06e61504db9af069bccc8ab4a02e2f8be92727e8e0f9ad7941d",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-router/references/form-sheet.md",
+          "sha256": "947de9cf35a15aacf3f02e96e45942b5e4826e536e529570886e5ddbb7ec8591",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-router/references/route-structure.md",
+          "sha256": "4c3d70edeb7e36d965c4d96fa150f23ee57e01be5f6c57dd3e34c6309aab7e87",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-router/references/search.md",
+          "sha256": "bb4785df4757d84f1aff09d34cdb84043e7099684b9731a24a1d79cc3c0df172",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-router/references/tabs.md",
+          "sha256": "c49081529a200bfc62c95d41229e5dd7368f2e35cd5775ccaaab3289ed1fd7eb",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-router/references/toolbar-and-headers.md",
+          "sha256": "14d9a71dd949bd2b28a5bd531f6b9c1b4f3fa847a86db8c5218fee67b5295769",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-router/references/zoom-transitions.md",
+          "sha256": "cacc1665e9f3044762765d2cd55fd1ead9627f06478f12dfa2280c6f9ae88ede",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/expo"
+    }
+  ]
+}

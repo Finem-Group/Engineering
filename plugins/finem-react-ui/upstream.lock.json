@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-react-ui",
+  "sources": [
+    {
+      "id": "shadcn",
+      "repository": "https://github.com/shadcn-ui/ui",
+      "revision": "3ba91b1cc83e1bbe4ab35a422ff2a694849c5048",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE.md"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original complete shadcn skill, rules, CLI/MCP references, evaluation data and assets. CLI commands require a compatible project-local shadcn runtime and components.json; upstream latest examples do not pin runtime. Agent metadata is inert vendored source.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "shadcn:shadcn",
+          "path": "skills/shadcn/SKILL.md",
+          "sha256": "deba6c5152d9835892fa7dffeb1fedbb689ddac7e59e14e57ec5eaf9463309e4",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE.md",
+          "sha256": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/SKILL.md",
+          "sha256": "deba6c5152d9835892fa7dffeb1fedbb689ddac7e59e14e57ec5eaf9463309e4",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/agents/openai.yml",
+          "sha256": "35db91b1eef58b2abe01da9b88577de5a44e233b740cd93d692ddeeadd2afe4d",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/assets/shadcn-small.png",
+          "sha256": "0ecc62d682727f68fc4937eed19960c706714fa084d44f63028d611ae02bf3d7",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/assets/shadcn.png",
+          "sha256": "7d60ad6fec4d89a0d44ba5a3c9283d2fea0047af5467f9227040e20d927d39b7",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/cli.md",
+          "sha256": "a381e35bf36fe7bb851952c13707e01e82434fd7a4a4e53f6df26c6370838904",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/customization.md",
+          "sha256": "84c1d47168c4b8adb5840e4af30a4e373ae3377c1110478c8974f398dd63f5ba",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/evals/evals.json",
+          "sha256": "58aca2760b0cc5265bb575f76cd8eed344b88544314b8cb2cd53e0b8007dc936",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/mcp.md",
+          "sha256": "8d696b4e45b7d0e337367248513bd9acebe8f3bcfd7b748c775e5a337c8f38c8",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/registry.md",
+          "sha256": "4f239be36bd2b58e17047db1ca80ab7da00e15a8b73242e5e4d50d113c4caa05",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/rules/base-vs-radix.md",
+          "sha256": "2b2deb47d004285220c1fc6b38bb2edc2d0ccbcdafd031b0b189d5d8ed0d1ba8",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/rules/chat.md",
+          "sha256": "de29c12524a27578a59ecf8c95ea939278c1a3572a3706bfc99f6f92cb770b7b",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/rules/composition.md",
+          "sha256": "f282df828d83a91132a846ddb62eea149a7c7c94822e9ca88cfddf85af01aa41",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/rules/forms.md",
+          "sha256": "29593e14381e34626f8e0e9c15c59f3394b92a0623af6a6ec94585400123853c",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/rules/icons.md",
+          "sha256": "d4a58266648872d9ee07d0c2368843a1cb88b8253b7f528dd7bda9d68b6c2535",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/rules/styling.md",
+          "sha256": "f88fbd72dff862805b786dc7d7e4c74c83030fc278c5b97c993e4e665001798c",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/shadcn"
+    }
+  ]
+}

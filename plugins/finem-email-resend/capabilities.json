@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-email-resend",
+  "kind": "pack",
+  "version": "0.4.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "extension": "email-resend",
+  "conflicts": [],
+  "exclusiveGroup": null,
+  "capabilities": [
+    {
+      "id": "backend",
+      "title": "Backend",
+      "phase": "build",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "context7"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "resend:resend",
+          "source": "resend",
+          "path": "upstream/resend/skills/resend/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "async-jobs-events",
+      "title": "Async/jobs/events",
+      "phase": "build",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "cloud-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "resend:resend",
+          "source": "resend",
+          "path": "upstream/resend/skills/resend/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "resend",
+      "repository": "https://github.com/resend/resend-skills",
+      "revision": "2a9310fb040fd06a17ce1e8e7aea478d79daea62",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "355-line multi-language API guidance plus send/receive/webhook/resource references and skill eval JSON in repo. Existing Resend SDK; observed6.27.0 Node>=20. Live sends require explicit communication authorization and configured domain. Use {data,error} and idempotencyKey; signature verify raw webhook payload. 24-hour dedupe limit; event-level durable outbox needed beyond window. Do not auto-upgrade SDK just because source says latest; version-gate APIs. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow. The separate generic email-best-practices skill is intentionally excluded because its SDK error/idempotency examples need review. Included provider skill and original eval fixtures use the Resend API contract; no sends execute during bundling."
+    }
+  ]
+}

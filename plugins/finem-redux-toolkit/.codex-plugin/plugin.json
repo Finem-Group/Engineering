@@ -1,0 +1,30 @@
+{
+  "name": "finem-redux-toolkit",
+  "version": "0.4.0",
+  "description": "Redux Toolkit state ownership and RTK Query",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "frontend"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Redux toolkit",
+    "shortDescription": "Redux Toolkit state ownership and RTK Query",
+    "longDescription": "Redux Toolkit state ownership and RTK Query Bundles the original redux-toolkit skills unmodified and activates them for frontend. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Redux toolkit guidance for this change.",
+      "Review this code against redux-toolkit practice."
+    ]
+  }
+}

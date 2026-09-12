@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-cache-upstash",
+  "kind": "pack",
+  "version": "0.4.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "extension": "cache-upstash",
+  "conflicts": [],
+  "exclusiveGroup": null,
+  "capabilities": [
+    {
+      "id": "backend",
+      "title": "Backend",
+      "phase": "build",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "context7"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "upstash:upstash-redis-js",
+          "source": "upstash",
+          "path": "upstream/upstash/skills/upstash-redis-js/SKILL.md"
+        },
+        {
+          "skill": "upstash:upstash-ratelimit-js",
+          "source": "upstash",
+          "path": "upstream/upstash/skills/upstash-ratelimit-js/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "upstash",
+      "repository": "https://github.com/upstash/skills",
+      "revision": "dccc0521a637fcc18395c41992703337bea6baef",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Redis substantial data structures/patterns/performance references; QStash/Workflow/search smaller entrypoints backed by extensive local docs. HTTP Redis with credentials; QStash local server possible; SDK/runtime-specific. Do not substitute REST Redis for BullMQ TCP requirement. No temporary start-redis POST without explicit resource scope. Unsafe basic lock release unconditional DEL precedes safer token/Lua pattern; correctness-critical lock fixture mandatory. Upstash Search is distinct from Redis FT.SEARCH, ordinary Redis and vector database. Provider-agnostic Redis work should use installed client and official Redis docs. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow."
+    }
+  ]
+}

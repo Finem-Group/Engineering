@@ -1,0 +1,31 @@
+{
+  "name": "finem-agent-engineering",
+  "version": "0.4.0",
+  "description": "Original agent skill evaluation and MCP server engineering specialists",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "testing",
+    "api-contracts"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Agent engineering",
+    "shortDescription": "Original agent skill evaluation and MCP server engineering specialists",
+    "longDescription": "Original agent skill evaluation and MCP server engineering specialists Bundles the original anthropic skills unmodified and activates them for testing, api contracts. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Agent engineering guidance for this change.",
+      "Review this code against anthropic practice."
+    ]
+  }
+}

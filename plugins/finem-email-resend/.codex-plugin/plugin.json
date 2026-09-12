@@ -1,0 +1,31 @@
+{
+  "name": "finem-email-resend",
+  "version": "0.4.0",
+  "description": "Resend transactional email API and webhook handling",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "backend",
+    "async-jobs-events"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Email resend",
+    "shortDescription": "Resend transactional email API and webhook handling",
+    "longDescription": "Resend transactional email API and webhook handling Bundles the original resend skills unmodified and activates them for backend, async/jobs/events. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Email resend guidance for this change.",
+      "Review this code against resend practice."
+    ]
+  }
+}

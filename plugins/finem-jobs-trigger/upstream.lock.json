@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-jobs-trigger",
+  "sources": [
+    {
+      "id": "trigger",
+      "repository": "https://github.com/triggerdotdev/trigger.dev",
+      "revision": "33cf5701b4536012d45e365761c4a36067ea5f1d",
+      "license": "MIT AND Apache-2.0",
+      "licenseFiles": [
+        "packages/trigger-sdk/LICENSE",
+        "packages/cli-v3/LICENSE",
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "SDK full authoring skill; setup skill; CLI authoring entry is thin pointer and should not replace full SDK source. Matching SDK/build/CLI observed4.5.16 Node>=18.20; local SDK bundled docs preferred; cloud project or self-hosted infrastructure for executions. Mirror triggerdotdev/skills lacks LICENSE; canonical package-level MIT license verified. Full skill sources frontmatter references monorepo docs/*.mdx: preserve those source docs if promising offline completeness. No deploy/login/project provisioning without task scope; no raw secrets in task logs. Never Promise.all SDK waits; inspect Result.ok; runtime idempotency scopes vary by version. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow. Package skill directories are MIT under their respective package LICENSE files; repository docs are Apache-2.0 under root LICENSE. Both terms and notices are retained. Use the full SDK authoring skill, not the thin CLI pointer. Source {{TRIGGER_SDK_VERSION}} placeholders remain unchanged; choose a tested project SDK/CLI/build combination. Secrets go only in local environment/secret stores, never chat.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "trigger:trigger-getting-started",
+          "path": "packages/cli-v3/skills/trigger-getting-started/SKILL.md",
+          "sha256": "abbe6e42741acf328107da863009879078325058af752c288d7c188253ea7679",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "trigger:trigger-authoring-tasks",
+          "path": "packages/trigger-sdk/skills/trigger-authoring-tasks/SKILL.md",
+          "sha256": "f41fe57987696d43132757fd3368fc87722a34a303a47a47ce0a22335bce53db",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "9e9e22db5ae77f7ce1119294d0386cbbab2791cc77fb68d97c90627d7d96c5e1",
+          "mode": 420
+        },
+        {
+          "path": "docs/config/config-file.mdx",
+          "sha256": "a41636b92d041dd23062c6a5584c35b909430a3b762e730f02ec75a06d0ae41f",
+          "mode": 420
+        },
+        {
+          "path": "docs/context.mdx",
+          "sha256": "211de88e5889495fd7b3b1a976be0b2b6db592e9457ed45778d3c34a0fb30db7",
+          "mode": 420
+        },
+        {
+          "path": "docs/errors-retrying.mdx",
+          "sha256": "7c39049db41e6a97e777373b5c8109621faccd539c7dd3130eef308e1c06e4d7",
+          "mode": 420
+        },
+        {
+          "path": "docs/idempotency.mdx",
+          "sha256": "54326500691f7e67ad8fade8df0450435a51740be6cffac0e49e33d1a73019e9",
+          "mode": 420
+        },
+        {
+          "path": "docs/logging.mdx",
+          "sha256": "9af8be86fc5ab257eb3bb5f6e76a3112fd637e518d570d39729b9c5501935a92",
+          "mode": 420
+        },
+        {
+          "path": "docs/queue-concurrency.mdx",
+          "sha256": "958a5e24e70b071f5e656e9b627464fa40e5bcb27f034a63f73d2782ca9ec70b",
+          "mode": 420
+        },
+        {
+          "path": "docs/runs/metadata.mdx",
+          "sha256": "ff1e9fd9904f69438cde4c6bd19e2d471dba826772b1f88f03acc853e48235b0",
+          "mode": 420
+        },
+        {
+          "path": "docs/tasks/overview.mdx",
+          "sha256": "90cb30641a2a415c25878656a1bf245c60524a3a4ee44f24e54ef57ff6c7cf77",
+          "mode": 420
+        },
+        {
+          "path": "docs/tasks/scheduled.mdx",
+          "sha256": "7fe9ae43897d49abdbf2fab8afbe3997aab7c98568289365b823e77e7610f78c",
+          "mode": 420
+        },
+        {
+          "path": "docs/tasks/schemaTask.mdx",
+          "sha256": "93ca0ad503a9ef280ab9b8926c244f3075ae17a8b25d2301fc50be4c7a89f3bf",
+          "mode": 420
+        },
+        {
+          "path": "docs/triggering.mdx",
+          "sha256": "283cb051b722c926b4145545f581482383808a23b9b4b27b17f6ddc85aac8f3b",
+          "mode": 420
+        },
+        {
+          "path": "docs/wait-for-token.mdx",
+          "sha256": "ae3b93f63c2ee1dbae9ccd96e9aa92f6ac6c477802c06bcfa49e60c37353fb22",
+          "mode": 420
+        },
+        {
+          "path": "docs/wait-for.mdx",
+          "sha256": "763d0dd9c65222abbd87909d85ba68e7914f26e3c5b1f9ac8db801713c11dc22",
+          "mode": 420
+        },
+        {
+          "path": "docs/wait-until.mdx",
+          "sha256": "b2a400b8349f7919809a25d6b65bbd563df85837df41c0b728395edc4cc85c15",
+          "mode": 420
+        },
+        {
+          "path": "docs/wait.mdx",
+          "sha256": "66188e628dcdd482170693f54fc385ba350e31701f9a7ebbe7a216a10ce0d8f2",
+          "mode": 420
+        },
+        {
+          "path": "packages/cli-v3/LICENSE",
+          "sha256": "08ba90c393a607a7dc83a3dbf6db16a31617925f27b378cd6f959640c3bfa59f",
+          "mode": 420
+        },
+        {
+          "path": "packages/cli-v3/skills/trigger-getting-started/SKILL.md",
+          "sha256": "abbe6e42741acf328107da863009879078325058af752c288d7c188253ea7679",
+          "mode": 420
+        },
+        {
+          "path": "packages/trigger-sdk/LICENSE",
+          "sha256": "08ba90c393a607a7dc83a3dbf6db16a31617925f27b378cd6f959640c3bfa59f",
+          "mode": 420
+        },
+        {
+          "path": "packages/trigger-sdk/skills/trigger-authoring-tasks/SKILL.md",
+          "sha256": "f41fe57987696d43132757fd3368fc87722a34a303a47a47ce0a22335bce53db",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/trigger"
+    }
+  ]
+}

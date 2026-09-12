@@ -1,0 +1,3 @@
+# Upstream originals must stay byte-identical to upstream.lock.json.
+# No line-ending translation anywhere in this repository.
+* -text

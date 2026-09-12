@@ -1,0 +1,30 @@
+{
+  "name": "finem-auth-auth0",
+  "version": "0.4.0",
+  "description": "Auth0 integration only when the project has selected Auth0",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "auth"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Auth auth0",
+    "shortDescription": "Auth0 integration only when the project has selected Auth0",
+    "longDescription": "Auth0 integration only when the project has selected Auth0 Bundles the original auth0 skills unmodified and activates them for auth. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Auth auth0 guidance for this change.",
+      "Review this code against auth0 practice."
+    ]
+  }
+}

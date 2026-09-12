@@ -1,0 +1,34 @@
+{
+  "name": "finem-backend-django",
+  "version": "0.4.0",
+  "description": "Django application conventions compatible with the installed version",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "backend",
+    "auth",
+    "database",
+    "migrations",
+    "testing"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Backend django",
+    "shortDescription": "Django application conventions compatible with the installed version",
+    "longDescription": "Django application conventions compatible with the installed version Bundles the original django skills unmodified and activates them for backend, auth, database, migrations, testing. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Backend django guidance for this change.",
+      "Review this code against django practice."
+    ]
+  }
+}

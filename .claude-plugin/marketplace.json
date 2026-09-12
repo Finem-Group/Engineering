@@ -1,0 +1,929 @@
+{
+  "name": "finem",
+  "owner": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "description": "Finem engineering: one coordinator plus 53 technology packs carrying 170 original skills from 49 pinned Git sources.",
+  "version": "0.4.0",
+  "plugins": [
+    {
+      "name": "finem-core",
+      "source": "./plugins/finem-core",
+      "description": "The Finem engineering coordinator and the base original skills for all 43 capabilities. Every finem technology pack depends on it.",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "workflow",
+      "keywords": [
+        "finem",
+        "core"
+      ]
+    },
+    {
+      "name": "finem-discovery",
+      "source": "./plugins/finem-discovery",
+      "description": "Original research interviews and opportunity synthesis",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "discovery"
+      ]
+    },
+    {
+      "name": "finem-react-ui",
+      "source": "./plugins/finem-react-ui",
+      "description": "shadcn component composition",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "react-ui"
+      ]
+    },
+    {
+      "name": "finem-browser-playwright",
+      "source": "./plugins/finem-browser-playwright",
+      "description": "Use Playwright as the browser execution backend",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "browser-playwright"
+      ]
+    },
+    {
+      "name": "finem-advanced-testing",
+      "source": "./plugins/finem-advanced-testing",
+      "description": "Properties and supply-chain analysis",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "advanced-testing"
+      ]
+    },
+    {
+      "name": "finem-cloudflare",
+      "source": "./plugins/finem-cloudflare",
+      "description": "Cloudflare Workers, Wrangler and Durable Objects",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "cloudflare"
+      ]
+    },
+    {
+      "name": "finem-terraform",
+      "source": "./plugins/finem-terraform",
+      "description": "Terraform style and tests",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "terraform"
+      ]
+    },
+    {
+      "name": "finem-observability",
+      "source": "./plugins/finem-observability",
+      "description": "OpenTelemetry and k6",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "observability"
+      ]
+    },
+    {
+      "name": "finem-expo",
+      "source": "./plugins/finem-expo",
+      "description": "Expo structure, native UI, routing, motion and data fetching",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "expo"
+      ]
+    },
+    {
+      "name": "finem-product-validation",
+      "source": "./plugins/finem-product-validation",
+      "description": "Product hypotheses, lean experiments and launch risk analysis",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "product-validation"
+      ]
+    },
+    {
+      "name": "finem-product-delivery",
+      "source": "./plugins/finem-product-delivery",
+      "description": "Product strategy, outcome roadmaps, user stories and acceptance scenarios",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "product-delivery"
+      ]
+    },
+    {
+      "name": "finem-product-analytics",
+      "source": "./plugins/finem-product-analytics",
+      "description": "Metrics definitions and cohort-based feedback alongside provider instrumentation",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "product-analytics"
+      ]
+    },
+    {
+      "name": "finem-intent-audit",
+      "source": "./plugins/finem-intent-audit",
+      "description": "Compare documented boundaries to implemented behavior",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "intent-audit"
+      ]
+    },
+    {
+      "name": "finem-agent-engineering",
+      "source": "./plugins/finem-agent-engineering",
+      "description": "Original agent skill evaluation and MCP server engineering specialists",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "agent-engineering"
+      ]
+    },
+    {
+      "name": "finem-vue",
+      "source": "./plugins/finem-vue",
+      "description": "Vue 3 application implementation, routing and tests",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "vue"
+      ]
+    },
+    {
+      "name": "finem-nuxt",
+      "source": "./plugins/finem-nuxt",
+      "description": "Nuxt 4 server rendering and Pinia state",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "nuxt"
+      ]
+    },
+    {
+      "name": "finem-svelte",
+      "source": "./plugins/finem-svelte",
+      "description": "Svelte 5 and SvelteKit implementation and analysis",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "svelte"
+      ]
+    },
+    {
+      "name": "finem-angular",
+      "source": "./plugins/finem-angular",
+      "description": "Version-aware Angular application implementation",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "angular"
+      ]
+    },
+    {
+      "name": "finem-next-cache",
+      "source": "./plugins/finem-next-cache",
+      "description": "Next 16.3+ instant-navigation tests for apps already building with Cache Components",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "next-cache"
+      ]
+    },
+    {
+      "name": "finem-tanstack-router",
+      "source": "./plugins/finem-tanstack-router",
+      "description": "TanStack React Router and Query composition",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "tanstack-router"
+      ]
+    },
+    {
+      "name": "finem-tanstack-start",
+      "source": "./plugins/finem-tanstack-start",
+      "description": "TanStack Start React full-stack rendering",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "tanstack-start"
+      ]
+    },
+    {
+      "name": "finem-tanstack-table",
+      "source": "./plugins/finem-tanstack-table",
+      "description": "TanStack Table 9 core and React table bindings",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "tanstack-table"
+      ]
+    },
+    {
+      "name": "finem-redux-toolkit",
+      "source": "./plugins/finem-redux-toolkit",
+      "description": "Redux Toolkit state ownership and RTK Query",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "redux-toolkit"
+      ]
+    },
+    {
+      "name": "finem-web-animation",
+      "source": "./plugins/finem-web-animation",
+      "description": "Purposeful CSS and chosen-library web motion",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "web-animation"
+      ]
+    },
+    {
+      "name": "finem-gsap",
+      "source": "./plugins/finem-gsap",
+      "description": "GSAP API, lifecycle and performance specialists",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "gsap"
+      ]
+    },
+    {
+      "name": "finem-react-native-performance",
+      "source": "./plugins/finem-react-native-performance",
+      "description": "Measure and optimize native JS, bundle and device performance",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "react-native-performance"
+      ]
+    },
+    {
+      "name": "finem-swiftui",
+      "source": "./plugins/finem-swiftui",
+      "description": "SwiftUI API, state, navigation and accessibility",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "swiftui"
+      ]
+    },
+    {
+      "name": "finem-android-ui",
+      "source": "./plugins/finem-android-ui",
+      "description": "Android edge-to-edge and incremental XML-to-Compose migration",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "android-ui"
+      ]
+    },
+    {
+      "name": "finem-kotlin-mobile",
+      "source": "./plugins/finem-kotlin-mobile",
+      "description": "KMP migrations and measured native build performance",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "kotlin-mobile"
+      ]
+    },
+    {
+      "name": "finem-backend-hono",
+      "source": "./plugins/finem-backend-hono",
+      "description": "Hono API implementation for a selected project runtime",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "backend-hono"
+      ]
+    },
+    {
+      "name": "finem-backend-fastify",
+      "source": "./plugins/finem-backend-fastify",
+      "description": "Fastify request lifecycle, schema and plugin isolation",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "backend-fastify"
+      ]
+    },
+    {
+      "name": "finem-backend-fastapi",
+      "source": "./plugins/finem-backend-fastapi",
+      "description": "FastAPI routing, validation, dependency cleanup and tests",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "backend-fastapi"
+      ]
+    },
+    {
+      "name": "finem-backend-django",
+      "source": "./plugins/finem-backend-django",
+      "description": "Django application conventions compatible with the installed version",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "backend-django"
+      ]
+    },
+    {
+      "name": "finem-api-graphql",
+      "source": "./plugins/finem-api-graphql",
+      "description": "GraphQL schema and operation contracts independent of server provider",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "api-graphql"
+      ]
+    },
+    {
+      "name": "finem-backend-apollo",
+      "source": "./plugins/finem-backend-apollo",
+      "description": "Apollo Server context, resolvers, authorization and operations",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "backend-apollo"
+      ]
+    },
+    {
+      "name": "finem-backend-rust",
+      "source": "./plugins/finem-backend-rust",
+      "description": "Rust ownership, errors, testing and performance conventions",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "backend-rust"
+      ]
+    },
+    {
+      "name": "finem-auth-auth0",
+      "source": "./plugins/finem-auth-auth0",
+      "description": "Auth0 integration only when the project has selected Auth0",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "auth-auth0"
+      ]
+    },
+    {
+      "name": "finem-data-prisma",
+      "source": "./plugins/finem-data-prisma",
+      "description": "Prisma database setup, client API and migration commands",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "data-prisma"
+      ]
+    },
+    {
+      "name": "finem-migration-prisma-v7",
+      "source": "./plugins/finem-migration-prisma-v7",
+      "description": "Explicit Prisma v7 upgrade work with project version checks",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "migration-prisma-v7"
+      ]
+    },
+    {
+      "name": "finem-migration-prisma-mongodb",
+      "source": "./plugins/finem-migration-prisma-mongodb",
+      "description": "Explicit MongoDB assessment: stay on Prisma 6 or evaluate Prisma Next; scoped separately from SQL projects",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "migration-prisma-mongodb"
+      ]
+    },
+    {
+      "name": "finem-data-neon",
+      "source": "./plugins/finem-data-neon",
+      "description": "Neon Postgres and database branching with the required provider parent",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "data-neon"
+      ]
+    },
+    {
+      "name": "finem-storage-neon",
+      "source": "./plugins/finem-storage-neon",
+      "description": "Neon object storage and its provider parent",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "storage-neon"
+      ]
+    },
+    {
+      "name": "finem-jobs-inngest",
+      "source": "./plugins/finem-jobs-inngest",
+      "description": "Inngest durable functions, events, flow control and development tests",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "jobs-inngest"
+      ]
+    },
+    {
+      "name": "finem-jobs-trigger",
+      "source": "./plugins/finem-jobs-trigger",
+      "description": "Trigger.dev task authoring and project setup",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "jobs-trigger"
+      ]
+    },
+    {
+      "name": "finem-cache-upstash",
+      "source": "./plugins/finem-cache-upstash",
+      "description": "Upstash Redis and rate limiting for a selected deployment",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "cache-upstash"
+      ]
+    },
+    {
+      "name": "finem-jobs-upstash",
+      "source": "./plugins/finem-jobs-upstash",
+      "description": "Upstash QStash and durable workflow delivery",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "jobs-upstash"
+      ]
+    },
+    {
+      "name": "finem-search-upstash",
+      "source": "./plugins/finem-search-upstash",
+      "description": "Upstash Search indexing and retrieval",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "search-upstash"
+      ]
+    },
+    {
+      "name": "finem-email-resend",
+      "source": "./plugins/finem-email-resend",
+      "description": "Resend transactional email API and webhook handling",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "email-resend"
+      ]
+    },
+    {
+      "name": "finem-api-contract-testing",
+      "source": "./plugins/finem-api-contract-testing",
+      "description": "OpenAPI parse fixtures and implementation drift checks",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "api-contract-testing"
+      ]
+    },
+    {
+      "name": "finem-search-algolia",
+      "source": "./plugins/finem-search-algolia",
+      "description": "Algolia indexing contracts and release quality checks",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "search-algolia"
+      ]
+    },
+    {
+      "name": "finem-kubernetes",
+      "source": "./plugins/finem-kubernetes",
+      "description": "Original Kubernetes manifests, policy, Helm and GitOps specialists",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "kubernetes"
+      ]
+    },
+    {
+      "name": "finem-security-audit",
+      "source": "./plugins/finem-security-audit",
+      "description": "Original agentic workflow, API footgun and SARIF auditors",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "security-audit"
+      ]
+    },
+    {
+      "name": "finem-finops",
+      "source": "./plugins/finem-finops",
+      "description": "Provider-aware infrastructure cost estimates and generation",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "finops"
+      ]
+    },
+    {
+      "name": "finem-aws-containers",
+      "source": "./plugins/finem-aws-containers",
+      "description": "AWS container selection and infrastructure deployment guidance",
+      "version": "0.4.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "technology",
+      "keywords": [
+        "finem",
+        "aws-containers"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "finem-swiftui",
+  "version": "0.4.0",
+  "description": "SwiftUI API, state, navigation and accessibility",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "frontend",
+    "performance",
+    "accessibility"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Swiftui",
+    "shortDescription": "SwiftUI API, state, navigation and accessibility",
+    "longDescription": "SwiftUI API, state, navigation and accessibility Bundles the original addy, swiftui skills unmodified and activates them for frontend, performance, accessibility. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Use the Finem Swiftui guidance for this change.",
+      "Review this code against addy and swiftui practice."
+    ]
+  }
+}
