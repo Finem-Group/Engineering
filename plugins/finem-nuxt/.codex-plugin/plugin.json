@@ -21,7 +21,11 @@
     "longDescription": "Nuxt 4 server rendering and Pinia state Bundles the original antfu skills unmodified and activates them for frontend. Requires finem-core, finem-vue.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Nuxt guidance for this change.",
       "Review this code against antfu practice."

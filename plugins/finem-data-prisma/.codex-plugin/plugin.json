@@ -22,7 +22,11 @@
     "longDescription": "Prisma database setup, client API and migration commands Bundles the original prisma skills unmodified and activates them for database, migrations. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Data prisma guidance for this change.",
       "Review this code against prisma practice."

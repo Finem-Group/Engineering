@@ -21,7 +21,11 @@
     "longDescription": "Purposeful CSS and chosen-library web motion Bundles the original emil skills unmodified and activates them for frontend. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Web animation guidance for this change.",
       "Review this code against emil practice."

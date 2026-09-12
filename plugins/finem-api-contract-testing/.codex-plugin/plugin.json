@@ -22,7 +22,11 @@
     "longDescription": "OpenAPI parse fixtures and implementation drift checks Bundles the original pactflow skills unmodified and activates them for api contracts, testing. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Api contract testing guidance for this change.",
       "Review this code against pactflow practice."

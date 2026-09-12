@@ -24,7 +24,11 @@
     "longDescription": "OpenTelemetry and k6 Bundles the original grafana skills unmodified and activates them for observability, performance, slos, incident response. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Observability guidance for this change.",
       "Review this code against grafana practice."

@@ -21,7 +21,11 @@
     "longDescription": "Upstash Redis and rate limiting for a selected deployment Bundles the original upstash skills unmodified and activates them for backend. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Cache upstash guidance for this change.",
       "Review this code against upstash practice."

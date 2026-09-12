@@ -22,7 +22,11 @@
     "longDescription": "Android edge-to-edge and incremental XML-to-Compose migration Bundles the original addy, android skills unmodified and activates them for frontend, performance. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Android ui guidance for this change.",
       "Review this code against addy and android practice."

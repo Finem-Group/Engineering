@@ -23,7 +23,11 @@
     "longDescription": "Version-aware Angular application implementation Bundles the original addy, angular skills unmodified and activates them for frontend, performance, accessibility. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Angular guidance for this change.",
       "Review this code against addy and angular practice."

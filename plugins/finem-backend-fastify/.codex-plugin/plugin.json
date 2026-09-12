@@ -23,7 +23,11 @@
     "longDescription": "Fastify request lifecycle, schema and plugin isolation Bundles the original fastify skills unmodified and activates them for backend, api contracts, testing. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Backend fastify guidance for this change.",
       "Review this code against fastify practice."

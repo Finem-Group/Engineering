@@ -21,7 +21,11 @@
     "longDescription": "GraphQL schema and operation contracts independent of server provider Bundles the original apollo skills unmodified and activates them for api contracts. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Api graphql guidance for this change.",
       "Review this code against apollo practice."

@@ -22,7 +22,11 @@
     "longDescription": "KMP migrations and measured native build performance Bundles the original kotlin skills unmodified and activates them for migration/deprecation, performance. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Kotlin mobile guidance for this change.",
       "Review this code against kotlin practice."

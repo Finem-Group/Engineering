@@ -25,7 +25,11 @@
     "longDescription": "Original Kubernetes manifests, policy, Helm and GitOps specialists Bundles the original wshobson skills unmodified and activates them for infrastructure, networking, security, deployment, rollback. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Kubernetes guidance for this change.",
       "Review this code against wshobson practice."

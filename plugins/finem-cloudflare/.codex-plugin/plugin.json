@@ -23,7 +23,11 @@
     "longDescription": "Cloudflare Workers, Wrangler and Durable Objects Bundles the original cloudflare skills unmodified and activates them for infrastructure, deployment, async/jobs/events. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Cloudflare guidance for this change.",
       "Review this code against cloudflare practice."

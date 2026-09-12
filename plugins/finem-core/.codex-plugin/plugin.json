@@ -30,7 +30,11 @@
     "longDescription": "Coordinates 43 engineering capabilities and the base original skills behind them. Technology packs plug into this core; every finem pack depends on it. Originals stay unmodified under upstream/ and are opened on demand.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Plan this change and name the capabilities it touches.",
       "Review this diff against the engineering quality gates.",

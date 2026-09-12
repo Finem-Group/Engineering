@@ -22,7 +22,11 @@
     "longDescription": "Svelte 5 and SvelteKit implementation and analysis Bundles the original addy, svelte skills unmodified and activates them for frontend, performance. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Svelte guidance for this change.",
       "Review this code against addy and svelte practice."

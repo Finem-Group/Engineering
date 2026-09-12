@@ -21,7 +21,11 @@
     "longDescription": "Auth0 integration only when the project has selected Auth0 Bundles the original auth0 skills unmodified and activates them for auth. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Auth auth0 guidance for this change.",
       "Review this code against auth0 practice."

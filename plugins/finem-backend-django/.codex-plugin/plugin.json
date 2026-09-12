@@ -25,7 +25,11 @@
     "longDescription": "Django application conventions compatible with the installed version Bundles the original django skills unmodified and activates them for backend, auth, database, migrations, testing. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Backend django guidance for this change.",
       "Review this code against django practice."

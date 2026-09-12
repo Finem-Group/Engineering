@@ -22,7 +22,11 @@
     "longDescription": "Hono API implementation for a selected project runtime Bundles the original hono skills unmodified and activates them for backend, api contracts. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Backend hono guidance for this change.",
       "Review this code against hono practice."

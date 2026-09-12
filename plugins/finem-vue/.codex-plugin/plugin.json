@@ -23,7 +23,11 @@
     "longDescription": "Vue 3 application implementation, routing and tests Bundles the original addy, vue skills unmodified and activates them for frontend, performance, testing. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Vue guidance for this change.",
       "Review this code against addy and vue practice."

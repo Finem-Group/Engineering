@@ -22,7 +22,11 @@
     "longDescription": "Neon Postgres and database branching with the required provider parent Bundles the original neon skills unmodified and activates them for database, migrations. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Data neon guidance for this change.",
       "Review this code against neon practice."

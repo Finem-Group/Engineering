@@ -23,7 +23,11 @@
     "longDescription": "Original research interviews and opportunity synthesis Bundles the original pm skills unmodified and activates them for product discovery, requirements, ux. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Discovery guidance for this change.",
       "Review this code against pm practice."

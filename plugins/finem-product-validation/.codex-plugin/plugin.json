@@ -22,7 +22,11 @@
     "longDescription": "Product hypotheses, lean experiments and launch risk analysis Bundles the original pm skills unmodified and activates them for feasibility, product discovery. Requires finem-core, finem-discovery.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Product validation guidance for this change.",
       "Review this code against pm practice."

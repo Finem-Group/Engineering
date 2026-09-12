@@ -21,7 +21,11 @@
     "longDescription": "Redux Toolkit state ownership and RTK Query Bundles the original redux-toolkit skills unmodified and activates them for frontend. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Redux toolkit guidance for this change.",
       "Review this code against redux-toolkit practice."

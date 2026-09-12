@@ -21,7 +21,11 @@
     "longDescription": "TanStack Start React full-stack rendering Bundles the original tanstack-router skills unmodified and activates them for frontend. Requires finem-core, finem-tanstack-router.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Tanstack start guidance for this change.",
       "Review this code against tanstack-router practice."

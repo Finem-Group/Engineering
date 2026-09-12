@@ -22,7 +22,11 @@
     "longDescription": "GSAP API, lifecycle and performance specialists Bundles the original gsap skills unmodified and activates them for frontend, performance. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Gsap guidance for this change.",
       "Review this code against gsap practice."

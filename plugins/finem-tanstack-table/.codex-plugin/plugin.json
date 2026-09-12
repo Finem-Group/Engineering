@@ -21,7 +21,11 @@
     "longDescription": "TanStack Table 9 core and React table bindings Bundles the original tanstack-table skills unmodified and activates them for frontend. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Tanstack table guidance for this change.",
       "Review this code against tanstack-table practice."

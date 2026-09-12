@@ -23,7 +23,11 @@
     "longDescription": "SwiftUI API, state, navigation and accessibility Bundles the original addy, swiftui skills unmodified and activates them for frontend, performance, accessibility. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Swiftui guidance for this change.",
       "Review this code against addy and swiftui practice."

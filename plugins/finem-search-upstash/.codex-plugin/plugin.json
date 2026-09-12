@@ -21,7 +21,11 @@
     "longDescription": "Upstash Search indexing and retrieval Bundles the original upstash skills unmodified and activates them for backend. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Search upstash guidance for this change.",
       "Review this code against upstash practice."

@@ -545,7 +545,9 @@ function codexManifest(catalog, plugin) {
             Requires ${plugin.dependencies.join(', ')}.`),
       developerName: OWNER.name,
       category: CODEX_CATEGORY,
-      capabilities: [],
+      // Skill-only plugins: they read project files and the bundled originals,
+      // and guide edits. Matches how OpenAI's own skill-only plugins declare it.
+      capabilities: ['Interactive', 'Read', 'Write'],
       defaultPrompt: prompts.map(p => p.slice(0, 128)).slice(0, 3),
     },
   };

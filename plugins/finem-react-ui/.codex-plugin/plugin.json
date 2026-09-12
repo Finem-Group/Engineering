@@ -22,7 +22,11 @@
     "longDescription": "shadcn component composition Bundles the original shadcn skills unmodified and activates them for frontend, design system. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem React ui guidance for this change.",
       "Review this code against shadcn practice."

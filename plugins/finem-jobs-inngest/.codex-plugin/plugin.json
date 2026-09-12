@@ -23,7 +23,11 @@
     "longDescription": "Inngest durable functions, events, flow control and development tests Bundles the original inngest skills unmodified and activates them for async/jobs/events, reliability/resilience, testing. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Jobs inngest guidance for this change.",
       "Review this code against inngest practice."

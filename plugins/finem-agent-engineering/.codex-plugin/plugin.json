@@ -22,7 +22,11 @@
     "longDescription": "Original agent skill evaluation and MCP server engineering specialists Bundles the original anthropic skills unmodified and activates them for testing, api contracts. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Agent engineering guidance for this change.",
       "Review this code against anthropic practice."

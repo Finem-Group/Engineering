@@ -22,7 +22,11 @@
     "longDescription": "Trigger.dev task authoring and project setup Bundles the original trigger skills unmodified and activates them for async/jobs/events, reliability/resilience. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Jobs trigger guidance for this change.",
       "Review this code against trigger practice."

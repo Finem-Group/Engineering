@@ -21,7 +21,11 @@
     "longDescription": "Metrics definitions and cohort-based feedback alongside provider instrumentation Bundles the original pm skills unmodified and activates them for product analytics/feedback. Requires finem-core.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
-    "capabilities": [],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Use the Finem Product analytics guidance for this change.",
       "Review this code against pm practice."
