@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 3,
+  "plugin": "finem-ui-ux",
+  "kind": "area",
+  "version": "0.7.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "area": "ui-ux",
+  "title": "UI/UX & Design System",
+  "purpose": "Design useful, accessible interfaces with coherent visual language, interaction states and motion.",
+  "deliverables": [
+    "User journeys and interface flows",
+    "Layouts and interaction states",
+    "Design tokens and component guidelines",
+    "Accessibility and motion guidance"
+  ],
+  "options": [
+    "discovery",
+    "react-ui",
+    "expo",
+    "angular",
+    "swiftui",
+    "xylex-ui-polish"
+  ],
+  "capabilities": [
+    {
+      "id": "ux",
+      "title": "UX",
+      "phase": "design",
+      "requires": [
+        "requirements"
+      ],
+      "connectors": [
+        "mobbin",
+        "paper",
+        "figma"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "impeccable:impeccable",
+          "source": "impeccable",
+          "plugin": "finem-core",
+          "path": "upstream/impeccable/.agents/skills/impeccable/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "design-system",
+      "title": "Design system",
+      "phase": "design",
+      "requires": [
+        "ux"
+      ],
+      "connectors": [
+        "paper",
+        "mobbin",
+        "figma"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "impeccable:impeccable",
+          "source": "impeccable",
+          "plugin": "finem-core",
+          "path": "upstream/impeccable/.agents/skills/impeccable/SKILL.md"
+        },
+        {
+          "skill": "vercel:web-design-guidelines",
+          "source": "vercel",
+          "plugin": "finem-core",
+          "path": "upstream/vercel/skills/web-design-guidelines/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "accessibility",
+      "title": "Accessibility",
+      "phase": "verify",
+      "requires": [
+        "ux"
+      ],
+      "connectors": [],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:wcag-audit-patterns",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/accessibility-compliance/skills/wcag-audit-patterns/SKILL.md"
+        },
+        {
+          "skill": "vercel:web-design-guidelines",
+          "source": "vercel",
+          "plugin": "finem-core",
+          "path": "upstream/vercel/skills/web-design-guidelines/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": []
+}

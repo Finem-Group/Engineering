@@ -10,7 +10,7 @@
  *
  * Output: plugins/<name>/ shared by both marketplaces.
  *   finem-core          coordinator + one complete shared original library
- *   finem-<phase>       one scoped entry skill + capability/option references
+ *   finem-<area>       one scoped entry skill + capability/option references
  *
  * Only entry skills are native. Upstream originals are copied byte for byte
  * into <plugin>/upstream/<source>/ and opened on demand.
@@ -25,7 +25,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
-const { groupByPhase, migrationMap } = require('./scripts/phase-layout.js');
+const { groupByArea, migrationMap } = require('./scripts/area-layout.js');
 
 // ---------------------------------------------------------------------------
 // Branding. Changing these regenerates every manifest, skill and install
@@ -41,7 +41,7 @@ const REPO_SLUG = 'Finem-Group/Engineering';
 const REPO_URL = `https://github.com/${REPO_SLUG}`;
 const OWNER = { name: 'Finem Group', url: 'https://github.com/Finem-Group' };
 // Marketplace fixes can be released independently of the pinned L11 catalog.
-const PLUGIN_VERSION = '0.6.0';
+const PLUGIN_VERSION = '0.7.0';
 const CODEX_CATEGORY = 'Developer Tools';
 const CODEX_POLICY = { installation: 'AVAILABLE', authentication: 'ON_USE' };
 
@@ -242,7 +242,9 @@ function describeAll(catalog) {
   const options = catalog.stack.extensions.map(e => describePack(catalog, e));
   core.sources = resolveSources(catalog, catalog.sources.keys());
   core.skillCount = catalog.skills.size;
-  return groupByPhase(core, options, catalog.stack.phases);
+  const definitions = readJSON(path.join(__dirname, 'catalog/plugin-areas.json'));
+  if (definitions.schemaVersion !== 1) throw new Error('Unsupported engineering area catalog');
+  return groupByArea(core, options, definitions.areas, catalog.stack.phases);
 }
 
 // ---------------------------------------------------------------------------
@@ -283,7 +285,7 @@ Check whether \`${CLI_STATE_DIR}/config.json\` exists in the project root.
   \`${CLI_STATE_DIR}/config.json\`, \`${CLI_STATE_DIR}/capabilities.json\` and \`${CLI_STATE_DIR}/tools.json\`,
   and resolve originals under \`${CLI_STATE_DIR}/upstream/<source>/\`. The CLI owns the selection; follow
   "Project mode" below.
-- **Absent — plugin mode.** Select relevant installed phases and the module's technology options. Follow
+- **Absent — plugin mode.** Select relevant installed areas and the module's technology options. Follow
   "Plugin mode" below. Do not invent a \`${CLI_STATE_DIR}/\` directory and do not run \`${CLI_BIN}\`
   commands; they are not installed in this mode.
 
@@ -297,33 +299,33 @@ levels above this \`SKILL.md\` (\`<plugin root>/skills/${COORDINATOR}/SKILL.md\`
 path below against that root.
 
 The read-only helper below loads \`capabilities.json\` in this plugin root. It contains the base registry,
-\`phasePlugins\` and \`technologyOptions\`. Inspect the selected helper result and relevant phase metadata
+\`areaPlugins\` and \`technologyOptions\`. Inspect the selected helper result and relevant area metadata
 to keep task context compact. Every original lives here under \`upstream/\`, once, and opens on demand.
 
-Find the installed phase plugin roots from the host's available skill paths. Each phase has one scoped
+Find the installed area plugin roots from the host's available skill paths. Each area has one scoped
 entry skill and capability map. Never guess sibling paths: host caches use separate version directories.
-Select phases relevant to the current task and technology options from the module's manifests, lockfiles,
+Select areas relevant to the current task and technology options from the module's manifests, lockfiles,
 existing project choices and user instructions. Keep different monorepo modules' selections separate.
 
-Run the read-only helper (Node 18+) with this core's actual root, one \`--phase\` for each available phase
-root, \`--select\` for the requested phase plugin names and optional \`--extensions\` for technology IDs:
+Run the read-only helper (Node 18+) with this core's actual root, one \`--area\` for each available area
+root, \`--select\` for the requested area plugin names and optional \`--extensions\` for technology IDs:
 
 \`\`\`text
-node "<core root>/scripts/resolve-packs.js" --core "<core root>" --phase "<context root>" --phase "<design root>" --phase "<build root>" --select ${PREFIX}-build --extensions nuxt
+node "<core root>/scripts/resolve-packs.js" --core "<core root>" --area "<product root>" --area "<architecture root>" --area "<frontend root>" --select ${PREFIX}-frontend-mobile --extensions nuxt
 \`\`\`
 
-The helper resolves capability prerequisites across installed phases, rejects missing phases or mixed
+The helper resolves capability prerequisites across installed areas, rejects missing areas or mixed
 plugin versions, then validates technology dependencies, conflicts and exclusive groups. Nuxt includes
 Vue as an internal option; neither is a separate native plugin. Replacements run before additions.
-Installing Build does not activate React, Vue, Svelte and every backend together. With no phase selection,
-no capability is active. Extra installed phases stay inactive unless a capability prerequisite needs them.
+Select the module's actual framework and provider options before opening specialist guidance. With no area selection,
+no capability is active. Extra installed areas stay inactive unless a capability prerequisite needs them.
 
-Only the result's \`active\` phase plugins, \`extensions\` and resolved \`capabilities\` apply. A prerequisite
-adds the required capability, not every task in its phase. Reuse existing artifacts; a small fix does not
+Only the result's \`active\` area plugins, \`extensions\` and resolved \`capabilities\` apply. A prerequisite
+adds the required capability, not every task in its area. Reuse existing artifacts; a small fix does not
 require repeating discovery or running the entire lifecycle. Open the resolved original \`SKILL.md\` and
 its references when relevant; never substitute a short wrapper for its body.
 
-Report missing phase plugins instead of silently installing them. If a framework choice is ambiguous,
+Report missing area plugins instead of silently installing them. If a framework choice is ambiguous,
 ask for that choice while continuing unrelated work. If Node is unavailable, apply the same metadata
 checks manually and say the helper was not run. A helper error must never activate everything.
 These plugins do not create project configuration or install framework/provider runtimes.
@@ -348,7 +350,7 @@ cross-skill references do not activate a new global workflow; required reference
 loaded within the selected task.
 
 Capability \`requires\` edges provide installed coverage and prerequisites; they do not require repeating
-discovery for every fix. Work at the task's current phase, reuse existing artifacts and authorization, and
+discovery for every fix. Work at the task's current lifecycle phase, reuse existing artifacts and authorization, and
 continue useful independent inspection while a configuration change is pending. A session-expiry fix may
 use frontend, auth, testing and browser QA without unrelated infrastructure or analytics work.
 
@@ -431,15 +433,19 @@ universal decommissioning procedure.
 `;
 }
 
-/** Phase entrypoints carry scope; the shared core owns routing and source bodies. */
-function phaseSkill(catalog, phase) {
-  const capabilities = phase.capabilities.map(cap => `- ${cap.title} (\`${cap.id}\`)`).join('\n');
-  return frontmatter(phase.name, `Use for the ${phase.phase} phase: ${phase.capabilities.map(cap => cap.title.toLowerCase()).join(', ')}. Work through the Finem core using original upstream specialists.`) + `
-# ${phase.displayName}
+/** Area entrypoints carry scope; the shared core owns routing and source bodies. */
+function areaSkill(catalog, area) {
+  const capabilities = area.capabilities.map(cap => `- ${cap.title} (\`${cap.id}\`)`).join('\n');
+  return frontmatter(area.name, `Use for ${area.title}: ${area.capabilities.map(cap => cap.title.toLowerCase()).join(', ')}. Work through the Finem core using original upstream specialists.`) + `
+# ${area.displayName}
 
-${phase.description}
+## Direction and expected outcomes
 
-## Phase scope
+${area.purpose}
+
+${area.deliverables.map(item => `- ${item}`).join('\n')}
+
+## Capability scope
 
 ${capabilities}
 
@@ -449,16 +455,18 @@ Locate the installed \`${CORE}\` using the host's available skill path; do not a
 folder. Open its \`skills/${COORDINATOR}/SKILL.md\`. If the core is missing or its version differs from
 this plugin, report that dependency before proceeding with this entrypoint.
 
-In plugin mode, supply this phase root to the core helper using \`--phase\` and select \`${phase.name}\`.
-Include installed prerequisite phase roots; the helper reports any required one that is absent. In CLI
+In plugin mode, supply this area root to the core helper using \`--area\` and select \`${area.name}\`.
+Include installed prerequisite area roots; the helper reports any required one that is absent. In CLI
 project mode, preserve the existing \`${CLI_STATE_DIR}/config.json\` profile and extension selection.
 
-This phase's \`capabilities.json\` lists its baseline capabilities and related internal option IDs.
+This area's \`capabilities.json\` lists its baseline capabilities and related internal option IDs.
 Its entrypoint paths explicitly belong to \`${CORE}\`, which contains the complete original source
 bodies, support files and licenses. Read the originals resolved by the core for the actual module.
 Framework/provider options activate only when selected; installation alone activates none of them.
+Use the expected outcomes relevant to the task and reuse existing artifacts; a small change does not
+require producing every listed deliverable.
 
-Return work and evidence to the single coordinator. This phase has no global router, hooks or automatic
+Return work and evidence to the single coordinator. This area has no global router, hooks or automatic
 runtime installation. Review relevant requirements and evidence without restarting earlier completed work.
 `;
 }
@@ -468,8 +476,8 @@ runtime installation. Review relevant requirements and evidence without restarti
 // ---------------------------------------------------------------------------
 
 function noticeFile(catalog, plugin) {
-  if (plugin.kind === 'phase') {
-    return `# Third-party notices — ${plugin.name}\n\nOriginals referenced by this phase are stored in the shared \`${CORE}\` plugin.\nIts \`NOTICE.md\` and \`upstream.lock.json\` record the original licenses, source revisions and hashes.\nThis phase's own entrypoint and metadata are MIT licensed.\n`;
+  if (plugin.kind === 'area') {
+    return `# Third-party notices — ${plugin.name}\n\nOriginals referenced by this area are stored in the shared \`${CORE}\` plugin.\nIts \`NOTICE.md\` and \`upstream.lock.json\` record the original licenses, source revisions and hashes.\nThis area's own entrypoint and metadata are MIT licensed.\n`;
   }
   const blocks = plugin.sources.map(id => {
     const source = catalog.sources.get(id);
@@ -547,7 +555,7 @@ function codexManifest(catalog, plugin) {
       ]
     : [
         `Use the ${plugin.displayName} guidance for this change.`,
-        `Review this change against the ${plugin.phase} phase guidance.`,
+        `Review this change against ${plugin.title}.`,
       ];
 
   return {
@@ -565,7 +573,7 @@ function codexManifest(catalog, plugin) {
       shortDescription: plugin.shortDescription,
       longDescription: plugin.kind === 'core'
         ? oneLine(`Coordinates ${catalog.stack.capabilities.length} engineering capabilities. Stores the
-            complete shared original library; phase plugins expose scoped entrypoints and technology
+            complete shared original library; area plugins expose scoped entrypoints and technology
             options activate only when selected for the current module.`)
         : oneLine(`${plugin.description} Requires ${plugin.dependencies.join(', ')}. Framework choices
             remain internal options validated by the single core coordinator.`),
@@ -581,14 +589,14 @@ function codexManifest(catalog, plugin) {
 
 function capabilitiesFile(catalog, plugin) {
   return {
-    schemaVersion: 2,
+    schemaVersion: 3,
     plugin: plugin.name,
     kind: plugin.kind,
     version: catalog.version,
     dependencies: plugin.dependencies,
     ...(plugin.kind === 'core'
-      ? { layout: 'phases', phasePlugins: plugin.phasePlugins, technologyOptions: plugin.technologyOptions }
-      : { phase: plugin.phase, options: plugin.options }),
+      ? { layout: 'areas', areaPlugins: plugin.areaPlugins, legacyPhases: plugin.legacyPhases, technologyOptions: plugin.technologyOptions }
+      : { area: plugin.area, title: plugin.title, purpose: plugin.purpose, deliverables: plugin.deliverables, options: plugin.options }),
     capabilities: plugin.capabilities,
     sources: plugin.sources.map(id => {
       const s = catalog.sources.get(id);
@@ -619,7 +627,7 @@ function lockSubset(catalog, plugin) {
 function pluginReadme(catalog, plugin) {
   const capRows = plugin.capabilities
     .filter(c => c.entrypoints.length)
-    .map(c => `| ${c.title} | ${plugin.kind === 'core' ? 'shared library' : 'phase baseline'} | ${c.entrypoints.length} |`)
+    .map(c => `| ${c.title} | ${plugin.kind === 'core' ? 'shared library' : 'area baseline'} | ${c.entrypoints.length} |`)
     .join('\n');
 
   const codexInstall = [...plugin.dependencies, plugin.name]
@@ -632,8 +640,8 @@ function pluginReadme(catalog, plugin) {
         in order.`) + '\n\n'
     : '';
 
-  const bundled = plugin.kind === 'phase'
-    ? `Native phase entries: 1. Original bodies live in the shared \`${CORE}\` dependency; this plugin contains no copied originals. Internal options: ${plugin.options.map(id => `\`${id}\``).join(', ') || 'none'}.`
+  const bundled = plugin.kind === 'area'
+    ? `Native area entries: 1. Original bodies live in the shared \`${CORE}\` dependency; this plugin contains no copied originals. Internal options: ${plugin.options.map(id => `\`${id}\``).join(', ') || 'none'}.`
     : oneLine(`Native skills: 1. Bundled originals: ${plugin.skillCount} from
     ${plugin.sources.length} source ${plugin.sources.length === 1 ? 'repository' : 'repositories'}
     (${plugin.sources.join(', ')}), unmodified under \`upstream/\`. See \`NOTICE.md\` for licenses and
@@ -677,7 +685,7 @@ function writePlugin(catalog, plugin, outRoot) {
   }
 
   const skillName = plugin.kind === 'core' ? COORDINATOR : plugin.name;
-  const body = plugin.kind === 'core' ? coordinatorSkill(catalog, plugin) : phaseSkill(catalog, plugin);
+  const body = plugin.kind === 'core' ? coordinatorSkill(catalog, plugin) : areaSkill(catalog, plugin);
   writeText(path.join(root, 'skills', skillName, 'SKILL.md'), body);
 
   writeJSON(path.join(root, '.claude-plugin', 'plugin.json'), claudeManifest(catalog, plugin));
@@ -698,7 +706,7 @@ function writeMarketplaces(catalog, plugins, outRoot) {
     name: MARKETPLACE,
     owner: OWNER,
     description: oneLine(`${BRAND} engineering: one coordinator plus ${plugins.length - 1}
-      lifecycle phases sharing ${catalog.skills.size} original skills from ${catalog.sources.size} pinned
+      engineering disciplines sharing ${catalog.skills.size} original skills from ${catalog.sources.size} pinned
       Git sources.`),
     version: catalog.version,
     plugins: plugins.map(p => ({
@@ -710,7 +718,7 @@ function writeMarketplaces(catalog, plugins, outRoot) {
       homepage: REPO_URL,
       license: 'MIT',
       category: 'workflow',
-      keywords: [PREFIX, p.phase ?? 'core'],
+      keywords: [PREFIX, p.area ?? 'core'],
     })),
   });
 
@@ -727,30 +735,32 @@ function writeMarketplaces(catalog, plugins, outRoot) {
 }
 
 function rootReadme(catalog, plugins) {
-  const phases = plugins.filter(plugin => plugin.kind === 'phase');
-  const rows = phases.map(phase => `| \`${phase.name}\` | ${phase.capabilities.map(cap => cap.title).join(', ')} |`).join('\n');
+  const areas = plugins.filter(plugin => plugin.kind === 'area');
+  const rows = areas.map(area => `| **${area.title}** (\`${area.name}\`) | ${area.capabilities.map(cap => cap.title).join(', ')} |`).join('\n');
   const installs = host => plugins.map(plugin => `${host === 'claude' ? 'claude plugin install' : 'codex plugin add'} ${plugin.name}@${MARKETPLACE}`).join('\n');
   return `# ${BRAND} Engineering
 
-**${plugins.length} native plugins: one Core + ${phases.length} lifecycle phases.**
+**${plugins.length} native plugins: one Core + ${areas.length} engineering disciplines.**
 ${catalog.stack.capabilities.length} capabilities, ${catalog.skills.size} complete selected original skills,
 ${catalog.sources.size} pinned Git sources and ${catalog.stack.extensions.length} internal technology options.
 
-Version ${catalog.version} groups the previous technology plugins by their existing engineering phases.
-The number follows the lifecycle; it is not a target. Every original source body is stored **once** in
-\`${CORE}/upstream/\`, with its references, helpers, license, pinned revision and file hashes. Phase plugins
+Version ${catalog.version} gives UI/UX, infrastructure, security and the other engineering disciplines
+their own clear scope and expected outcomes. Every original source body is stored **once** in
+\`${CORE}/upstream/\`, with its references, helpers, license, pinned revision and file hashes. Area plugins
 provide scoped entrypoints and metadata. They use the same single coordinator.
 
-## Phase plugins
+## Engineering plugins
 
 | Plugin | Scope |
 | --- | --- |
 | \`${CORE}\` | One workflow, shared original library, technology selection and compatibility checks |
 ${rows}
 
-Build keeps frontend/mobile, backend/data and platform choices separate internally. A Vue project selects
-Vue/Nuxt guidance; installing Build does not activate all frameworks or providers. The phases scope the
-work; they do not impose a waterfall process. Existing discovery, architecture and test evidence can be reused.
+UI/UX owns flows, design systems and accessibility. Frontend & Mobile implements interfaces; Backend &
+Data implements services and persistence. Infrastructure & DevOps owns CI, releases, deployments, rollback
+and costs. Security & Privacy owns auth, IAM, security review and privacy. Each plugin includes its purpose
+and expected deliverables. Original lifecycle tags remain in the capability metadata. Existing evidence
+can satisfy prerequisites without repeating completed work.
 
 ## Install the full stack
 
@@ -769,23 +779,23 @@ ${installs('codex')}
 \`\`\`
 
 For local validation, add the path to this checkout as the marketplace instead of the GitHub repository.
-Claude declares the Core dependency for every phase. Codex requires Core to be installed explicitly.
-The full-stack commands install all phases; the coordinator only activates those relevant to the task.
-For a subset, install Core plus the required phases. Capability prerequisites may require another phase:
-Build uses Design and Context; a missing phase is reported by the selection helper.
+Claude declares the Core dependency for every area. Codex requires Core to be installed explicitly.
+The full-stack commands install all areas; the coordinator only activates those relevant to the task.
+For a subset, install Core plus the required areas. Capability prerequisites may require another area:
+Frontend & Mobile uses Architecture & API Design and Product & Planning; a missing area is reported by the selection helper.
 
 ## Selection and layout
 
 \`\`\`text
 plugins/finem-core/
   skills/finem-engineering/SKILL.md   single coordinator
-  capabilities.json                 phase registry + internal technology options
+  capabilities.json                 area registry + internal technology options
   scripts/resolve-packs.js           read-only selection and validation
   upstream.lock.json                 all source pins, hashes and original file modes
   upstream/<source>/...              complete selected originals, stored once
-plugins/finem-<phase>/
-  skills/finem-<phase>/SKILL.md       scoped phase entry
-  capabilities.json                 phase capabilities + related option IDs
+plugins/finem-<area>/
+  skills/finem-<area>/SKILL.md       scoped area entry
+  capabilities.json                 area capabilities + related option IDs
 .claude-plugin/marketplace.json      Claude Code; same plugin files
 .agents/plugins/marketplace.json     Codex; same plugin files
 \`\`\`
@@ -793,7 +803,7 @@ plugins/finem-<phase>/
 Use actual host-discovered plugin paths rather than guessing cache siblings:
 
 \`\`\`text
-node "<core>/scripts/resolve-packs.js" --core "<core>" --phase "<context>" --phase "<design>" --phase "<build>" --select finem-build --extensions nuxt,xylex-ui-polish
+node "<core>/scripts/resolve-packs.js" --core "<core>" --area "<product>" --area "<architecture>" --area "<frontend>" --select finem-frontend-mobile --extensions nuxt,xylex-ui-polish
 \`\`\`
 
 The helper expands capability prerequisites, validates matching plugin versions and resolves required
@@ -806,13 +816,17 @@ An existing \`.l11/config.json\` remains authoritative in project mode.
 
 ## Migration and limits
 
-See [migration and architecture](docs/phase-plugins.md) and the complete
-[old-plugin to phase mapping](docs/plugin-migration.json). Old option names such as \`finem-nuxt\` are
-accepted by \`--extensions\` as aliases. Old plugin folders are not phase roots: upgrade Core and install
-the new phases together, then disable the old technology plugin entries in the host. No local installed
+See [migration and architecture](docs/area-plugins.md) and the complete
+[old-plugin to area mapping](docs/plugin-migration.json). Old option names such as \`finem-nuxt\` are
+accepted by \`--extensions\` as aliases. Old plugin folders are not area roots: upgrade Core and install
+the new areas together, then disable the old technology plugin entries in the host. No local installed
 plugin cache is changed by building this repository.
 
-${catalog.sources.has('xylex') ? 'All ten XYLEX originals remain available through internal options; see [provenance and prerequisites](docs/xylex-integration.md). The old three native XYLEX entries are now covered by Design, Build, Verify and Evolve according to their capability mappings.\n' : ''}
+The seven 0.6 phase selectors remain supported with their exact capability scope. For example,
+\`--select finem-build\` resolves the former Build capabilities through the new area plugins.
+\`--phase PATH\` remains an alias for \`--area PATH\`; paths must point to the current area plugins.
+
+${catalog.sources.has('xylex') ? 'All ten XYLEX originals remain available through internal options; see [provenance and prerequisites](docs/xylex-integration.md). Their mappings attach to Architecture, UI/UX, Frontend, Testing & Quality and Maintenance & Documentation.\n' : ''}
 The plugins carry guidance and original helper sources; they do not install runtimes or connect MCP
 accounts. Real browser/provider execution depends on the project environment. Known upstream limitations,
 including partial retirement coverage and the XYLEX Windows metrics caveat, remain in source notices.
@@ -829,7 +843,7 @@ python -m unittest discover -s tests -v
 \`\`\`
 
 Edit the catalog, generator or canonical helpers; generated plugin files are derived artifacts. Tests
-cover phase ownership, complete original bytes, shared-library paths, prerequisites, framework conflicts,
+cover area ownership, complete original bytes, shared-library paths, prerequisites, framework conflicts,
 selection order and migration aliases. GitHub Actions runs on Windows/Linux and Node 22/24.
 
 ## Licensing
@@ -896,11 +910,11 @@ function main() {
 
   const catalog = loadCatalog(catalogRoot);
   const plugins = describeAll(catalog);
-  const phaseDoc = fs.readFileSync(path.join(__dirname, 'docs/phase-plugins.md'), 'utf8');
+  const areaDoc = fs.readFileSync(path.join(__dirname, 'docs/area-plugins.md'), 'utf8');
   const xylexDoc = catalog.sources.has('xylex')
     ? fs.readFileSync(path.join(catalogRoot, 'docs/xylex-integration.md'), 'utf8').replace(
       /## Native Finem plugin mode[\s\S]*?(?=## Scope and prerequisites)/,
-      '## Native Finem plugin mode\n\nSince Finem 0.6, these three IDs are internal technology options, not separate native plugins. Install the phase plugins and select the desired options through the core coordinator. Architecture belongs to Design; UI polish to Design/Build; code audit to Design/Verify/Evolve.\n\nThe complete 66-file XYLEX bundle lives once in `finem-core/upstream/xylex/`. Phase entrypoints reference that shared library. Original bytes, supporting references and selection conflicts are unchanged. Native mode needs no `.l11/` or L11 CLI. See [phase architecture and migration](phase-plugins.md).\n\n') : null;
+      '## Native Finem plugin mode\n\nSince Finem 0.7, these three IDs are internal technology options, not separate native plugins. Install the area plugins and select the desired options through the core coordinator. Architecture belongs to Architecture & API Design; UI polish to UI/UX and Frontend; code audit to Architecture, Testing & Quality and Maintenance & Documentation.\n\nThe complete 66-file XYLEX bundle lives once in `finem-core/upstream/xylex/`. Area entrypoints reference that shared library. Original bytes, supporting references and selection conflicts are unchanged. Native mode needs no `.l11/` or L11 CLI. See [area architecture and migration](area-plugins.md).\n\n') : null;
 
   rmrf(path.join(outRoot, 'plugins'));
   for (const plugin of plugins) {
@@ -910,7 +924,7 @@ function main() {
 
   writeMarketplaces(catalog, plugins, outRoot);
   writeJSON(path.join(outRoot, 'docs/plugin-migration.json'), migrationMap(plugins[0]));
-  writeText(path.join(outRoot, 'docs/phase-plugins.md'), phaseDoc);
+  writeText(path.join(outRoot, 'docs/area-plugins.md'), areaDoc);
   writeText(path.join(outRoot, 'README.md'), rootReadme(catalog, plugins));
   if (xylexDoc !== null) writeText(path.join(outRoot, 'docs/xylex-integration.md'), xylexDoc);
   // Pure MIT text at the root so GitHub's licence detection picks it up; the

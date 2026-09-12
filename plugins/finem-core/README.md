@@ -1,6 +1,6 @@
 # Finem Engineering core
 
-The single engineering coordinator and shared original skill library for every lifecycle phase.
+The single engineering coordinator and shared original skill library for product, architecture, UI/UX, implementation, infrastructure, security and operations.
 
 **Claude Code**
 

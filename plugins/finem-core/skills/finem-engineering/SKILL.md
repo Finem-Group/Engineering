@@ -17,7 +17,7 @@ Check whether `.l11/config.json` exists in the project root.
   `.l11/config.json`, `.l11/capabilities.json` and `.l11/tools.json`,
   and resolve originals under `.l11/upstream/<source>/`. The CLI owns the selection; follow
   "Project mode" below.
-- **Absent — plugin mode.** Select relevant installed phases and the module's technology options. Follow
+- **Absent — plugin mode.** Select relevant installed areas and the module's technology options. Follow
   "Plugin mode" below. Do not invent a `.l11/` directory and do not run `l11`
   commands; they are not installed in this mode.
 
@@ -31,33 +31,33 @@ levels above this `SKILL.md` (`<plugin root>/skills/finem-engineering/SKILL.md`)
 path below against that root.
 
 The read-only helper below loads `capabilities.json` in this plugin root. It contains the base registry,
-`phasePlugins` and `technologyOptions`. Inspect the selected helper result and relevant phase metadata
+`areaPlugins` and `technologyOptions`. Inspect the selected helper result and relevant area metadata
 to keep task context compact. Every original lives here under `upstream/`, once, and opens on demand.
 
-Find the installed phase plugin roots from the host's available skill paths. Each phase has one scoped
+Find the installed area plugin roots from the host's available skill paths. Each area has one scoped
 entry skill and capability map. Never guess sibling paths: host caches use separate version directories.
-Select phases relevant to the current task and technology options from the module's manifests, lockfiles,
+Select areas relevant to the current task and technology options from the module's manifests, lockfiles,
 existing project choices and user instructions. Keep different monorepo modules' selections separate.
 
-Run the read-only helper (Node 18+) with this core's actual root, one `--phase` for each available phase
-root, `--select` for the requested phase plugin names and optional `--extensions` for technology IDs:
+Run the read-only helper (Node 18+) with this core's actual root, one `--area` for each available area
+root, `--select` for the requested area plugin names and optional `--extensions` for technology IDs:
 
 ```text
-node "<core root>/scripts/resolve-packs.js" --core "<core root>" --phase "<context root>" --phase "<design root>" --phase "<build root>" --select finem-build --extensions nuxt
+node "<core root>/scripts/resolve-packs.js" --core "<core root>" --area "<product root>" --area "<architecture root>" --area "<frontend root>" --select finem-frontend-mobile --extensions nuxt
 ```
 
-The helper resolves capability prerequisites across installed phases, rejects missing phases or mixed
+The helper resolves capability prerequisites across installed areas, rejects missing areas or mixed
 plugin versions, then validates technology dependencies, conflicts and exclusive groups. Nuxt includes
 Vue as an internal option; neither is a separate native plugin. Replacements run before additions.
-Installing Build does not activate React, Vue, Svelte and every backend together. With no phase selection,
-no capability is active. Extra installed phases stay inactive unless a capability prerequisite needs them.
+Select the module's actual framework and provider options before opening specialist guidance. With no area selection,
+no capability is active. Extra installed areas stay inactive unless a capability prerequisite needs them.
 
-Only the result's `active` phase plugins, `extensions` and resolved `capabilities` apply. A prerequisite
-adds the required capability, not every task in its phase. Reuse existing artifacts; a small fix does not
+Only the result's `active` area plugins, `extensions` and resolved `capabilities` apply. A prerequisite
+adds the required capability, not every task in its area. Reuse existing artifacts; a small fix does not
 require repeating discovery or running the entire lifecycle. Open the resolved original `SKILL.md` and
 its references when relevant; never substitute a short wrapper for its body.
 
-Report missing phase plugins instead of silently installing them. If a framework choice is ambiguous,
+Report missing area plugins instead of silently installing them. If a framework choice is ambiguous,
 ask for that choice while continuing unrelated work. If Node is unavailable, apply the same metadata
 checks manually and say the helper was not run. A helper error must never activate everything.
 These plugins do not create project configuration or install framework/provider runtimes.
@@ -82,7 +82,7 @@ cross-skill references do not activate a new global workflow; required reference
 loaded within the selected task.
 
 Capability `requires` edges provide installed coverage and prerequisites; they do not require repeating
-discovery for every fix. Work at the task's current phase, reuse existing artifacts and authorization, and
+discovery for every fix. Work at the task's current lifecycle phase, reuse existing artifacts and authorization, and
 continue useful independent inspection while a configuration change is pending. A session-expiry fix may
 use frontend, auth, testing and browser QA without unrelated infrastructure or analytics work.
 

@@ -78,27 +78,27 @@ function resolveSelection(core, packs, selected) {
   return { active: names, capabilities: [...capabilities.values()] };
 }
 
-function resolvePhases(core, phases, selected, extensions = []) {
-  if (core.kind !== 'core' || core.schemaVersion !== 2 || core.layout !== 'phases') {
-    throw new Error('Phase selection requires the 0.6+ core; update the core and phase plugins together');
+function resolveAreas(core, areas, selected, extensions = []) {
+  if (core.kind !== 'core' || core.schemaVersion !== 3 || core.layout !== 'areas') {
+    throw new Error('Area selection requires the 0.7+ core; update the core and area plugins together');
   }
-  const expected = new Map(core.phasePlugins.map(phase => [phase.plugin, phase]));
+  const expected = new Map(core.areaPlugins.map(area => [area.plugin, area]));
   const available = new Map();
-  for (const phase of phases) {
-    const definition = expected.get(phase.plugin);
-    if (phase.kind !== 'phase' || !definition || available.has(phase.plugin)) {
-      throw new Error(`Invalid or duplicate phase plugin: ${phase.plugin}`);
+  for (const area of areas) {
+    const definition = expected.get(area.plugin);
+    if (area.kind !== 'area' || !definition || available.has(area.plugin)) {
+      throw new Error(`Invalid or duplicate area plugin: ${area.plugin}`);
     }
-    if (phase.version !== core.version || phase.schemaVersion !== core.schemaVersion) {
-      throw new Error(`Plugin version mismatch: ${phase.plugin}; update it together with ${core.plugin}`);
+    if (area.version !== core.version || area.schemaVersion !== core.schemaVersion) {
+      throw new Error(`Plugin version mismatch: ${area.plugin}; update it together with ${core.plugin}`);
     }
-    if (phase.phase !== definition.phase || JSON.stringify(phase.capabilities) !== JSON.stringify(core.capabilities.filter(cap => cap.phase === definition.phase))) {
-      throw new Error(`Phase capability mismatch: ${phase.plugin}`);
+    if (area.area !== definition.area || JSON.stringify(area.capabilities) !== JSON.stringify(core.capabilities.filter(cap => definition.capabilities.includes(cap.id)))) {
+      throw new Error(`Area capability mismatch: ${area.plugin}`);
     }
-    available.set(phase.plugin, phase);
+    available.set(area.plugin, area);
   }
   const byCapability = new Map(core.capabilities.map(cap => [cap.id, cap]));
-  const owner = new Map(core.phasePlugins.flatMap(phase => phase.capabilities.map(id => [id, phase.plugin])));
+  const owner = new Map(core.areaPlugins.flatMap(area => area.capabilities.map(id => [id, area.plugin])));
   const active = new Set([core.plugin]);
   const included = new Set();
   const visiting = new Set();
@@ -108,7 +108,7 @@ function resolvePhases(core, phases, selected, extensions = []) {
     const cap = byCapability.get(id);
     if (!cap) throw new Error(`Unknown capability dependency: ${id}`);
     const plugin = owner.get(id);
-    if (!available.has(plugin)) throw new Error(`Required phase plugin is not available: ${plugin} (for ${id})`);
+    if (!available.has(plugin)) throw new Error(`Required area plugin is not available: ${plugin} (for ${id})`);
     visiting.add(id);
     for (const dependency of cap.requires ?? []) include(dependency);
     visiting.delete(id);
@@ -117,9 +117,14 @@ function resolvePhases(core, phases, selected, extensions = []) {
   }
   for (const name of [...new Set(selected)].sort()) {
     if (name === core.plugin) continue;
-    const phase = available.get(name);
-    if (!phase) throw new Error(`Selected phase plugin is not available: ${name}`);
-    for (const cap of phase.capabilities) include(cap.id);
+    const legacy = (core.legacyPhases ?? []).find(phase => phase.plugin === name);
+    if (legacy) {
+      for (const id of legacy.capabilities) include(id);
+      continue;
+    }
+    const area = available.get(name);
+    if (!area) throw new Error(`Selected area plugin is not available: ${name}`);
+    for (const cap of area.capabilities) include(cap.id);
   }
   const prefix = core.plugin.replace(/core$/, '');
   const normalize = name => name.startsWith(prefix) ? name : prefix + name;
@@ -152,16 +157,16 @@ function main(args) {
   for (let i = 0; i < args.length; i += 2) {
     const [option, value] = args.slice(i, i + 2);
     if (value === undefined || value.startsWith('--')) throw new Error(`Missing value for ${option}`);
-    if (seen.has(option) && option !== '--phase') throw new Error(`Repeated option: ${option}`);
+    if (seen.has(option) && !['--area', '--phase'].includes(option)) throw new Error(`Repeated option: ${option}`);
     seen.add(option);
     if (option === '--core' && coreRoot === undefined) coreRoot = value;
-    else if (option === '--phase') packRoots.push(value);
+    else if (['--area', '--phase'].includes(option)) packRoots.push(value);
     else if (option === '--select') selected = value.split(',').map(name => name.trim()).filter(Boolean);
     else if (option === '--extensions') extensions = value.split(',').map(name => name.trim()).filter(Boolean);
     else throw new Error(`Unknown or repeated option: ${option}`);
   }
-  if (!coreRoot) throw new Error('Usage: resolve-packs.js --core PATH [--phase PATH ...] [--select finem-PHASE,...] [--extensions ID,...]');
-  const result = resolvePhases(readPlugin(coreRoot), packRoots.map(readPlugin), selected, extensions);
+  if (!coreRoot) throw new Error('Usage: resolve-packs.js --core PATH [--area PATH ...] [--select finem-AREA,...] [--extensions ID,...]');
+  const result = resolveAreas(readPlugin(coreRoot), packRoots.map(readPlugin), selected, extensions);
   process.stdout.write(JSON.stringify(result, null, 2) + '\n');
 }
 
@@ -170,4 +175,4 @@ if (require.main === module) {
   catch (error) { process.stderr.write(error.message + '\n'); process.exitCode = 1; }
 }
 
-module.exports = { resolveSelection, resolvePhases };
+module.exports = { resolveSelection, resolveAreas };

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.0
+
+- Give UI/UX, Infrastructure & DevOps, Security & Privacy and seven other engineering disciplines their own names, purpose and expected deliverables, with one shared Core.
+- Assign each of the 43 capabilities to one area while preserving its original lifecycle tag and skill mappings. Frontend work now selects its own narrow scope instead of the entire former Build bundle.
+- Preserve 0.6 phase selectors with their exact capability scope and map both previous plugin layouts to the new areas. Existing CLI profiles and all 56 technology choices stay compatible.
+- Retain all 180 original skills and 2,651 original/support files byte for byte in the shared library.
+
 ## 0.6.0
 
 - Consolidate 57 native plugins into one Core and seven existing lifecycle phases: Context, Design, Build, Verify, Deliver, Operate and Evolve.

@@ -1,0 +1,34 @@
+{
+  "name": "finem-frontend-mobile",
+  "version": "0.7.0",
+  "description": "Implement the interface in the project's actual web or mobile framework, connecting state, navigation and API boundaries.",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "frontend"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Frontend & Mobile",
+    "shortDescription": "Frontend & Mobile: original engineering specialists through one shared workflow.",
+    "longDescription": "Implement the interface in the project's actual web or mobile framework, connecting state, navigation and API boundaries. Requires finem-core. Framework choices remain internal options validated by the single core coordinator.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use the Finem Frontend & Mobile guidance for this change.",
+      "Review this change against Frontend & Mobile."
+    ]
+  }
+}

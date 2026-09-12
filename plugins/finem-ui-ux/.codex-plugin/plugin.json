@@ -1,0 +1,36 @@
+{
+  "name": "finem-ui-ux",
+  "version": "0.7.0",
+  "description": "Design useful, accessible interfaces with coherent visual language, interaction states and motion.",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "ux",
+    "design-system",
+    "accessibility"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem UI/UX & Design System",
+    "shortDescription": "UI/UX & Design System: original engineering specialists through one shared workflow.",
+    "longDescription": "Design useful, accessible interfaces with coherent visual language, interaction states and motion. Requires finem-core. Framework choices remain internal options validated by the single core coordinator.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use the Finem UI/UX & Design System guidance for this change.",
+      "Review this change against UI/UX & Design System."
+    ]
+  }
+}

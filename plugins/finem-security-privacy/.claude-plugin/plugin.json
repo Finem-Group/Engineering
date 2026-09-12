@@ -1,0 +1,24 @@
+{
+  "name": "finem-security-privacy",
+  "version": "0.7.0",
+  "description": "Protect identity, permissions, secrets and personal data, and assess concrete security risks in the implementation.",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "auth",
+    "secrets-iam",
+    "security",
+    "privacy-compliance"
+  ],
+  "skills": "./skills",
+  "dependencies": [
+    "finem-core"
+  ]
+}

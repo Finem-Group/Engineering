@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 3,
+  "plugin": "finem-maintenance-documentation",
+  "kind": "area",
+  "version": "0.7.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "area": "maintenance-documentation",
+  "title": "Maintenance & Documentation",
+  "purpose": "Keep the system understandable and support safe dependency changes, deprecation and eventual retirement.",
+  "deliverables": [
+    "Maintenance and dependency updates",
+    "Migration and deprecation plans",
+    "Documentation and operational runbooks",
+    "Retirement assessment with explicit coverage limits"
+  ],
+  "options": [
+    "advanced-testing",
+    "intent-audit",
+    "kotlin-mobile",
+    "migration-prisma-v7",
+    "migration-prisma-mongodb",
+    "xylex-code-audit"
+  ],
+  "capabilities": [
+    {
+      "id": "maintenance",
+      "title": "Maintenance",
+      "phase": "evolve",
+      "requires": [],
+      "connectors": [
+        "github"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "superpowers:systematic-debugging",
+          "source": "superpowers",
+          "plugin": "finem-core",
+          "path": "upstream/superpowers/skills/systematic-debugging/SKILL.md"
+        },
+        {
+          "skill": "addy:code-simplification",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/code-simplification/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "dependencies",
+      "title": "Dependencies",
+      "phase": "evolve",
+      "requires": [],
+      "connectors": [
+        "github",
+        "context7"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:dependency-upgrade",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/framework-migration/skills/dependency-upgrade/SKILL.md"
+        },
+        {
+          "skill": "pulumi:provider-upgrade",
+          "source": "pulumi",
+          "plugin": "finem-core",
+          "path": "upstream/pulumi/pulumi/skills/provider-upgrade/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "migration-deprecation",
+      "title": "Migration/deprecation",
+      "phase": "evolve",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "github"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:deprecation-and-migration",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/deprecation-and-migration/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "retirement",
+      "title": "Retirement",
+      "phase": "evolve",
+      "requires": [
+        "migration-deprecation"
+      ],
+      "connectors": [
+        "cloud-provider",
+        "db-provider"
+      ],
+      "coverage": "partial",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:deprecation-and-migration",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/deprecation-and-migration/SKILL.md"
+        },
+        {
+          "skill": "wshobson:gdpr-data-handling",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/hr-legal-compliance/skills/gdpr-data-handling/SKILL.md"
+        },
+        {
+          "skill": "wshobson:cost-optimization",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/cloud-infrastructure/skills/cost-optimization/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "documentation-runbooks",
+      "title": "Documentation/runbooks",
+      "phase": "evolve",
+      "requires": [],
+      "connectors": [],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:documentation-and-adrs",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/documentation-and-adrs/SKILL.md"
+        },
+        {
+          "skill": "wshobson:incident-runbook-templates",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/incident-response/skills/incident-runbook-templates/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": []
+}

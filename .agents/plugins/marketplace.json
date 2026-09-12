@@ -17,10 +17,10 @@
       "category": "Developer Tools"
     },
     {
-      "name": "finem-context",
+      "name": "finem-product-planning",
       "source": {
         "source": "local",
-        "path": "./plugins/finem-context"
+        "path": "./plugins/finem-product-planning"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -29,10 +29,10 @@
       "category": "Developer Tools"
     },
     {
-      "name": "finem-design",
+      "name": "finem-architecture",
       "source": {
         "source": "local",
-        "path": "./plugins/finem-design"
+        "path": "./plugins/finem-architecture"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -41,10 +41,10 @@
       "category": "Developer Tools"
     },
     {
-      "name": "finem-build",
+      "name": "finem-ui-ux",
       "source": {
         "source": "local",
-        "path": "./plugins/finem-build"
+        "path": "./plugins/finem-ui-ux"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -53,10 +53,10 @@
       "category": "Developer Tools"
     },
     {
-      "name": "finem-verify",
+      "name": "finem-frontend-mobile",
       "source": {
         "source": "local",
-        "path": "./plugins/finem-verify"
+        "path": "./plugins/finem-frontend-mobile"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -65,10 +65,10 @@
       "category": "Developer Tools"
     },
     {
-      "name": "finem-deliver",
+      "name": "finem-backend-data",
       "source": {
         "source": "local",
-        "path": "./plugins/finem-deliver"
+        "path": "./plugins/finem-backend-data"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -77,10 +77,10 @@
       "category": "Developer Tools"
     },
     {
-      "name": "finem-operate",
+      "name": "finem-infrastructure-devops",
       "source": {
         "source": "local",
-        "path": "./plugins/finem-operate"
+        "path": "./plugins/finem-infrastructure-devops"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -89,10 +89,46 @@
       "category": "Developer Tools"
     },
     {
-      "name": "finem-evolve",
+      "name": "finem-security-privacy",
       "source": {
         "source": "local",
-        "path": "./plugins/finem-evolve"
+        "path": "./plugins/finem-security-privacy"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-testing-quality",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-testing-quality"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-observability-reliability",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-observability-reliability"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "finem-maintenance-documentation",
+      "source": {
+        "source": "local",
+        "path": "./plugins/finem-maintenance-documentation"
       },
       "policy": {
         "installation": "AVAILABLE",

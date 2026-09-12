@@ -1,0 +1,24 @@
+{
+  "name": "finem-testing-quality",
+  "version": "0.7.0",
+  "description": "Verify behavior, integrations and performance and review whether the change is correct and maintainable.",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "testing",
+    "browser-qa",
+    "performance",
+    "code-review-quality-gates"
+  ],
+  "skills": "./skills",
+  "dependencies": [
+    "finem-core"
+  ]
+}

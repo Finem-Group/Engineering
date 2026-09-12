@@ -1,14 +1,128 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "plugin": "finem-core",
   "kind": "core",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "dependencies": [],
-  "layout": "phases",
-  "phasePlugins": [
+  "layout": "areas",
+  "areaPlugins": [
+    {
+      "plugin": "finem-product-planning",
+      "area": "product-planning",
+      "title": "Product & Planning",
+      "capabilities": [
+        "product-discovery",
+        "requirements",
+        "feasibility",
+        "planning-task-decomposition",
+        "product-analytics-feedback"
+      ]
+    },
+    {
+      "plugin": "finem-architecture",
+      "area": "architecture",
+      "title": "Architecture & API Design",
+      "capabilities": [
+        "architecture",
+        "adrs",
+        "domain-modeling",
+        "api-contracts"
+      ]
+    },
+    {
+      "plugin": "finem-ui-ux",
+      "area": "ui-ux",
+      "title": "UI/UX & Design System",
+      "capabilities": [
+        "ux",
+        "design-system",
+        "accessibility"
+      ]
+    },
+    {
+      "plugin": "finem-frontend-mobile",
+      "area": "frontend-mobile",
+      "title": "Frontend & Mobile",
+      "capabilities": [
+        "frontend"
+      ]
+    },
+    {
+      "plugin": "finem-backend-data",
+      "area": "backend-data",
+      "title": "Backend & Data",
+      "capabilities": [
+        "backend",
+        "database",
+        "migrations",
+        "async-jobs-events"
+      ]
+    },
+    {
+      "plugin": "finem-infrastructure-devops",
+      "area": "infrastructure-devops",
+      "title": "Infrastructure & DevOps",
+      "capabilities": [
+        "infrastructure",
+        "networking",
+        "ci",
+        "release",
+        "deployment",
+        "rollback",
+        "cost-finops",
+        "configuration-environments"
+      ]
+    },
+    {
+      "plugin": "finem-security-privacy",
+      "area": "security-privacy",
+      "title": "Security & Privacy",
+      "capabilities": [
+        "auth",
+        "secrets-iam",
+        "security",
+        "privacy-compliance"
+      ]
+    },
+    {
+      "plugin": "finem-testing-quality",
+      "area": "testing-quality",
+      "title": "Testing & Quality",
+      "capabilities": [
+        "testing",
+        "browser-qa",
+        "performance",
+        "code-review-quality-gates"
+      ]
+    },
+    {
+      "plugin": "finem-observability-reliability",
+      "area": "observability-reliability",
+      "title": "Observability & Reliability",
+      "capabilities": [
+        "observability",
+        "slos",
+        "incident-response",
+        "postmortem",
+        "reliability-resilience"
+      ]
+    },
+    {
+      "plugin": "finem-maintenance-documentation",
+      "area": "maintenance-documentation",
+      "title": "Maintenance & Documentation",
+      "capabilities": [
+        "maintenance",
+        "dependencies",
+        "migration-deprecation",
+        "retirement",
+        "documentation-runbooks"
+      ]
+    }
+  ],
+  "legacyPhases": [
     {
       "plugin": "finem-context",
-      "phase": "context",
       "capabilities": [
         "product-discovery",
         "requirements",
@@ -18,7 +132,6 @@
     },
     {
       "plugin": "finem-design",
-      "phase": "design",
       "capabilities": [
         "architecture",
         "adrs",
@@ -32,7 +145,6 @@
     },
     {
       "plugin": "finem-build",
-      "phase": "build",
       "capabilities": [
         "frontend",
         "backend",
@@ -48,7 +160,6 @@
     },
     {
       "plugin": "finem-verify",
-      "phase": "verify",
       "capabilities": [
         "ci",
         "testing",
@@ -61,7 +172,6 @@
     },
     {
       "plugin": "finem-deliver",
-      "phase": "deliver",
       "capabilities": [
         "release",
         "deployment",
@@ -70,7 +180,6 @@
     },
     {
       "plugin": "finem-operate",
-      "phase": "operate",
       "capabilities": [
         "observability",
         "slos",
@@ -81,7 +190,6 @@
     },
     {
       "plugin": "finem-evolve",
-      "phase": "evolve",
       "capabilities": [
         "maintenance",
         "dependencies",

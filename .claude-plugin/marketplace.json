@@ -4,14 +4,14 @@
     "name": "Finem Group",
     "url": "https://github.com/Finem-Group"
   },
-  "description": "Finem engineering: one coordinator plus 7 lifecycle phases sharing 180 original skills from 50 pinned Git sources.",
-  "version": "0.6.0",
+  "description": "Finem engineering: one coordinator plus 10 engineering disciplines sharing 180 original skills from 50 pinned Git sources.",
+  "version": "0.7.0",
   "plugins": [
     {
       "name": "finem-core",
       "source": "./plugins/finem-core",
-      "description": "The single engineering coordinator and shared original skill library for every lifecycle phase.",
-      "version": "0.6.0",
+      "description": "The single engineering coordinator and shared original skill library for product, architecture, UI/UX, implementation, infrastructure, security and operations.",
+      "version": "0.7.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"
@@ -25,10 +25,10 @@
       ]
     },
     {
-      "name": "finem-context",
-      "source": "./plugins/finem-context",
-      "description": "Engineering phase context: product discovery, requirements, feasibility, planning/task decomposition. Uses the shared original skill library in finem-core.",
-      "version": "0.6.0",
+      "name": "finem-product-planning",
+      "source": "./plugins/finem-product-planning",
+      "description": "Turn a product problem into a feasible, prioritized plan and measure whether the outcome creates value.",
+      "version": "0.7.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"
@@ -38,14 +38,14 @@
       "category": "workflow",
       "keywords": [
         "finem",
-        "context"
+        "product-planning"
       ]
     },
     {
-      "name": "finem-design",
-      "source": "./plugins/finem-design",
-      "description": "Engineering phase design: architecture, adrs, domain modeling, ux, design system, api contracts, reliability/resilience, privacy/compliance. Uses the shared original skill library in finem-core.",
-      "version": "0.6.0",
+      "name": "finem-architecture",
+      "source": "./plugins/finem-architecture",
+      "description": "Define system boundaries, domain rules and clear interfaces so implementation can evolve without spreading coupling.",
+      "version": "0.7.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"
@@ -55,14 +55,14 @@
       "category": "workflow",
       "keywords": [
         "finem",
-        "design"
+        "architecture"
       ]
     },
     {
-      "name": "finem-build",
-      "source": "./plugins/finem-build",
-      "description": "Engineering phase build: frontend, backend, auth, database, migrations, async/jobs/events, infrastructure, networking, secrets/iam, configuration/environments. Uses the shared original skill library in finem-core.",
-      "version": "0.6.0",
+      "name": "finem-ui-ux",
+      "source": "./plugins/finem-ui-ux",
+      "description": "Design useful, accessible interfaces with coherent visual language, interaction states and motion.",
+      "version": "0.7.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"
@@ -72,14 +72,14 @@
       "category": "workflow",
       "keywords": [
         "finem",
-        "build"
+        "ui-ux"
       ]
     },
     {
-      "name": "finem-verify",
-      "source": "./plugins/finem-verify",
-      "description": "Engineering phase verify: ci, testing, browser qa, accessibility, security, performance, code review/quality gates. Uses the shared original skill library in finem-core.",
-      "version": "0.6.0",
+      "name": "finem-frontend-mobile",
+      "source": "./plugins/finem-frontend-mobile",
+      "description": "Implement the interface in the project's actual web or mobile framework, connecting state, navigation and API boundaries.",
+      "version": "0.7.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"
@@ -89,14 +89,14 @@
       "category": "workflow",
       "keywords": [
         "finem",
-        "verify"
+        "frontend-mobile"
       ]
     },
     {
-      "name": "finem-deliver",
-      "source": "./plugins/finem-deliver",
-      "description": "Engineering phase deliver: release, deployment, rollback. Uses the shared original skill library in finem-core.",
-      "version": "0.6.0",
+      "name": "finem-backend-data",
+      "source": "./plugins/finem-backend-data",
+      "description": "Build services, persistence and background processing around explicit business rules and data contracts.",
+      "version": "0.7.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"
@@ -106,14 +106,14 @@
       "category": "workflow",
       "keywords": [
         "finem",
-        "deliver"
+        "backend-data"
       ]
     },
     {
-      "name": "finem-operate",
-      "source": "./plugins/finem-operate",
-      "description": "Engineering phase operate: observability, slos, incident response, postmortem, cost/finops. Uses the shared original skill library in finem-core.",
-      "version": "0.6.0",
+      "name": "finem-infrastructure-devops",
+      "source": "./plugins/finem-infrastructure-devops",
+      "description": "Provision reproducible environments and operate the build, release, deployment and rollback path with visible infrastructure costs.",
+      "version": "0.7.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"
@@ -123,14 +123,14 @@
       "category": "workflow",
       "keywords": [
         "finem",
-        "operate"
+        "infrastructure-devops"
       ]
     },
     {
-      "name": "finem-evolve",
-      "source": "./plugins/finem-evolve",
-      "description": "Engineering phase evolve: maintenance, dependencies, migration/deprecation, retirement, documentation/runbooks, product analytics/feedback. Uses the shared original skill library in finem-core.",
-      "version": "0.6.0",
+      "name": "finem-security-privacy",
+      "source": "./plugins/finem-security-privacy",
+      "description": "Protect identity, permissions, secrets and personal data, and assess concrete security risks in the implementation.",
+      "version": "0.7.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"
@@ -140,7 +140,58 @@
       "category": "workflow",
       "keywords": [
         "finem",
-        "evolve"
+        "security-privacy"
+      ]
+    },
+    {
+      "name": "finem-testing-quality",
+      "source": "./plugins/finem-testing-quality",
+      "description": "Verify behavior, integrations and performance and review whether the change is correct and maintainable.",
+      "version": "0.7.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "workflow",
+      "keywords": [
+        "finem",
+        "testing-quality"
+      ]
+    },
+    {
+      "name": "finem-observability-reliability",
+      "source": "./plugins/finem-observability-reliability",
+      "description": "Make system health measurable, design for failure and support incident diagnosis and recovery.",
+      "version": "0.7.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "workflow",
+      "keywords": [
+        "finem",
+        "observability-reliability"
+      ]
+    },
+    {
+      "name": "finem-maintenance-documentation",
+      "source": "./plugins/finem-maintenance-documentation",
+      "description": "Keep the system understandable and support safe dependency changes, deprecation and eventual retirement.",
+      "version": "0.7.0",
+      "author": {
+        "name": "Finem Group",
+        "url": "https://github.com/Finem-Group"
+      },
+      "homepage": "https://github.com/Finem-Group/Engineering",
+      "license": "MIT",
+      "category": "workflow",
+      "keywords": [
+        "finem",
+        "maintenance-documentation"
       ]
     }
   ]

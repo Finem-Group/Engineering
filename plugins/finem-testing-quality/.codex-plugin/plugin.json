@@ -1,0 +1,37 @@
+{
+  "name": "finem-testing-quality",
+  "version": "0.7.0",
+  "description": "Verify behavior, integrations and performance and review whether the change is correct and maintainable.",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "testing",
+    "browser-qa",
+    "performance",
+    "code-review-quality-gates"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Testing & Quality",
+    "shortDescription": "Testing & Quality: original engineering specialists through one shared workflow.",
+    "longDescription": "Verify behavior, integrations and performance and review whether the change is correct and maintainable. Requires finem-core. Framework choices remain internal options validated by the single core coordinator.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use the Finem Testing & Quality guidance for this change.",
+      "Review this change against Testing & Quality."
+    ]
+  }
+}

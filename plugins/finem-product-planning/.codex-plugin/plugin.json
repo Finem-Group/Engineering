@@ -1,0 +1,38 @@
+{
+  "name": "finem-product-planning",
+  "version": "0.7.0",
+  "description": "Turn a product problem into a feasible, prioritized plan and measure whether the outcome creates value.",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "product-discovery",
+    "requirements",
+    "feasibility",
+    "planning-task-decomposition",
+    "product-analytics-feedback"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Product & Planning",
+    "shortDescription": "Product & Planning: original engineering specialists through one shared workflow.",
+    "longDescription": "Turn a product problem into a feasible, prioritized plan and measure whether the outcome creates value. Requires finem-core. Framework choices remain internal options validated by the single core coordinator.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use the Finem Product & Planning guidance for this change.",
+      "Review this change against Product & Planning."
+    ]
+  }
+}

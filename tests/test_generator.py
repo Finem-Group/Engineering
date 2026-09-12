@@ -63,11 +63,11 @@ class GeneratorTests(unittest.TestCase):
             self.assertEqual((plugin / 'upstream/support/LICENSE').read_bytes(), b'MIT fixture\n')
             sources = json.loads((plugin / 'upstream.lock.json').read_text())['sources']
             self.assertEqual({s['id'] for s in sources}, {'vercel', 'web-guidelines', 'support'})
-        phase = self.output / 'plugins/finem-build'
+        phase = self.output / 'plugins/finem-frontend-mobile'
         self.assertFalse((phase / 'upstream').exists())
         metadata = json.loads((phase / 'capabilities.json').read_text())
         self.assertEqual(metadata['capabilities'][0]['entrypoints'][0]['plugin'], 'finem-core')
-        self.assertTrue((self.output / 'docs/phase-plugins.md').is_file())
+        self.assertTrue((self.output / 'docs/area-plugins.md').is_file())
 
     def test_invalid_phase_ownership_fails_before_overwriting_plugins(self):
         self.stack['phases'] = ['design']

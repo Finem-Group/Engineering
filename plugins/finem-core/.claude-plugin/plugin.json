@@ -1,7 +1,7 @@
 {
   "name": "finem-core",
-  "version": "0.6.0",
-  "description": "The single engineering coordinator and shared original skill library for every lifecycle phase.",
+  "version": "0.7.0",
+  "description": "The single engineering coordinator and shared original skill library for product, architecture, UI/UX, implementation, infrastructure, security and operations.",
   "author": {
     "name": "Finem Group",
     "url": "https://github.com/Finem-Group"

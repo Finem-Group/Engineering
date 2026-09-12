@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 3,
+  "plugin": "finem-security-privacy",
+  "kind": "area",
+  "version": "0.7.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "area": "security-privacy",
+  "title": "Security & Privacy",
+  "purpose": "Protect identity, permissions, secrets and personal data, and assess concrete security risks in the implementation.",
+  "deliverables": [
+    "Authentication and authorization controls",
+    "IAM and secret handling",
+    "Security findings and mitigations",
+    "Privacy, retention and compliance requirements"
+  ],
+  "options": [
+    "advanced-testing",
+    "intent-audit",
+    "backend-django",
+    "auth-auth0",
+    "kubernetes",
+    "security-audit"
+  ],
+  "capabilities": [
+    {
+      "id": "auth",
+      "title": "Auth",
+      "phase": "build",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "context7",
+        "db-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:auth-implementation-patterns",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/developer-essentials/skills/auth-implementation-patterns/SKILL.md"
+        },
+        {
+          "skill": "addy:security-and-hardening",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/security-and-hardening/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "secrets-iam",
+      "title": "Secrets/IAM",
+      "phase": "build",
+      "requires": [
+        "architecture"
+      ],
+      "connectors": [
+        "cloud-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "pulumi:pulumi-esc",
+          "source": "pulumi",
+          "plugin": "finem-core",
+          "path": "upstream/pulumi/pulumi/skills/pulumi-esc/SKILL.md"
+        },
+        {
+          "skill": "wshobson:secrets-management",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/cicd-automation/skills/secrets-management/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "title": "Security",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "github",
+        "context7"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:security-and-hardening",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/security-and-hardening/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "privacy-compliance",
+      "title": "Privacy/compliance",
+      "phase": "design",
+      "requires": [],
+      "connectors": [
+        "db-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:gdpr-data-handling",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/hr-legal-compliance/skills/gdpr-data-handling/SKILL.md"
+        },
+        {
+          "skill": "addy:security-and-hardening",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/security-and-hardening/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": []
+}

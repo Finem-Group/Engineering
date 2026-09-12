@@ -1,7 +1,7 @@
 {
   "name": "finem-core",
-  "version": "0.6.0",
-  "description": "The single engineering coordinator and shared original skill library for every lifecycle phase.",
+  "version": "0.7.0",
+  "description": "The single engineering coordinator and shared original skill library for product, architecture, UI/UX, implementation, infrastructure, security and operations.",
   "author": {
     "name": "Finem Group",
     "url": "https://github.com/Finem-Group"
@@ -26,8 +26,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Finem Engineering core",
-    "shortDescription": "One engineering workflow and shared original library for all phases.",
-    "longDescription": "Coordinates 43 engineering capabilities. Stores the complete shared original library; phase plugins expose scoped entrypoints and technology options activate only when selected for the current module.",
+    "shortDescription": "One engineering workflow and shared original library for all disciplines.",
+    "longDescription": "Coordinates 43 engineering capabilities. Stores the complete shared original library; area plugins expose scoped entrypoints and technology options activate only when selected for the current module.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
     "capabilities": [

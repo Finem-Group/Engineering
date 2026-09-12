@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 3,
+  "plugin": "finem-frontend-mobile",
+  "kind": "area",
+  "version": "0.7.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "area": "frontend-mobile",
+  "title": "Frontend & Mobile",
+  "purpose": "Implement the interface in the project's actual web or mobile framework, connecting state, navigation and API boundaries.",
+  "deliverables": [
+    "Web or native screens and components",
+    "Application state and navigation",
+    "Client integration with API contracts",
+    "Framework-specific implementation evidence"
+  ],
+  "options": [
+    "react-ui",
+    "expo",
+    "vue",
+    "nuxt",
+    "svelte",
+    "angular",
+    "next-cache",
+    "tanstack-router",
+    "tanstack-start",
+    "tanstack-table",
+    "redux-toolkit",
+    "web-animation",
+    "gsap",
+    "swiftui",
+    "android-ui",
+    "xylex-ui-polish"
+  ],
+  "capabilities": [
+    {
+      "id": "frontend",
+      "title": "Frontend",
+      "phase": "build",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "context7",
+        "paper"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:frontend-ui-engineering",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/frontend-ui-engineering/SKILL.md"
+        },
+        {
+          "skill": "vercel:react-best-practices",
+          "source": "vercel",
+          "plugin": "finem-core",
+          "path": "upstream/vercel/skills/react-best-practices/SKILL.md"
+        },
+        {
+          "skill": "vercel:composition-patterns",
+          "source": "vercel",
+          "plugin": "finem-core",
+          "path": "upstream/vercel/skills/composition-patterns/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": []
+}

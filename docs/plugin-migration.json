@@ -1,386 +1,498 @@
 {
-  "schemaVersion": 1,
-  "from": "technology-plugins",
-  "to": "phase-plugins",
+  "schemaVersion": 2,
+  "from": [
+    "technology-plugins",
+    "phase-plugins"
+  ],
+  "to": "engineering-areas",
   "core": "finem-core",
   "extensions": {
     "finem-discovery": {
       "extension": "discovery",
-      "phases": [
-        "finem-context",
-        "finem-design"
+      "areas": [
+        "finem-product-planning",
+        "finem-ui-ux"
       ]
     },
     "finem-react-ui": {
       "extension": "react-ui",
-      "phases": [
-        "finem-design",
-        "finem-build"
+      "areas": [
+        "finem-ui-ux",
+        "finem-frontend-mobile"
       ]
     },
     "finem-browser-playwright": {
       "extension": "browser-playwright",
-      "phases": [
-        "finem-verify"
+      "areas": [
+        "finem-testing-quality"
       ]
     },
     "finem-advanced-testing": {
       "extension": "advanced-testing",
-      "phases": [
-        "finem-verify",
-        "finem-evolve"
+      "areas": [
+        "finem-security-privacy",
+        "finem-testing-quality",
+        "finem-maintenance-documentation"
       ]
     },
     "finem-cloudflare": {
       "extension": "cloudflare",
-      "phases": [
-        "finem-build",
-        "finem-deliver"
+      "areas": [
+        "finem-backend-data",
+        "finem-infrastructure-devops"
       ]
     },
     "finem-terraform": {
       "extension": "terraform",
-      "phases": [
-        "finem-build",
-        "finem-verify"
+      "areas": [
+        "finem-infrastructure-devops",
+        "finem-testing-quality"
       ]
     },
     "finem-observability": {
       "extension": "observability",
-      "phases": [
-        "finem-verify",
-        "finem-operate"
+      "areas": [
+        "finem-testing-quality",
+        "finem-observability-reliability"
       ]
     },
     "finem-expo": {
       "extension": "expo",
-      "phases": [
-        "finem-design",
-        "finem-build",
-        "finem-verify"
+      "areas": [
+        "finem-ui-ux",
+        "finem-frontend-mobile",
+        "finem-testing-quality"
       ]
     },
     "finem-product-validation": {
       "extension": "product-validation",
-      "phases": [
-        "finem-context"
+      "areas": [
+        "finem-product-planning"
       ]
     },
     "finem-product-delivery": {
       "extension": "product-delivery",
-      "phases": [
-        "finem-context",
-        "finem-verify"
+      "areas": [
+        "finem-product-planning",
+        "finem-testing-quality"
       ]
     },
     "finem-product-analytics": {
       "extension": "product-analytics",
-      "phases": [
-        "finem-evolve"
+      "areas": [
+        "finem-product-planning"
       ]
     },
     "finem-intent-audit": {
       "extension": "intent-audit",
-      "phases": [
-        "finem-verify",
-        "finem-evolve"
+      "areas": [
+        "finem-security-privacy",
+        "finem-testing-quality",
+        "finem-maintenance-documentation"
       ]
     },
     "finem-agent-engineering": {
       "extension": "agent-engineering",
-      "phases": [
-        "finem-design",
-        "finem-verify"
+      "areas": [
+        "finem-architecture",
+        "finem-testing-quality"
       ]
     },
     "finem-vue": {
       "extension": "vue",
-      "phases": [
-        "finem-build",
-        "finem-verify"
+      "areas": [
+        "finem-frontend-mobile",
+        "finem-testing-quality"
       ]
     },
     "finem-nuxt": {
       "extension": "nuxt",
-      "phases": [
-        "finem-build"
+      "areas": [
+        "finem-frontend-mobile"
       ]
     },
     "finem-svelte": {
       "extension": "svelte",
-      "phases": [
-        "finem-build",
-        "finem-verify"
+      "areas": [
+        "finem-frontend-mobile",
+        "finem-testing-quality"
       ]
     },
     "finem-angular": {
       "extension": "angular",
-      "phases": [
-        "finem-build",
-        "finem-verify"
+      "areas": [
+        "finem-ui-ux",
+        "finem-frontend-mobile",
+        "finem-testing-quality"
       ]
     },
     "finem-next-cache": {
       "extension": "next-cache",
-      "phases": [
-        "finem-build",
-        "finem-verify"
+      "areas": [
+        "finem-frontend-mobile",
+        "finem-testing-quality"
       ]
     },
     "finem-tanstack-router": {
       "extension": "tanstack-router",
-      "phases": [
-        "finem-build"
+      "areas": [
+        "finem-frontend-mobile"
       ]
     },
     "finem-tanstack-start": {
       "extension": "tanstack-start",
-      "phases": [
-        "finem-build"
+      "areas": [
+        "finem-frontend-mobile"
       ]
     },
     "finem-tanstack-table": {
       "extension": "tanstack-table",
-      "phases": [
-        "finem-build"
+      "areas": [
+        "finem-frontend-mobile"
       ]
     },
     "finem-redux-toolkit": {
       "extension": "redux-toolkit",
-      "phases": [
-        "finem-build"
+      "areas": [
+        "finem-frontend-mobile"
       ]
     },
     "finem-web-animation": {
       "extension": "web-animation",
-      "phases": [
-        "finem-build"
+      "areas": [
+        "finem-frontend-mobile"
       ]
     },
     "finem-gsap": {
       "extension": "gsap",
-      "phases": [
-        "finem-build",
-        "finem-verify"
+      "areas": [
+        "finem-frontend-mobile",
+        "finem-testing-quality"
       ]
     },
     "finem-react-native-performance": {
       "extension": "react-native-performance",
-      "phases": [
-        "finem-verify"
+      "areas": [
+        "finem-testing-quality"
       ]
     },
     "finem-swiftui": {
       "extension": "swiftui",
-      "phases": [
-        "finem-build",
-        "finem-verify"
+      "areas": [
+        "finem-ui-ux",
+        "finem-frontend-mobile",
+        "finem-testing-quality"
       ]
     },
     "finem-android-ui": {
       "extension": "android-ui",
-      "phases": [
-        "finem-build",
-        "finem-verify"
+      "areas": [
+        "finem-frontend-mobile",
+        "finem-testing-quality"
       ]
     },
     "finem-kotlin-mobile": {
       "extension": "kotlin-mobile",
-      "phases": [
-        "finem-verify",
-        "finem-evolve"
+      "areas": [
+        "finem-testing-quality",
+        "finem-maintenance-documentation"
       ]
     },
     "finem-backend-hono": {
       "extension": "backend-hono",
-      "phases": [
-        "finem-design",
-        "finem-build"
+      "areas": [
+        "finem-architecture",
+        "finem-backend-data"
       ]
     },
     "finem-backend-fastify": {
       "extension": "backend-fastify",
-      "phases": [
-        "finem-design",
-        "finem-build",
-        "finem-verify"
+      "areas": [
+        "finem-architecture",
+        "finem-backend-data",
+        "finem-testing-quality"
       ]
     },
     "finem-backend-fastapi": {
       "extension": "backend-fastapi",
-      "phases": [
-        "finem-design",
-        "finem-build",
-        "finem-verify"
+      "areas": [
+        "finem-architecture",
+        "finem-backend-data",
+        "finem-testing-quality"
       ]
     },
     "finem-backend-django": {
       "extension": "backend-django",
-      "phases": [
-        "finem-build",
-        "finem-verify"
+      "areas": [
+        "finem-backend-data",
+        "finem-security-privacy",
+        "finem-testing-quality"
       ]
     },
     "finem-api-graphql": {
       "extension": "api-graphql",
-      "phases": [
-        "finem-design"
+      "areas": [
+        "finem-architecture"
       ]
     },
     "finem-backend-apollo": {
       "extension": "backend-apollo",
-      "phases": [
-        "finem-build",
-        "finem-verify"
+      "areas": [
+        "finem-backend-data",
+        "finem-testing-quality"
       ]
     },
     "finem-backend-rust": {
       "extension": "backend-rust",
-      "phases": [
-        "finem-design",
-        "finem-build",
-        "finem-verify"
+      "areas": [
+        "finem-backend-data",
+        "finem-testing-quality",
+        "finem-observability-reliability"
       ]
     },
     "finem-auth-auth0": {
       "extension": "auth-auth0",
-      "phases": [
-        "finem-build"
+      "areas": [
+        "finem-security-privacy"
       ]
     },
     "finem-data-prisma": {
       "extension": "data-prisma",
-      "phases": [
-        "finem-build"
+      "areas": [
+        "finem-backend-data"
       ]
     },
     "finem-migration-prisma-v7": {
       "extension": "migration-prisma-v7",
-      "phases": [
-        "finem-build",
-        "finem-evolve"
+      "areas": [
+        "finem-backend-data",
+        "finem-maintenance-documentation"
       ]
     },
     "finem-migration-prisma-mongodb": {
       "extension": "migration-prisma-mongodb",
-      "phases": [
-        "finem-build",
-        "finem-evolve"
+      "areas": [
+        "finem-backend-data",
+        "finem-maintenance-documentation"
       ]
     },
     "finem-data-neon": {
       "extension": "data-neon",
-      "phases": [
-        "finem-build"
+      "areas": [
+        "finem-backend-data"
       ]
     },
     "finem-storage-neon": {
       "extension": "storage-neon",
-      "phases": [
-        "finem-build"
+      "areas": [
+        "finem-backend-data"
       ]
     },
     "finem-jobs-inngest": {
       "extension": "jobs-inngest",
-      "phases": [
-        "finem-design",
-        "finem-build",
-        "finem-verify"
+      "areas": [
+        "finem-backend-data",
+        "finem-testing-quality",
+        "finem-observability-reliability"
       ]
     },
     "finem-jobs-trigger": {
       "extension": "jobs-trigger",
-      "phases": [
-        "finem-design",
-        "finem-build"
+      "areas": [
+        "finem-backend-data",
+        "finem-observability-reliability"
       ]
     },
     "finem-cache-upstash": {
       "extension": "cache-upstash",
-      "phases": [
-        "finem-build"
+      "areas": [
+        "finem-backend-data"
       ]
     },
     "finem-jobs-upstash": {
       "extension": "jobs-upstash",
-      "phases": [
-        "finem-design",
-        "finem-build"
+      "areas": [
+        "finem-backend-data",
+        "finem-observability-reliability"
       ]
     },
     "finem-search-upstash": {
       "extension": "search-upstash",
-      "phases": [
-        "finem-build"
+      "areas": [
+        "finem-backend-data"
       ]
     },
     "finem-email-resend": {
       "extension": "email-resend",
-      "phases": [
-        "finem-build"
+      "areas": [
+        "finem-backend-data"
       ]
     },
     "finem-api-contract-testing": {
       "extension": "api-contract-testing",
-      "phases": [
-        "finem-design",
-        "finem-verify"
+      "areas": [
+        "finem-architecture",
+        "finem-testing-quality"
       ]
     },
     "finem-search-algolia": {
       "extension": "search-algolia",
-      "phases": [
-        "finem-build",
-        "finem-verify"
+      "areas": [
+        "finem-backend-data",
+        "finem-testing-quality"
       ]
     },
     "finem-kubernetes": {
       "extension": "kubernetes",
-      "phases": [
-        "finem-build",
-        "finem-verify",
-        "finem-deliver"
+      "areas": [
+        "finem-infrastructure-devops",
+        "finem-security-privacy"
       ]
     },
     "finem-security-audit": {
       "extension": "security-audit",
-      "phases": [
-        "finem-verify"
+      "areas": [
+        "finem-infrastructure-devops",
+        "finem-security-privacy",
+        "finem-testing-quality"
       ]
     },
     "finem-finops": {
       "extension": "finops",
-      "phases": [
-        "finem-build",
-        "finem-operate"
+      "areas": [
+        "finem-infrastructure-devops"
       ]
     },
     "finem-aws-containers": {
       "extension": "aws-containers",
-      "phases": [
-        "finem-build",
-        "finem-deliver"
+      "areas": [
+        "finem-infrastructure-devops"
       ]
     },
     "finem-xylex-architecture": {
       "extension": "xylex-architecture",
-      "phases": [
-        "finem-design"
+      "areas": [
+        "finem-architecture"
       ]
     },
     "finem-xylex-code-audit": {
       "extension": "xylex-code-audit",
-      "phases": [
-        "finem-design",
-        "finem-verify",
-        "finem-evolve"
+      "areas": [
+        "finem-architecture",
+        "finem-testing-quality",
+        "finem-maintenance-documentation"
       ]
     },
     "finem-xylex-ui-polish": {
       "extension": "xylex-ui-polish",
-      "phases": [
-        "finem-design",
-        "finem-build"
+      "areas": [
+        "finem-ui-ux",
+        "finem-frontend-mobile"
+      ]
+    }
+  },
+  "legacyPhases": {
+    "finem-context": {
+      "capabilities": [
+        "product-discovery",
+        "requirements",
+        "feasibility",
+        "planning-task-decomposition"
+      ],
+      "areas": [
+        "finem-product-planning"
+      ]
+    },
+    "finem-design": {
+      "capabilities": [
+        "architecture",
+        "adrs",
+        "domain-modeling",
+        "ux",
+        "design-system",
+        "api-contracts",
+        "reliability-resilience",
+        "privacy-compliance"
+      ],
+      "areas": [
+        "finem-architecture",
+        "finem-ui-ux",
+        "finem-security-privacy",
+        "finem-observability-reliability"
+      ]
+    },
+    "finem-build": {
+      "capabilities": [
+        "frontend",
+        "backend",
+        "auth",
+        "database",
+        "migrations",
+        "async-jobs-events",
+        "infrastructure",
+        "networking",
+        "secrets-iam",
+        "configuration-environments"
+      ],
+      "areas": [
+        "finem-frontend-mobile",
+        "finem-backend-data",
+        "finem-infrastructure-devops",
+        "finem-security-privacy"
+      ]
+    },
+    "finem-verify": {
+      "capabilities": [
+        "ci",
+        "testing",
+        "browser-qa",
+        "accessibility",
+        "security",
+        "performance",
+        "code-review-quality-gates"
+      ],
+      "areas": [
+        "finem-ui-ux",
+        "finem-infrastructure-devops",
+        "finem-security-privacy",
+        "finem-testing-quality"
+      ]
+    },
+    "finem-deliver": {
+      "capabilities": [
+        "release",
+        "deployment",
+        "rollback"
+      ],
+      "areas": [
+        "finem-infrastructure-devops"
+      ]
+    },
+    "finem-operate": {
+      "capabilities": [
+        "observability",
+        "slos",
+        "incident-response",
+        "postmortem",
+        "cost-finops"
+      ],
+      "areas": [
+        "finem-infrastructure-devops",
+        "finem-observability-reliability"
+      ]
+    },
+    "finem-evolve": {
+      "capabilities": [
+        "maintenance",
+        "dependencies",
+        "migration-deprecation",
+        "retirement",
+        "documentation-runbooks",
+        "product-analytics-feedback"
+      ],
+      "areas": [
+        "finem-product-planning",
+        "finem-maintenance-documentation"
       ]
     }
   }

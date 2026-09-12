@@ -1,0 +1,37 @@
+{
+  "name": "finem-architecture",
+  "version": "0.7.0",
+  "description": "Define system boundaries, domain rules and clear interfaces so implementation can evolve without spreading coupling.",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "architecture",
+    "adrs",
+    "domain-modeling",
+    "api-contracts"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Architecture & API Design",
+    "shortDescription": "Architecture & API Design: original engineering specialists through one shared workflow.",
+    "longDescription": "Define system boundaries, domain rules and clear interfaces so implementation can evolve without spreading coupling. Requires finem-core. Framework choices remain internal options validated by the single core coordinator.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use the Finem Architecture & API Design guidance for this change.",
+      "Review this change against Architecture & API Design."
+    ]
+  }
+}

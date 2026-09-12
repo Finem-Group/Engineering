@@ -1,30 +1,35 @@
 # Finem Engineering
 
-**8 native plugins: one Core + 7 lifecycle phases.**
+**11 native plugins: one Core + 10 engineering disciplines.**
 43 capabilities, 180 complete selected original skills,
 50 pinned Git sources and 56 internal technology options.
 
-Version 0.6.0 groups the previous technology plugins by their existing engineering phases.
-The number follows the lifecycle; it is not a target. Every original source body is stored **once** in
-`finem-core/upstream/`, with its references, helpers, license, pinned revision and file hashes. Phase plugins
+Version 0.7.0 gives UI/UX, infrastructure, security and the other engineering disciplines
+their own clear scope and expected outcomes. Every original source body is stored **once** in
+`finem-core/upstream/`, with its references, helpers, license, pinned revision and file hashes. Area plugins
 provide scoped entrypoints and metadata. They use the same single coordinator.
 
-## Phase plugins
+## Engineering plugins
 
 | Plugin | Scope |
 | --- | --- |
 | `finem-core` | One workflow, shared original library, technology selection and compatibility checks |
-| `finem-context` | Product discovery, Requirements, Feasibility, Planning/task decomposition |
-| `finem-design` | Architecture, ADRs, Domain modeling, UX, Design system, API contracts, Reliability/resilience, Privacy/compliance |
-| `finem-build` | Frontend, Backend, Auth, Database, Migrations, Async/jobs/events, Infrastructure, Networking, Secrets/IAM, Configuration/environments |
-| `finem-verify` | CI, Testing, Browser QA, Accessibility, Security, Performance, Code review/quality gates |
-| `finem-deliver` | Release, Deployment, Rollback |
-| `finem-operate` | Observability, SLOs, Incident response, Postmortem, Cost/FinOps |
-| `finem-evolve` | Maintenance, Dependencies, Migration/deprecation, Retirement, Documentation/runbooks, Product analytics/feedback |
+| **Product & Planning** (`finem-product-planning`) | Product discovery, Requirements, Feasibility, Planning/task decomposition, Product analytics/feedback |
+| **Architecture & API Design** (`finem-architecture`) | Architecture, ADRs, Domain modeling, API contracts |
+| **UI/UX & Design System** (`finem-ui-ux`) | UX, Design system, Accessibility |
+| **Frontend & Mobile** (`finem-frontend-mobile`) | Frontend |
+| **Backend & Data** (`finem-backend-data`) | Backend, Database, Migrations, Async/jobs/events |
+| **Infrastructure & DevOps** (`finem-infrastructure-devops`) | Infrastructure, Networking, CI, Release, Deployment, Rollback, Cost/FinOps, Configuration/environments |
+| **Security & Privacy** (`finem-security-privacy`) | Auth, Secrets/IAM, Security, Privacy/compliance |
+| **Testing & Quality** (`finem-testing-quality`) | Testing, Browser QA, Performance, Code review/quality gates |
+| **Observability & Reliability** (`finem-observability-reliability`) | Observability, SLOs, Incident response, Postmortem, Reliability/resilience |
+| **Maintenance & Documentation** (`finem-maintenance-documentation`) | Maintenance, Dependencies, Migration/deprecation, Retirement, Documentation/runbooks |
 
-Build keeps frontend/mobile, backend/data and platform choices separate internally. A Vue project selects
-Vue/Nuxt guidance; installing Build does not activate all frameworks or providers. The phases scope the
-work; they do not impose a waterfall process. Existing discovery, architecture and test evidence can be reused.
+UI/UX owns flows, design systems and accessibility. Frontend & Mobile implements interfaces; Backend &
+Data implements services and persistence. Infrastructure & DevOps owns CI, releases, deployments, rollback
+and costs. Security & Privacy owns auth, IAM, security review and privacy. Each plugin includes its purpose
+and expected deliverables. Original lifecycle tags remain in the capability metadata. Existing evidence
+can satisfy prerequisites without repeating completed work.
 
 ## Install the full stack
 
@@ -33,13 +38,16 @@ work; they do not impose a waterfall process. Existing discovery, architecture a
 ```sh
 claude plugin marketplace add Finem-Group/Engineering
 claude plugin install finem-core@finem
-claude plugin install finem-context@finem
-claude plugin install finem-design@finem
-claude plugin install finem-build@finem
-claude plugin install finem-verify@finem
-claude plugin install finem-deliver@finem
-claude plugin install finem-operate@finem
-claude plugin install finem-evolve@finem
+claude plugin install finem-product-planning@finem
+claude plugin install finem-architecture@finem
+claude plugin install finem-ui-ux@finem
+claude plugin install finem-frontend-mobile@finem
+claude plugin install finem-backend-data@finem
+claude plugin install finem-infrastructure-devops@finem
+claude plugin install finem-security-privacy@finem
+claude plugin install finem-testing-quality@finem
+claude plugin install finem-observability-reliability@finem
+claude plugin install finem-maintenance-documentation@finem
 ```
 
 ### Codex
@@ -47,33 +55,36 @@ claude plugin install finem-evolve@finem
 ```sh
 codex plugin marketplace add Finem-Group/Engineering
 codex plugin add finem-core@finem
-codex plugin add finem-context@finem
-codex plugin add finem-design@finem
-codex plugin add finem-build@finem
-codex plugin add finem-verify@finem
-codex plugin add finem-deliver@finem
-codex plugin add finem-operate@finem
-codex plugin add finem-evolve@finem
+codex plugin add finem-product-planning@finem
+codex plugin add finem-architecture@finem
+codex plugin add finem-ui-ux@finem
+codex plugin add finem-frontend-mobile@finem
+codex plugin add finem-backend-data@finem
+codex plugin add finem-infrastructure-devops@finem
+codex plugin add finem-security-privacy@finem
+codex plugin add finem-testing-quality@finem
+codex plugin add finem-observability-reliability@finem
+codex plugin add finem-maintenance-documentation@finem
 ```
 
 For local validation, add the path to this checkout as the marketplace instead of the GitHub repository.
-Claude declares the Core dependency for every phase. Codex requires Core to be installed explicitly.
-The full-stack commands install all phases; the coordinator only activates those relevant to the task.
-For a subset, install Core plus the required phases. Capability prerequisites may require another phase:
-Build uses Design and Context; a missing phase is reported by the selection helper.
+Claude declares the Core dependency for every area. Codex requires Core to be installed explicitly.
+The full-stack commands install all areas; the coordinator only activates those relevant to the task.
+For a subset, install Core plus the required areas. Capability prerequisites may require another area:
+Frontend & Mobile uses Architecture & API Design and Product & Planning; a missing area is reported by the selection helper.
 
 ## Selection and layout
 
 ```text
 plugins/finem-core/
   skills/finem-engineering/SKILL.md   single coordinator
-  capabilities.json                 phase registry + internal technology options
+  capabilities.json                 area registry + internal technology options
   scripts/resolve-packs.js           read-only selection and validation
   upstream.lock.json                 all source pins, hashes and original file modes
   upstream/<source>/...              complete selected originals, stored once
-plugins/finem-<phase>/
-  skills/finem-<phase>/SKILL.md       scoped phase entry
-  capabilities.json                 phase capabilities + related option IDs
+plugins/finem-<area>/
+  skills/finem-<area>/SKILL.md       scoped area entry
+  capabilities.json                 area capabilities + related option IDs
 .claude-plugin/marketplace.json      Claude Code; same plugin files
 .agents/plugins/marketplace.json     Codex; same plugin files
 ```
@@ -81,7 +92,7 @@ plugins/finem-<phase>/
 Use actual host-discovered plugin paths rather than guessing cache siblings:
 
 ```text
-node "<core>/scripts/resolve-packs.js" --core "<core>" --phase "<context>" --phase "<design>" --phase "<build>" --select finem-build --extensions nuxt,xylex-ui-polish
+node "<core>/scripts/resolve-packs.js" --core "<core>" --area "<product>" --area "<architecture>" --area "<frontend>" --select finem-frontend-mobile --extensions nuxt,xylex-ui-polish
 ```
 
 The helper expands capability prerequisites, validates matching plugin versions and resolves required
@@ -94,13 +105,17 @@ An existing `.l11/config.json` remains authoritative in project mode.
 
 ## Migration and limits
 
-See [migration and architecture](docs/phase-plugins.md) and the complete
-[old-plugin to phase mapping](docs/plugin-migration.json). Old option names such as `finem-nuxt` are
-accepted by `--extensions` as aliases. Old plugin folders are not phase roots: upgrade Core and install
-the new phases together, then disable the old technology plugin entries in the host. No local installed
+See [migration and architecture](docs/area-plugins.md) and the complete
+[old-plugin to area mapping](docs/plugin-migration.json). Old option names such as `finem-nuxt` are
+accepted by `--extensions` as aliases. Old plugin folders are not area roots: upgrade Core and install
+the new areas together, then disable the old technology plugin entries in the host. No local installed
 plugin cache is changed by building this repository.
 
-All ten XYLEX originals remain available through internal options; see [provenance and prerequisites](docs/xylex-integration.md). The old three native XYLEX entries are now covered by Design, Build, Verify and Evolve according to their capability mappings.
+The seven 0.6 phase selectors remain supported with their exact capability scope. For example,
+`--select finem-build` resolves the former Build capabilities through the new area plugins.
+`--phase PATH` remains an alias for `--area PATH`; paths must point to the current area plugins.
+
+All ten XYLEX originals remain available through internal options; see [provenance and prerequisites](docs/xylex-integration.md). Their mappings attach to Architecture, UI/UX, Frontend, Testing & Quality and Maintenance & Documentation.
 
 The plugins carry guidance and original helper sources; they do not install runtimes or connect MCP
 accounts. Real browser/provider execution depends on the project environment. Known upstream limitations,
@@ -118,7 +133,7 @@ python -m unittest discover -s tests -v
 ```
 
 Edit the catalog, generator or canonical helpers; generated plugin files are derived artifacts. Tests
-cover phase ownership, complete original bytes, shared-library paths, prerequisites, framework conflicts,
+cover area ownership, complete original bytes, shared-library paths, prerequisites, framework conflicts,
 selection order and migration aliases. GitHub Actions runs on Windows/Linux and Node 22/24.
 
 ## Licensing

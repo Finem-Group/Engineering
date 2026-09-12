@@ -24,9 +24,9 @@ For an existing L11 project, preserve its other settings and add the wanted pack
 
 ## Native Finem plugin mode
 
-Since Finem 0.6, these three IDs are internal technology options, not separate native plugins. Install the phase plugins and select the desired options through the core coordinator. Architecture belongs to Design; UI polish to Design/Build; code audit to Design/Verify/Evolve.
+Since Finem 0.7, these three IDs are internal technology options, not separate native plugins. Install the area plugins and select the desired options through the core coordinator. Architecture belongs to Architecture & API Design; UI polish to UI/UX and Frontend; code audit to Architecture, Testing & Quality and Maintenance & Documentation.
 
-The complete 66-file XYLEX bundle lives once in `finem-core/upstream/xylex/`. Phase entrypoints reference that shared library. Original bytes, supporting references and selection conflicts are unchanged. Native mode needs no `.l11/` or L11 CLI. See [phase architecture and migration](phase-plugins.md).
+The complete 66-file XYLEX bundle lives once in `finem-core/upstream/xylex/`. Area entrypoints reference that shared library. Original bytes, supporting references and selection conflicts are unchanged. Native mode needs no `.l11/` or L11 CLI. See [area architecture and migration](area-plugins.md).
 
 ## Scope and prerequisites
 
