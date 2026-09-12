@@ -1,6 +1,6 @@
 # Finem Engineering core
 
-The Finem engineering coordinator and the base original skills for all 43 capabilities. Every finem technology pack depends on it.
+The single engineering coordinator and shared original skill library for product, architecture, UI/UX, implementation, infrastructure, security and operations.
 
 **Claude Code**
 
@@ -16,48 +16,48 @@ codex plugin add finem-core@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Product discovery | base | 2 |
-| Requirements | base | 1 |
-| Feasibility | base | 2 |
-| Architecture | base | 2 |
-| ADRs | base | 1 |
-| Domain modeling | base | 1 |
-| UX | base | 1 |
-| Design system | base | 2 |
-| Frontend | base | 3 |
-| API contracts | base | 1 |
-| Backend | base | 3 |
-| Auth | base | 2 |
-| Database | base | 2 |
-| Migrations | base | 2 |
-| Async/jobs/events | base | 2 |
-| Infrastructure | base | 1 |
-| Networking | base | 2 |
-| Secrets/IAM | base | 2 |
-| CI | base | 1 |
-| Testing | base | 2 |
-| Browser QA | base | 2 |
-| Accessibility | base | 2 |
-| Security | base | 1 |
-| Performance | base | 2 |
-| Observability | base | 1 |
-| SLOs | base | 1 |
-| Release | base | 2 |
-| Deployment | base | 2 |
-| Rollback | base | 3 |
-| Incident response | base | 2 |
-| Postmortem | base | 1 |
-| Maintenance | base | 2 |
-| Dependencies | base | 2 |
-| Migration/deprecation | base | 1 |
-| Cost/FinOps | base | 1 |
-| Retirement | base | 3 |
-| Planning/task decomposition | base | 2 |
-| Code review/quality gates | base | 2 |
-| Reliability/resilience | base | 3 |
-| Configuration/environments | base | 1 |
-| Documentation/runbooks | base | 2 |
-| Privacy/compliance | base | 2 |
-| Product analytics/feedback | base | 3 |
+| Product discovery | shared library | 2 |
+| Requirements | shared library | 1 |
+| Feasibility | shared library | 2 |
+| Architecture | shared library | 2 |
+| ADRs | shared library | 1 |
+| Domain modeling | shared library | 1 |
+| UX | shared library | 1 |
+| Design system | shared library | 2 |
+| Frontend | shared library | 3 |
+| API contracts | shared library | 1 |
+| Backend | shared library | 3 |
+| Auth | shared library | 2 |
+| Database | shared library | 2 |
+| Migrations | shared library | 2 |
+| Async/jobs/events | shared library | 2 |
+| Infrastructure | shared library | 1 |
+| Networking | shared library | 2 |
+| Secrets/IAM | shared library | 2 |
+| CI | shared library | 1 |
+| Testing | shared library | 2 |
+| Browser QA | shared library | 2 |
+| Accessibility | shared library | 2 |
+| Security | shared library | 1 |
+| Performance | shared library | 2 |
+| Observability | shared library | 1 |
+| SLOs | shared library | 1 |
+| Release | shared library | 2 |
+| Deployment | shared library | 2 |
+| Rollback | shared library | 3 |
+| Incident response | shared library | 2 |
+| Postmortem | shared library | 1 |
+| Maintenance | shared library | 2 |
+| Dependencies | shared library | 2 |
+| Migration/deprecation | shared library | 1 |
+| Cost/FinOps | shared library | 1 |
+| Retirement | shared library | 3 |
+| Planning/task decomposition | shared library | 2 |
+| Code review/quality gates | shared library | 2 |
+| Reliability/resilience | shared library | 3 |
+| Configuration/environments | shared library | 1 |
+| Documentation/runbooks | shared library | 2 |
+| Privacy/compliance | shared library | 2 |
+| Product analytics/feedback | shared library | 3 |
 
-Native skills: 1. Bundled originals: 53 from 9 source repositories (addy, gstack, impeccable, posthog, pulumi, supabase, superpowers, vercel, wshobson), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.
+Native skills: 1. Bundled originals: 180 from 50 source repositories (addy, algolia, android, angular, antfu, anthropic, apollo, auth0, aws, callstack, cloudflare, django, emil, expo, fastapi, fastify, grafana, gsap, gstack, hono, impeccable, infracost, inngest, kotlin, neon, next, pactflow, playwright, pm, posthog, prisma, pulumi, redux-toolkit, resend, shadcn, supabase, superpowers, svelte, swiftui, tanstack-router, tanstack-table, terraform, trailofbits, trigger, upstash, vercel, vue, web-guidelines, wshobson, xylex), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

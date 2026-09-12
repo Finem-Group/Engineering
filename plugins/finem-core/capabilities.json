@@ -1,9 +1,3925 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 3,
   "plugin": "finem-core",
   "kind": "core",
-  "version": "0.4.0",
+  "version": "0.7.0",
   "dependencies": [],
+  "layout": "areas",
+  "areaPlugins": [
+    {
+      "plugin": "finem-product-planning",
+      "area": "product-planning",
+      "title": "Product & Planning",
+      "capabilities": [
+        "product-discovery",
+        "requirements",
+        "feasibility",
+        "planning-task-decomposition",
+        "product-analytics-feedback"
+      ]
+    },
+    {
+      "plugin": "finem-architecture",
+      "area": "architecture",
+      "title": "Architecture & API Design",
+      "capabilities": [
+        "architecture",
+        "adrs",
+        "domain-modeling",
+        "api-contracts"
+      ]
+    },
+    {
+      "plugin": "finem-ui-ux",
+      "area": "ui-ux",
+      "title": "UI/UX & Design System",
+      "capabilities": [
+        "ux",
+        "design-system",
+        "accessibility"
+      ]
+    },
+    {
+      "plugin": "finem-frontend-mobile",
+      "area": "frontend-mobile",
+      "title": "Frontend & Mobile",
+      "capabilities": [
+        "frontend"
+      ]
+    },
+    {
+      "plugin": "finem-backend-data",
+      "area": "backend-data",
+      "title": "Backend & Data",
+      "capabilities": [
+        "backend",
+        "database",
+        "migrations",
+        "async-jobs-events"
+      ]
+    },
+    {
+      "plugin": "finem-infrastructure-devops",
+      "area": "infrastructure-devops",
+      "title": "Infrastructure & DevOps",
+      "capabilities": [
+        "infrastructure",
+        "networking",
+        "ci",
+        "release",
+        "deployment",
+        "rollback",
+        "cost-finops",
+        "configuration-environments"
+      ]
+    },
+    {
+      "plugin": "finem-security-privacy",
+      "area": "security-privacy",
+      "title": "Security & Privacy",
+      "capabilities": [
+        "auth",
+        "secrets-iam",
+        "security",
+        "privacy-compliance"
+      ]
+    },
+    {
+      "plugin": "finem-testing-quality",
+      "area": "testing-quality",
+      "title": "Testing & Quality",
+      "capabilities": [
+        "testing",
+        "browser-qa",
+        "performance",
+        "code-review-quality-gates"
+      ]
+    },
+    {
+      "plugin": "finem-observability-reliability",
+      "area": "observability-reliability",
+      "title": "Observability & Reliability",
+      "capabilities": [
+        "observability",
+        "slos",
+        "incident-response",
+        "postmortem",
+        "reliability-resilience"
+      ]
+    },
+    {
+      "plugin": "finem-maintenance-documentation",
+      "area": "maintenance-documentation",
+      "title": "Maintenance & Documentation",
+      "capabilities": [
+        "maintenance",
+        "dependencies",
+        "migration-deprecation",
+        "retirement",
+        "documentation-runbooks"
+      ]
+    }
+  ],
+  "legacyPhases": [
+    {
+      "plugin": "finem-context",
+      "capabilities": [
+        "product-discovery",
+        "requirements",
+        "feasibility",
+        "planning-task-decomposition"
+      ]
+    },
+    {
+      "plugin": "finem-design",
+      "capabilities": [
+        "architecture",
+        "adrs",
+        "domain-modeling",
+        "ux",
+        "design-system",
+        "api-contracts",
+        "reliability-resilience",
+        "privacy-compliance"
+      ]
+    },
+    {
+      "plugin": "finem-build",
+      "capabilities": [
+        "frontend",
+        "backend",
+        "auth",
+        "database",
+        "migrations",
+        "async-jobs-events",
+        "infrastructure",
+        "networking",
+        "secrets-iam",
+        "configuration-environments"
+      ]
+    },
+    {
+      "plugin": "finem-verify",
+      "capabilities": [
+        "ci",
+        "testing",
+        "browser-qa",
+        "accessibility",
+        "security",
+        "performance",
+        "code-review-quality-gates"
+      ]
+    },
+    {
+      "plugin": "finem-deliver",
+      "capabilities": [
+        "release",
+        "deployment",
+        "rollback"
+      ]
+    },
+    {
+      "plugin": "finem-operate",
+      "capabilities": [
+        "observability",
+        "slos",
+        "incident-response",
+        "postmortem",
+        "cost-finops"
+      ]
+    },
+    {
+      "plugin": "finem-evolve",
+      "capabilities": [
+        "maintenance",
+        "dependencies",
+        "migration-deprecation",
+        "retirement",
+        "documentation-runbooks",
+        "product-analytics-feedback"
+      ]
+    }
+  ],
+  "technologyOptions": [
+    {
+      "plugin": "finem-discovery",
+      "kind": "pack",
+      "extension": "discovery",
+      "description": "Original research interviews and opportunity synthesis",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "product-discovery",
+          "title": "Product discovery",
+          "phase": "context",
+          "requires": [],
+          "connectors": [
+            "mobbin"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:interview-script",
+              "source": "pm",
+              "plugin": "finem-core",
+              "path": "upstream/pm/pm-product-discovery/skills/interview-script/SKILL.md"
+            },
+            {
+              "skill": "pm:summarize-interview",
+              "source": "pm",
+              "plugin": "finem-core",
+              "path": "upstream/pm/pm-product-discovery/skills/summarize-interview/SKILL.md"
+            },
+            {
+              "skill": "pm:opportunity-solution-tree",
+              "source": "pm",
+              "plugin": "finem-core",
+              "path": "upstream/pm/pm-product-discovery/skills/opportunity-solution-tree/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "requirements",
+          "title": "Requirements",
+          "phase": "context",
+          "requires": [
+            "product-discovery"
+          ],
+          "connectors": [],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:create-prd",
+              "source": "pm",
+              "plugin": "finem-core",
+              "path": "upstream/pm/pm-execution/skills/create-prd/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "ux",
+          "title": "UX",
+          "phase": "design",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [
+            "mobbin",
+            "paper",
+            "figma"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:customer-journey-map",
+              "source": "pm",
+              "plugin": "finem-core",
+              "path": "upstream/pm/pm-market-research/skills/customer-journey-map/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-react-ui",
+      "kind": "pack",
+      "extension": "react-ui",
+      "description": "shadcn component composition",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "shadcn:shadcn",
+              "source": "shadcn",
+              "plugin": "finem-core",
+              "path": "upstream/shadcn/skills/shadcn/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "design-system",
+          "title": "Design system",
+          "phase": "design",
+          "requires": [
+            "ux"
+          ],
+          "connectors": [
+            "paper",
+            "mobbin",
+            "figma"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "shadcn:shadcn",
+              "source": "shadcn",
+              "plugin": "finem-core",
+              "path": "upstream/shadcn/skills/shadcn/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-browser-playwright",
+      "kind": "pack",
+      "extension": "browser-playwright",
+      "description": "Use Playwright as the browser execution backend",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "browser-qa",
+          "title": "Browser QA",
+          "phase": "verify",
+          "requires": [
+            "frontend"
+          ],
+          "connectors": [],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "playwright:playwright-cli",
+              "source": "playwright",
+              "plugin": "finem-core",
+              "path": "upstream/playwright/skills/playwright-cli/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-advanced-testing",
+      "kind": "pack",
+      "extension": "advanced-testing",
+      "description": "Properties and supply-chain analysis",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trailofbits:property-based-testing",
+              "source": "trailofbits",
+              "plugin": "finem-core",
+              "path": "upstream/trailofbits/plugins/property-based-testing/skills/property-based-testing/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "dependencies",
+          "title": "Dependencies",
+          "phase": "evolve",
+          "requires": [],
+          "connectors": [
+            "github",
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trailofbits:supply-chain-risk-auditor",
+              "source": "trailofbits",
+              "plugin": "finem-core",
+              "path": "upstream/trailofbits/plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "title": "Security",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trailofbits:supply-chain-risk-auditor",
+              "source": "trailofbits",
+              "plugin": "finem-core",
+              "path": "upstream/trailofbits/plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-cloudflare",
+      "kind": "pack",
+      "extension": "cloudflare",
+      "description": "Cloudflare Workers, Wrangler and Durable Objects",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "infrastructure",
+          "title": "Infrastructure",
+          "phase": "build",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "cloudflare:workers-best-practices",
+              "source": "cloudflare",
+              "plugin": "finem-core",
+              "path": "upstream/cloudflare/skills/workers-best-practices/SKILL.md"
+            },
+            {
+              "skill": "cloudflare:wrangler",
+              "source": "cloudflare",
+              "plugin": "finem-core",
+              "path": "upstream/cloudflare/skills/wrangler/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "deployment",
+          "title": "Deployment",
+          "phase": "deliver",
+          "requires": [
+            "release"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "github"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "cloudflare:wrangler",
+              "source": "cloudflare",
+              "plugin": "finem-core",
+              "path": "upstream/cloudflare/skills/wrangler/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "async-jobs-events",
+          "title": "Async/jobs/events",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "cloudflare:durable-objects",
+              "source": "cloudflare",
+              "plugin": "finem-core",
+              "path": "upstream/cloudflare/skills/durable-objects/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-terraform",
+      "kind": "pack",
+      "extension": "terraform",
+      "description": "Terraform style and tests",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "infrastructure",
+          "title": "Infrastructure",
+          "phase": "build",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "terraform:terraform-style-guide",
+              "source": "terraform",
+              "plugin": "finem-core",
+              "path": "upstream/terraform/plugins/terraform/skills/terraform-style-guide/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "terraform:terraform-test",
+              "source": "terraform",
+              "plugin": "finem-core",
+              "path": "upstream/terraform/plugins/terraform/skills/terraform-test/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-observability",
+      "kind": "pack",
+      "extension": "observability",
+      "description": "OpenTelemetry and k6",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "observability",
+          "title": "Observability",
+          "phase": "operate",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "grafana:opentelemetry",
+              "source": "grafana",
+              "plugin": "finem-core",
+              "path": "upstream/grafana/skills/grafana-core/opentelemetry/SKILL.md"
+            },
+            {
+              "skill": "grafana:alerting-irm",
+              "source": "grafana",
+              "plugin": "finem-core",
+              "path": "upstream/grafana/skills/grafana-core/alerting-irm/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "grafana:k6",
+              "source": "grafana",
+              "plugin": "finem-core",
+              "path": "upstream/grafana/skills/grafana-k6/k6/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "slos",
+          "title": "SLOs",
+          "phase": "operate",
+          "requires": [
+            "observability"
+          ],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "grafana:alerting-irm",
+              "source": "grafana",
+              "plugin": "finem-core",
+              "path": "upstream/grafana/skills/grafana-core/alerting-irm/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "incident-response",
+          "title": "Incident response",
+          "phase": "operate",
+          "requires": [
+            "observability"
+          ],
+          "connectors": [
+            "sentry",
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "grafana:alerting-irm",
+              "source": "grafana",
+              "plugin": "finem-core",
+              "path": "upstream/grafana/skills/grafana-core/alerting-irm/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-expo",
+      "kind": "pack",
+      "extension": "expo",
+      "description": "Expo structure, native UI, routing, motion and data fetching",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [
+        "finem-react-ui",
+        "finem-vue",
+        "finem-svelte",
+        "finem-angular",
+        "finem-next-cache",
+        "finem-tanstack-router",
+        "finem-tanstack-start",
+        "finem-swiftui",
+        "finem-android-ui"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:frontend-ui-engineering",
+              "source": "addy",
+              "plugin": "finem-core",
+              "path": "upstream/addy/skills/frontend-ui-engineering/SKILL.md"
+            },
+            {
+              "skill": "expo:expo-project-structure",
+              "source": "expo",
+              "plugin": "finem-core",
+              "path": "upstream/expo/plugins/expo/skills/expo-project-structure/SKILL.md"
+            },
+            {
+              "skill": "expo:expo-native-ui",
+              "source": "expo",
+              "plugin": "finem-core",
+              "path": "upstream/expo/plugins/expo/skills/expo-native-ui/SKILL.md"
+            },
+            {
+              "skill": "expo:expo-router",
+              "source": "expo",
+              "plugin": "finem-core",
+              "path": "upstream/expo/plugins/expo/skills/expo-router/SKILL.md"
+            },
+            {
+              "skill": "expo:expo-animation",
+              "source": "expo",
+              "plugin": "finem-core",
+              "path": "upstream/expo/plugins/expo/skills/expo-animation/SKILL.md"
+            },
+            {
+              "skill": "expo:expo-design-system",
+              "source": "expo",
+              "plugin": "finem-core",
+              "path": "upstream/expo/plugins/expo/skills/expo-design-system/SKILL.md"
+            },
+            {
+              "skill": "expo:expo-data-fetching",
+              "source": "expo",
+              "plugin": "finem-core",
+              "path": "upstream/expo/plugins/expo/skills/expo-data-fetching/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:performance-optimization",
+              "source": "addy",
+              "plugin": "finem-core",
+              "path": "upstream/addy/skills/performance-optimization/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "design-system",
+          "title": "Design system",
+          "phase": "design",
+          "requires": [
+            "ux"
+          ],
+          "connectors": [
+            "paper",
+            "mobbin",
+            "figma"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "expo:expo-design-system",
+              "source": "expo",
+              "plugin": "finem-core",
+              "path": "upstream/expo/plugins/expo/skills/expo-design-system/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-product-validation",
+      "kind": "pack",
+      "extension": "product-validation",
+      "description": "Product hypotheses, lean experiments and launch risk analysis",
+      "dependencies": [
+        "finem-core",
+        "finem-discovery"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "feasibility",
+          "title": "Feasibility",
+          "phase": "context",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [
+            "context7",
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:identify-assumptions-new",
+              "source": "pm",
+              "plugin": "finem-core",
+              "path": "upstream/pm/pm-product-discovery/skills/identify-assumptions-new/SKILL.md"
+            },
+            {
+              "skill": "pm:pre-mortem",
+              "source": "pm",
+              "plugin": "finem-core",
+              "path": "upstream/pm/pm-execution/skills/pre-mortem/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "product-discovery",
+          "title": "Product discovery",
+          "phase": "context",
+          "requires": [],
+          "connectors": [
+            "mobbin"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:brainstorm-experiments-new",
+              "source": "pm",
+              "plugin": "finem-core",
+              "path": "upstream/pm/pm-product-discovery/skills/brainstorm-experiments-new/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-product-delivery",
+      "kind": "pack",
+      "extension": "product-delivery",
+      "description": "Product strategy, outcome roadmaps, user stories and acceptance scenarios",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "product-discovery",
+          "title": "Product discovery",
+          "phase": "context",
+          "requires": [],
+          "connectors": [
+            "mobbin"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:product-strategy",
+              "source": "pm",
+              "plugin": "finem-core",
+              "path": "upstream/pm/pm-product-strategy/skills/product-strategy/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "requirements",
+          "title": "Requirements",
+          "phase": "context",
+          "requires": [
+            "product-discovery"
+          ],
+          "connectors": [],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:user-stories",
+              "source": "pm",
+              "plugin": "finem-core",
+              "path": "upstream/pm/pm-execution/skills/user-stories/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "planning-task-decomposition",
+          "title": "Planning/task decomposition",
+          "phase": "context",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:outcome-roadmap",
+              "source": "pm",
+              "plugin": "finem-core",
+              "path": "upstream/pm/pm-execution/skills/outcome-roadmap/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:test-scenarios",
+              "source": "pm",
+              "plugin": "finem-core",
+              "path": "upstream/pm/pm-execution/skills/test-scenarios/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-product-analytics",
+      "kind": "pack",
+      "extension": "product-analytics",
+      "description": "Metrics definitions and cohort-based feedback alongside provider instrumentation",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "product-analytics-feedback",
+          "title": "Product analytics/feedback",
+          "phase": "evolve",
+          "requires": [
+            "product-discovery"
+          ],
+          "connectors": [
+            "posthog"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:metrics-dashboard",
+              "source": "pm",
+              "plugin": "finem-core",
+              "path": "upstream/pm/pm-product-discovery/skills/metrics-dashboard/SKILL.md"
+            },
+            {
+              "skill": "pm:cohort-analysis",
+              "source": "pm",
+              "plugin": "finem-core",
+              "path": "upstream/pm/pm-data-analytics/skills/cohort-analysis/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-intent-audit",
+      "kind": "pack",
+      "extension": "intent-audit",
+      "description": "Compare documented boundaries to implemented behavior",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "documentation-runbooks",
+          "title": "Documentation/runbooks",
+          "phase": "evolve",
+          "requires": [],
+          "connectors": [],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:shipping-artifacts",
+              "source": "pm",
+              "plugin": "finem-core",
+              "path": "upstream/pm/pm-ai-shipping/skills/shipping-artifacts/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "code-review-quality-gates",
+          "title": "Code review/quality gates",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:intended-vs-implemented",
+              "source": "pm",
+              "plugin": "finem-core",
+              "path": "upstream/pm/pm-ai-shipping/skills/intended-vs-implemented/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "title": "Security",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:intended-vs-implemented",
+              "source": "pm",
+              "plugin": "finem-core",
+              "path": "upstream/pm/pm-ai-shipping/skills/intended-vs-implemented/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-agent-engineering",
+      "kind": "pack",
+      "extension": "agent-engineering",
+      "description": "Original agent skill evaluation and MCP server engineering specialists",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "anthropic:skill-creator",
+              "source": "anthropic",
+              "plugin": "finem-core",
+              "path": "upstream/anthropic/skills/skill-creator/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "api-contracts",
+          "title": "API contracts",
+          "phase": "design",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "anthropic:mcp-builder",
+              "source": "anthropic",
+              "plugin": "finem-core",
+              "path": "upstream/anthropic/skills/mcp-builder/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-vue",
+      "kind": "pack",
+      "extension": "vue",
+      "description": "Vue 3 application implementation, routing and tests",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [
+        "finem-react-ui",
+        "finem-expo"
+      ],
+      "exclusiveGroup": "web-framework",
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:frontend-ui-engineering",
+              "source": "addy",
+              "plugin": "finem-core",
+              "path": "upstream/addy/skills/frontend-ui-engineering/SKILL.md"
+            },
+            {
+              "skill": "vue:vue-best-practices",
+              "source": "vue",
+              "plugin": "finem-core",
+              "path": "upstream/vue/skills/vue-best-practices/SKILL.md"
+            },
+            {
+              "skill": "vue:vue-router-best-practices",
+              "source": "vue",
+              "plugin": "finem-core",
+              "path": "upstream/vue/skills/vue-router-best-practices/SKILL.md"
+            },
+            {
+              "skill": "vue:vue-testing-best-practices",
+              "source": "vue",
+              "plugin": "finem-core",
+              "path": "upstream/vue/skills/vue-testing-best-practices/SKILL.md"
+            },
+            {
+              "skill": "vue:vue-debug-guides",
+              "source": "vue",
+              "plugin": "finem-core",
+              "path": "upstream/vue/skills/vue-debug-guides/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:performance-optimization",
+              "source": "addy",
+              "plugin": "finem-core",
+              "path": "upstream/addy/skills/performance-optimization/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "vue:vue-testing-best-practices",
+              "source": "vue",
+              "plugin": "finem-core",
+              "path": "upstream/vue/skills/vue-testing-best-practices/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-nuxt",
+      "kind": "pack",
+      "extension": "nuxt",
+      "description": "Nuxt 4 server rendering and Pinia state",
+      "dependencies": [
+        "finem-core",
+        "finem-vue"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "antfu:nuxt",
+              "source": "antfu",
+              "plugin": "finem-core",
+              "path": "upstream/antfu/skills/nuxt/SKILL.md"
+            },
+            {
+              "skill": "antfu:pinia",
+              "source": "antfu",
+              "plugin": "finem-core",
+              "path": "upstream/antfu/skills/pinia/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-svelte",
+      "kind": "pack",
+      "extension": "svelte",
+      "description": "Svelte 5 and SvelteKit implementation and analysis",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [
+        "finem-react-ui",
+        "finem-expo"
+      ],
+      "exclusiveGroup": "web-framework",
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:frontend-ui-engineering",
+              "source": "addy",
+              "plugin": "finem-core",
+              "path": "upstream/addy/skills/frontend-ui-engineering/SKILL.md"
+            },
+            {
+              "skill": "svelte:svelte-code-writer",
+              "source": "svelte",
+              "plugin": "finem-core",
+              "path": "upstream/svelte/tools/skills/svelte-code-writer/SKILL.md"
+            },
+            {
+              "skill": "svelte:svelte-core-bestpractices",
+              "source": "svelte",
+              "plugin": "finem-core",
+              "path": "upstream/svelte/tools/skills/svelte-core-bestpractices/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:performance-optimization",
+              "source": "addy",
+              "plugin": "finem-core",
+              "path": "upstream/addy/skills/performance-optimization/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-angular",
+      "kind": "pack",
+      "extension": "angular",
+      "description": "Version-aware Angular application implementation",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [
+        "finem-react-ui",
+        "finem-expo"
+      ],
+      "exclusiveGroup": "web-framework",
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:frontend-ui-engineering",
+              "source": "addy",
+              "plugin": "finem-core",
+              "path": "upstream/addy/skills/frontend-ui-engineering/SKILL.md"
+            },
+            {
+              "skill": "angular:angular-developer",
+              "source": "angular",
+              "plugin": "finem-core",
+              "path": "upstream/angular/skills/dev-skills/angular-developer/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:performance-optimization",
+              "source": "addy",
+              "plugin": "finem-core",
+              "path": "upstream/addy/skills/performance-optimization/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "accessibility",
+          "title": "Accessibility",
+          "phase": "verify",
+          "requires": [
+            "ux"
+          ],
+          "connectors": [],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "angular:angular-developer",
+              "source": "angular",
+              "plugin": "finem-core",
+              "path": "upstream/angular/skills/dev-skills/angular-developer/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-next-cache",
+      "kind": "pack",
+      "extension": "next-cache",
+      "description": "Next 16.3+ instant-navigation tests for apps already building with Cache Components",
+      "dependencies": [
+        "finem-core",
+        "finem-browser-playwright"
+      ],
+      "conflicts": [
+        "finem-vue",
+        "finem-svelte",
+        "finem-angular",
+        "finem-expo",
+        "finem-tanstack-start"
+      ],
+      "exclusiveGroup": "web-framework",
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "next:next-cache-components-optimizer",
+              "source": "next",
+              "plugin": "finem-core",
+              "path": "upstream/next/skills/next-cache-components-optimizer/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "next:next-cache-components-optimizer",
+              "source": "next",
+              "plugin": "finem-core",
+              "path": "upstream/next/skills/next-cache-components-optimizer/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-tanstack-router",
+      "kind": "pack",
+      "extension": "tanstack-router",
+      "description": "TanStack React Router and Query composition",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [
+        "finem-vue",
+        "finem-svelte",
+        "finem-angular",
+        "finem-expo",
+        "finem-next-cache"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "tanstack-router:router-core",
+              "source": "tanstack-router",
+              "plugin": "finem-core",
+              "path": "upstream/tanstack-router/packages/router-core/skills/router-core/SKILL.md"
+            },
+            {
+              "skill": "tanstack-router:react-router",
+              "source": "tanstack-router",
+              "plugin": "finem-core",
+              "path": "upstream/tanstack-router/packages/react-router/skills/react-router/SKILL.md"
+            },
+            {
+              "skill": "tanstack-router:router-query",
+              "source": "tanstack-router",
+              "plugin": "finem-core",
+              "path": "upstream/tanstack-router/packages/react-router/skills/compositions/router-query/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-tanstack-start",
+      "kind": "pack",
+      "extension": "tanstack-start",
+      "description": "TanStack Start React full-stack rendering",
+      "dependencies": [
+        "finem-core",
+        "finem-tanstack-router"
+      ],
+      "conflicts": [
+        "finem-vue",
+        "finem-svelte",
+        "finem-angular",
+        "finem-expo",
+        "finem-next-cache"
+      ],
+      "exclusiveGroup": "web-framework",
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "tanstack-router:react-start",
+              "source": "tanstack-router",
+              "plugin": "finem-core",
+              "path": "upstream/tanstack-router/packages/react-start/skills/react-start/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-tanstack-table",
+      "kind": "pack",
+      "extension": "tanstack-table",
+      "description": "TanStack Table 9 core and React table bindings",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [
+        "finem-vue",
+        "finem-svelte",
+        "finem-angular",
+        "finem-expo"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "tanstack-table:core-core",
+              "source": "tanstack-table",
+              "plugin": "finem-core",
+              "path": "upstream/tanstack-table/packages/table-core/skills/core/SKILL.md"
+            },
+            {
+              "skill": "tanstack-table:core-table-features",
+              "source": "tanstack-table",
+              "plugin": "finem-core",
+              "path": "upstream/tanstack-table/packages/table-core/skills/table-features/SKILL.md"
+            },
+            {
+              "skill": "tanstack-table:react-getting-started",
+              "source": "tanstack-table",
+              "plugin": "finem-core",
+              "path": "upstream/tanstack-table/packages/react-table/skills/getting-started/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-redux-toolkit",
+      "kind": "pack",
+      "extension": "redux-toolkit",
+      "description": "Redux Toolkit state ownership and RTK Query",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [
+        "finem-tanstack-router"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "redux-toolkit:design-state-ownership",
+              "source": "redux-toolkit",
+              "plugin": "finem-core",
+              "path": "upstream/redux-toolkit/packages/toolkit/skills/model-redux-state/design-state-ownership/SKILL.md"
+            },
+            {
+              "skill": "redux-toolkit:modern-redux",
+              "source": "redux-toolkit",
+              "plugin": "finem-core",
+              "path": "upstream/redux-toolkit/packages/toolkit/skills/build-modern-redux-apps/modern-redux/SKILL.md"
+            },
+            {
+              "skill": "redux-toolkit:adopt-rtk-query",
+              "source": "redux-toolkit",
+              "plugin": "finem-core",
+              "path": "upstream/redux-toolkit/packages/toolkit/skills/manage-server-data/adopt-rtk-query/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-web-animation",
+      "kind": "pack",
+      "extension": "web-animation",
+      "description": "Purposeful CSS and chosen-library web motion",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [
+        "finem-expo"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "emil:animate",
+              "source": "emil",
+              "plugin": "finem-core",
+              "path": "upstream/emil/skills/animate/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-gsap",
+      "kind": "pack",
+      "extension": "gsap",
+      "description": "GSAP API, lifecycle and performance specialists",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [
+        "finem-expo"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "gsap:gsap-core",
+              "source": "gsap",
+              "plugin": "finem-core",
+              "path": "upstream/gsap/skills/gsap-core/SKILL.md"
+            },
+            {
+              "skill": "gsap:gsap-react",
+              "source": "gsap",
+              "plugin": "finem-core",
+              "path": "upstream/gsap/skills/gsap-react/SKILL.md"
+            },
+            {
+              "skill": "gsap:gsap-frameworks",
+              "source": "gsap",
+              "plugin": "finem-core",
+              "path": "upstream/gsap/skills/gsap-frameworks/SKILL.md"
+            },
+            {
+              "skill": "gsap:gsap-performance",
+              "source": "gsap",
+              "plugin": "finem-core",
+              "path": "upstream/gsap/skills/gsap-performance/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "gsap:gsap-performance",
+              "source": "gsap",
+              "plugin": "finem-core",
+              "path": "upstream/gsap/skills/gsap-performance/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-react-native-performance",
+      "kind": "pack",
+      "extension": "react-native-performance",
+      "description": "Measure and optimize native JS, bundle and device performance",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "callstack:react-native-best-practices",
+              "source": "callstack",
+              "plugin": "finem-core",
+              "path": "upstream/callstack/skills/react-native-best-practices/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-swiftui",
+      "kind": "pack",
+      "extension": "swiftui",
+      "description": "SwiftUI API, state, navigation and accessibility",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [
+        "finem-react-ui",
+        "finem-expo",
+        "finem-android-ui",
+        "finem-vue",
+        "finem-svelte",
+        "finem-angular",
+        "finem-next-cache",
+        "finem-tanstack-start",
+        "finem-tanstack-router",
+        "finem-tanstack-table",
+        "finem-gsap",
+        "finem-web-animation",
+        "finem-react-native-performance"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:frontend-ui-engineering",
+              "source": "addy",
+              "plugin": "finem-core",
+              "path": "upstream/addy/skills/frontend-ui-engineering/SKILL.md"
+            },
+            {
+              "skill": "swiftui:swiftui-pro",
+              "source": "swiftui",
+              "plugin": "finem-core",
+              "path": "upstream/swiftui/swiftui-pro/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:performance-optimization",
+              "source": "addy",
+              "plugin": "finem-core",
+              "path": "upstream/addy/skills/performance-optimization/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "accessibility",
+          "title": "Accessibility",
+          "phase": "verify",
+          "requires": [
+            "ux"
+          ],
+          "connectors": [],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "swiftui:swiftui-pro",
+              "source": "swiftui",
+              "plugin": "finem-core",
+              "path": "upstream/swiftui/swiftui-pro/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-android-ui",
+      "kind": "pack",
+      "extension": "android-ui",
+      "description": "Android edge-to-edge and incremental XML-to-Compose migration",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [
+        "finem-react-ui",
+        "finem-expo",
+        "finem-swiftui",
+        "finem-vue",
+        "finem-svelte",
+        "finem-angular",
+        "finem-next-cache",
+        "finem-tanstack-start",
+        "finem-tanstack-router",
+        "finem-tanstack-table",
+        "finem-gsap",
+        "finem-web-animation",
+        "finem-react-native-performance"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:frontend-ui-engineering",
+              "source": "addy",
+              "plugin": "finem-core",
+              "path": "upstream/addy/skills/frontend-ui-engineering/SKILL.md"
+            },
+            {
+              "skill": "android:edge-to-edge",
+              "source": "android",
+              "plugin": "finem-core",
+              "path": "upstream/android/system/edge-to-edge/SKILL.md"
+            },
+            {
+              "skill": "android:migrate-xml-views-to-jetpack-compose",
+              "source": "android",
+              "plugin": "finem-core",
+              "path": "upstream/android/jetpack-compose/migration/migrate-xml-views-to-jetpack-compose/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:performance-optimization",
+              "source": "addy",
+              "plugin": "finem-core",
+              "path": "upstream/addy/skills/performance-optimization/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-kotlin-mobile",
+      "kind": "pack",
+      "extension": "kotlin-mobile",
+      "description": "KMP migrations and measured native build performance",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "migration-deprecation",
+          "title": "Migration/deprecation",
+          "phase": "evolve",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "github"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "kotlin:kotlin-tooling-agp9-migration",
+              "source": "kotlin",
+              "plugin": "finem-core",
+              "path": "upstream/kotlin/skills/kotlin-tooling-agp9-migration/SKILL.md"
+            },
+            {
+              "skill": "kotlin:kotlin-tooling-java-to-kotlin",
+              "source": "kotlin",
+              "plugin": "finem-core",
+              "path": "upstream/kotlin/skills/kotlin-tooling-java-to-kotlin/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "kotlin:kotlin-tooling-native-build-performance",
+              "source": "kotlin",
+              "plugin": "finem-core",
+              "path": "upstream/kotlin/skills/kotlin-tooling-native-build-performance/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-backend-hono",
+      "kind": "pack",
+      "extension": "backend-hono",
+      "description": "Hono API implementation for a selected project runtime",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "hono:hono",
+              "source": "hono",
+              "plugin": "finem-core",
+              "path": "upstream/hono/skills/hono/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "api-contracts",
+          "title": "API contracts",
+          "phase": "design",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "hono:hono",
+              "source": "hono",
+              "plugin": "finem-core",
+              "path": "upstream/hono/skills/hono/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-backend-fastify",
+      "kind": "pack",
+      "extension": "backend-fastify",
+      "description": "Fastify request lifecycle, schema and plugin isolation",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "fastify:fastify-best-practices",
+              "source": "fastify",
+              "plugin": "finem-core",
+              "path": "upstream/fastify/skills/fastify/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "api-contracts",
+          "title": "API contracts",
+          "phase": "design",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "fastify:fastify-best-practices",
+              "source": "fastify",
+              "plugin": "finem-core",
+              "path": "upstream/fastify/skills/fastify/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "fastify:fastify-best-practices",
+              "source": "fastify",
+              "plugin": "finem-core",
+              "path": "upstream/fastify/skills/fastify/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-backend-fastapi",
+      "kind": "pack",
+      "extension": "backend-fastapi",
+      "description": "FastAPI routing, validation, dependency cleanup and tests",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "fastapi:fastapi",
+              "source": "fastapi",
+              "plugin": "finem-core",
+              "path": "upstream/fastapi/fastapi/.agents/skills/fastapi/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "api-contracts",
+          "title": "API contracts",
+          "phase": "design",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "fastapi:fastapi",
+              "source": "fastapi",
+              "plugin": "finem-core",
+              "path": "upstream/fastapi/fastapi/.agents/skills/fastapi/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "fastapi:fastapi",
+              "source": "fastapi",
+              "plugin": "finem-core",
+              "path": "upstream/fastapi/fastapi/.agents/skills/fastapi/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-backend-django",
+      "kind": "pack",
+      "extension": "backend-django",
+      "description": "Django application conventions compatible with the installed version",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "django:django",
+              "source": "django",
+              "plugin": "finem-core",
+              "path": "upstream/django/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "auth",
+          "title": "Auth",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "django:django",
+              "source": "django",
+              "plugin": "finem-core",
+              "path": "upstream/django/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "database",
+          "title": "Database",
+          "phase": "build",
+          "requires": [
+            "domain-modeling"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "django:django",
+              "source": "django",
+              "plugin": "finem-core",
+              "path": "upstream/django/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "migrations",
+          "title": "Migrations",
+          "phase": "build",
+          "requires": [
+            "database"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "django:django",
+              "source": "django",
+              "plugin": "finem-core",
+              "path": "upstream/django/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "django:django",
+              "source": "django",
+              "plugin": "finem-core",
+              "path": "upstream/django/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-api-graphql",
+      "kind": "pack",
+      "extension": "api-graphql",
+      "description": "GraphQL schema and operation contracts independent of server provider",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "api-contracts",
+          "title": "API contracts",
+          "phase": "design",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "apollo:graphql-schema",
+              "source": "apollo",
+              "plugin": "finem-core",
+              "path": "upstream/apollo/skills/graphql-schema/SKILL.md"
+            },
+            {
+              "skill": "apollo:graphql-operations",
+              "source": "apollo",
+              "plugin": "finem-core",
+              "path": "upstream/apollo/skills/graphql-operations/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-backend-apollo",
+      "kind": "pack",
+      "extension": "backend-apollo",
+      "description": "Apollo Server context, resolvers, authorization and operations",
+      "dependencies": [
+        "finem-core",
+        "finem-api-graphql"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "apollo:apollo-server",
+              "source": "apollo",
+              "plugin": "finem-core",
+              "path": "upstream/apollo/skills/apollo-server/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "apollo:apollo-server",
+              "source": "apollo",
+              "plugin": "finem-core",
+              "path": "upstream/apollo/skills/apollo-server/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-backend-rust",
+      "kind": "pack",
+      "extension": "backend-rust",
+      "description": "Rust ownership, errors, testing and performance conventions",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "apollo:rust-best-practices",
+              "source": "apollo",
+              "plugin": "finem-core",
+              "path": "upstream/apollo/skills/rust-best-practices/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "reliability-resilience",
+          "title": "Reliability/resilience",
+          "phase": "design",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "apollo:rust-best-practices",
+              "source": "apollo",
+              "plugin": "finem-core",
+              "path": "upstream/apollo/skills/rust-best-practices/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "apollo:rust-best-practices",
+              "source": "apollo",
+              "plugin": "finem-core",
+              "path": "upstream/apollo/skills/rust-best-practices/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-auth-auth0",
+      "kind": "pack",
+      "extension": "auth-auth0",
+      "description": "Auth0 integration only when the project has selected Auth0",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "auth",
+          "title": "Auth",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "auth0:auth0",
+              "source": "auth0",
+              "plugin": "finem-core",
+              "path": "upstream/auth0/plugins/auth0/skills/auth0/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-data-prisma",
+      "kind": "pack",
+      "extension": "data-prisma",
+      "description": "Prisma database setup, client API and migration commands",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "database",
+          "title": "Database",
+          "phase": "build",
+          "requires": [
+            "domain-modeling"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "prisma:prisma-database-setup",
+              "source": "prisma",
+              "plugin": "finem-core",
+              "path": "upstream/prisma/prisma-database-setup/SKILL.md"
+            },
+            {
+              "skill": "prisma:prisma-client-api",
+              "source": "prisma",
+              "plugin": "finem-core",
+              "path": "upstream/prisma/prisma-client-api/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "migrations",
+          "title": "Migrations",
+          "phase": "build",
+          "requires": [
+            "database"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "prisma:prisma-cli",
+              "source": "prisma",
+              "plugin": "finem-core",
+              "path": "upstream/prisma/prisma-cli/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-migration-prisma-v7",
+      "kind": "pack",
+      "extension": "migration-prisma-v7",
+      "description": "Explicit Prisma v7 upgrade work with project version checks",
+      "dependencies": [
+        "finem-core",
+        "finem-data-prisma"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "migrations",
+          "title": "Migrations",
+          "phase": "build",
+          "requires": [
+            "database"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "prisma:prisma-upgrade-v7",
+              "source": "prisma",
+              "plugin": "finem-core",
+              "path": "upstream/prisma/prisma-upgrade-v7/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "migration-deprecation",
+          "title": "Migration/deprecation",
+          "phase": "evolve",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "github"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "prisma:prisma-upgrade-v7",
+              "source": "prisma",
+              "plugin": "finem-core",
+              "path": "upstream/prisma/prisma-upgrade-v7/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-migration-prisma-mongodb",
+      "kind": "pack",
+      "extension": "migration-prisma-mongodb",
+      "description": "Explicit MongoDB assessment: stay on Prisma 6 or evaluate Prisma Next; scoped separately from SQL projects",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [
+        "finem-data-prisma",
+        "finem-data-neon",
+        "finem-migration-prisma-v7"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "migrations",
+          "title": "Migrations",
+          "phase": "build",
+          "requires": [
+            "database"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "prisma:prisma-mongodb-upgrade",
+              "source": "prisma",
+              "plugin": "finem-core",
+              "path": "upstream/prisma/prisma-mongodb-upgrade/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "migration-deprecation",
+          "title": "Migration/deprecation",
+          "phase": "evolve",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "github"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "prisma:prisma-mongodb-upgrade",
+              "source": "prisma",
+              "plugin": "finem-core",
+              "path": "upstream/prisma/prisma-mongodb-upgrade/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "database",
+          "title": "Database",
+          "phase": "build",
+          "requires": [
+            "domain-modeling"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "prisma:prisma-mongodb-upgrade",
+              "source": "prisma",
+              "plugin": "finem-core",
+              "path": "upstream/prisma/prisma-mongodb-upgrade/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-data-neon",
+      "kind": "pack",
+      "extension": "data-neon",
+      "description": "Neon Postgres and database branching with the required provider parent",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "database",
+          "title": "Database",
+          "phase": "build",
+          "requires": [
+            "domain-modeling"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "neon:neon",
+              "source": "neon",
+              "plugin": "finem-core",
+              "path": "upstream/neon/plugins/neon-postgres/skills/neon/SKILL.md"
+            },
+            {
+              "skill": "neon:neon-postgres",
+              "source": "neon",
+              "plugin": "finem-core",
+              "path": "upstream/neon/plugins/neon-postgres/skills/neon-postgres/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "migrations",
+          "title": "Migrations",
+          "phase": "build",
+          "requires": [
+            "database"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "neon:neon",
+              "source": "neon",
+              "plugin": "finem-core",
+              "path": "upstream/neon/plugins/neon-postgres/skills/neon/SKILL.md"
+            },
+            {
+              "skill": "neon:neon-postgres-branches",
+              "source": "neon",
+              "plugin": "finem-core",
+              "path": "upstream/neon/plugins/neon-postgres/skills/neon-postgres-branches/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-storage-neon",
+      "kind": "pack",
+      "extension": "storage-neon",
+      "description": "Neon object storage and its provider parent",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "neon:neon",
+              "source": "neon",
+              "plugin": "finem-core",
+              "path": "upstream/neon/plugins/neon-postgres/skills/neon/SKILL.md"
+            },
+            {
+              "skill": "neon:neon-object-storage",
+              "source": "neon",
+              "plugin": "finem-core",
+              "path": "upstream/neon/plugins/neon-postgres/skills/neon-object-storage/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-jobs-inngest",
+      "kind": "pack",
+      "extension": "jobs-inngest",
+      "description": "Inngest durable functions, events, flow control and development tests",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "async-jobs-events",
+          "title": "Async/jobs/events",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "inngest:inngest-setup",
+              "source": "inngest",
+              "plugin": "finem-core",
+              "path": "upstream/inngest/skills/inngest-setup/SKILL.md"
+            },
+            {
+              "skill": "inngest:inngest-durable-functions",
+              "source": "inngest",
+              "plugin": "finem-core",
+              "path": "upstream/inngest/skills/inngest-durable-functions/SKILL.md"
+            },
+            {
+              "skill": "inngest:inngest-events",
+              "source": "inngest",
+              "plugin": "finem-core",
+              "path": "upstream/inngest/skills/inngest-events/SKILL.md"
+            },
+            {
+              "skill": "inngest:inngest-flow-control",
+              "source": "inngest",
+              "plugin": "finem-core",
+              "path": "upstream/inngest/skills/inngest-flow-control/SKILL.md"
+            },
+            {
+              "skill": "inngest:inngest-steps",
+              "source": "inngest",
+              "plugin": "finem-core",
+              "path": "upstream/inngest/skills/inngest-steps/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "reliability-resilience",
+          "title": "Reliability/resilience",
+          "phase": "design",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "inngest:inngest-durable-functions",
+              "source": "inngest",
+              "plugin": "finem-core",
+              "path": "upstream/inngest/skills/inngest-durable-functions/SKILL.md"
+            },
+            {
+              "skill": "inngest:inngest-brownfield-audit",
+              "source": "inngest",
+              "plugin": "finem-core",
+              "path": "upstream/inngest/skills/inngest-brownfield-audit/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "inngest:inngest-cli",
+              "source": "inngest",
+              "plugin": "finem-core",
+              "path": "upstream/inngest/skills/inngest-cli/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-jobs-trigger",
+      "kind": "pack",
+      "extension": "jobs-trigger",
+      "description": "Trigger.dev task authoring and project setup",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "async-jobs-events",
+          "title": "Async/jobs/events",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trigger:trigger-getting-started",
+              "source": "trigger",
+              "plugin": "finem-core",
+              "path": "upstream/trigger/packages/cli-v3/skills/trigger-getting-started/SKILL.md"
+            },
+            {
+              "skill": "trigger:trigger-authoring-tasks",
+              "source": "trigger",
+              "plugin": "finem-core",
+              "path": "upstream/trigger/packages/trigger-sdk/skills/trigger-authoring-tasks/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "reliability-resilience",
+          "title": "Reliability/resilience",
+          "phase": "design",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trigger:trigger-authoring-tasks",
+              "source": "trigger",
+              "plugin": "finem-core",
+              "path": "upstream/trigger/packages/trigger-sdk/skills/trigger-authoring-tasks/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-cache-upstash",
+      "kind": "pack",
+      "extension": "cache-upstash",
+      "description": "Upstash Redis and rate limiting for a selected deployment",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "upstash:upstash-redis-js",
+              "source": "upstash",
+              "plugin": "finem-core",
+              "path": "upstream/upstash/skills/upstash-redis-js/SKILL.md"
+            },
+            {
+              "skill": "upstash:upstash-ratelimit-js",
+              "source": "upstash",
+              "plugin": "finem-core",
+              "path": "upstream/upstash/skills/upstash-ratelimit-js/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-jobs-upstash",
+      "kind": "pack",
+      "extension": "jobs-upstash",
+      "description": "Upstash QStash and durable workflow delivery",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "async-jobs-events",
+          "title": "Async/jobs/events",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "upstash:upstash-qstash-js",
+              "source": "upstash",
+              "plugin": "finem-core",
+              "path": "upstream/upstash/skills/upstash-qstash-js/SKILL.md"
+            },
+            {
+              "skill": "upstash:upstash-workflow-js",
+              "source": "upstash",
+              "plugin": "finem-core",
+              "path": "upstream/upstash/skills/upstash-workflow-js/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "reliability-resilience",
+          "title": "Reliability/resilience",
+          "phase": "design",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "upstash:upstash-workflow-js",
+              "source": "upstash",
+              "plugin": "finem-core",
+              "path": "upstream/upstash/skills/upstash-workflow-js/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-search-upstash",
+      "kind": "pack",
+      "extension": "search-upstash",
+      "description": "Upstash Search indexing and retrieval",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "upstash:upstash-search-js",
+              "source": "upstash",
+              "plugin": "finem-core",
+              "path": "upstream/upstash/skills/upstash-search-js/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-email-resend",
+      "kind": "pack",
+      "extension": "email-resend",
+      "description": "Resend transactional email API and webhook handling",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "resend:resend",
+              "source": "resend",
+              "plugin": "finem-core",
+              "path": "upstream/resend/skills/resend/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "async-jobs-events",
+          "title": "Async/jobs/events",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "resend:resend",
+              "source": "resend",
+              "plugin": "finem-core",
+              "path": "upstream/resend/skills/resend/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-api-contract-testing",
+      "kind": "pack",
+      "extension": "api-contract-testing",
+      "description": "OpenAPI parse fixtures and implementation drift checks",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "api-contracts",
+          "title": "API contracts",
+          "phase": "design",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pactflow:openapi-parser",
+              "source": "pactflow",
+              "plugin": "finem-core",
+              "path": "upstream/pactflow/plugins/swagger-contract-testing/skills/openapi-parser/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pactflow:drift-testing",
+              "source": "pactflow",
+              "plugin": "finem-core",
+              "path": "upstream/pactflow/plugins/swagger-contract-testing/skills/drift-testing/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-search-algolia",
+      "kind": "pack",
+      "extension": "search-algolia",
+      "description": "Algolia indexing contracts and release quality checks",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "algolia:algolia-data-modeling",
+              "source": "algolia",
+              "plugin": "finem-core",
+              "path": "upstream/algolia/skills/algolia-data-modeling/SKILL.md"
+            },
+            {
+              "skill": "algolia:algolia-index-configuration",
+              "source": "algolia",
+              "plugin": "finem-core",
+              "path": "upstream/algolia/skills/algolia-index-configuration/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "algolia:algolia-release-qa",
+              "source": "algolia",
+              "plugin": "finem-core",
+              "path": "upstream/algolia/skills/algolia-release-qa/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-kubernetes",
+      "kind": "pack",
+      "extension": "kubernetes",
+      "description": "Original Kubernetes manifests, policy, Helm and GitOps specialists",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "infrastructure",
+          "title": "Infrastructure",
+          "phase": "build",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "wshobson:k8s-manifest-generator",
+              "source": "wshobson",
+              "plugin": "finem-core",
+              "path": "upstream/wshobson/plugins/kubernetes-operations/skills/k8s-manifest-generator/SKILL.md"
+            },
+            {
+              "skill": "wshobson:helm-chart-scaffolding",
+              "source": "wshobson",
+              "plugin": "finem-core",
+              "path": "upstream/wshobson/plugins/kubernetes-operations/skills/helm-chart-scaffolding/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "networking",
+          "title": "Networking",
+          "phase": "build",
+          "requires": [
+            "infrastructure"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "wshobson:k8s-security-policies",
+              "source": "wshobson",
+              "plugin": "finem-core",
+              "path": "upstream/wshobson/plugins/kubernetes-operations/skills/k8s-security-policies/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "title": "Security",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "wshobson:k8s-security-policies",
+              "source": "wshobson",
+              "plugin": "finem-core",
+              "path": "upstream/wshobson/plugins/kubernetes-operations/skills/k8s-security-policies/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "deployment",
+          "title": "Deployment",
+          "phase": "deliver",
+          "requires": [
+            "release"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "github"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "wshobson:gitops-workflow",
+              "source": "wshobson",
+              "plugin": "finem-core",
+              "path": "upstream/wshobson/plugins/kubernetes-operations/skills/gitops-workflow/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "rollback",
+          "title": "Rollback",
+          "phase": "deliver",
+          "requires": [
+            "release"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "wshobson:gitops-workflow",
+              "source": "wshobson",
+              "plugin": "finem-core",
+              "path": "upstream/wshobson/plugins/kubernetes-operations/skills/gitops-workflow/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-security-audit",
+      "kind": "pack",
+      "extension": "security-audit",
+      "description": "Original agentic workflow, API footgun and SARIF auditors",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "ci",
+          "title": "CI",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trailofbits:agentic-actions-auditor",
+              "source": "trailofbits",
+              "plugin": "finem-core",
+              "path": "upstream/trailofbits/plugins/agentic-actions-auditor/skills/agentic-actions-auditor/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "title": "Security",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trailofbits:sharp-edges",
+              "source": "trailofbits",
+              "plugin": "finem-core",
+              "path": "upstream/trailofbits/plugins/sharp-edges/skills/sharp-edges/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "code-review-quality-gates",
+          "title": "Code review/quality gates",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trailofbits:sarif-parsing",
+              "source": "trailofbits",
+              "plugin": "finem-core",
+              "path": "upstream/trailofbits/plugins/static-analysis/skills/sarif-parsing/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-finops",
+      "kind": "pack",
+      "extension": "finops",
+      "description": "Provider-aware infrastructure cost estimates and generation",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "cost-finops",
+          "title": "Cost/FinOps",
+          "phase": "operate",
+          "requires": [
+            "observability"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "infracost:scan",
+              "source": "infracost",
+              "plugin": "finem-core",
+              "path": "upstream/infracost/plugins/infracost/skills/scan/SKILL.md"
+            },
+            {
+              "skill": "infracost:price-lookup",
+              "source": "infracost",
+              "plugin": "finem-core",
+              "path": "upstream/infracost/plugins/infracost/skills/price-lookup/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "infrastructure",
+          "title": "Infrastructure",
+          "phase": "build",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "infracost:iac-generation",
+              "source": "infracost",
+              "plugin": "finem-core",
+              "path": "upstream/infracost/plugins/infracost/skills/iac-generation/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-aws-containers",
+      "kind": "pack",
+      "extension": "aws-containers",
+      "description": "AWS container selection and infrastructure deployment guidance",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "infrastructure",
+          "title": "Infrastructure",
+          "phase": "build",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "aws:aws-containers",
+              "source": "aws",
+              "plugin": "finem-core",
+              "path": "upstream/aws/skills/core-skills/aws-containers/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "deployment",
+          "title": "Deployment",
+          "phase": "deliver",
+          "requires": [
+            "release"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "github"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "aws:aws-containers",
+              "source": "aws",
+              "plugin": "finem-core",
+              "path": "upstream/aws/skills/core-skills/aws-containers/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-xylex-architecture",
+      "kind": "pack",
+      "extension": "xylex-architecture",
+      "description": "Original XYLEX module design and domain modeling specialists",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "architecture",
+          "title": "Architecture",
+          "phase": "design",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [
+            "eraser",
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "xylex:codebase-design",
+              "source": "xylex",
+              "plugin": "finem-core",
+              "path": "upstream/xylex/plugins/architecture-plugins/skills/codebase-design/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "domain-modeling",
+          "title": "Domain modeling",
+          "phase": "design",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [
+            "eraser"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "xylex:domain-modeling",
+              "source": "xylex",
+              "plugin": "finem-core",
+              "path": "upstream/xylex/plugins/architecture-plugins/skills/domain-modeling/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "adrs",
+          "title": "ADRs",
+          "phase": "design",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "eraser"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "xylex:domain-modeling",
+              "source": "xylex",
+              "plugin": "finem-core",
+              "path": "upstream/xylex/plugins/architecture-plugins/skills/domain-modeling/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-xylex-code-audit",
+      "kind": "pack",
+      "extension": "xylex-code-audit",
+      "description": "Original XYLEX duplicate/dead-code audits, contract drift and callable documentation",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "code-review-quality-gates",
+          "title": "Code review/quality gates",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "xylex:audit-duplicate-dead-code",
+              "source": "xylex",
+              "plugin": "finem-core",
+              "path": "upstream/xylex/plugins/audit-code-quality/skills/audit-duplicate-dead-code/SKILL.md"
+            },
+            {
+              "skill": "xylex:duplicate-blastzone-audit",
+              "source": "xylex",
+              "plugin": "finem-core",
+              "path": "upstream/xylex/plugins/audit-code-quality/skills/duplicate-blastzone-audit/SKILL.md"
+            },
+            {
+              "skill": "xylex:reduce-contract-drift",
+              "source": "xylex",
+              "plugin": "finem-core",
+              "path": "upstream/xylex/plugins/audit-code-quality/skills/reduce-contract-drift/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "maintenance",
+          "title": "Maintenance",
+          "phase": "evolve",
+          "requires": [],
+          "connectors": [
+            "github"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "xylex:audit-duplicate-dead-code",
+              "source": "xylex",
+              "plugin": "finem-core",
+              "path": "upstream/xylex/plugins/audit-code-quality/skills/audit-duplicate-dead-code/SKILL.md"
+            },
+            {
+              "skill": "xylex:duplicate-blastzone-audit",
+              "source": "xylex",
+              "plugin": "finem-core",
+              "path": "upstream/xylex/plugins/audit-code-quality/skills/duplicate-blastzone-audit/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "api-contracts",
+          "title": "API contracts",
+          "phase": "design",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "xylex:reduce-contract-drift",
+              "source": "xylex",
+              "plugin": "finem-core",
+              "path": "upstream/xylex/plugins/audit-code-quality/skills/reduce-contract-drift/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "documentation-runbooks",
+          "title": "Documentation/runbooks",
+          "phase": "evolve",
+          "requires": [],
+          "connectors": [],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "xylex:document-code-contracts",
+              "source": "xylex",
+              "plugin": "finem-core",
+              "path": "upstream/xylex/plugins/engineering/skills/document-code-contracts/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-xylex-ui-polish",
+      "kind": "pack",
+      "extension": "xylex-ui-polish",
+      "description": "Original XYLEX web component polish, CSS transition recipes and website token extraction",
+      "dependencies": [
+        "finem-core"
+      ],
+      "conflicts": [
+        "finem-expo",
+        "finem-swiftui",
+        "finem-android-ui"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "xylex:polish-ui-components",
+              "source": "xylex",
+              "plugin": "finem-core",
+              "path": "upstream/xylex/plugins/ui-plugins/skills/polish-ui-components/SKILL.md"
+            },
+            {
+              "skill": "xylex:transitions-dev",
+              "source": "xylex",
+              "plugin": "finem-core",
+              "path": "upstream/xylex/plugins/ui-plugins/skills/transitions-dev/SKILL.md"
+            },
+            {
+              "skill": "xylex:transitions-polish",
+              "source": "xylex",
+              "plugin": "finem-core",
+              "path": "upstream/xylex/plugins/ui-plugins/skills/transitions-polish/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "design-system",
+          "title": "Design system",
+          "phase": "design",
+          "requires": [
+            "ux"
+          ],
+          "connectors": [
+            "paper",
+            "mobbin",
+            "figma"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "xylex:extract-design-system",
+              "source": "xylex",
+              "plugin": "finem-core",
+              "path": "upstream/xylex/plugins/ui-plugins/skills/extract-design-system/SKILL.md"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "capabilities": [
     {
       "id": "product-discovery",
@@ -19,11 +3935,13 @@
         {
           "skill": "gstack:office-hours",
           "source": "gstack",
+          "plugin": "finem-core",
           "path": "upstream/gstack/office-hours/SKILL.md"
         },
         {
           "skill": "addy:idea-refine",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/idea-refine/SKILL.md"
         }
       ]
@@ -42,6 +3960,7 @@
         {
           "skill": "addy:spec-driven-development",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/spec-driven-development/SKILL.md"
         }
       ]
@@ -63,11 +3982,13 @@
         {
           "skill": "gstack:plan-eng-review",
           "source": "gstack",
+          "plugin": "finem-core",
           "path": "upstream/gstack/plan-eng-review/SKILL.md"
         },
         {
           "skill": "addy:constraint-driven-development",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/constraint-driven-development/SKILL.md"
         }
       ]
@@ -89,11 +4010,13 @@
         {
           "skill": "gstack:plan-eng-review",
           "source": "gstack",
+          "plugin": "finem-core",
           "path": "upstream/gstack/plan-eng-review/SKILL.md"
         },
         {
           "skill": "wshobson:architecture-patterns",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/backend-development/skills/architecture-patterns/SKILL.md"
         }
       ]
@@ -114,6 +4037,7 @@
         {
           "skill": "addy:documentation-and-adrs",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/documentation-and-adrs/SKILL.md"
         }
       ]
@@ -134,6 +4058,7 @@
         {
           "skill": "wshobson:architecture-patterns",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/backend-development/skills/architecture-patterns/SKILL.md"
         }
       ]
@@ -156,6 +4081,7 @@
         {
           "skill": "impeccable:impeccable",
           "source": "impeccable",
+          "plugin": "finem-core",
           "path": "upstream/impeccable/.agents/skills/impeccable/SKILL.md"
         }
       ]
@@ -178,11 +4104,13 @@
         {
           "skill": "impeccable:impeccable",
           "source": "impeccable",
+          "plugin": "finem-core",
           "path": "upstream/impeccable/.agents/skills/impeccable/SKILL.md"
         },
         {
           "skill": "vercel:web-design-guidelines",
           "source": "vercel",
+          "plugin": "finem-core",
           "path": "upstream/vercel/skills/web-design-guidelines/SKILL.md"
         }
       ]
@@ -204,16 +4132,19 @@
         {
           "skill": "addy:frontend-ui-engineering",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/frontend-ui-engineering/SKILL.md"
         },
         {
           "skill": "vercel:react-best-practices",
           "source": "vercel",
+          "plugin": "finem-core",
           "path": "upstream/vercel/skills/react-best-practices/SKILL.md"
         },
         {
           "skill": "vercel:composition-patterns",
           "source": "vercel",
+          "plugin": "finem-core",
           "path": "upstream/vercel/skills/composition-patterns/SKILL.md"
         }
       ]
@@ -234,6 +4165,7 @@
         {
           "skill": "addy:api-and-interface-design",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/api-and-interface-design/SKILL.md"
         }
       ]
@@ -254,16 +4186,19 @@
         {
           "skill": "wshobson:architecture-patterns",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/backend-development/skills/architecture-patterns/SKILL.md"
         },
         {
           "skill": "addy:incremental-implementation",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/incremental-implementation/SKILL.md"
         },
         {
           "skill": "addy:api-and-interface-design",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/api-and-interface-design/SKILL.md"
         }
       ]
@@ -285,11 +4220,13 @@
         {
           "skill": "wshobson:auth-implementation-patterns",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/developer-essentials/skills/auth-implementation-patterns/SKILL.md"
         },
         {
           "skill": "addy:security-and-hardening",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/security-and-hardening/SKILL.md"
         }
       ]
@@ -310,11 +4247,13 @@
         {
           "skill": "supabase:supabase-postgres-best-practices",
           "source": "supabase",
+          "plugin": "finem-core",
           "path": "upstream/supabase/skills/supabase-postgres-best-practices/SKILL.md"
         },
         {
           "skill": "wshobson:postgresql-table-design",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/database-design/skills/postgresql-table-design/SKILL.md"
         }
       ]
@@ -335,11 +4274,13 @@
         {
           "skill": "wshobson:database-migration",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/framework-migration/skills/database-migration/SKILL.md"
         },
         {
           "skill": "addy:deprecation-and-migration",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/deprecation-and-migration/SKILL.md"
         }
       ]
@@ -360,11 +4301,13 @@
         {
           "skill": "wshobson:workflow-orchestration-patterns",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/backend-development/skills/workflow-orchestration-patterns/SKILL.md"
         },
         {
           "skill": "wshobson:microservices-patterns",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/backend-development/skills/microservices-patterns/SKILL.md"
         }
       ]
@@ -386,6 +4329,7 @@
         {
           "skill": "pulumi:pulumi-best-practices",
           "source": "pulumi",
+          "plugin": "finem-core",
           "path": "upstream/pulumi/pulumi/skills/pulumi-best-practices/SKILL.md"
         }
       ]
@@ -406,11 +4350,13 @@
         {
           "skill": "wshobson:hybrid-cloud-networking",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/cloud-infrastructure/skills/hybrid-cloud-networking/SKILL.md"
         },
         {
           "skill": "pulumi:pulumi-best-practices",
           "source": "pulumi",
+          "plugin": "finem-core",
           "path": "upstream/pulumi/pulumi/skills/pulumi-best-practices/SKILL.md"
         }
       ]
@@ -431,11 +4377,13 @@
         {
           "skill": "pulumi:pulumi-esc",
           "source": "pulumi",
+          "plugin": "finem-core",
           "path": "upstream/pulumi/pulumi/skills/pulumi-esc/SKILL.md"
         },
         {
           "skill": "wshobson:secrets-management",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/cicd-automation/skills/secrets-management/SKILL.md"
         }
       ]
@@ -454,6 +4402,7 @@
         {
           "skill": "addy:ci-cd-and-automation",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/ci-cd-and-automation/SKILL.md"
         }
       ]
@@ -472,11 +4421,13 @@
         {
           "skill": "superpowers:test-driven-development",
           "source": "superpowers",
+          "plugin": "finem-core",
           "path": "upstream/superpowers/skills/test-driven-development/SKILL.md"
         },
         {
           "skill": "wshobson:e2e-testing-patterns",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/developer-essentials/skills/e2e-testing-patterns/SKILL.md"
         }
       ]
@@ -495,11 +4446,13 @@
         {
           "skill": "gstack:qa-only",
           "source": "gstack",
+          "plugin": "finem-core",
           "path": "upstream/gstack/qa-only/SKILL.md"
         },
         {
           "skill": "addy:browser-testing-with-devtools",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/browser-testing-with-devtools/SKILL.md"
         }
       ]
@@ -518,11 +4471,13 @@
         {
           "skill": "wshobson:wcag-audit-patterns",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/accessibility-compliance/skills/wcag-audit-patterns/SKILL.md"
         },
         {
           "skill": "vercel:web-design-guidelines",
           "source": "vercel",
+          "plugin": "finem-core",
           "path": "upstream/vercel/skills/web-design-guidelines/SKILL.md"
         }
       ]
@@ -542,6 +4497,7 @@
         {
           "skill": "addy:security-and-hardening",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/security-and-hardening/SKILL.md"
         }
       ]
@@ -560,11 +4516,13 @@
         {
           "skill": "addy:performance-optimization",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/performance-optimization/SKILL.md"
         },
         {
           "skill": "vercel:react-best-practices",
           "source": "vercel",
+          "plugin": "finem-core",
           "path": "upstream/vercel/skills/react-best-practices/SKILL.md"
         }
       ]
@@ -583,6 +4541,7 @@
         {
           "skill": "addy:observability-and-instrumentation",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/observability-and-instrumentation/SKILL.md"
         }
       ]
@@ -603,6 +4562,7 @@
         {
           "skill": "wshobson:slo-implementation",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/observability-monitoring/skills/slo-implementation/SKILL.md"
         }
       ]
@@ -624,11 +4584,13 @@
         {
           "skill": "gstack:ship",
           "source": "gstack",
+          "plugin": "finem-core",
           "path": "upstream/gstack/ship/SKILL.md"
         },
         {
           "skill": "addy:git-workflow-and-versioning",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/git-workflow-and-versioning/SKILL.md"
         }
       ]
@@ -650,11 +4612,13 @@
         {
           "skill": "wshobson:deployment-pipeline-design",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/cicd-automation/skills/deployment-pipeline-design/SKILL.md"
         },
         {
           "skill": "pulumi:pulumi-best-practices",
           "source": "pulumi",
+          "plugin": "finem-core",
           "path": "upstream/pulumi/pulumi/skills/pulumi-best-practices/SKILL.md"
         }
       ]
@@ -676,16 +4640,19 @@
         {
           "skill": "wshobson:deployment-pipeline-design",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/cicd-automation/skills/deployment-pipeline-design/SKILL.md"
         },
         {
           "skill": "wshobson:database-migration",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/framework-migration/skills/database-migration/SKILL.md"
         },
         {
           "skill": "addy:deprecation-and-migration",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/deprecation-and-migration/SKILL.md"
         }
       ]
@@ -707,11 +4674,13 @@
         {
           "skill": "wshobson:incident-runbook-templates",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/incident-response/skills/incident-runbook-templates/SKILL.md"
         },
         {
           "skill": "superpowers:systematic-debugging",
           "source": "superpowers",
+          "plugin": "finem-core",
           "path": "upstream/superpowers/skills/systematic-debugging/SKILL.md"
         }
       ]
@@ -730,6 +4699,7 @@
         {
           "skill": "wshobson:postmortem-writing",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/incident-response/skills/postmortem-writing/SKILL.md"
         }
       ]
@@ -748,11 +4718,13 @@
         {
           "skill": "superpowers:systematic-debugging",
           "source": "superpowers",
+          "plugin": "finem-core",
           "path": "upstream/superpowers/skills/systematic-debugging/SKILL.md"
         },
         {
           "skill": "addy:code-simplification",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/code-simplification/SKILL.md"
         }
       ]
@@ -772,11 +4744,13 @@
         {
           "skill": "wshobson:dependency-upgrade",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/framework-migration/skills/dependency-upgrade/SKILL.md"
         },
         {
           "skill": "pulumi:provider-upgrade",
           "source": "pulumi",
+          "plugin": "finem-core",
           "path": "upstream/pulumi/pulumi/skills/provider-upgrade/SKILL.md"
         }
       ]
@@ -797,6 +4771,7 @@
         {
           "skill": "addy:deprecation-and-migration",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/deprecation-and-migration/SKILL.md"
         }
       ]
@@ -817,6 +4792,7 @@
         {
           "skill": "wshobson:cost-optimization",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/cloud-infrastructure/skills/cost-optimization/SKILL.md"
         }
       ]
@@ -838,16 +4814,19 @@
         {
           "skill": "addy:deprecation-and-migration",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/deprecation-and-migration/SKILL.md"
         },
         {
           "skill": "wshobson:gdpr-data-handling",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/hr-legal-compliance/skills/gdpr-data-handling/SKILL.md"
         },
         {
           "skill": "wshobson:cost-optimization",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/cloud-infrastructure/skills/cost-optimization/SKILL.md"
         }
       ]
@@ -866,11 +4845,13 @@
         {
           "skill": "addy:planning-and-task-breakdown",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/planning-and-task-breakdown/SKILL.md"
         },
         {
           "skill": "superpowers:writing-plans",
           "source": "superpowers",
+          "plugin": "finem-core",
           "path": "upstream/superpowers/skills/writing-plans/SKILL.md"
         }
       ]
@@ -889,11 +4870,13 @@
         {
           "skill": "addy:code-review-and-quality",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/code-review-and-quality/SKILL.md"
         },
         {
           "skill": "superpowers:verification-before-completion",
           "source": "superpowers",
+          "plugin": "finem-core",
           "path": "upstream/superpowers/skills/verification-before-completion/SKILL.md"
         }
       ]
@@ -915,16 +4898,19 @@
         {
           "skill": "wshobson:microservices-patterns",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/backend-development/skills/microservices-patterns/SKILL.md"
         },
         {
           "skill": "wshobson:workflow-orchestration-patterns",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/backend-development/skills/workflow-orchestration-patterns/SKILL.md"
         },
         {
           "skill": "wshobson:slo-implementation",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/observability-monitoring/skills/slo-implementation/SKILL.md"
         }
       ]
@@ -943,6 +4929,7 @@
         {
           "skill": "pulumi:pulumi-esc",
           "source": "pulumi",
+          "plugin": "finem-core",
           "path": "upstream/pulumi/pulumi/skills/pulumi-esc/SKILL.md"
         }
       ]
@@ -959,11 +4946,13 @@
         {
           "skill": "addy:documentation-and-adrs",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/documentation-and-adrs/SKILL.md"
         },
         {
           "skill": "wshobson:incident-runbook-templates",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/incident-response/skills/incident-runbook-templates/SKILL.md"
         }
       ]
@@ -982,11 +4971,13 @@
         {
           "skill": "wshobson:gdpr-data-handling",
           "source": "wshobson",
+          "plugin": "finem-core",
           "path": "upstream/wshobson/plugins/hr-legal-compliance/skills/gdpr-data-handling/SKILL.md"
         },
         {
           "skill": "addy:security-and-hardening",
           "source": "addy",
+          "plugin": "finem-core",
           "path": "upstream/addy/skills/security-and-hardening/SKILL.md"
         }
       ]
@@ -1007,16 +4998,19 @@
         {
           "skill": "posthog:instrument-product-analytics",
           "source": "posthog",
+          "plugin": "finem-core",
           "path": "upstream/posthog/skills/omnibus/instrument-product-analytics/SKILL.md"
         },
         {
           "skill": "posthog:querying-posthog-data",
           "source": "posthog",
+          "plugin": "finem-core",
           "path": "upstream/posthog/skills/omnibus/querying-posthog-data/SKILL.md"
         },
         {
           "skill": "posthog:creating-surveys",
           "source": "posthog",
+          "plugin": "finem-core",
           "path": "upstream/posthog/skills/omnibus/creating-surveys/SKILL.md"
         }
       ]
@@ -1032,12 +5026,156 @@
       "caveat": "Original upstream skill directories and supporting files. Invoke selected specialists within the single L11 workflow; do not activate source bootstrap routers or global hooks."
     },
     {
+      "id": "algolia",
+      "repository": "https://github.com/algolia/skills",
+      "revision": "ded7ff387b1099edc6218e002a7d5fda13390d26",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Full indexing contract/record-grain modeling, relevance settings, secured filter and evidence QA guides, local references and eval cases. Offline design needs sample records; live Algolia account/CLI/MCP only when relevant operations are authorized. Companion CLI/MCP/UI references are optional external capabilities; do not imply they are bundled/running. No default account provisioning, crawling or writes; selected guides explicitly delegate those operations. Do not activate for ordinary SQL domain modeling or non-Algolia search. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow."
+    },
+    {
+      "id": "android",
+      "repository": "https://github.com/android/skills",
+      "revision": "bac232fd02b0855df9275281a2a7a47643768719",
+      "license": "Apache-2.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Official targeted Android navigation, insets and View-to-Compose migration coverage. JDK, Gradle wrapper, Android SDK and target-device/emulator; Navigation3 migration only when chosen. Match targetSdk/Compose/Navigation versions. Never auto-migrate a View application merely because Compose references exist. Source nesting triggers Windows MAX_PATH in a deep directory: ingestion/materialization needs long-path-safe I/O. One upstream dead README.md link in a deep-link recipe is absent from the Git tree; document it as upstream defect, not a missing vendored file."
+    },
+    {
+      "id": "angular",
+      "repository": "https://github.com/angular/angular",
+      "revision": "ae33a5f55ec1d31ea4e216b32cd1ddc535a3b331",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Comprehensive first-party Angular app guidance, rather than a third-party kitchen-sink framework skill. Project Angular CLI, matching Angular version, ng build. Signal Forms defaults are gated to Angular 22+; older app conventions retained. Do not include Angular repository contributor .agent skills or additional angular-new-app entrypoint initially; developer already covers setup. New-project latest/global CLI examples are source instructions, not automatic installs; existing project version decides."
+    },
+    {
+      "id": "antfu",
+      "repository": "https://github.com/antfu/skills",
+      "revision": "a74f281a27dadc02397bc1a174b0f2c97531b6ae",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Adds Nuxt 4 app/server/shared layout, SSR-safe fetching, state and Pinia; complements Vue core without copying its rules. Nuxt 4 project; Pinia v3 guidance generated for 3.0.4; installed versions and current docs remain decisive. Nuxt is an alternative primary app framework to Next/Angular/SvelteKit/TanStack Start; Pinia only when already selected. Do not include antfu global preference skill, installation/meta router, or duplicated vendored Vue/web-guideline skills."
+    },
+    {
+      "id": "anthropic",
+      "repository": "https://github.com/anthropics/skills",
+      "revision": "34040c9c568585f6929bedeaad110ad08f079624",
+      "license": "Apache-2.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original Apache-2.0 skill-creator evaluation/grader/comparator/viewer and MCP builder references/scripts. Only selected for engineering agents or MCP servers. Claude CLI is required by upstream triggering/optimization helpers; Python and optional provider SDK/API credentials are separate. These specialists do not become global routers. Model-driven trials and deterministic checks must be reported separately; source examples and XML answer matching alone do not establish agent effectiveness."
+    },
+    {
+      "id": "apollo",
+      "repository": "https://github.com/apollographql/skills",
+      "revision": "c288eb80629dd2309eed81f23d693f66a452d043",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Schema/operation portable specialists with refs plus Apollo Server 5-specific resolvers/context/plugins/security/performance references. GraphQL schema/operations work with any GraphQL implementation. Apollo Server 5 requires Node >=20; observed @apollo/server5.5.1. Only Apollo Server module is Apollo-runtime-specific; do not force federation/router. Preserve intentional nullability and established API contracts over blanket [Type!]! preference. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow. Nine complete handbook chapters: ownership, linting, errors, testing, performance, type-state, pointers and documentation. Existing Rust toolchain/Cargo; check MSRV before copying newer lint attributes. General Rust specialist, not an Axum framework guide. Run supported feature combinations; all-features can be invalid for a given crate. Project error policy prevails over blanket no expect/unwrap advice. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow."
+    },
+    {
+      "id": "auth0",
+      "repository": "https://github.com/auth0/agent-skills",
+      "revision": "f135610540ea41e4d99882dc1f06162030c7340b",
+      "license": "Apache-2.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "404-line intent/framework/tool router plus extensive integration references; activation/behavioral eval harness present in repo. Selected Auth0 tenant and SDK; CLI/MCP optional for live config. Source metadata lists macOS/Linux only; Windows CLI not validated here. Description says use even without Auth0 mention; prohibit global provider capture, select only after project/user choice. Do not import marketplace/MCP registration; auth flow code can be authored without live tenant mutation. Include selected directory intact; acquire upstream evals separately if running. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow."
+    },
+    {
+      "id": "aws",
+      "repository": "https://github.com/aws/agent-toolkit-for-aws",
+      "revision": "68d9e8541c45afd2510662bcea69fe1e433ea9db",
+      "license": "Apache-2.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Official AWS-supported toolkit; AWS README claims end-to-end evaluations, not independently executed here. Git pinned content differs materially from cached Exa excerpt. Do not install top-level AWS rules, routers or MCP automatically. Exa returned older ECS-only body: selected body is exact Git pin and metadata version2. AWS service quotas/version claims require current docs at invocation. Only selected specialist directories and supporting source are shipped; no source plugin, root router, hooks, agent registration or MCP is activated. Cloud/account runtimes remain separate requirements."
+    },
+    {
+      "id": "callstack",
+      "repository": "https://github.com/callstackincubator/agent-skills",
+      "revision": "2766baa46ca0fe7c16cc5ab4d0077ccec2e95fb9",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Adds device, native, JS-thread, memory, startup and bundle diagnosis beyond Expo UI instructions. Existing RN/Expo project and matching Hermes/toolchains; iOS profiling needs macOS/Xcode; Android profiling needs SDK/device. Callstack owns measured mobile performance; Expo owns Expo layout/router/animation implementation. No generic lifecycle takeover."
+    },
+    {
+      "id": "cloudflare",
+      "repository": "https://github.com/cloudflare/skills",
+      "revision": "b052c32bab7dd493513260228a36c88294f343f1",
+      "license": "Apache-2.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original complete selected Workers, Wrangler and Durable Objects skills and references. Project-local Wrangler and matching compatibility settings are required; deploy/resource operations require separately authorized Cloudflare credentials. No cloud setup or global routers run during bundling."
+    },
+    {
+      "id": "django",
+      "repository": "https://github.com/wsvincent/django-skills",
+      "revision": "9a8420d96174f53a8d14e696e30a59927ac70fa0",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Substantive 300+ line guide plus ORM, async, views, templates, testing, deployment, admin and checklist references. New project guidance Django 6.x/Python 3.12+; preserve installed version/LTS. Background Tasks require a real production backend. Claims several 6.1 APIs: gate on actual project version; registry Django 6.1.1 observed. Generic service-layer and always-custom-user conventions should respect existing projects. Reference prose contains test examples, no standalone executable eval suite found. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow."
+    },
+    {
+      "id": "emil",
+      "repository": "https://github.com/emilkowalski/skills",
+      "revision": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Adds explicit motion decision, accessibility, interruption and CSS/Motion implementation craft with no connected-service dependency. Existing CSS or chosen animation runtime; no runtime for documentation itself. Impeccable remains design owner; animate runs only for a concrete web-motion task. Choose CSS when sufficient and preserve existing tokens; do not activate every motion specialist. Expo uses official expo-animation, avoiding duplicate animate-expo."
+    },
+    {
+      "id": "expo",
+      "repository": "https://github.com/expo/skills",
+      "revision": "f27959a9f0ee178def45bc974a26ed9090ac4b17",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Completes explicitly missing sibling capabilities of the already bundled project-structure and native-ui skills. Project Expo SDK/packages via expo install; many examples require SDK 56+, Reanimated 4, matching worklets and Gesture Handler. Native iOS-only surfaces, NativeTabs unstable import, iOS 18+/26-specific features must be feature/platform gated. Real device release build needed for motion verification. Retain baseline two Expo entries and pin unchanged. Expo Router owns Expo navigation; do not activate Callstack react-navigation there. Feedback submission commands contact Expo; never execute without explicit messaging authorization. Named optional expo-skill-feedback is not a required source import."
+    },
+    {
+      "id": "fastapi",
+      "repository": "https://github.com/fastapi/fastapi",
+      "revision": "50113da16fec53b66b80d75e80a89296de4fa5a5",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "321-line skill plus six focused references covering DI, Pydantic, routers, responses, frontend assets and streaming. Python >=3.10 for observed FastAPI 0.141.1; project environment and HTTPX/TestClient. Current skill uses newer app.frontend and fastapi.sse APIs; version-gate before use. SQLModel/Asyncer preferences must not trigger a migration of an existing SQLAlchemy/AnyIO app. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow."
+    },
+    {
+      "id": "fastify",
+      "repository": "https://github.com/mcollina/skills",
+      "revision": "856efd268ae85482d882f3d0bed869fd020b5c06",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Entry plus 19 detailed rules including schema, serialization, DI/plugins, hooks, auth, inject tests and deployment. Project Fastify 5; Node and installed TypeScript strategy. Type stripping advice depends on actual Node support. Description includes generic REST/backend triggers; L11 must require Fastify project evidence. Auth recipes include illustrative unimplemented validateCredentials; not complete identity provider. Tests in rules are examples, not a passed runtime suite. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow."
+    },
+    {
+      "id": "grafana",
+      "repository": "https://github.com/grafana/skills",
+      "revision": "51d33e71e191b409bbd25fc7be2684c610d18166",
+      "license": "Apache-2.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original complete OTel guidance and k6 references/examples/SETUP. k6 executable, protocol services and optional xk6 extensions are separate runtime requirements. Upstream docs CLI uses POSIX script; use documented web fallback on Windows. External example targets/cloud runs are not executed during bundling. Official Grafana product-maintained original skill repository; reused existing verified baseline pin. SLO examples reference recording rules not all defined in snippet; not a complete deployable rule file. No real alerts, contact points or paging were created. Only selected specialist directories and supporting source are shipped; no source plugin, root router, hooks, agent registration or MCP is activated. Cloud/account runtimes remain separate requirements."
+    },
+    {
+      "id": "gsap",
+      "repository": "https://github.com/greensock/gsap-skills",
+      "revision": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Official library-specific animation API/cleanup/performance guidance for projects choosing GSAP. Chosen project GSAP runtime and @gsap/react when React; matching framework packages. Gate to an actual GSAP project/request: upstream descriptions recommend GSAP generally, so avoid loading for generic motion. Preserve examples outside skills because source refers to examples/react, vue, nuxt and vanilla. All eight skills available, task-relevant entrypoint only."
+    },
+    {
       "id": "gstack",
       "repository": "https://github.com/garrytan/gstack",
       "revision": "71f6048e8ada25180e61438abc1d98cb151fe9a7",
       "license": "MIT",
       "verifiedAt": "2026-09-11",
       "caveat": "Original gstack source snapshot. L11 maps upstream gstack paths to .l11/upstream/gstack and owns routing. Browser/runtime builds need Bash, Bun, dependencies and Chromium; Windows browser also needs the Node server build. Setup scripts are shipped as source, never automatically executed or registered. The legacy connect-chrome directory symlink is omitted; its open-gstack-browser target is included as source. Git ignore metadata is omitted so npm cannot suppress original runtime helpers during packaging."
+    },
+    {
+      "id": "hono",
+      "repository": "https://github.com/honojs/skills",
+      "revision": "f916476e71029ebf62160c3286550a99f0b6c687",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "601-line full API skill: middleware, validation, streaming, RPC, app.request, CLI workflow. Project runtime Hono 4; optional Node >=22.13 CLI; Workers testing needs project Wrangler/workerd. CLI instructions use @hono/cli@next; registry latest 0.1.11 differs from next 0.2.0-next.7. Basic auth sample only checks header presence; never interpret as complete authentication. Use existing runtime adapter and do not choose Workers automatically. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow."
     },
     {
       "id": "impeccable",
@@ -1048,6 +5186,70 @@
       "caveat": "Complete compiled portable skill with references, scripts and notices. Launcher engine 0.1.5 is a separate download; invocation may download it. Windows launcher execution has not been live-tested."
     },
     {
+      "id": "infracost",
+      "repository": "https://github.com/infracost/agent-skills",
+      "revision": "2ee419ceb8a9add56ba5c525d5b2a93ce0ad2e70",
+      "license": "Apache-2.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Official Infracost product-maintained skills; concrete typed MCP and CLI bindings, version floor, org/auth failure behavior. Do not activate hooks or automatically start MCP during source installation. MCP/CLI service requests were not run; no account ready claim. price reads IaC from stdin; use native stdin pipe rather than POSIX heredoc on Windows. Only selected specialist directories and supporting source are shipped; no source plugin, root router, hooks, agent registration or MCP is activated. Cloud/account runtimes remain separate requirements."
+    },
+    {
+      "id": "inngest",
+      "repository": "https://github.com/inngest/inngest-skills",
+      "revision": "ff42436bcedfb262d6a377571ce64a0d78d386a5",
+      "license": "Apache-2.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Five deep entries (~200-500 lines each); repo eval/runner and prompt catalog present. TypeScript-specific; installed inngest major (observed4.20.0) and local Dev Server for runtime tests, credentials for Cloud. 24-hour event dedupe is not an unlimited business once-only guarantee. Select one durable job platform per project rather than activating all provider alternatives. Read installed major-specific API/migration docs; tests not executed here. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow. Shared skills/references/expressions.md is required and included. Preserve the upstream step-execution.md checkpointing link defect as a documented navigation caveat; the actual checkpointing.md file is present. Setup/CLI instructions using global installs, latest, or INNGEST_DEV=1 must be interpreted through the project-local pinned runtime and local-only development settings. Current observed SDK 4.20.0 requires Node >=20 despite source setup saying Node 18+."
+    },
+    {
+      "id": "kotlin",
+      "repository": "https://github.com/Kotlin/kotlin-agent-skills",
+      "revision": "c2f90697bf71966a117a13340d5fff787f004140",
+      "license": "Apache-2.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "First-party KMP compatibility, Java conversion and measured Native build optimization. Kotlin/Gradle/JDK and project wrapper; macOS/Xcode for native iOS builds. Bash needed for optional analyze-project.sh and audit-native-build.sh; inspect directly on Windows if absent. Separate KMP AGP9 module split from ordinary Android AGP upgrade. Preserve release build behavior and measure same command/state before and after. Skip unrelated backend JPA/toolchain experiments; no global runtime installs or CI cache mutations during source import."
+    },
+    {
+      "id": "neon",
+      "repository": "https://github.com/neondatabase/agent-skills",
+      "revision": "2e0da3a1653bcdd227565ac14bb3e9e453a8b854",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Parent overview plus detailed Postgres, branching, object-storage routes; diagnostics, pooled/direct connections, provider-specific limitations. Neon account/selected project for remote calls; source inspection and branch plan work offline. HTTP/WS/pg differ by runtime. Parent neon required by postgres and siblings; retain dependency explicitly. Provider must not replace ORM choice; ignore blanket always-pair-with-ORM when project uses SQL. No automatic claimable resources or production branch cloning containing PII. Many refs are live docs; source portability does not equal offline API documentation. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow."
+    },
+    {
+      "id": "next",
+      "repository": "https://github.com/vercel/next.js",
+      "revision": "d155ba9ebfffe4742efefda8d68c2e0e8e490924",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Official deterministic instant-navigation optimizer, scoped to apps already building with Cache Components. Baseline React best practices and installed Next docs retained. Activate only for an existing Next >=16.3 app already building with cacheComponents. Project-local @next/playwright must match the installed Next release line, alongside @playwright/test. npm latest Next and @next/playwright were both 16.3.4; Node >=20.9. Reuse the project Playwright harness and production-like local test build. No agent-browser runtime, global install or deployment is required by the selected optimizer. Do not bundle retired next-best-practices. Installed node_modules/next/dist/docs remains the version authority. Exclude next-cache-components-adoption and next-dev-loop: adoption SKILL.md lines 84-98 requires attempting next-dev-loop and only permits fallback for a real blocker; dev-loop lines 31-50 mandates Next16.3+ Turbopack and agent-browser>=0.31.1, and lines 55-94 require restored headed React-DevTools browser plus /_next/mcp. Existing browser-playwright is not that runtime. Optimizer SKILL.md lines 40-53 explicitly lets the project own its Playwright rig. Lines 140-159 restrict the workflow to an app that already builds with Cache Components. Its adoption link is outside the selected activation scope. Testing API only enabled in explicit test builds and never production. Older apps or cache adoption require a separate migration decision; no automatic framework upgrade through this pack. Advanced optional optimization, not generic Next frontend coverage. Adoption/dev-loop remain reviewed but deferred until a separately pinned, portable, smoke-tested second browser runtime is deliberately selected."
+    },
+    {
+      "id": "pactflow",
+      "repository": "https://github.com/pactflow/pactflow-agent-skills",
+      "revision": "463f70a32daba156376dbe030bbf23097a6a1ecb",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Complex OpenAPI variants plus Drift mapping, Python endpoint/coverage scripts, PowerShell and shell loops, eval fixtures. Project-local @pactflow/drift; Python+PyYAML for scripts; optional Prism; Cloud only for publishing/BDCT integration. Do not register context:fork agent metadata as global router. Helpers auto-install dependencies; use pinned local tools under L11. Long workspace path caused three fixture download writes to fail; use short workspace root or long-path capable importer, do not omit them. Loop verify is not authorization to alter spec until tests pass; source explicitly forbids modifying tested spec. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow."
+    },
+    {
+      "id": "playwright",
+      "repository": "https://github.com/microsoft/playwright-cli",
+      "revision": "655530f6d0dc71a0d6bf46ae165877d3c7311099",
+      "license": "Apache-2.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original complete research-pinned skill and nine references. Git source revision has alpha runtime dependencies; released CLI compatibility is separately documented in docs/upstream-expansion.md. Use the explicitly installed project-local L11 runtime; do not execute upstream global npm installation instructions. Browser binaries are separate."
+    },
+    {
+      "id": "pm",
+      "repository": "https://github.com/phuryn/pm-skills",
+      "revision": "18468a95b427e70e258b51389796367c6f684e7d",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original three self-contained product research skills; no executable helpers. Supply actual product evidence and user context. Added product hypothesis, requirements, acceptance, reviewability and cohort specialists preserve original bytes. Inputs and example numerical targets are not measured evidence. Generic statistical A/B analysis and ambiguous confidence/risk formulas were reviewed but not selected. Cohort analysis must distinguish incomplete observation windows from churn; intent audit requires actual project documentation. Use existing project docs rather than invent evidence or register source slash-command routers."
+    },
+    {
       "id": "posthog",
       "repository": "https://github.com/PostHog/skills",
       "revision": "a49f0145ff5d9d75b49c147a807d786d6ca8334e",
@@ -1056,12 +5258,44 @@
       "caveat": "Original PostHog instrumentation, query and survey skills. PostHog service operations require a separately connected optional account/MCP integration."
     },
     {
+      "id": "prisma",
+      "repository": "https://github.com/prisma/skills",
+      "revision": "1123817e60d15ca0f3af91878923241dee7e3b09",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Four skills with full command/client/provider/migration references; metadata baseline7.6.0. Match Prisma CLI/client/adapter versions explicitly; Node20.19+ for v7 skill; ESM/TS details; MongoDB route stays v6. Registry latest prisma8.0.0-rc.13 mismatches client latest7.10.0; never install latest pair blindly. Do not route MongoDB through v7 SQL adapter/upgrade workflow. Destructive reset/push/dev migrations must remain explicit and environment-scoped. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow. MongoDB migration companion is included intact but activated only for explicit MongoDB upgrade work: staying on Prisma 6 is valid, Prisma Next is early access, and a provider change is never automatic. Client/CLI must match project versions; observed prisma latest 8.0.0-rc.13 differs from client latest 7.10.0."
+    },
+    {
       "id": "pulumi",
       "repository": "https://github.com/pulumi/agent-skills",
       "revision": "e57d1d117b585a3b5bf6bc612ff327acfa89bd29",
       "license": "Apache-2.0",
       "verifiedAt": "2026-09-11",
       "caveat": "Original upstream skill directories and supporting files. Invoke selected specialists within the single L11 workflow; do not activate source bootstrap routers or global hooks."
+    },
+    {
+      "id": "redux-toolkit",
+      "repository": "https://github.com/reduxjs/redux-toolkit",
+      "revision": "5b4795b5d3e8a0ab19bf94d8d3413168804ade64",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Fills explicit state-ownership and RTK Query alternative with official package-shipped skills. Existing or explicitly chosen Redux Toolkit2 + React-Redux; project tests. RTK Query is an alternative server-cache owner to TanStack Query/SWR, not an additional default cache. Requires edges: modern-redux -> redux-dataflow; adopt-rtk-query -> modern-redux; slices -> state-ownership. Preserve all eight skills but load relevant path. Slash names require namespaced catalog IDs."
+    },
+    {
+      "id": "resend",
+      "repository": "https://github.com/resend/resend-skills",
+      "revision": "2a9310fb040fd06a17ce1e8e7aea478d79daea62",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "355-line multi-language API guidance plus send/receive/webhook/resource references and skill eval JSON in repo. Existing Resend SDK; observed6.27.0 Node>=20. Live sends require explicit communication authorization and configured domain. Use {data,error} and idempotencyKey; signature verify raw webhook payload. 24-hour dedupe limit; event-level durable outbox needed beyond window. Do not auto-upgrade SDK just because source says latest; version-gate APIs. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow. The separate generic email-best-practices skill is intentionally excluded because its SDK error/idempotency examples need review. Included provider skill and original eval fixtures use the Resend API contract; no sends execute during bundling."
+    },
+    {
+      "id": "shadcn",
+      "repository": "https://github.com/shadcn-ui/ui",
+      "revision": "3ba91b1cc83e1bbe4ab35a422ff2a694849c5048",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original complete shadcn skill, rules, CLI/MCP references, evaluation data and assets. CLI commands require a compatible project-local shadcn runtime and components.json; upstream latest examples do not pin runtime. Agent metadata is inert vendored source."
     },
     {
       "id": "supabase",
@@ -1080,6 +5314,70 @@
       "caveat": "Original upstream skill directories and supporting files. Invoke selected specialists within the single L11 workflow; do not activate source bootstrap routers or global hooks."
     },
     {
+      "id": "svelte",
+      "repository": "https://github.com/sveltejs/ai-tools",
+      "revision": "e7d93fcc168b5f4b3fec57c22f49a36d57e8ee1a",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Official Svelte instructions plus framework-aware analysis and documentation CLI. Svelte 5/SvelteKit project, svelte-check and project build. Optional project-private @sveltejs/mcp 0.1.26 CLI for required autofixer. npm 0.1.26 depends on tmcp 1.20.0-next.1 and eslint ^9.36.0. Pin complete toolchain; released top-level package has prerelease transitive dependency. Use canonical tools/skills originals; omit Claude/Cursor/OpenCode copies and global routers. Prefer file argument to autofixer; original POSIX dollar-escaping examples must not be copied literally into PowerShell. Optional editor subagent advice does not require creating one."
+    },
+    {
+      "id": "swiftui",
+      "repository": "https://github.com/twostraws/swiftui-agent-skill",
+      "revision": "be297ff80dddec529af1f9b1f1f114aab6c9d11c",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Adds an actual native Apple UI specialist, covering API modernization, state, navigation, accessibility and performance. macOS/Xcode and matching iOS SDK for builds; source defaults Swift >=6.2 and iOS26 for new apps; preserve existing deployment target. Use root canonical skill plus direct references only. Exclude nested swiftui-pro/skills and plugin registration. Do not label Windows static review a native build. SwiftUI is a separate primary UI framework."
+    },
+    {
+      "id": "tanstack-router",
+      "repository": "https://github.com/TanStack/router",
+      "revision": "f021f6d1c6dce6c9b54d70766f1d636d8fd9e184",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "First-party composable routing, Query integration and Start SSR/server boundaries with explicit dependency links. Matching project @tanstack/react-router, router-plugin and Query when selected; Start only for Start project. Version metadata differs across skill files, so inspect installed types, not only repository HEAD. Preserve full package paths. router-core auth links Start auth-server-primitives; router-plugin links virtual-file-routes. Both support closures included. Names react-router and vue-router belong to TanStack packages here; never confuse with Remix react-router or Vue Router. Prefix IDs. Router/Start are alternative primary routing/app owners to Next, Remix, Nuxt and Expo. Nested specialists load on demand, not all at once."
+    },
+    {
+      "id": "tanstack-table",
+      "repository": "https://github.com/TanStack/table",
+      "revision": "ce123bc6651bcbf188f3198627c6bb0b10588162",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Detailed official table behavior and state guidance; optional feature specialists form a coherent dependency graph. @tanstack/react-table 9.x, Node >=20; 9.2.4 published runtime verified. Skills use useTable/tableFeatures, not v8 useReactTable. Version9-only pack: never auto-migrate a v8 consumer. Core and table-features are required before React getting-started. Only React adapter imported initially; do not bulk activate other framework adapters. Preserve all core feature references but route to only task-relevant ones."
+    },
+    {
+      "id": "terraform",
+      "repository": "https://github.com/hashicorp/agent-skills",
+      "revision": "c2d65dfe492f74d360d35b859b88932222470bd8",
+      "license": "MPL-2.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original Terraform style/security guidance and full test references. MPL-2.0 source remains unchanged and separately licensed. Terraform test requires >=1.6; provider mocks require >=1.7. Providers and account credentials are project/runtime requirements."
+    },
+    {
+      "id": "trailofbits",
+      "repository": "https://github.com/trailofbits/skills",
+      "revision": "321ccfe628eca0d314b0ee4eaffcdd8a05639aaf",
+      "license": "CC-BY-SA-4.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original complete property-testing references and supply-chain collector/render scripts with tests, Python dependency metadata and uv.lock. CC-BY-SA-4.0 source is redistributed unchanged with attribution; it is not covered by the L11 MIT license. Collector needs Python >=3.11, uv/locked dependencies and network registries; authenticated gh improves GitHub coverage. Unavailable data must remain unassessable. Security consultancy's original auditor skills, executable helpers and test fixtures; preserve separate attribution/share-alike license. One-level cross-file limit must be reported. Static guidance, not runtime exploit assurance. Agent reference is a support dependency; ship as inert source, not registered top-level agent. Execution/probing must follow caller's task scope. Only selected specialist directories and supporting source are shipped; no source plugin, root router, hooks, agent registration or MCP is activated. Cloud/account runtimes remain separate requirements."
+    },
+    {
+      "id": "trigger",
+      "repository": "https://github.com/triggerdotdev/trigger.dev",
+      "revision": "33cf5701b4536012d45e365761c4a36067ea5f1d",
+      "license": "MIT AND Apache-2.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "SDK full authoring skill; setup skill; CLI authoring entry is thin pointer and should not replace full SDK source. Matching SDK/build/CLI observed4.5.16 Node>=18.20; local SDK bundled docs preferred; cloud project or self-hosted infrastructure for executions. Mirror triggerdotdev/skills lacks LICENSE; canonical package-level MIT license verified. Full skill sources frontmatter references monorepo docs/*.mdx: preserve those source docs if promising offline completeness. No deploy/login/project provisioning without task scope; no raw secrets in task logs. Never Promise.all SDK waits; inspect Result.ok; runtime idempotency scopes vary by version. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow. Package skill directories are MIT under their respective package LICENSE files; repository docs are Apache-2.0 under root LICENSE. Both terms and notices are retained. Use the full SDK authoring skill, not the thin CLI pointer. Source {{TRIGGER_SDK_VERSION}} placeholders remain unchanged; choose a tested project SDK/CLI/build combination. Secrets go only in local environment/secret stores, never chat."
+    },
+    {
+      "id": "upstash",
+      "repository": "https://github.com/upstash/skills",
+      "revision": "dccc0521a637fcc18395c41992703337bea6baef",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Redis substantial data structures/patterns/performance references; QStash/Workflow/search smaller entrypoints backed by extensive local docs. HTTP Redis with credentials; QStash local server possible; SDK/runtime-specific. Do not substitute REST Redis for BullMQ TCP requirement. No temporary start-redis POST without explicit resource scope. Unsafe basic lock release unconditional DEL precedes safer token/Lua pattern; correctness-critical lock fixture mandatory. Upstash Search is distinct from Redis FT.SEARCH, ordinary Redis and vector database. Provider-agnostic Redis work should use installed client and official Redis docs. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow."
+    },
+    {
       "id": "vercel",
       "repository": "https://github.com/vercel-labs/agent-skills",
       "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
@@ -1088,12 +5386,36 @@
       "caveat": "Original React/Next, composition and web-design skill directories. Repository README and React metadata declare MIT; no standalone upstream LICENSE is tracked. Offline web guidelines are provided by the web-guidelines dependency."
     },
     {
+      "id": "vue",
+      "repository": "https://github.com/vuejs-ai/skills",
+      "revision": "c9d355ff23f654309dd02006be671859df0a134c",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Fills a genuine non-React framework gap with progressive references for implementation, routing, debugging and component tests. Existing Vue 3 project, matching Vue Router/Vitest/Vue Test Utils; vue-tsc and project build. Vue core is the primary Vue skill; do not also activate antfu vue or its copied vue-best-practices. Composition API defaults yield to an existing Options API project. Route testing through established Playwright QA owner; do not activate a second global workflow router."
+    },
+    {
+      "id": "web-guidelines",
+      "repository": "https://github.com/vercel-labs/web-interface-guidelines",
+      "revision": "e3d624baaf29dc1fc645aff3e38f03e564d2d6b1",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original upstream skill directories and supporting files. Invoke selected specialists within the single L11 workflow; do not activate source bootstrap routers or global hooks."
+    },
+    {
       "id": "wshobson",
       "repository": "https://github.com/wshobson/agents",
       "revision": "a30778f8c4e6b0a87567941b7cca4f534bf642b6",
       "license": "MIT",
       "verifiedAt": "2026-09-11",
       "caveat": "Original specialist directories with substantive references/examples. Framework/cloud examples must be adapted to the actual project. Retirement is composed partial coverage, not a complete decommissioning runbook. Established specialist skill collection; content and complete templates/scripts inspected; not Kubernetes vendor ownership. CNI must implement NetworkPolicy; YAML validity does not prove enforcement. Account/cluster operations require separately authorized credentials. Upstream examples include curl-to-sudo bootstrap, auto-prune, sync --force; never auto-run during installation. Git reversal alone does not prove data rollback. Only selected specialist directories and supporting source are shipped; no source plugin, root router, hooks, agent registration or MCP is activated. Cloud/account runtimes remain separate requirements."
+    },
+    {
+      "id": "xylex",
+      "repository": "https://github.com/xylex-group/skills",
+      "revision": "53c3a7758bd1e0e5bf6564c77fe3f7d075c91846",
+      "license": "MIT",
+      "verifiedAt": "2026-09-12",
+      "caveat": "Ten complete original XYLEX skill directories, including local references, Python helpers, CSS tokens and the MIT license. Only explicitly selected architecture, code-audit and web UI-polish entrypoints are mapped. No XYLEX root router, hooks, Grok workflows or duplicate TDD/Rust skills are installed. Resolve helpers relative to the original skill directory and run them against the intended project. Python helpers require Python 3; website token extraction requires the separate extract-design-system CLI plus Playwright/Chromium, which these source bundles do not install. Keep existing project design tokens authoritative; invoke the requested specialist without stacking competing motion or review workflows. CSS motion specialists are web-only. The audit helpers also require Git and blast-zone search requires rg. The original blastzone_metrics.py uses POSIX path separators when filtering definitions/test callers: Windows aggregate caller counts can be inaccurate. Verify actual caller files or use a POSIX environment; do not treat those counts as authoritative."
     }
   ]
 }

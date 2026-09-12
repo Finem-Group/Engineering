@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 3,
+  "plugin": "finem-observability-reliability",
+  "kind": "area",
+  "version": "0.7.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "area": "observability-reliability",
+  "title": "Observability & Reliability",
+  "purpose": "Make system health measurable, design for failure and support incident diagnosis and recovery.",
+  "deliverables": [
+    "Logging, metrics and tracing",
+    "SLOs and alert criteria",
+    "Resilience and failure-mode analysis",
+    "Incident response and postmortems"
+  ],
+  "options": [
+    "observability",
+    "backend-rust",
+    "jobs-inngest",
+    "jobs-trigger",
+    "jobs-upstash"
+  ],
+  "capabilities": [
+    {
+      "id": "observability",
+      "title": "Observability",
+      "phase": "operate",
+      "requires": [],
+      "connectors": [
+        "sentry"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:observability-and-instrumentation",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/observability-and-instrumentation/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "slos",
+      "title": "SLOs",
+      "phase": "operate",
+      "requires": [
+        "observability"
+      ],
+      "connectors": [
+        "sentry"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:slo-implementation",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/observability-monitoring/skills/slo-implementation/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "incident-response",
+      "title": "Incident response",
+      "phase": "operate",
+      "requires": [
+        "observability"
+      ],
+      "connectors": [
+        "sentry",
+        "cloud-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:incident-runbook-templates",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/incident-response/skills/incident-runbook-templates/SKILL.md"
+        },
+        {
+          "skill": "superpowers:systematic-debugging",
+          "source": "superpowers",
+          "plugin": "finem-core",
+          "path": "upstream/superpowers/skills/systematic-debugging/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "postmortem",
+      "title": "Postmortem",
+      "phase": "operate",
+      "requires": [
+        "incident-response"
+      ],
+      "connectors": [],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:postmortem-writing",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/incident-response/skills/postmortem-writing/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "reliability-resilience",
+      "title": "Reliability/resilience",
+      "phase": "design",
+      "requires": [
+        "architecture"
+      ],
+      "connectors": [
+        "cloud-provider",
+        "sentry"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:microservices-patterns",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/backend-development/skills/microservices-patterns/SKILL.md"
+        },
+        {
+          "skill": "wshobson:workflow-orchestration-patterns",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/backend-development/skills/workflow-orchestration-patterns/SKILL.md"
+        },
+        {
+          "skill": "wshobson:slo-implementation",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/observability-monitoring/skills/slo-implementation/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": []
+}

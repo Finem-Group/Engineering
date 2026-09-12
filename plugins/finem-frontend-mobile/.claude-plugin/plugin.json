@@ -1,0 +1,21 @@
+{
+  "name": "finem-frontend-mobile",
+  "version": "0.7.0",
+  "description": "Implement the interface in the project's actual web or mobile framework, connecting state, navigation and API boundaries.",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "frontend"
+  ],
+  "skills": "./skills",
+  "dependencies": [
+    "finem-core"
+  ]
+}

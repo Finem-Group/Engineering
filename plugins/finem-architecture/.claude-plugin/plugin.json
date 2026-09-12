@@ -1,0 +1,24 @@
+{
+  "name": "finem-architecture",
+  "version": "0.7.0",
+  "description": "Define system boundaries, domain rules and clear interfaces so implementation can evolve without spreading coupling.",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "architecture",
+    "adrs",
+    "domain-modeling",
+    "api-contracts"
+  ],
+  "skills": "./skills",
+  "dependencies": [
+    "finem-core"
+  ]
+}

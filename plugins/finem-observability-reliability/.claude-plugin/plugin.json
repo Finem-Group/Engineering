@@ -1,0 +1,25 @@
+{
+  "name": "finem-observability-reliability",
+  "version": "0.7.0",
+  "description": "Make system health measurable, design for failure and support incident diagnosis and recovery.",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "observability",
+    "slos",
+    "incident-response",
+    "postmortem",
+    "reliability-resilience"
+  ],
+  "skills": "./skills",
+  "dependencies": [
+    "finem-core"
+  ]
+}

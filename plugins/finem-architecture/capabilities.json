@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 3,
+  "plugin": "finem-architecture",
+  "kind": "area",
+  "version": "0.7.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "area": "architecture",
+  "title": "Architecture & API Design",
+  "purpose": "Define system boundaries, domain rules and clear interfaces so implementation can evolve without spreading coupling.",
+  "deliverables": [
+    "System and module boundaries",
+    "Domain model and terminology",
+    "Architecture decision records",
+    "API contracts and integration boundaries"
+  ],
+  "options": [
+    "agent-engineering",
+    "backend-hono",
+    "backend-fastify",
+    "backend-fastapi",
+    "api-graphql",
+    "api-contract-testing",
+    "xylex-architecture",
+    "xylex-code-audit"
+  ],
+  "capabilities": [
+    {
+      "id": "architecture",
+      "title": "Architecture",
+      "phase": "design",
+      "requires": [
+        "requirements"
+      ],
+      "connectors": [
+        "eraser",
+        "context7"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "gstack:plan-eng-review",
+          "source": "gstack",
+          "plugin": "finem-core",
+          "path": "upstream/gstack/plan-eng-review/SKILL.md"
+        },
+        {
+          "skill": "wshobson:architecture-patterns",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/backend-development/skills/architecture-patterns/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "adrs",
+      "title": "ADRs",
+      "phase": "design",
+      "requires": [
+        "architecture"
+      ],
+      "connectors": [
+        "eraser"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:documentation-and-adrs",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/documentation-and-adrs/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "domain-modeling",
+      "title": "Domain modeling",
+      "phase": "design",
+      "requires": [
+        "requirements"
+      ],
+      "connectors": [
+        "eraser"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:architecture-patterns",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/backend-development/skills/architecture-patterns/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "api-contracts",
+      "title": "API contracts",
+      "phase": "design",
+      "requires": [
+        "requirements"
+      ],
+      "connectors": [
+        "context7"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:api-and-interface-design",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/api-and-interface-design/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": []
+}

@@ -1,6 +1,6 @@
 ---
 name: finem-engineering
-description: Use when coordinating engineering work in this project: selecting which original upstream skill to follow for discovery, architecture, frontend, backend, data, infrastructure, testing, security, release or operations work, and resolving its original file paths and tools.
+description: "Use when coordinating engineering work in this project: selecting which original upstream skill to follow for discovery, architecture, frontend, backend, data, infrastructure, testing, security, release or operations work, and resolving its original file paths and tools."
 ---
 
 # Finem engineering workflow
@@ -17,7 +17,7 @@ Check whether `.l11/config.json` exists in the project root.
   `.l11/config.json`, `.l11/capabilities.json` and `.l11/tools.json`,
   and resolve originals under `.l11/upstream/<source>/`. The CLI owns the selection; follow
   "Project mode" below.
-- **Absent — plugin mode.** Selection comes from which finem plugins are installed. Follow
+- **Absent — plugin mode.** Select relevant installed areas and the module's technology options. Follow
   "Plugin mode" below. Do not invent a `.l11/` directory and do not run `l11`
   commands; they are not installed in this mode.
 
@@ -30,20 +30,37 @@ This plugin root is `${CLAUDE_PLUGIN_ROOT}` when the host sets it; otherwise it 
 levels above this `SKILL.md` (`<plugin root>/skills/finem-engineering/SKILL.md`). Resolve every relative
 path below against that root.
 
-Read `capabilities.json` in this plugin root. It lists all 43 capabilities with their
-phase, `requires` edges, connectors and the base `entrypoints` — the original `SKILL.md` files that
-cover the capability without any technology pack.
+The read-only helper below loads `capabilities.json` in this plugin root. It contains the base registry,
+`areaPlugins` and `technologyOptions`. Inspect the selected helper result and relevant area metadata
+to keep task context compact. Every original lives here under `upstream/`, once, and opens on demand.
 
-Installed technology packs are sibling plugins named `finem-*`. Each carries its own
-`capabilities.json` and its own `upstream/`, and its entry skill names the originals it activates. A
-pack entry marked `"replace": true` supersedes this plugin's base entrypoints for that capability; a
-pack entry that is not a replacement augments them. Apply every installed pack's replacements first, then
-the additive ones, so pack install order does not change the result.
+Find the installed area plugin roots from the host's available skill paths. Each area has one scoped
+entry skill and capability map. Never guess sibling paths: host caches use separate version directories.
+Select areas relevant to the current task and technology options from the module's manifests, lockfiles,
+existing project choices and user instructions. Keep different monorepo modules' selections separate.
 
-Choose the capabilities relevant to the user's outcome, open the resolved original `SKILL.md` files and
-the references, examples or helpers they require. Do not substitute a summary for reading the source. If a
-relevant technology has no pack installed, say which pack covers it rather than improvising from a
-neighbouring framework's guidance.
+Run the read-only helper (Node 18+) with this core's actual root, one `--area` for each available area
+root, `--select` for the requested area plugin names and optional `--extensions` for technology IDs:
+
+```text
+node "<core root>/scripts/resolve-packs.js" --core "<core root>" --area "<product root>" --area "<architecture root>" --area "<frontend root>" --select finem-frontend-mobile --extensions nuxt
+```
+
+The helper resolves capability prerequisites across installed areas, rejects missing areas or mixed
+plugin versions, then validates technology dependencies, conflicts and exclusive groups. Nuxt includes
+Vue as an internal option; neither is a separate native plugin. Replacements run before additions.
+Select the module's actual framework and provider options before opening specialist guidance. With no area selection,
+no capability is active. Extra installed areas stay inactive unless a capability prerequisite needs them.
+
+Only the result's `active` area plugins, `extensions` and resolved `capabilities` apply. A prerequisite
+adds the required capability, not every task in its area. Reuse existing artifacts; a small fix does not
+require repeating discovery or running the entire lifecycle. Open the resolved original `SKILL.md` and
+its references when relevant; never substitute a short wrapper for its body.
+
+Report missing area plugins instead of silently installing them. If a framework choice is ambiguous,
+ask for that choice while continuing unrelated work. If Node is unavailable, apply the same metadata
+checks manually and say the helper was not run. A helper error must never activate everything.
+These plugins do not create project configuration or install framework/provider runtimes.
 
 ## Project mode
 
@@ -65,7 +82,7 @@ cross-skill references do not activate a new global workflow; required reference
 loaded within the selected task.
 
 Capability `requires` edges provide installed coverage and prerequisites; they do not require repeating
-discovery for every fix. Work at the task's current phase, reuse existing artifacts and authorization, and
+discovery for every fix. Work at the task's current lifecycle phase, reuse existing artifacts and authorization, and
 continue useful independent inspection while a configuration change is pending. A session-expiry fix may
 use frontend, auth, testing and browser QA without unrelated infrastructure or analytics work.
 
@@ -75,7 +92,8 @@ Only Finem is registered as the native workflow. Upstream routers, hooks, instal
 agent metadata inside `upstream/` are inert source. Do not install or activate their global entrypoints.
 Invoke a selected specialist within the current task, then return its findings, changes and evidence here.
 
-When the `finem-browser-playwright` pack is installed, use the Playwright browser-QA entrypoint.
+When the `browser-playwright` internal option is active for this module, use the Playwright browser-QA entrypoint.
+In project mode, follow the browser-QA entrypoints selected by the CLI capability map.
 gstack source may remain present for discovery, engineering review or shipping roles; that does not make its
 browser QA active. Do not silently build a second browser stack or switch backend because another bundle
 happens to be present. If a required behavior is unavailable, report the concrete limitation.
@@ -139,7 +157,7 @@ Connector names in `capabilities.json` are desired integrations, not connections
 host and discover actual tools and scope before use. Keep secrets out of configuration and reports.
 
 Respect upstream licensing and notices when sharing source or adaptations. These plugins carry
-170 original skills from 49 pinned Git sources across 53 technology packs;
+180 original skills from 50 pinned Git sources with 56 internal technology options;
 see `NOTICE.md` in each plugin. The library includes MIT, Apache-2.0, CC-BY-SA-4.0 and MPL-2.0 material;
 Finem's own MIT terms do not replace upstream licenses. A `coverage: partial` capability remains a real
 limitation: retirement composes deprecation, data handling and cost guidance rather than a complete

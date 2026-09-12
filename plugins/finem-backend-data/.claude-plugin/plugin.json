@@ -1,0 +1,24 @@
+{
+  "name": "finem-backend-data",
+  "version": "0.7.0",
+  "description": "Build services, persistence and background processing around explicit business rules and data contracts.",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "backend",
+    "database",
+    "migrations",
+    "async-jobs-events"
+  ],
+  "skills": "./skills",
+  "dependencies": [
+    "finem-core"
+  ]
+}

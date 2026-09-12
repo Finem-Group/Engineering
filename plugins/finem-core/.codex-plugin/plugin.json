@@ -1,7 +1,7 @@
 {
   "name": "finem-core",
-  "version": "0.4.0",
-  "description": "The Finem engineering coordinator and the base original skills for all 43 capabilities. Every finem technology pack depends on it.",
+  "version": "0.7.0",
+  "description": "The single engineering coordinator and shared original skill library for product, architecture, UI/UX, implementation, infrastructure, security and operations.",
   "author": {
     "name": "Finem Group",
     "url": "https://github.com/Finem-Group"
@@ -26,8 +26,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Finem Engineering core",
-    "shortDescription": "Coordinates 43 engineering capabilities; every finem pack builds on it.",
-    "longDescription": "Coordinates 43 engineering capabilities and the base original skills behind them. Technology packs plug into this core; every finem pack depends on it. Originals stay unmodified under upstream/ and are opened on demand.",
+    "shortDescription": "One engineering workflow and shared original library for all disciplines.",
+    "longDescription": "Coordinates 43 engineering capabilities. Stores the complete shared original library; area plugins expose scoped entrypoints and technology options activate only when selected for the current module.",
     "developerName": "Finem Group",
     "category": "Developer Tools",
     "capabilities": [

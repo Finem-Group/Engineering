@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 3,
+  "plugin": "finem-infrastructure-devops",
+  "kind": "area",
+  "version": "0.7.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "area": "infrastructure-devops",
+  "title": "Infrastructure & DevOps",
+  "purpose": "Provision reproducible environments and operate the build, release, deployment and rollback path with visible infrastructure costs.",
+  "deliverables": [
+    "Infrastructure and network configuration",
+    "Environment and CI configuration",
+    "Release, deployment and rollback plans",
+    "Infrastructure cost assessment"
+  ],
+  "options": [
+    "cloudflare",
+    "terraform",
+    "kubernetes",
+    "security-audit",
+    "finops",
+    "aws-containers"
+  ],
+  "capabilities": [
+    {
+      "id": "infrastructure",
+      "title": "Infrastructure",
+      "phase": "build",
+      "requires": [
+        "architecture"
+      ],
+      "connectors": [
+        "cloud-provider",
+        "context7"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "pulumi:pulumi-best-practices",
+          "source": "pulumi",
+          "plugin": "finem-core",
+          "path": "upstream/pulumi/pulumi/skills/pulumi-best-practices/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "networking",
+      "title": "Networking",
+      "phase": "build",
+      "requires": [
+        "infrastructure"
+      ],
+      "connectors": [
+        "cloud-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:hybrid-cloud-networking",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/cloud-infrastructure/skills/hybrid-cloud-networking/SKILL.md"
+        },
+        {
+          "skill": "pulumi:pulumi-best-practices",
+          "source": "pulumi",
+          "plugin": "finem-core",
+          "path": "upstream/pulumi/pulumi/skills/pulumi-best-practices/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "ci",
+      "title": "CI",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "github"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:ci-cd-and-automation",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/ci-cd-and-automation/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "release",
+      "title": "Release",
+      "phase": "deliver",
+      "requires": [
+        "testing",
+        "code-review-quality-gates"
+      ],
+      "connectors": [
+        "github"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "gstack:ship",
+          "source": "gstack",
+          "plugin": "finem-core",
+          "path": "upstream/gstack/ship/SKILL.md"
+        },
+        {
+          "skill": "addy:git-workflow-and-versioning",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/git-workflow-and-versioning/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "deployment",
+      "title": "Deployment",
+      "phase": "deliver",
+      "requires": [
+        "release"
+      ],
+      "connectors": [
+        "cloud-provider",
+        "github"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:deployment-pipeline-design",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/cicd-automation/skills/deployment-pipeline-design/SKILL.md"
+        },
+        {
+          "skill": "pulumi:pulumi-best-practices",
+          "source": "pulumi",
+          "plugin": "finem-core",
+          "path": "upstream/pulumi/pulumi/skills/pulumi-best-practices/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "rollback",
+      "title": "Rollback",
+      "phase": "deliver",
+      "requires": [
+        "release"
+      ],
+      "connectors": [
+        "cloud-provider",
+        "db-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:deployment-pipeline-design",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/cicd-automation/skills/deployment-pipeline-design/SKILL.md"
+        },
+        {
+          "skill": "wshobson:database-migration",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/framework-migration/skills/database-migration/SKILL.md"
+        },
+        {
+          "skill": "addy:deprecation-and-migration",
+          "source": "addy",
+          "plugin": "finem-core",
+          "path": "upstream/addy/skills/deprecation-and-migration/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "cost-finops",
+      "title": "Cost/FinOps",
+      "phase": "operate",
+      "requires": [
+        "observability"
+      ],
+      "connectors": [
+        "cloud-provider"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:cost-optimization",
+          "source": "wshobson",
+          "plugin": "finem-core",
+          "path": "upstream/wshobson/plugins/cloud-infrastructure/skills/cost-optimization/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "configuration-environments",
+      "title": "Configuration/environments",
+      "phase": "build",
+      "requires": [],
+      "connectors": [
+        "cloud-provider"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "pulumi:pulumi-esc",
+          "source": "pulumi",
+          "plugin": "finem-core",
+          "path": "upstream/pulumi/pulumi/skills/pulumi-esc/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": []
+}

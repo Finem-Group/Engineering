@@ -1,0 +1,25 @@
+{
+  "name": "finem-maintenance-documentation",
+  "version": "0.7.0",
+  "description": "Keep the system understandable and support safe dependency changes, deprecation and eventual retirement.",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "maintenance",
+    "dependencies",
+    "migration-deprecation",
+    "retirement",
+    "documentation-runbooks"
+  ],
+  "skills": "./skills",
+  "dependencies": [
+    "finem-core"
+  ]
+}
