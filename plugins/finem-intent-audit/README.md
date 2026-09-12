@@ -19,8 +19,8 @@ codex plugin add finem-intent-audit@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Documentation/runbooks | base | 1 |
-| Code review/quality gates | base | 1 |
-| Security | base | 1 |
+| Documentation/runbooks | adds to base | 1 |
+| Code review/quality gates | adds to base | 1 |
+| Security | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 2 from 1 source repository (pm), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

@@ -1,6 +1,6 @@
 {
   "name": "finem-jobs-upstash",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Upstash QStash and durable workflow delivery",
   "author": {
     "name": "Finem Group",

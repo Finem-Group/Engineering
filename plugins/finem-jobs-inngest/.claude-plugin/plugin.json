@@ -1,6 +1,6 @@
 {
   "name": "finem-jobs-inngest",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Inngest durable functions, events, flow control and development tests",
   "author": {
     "name": "Finem Group",

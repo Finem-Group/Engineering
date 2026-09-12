@@ -1,6 +1,6 @@
 {
   "name": "finem-finops",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Provider-aware infrastructure cost estimates and generation",
   "author": {
     "name": "Finem Group",

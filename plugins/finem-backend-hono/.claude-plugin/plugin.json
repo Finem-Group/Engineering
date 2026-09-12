@@ -1,6 +1,6 @@
 {
   "name": "finem-backend-hono",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Hono API implementation for a selected project runtime",
   "author": {
     "name": "Finem Group",

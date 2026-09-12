@@ -19,7 +19,7 @@ codex plugin add finem-terraform@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Infrastructure | base | 1 |
-| Testing | base | 1 |
+| Infrastructure | adds to base | 1 |
+| Testing | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 2 from 1 source repository (terraform), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

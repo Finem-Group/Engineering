@@ -19,9 +19,9 @@ codex plugin add finem-observability@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Observability | base | 2 |
-| Performance | base | 1 |
-| SLOs | base | 1 |
-| Incident response | base | 1 |
+| Observability | adds to base | 2 |
+| Performance | adds to base | 1 |
+| SLOs | adds to base | 1 |
+| Incident response | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 3 from 1 source repository (grafana), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

@@ -19,7 +19,7 @@ codex plugin add finem-kotlin-mobile@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Migration/deprecation | base | 2 |
-| Performance | base | 1 |
+| Migration/deprecation | adds to base | 2 |
+| Performance | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 3 from 1 source repository (kotlin), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

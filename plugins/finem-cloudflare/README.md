@@ -19,8 +19,8 @@ codex plugin add finem-cloudflare@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Infrastructure | base | 2 |
-| Deployment | base | 1 |
-| Async/jobs/events | base | 1 |
+| Infrastructure | adds to base | 2 |
+| Deployment | adds to base | 1 |
+| Async/jobs/events | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 3 from 1 source repository (cloudflare), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

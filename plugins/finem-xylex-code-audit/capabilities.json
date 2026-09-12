@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-xylex-code-audit",
+  "kind": "pack",
+  "version": "0.5.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "extension": "xylex-code-audit",
+  "conflicts": [],
+  "exclusiveGroup": null,
+  "capabilities": [
+    {
+      "id": "code-review-quality-gates",
+      "title": "Code review/quality gates",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "github"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "xylex:audit-duplicate-dead-code",
+          "source": "xylex",
+          "path": "upstream/xylex/plugins/audit-code-quality/skills/audit-duplicate-dead-code/SKILL.md"
+        },
+        {
+          "skill": "xylex:duplicate-blastzone-audit",
+          "source": "xylex",
+          "path": "upstream/xylex/plugins/audit-code-quality/skills/duplicate-blastzone-audit/SKILL.md"
+        },
+        {
+          "skill": "xylex:reduce-contract-drift",
+          "source": "xylex",
+          "path": "upstream/xylex/plugins/audit-code-quality/skills/reduce-contract-drift/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "maintenance",
+      "title": "Maintenance",
+      "phase": "evolve",
+      "requires": [],
+      "connectors": [
+        "github"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "xylex:audit-duplicate-dead-code",
+          "source": "xylex",
+          "path": "upstream/xylex/plugins/audit-code-quality/skills/audit-duplicate-dead-code/SKILL.md"
+        },
+        {
+          "skill": "xylex:duplicate-blastzone-audit",
+          "source": "xylex",
+          "path": "upstream/xylex/plugins/audit-code-quality/skills/duplicate-blastzone-audit/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "api-contracts",
+      "title": "API contracts",
+      "phase": "design",
+      "requires": [
+        "requirements"
+      ],
+      "connectors": [
+        "context7"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "xylex:reduce-contract-drift",
+          "source": "xylex",
+          "path": "upstream/xylex/plugins/audit-code-quality/skills/reduce-contract-drift/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "documentation-runbooks",
+      "title": "Documentation/runbooks",
+      "phase": "evolve",
+      "requires": [],
+      "connectors": [],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "xylex:document-code-contracts",
+          "source": "xylex",
+          "path": "upstream/xylex/plugins/engineering/skills/document-code-contracts/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "xylex",
+      "repository": "https://github.com/xylex-group/skills",
+      "revision": "53c3a7758bd1e0e5bf6564c77fe3f7d075c91846",
+      "license": "MIT",
+      "verifiedAt": "2026-09-12",
+      "caveat": "Ten complete original XYLEX skill directories, including local references, Python helpers, CSS tokens and the MIT license. Only explicitly selected architecture, code-audit and web UI-polish entrypoints are mapped. No XYLEX root router, hooks, Grok workflows or duplicate TDD/Rust skills are installed. Resolve helpers relative to the original skill directory and run them against the intended project. Python helpers require Python 3; website token extraction requires the separate extract-design-system CLI plus Playwright/Chromium, which these source bundles do not install. Keep existing project design tokens authoritative; invoke the requested specialist without stacking competing motion or review workflows. CSS motion specialists are web-only. The audit helpers also require Git and blast-zone search requires rg. The original blastzone_metrics.py uses POSIX path separators when filtering definitions/test callers: Windows aggregate caller counts can be inaccurate. Verify actual caller files or use a POSIX environment; do not treat those counts as authoritative."
+    }
+  ]
+}

@@ -19,8 +19,8 @@ codex plugin add finem-jobs-inngest@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Async/jobs/events | base | 5 |
-| Reliability/resilience | base | 2 |
-| Testing | base | 1 |
+| Async/jobs/events | adds to base | 5 |
+| Reliability/resilience | adds to base | 2 |
+| Testing | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 7 from 1 source repository (inngest), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

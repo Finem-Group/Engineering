@@ -1,6 +1,6 @@
 {
   "name": "finem-auth-auth0",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Auth0 integration only when the project has selected Auth0",
   "author": {
     "name": "Finem Group",

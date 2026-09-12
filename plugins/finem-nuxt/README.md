@@ -20,6 +20,6 @@ codex plugin add finem-nuxt@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Frontend | base | 2 |
+| Frontend | adds to base | 2 |
 
 Native skills: 1. Bundled originals: 2 from 1 source repository (antfu), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

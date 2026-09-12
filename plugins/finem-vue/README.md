@@ -21,6 +21,6 @@ codex plugin add finem-vue@finem
 | --- | --- | --- |
 | Frontend | replaces base | 5 |
 | Performance | replaces base | 1 |
-| Testing | base | 1 |
+| Testing | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 6 from 2 source repositories (addy, vue), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

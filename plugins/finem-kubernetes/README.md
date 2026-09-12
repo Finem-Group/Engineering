@@ -19,10 +19,10 @@ codex plugin add finem-kubernetes@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Infrastructure | base | 2 |
-| Networking | base | 1 |
-| Security | base | 1 |
-| Deployment | base | 1 |
-| Rollback | base | 1 |
+| Infrastructure | adds to base | 2 |
+| Networking | adds to base | 1 |
+| Security | adds to base | 1 |
+| Deployment | adds to base | 1 |
+| Rollback | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 4 from 1 source repository (wshobson), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

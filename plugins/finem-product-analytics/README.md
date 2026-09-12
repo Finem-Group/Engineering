@@ -19,6 +19,6 @@ codex plugin add finem-product-analytics@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Product analytics/feedback | base | 2 |
+| Product analytics/feedback | adds to base | 2 |
 
 Native skills: 1. Bundled originals: 2 from 1 source repository (pm), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

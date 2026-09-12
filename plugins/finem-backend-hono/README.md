@@ -19,7 +19,7 @@ codex plugin add finem-backend-hono@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Backend | base | 1 |
-| API contracts | base | 1 |
+| Backend | adds to base | 1 |
+| API contracts | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 1 from 1 source repository (hono), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

@@ -1,6 +1,6 @@
 {
   "name": "finem-kotlin-mobile",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "KMP migrations and measured native build performance",
   "author": {
     "name": "Finem Group",

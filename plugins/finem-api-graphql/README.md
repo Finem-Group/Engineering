@@ -19,6 +19,6 @@ codex plugin add finem-api-graphql@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| API contracts | base | 2 |
+| API contracts | adds to base | 2 |
 
 Native skills: 1. Bundled originals: 2 from 1 source repository (apollo), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

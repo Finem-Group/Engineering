@@ -1,0 +1,423 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-xylex-code-audit",
+  "sources": [
+    {
+      "id": "xylex",
+      "repository": "https://github.com/xylex-group/skills",
+      "revision": "53c3a7758bd1e0e5bf6564c77fe3f7d075c91846",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-12",
+      "dependencies": [],
+      "caveat": "Ten complete original XYLEX skill directories, including local references, Python helpers, CSS tokens and the MIT license. Only explicitly selected architecture, code-audit and web UI-polish entrypoints are mapped. No XYLEX root router, hooks, Grok workflows or duplicate TDD/Rust skills are installed. Resolve helpers relative to the original skill directory and run them against the intended project. Python helpers require Python 3; website token extraction requires the separate extract-design-system CLI plus Playwright/Chromium, which these source bundles do not install. Keep existing project design tokens authoritative; invoke the requested specialist without stacking competing motion or review workflows. CSS motion specialists are web-only. The audit helpers also require Git and blast-zone search requires rg. The original blastzone_metrics.py uses POSIX path separators when filtering definitions/test callers: Windows aggregate caller counts can be inaccurate. Verify actual caller files or use a POSIX environment; do not treat those counts as authoritative.",
+      "skills": [
+        {
+          "id": "xylex:codebase-design",
+          "path": "plugins/architecture-plugins/skills/codebase-design/SKILL.md",
+          "sha256": "a8d50abac5a4018f60e1d911d4b6f4e36454ca14d6c390c0695a578c7de65dad",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "xylex:domain-modeling",
+          "path": "plugins/architecture-plugins/skills/domain-modeling/SKILL.md",
+          "sha256": "152e2c97239affb12a60c5f4a7e74ab546a49ae169688c81f4e2ccc42dafa579",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "xylex:audit-duplicate-dead-code",
+          "path": "plugins/audit-code-quality/skills/audit-duplicate-dead-code/SKILL.md",
+          "sha256": "2b4884dc594e1f3047ce4abbe2cc58d36e5386f37cabdc3acd5706d2b8577868",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "xylex:duplicate-blastzone-audit",
+          "path": "plugins/audit-code-quality/skills/duplicate-blastzone-audit/SKILL.md",
+          "sha256": "6c7e76a6ee654f4b229c10b04658322490035541834fc517a82ba89a35e4d90f",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "xylex:reduce-contract-drift",
+          "path": "plugins/audit-code-quality/skills/reduce-contract-drift/SKILL.md",
+          "sha256": "ea1d79e3eddfa4889751e153f7cd7e2b849b0c889852a426ad5a111f77af7c08",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "xylex:document-code-contracts",
+          "path": "plugins/engineering/skills/document-code-contracts/SKILL.md",
+          "sha256": "f91fe1bcdd5f790a7fe6ab03574123f13d4c45c632344b13a27ecc9bad620b88",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "xylex:polish-ui-components",
+          "path": "plugins/ui-plugins/skills/polish-ui-components/SKILL.md",
+          "sha256": "65b074c08bb6effe695d3291adeb59b494553b6a6f39c52fd5e23b45815a5070",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "xylex:transitions-dev",
+          "path": "plugins/ui-plugins/skills/transitions-dev/SKILL.md",
+          "sha256": "11f9ab398bf7ad2a506d991c4a7ba696755704f15741b419f583d1e94d8c9775",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "xylex:transitions-polish",
+          "path": "plugins/ui-plugins/skills/transitions-polish/SKILL.md",
+          "sha256": "365a5bf179c8f53ccd8233d807f5a65a3c4311c90ff645305b7d5f983bb2e33e",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "xylex:extract-design-system",
+          "path": "plugins/ui-plugins/skills/extract-design-system/SKILL.md",
+          "sha256": "e1a08d959b6f6d8d6012bc1dd6b12493dc83f615e32e70117d2fdda33b053c65",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "e5936b877eccc4dd0feaddfb35bcff1bea7647521e4b522121e0c85a573c7148",
+          "mode": 420
+        },
+        {
+          "path": "plugins/architecture-plugins/skills/codebase-design/DEEPENING.md",
+          "sha256": "125e6b77413ad2bc7cf7a772bc74336d580a50f9e797db2178ed133d62333d06",
+          "mode": 420
+        },
+        {
+          "path": "plugins/architecture-plugins/skills/codebase-design/DESIGN-IT-TWICE.md",
+          "sha256": "21c3264953bd30ee87b181a3ccaf0e70649f461e5ffd7dc654acee4ba1788b31",
+          "mode": 420
+        },
+        {
+          "path": "plugins/architecture-plugins/skills/codebase-design/SKILL.md",
+          "sha256": "a8d50abac5a4018f60e1d911d4b6f4e36454ca14d6c390c0695a578c7de65dad",
+          "mode": 420
+        },
+        {
+          "path": "plugins/architecture-plugins/skills/codebase-design/agents/openai.yaml",
+          "sha256": "edebc9e4fcfe102114012575eaa9600b9b5fd08c311664f389c36e7bc717740f",
+          "mode": 420
+        },
+        {
+          "path": "plugins/architecture-plugins/skills/domain-modeling/ADR-FORMAT.md",
+          "sha256": "f1f36cd3f8d3b6474ddd5855da4e233bfc4ae1a1c5024909ccf11871819a41b2",
+          "mode": 420
+        },
+        {
+          "path": "plugins/architecture-plugins/skills/domain-modeling/CONTEXT-FORMAT.md",
+          "sha256": "b8cc318f2a4285b530e908b6bc43901c3c5cd11100362636bbc4216639bef597",
+          "mode": 420
+        },
+        {
+          "path": "plugins/architecture-plugins/skills/domain-modeling/SKILL.md",
+          "sha256": "152e2c97239affb12a60c5f4a7e74ab546a49ae169688c81f4e2ccc42dafa579",
+          "mode": 420
+        },
+        {
+          "path": "plugins/architecture-plugins/skills/domain-modeling/agents/openai.yaml",
+          "sha256": "f6bf2aa996c6e6f53fdd0708e18a0d16a56aed8322cca59fedbe3c0d2c75f06b",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/audit-duplicate-dead-code/SKILL.md",
+          "sha256": "2b4884dc594e1f3047ce4abbe2cc58d36e5386f37cabdc3acd5706d2b8577868",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/audit-duplicate-dead-code/references/cluster-manifest.example.json",
+          "sha256": "777709aafe1bc2e57f2bae94348164f256b13e1b8625ca933db48ff6cb477ef1",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/audit-duplicate-dead-code/references/ranking-rubric.md",
+          "sha256": "d3531c1a9db2c2ebe62ee260fd5e02d4d63018b8b2bb26d585c1de54fcd72049",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/audit-duplicate-dead-code/references/report-template.md",
+          "sha256": "7b99105d406f5004f4b3388d6ff91717ae908216b4c84ef39e8ab4f4578c4d63",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/audit-duplicate-dead-code/scripts/cluster_metrics.py",
+          "sha256": "2608d86eee5afbd29e36eea694307036bf818a31d4792a006493bb2f36842e54",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/duplicate-blastzone-audit/SKILL.md",
+          "sha256": "6c7e76a6ee654f4b229c10b04658322490035541834fc517a82ba89a35e4d90f",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/duplicate-blastzone-audit/references/blastzone-matrix.md",
+          "sha256": "daf995740bf8a10959dda8113d921ef6d01eb00ea71c54f50ba84216be0469b1",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/duplicate-blastzone-audit/references/function-cluster-manifest.example.json",
+          "sha256": "d13cbbd53cf02f2df9b7f82b824d9489951d44436d494acf6a94e833a75a6000",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/duplicate-blastzone-audit/references/report-template.md",
+          "sha256": "bf634fcd0495fc2c8c581773c8305f2f8f7a9baa96fe6e2c34f86f74a9a398fd",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/duplicate-blastzone-audit/references/yield-risk-rubric.md",
+          "sha256": "db4f3e244d8a4bec9fe44a76fe58f09b0e74e1003c7ddc6032d2025b0c7cf286",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/duplicate-blastzone-audit/scripts/blastzone_metrics.py",
+          "sha256": "3438b0e83ca63f6d99ca5c945cc7eebbd7a37adab013c18c7a270f51be265db5",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/reduce-contract-drift/SKILL.md",
+          "sha256": "ea1d79e3eddfa4889751e153f7cd7e2b849b0c889852a426ad5a111f77af7c08",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/reduce-contract-drift/references/api-framework-patterns.md",
+          "sha256": "1fa14a6cd9fbebaa7be5e73bd3c7992868b0c3b649ae68806d4a9f2dd6c38766",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/reduce-contract-drift/references/ci-guardrails.md",
+          "sha256": "3ae77f8e669649011d1fa48693bd51c37ccfe4a2b6f5301156cb3bb5b42545be",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/reduce-contract-drift/references/contract-drift-playbook.md",
+          "sha256": "47c58b8f0aaa64e57dd5f735cd2259a4e7fa70dbc16bcb7e597bb026df821542",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/reduce-contract-drift/references/rust-crate-patterns.md",
+          "sha256": "6aff909ddf7538627a4320f2696349ba283289d6c76958a69db1f5f68cfc04a6",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/reduce-contract-drift/references/surface-checklists.md",
+          "sha256": "2e23091ba73a4e6ad43a41283df2c34eb31408758827df8ba4590b2642d281fd",
+          "mode": 420
+        },
+        {
+          "path": "plugins/engineering/skills/document-code-contracts/SKILL.md",
+          "sha256": "f91fe1bcdd5f790a7fe6ab03574123f13d4c45c632344b13a27ecc9bad620b88",
+          "mode": 420
+        },
+        {
+          "path": "plugins/engineering/skills/document-code-contracts/references/contract-template.md",
+          "sha256": "73504521c39547786296b71805dbd7a7f618be7acef11693c7b417edb8685577",
+          "mode": 420
+        },
+        {
+          "path": "plugins/engineering/skills/document-code-contracts/scripts/init_contract_doc.py",
+          "sha256": "b0ac3a1a036330aaa4c38cb65eee1921bbefe8c1cca4256350eb5d2ae07c0285",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/extract-design-system/SKILL.md",
+          "sha256": "e1a08d959b6f6d8d6012bc1dd6b12493dc83f615e32e70117d2fdda33b053c65",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/extract-design-system/references/outputs.md",
+          "sha256": "5fad6484561857beb32e8fd42d90fa7ed3ad5918174ccee3c7caceac97e5a3f6",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/extract-design-system/references/workflow.md",
+          "sha256": "2361195ede7301b1e65c14e3ec133021798ebf6d6e570e731097f20ebcf62950",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/polish-ui-components/SKILL.md",
+          "sha256": "65b074c08bb6effe695d3291adeb59b494553b6a6f39c52fd5e23b45815a5070",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/polish-ui-components/references/rules.md",
+          "sha256": "2d33df163366594c7ea073cfdf24491485e8c7defa75972eb185e7d435914a71",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/01-card-resize.md",
+          "sha256": "e464e54fd9bc855c96d1dc3a570227fbe9e97857626fd9ba85035d927a918157",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/02-number-pop-in.md",
+          "sha256": "723c6318d4c785febeb998326651cbbd04294d7712f8d32dfac85fef9e8bf5d1",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/03-notification-badge.md",
+          "sha256": "f8f58844de1acf988f9437e4e1957478c48c6392939ac161ae3b9f6b55ea02f9",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/04-text-states-swap.md",
+          "sha256": "d6e2ba7a8c591c4e436303694b981d38bed78dc0c8583173dbdccb192eb390c0",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/05-menu-dropdown.md",
+          "sha256": "70048541fd6389cfee736bf15a2bb21b062bc59c022562dc8d19773499630243",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/06-modal.md",
+          "sha256": "55638bf7e92d54d54cd09ad360442d7433e5b7a4b34bea24138643c76c03339a",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/07-panel-reveal.md",
+          "sha256": "1e6e726ccbbf44a5122200096f9bae7f1484be55fd17c102bfee870fd1a7418f",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/08-page-side-by-side.md",
+          "sha256": "535c056bc2029ccf73ba63cfe839a9078c7967b374d2f021dbaa30ef411324f7",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/09-icon-swap.md",
+          "sha256": "46cb518c5ba9d5425fd6a854e337ce2242a82a8d215c00153c6330f239cb610d",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/10-success-check.md",
+          "sha256": "bd588b8f6039e63184b4161f6ae086f2333ed8a155229da702d7563fee41e610",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/11-avatar-group-hover.md",
+          "sha256": "4f440f0f6e3e2c99631d6cd168e326ea7c41052bedea71331b0db1fc67e82a84",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/12-error-state-shake.md",
+          "sha256": "f8c14b853e7d1ab1b1d7272d0d9e704e2877df837a44ee7fa58ab7e990a3e102",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/13-input-clear-dissolve.md",
+          "sha256": "f9795657d72947ea65bb611c0abedf44507b0a4a9866004ca1c228b1e41c2d15",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/14-skeleton-reveal.md",
+          "sha256": "ffa8d66692cb863a05799abab90cdd4f1ad43189833202428ada7385bffcd88f",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/15-shimmer-text.md",
+          "sha256": "c62243675c39f14f637bde54a4fbd57ba6c799b381cb38f60432dc816d0a33c9",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/16-tabs-sliding.md",
+          "sha256": "5d5476da745b58652daba496b309d5293be6f61297968e946c019dc8842f4d17",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/17-tooltip.md",
+          "sha256": "eedc3c03c78ed66e8eef2d9bd031d27096d8d612f4444c5cc84f74aa39e94275",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/18-texts-reveal.md",
+          "sha256": "532a7fc12d94008d38d73e10d384ff8493ac8497505dad32d560f9842185fda7",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/19-card-tilt.md",
+          "sha256": "d64a509bdfbc478647bae4654543babd208e26743839f9ea17a0605951de920f",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/20-plus-menu-morph.md",
+          "sha256": "3dc1ff9409bc70312cb74beca8e93c6255c246510c4fdee3a01ccd4eb59b4bce",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/21-accordion.md",
+          "sha256": "5b01c4b3db1773e3408bcc8a0b00b86c3dd7c7ed94b08f0cb250bf823969c641",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/22-toast.md",
+          "sha256": "a383f33a69db0fa325bdf3ac51ef2221bd784a6021cabc04c98725b070704343",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/23-like-button.md",
+          "sha256": "116a03e19fc036036b0bb2d42837f0a8b67b898c1974f5375b3d87f1076e051e",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/24-learn-more-hover.md",
+          "sha256": "94f5162e497a9399bca8b57d5b64d03e8545233b8e27b953d8e35108fc33482c",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/25-checkbox-check.md",
+          "sha256": "a8d879e720691dc70d2396f3819f77be2c384da443dba667eb95a103e6234c4e",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/26-spinning-counter.md",
+          "sha256": "e34bc3f7bcea2279216acf577f3279df89fb81861879834446482e3412833b49",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/27-toggle.md",
+          "sha256": "9e4c405e573e1cf3286cc2eadf94c4dea7fa1139a843298db3dfd94fc47d1684",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/SKILL.md",
+          "sha256": "11f9ab398bf7ad2a506d991c4a7ba696755704f15741b419f583d1e94d8c9775",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/_root.css",
+          "sha256": "e74d5b31896e0f839df153e68b737e742b4d38a61ef928be99aee2a14623cf19",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-polish/SKILL.md",
+          "sha256": "365a5bf179c8f53ccd8233d807f5a65a3c4311c90ff645305b7d5f983bb2e33e",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-polish/_refine-rules.md",
+          "sha256": "9e6b05051ecfbae1c2eacae210b09fd5795557e8f7d1759acfcc106bc88e92c3",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-polish/_root.css",
+          "sha256": "02e4335077af1433e9722ddc1a2474d83392cc3a81df4b4e69821a094872efaa",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/xylex"
+    }
+  ]
+}

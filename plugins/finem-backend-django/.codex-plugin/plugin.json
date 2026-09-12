@@ -1,6 +1,6 @@
 {
   "name": "finem-backend-django",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Django application conventions compatible with the installed version",
   "author": {
     "name": "Finem Group",

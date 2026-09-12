@@ -19,7 +19,7 @@ codex plugin add finem-react-ui@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Frontend | base | 1 |
-| Design system | base | 1 |
+| Frontend | adds to base | 1 |
+| Design system | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 1 from 1 source repository (shadcn), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

@@ -19,9 +19,9 @@ codex plugin add finem-product-delivery@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Product discovery | base | 1 |
-| Requirements | base | 1 |
-| Planning/task decomposition | base | 1 |
-| Testing | base | 1 |
+| Product discovery | adds to base | 1 |
+| Requirements | adds to base | 1 |
+| Planning/task decomposition | adds to base | 1 |
+| Testing | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 4 from 1 source repository (pm), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

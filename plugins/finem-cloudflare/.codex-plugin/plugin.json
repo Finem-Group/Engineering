@@ -1,6 +1,6 @@
 {
   "name": "finem-cloudflare",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Cloudflare Workers, Wrangler and Durable Objects",
   "author": {
     "name": "Finem Group",

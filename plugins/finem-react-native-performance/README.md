@@ -19,6 +19,6 @@ codex plugin add finem-react-native-performance@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Performance | base | 1 |
+| Performance | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 1 from 1 source repository (callstack), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

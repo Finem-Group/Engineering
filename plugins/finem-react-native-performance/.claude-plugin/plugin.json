@@ -1,6 +1,6 @@
 {
   "name": "finem-react-native-performance",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Measure and optimize native JS, bundle and device performance",
   "author": {
     "name": "Finem Group",

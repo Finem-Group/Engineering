@@ -21,6 +21,6 @@ codex plugin add finem-expo@finem
 | --- | --- | --- |
 | Frontend | replaces base | 7 |
 | Performance | replaces base | 1 |
-| Design system | base | 1 |
+| Design system | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 8 from 2 source repositories (addy, expo), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

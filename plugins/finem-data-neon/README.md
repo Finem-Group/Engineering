@@ -19,7 +19,7 @@ codex plugin add finem-data-neon@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Database | base | 2 |
-| Migrations | base | 2 |
+| Database | adds to base | 2 |
+| Migrations | adds to base | 2 |
 
 Native skills: 1. Bundled originals: 3 from 1 source repository (neon), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

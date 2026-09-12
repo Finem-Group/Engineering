@@ -19,6 +19,6 @@ codex plugin add finem-tanstack-router@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Frontend | base | 3 |
+| Frontend | adds to base | 3 |
 
 Native skills: 1. Bundled originals: 3 from 1 source repository (tanstack-router), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

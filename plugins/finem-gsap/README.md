@@ -19,7 +19,7 @@ codex plugin add finem-gsap@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Frontend | base | 4 |
-| Performance | base | 1 |
+| Frontend | adds to base | 4 |
+| Performance | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 4 from 1 source repository (gsap), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

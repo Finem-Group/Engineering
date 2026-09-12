@@ -1,6 +1,6 @@
 {
   "name": "finem-tanstack-table",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "TanStack Table 9 core and React table bindings",
   "author": {
     "name": "Finem Group",

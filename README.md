@@ -1,11 +1,11 @@
 # Finem Engineering
 
 A plugin marketplace for **Claude Code** and **Codex**: one engineering coordinator plus
-53 technology packs, carrying 170 original skills from
-49 pinned Git sources across 43 capabilities.
+56 technology packs, carrying 180 original skills from
+50 pinned Git sources across 43 capabilities.
 
 Originals are bundled **unmodified** under each plugin's `upstream/`. Only the entry skills are native,
-so installing a pack adds two skills to the model's view — the coordinator and that pack's entry — not 170.
+so installing a pack exposes the coordinator and that pack's entry; original specialists load on demand.
 
 ## Install
 
@@ -99,6 +99,9 @@ codex plugin add finem-nuxt@finem
 | `finem-security-audit` | Original agentic workflow, API footgun and SARIF auditors | trailofbits |
 | `finem-finops` | Provider-aware infrastructure cost estimates and generation | infracost |
 | `finem-aws-containers` | AWS container selection and infrastructure deployment guidance | aws |
+| `finem-xylex-architecture` | Original XYLEX module design and domain modeling specialists | xylex |
+| `finem-xylex-code-audit` | Original XYLEX duplicate/dead-code audits, contract drift and callable documentation | xylex |
+| `finem-xylex-ui-polish` | Original XYLEX web component polish, CSS transition recipes and website token extraction | xylex |
 
 ## Layout
 
@@ -118,6 +121,10 @@ plugins/<name>/
 Both marketplace files point at the same `plugins/` directory, so the two hosts install identical bytes.
 
 ## Known limits
+
+The three optional XYLEX packs and their ten complete original skills are documented in
+[XYLEX integration](docs/xylex-integration.md), including source provenance, prerequisites and web/native scope.
+
 
 - **Codex has no dependency resolution.** See the install section — install `finem-core` and any required
   pack explicitly.

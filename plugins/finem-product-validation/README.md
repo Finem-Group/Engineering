@@ -20,7 +20,7 @@ codex plugin add finem-product-validation@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Feasibility | base | 2 |
-| Product discovery | base | 1 |
+| Feasibility | adds to base | 2 |
+| Product discovery | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 3 from 1 source repository (pm), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

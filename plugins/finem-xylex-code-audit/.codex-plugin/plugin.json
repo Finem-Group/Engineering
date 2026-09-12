@@ -1,0 +1,37 @@
+{
+  "name": "finem-xylex-code-audit",
+  "version": "0.5.0",
+  "description": "Original XYLEX duplicate/dead-code audits, contract drift and callable documentation",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "code-review-quality-gates",
+    "maintenance",
+    "api-contracts",
+    "documentation-runbooks"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Xylex code audit",
+    "shortDescription": "Original XYLEX duplicate/dead-code audits, contract drift and callable documentation",
+    "longDescription": "Original XYLEX duplicate/dead-code audits, contract drift and callable documentation Bundles the original xylex skills unmodified and activates them for code review/quality gates, maintenance, api contracts, documentation/runbooks. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use the Finem Xylex code audit guidance for this change.",
+      "Review this code against xylex practice."
+    ]
+  }
+}

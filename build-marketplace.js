@@ -10,11 +10,10 @@
  *
  * Output: plugins/<name>/ shared by both marketplaces.
  *   finem-core          coordinator skill + the capability base originals
- *   finem-<extension>   one entry skill + that pack's originals   (53 packs)
+ *   finem-<extension>   one entry skill + that pack's originals
  *
  * Only entry skills are native. Upstream originals are copied byte for byte
- * into <plugin>/upstream/<source>/ and opened on demand, so no host loads 170
- * skills at once.
+ * into <plugin>/upstream/<source>/ and opened on demand.
  *
  * Usage:  node build-marketplace.js --catalog <path-to-extracted-package> [--out <repo-root>]
  *
@@ -41,7 +40,7 @@ const REPO_SLUG = 'Finem-Group/Engineering';
 const REPO_URL = `https://github.com/${REPO_SLUG}`;
 const OWNER = { name: 'Finem Group', url: 'https://github.com/Finem-Group' };
 // Marketplace fixes can be released independently of the pinned L11 catalog.
-const PLUGIN_VERSION = '0.4.1';
+const PLUGIN_VERSION = '0.5.0';
 const CODEX_CATEGORY = 'Developer Tools';
 const CODEX_POLICY = { installation: 'AVAILABLE', authentication: 'ON_USE' };
 
@@ -639,7 +638,7 @@ function lockSubset(catalog, plugin) {
 function pluginReadme(catalog, plugin) {
   const capRows = plugin.capabilities
     .filter(c => c.entrypoints.length)
-    .map(c => `| ${c.title} | ${c.replace ? 'replaces base' : 'base'} | ${c.entrypoints.length} |`)
+    .map(c => `| ${c.title} | ${c.replace ? 'replaces base' : plugin.kind === 'core' ? 'base' : 'adds to base'} | ${c.entrypoints.length} |`)
     .join('\n');
 
   const codexInstall = [...plugin.dependencies, plugin.name]
@@ -757,7 +756,7 @@ ${packs.length} technology packs, carrying ${catalog.skills.size} original skill
 ${catalog.sources.size} pinned Git sources across ${catalog.stack.capabilities.length} capabilities.
 
 Originals are bundled **unmodified** under each plugin's \`upstream/\`. Only the entry skills are native,
-so installing a pack adds two skills to the model's view — the coordinator and that pack's entry — not 170.
+so installing a pack exposes the coordinator and that pack's entry; original specialists load on demand.
 
 ## Install
 
@@ -818,6 +817,8 @@ plugins/<name>/
 Both marketplace files point at the same \`plugins/\` directory, so the two hosts install identical bytes.
 
 ## Known limits
+
+${catalog.sources.has('xylex') ? 'The three optional XYLEX packs and their ten complete original skills are documented in\n[XYLEX integration](docs/xylex-integration.md), including source provenance, prerequisites and web/native scope.\n' : ''}
 
 - **Codex has no dependency resolution.** See the install section — install \`${CORE}\` and any required
   pack explicitly.
@@ -920,6 +921,8 @@ function main() {
 
   const catalog = loadCatalog(catalogRoot);
   const plugins = describeAll(catalog);
+  const xylexDoc = catalog.sources.has('xylex')
+    ? fs.readFileSync(path.join(catalogRoot, 'docs/xylex-integration.md'), 'utf8') : null;
 
   rmrf(path.join(outRoot, 'plugins'));
   for (const plugin of plugins) {
@@ -929,6 +932,7 @@ function main() {
 
   writeMarketplaces(catalog, plugins, outRoot);
   writeText(path.join(outRoot, 'README.md'), rootReadme(catalog, plugins));
+  if (xylexDoc !== null) writeText(path.join(outRoot, 'docs/xylex-integration.md'), xylexDoc);
   // Pure MIT text at the root so GitHub's licence detection picks it up; the
   // per-plugin copies carry the scope note about upstream/.
   writeText(path.join(outRoot, 'LICENSE'), MIT_TEXT);

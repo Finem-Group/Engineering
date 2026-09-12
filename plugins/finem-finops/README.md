@@ -19,7 +19,7 @@ codex plugin add finem-finops@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Cost/FinOps | base | 2 |
-| Infrastructure | base | 1 |
+| Cost/FinOps | adds to base | 2 |
+| Infrastructure | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 3 from 1 source repository (infracost), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

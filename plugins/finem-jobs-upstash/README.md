@@ -19,7 +19,7 @@ codex plugin add finem-jobs-upstash@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Async/jobs/events | base | 2 |
-| Reliability/resilience | base | 1 |
+| Async/jobs/events | adds to base | 2 |
+| Reliability/resilience | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 2 from 1 source repository (upstash), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

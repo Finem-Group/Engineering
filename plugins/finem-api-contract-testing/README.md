@@ -19,7 +19,7 @@ codex plugin add finem-api-contract-testing@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| API contracts | base | 1 |
-| Testing | base | 1 |
+| API contracts | adds to base | 1 |
+| Testing | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 2 from 1 source repository (pactflow), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

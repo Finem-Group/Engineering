@@ -19,7 +19,7 @@ codex plugin add finem-data-prisma@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Database | base | 2 |
-| Migrations | base | 1 |
+| Database | adds to base | 2 |
+| Migrations | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 3 from 1 source repository (prisma), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

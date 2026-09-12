@@ -19,7 +19,7 @@ codex plugin add finem-search-algolia@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Backend | base | 2 |
-| Testing | base | 1 |
+| Backend | adds to base | 2 |
+| Testing | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 3 from 1 source repository (algolia), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

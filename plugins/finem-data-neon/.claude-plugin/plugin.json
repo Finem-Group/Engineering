@@ -1,6 +1,6 @@
 {
   "name": "finem-data-neon",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Neon Postgres and database branching with the required provider parent",
   "author": {
     "name": "Finem Group",

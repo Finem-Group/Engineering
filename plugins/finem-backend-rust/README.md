@@ -19,8 +19,8 @@ codex plugin add finem-backend-rust@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Backend | base | 1 |
-| Reliability/resilience | base | 1 |
-| Testing | base | 1 |
+| Backend | adds to base | 1 |
+| Reliability/resilience | adds to base | 1 |
+| Testing | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 1 from 1 source repository (apollo), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

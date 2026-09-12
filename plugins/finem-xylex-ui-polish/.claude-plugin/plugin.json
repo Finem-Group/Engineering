@@ -1,0 +1,22 @@
+{
+  "name": "finem-xylex-ui-polish",
+  "version": "0.5.0",
+  "description": "Original XYLEX web component polish, CSS transition recipes and website token extraction",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "frontend",
+    "design-system"
+  ],
+  "skills": "./skills",
+  "dependencies": [
+    "finem-core"
+  ]
+}

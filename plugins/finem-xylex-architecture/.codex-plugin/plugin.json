@@ -1,0 +1,36 @@
+{
+  "name": "finem-xylex-architecture",
+  "version": "0.5.0",
+  "description": "Original XYLEX module design and domain modeling specialists",
+  "author": {
+    "name": "Finem Group",
+    "url": "https://github.com/Finem-Group"
+  },
+  "homepage": "https://github.com/Finem-Group/Engineering",
+  "repository": "https://github.com/Finem-Group/Engineering",
+  "license": "MIT",
+  "keywords": [
+    "finem",
+    "engineering",
+    "architecture",
+    "domain-modeling",
+    "adrs"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Finem Xylex architecture",
+    "shortDescription": "Original XYLEX module design and domain modeling specialists",
+    "longDescription": "Original XYLEX module design and domain modeling specialists Bundles the original xylex skills unmodified and activates them for architecture, domain modeling, adrs. Requires finem-core.",
+    "developerName": "Finem Group",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use the Finem Xylex architecture guidance for this change.",
+      "Review this code against xylex practice."
+    ]
+  }
+}

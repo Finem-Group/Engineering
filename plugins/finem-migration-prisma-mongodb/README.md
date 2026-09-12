@@ -20,7 +20,7 @@ codex plugin add finem-migration-prisma-mongodb@finem
 | Capability | Role | Originals |
 | --- | --- | --- |
 | Migrations | replaces base | 1 |
-| Migration/deprecation | base | 1 |
+| Migration/deprecation | adds to base | 1 |
 | Database | replaces base | 1 |
 
 Native skills: 1. Bundled originals: 1 from 1 source repository (prisma), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

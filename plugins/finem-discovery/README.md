@@ -19,8 +19,8 @@ codex plugin add finem-discovery@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Product discovery | base | 3 |
-| Requirements | base | 1 |
-| UX | base | 1 |
+| Product discovery | adds to base | 3 |
+| Requirements | adds to base | 1 |
+| UX | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 5 from 1 source repository (pm), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

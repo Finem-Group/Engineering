@@ -19,8 +19,8 @@ codex plugin add finem-security-audit@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| CI | base | 1 |
-| Security | base | 1 |
-| Code review/quality gates | base | 1 |
+| CI | adds to base | 1 |
+| Security | adds to base | 1 |
+| Code review/quality gates | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 3 from 1 source repository (trailofbits), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

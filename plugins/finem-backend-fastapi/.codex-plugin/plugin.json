@@ -1,6 +1,6 @@
 {
   "name": "finem-backend-fastapi",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "FastAPI routing, validation, dependency cleanup and tests",
   "author": {
     "name": "Finem Group",

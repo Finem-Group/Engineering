@@ -1,6 +1,6 @@
 {
   "name": "finem-svelte",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Svelte 5 and SvelteKit implementation and analysis",
   "author": {
     "name": "Finem Group",

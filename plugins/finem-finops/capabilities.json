@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "plugin": "finem-finops",
   "kind": "pack",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "dependencies": [
     "finem-core"
   ],

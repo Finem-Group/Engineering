@@ -1,6 +1,6 @@
 {
   "name": "finem-product-analytics",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Metrics definitions and cohort-based feedback alongside provider instrumentation",
   "author": {
     "name": "Finem Group",

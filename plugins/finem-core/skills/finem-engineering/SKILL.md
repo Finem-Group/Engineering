@@ -163,7 +163,7 @@ Connector names in `capabilities.json` are desired integrations, not connections
 host and discover actual tools and scope before use. Keep secrets out of configuration and reports.
 
 Respect upstream licensing and notices when sharing source or adaptations. These plugins carry
-170 original skills from 49 pinned Git sources across 53 technology packs;
+180 original skills from 50 pinned Git sources across 56 technology packs;
 see `NOTICE.md` in each plugin. The library includes MIT, Apache-2.0, CC-BY-SA-4.0 and MPL-2.0 material;
 Finem's own MIT terms do not replace upstream licenses. A `coverage: partial` capability remains a real
 limitation: retirement composes deprecation, data handling and cost guidance rather than a complete

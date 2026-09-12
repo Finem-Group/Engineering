@@ -19,6 +19,6 @@ codex plugin add finem-search-upstash@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Backend | base | 1 |
+| Backend | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 1 from 1 source repository (upstash), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-xylex-ui-polish",
+  "kind": "pack",
+  "version": "0.5.0",
+  "dependencies": [
+    "finem-core"
+  ],
+  "extension": "xylex-ui-polish",
+  "conflicts": [
+    "finem-expo",
+    "finem-swiftui",
+    "finem-android-ui"
+  ],
+  "exclusiveGroup": null,
+  "capabilities": [
+    {
+      "id": "frontend",
+      "title": "Frontend",
+      "phase": "build",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "context7",
+        "paper"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "xylex:polish-ui-components",
+          "source": "xylex",
+          "path": "upstream/xylex/plugins/ui-plugins/skills/polish-ui-components/SKILL.md"
+        },
+        {
+          "skill": "xylex:transitions-dev",
+          "source": "xylex",
+          "path": "upstream/xylex/plugins/ui-plugins/skills/transitions-dev/SKILL.md"
+        },
+        {
+          "skill": "xylex:transitions-polish",
+          "source": "xylex",
+          "path": "upstream/xylex/plugins/ui-plugins/skills/transitions-polish/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "design-system",
+      "title": "Design system",
+      "phase": "design",
+      "requires": [
+        "ux"
+      ],
+      "connectors": [
+        "paper",
+        "mobbin",
+        "figma"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "xylex:extract-design-system",
+          "source": "xylex",
+          "path": "upstream/xylex/plugins/ui-plugins/skills/extract-design-system/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "xylex",
+      "repository": "https://github.com/xylex-group/skills",
+      "revision": "53c3a7758bd1e0e5bf6564c77fe3f7d075c91846",
+      "license": "MIT",
+      "verifiedAt": "2026-09-12",
+      "caveat": "Ten complete original XYLEX skill directories, including local references, Python helpers, CSS tokens and the MIT license. Only explicitly selected architecture, code-audit and web UI-polish entrypoints are mapped. No XYLEX root router, hooks, Grok workflows or duplicate TDD/Rust skills are installed. Resolve helpers relative to the original skill directory and run them against the intended project. Python helpers require Python 3; website token extraction requires the separate extract-design-system CLI plus Playwright/Chromium, which these source bundles do not install. Keep existing project design tokens authoritative; invoke the requested specialist without stacking competing motion or review workflows. CSS motion specialists are web-only. The audit helpers also require Git and blast-zone search requires rg. The original blastzone_metrics.py uses POSIX path separators when filtering definitions/test callers: Windows aggregate caller counts can be inaccurate. Verify actual caller files or use a POSIX environment; do not treat those counts as authoritative."
+    }
+  ]
+}

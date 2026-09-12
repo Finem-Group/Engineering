@@ -19,8 +19,8 @@ codex plugin add finem-advanced-testing@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Testing | base | 1 |
-| Dependencies | base | 1 |
-| Security | base | 1 |
+| Testing | adds to base | 1 |
+| Dependencies | adds to base | 1 |
+| Security | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 2 from 1 source repository (trailofbits), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

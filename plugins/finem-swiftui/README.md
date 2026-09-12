@@ -21,6 +21,6 @@ codex plugin add finem-swiftui@finem
 | --- | --- | --- |
 | Frontend | replaces base | 2 |
 | Performance | replaces base | 1 |
-| Accessibility | base | 1 |
+| Accessibility | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 3 from 2 source repositories (addy, swiftui), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

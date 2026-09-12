@@ -1,6 +1,6 @@
 {
   "name": "finem-storage-neon",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Neon object storage and its provider parent",
   "author": {
     "name": "Finem Group",

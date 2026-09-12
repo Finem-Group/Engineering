@@ -19,6 +19,6 @@ codex plugin add finem-auth-auth0@finem
 
 | Capability | Role | Originals |
 | --- | --- | --- |
-| Auth | base | 1 |
+| Auth | adds to base | 1 |
 
 Native skills: 1. Bundled originals: 1 from 1 source repository (auth0), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

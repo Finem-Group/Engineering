@@ -60,6 +60,31 @@ class SelectionTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn('finem-does-not-exist', result.stderr)
 
+    def test_xylex_packs_add_ten_specialists_only_when_selected(self):
+        packs = ['finem-xylex-architecture', 'finem-xylex-code-audit', 'finem-xylex-ui-polish']
+        before = self.success(packs, [])
+        self.assertFalse(any(e['skill'].startswith('xylex:') for c in before['capabilities'] for e in c['entrypoints']))
+        after = self.success(packs, packs)
+        actual = {e['skill'] for c in after['capabilities'] for e in c['entrypoints'] if e['skill'].startswith('xylex:')}
+        self.assertEqual(actual, {
+            'xylex:codebase-design', 'xylex:domain-modeling', 'xylex:audit-duplicate-dead-code',
+            'xylex:duplicate-blastzone-audit', 'xylex:reduce-contract-drift', 'xylex:document-code-contracts',
+            'xylex:polish-ui-components', 'xylex:transitions-dev', 'xylex:transitions-polish', 'xylex:extract-design-system',
+        })
+        self.assertEqual(after['active'], ['finem-core', *packs])
+
+    def test_xylex_web_polish_rejects_native_ui_but_preserves_vue(self):
+        for native in ['finem-expo', 'finem-swiftui', 'finem-android-ui']:
+            packs = ['finem-xylex-ui-polish', native]
+            result = self.select(packs, packs)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn('conflict', result.stderr.lower())
+        packs = ['finem-vue', 'finem-xylex-ui-polish']
+        result = self.success(packs, packs)
+        frontend = next(c for c in result['capabilities'] if c['id'] == 'frontend')
+        self.assertTrue(any(e['skill'] == 'xylex:transitions-dev' for e in frontend['entrypoints']))
+        self.assertFalse(any(e['skill'] == 'vercel:react-best-practices' for e in frontend['entrypoints']))
+
     def test_install_and_selection_order_do_not_change_resolved_map(self):
         packs = ['finem-vue', 'finem-nuxt', 'finem-web-animation']
         first = self.success(packs, ['finem-nuxt', 'finem-web-animation'])
