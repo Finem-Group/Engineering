@@ -744,7 +744,7 @@ function writeMarketplaces(catalog, plugins, outRoot) {
 
   writeJSON(path.join(outRoot, '.agents', 'plugins', 'marketplace.json'), {
     name: MARKETPLACE,
-    interface: { displayName: `${BRAND} Engineering` },
+    interface: { displayName: 'FINEM Group' },
     plugins: plugins.map(p => ({
       name: p.name,
       source: { source: 'local', path: `./plugins/${p.name}` },
