@@ -60,4 +60,4 @@ codex plugin add finem-core@finem
 | Privacy/compliance | base | 2 |
 | Product analytics/feedback | base | 3 |
 
-Native skills: 1. Bundled originals: 53 from 9 source repositories (addy, gstack, impeccable, posthog, pulumi, supabase, superpowers, vercel, wshobson), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.
+Native skills: 1. Bundled originals: 53 from 10 source repositories (addy, gstack, impeccable, posthog, pulumi, supabase, superpowers, vercel, web-guidelines, wshobson), unmodified under `upstream/`. See `NOTICE.md` for licenses and pinned revisions.

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "plugin": "finem-core",
   "kind": "core",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "dependencies": [],
   "capabilities": [
     {
@@ -1086,6 +1086,14 @@
       "license": "MIT",
       "verifiedAt": "2026-09-11",
       "caveat": "Original React/Next, composition and web-design skill directories. Repository README and React metadata declare MIT; no standalone upstream LICENSE is tracked. Offline web guidelines are provided by the web-guidelines dependency."
+    },
+    {
+      "id": "web-guidelines",
+      "repository": "https://github.com/vercel-labs/web-interface-guidelines",
+      "revision": "e3d624baaf29dc1fc645aff3e38f03e564d2d6b1",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original upstream skill directories and supporting files. Invoke selected specialists within the single L11 workflow; do not activate source bootstrap routers or global hooks."
     },
     {
       "id": "wshobson",

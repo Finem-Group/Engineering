@@ -1,6 +1,6 @@
 {
   "name": "finem-migration-prisma-mongodb",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Explicit MongoDB assessment: stay on Prisma 6 or evaluate Prisma Next; scoped separately from SQL projects",
   "author": {
     "name": "Finem Group",

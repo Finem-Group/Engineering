@@ -1,6 +1,6 @@
 {
   "name": "finem-kubernetes",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Original Kubernetes manifests, policy, Helm and GitOps specialists",
   "author": {
     "name": "Finem Group",

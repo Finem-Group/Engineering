@@ -1,6 +1,6 @@
 ---
 name: finem-engineering
-description: Use when coordinating engineering work in this project: selecting which original upstream skill to follow for discovery, architecture, frontend, backend, data, infrastructure, testing, security, release or operations work, and resolving its original file paths and tools.
+description: "Use when coordinating engineering work in this project: selecting which original upstream skill to follow for discovery, architecture, frontend, backend, data, infrastructure, testing, security, release or operations work, and resolving its original file paths and tools."
 ---
 
 # Finem engineering workflow
@@ -34,11 +34,34 @@ Read `capabilities.json` in this plugin root. It lists all 43 capabilities with 
 phase, `requires` edges, connectors and the base `entrypoints` — the original `SKILL.md` files that
 cover the capability without any technology pack.
 
-Installed technology packs are sibling plugins named `finem-*`. Each carries its own
-`capabilities.json` and its own `upstream/`, and its entry skill names the originals it activates. A
-pack entry marked `"replace": true` supersedes this plugin's base entrypoints for that capability; a
-pack entry that is not a replacement augments them. Apply every installed pack's replacements first, then
-the additive ones, so pack install order does not change the result.
+Installed technology packs are available plugins, not automatically active project choices. Each carries
+its own `capabilities.json` and `upstream/`. Find their actual roots from the host's available skill
+paths; caches can put plugins under separate version directories, so do not guess sibling paths.
+
+Select active packs from the user's task, the current module's manifests, lockfiles and configuration.
+For example, if Vue and Svelte are both installed but this module uses Vue, select only Vue. Resolve
+heterogeneous monorepo modules separately. If evidence leaves the framework ambiguous, ask for that
+choice before applying framework-specific replacements; continue unrelated work in the meantime.
+
+Read selected packs' `dependencies`, `conflicts` and `exclusiveGroup`. Dependencies must also be
+installed and active; report missing plugins instead of silently installing them. Reject a conflict or
+more than one active pack in an exclusive group. Installing packs for different projects is allowed;
+activating incompatible packs in one module is not. `finem-core` alone owns coordination.
+
+Use this plugin's read-only selection helper (Node 18+) to check the selection and obtain original file
+paths. Pass this core's actual root, one `--pack` per available pack root, and a comma-separated list
+of explicitly selected names. For example, substituting the discovered absolute paths:
+
+```text
+node "<core root>/scripts/resolve-packs.js" --core "<core root>" --pack "<vue root>" --pack "<nuxt root>" --select finem-nuxt
+```
+
+The helper includes installed dependencies, rejects incompatible selections, applies at most one
+replacement per capability, then adds specialists in stable order. Only its `active` plugins and
+resolved `capabilities` apply to this module. Unselected installed packs remain inactive. It neither
+installs plugins nor writes project state. If Node is unavailable, apply those same metadata checks
+manually and state that automated selection validation was not run. Never interpret a missing helper
+or an error as permission to apply every installed pack.
 
 Choose the capabilities relevant to the user's outcome, open the resolved original `SKILL.md` files and
 the references, examples or helpers they require. Do not substitute a summary for reading the source. If a
@@ -75,7 +98,8 @@ Only Finem is registered as the native workflow. Upstream routers, hooks, instal
 agent metadata inside `upstream/` are inert source. Do not install or activate their global entrypoints.
 Invoke a selected specialist within the current task, then return its findings, changes and evidence here.
 
-When the `finem-browser-playwright` pack is installed, use the Playwright browser-QA entrypoint.
+When the `finem-browser-playwright` pack is active for this module, use the Playwright browser-QA entrypoint.
+In project mode, follow the browser-QA entrypoints selected by the CLI capability map.
 gstack source may remain present for discovery, engineering review or shipping roles; that does not make its
 browser QA active. Do not silently build a second browser stack or switch backend because another bundle
 happens to be present. If a required behavior is unavailable, report the concrete limitation.

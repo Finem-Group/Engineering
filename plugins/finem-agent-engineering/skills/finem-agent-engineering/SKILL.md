@@ -1,14 +1,18 @@
 ---
 name: finem-agent-engineering
-description: Use when this project's work involves Original agent skill evaluation and MCP server engineering specialists — covers testing, api contracts. Loads the original anthropic skills bundled with this pack.
+description: "Use when this project's work involves Original agent skill evaluation and MCP server engineering specialists — covers testing, api contracts. Loads the original anthropic skills bundled with this pack."
 ---
 
 # Finem Agent engineering
 
 Original agent skill evaluation and MCP server engineering specialists
 
-This is an entry skill. It names originals; it does not restate them. Open the listed `SKILL.md` files
-and the references they require, and follow their procedure.
+This is an entry skill. It names originals; it does not restate them. Before opening originals, let
+`finem-core` select this pack for the current project's task and validate its dependencies, conflicts
+and exclusive group. Installation or a matching trigger alone does not activate a pack. In CLI project
+mode follow the existing `.l11/config.json` selection. If this pack is inactive, return to
+the coordinator without applying its replacements. Once active, open the listed `SKILL.md` files and
+the references they require, and follow their procedure.
 
 ## Resolve paths
 

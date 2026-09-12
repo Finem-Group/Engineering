@@ -1,6 +1,6 @@
 {
   "name": "finem-core",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "The Finem engineering coordinator and the base original skills for all 43 capabilities. Every finem technology pack depends on it.",
   "author": {
     "name": "Finem Group",

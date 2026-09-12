@@ -45,7 +45,7 @@ codex plugin add finem-nuxt@finem
 
 | Plugin | Covers | Upstream |
 | --- | --- | --- |
-| `finem-core` | The coordinator and the base originals for all 43 capabilities | addy, gstack, impeccable, posthog, pulumi, supabase, superpowers, vercel, wshobson |
+| `finem-core` | The coordinator and the base originals for all 43 capabilities | addy, gstack, impeccable, posthog, pulumi, supabase, superpowers, vercel, web-guidelines, wshobson |
 | `finem-discovery` | Original research interviews and opportunity synthesis | pm |
 | `finem-react-ui` | shadcn component composition | shadcn |
 | `finem-browser-playwright` | Use Playwright as the browser execution backend | playwright |
@@ -127,6 +127,9 @@ Both marketplace files point at the same `plugins/` directory, so the two hosts 
 - **These plugins install no runtimes.** They carry source, not a toolchain. An original that expects
   Playwright, uv, Terraform or a provider CLI will say so; the coordinator reports the missing requirement
   rather than installing it. The `l11` npm CLI is what provides a managed toolchain.
+- **Installed is not active.** The coordinator selects packs for the current project/module, checks
+  dependencies, conflicts and exclusive groups, and leaves other installed frameworks inactive. Its
+  bundled Node helper validates selection without installing anything or writing project state.
 - **Bundled originals are pinned snapshots.** `upstream.lock.json` records the commit and a SHA-256 per
   file. They do not track their upstream repositories; regenerate from an updated catalog to move them.
 
@@ -137,7 +140,22 @@ node build-marketplace.js --catalog <path-to-l11-engineering-stack> --out .
 ```
 
 The generator is the source of truth: `plugins/`, both marketplace files and this table are derived from
-the catalog. Edit the catalog or `build-marketplace.js`, never the generated tree.
+the catalog. Edit the catalog, `build-marketplace.js` or the canonical helper under `scripts/`, never
+the generated tree. `PLUGIN_VERSION` versions this marketplace independently of the upstream catalog.
+
+## Validation
+
+Node 18+ and Python 3.11+ are required for the checks:
+
+```bash
+python -m pip install -r requirements-test.txt
+python -m unittest discover -s tests -v
+```
+
+Tests parse every native YAML header, check both marketplaces and original hashes, exercise the generator
+with small standalone catalogs, and test project selection with incompatible installed frameworks.
+GitHub Actions runs these checks on Windows and Linux. Original upstream scripts are not executed by
+these checks. Native interactive discovery and real provider/tool execution remain separate checks.
 
 ## Licensing
 

@@ -1,6 +1,6 @@
 {
   "name": "finem-intent-audit",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Compare documented boundaries to implemented behavior",
   "author": {
     "name": "Finem Group",

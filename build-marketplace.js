@@ -40,6 +40,8 @@ const COORDINATOR = `${PREFIX}-engineering`;
 const REPO_SLUG = 'Finem-Group/Engineering';
 const REPO_URL = `https://github.com/${REPO_SLUG}`;
 const OWNER = { name: 'Finem Group', url: 'https://github.com/Finem-Group' };
+// Marketplace fixes can be released independently of the pinned L11 catalog.
+const PLUGIN_VERSION = '0.4.1';
 const CODEX_CATEGORY = 'Developer Tools';
 const CODEX_POLICY = { installation: 'AVAILABLE', authentication: 'ON_USE' };
 
@@ -130,7 +132,25 @@ function loadCatalog(root) {
       skills.set(skill.id, { source: source.id, path: skill.path });
     }
   }
-  return { root, stack, sources, lockBySource, capabilities, skills, version: stack.version };
+  return { root, stack, sources, lockBySource, capabilities, skills, version: PLUGIN_VERSION };
+}
+
+/** Include supporting repositories even when they expose no native skill. */
+function resolveSources(catalog, selected) {
+  const done = new Set();
+  const visiting = new Set();
+  function visit(id) {
+    if (visiting.has(id)) throw new Error(`Source dependency cycle at ${id}`);
+    if (done.has(id)) return;
+    const source = catalog.sources.get(id);
+    if (!source || !catalog.lockBySource.has(id)) throw new Error(`Unknown or unlocked source dependency: ${id}`);
+    visiting.add(id);
+    for (const dependency of source.dependencies ?? []) visit(dependency);
+    visiting.delete(id);
+    done.add(id);
+  }
+  for (const id of selected) visit(id);
+  return [...done].sort();
 }
 
 function locate(catalog, skillId) {
@@ -178,7 +198,7 @@ function describeCore(catalog) {
       every ${PREFIX} pack builds on it.`),
     dependencies: [],
     capabilities: caps,
-    sources: [...sources].sort(),
+    sources: resolveSources(catalog, sources),
     skillCount: new Set(caps.flatMap(c => c.entrypoints.map(e => e.skill))).size,
   };
 }
@@ -212,7 +232,7 @@ function describePack(catalog, extension) {
     exclusiveGroup: extension.exclusiveGroup ?? null,
     dependencies: [CORE, ...(extension.requires ?? []).map(id => `${PREFIX}-${id}`)],
     capabilities: caps,
-    sources: [...sources].sort(),
+    sources: resolveSources(catalog, sources),
     skillCount: new Set(caps.flatMap(c => c.entrypoints.map(e => e.skill))).size,
   };
 }
@@ -226,7 +246,7 @@ function describeAll(catalog) {
 // ---------------------------------------------------------------------------
 
 function frontmatter(name, description) {
-  return `---\nname: ${name}\ndescription: ${oneLine(description)}\n---\n`;
+  return `---\nname: ${name}\ndescription: ${JSON.stringify(oneLine(description))}\n---\n`;
 }
 
 /**
@@ -276,11 +296,34 @@ Read \`capabilities.json\` in this plugin root. It lists all ${capabilityCount} 
 phase, \`requires\` edges, connectors and the base \`entrypoints\` — the original \`SKILL.md\` files that
 cover the capability without any technology pack.
 
-Installed technology packs are sibling plugins named \`${PREFIX}-*\`. Each carries its own
-\`capabilities.json\` and its own \`upstream/\`, and its entry skill names the originals it activates. A
-pack entry marked \`"replace": true\` supersedes this plugin's base entrypoints for that capability; a
-pack entry that is not a replacement augments them. Apply every installed pack's replacements first, then
-the additive ones, so pack install order does not change the result.
+Installed technology packs are available plugins, not automatically active project choices. Each carries
+its own \`capabilities.json\` and \`upstream/\`. Find their actual roots from the host's available skill
+paths; caches can put plugins under separate version directories, so do not guess sibling paths.
+
+Select active packs from the user's task, the current module's manifests, lockfiles and configuration.
+For example, if Vue and Svelte are both installed but this module uses Vue, select only Vue. Resolve
+heterogeneous monorepo modules separately. If evidence leaves the framework ambiguous, ask for that
+choice before applying framework-specific replacements; continue unrelated work in the meantime.
+
+Read selected packs' \`dependencies\`, \`conflicts\` and \`exclusiveGroup\`. Dependencies must also be
+installed and active; report missing plugins instead of silently installing them. Reject a conflict or
+more than one active pack in an exclusive group. Installing packs for different projects is allowed;
+activating incompatible packs in one module is not. \`${CORE}\` alone owns coordination.
+
+Use this plugin's read-only selection helper (Node 18+) to check the selection and obtain original file
+paths. Pass this core's actual root, one \`--pack\` per available pack root, and a comma-separated list
+of explicitly selected names. For example, substituting the discovered absolute paths:
+
+\`\`\`text
+node "<core root>/scripts/resolve-packs.js" --core "<core root>" --pack "<vue root>" --pack "<nuxt root>" --select ${PREFIX}-nuxt
+\`\`\`
+
+The helper includes installed dependencies, rejects incompatible selections, applies at most one
+replacement per capability, then adds specialists in stable order. Only its \`active\` plugins and
+resolved \`capabilities\` apply to this module. Unselected installed packs remain inactive. It neither
+installs plugins nor writes project state. If Node is unavailable, apply those same metadata checks
+manually and state that automated selection validation was not run. Never interpret a missing helper
+or an error as permission to apply every installed pack.
 
 Choose the capabilities relevant to the user's outcome, open the resolved original \`SKILL.md\` files and
 the references, examples or helpers they require. Do not substitute a summary for reading the source. If a
@@ -317,7 +360,8 @@ Only ${BRAND} is registered as the native workflow. Upstream routers, hooks, ins
 agent metadata inside \`upstream/\` are inert source. Do not install or activate their global entrypoints.
 Invoke a selected specialist within the current task, then return its findings, changes and evidence here.
 
-When the \`${PREFIX}-browser-playwright\` pack is installed, use the Playwright browser-QA entrypoint.
+When the \`${PREFIX}-browser-playwright\` pack is active for this module, use the Playwright browser-QA entrypoint.
+In project mode, follow the browser-QA entrypoints selected by the CLI capability map.
 gstack source may remain present for discovery, engineering review or shipping roles; that does not make its
 browser QA active. Do not silently build a second browser stack or switch backend because another bundle
 happens to be present. If a required behavior is unavailable, report the concrete limitation.
@@ -417,8 +461,12 @@ function packSkill(catalog, pack) {
 
 ${pack.description}
 
-This is an entry skill. It names originals; it does not restate them. Open the listed \`SKILL.md\` files
-and the references they require, and follow their procedure.
+This is an entry skill. It names originals; it does not restate them. Before opening originals, let
+\`${CORE}\` select this pack for the current project's task and validate its dependencies, conflicts
+and exclusive group. Installation or a matching trigger alone does not activate a pack. In CLI project
+mode follow the existing \`${CLI_STATE_DIR}/config.json\` selection. If this pack is inactive, return to
+the coordinator without applying its replacements. Once active, open the listed \`SKILL.md\` files and
+the references they require, and follow their procedure.
 
 ## Resolve paths
 
@@ -432,7 +480,7 @@ ${sections}
 
 ## Coordination
 
-${BRAND}'s \`${COORDINATOR}\` skill in ${dependsOn} owns capability selection, evidence and limits. Depends
+${BRAND}'s \`${COORDINATOR}\` skill in \`${CORE}\` owns capability selection, evidence and limits. Depends
 on: ${dependsOn}.${conflicts}
 Upstream sources bundled here: ${sourceList}. Their licenses and pinned revisions are recorded in
 \`NOTICE.md\` and \`upstream.lock.json\` in this plugin root.
@@ -657,6 +705,9 @@ function writePlugin(catalog, plugin, outRoot) {
   writeText(path.join(root, 'NOTICE.md'), noticeFile(catalog, plugin));
   writeText(path.join(root, 'README.md'), pluginReadme(catalog, plugin));
   writeText(path.join(root, 'LICENSE'), pluginLicense());
+  if (plugin.kind === 'core') {
+    writeText(path.join(root, 'scripts', 'resolve-packs.js'), fs.readFileSync(path.join(__dirname, 'scripts', 'resolve-packs.js'), 'utf8'));
+  }
   return root;
 }
 
@@ -776,6 +827,9 @@ Both marketplace files point at the same \`plugins/\` directory, so the two host
 - **These plugins install no runtimes.** They carry source, not a toolchain. An original that expects
   Playwright, uv, Terraform or a provider CLI will say so; the coordinator reports the missing requirement
   rather than installing it. The \`${CLI_BIN}\` npm CLI is what provides a managed toolchain.
+- **Installed is not active.** The coordinator selects packs for the current project/module, checks
+  dependencies, conflicts and exclusive groups, and leaves other installed frameworks inactive. Its
+  bundled Node helper validates selection without installing anything or writing project state.
 - **Bundled originals are pinned snapshots.** \`upstream.lock.json\` records the commit and a SHA-256 per
   file. They do not track their upstream repositories; regenerate from an updated catalog to move them.
 
@@ -786,7 +840,22 @@ node build-marketplace.js --catalog <path-to-l11-engineering-stack> --out .
 \`\`\`
 
 The generator is the source of truth: \`plugins/\`, both marketplace files and this table are derived from
-the catalog. Edit the catalog or \`build-marketplace.js\`, never the generated tree.
+the catalog. Edit the catalog, \`build-marketplace.js\` or the canonical helper under \`scripts/\`, never
+the generated tree. \`PLUGIN_VERSION\` versions this marketplace independently of the upstream catalog.
+
+## Validation
+
+Node 18+ and Python 3.11+ are required for the checks:
+
+\`\`\`bash
+python -m pip install -r requirements-test.txt
+python -m unittest discover -s tests -v
+\`\`\`
+
+Tests parse every native YAML header, check both marketplaces and original hashes, exercise the generator
+with small standalone catalogs, and test project selection with incompatible installed frameworks.
+GitHub Actions runs these checks on Windows and Linux. Original upstream scripts are not executed by
+these checks. Native interactive discovery and real provider/tool execution remain separate checks.
 
 ## Licensing
 

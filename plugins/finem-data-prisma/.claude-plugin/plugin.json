@@ -1,6 +1,6 @@
 {
   "name": "finem-data-prisma",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Prisma database setup, client API and migration commands",
   "author": {
     "name": "Finem Group",

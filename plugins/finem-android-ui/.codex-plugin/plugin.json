@@ -1,6 +1,6 @@
 {
   "name": "finem-android-ui",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Android edge-to-edge and incremental XML-to-Compose migration",
   "author": {
     "name": "Finem Group",

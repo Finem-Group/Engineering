@@ -1,6 +1,6 @@
 {
   "name": "finem-search-algolia",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Algolia indexing contracts and release quality checks",
   "author": {
     "name": "Finem Group",

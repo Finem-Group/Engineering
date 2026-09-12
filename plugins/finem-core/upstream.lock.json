@@ -7370,6 +7370,37 @@
       "root": "upstream/vercel"
     },
     {
+      "id": "web-guidelines",
+      "repository": "https://github.com/vercel-labs/web-interface-guidelines",
+      "revision": "e3d624baaf29dc1fc645aff3e38f03e564d2d6b1",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original upstream skill directories and supporting files. Invoke selected specialists within the single L11 workflow; do not activate source bootstrap routers or global hooks.",
+      "dependencies": [],
+      "skills": [],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "6cd1609c9c12233507cdd2ce0d32e9a721e3c27494951be06b90090deeeb7af2",
+          "mode": 420
+        },
+        {
+          "path": "README.md",
+          "sha256": "4c46fee0b386f20e50d5e04fba2a9c5311133f430ade26309c8a2594c144cd3b",
+          "mode": 420
+        },
+        {
+          "path": "command.md",
+          "sha256": "5a775e6411f790f518dbc9c1fa7c50a89e6873502d9a3530a6eb223a590bcfe8",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/web-guidelines"
+    },
+    {
       "id": "wshobson",
       "repository": "https://github.com/wshobson/agents",
       "revision": "a30778f8c4e6b0a87567941b7cca4f534bf642b6",

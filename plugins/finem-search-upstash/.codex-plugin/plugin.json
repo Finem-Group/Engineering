@@ -1,6 +1,6 @@
 {
   "name": "finem-search-upstash",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Upstash Search indexing and retrieval",
   "author": {
     "name": "Finem Group",

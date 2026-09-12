@@ -84,6 +84,16 @@ below. `upstream.lock.json` records a SHA-256 for every bundled file.
 
   Original React/Next, composition and web-design skill directories. Repository README and React metadata declare MIT; no standalone upstream LICENSE is tracked. Offline web guidelines are provided by the web-guidelines dependency.
 
+## web-guidelines
+
+- Repository: https://github.com/vercel-labs/web-interface-guidelines
+- Revision: `e3d624baaf29dc1fc645aff3e38f03e564d2d6b1`
+- License: MIT
+- License files: `upstream/web-guidelines/LICENSE`
+- Reviewed: 2026-09-11
+
+  Original upstream skill directories and supporting files. Invoke selected specialists within the single L11 workflow; do not activate source bootstrap routers or global hooks.
+
 ## wshobson
 
 - Repository: https://github.com/wshobson/agents
