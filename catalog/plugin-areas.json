@@ -5,71 +5,194 @@
       "id": "product-planning",
       "title": "Product & Planning",
       "purpose": "Turn a product problem into a feasible, prioritized plan and measure whether the outcome creates value.",
-      "capabilities": ["product-discovery", "requirements", "feasibility", "planning-task-decomposition", "product-analytics-feedback"],
-      "deliverables": ["Problem statement and target users", "Requirements and success measures", "Feasibility assessment and implementation plan", "Product feedback and experiment findings"]
+      "capabilities": [
+        "product-discovery",
+        "requirements",
+        "feasibility",
+        "planning-task-decomposition",
+        "product-analytics-feedback"
+      ],
+      "deliverables": [
+        "Problem statement and target users",
+        "Requirements and success measures",
+        "Feasibility assessment and implementation plan",
+        "Product feedback and experiment findings"
+      ],
+      "displayName": "Product & Planning",
+      "shortDescription": "Discovery, requirements and planning."
     },
     {
       "id": "architecture",
       "title": "Architecture & API Design",
       "purpose": "Define system boundaries, domain rules and clear interfaces so implementation can evolve without spreading coupling.",
-      "capabilities": ["architecture", "adrs", "domain-modeling", "api-contracts"],
-      "deliverables": ["System and module boundaries", "Domain model and terminology", "Architecture decision records", "API contracts and integration boundaries"]
+      "capabilities": [
+        "architecture",
+        "adrs",
+        "domain-modeling",
+        "api-contracts"
+      ],
+      "deliverables": [
+        "System and module boundaries",
+        "Domain model and terminology",
+        "Architecture decision records",
+        "API contracts and integration boundaries"
+      ],
+      "displayName": "Architecture",
+      "shortDescription": "System design, domains and API contracts."
     },
     {
       "id": "ui-ux",
       "title": "UI/UX & Design System",
       "purpose": "Design useful, accessible interfaces with coherent visual language, interaction states and motion.",
-      "capabilities": ["ux", "design-system", "accessibility"],
-      "deliverables": ["User journeys and interface flows", "Layouts and interaction states", "Design tokens and component guidelines", "Accessibility and motion guidance"]
+      "capabilities": [
+        "ux",
+        "design-system",
+        "accessibility"
+      ],
+      "deliverables": [
+        "User journeys and interface flows",
+        "Layouts and interaction states",
+        "Design tokens and component guidelines",
+        "Accessibility and motion guidance"
+      ],
+      "displayName": "UI Plugins",
+      "shortDescription": "UI/UX, design systems and accessibility."
     },
     {
       "id": "frontend-mobile",
       "title": "Frontend & Mobile",
       "purpose": "Implement the interface in the project's actual web or mobile framework, connecting state, navigation and API boundaries.",
-      "capabilities": ["frontend"],
-      "deliverables": ["Web or native screens and components", "Application state and navigation", "Client integration with API contracts", "Framework-specific implementation evidence"]
+      "capabilities": [
+        "frontend"
+      ],
+      "deliverables": [
+        "Web or native screens and components",
+        "Application state and navigation",
+        "Client integration with API contracts",
+        "Framework-specific implementation evidence"
+      ],
+      "displayName": "Frontend & Mobile",
+      "shortDescription": "Web and mobile engineering skills."
     },
     {
       "id": "backend-data",
       "title": "Backend & Data",
       "purpose": "Build services, persistence and background processing around explicit business rules and data contracts.",
-      "capabilities": ["backend", "database", "migrations", "async-jobs-events"],
-      "deliverables": ["Service and API implementations", "Database schema and queries", "Data migrations", "Jobs, events and asynchronous processing"]
+      "capabilities": [
+        "backend",
+        "database",
+        "migrations",
+        "async-jobs-events"
+      ],
+      "deliverables": [
+        "Service and API implementations",
+        "Database schema and queries",
+        "Data migrations",
+        "Jobs, events and asynchronous processing"
+      ],
+      "displayName": "Backend & Data",
+      "shortDescription": "APIs, databases and background jobs."
     },
     {
       "id": "infrastructure-devops",
       "title": "Infrastructure & DevOps",
       "purpose": "Provision reproducible environments and operate the build, release, deployment and rollback path with visible infrastructure costs.",
-      "capabilities": ["infrastructure", "networking", "configuration-environments", "ci", "release", "deployment", "rollback", "cost-finops"],
-      "deliverables": ["Infrastructure and network configuration", "Environment and CI configuration", "Release, deployment and rollback plans", "Infrastructure cost assessment"]
+      "capabilities": [
+        "infrastructure",
+        "networking",
+        "configuration-environments",
+        "ci",
+        "release",
+        "deployment",
+        "rollback",
+        "cost-finops"
+      ],
+      "deliverables": [
+        "Infrastructure and network configuration",
+        "Environment and CI configuration",
+        "Release, deployment and rollback plans",
+        "Infrastructure cost assessment"
+      ],
+      "displayName": "Infrastructure",
+      "shortDescription": "Cloud, CI/CD and deployment skills."
     },
     {
       "id": "security-privacy",
       "title": "Security & Privacy",
       "purpose": "Protect identity, permissions, secrets and personal data, and assess concrete security risks in the implementation.",
-      "capabilities": ["auth", "secrets-iam", "security", "privacy-compliance"],
-      "deliverables": ["Authentication and authorization controls", "IAM and secret handling", "Security findings and mitigations", "Privacy, retention and compliance requirements"]
+      "capabilities": [
+        "auth",
+        "secrets-iam",
+        "security",
+        "privacy-compliance"
+      ],
+      "deliverables": [
+        "Authentication and authorization controls",
+        "IAM and secret handling",
+        "Security findings and mitigations",
+        "Privacy, retention and compliance requirements"
+      ],
+      "displayName": "Security",
+      "shortDescription": "Auth, privacy and security reviews."
     },
     {
       "id": "testing-quality",
       "title": "Testing & Quality",
       "purpose": "Verify behavior, integrations and performance and review whether the change is correct and maintainable.",
-      "capabilities": ["testing", "browser-qa", "performance", "code-review-quality-gates"],
-      "deliverables": ["Test strategy and automated checks", "Browser QA evidence", "Performance measurements", "Code review and quality-gate findings"]
+      "capabilities": [
+        "testing",
+        "browser-qa",
+        "performance",
+        "code-review-quality-gates"
+      ],
+      "deliverables": [
+        "Test strategy and automated checks",
+        "Browser QA evidence",
+        "Performance measurements",
+        "Code review and quality-gate findings"
+      ],
+      "displayName": "Testing & QA",
+      "shortDescription": "Tests, browser QA and code reviews."
     },
     {
       "id": "observability-reliability",
       "title": "Observability & Reliability",
       "purpose": "Make system health measurable, design for failure and support incident diagnosis and recovery.",
-      "capabilities": ["observability", "slos", "reliability-resilience", "incident-response", "postmortem"],
-      "deliverables": ["Logging, metrics and tracing", "SLOs and alert criteria", "Resilience and failure-mode analysis", "Incident response and postmortems"]
+      "capabilities": [
+        "observability",
+        "slos",
+        "reliability-resilience",
+        "incident-response",
+        "postmortem"
+      ],
+      "deliverables": [
+        "Logging, metrics and tracing",
+        "SLOs and alert criteria",
+        "Resilience and failure-mode analysis",
+        "Incident response and postmortems"
+      ],
+      "displayName": "Observability",
+      "shortDescription": "Monitoring, reliability and incidents."
     },
     {
       "id": "maintenance-documentation",
       "title": "Maintenance & Documentation",
       "purpose": "Keep the system understandable and support safe dependency changes, deprecation and eventual retirement.",
-      "capabilities": ["maintenance", "dependencies", "migration-deprecation", "retirement", "documentation-runbooks"],
-      "deliverables": ["Maintenance and dependency updates", "Migration and deprecation plans", "Documentation and operational runbooks", "Retirement assessment with explicit coverage limits"]
+      "capabilities": [
+        "maintenance",
+        "dependencies",
+        "migration-deprecation",
+        "retirement",
+        "documentation-runbooks"
+      ],
+      "deliverables": [
+        "Maintenance and dependency updates",
+        "Migration and deprecation plans",
+        "Documentation and operational runbooks",
+        "Retirement assessment with explicit coverage limits"
+      ],
+      "displayName": "Maintenance & Docs",
+      "shortDescription": "Dependencies, migrations and runbooks."
     }
   ]
 }

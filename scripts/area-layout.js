@@ -34,9 +34,9 @@ function groupByArea(core, options, definitions, phases) {
     const scope = new Set(capabilities.map(cap => cap.id));
     return [{
       name: `${prefix}-${area.id}`, kind: 'area', area: area.id,
-      displayName: `Finem ${area.title}`, title: area.title,
+      displayName: area.displayName || area.title, title: area.title,
       description: area.purpose, purpose: area.purpose, deliverables: area.deliverables,
-      shortDescription: `${area.title}: original engineering specialists through one shared workflow.`,
+      shortDescription: area.shortDescription || `${area.title} agent skills.`,
       dependencies: [core.name], capabilities,
       options: options.filter(option => option.capabilities.some(cap => scope.has(cap.id))).map(option => option.extension),
       sources: [], skillCount: 0,
@@ -44,7 +44,8 @@ function groupByArea(core, options, definitions, phases) {
   });
   core.layout = 'areas';
   core.description = 'The single engineering coordinator and shared original skill library for product, architecture, UI/UX, implementation, infrastructure, security and operations.';
-  core.shortDescription = 'One engineering workflow and shared original library for all disciplines.';
+  core.displayName = 'Engineering Core';
+  core.shortDescription = 'The shared Finem engineering workflow.';
   core.areaPlugins = groups.map(group => ({ plugin: group.name, area: group.area, title: group.title, capabilities: group.capabilities.map(cap => cap.id) }));
   core.legacyPhases = phaseIds.map(phase => ({ plugin: `${prefix}-${phase}`, capabilities: core.capabilities.filter(cap => cap.phase === phase).map(cap => cap.id) }));
   core.technologyOptions = options.map(option => ({

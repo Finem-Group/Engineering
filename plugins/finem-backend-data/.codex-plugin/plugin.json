@@ -1,6 +1,6 @@
 {
   "name": "finem-backend-data",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Build services, persistence and background processing around explicit business rules and data contracts.",
   "author": {
     "name": "Finem Group",
@@ -19,10 +19,13 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "Finem Backend & Data",
-    "shortDescription": "Backend & Data: original engineering specialists through one shared workflow.",
+    "displayName": "Backend & Data",
+    "shortDescription": "APIs, databases and background jobs.",
     "longDescription": "Build services, persistence and background processing around explicit business rules and data contracts. Requires finem-core. Framework choices remain internal options validated by the single core coordinator.",
     "developerName": "Finem Group",
+    "brandColor": "#111111",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png",
     "category": "Developer Tools",
     "capabilities": [
       "Interactive",
@@ -30,7 +33,7 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Use the Finem Backend & Data guidance for this change.",
+      "Use the Backend & Data guidance for this change.",
       "Review this change against Backend & Data."
     ]
   }

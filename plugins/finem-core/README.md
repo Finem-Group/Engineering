@@ -1,4 +1,4 @@
-# Finem Engineering core
+# Engineering Core
 
 The single engineering coordinator and shared original skill library for product, architecture, UI/UX, implementation, infrastructure, security and operations.
 

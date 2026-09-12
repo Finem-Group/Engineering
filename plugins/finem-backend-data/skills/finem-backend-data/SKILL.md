@@ -3,7 +3,7 @@ name: finem-backend-data
 description: "Use for Backend & Data: backend, database, migrations, async/jobs/events. Work through the Finem core using original upstream specialists."
 ---
 
-# Finem Backend & Data
+# Backend & Data
 
 ## Direction and expected outcomes
 

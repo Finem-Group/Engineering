@@ -34,9 +34,9 @@ class AreaTests(unittest.TestCase):
         for area in AREAS:
             root = ROOT / 'plugins' / ('finem-' + area)
             titles[area] = read_json(root / '.codex-plugin/plugin.json')['interface']['displayName']
-        self.assertEqual(titles['ui-ux'], 'Finem UI/UX & Design System')
-        self.assertEqual(titles['infrastructure-devops'], 'Finem Infrastructure & DevOps')
-        self.assertEqual(titles['security-privacy'], 'Finem Security & Privacy')
+        self.assertEqual(titles['ui-ux'], 'UI Plugins')
+        self.assertEqual(titles['infrastructure-devops'], 'Infrastructure')
+        self.assertEqual(titles['security-privacy'], 'Security')
 
     def test_ui_infrastructure_and_security_have_their_own_capabilities(self):
         expected = {

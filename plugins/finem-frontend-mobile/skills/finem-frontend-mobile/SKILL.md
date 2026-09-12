@@ -3,7 +3,7 @@ name: finem-frontend-mobile
 description: "Use for Frontend & Mobile: frontend. Work through the Finem core using original upstream specialists."
 ---
 
-# Finem Frontend & Mobile
+# Frontend & Mobile
 
 ## Direction and expected outcomes
 

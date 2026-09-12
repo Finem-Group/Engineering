@@ -3,7 +3,7 @@ name: finem-ui-ux
 description: "Use for UI/UX & Design System: ux, design system, accessibility. Work through the Finem core using original upstream specialists."
 ---
 
-# Finem UI/UX & Design System
+# UI Plugins
 
 ## Direction and expected outcomes
 

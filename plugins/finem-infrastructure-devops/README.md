@@ -1,4 +1,4 @@
-# Finem Infrastructure & DevOps
+# Infrastructure
 
 Provision reproducible environments and operate the build, release, deployment and rollback path with visible infrastructure costs.
 

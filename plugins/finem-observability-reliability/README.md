@@ -1,4 +1,4 @@
-# Finem Observability & Reliability
+# Observability
 
 Make system health measurable, design for failure and support incident diagnosis and recovery.
 

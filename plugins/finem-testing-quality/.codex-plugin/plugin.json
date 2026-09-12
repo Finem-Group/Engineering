@@ -1,6 +1,6 @@
 {
   "name": "finem-testing-quality",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Verify behavior, integrations and performance and review whether the change is correct and maintainable.",
   "author": {
     "name": "Finem Group",
@@ -19,10 +19,13 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "Finem Testing & Quality",
-    "shortDescription": "Testing & Quality: original engineering specialists through one shared workflow.",
+    "displayName": "Testing & QA",
+    "shortDescription": "Tests, browser QA and code reviews.",
     "longDescription": "Verify behavior, integrations and performance and review whether the change is correct and maintainable. Requires finem-core. Framework choices remain internal options validated by the single core coordinator.",
     "developerName": "Finem Group",
+    "brandColor": "#111111",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png",
     "category": "Developer Tools",
     "capabilities": [
       "Interactive",
@@ -30,7 +33,7 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Use the Finem Testing & Quality guidance for this change.",
+      "Use the Testing & QA guidance for this change.",
       "Review this change against Testing & Quality."
     ]
   }

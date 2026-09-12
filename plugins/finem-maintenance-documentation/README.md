@@ -1,4 +1,4 @@
-# Finem Maintenance & Documentation
+# Maintenance & Docs
 
 Keep the system understandable and support safe dependency changes, deprecation and eventual retirement.
 

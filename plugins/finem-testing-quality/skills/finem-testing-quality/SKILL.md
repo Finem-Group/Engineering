@@ -3,7 +3,7 @@ name: finem-testing-quality
 description: "Use for Testing & Quality: testing, browser qa, performance, code review/quality gates. Work through the Finem core using original upstream specialists."
 ---
 
-# Finem Testing & Quality
+# Testing & QA
 
 ## Direction and expected outcomes
 

@@ -1,4 +1,4 @@
-# Finem Architecture & API Design
+# Architecture
 
 Define system boundaries, domain rules and clear interfaces so implementation can evolve without spreading coupling.
 

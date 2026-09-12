@@ -1,4 +1,4 @@
-# Finem Testing & Quality
+# Testing & QA
 
 Verify behavior, integrations and performance and review whether the change is correct and maintainable.
 

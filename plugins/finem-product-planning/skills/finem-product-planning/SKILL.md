@@ -3,7 +3,7 @@ name: finem-product-planning
 description: "Use for Product & Planning: product discovery, requirements, feasibility, planning/task decomposition, product analytics/feedback. Work through the Finem core using original upstream specialists."
 ---
 
-# Finem Product & Planning
+# Product & Planning
 
 ## Direction and expected outcomes
 

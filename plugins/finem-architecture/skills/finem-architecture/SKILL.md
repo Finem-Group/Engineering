@@ -3,7 +3,7 @@ name: finem-architecture
 description: "Use for Architecture & API Design: architecture, adrs, domain modeling, api contracts. Work through the Finem core using original upstream specialists."
 ---
 
-# Finem Architecture & API Design
+# Architecture
 
 ## Direction and expected outcomes
 

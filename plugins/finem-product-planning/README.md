@@ -1,4 +1,4 @@
-# Finem Product & Planning
+# Product & Planning
 
 Turn a product problem into a feasible, prioritized plan and measure whether the outcome creates value.
 

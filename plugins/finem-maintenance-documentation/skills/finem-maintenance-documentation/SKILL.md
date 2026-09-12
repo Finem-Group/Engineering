@@ -3,7 +3,7 @@ name: finem-maintenance-documentation
 description: "Use for Maintenance & Documentation: maintenance, dependencies, migration/deprecation, retirement, documentation/runbooks. Work through the Finem core using original upstream specialists."
 ---
 
-# Finem Maintenance & Documentation
+# Maintenance & Docs
 
 ## Direction and expected outcomes
 

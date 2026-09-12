@@ -3,7 +3,7 @@ name: finem-observability-reliability
 description: "Use for Observability & Reliability: observability, slos, incident response, postmortem, reliability/resilience. Work through the Finem core using original upstream specialists."
 ---
 
-# Finem Observability & Reliability
+# Observability
 
 ## Direction and expected outcomes
 

@@ -4,7 +4,7 @@
 43 capabilities, 180 complete selected original skills,
 50 pinned Git sources and 56 internal technology options.
 
-Version 0.7.0 gives UI/UX, infrastructure, security and the other engineering disciplines
+Version 0.7.1 gives UI/UX, infrastructure, security and the other engineering disciplines
 their own clear scope and expected outcomes. Every original source body is stored **once** in
 `finem-core/upstream/`, with its references, helpers, license, pinned revision and file hashes. Area plugins
 provide scoped entrypoints and metadata. They use the same single coordinator.

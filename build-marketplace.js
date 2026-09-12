@@ -41,7 +41,7 @@ const REPO_SLUG = 'Finem-Group/Engineering';
 const REPO_URL = `https://github.com/${REPO_SLUG}`;
 const OWNER = { name: 'Finem Group', url: 'https://github.com/Finem-Group' };
 // Marketplace fixes can be released independently of the pinned L11 catalog.
-const PLUGIN_VERSION = '0.7.0';
+const PLUGIN_VERSION = '0.7.1';
 const CODEX_CATEGORY = 'Developer Tools';
 const CODEX_POLICY = { installation: 'AVAILABLE', authentication: 'ON_USE' };
 
@@ -578,6 +578,9 @@ function codexManifest(catalog, plugin) {
         : oneLine(`${plugin.description} Requires ${plugin.dependencies.join(', ')}. Framework choices
             remain internal options validated by the single core coordinator.`),
       developerName: OWNER.name,
+      brandColor: '#111111',
+      composerIcon: './assets/logo.png',
+      logo: './assets/logo.png',
       category: CODEX_CATEGORY,
       // Skill-only plugins: they read project files and the bundled originals,
       // and guide edits. Matches how OpenAI's own skill-only plugins declare it.
@@ -679,6 +682,7 @@ function writePlugin(catalog, plugin, outRoot) {
   const root = path.join(outRoot, 'plugins', plugin.name);
   rmrf(root);
   fs.mkdirSync(root, { recursive: true });
+  copyTree(path.join(__dirname, 'assets', 'branding'), path.join(root, 'assets'));
 
   for (const id of plugin.sources) {
     copyTree(path.join(catalog.root, 'vendor', id), path.join(root, 'upstream', id));

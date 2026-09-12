@@ -1,6 +1,6 @@
 {
   "name": "finem-observability-reliability",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Make system health measurable, design for failure and support incident diagnosis and recovery.",
   "author": {
     "name": "Finem Group",
@@ -20,10 +20,13 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "Finem Observability & Reliability",
-    "shortDescription": "Observability & Reliability: original engineering specialists through one shared workflow.",
+    "displayName": "Observability",
+    "shortDescription": "Monitoring, reliability and incidents.",
     "longDescription": "Make system health measurable, design for failure and support incident diagnosis and recovery. Requires finem-core. Framework choices remain internal options validated by the single core coordinator.",
     "developerName": "Finem Group",
+    "brandColor": "#111111",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png",
     "category": "Developer Tools",
     "capabilities": [
       "Interactive",
@@ -31,7 +34,7 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Use the Finem Observability & Reliability guidance for this change.",
+      "Use the Observability guidance for this change.",
       "Review this change against Observability & Reliability."
     ]
   }

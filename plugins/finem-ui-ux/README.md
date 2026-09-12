@@ -1,4 +1,4 @@
-# Finem UI/UX & Design System
+# UI Plugins
 
 Design useful, accessible interfaces with coherent visual language, interaction states and motion.
 

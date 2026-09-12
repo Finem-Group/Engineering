@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.7.1
+
+- Use concise marketplace names and descriptions, with Finem Group as the publisher and stable plugin IDs.
+- Bundle the supplied Finem logo in every plugin and declare Codex logo, composer icon and brand color metadata.
+- Preserve branding when regenerating the marketplace. The original logo retains its white background; host-specific icon rendering requires an app refresh after updating.
+
 ## 0.7.0
 
 - Give UI/UX, Infrastructure & DevOps, Security & Privacy and seven other engineering disciplines their own names, purpose and expected deliverables, with one shared Core.

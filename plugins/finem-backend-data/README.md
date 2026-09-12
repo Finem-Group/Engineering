@@ -1,4 +1,4 @@
-# Finem Backend & Data
+# Backend & Data
 
 Build services, persistence and background processing around explicit business rules and data contracts.
 

@@ -1,4 +1,4 @@
-# Finem Security & Privacy
+# Security
 
 Protect identity, permissions, secrets and personal data, and assess concrete security risks in the implementation.
 

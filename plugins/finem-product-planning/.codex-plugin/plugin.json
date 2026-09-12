@@ -1,6 +1,6 @@
 {
   "name": "finem-product-planning",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Turn a product problem into a feasible, prioritized plan and measure whether the outcome creates value.",
   "author": {
     "name": "Finem Group",
@@ -20,10 +20,13 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "Finem Product & Planning",
-    "shortDescription": "Product & Planning: original engineering specialists through one shared workflow.",
+    "displayName": "Product & Planning",
+    "shortDescription": "Discovery, requirements and planning.",
     "longDescription": "Turn a product problem into a feasible, prioritized plan and measure whether the outcome creates value. Requires finem-core. Framework choices remain internal options validated by the single core coordinator.",
     "developerName": "Finem Group",
+    "brandColor": "#111111",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png",
     "category": "Developer Tools",
     "capabilities": [
       "Interactive",
@@ -31,7 +34,7 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Use the Finem Product & Planning guidance for this change.",
+      "Use the Product & Planning guidance for this change.",
       "Review this change against Product & Planning."
     ]
   }

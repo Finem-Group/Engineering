@@ -1,6 +1,6 @@
 {
   "name": "finem-core",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "The single engineering coordinator and shared original skill library for product, architecture, UI/UX, implementation, infrastructure, security and operations.",
   "author": {
     "name": "Finem Group",
@@ -25,10 +25,13 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "Finem Engineering core",
-    "shortDescription": "One engineering workflow and shared original library for all disciplines.",
+    "displayName": "Engineering Core",
+    "shortDescription": "The shared Finem engineering workflow.",
     "longDescription": "Coordinates 43 engineering capabilities. Stores the complete shared original library; area plugins expose scoped entrypoints and technology options activate only when selected for the current module.",
     "developerName": "Finem Group",
+    "brandColor": "#111111",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png",
     "category": "Developer Tools",
     "capabilities": [
       "Interactive",

@@ -3,7 +3,7 @@ name: finem-security-privacy
 description: "Use for Security & Privacy: auth, secrets/iam, security, privacy/compliance. Work through the Finem core using original upstream specialists."
 ---
 
-# Finem Security & Privacy
+# Security
 
 ## Direction and expected outcomes
 

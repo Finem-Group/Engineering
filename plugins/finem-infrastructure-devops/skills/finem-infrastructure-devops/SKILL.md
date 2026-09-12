@@ -3,7 +3,7 @@ name: finem-infrastructure-devops
 description: "Use for Infrastructure & DevOps: infrastructure, networking, ci, release, deployment, rollback, cost/finops, configuration/environments. Work through the Finem core using original upstream specialists."
 ---
 
-# Finem Infrastructure & DevOps
+# Infrastructure
 
 ## Direction and expected outcomes
 

@@ -1,6 +1,6 @@
 {
   "name": "finem-architecture",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Define system boundaries, domain rules and clear interfaces so implementation can evolve without spreading coupling.",
   "author": {
     "name": "Finem Group",
@@ -19,10 +19,13 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "Finem Architecture & API Design",
-    "shortDescription": "Architecture & API Design: original engineering specialists through one shared workflow.",
+    "displayName": "Architecture",
+    "shortDescription": "System design, domains and API contracts.",
     "longDescription": "Define system boundaries, domain rules and clear interfaces so implementation can evolve without spreading coupling. Requires finem-core. Framework choices remain internal options validated by the single core coordinator.",
     "developerName": "Finem Group",
+    "brandColor": "#111111",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png",
     "category": "Developer Tools",
     "capabilities": [
       "Interactive",
@@ -30,7 +33,7 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Use the Finem Architecture & API Design guidance for this change.",
+      "Use the Architecture guidance for this change.",
       "Review this change against Architecture & API Design."
     ]
   }

@@ -1,6 +1,6 @@
 {
   "name": "finem-security-privacy",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Protect identity, permissions, secrets and personal data, and assess concrete security risks in the implementation.",
   "author": {
     "name": "Finem Group",
@@ -19,10 +19,13 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "Finem Security & Privacy",
-    "shortDescription": "Security & Privacy: original engineering specialists through one shared workflow.",
+    "displayName": "Security",
+    "shortDescription": "Auth, privacy and security reviews.",
     "longDescription": "Protect identity, permissions, secrets and personal data, and assess concrete security risks in the implementation. Requires finem-core. Framework choices remain internal options validated by the single core coordinator.",
     "developerName": "Finem Group",
+    "brandColor": "#111111",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png",
     "category": "Developer Tools",
     "capabilities": [
       "Interactive",
@@ -30,7 +33,7 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Use the Finem Security & Privacy guidance for this change.",
+      "Use the Security guidance for this change.",
       "Review this change against Security & Privacy."
     ]
   }

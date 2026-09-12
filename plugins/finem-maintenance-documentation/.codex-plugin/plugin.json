@@ -1,6 +1,6 @@
 {
   "name": "finem-maintenance-documentation",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Keep the system understandable and support safe dependency changes, deprecation and eventual retirement.",
   "author": {
     "name": "Finem Group",
@@ -20,10 +20,13 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "Finem Maintenance & Documentation",
-    "shortDescription": "Maintenance & Documentation: original engineering specialists through one shared workflow.",
+    "displayName": "Maintenance & Docs",
+    "shortDescription": "Dependencies, migrations and runbooks.",
     "longDescription": "Keep the system understandable and support safe dependency changes, deprecation and eventual retirement. Requires finem-core. Framework choices remain internal options validated by the single core coordinator.",
     "developerName": "Finem Group",
+    "brandColor": "#111111",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png",
     "category": "Developer Tools",
     "capabilities": [
       "Interactive",
@@ -31,7 +34,7 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Use the Finem Maintenance & Documentation guidance for this change.",
+      "Use the Maintenance & Docs guidance for this change.",
       "Review this change against Maintenance & Documentation."
     ]
   }

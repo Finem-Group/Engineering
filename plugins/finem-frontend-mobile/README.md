@@ -1,4 +1,4 @@
-# Finem Frontend & Mobile
+# Frontend & Mobile
 
 Implement the interface in the project's actual web or mobile framework, connecting state, navigation and API boundaries.
 
