@@ -37,7 +37,7 @@ function groupByArea(core, options, definitions, phases) {
       displayName: area.displayName || area.title, title: area.title,
       description: area.purpose, purpose: area.purpose, deliverables: area.deliverables,
       shortDescription: area.shortDescription || `${area.title} agent skills.`,
-      dependencies: [core.name], capabilities,
+      dependencies: area.id === 'ui-ux' ? [] : [core.name], capabilities,
       options: options.filter(option => option.capabilities.some(cap => scope.has(cap.id))).map(option => option.extension),
       sources: [], skillCount: 0,
     }];

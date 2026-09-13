@@ -41,7 +41,7 @@ const REPO_SLUG = 'Finem-Group/Engineering';
 const REPO_URL = `https://github.com/${REPO_SLUG}`;
 const OWNER = { name: 'Finem Group', url: 'https://github.com/Finem-Group' };
 // Marketplace fixes can be released independently of the pinned L11 catalog.
-const PLUGIN_VERSION = '0.7.2';
+const PLUGIN_VERSION = '0.8.0';
 const CODEX_CATEGORY = 'Developer Tools';
 const CODEX_POLICY = { installation: 'AVAILABLE', authentication: 'ON_USE' };
 
@@ -435,6 +435,7 @@ universal decommissioning procedure.
 
 /** Area entrypoints carry scope; the shared core owns routing and source bodies. */
 function areaSkill(catalog, area) {
+  if (area.area === 'ui-ux') return fs.readFileSync(path.join(__dirname, 'catalog', 'ui-entry.md'), 'utf8');
   const capabilities = area.capabilities.map(cap => `- ${cap.title} (\`${cap.id}\`)`).join('\n');
   return frontmatter(area.name, `Use for ${area.title}: ${area.capabilities.map(cap => cap.title.toLowerCase()).join(', ')}. Work through the Finem core using original upstream specialists.`) + `
 # ${area.displayName}
@@ -547,6 +548,7 @@ function claudeManifest(catalog, plugin) {
 }
 
 function pluginDetails(catalog, plugin) {
+  if (plugin.area === 'ui-ux') return fs.readFileSync(path.join(__dirname, 'catalog', 'ui-description.txt'), 'utf8').trim();
   const unique = values => [...new Set(values)];
   const skills = unique(plugin.capabilities.flatMap(cap => cap.entrypoints.map(entry => entry.skill)));
   const connectors = unique(plugin.capabilities.flatMap(cap => cap.connectors || []));
@@ -715,6 +717,14 @@ function writePlugin(catalog, plugin, outRoot) {
   writeText(path.join(root, 'NOTICE.md'), noticeFile(catalog, plugin));
   writeText(path.join(root, 'README.md'), pluginReadme(catalog, plugin));
   writeText(path.join(root, 'LICENSE'), pluginLicense());
+  if (plugin.area === 'ui-ux') {
+    copyTree(path.join(__dirname, 'vendor', 'ui-specialists'), root);
+    for (const record of readJSON(path.join(root, 'ui-source.lock.json')).files) {
+      if (sha256(path.join(root, record.path)) !== record.sha256) throw new Error(`UI source hash mismatch: ${record.path}`);
+    }
+    writeText(path.join(root, 'NOTICE.md'), 'Original UI specialists are bundled under skills/ from XYLEX Group (MIT). See ui-source.lock.json for the Git revision and SHA-256 hashes, and licenses/XYLEX-LICENSE.txt for the original license. Finem entrypoint and metadata are MIT licensed. Core-backed capability mappings are optional and keep their separate upstream notices.');
+    writeText(path.join(root, 'README.md'), '# UI Plugins\n\n' + pluginDetails(catalog, plugin));
+  }
   if (plugin.kind === 'core') {
     writeText(path.join(root, 'scripts', 'resolve-packs.js'), fs.readFileSync(path.join(__dirname, 'scripts', 'resolve-packs.js'), 'utf8'));
   }
@@ -799,7 +809,7 @@ ${installs('codex')}
 \`\`\`
 
 For local validation, add the path to this checkout as the marketplace instead of the GitHub repository.
-Claude declares the Core dependency for every area. Codex requires Core to be installed explicitly.
+UI Plugins includes nine original XYLEX specialists and works independently of Core. Its ten native skills include the Finem entrypoint. The bundled Git revision, hashes and license are recorded in ui-source.lock.json and licenses/XYLEX-LICENSE.txt. Other areas require Core, explicitly installed in Codex. Core-backed UI capability selection also needs compatible Core and prerequisite areas.
 The full-stack commands install all areas; the coordinator only activates those relevant to the task.
 For a subset, install Core plus the required areas. Capability prerequisites may require another area:
 Frontend & Mobile uses Architecture & API Design and Product & Planning; a missing area is reported by the selection helper.

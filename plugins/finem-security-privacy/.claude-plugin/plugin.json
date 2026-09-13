@@ -1,6 +1,6 @@
 {
   "name": "finem-security-privacy",
-  "version": "0.7.2",
+  "version": "0.8.0",
   "description": "Protect identity, permissions, secrets and personal data, and assess concrete security risks in the implementation.",
   "author": {
     "name": "Finem Group",

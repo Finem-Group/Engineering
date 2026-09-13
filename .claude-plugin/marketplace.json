@@ -5,13 +5,13 @@
     "url": "https://github.com/Finem-Group"
   },
   "description": "Finem engineering: one coordinator plus 10 engineering disciplines sharing 180 original skills from 50 pinned Git sources.",
-  "version": "0.7.2",
+  "version": "0.8.0",
   "plugins": [
     {
       "name": "finem-core",
       "source": "./plugins/finem-core",
       "description": "The single engineering coordinator and shared original skill library for product, architecture, UI/UX, implementation, infrastructure, security and operations.",
-      "version": "0.7.2",
+      "version": "0.8.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"
@@ -28,7 +28,7 @@
       "name": "finem-product-planning",
       "source": "./plugins/finem-product-planning",
       "description": "Turn a product problem into a feasible, prioritized plan and measure whether the outcome creates value.",
-      "version": "0.7.2",
+      "version": "0.8.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"
@@ -45,7 +45,7 @@
       "name": "finem-architecture",
       "source": "./plugins/finem-architecture",
       "description": "Define system boundaries, domain rules and clear interfaces so implementation can evolve without spreading coupling.",
-      "version": "0.7.2",
+      "version": "0.8.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"
@@ -62,7 +62,7 @@
       "name": "finem-ui-ux",
       "source": "./plugins/finem-ui-ux",
       "description": "Design useful, accessible interfaces with coherent visual language, interaction states and motion.",
-      "version": "0.7.2",
+      "version": "0.8.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"
@@ -79,7 +79,7 @@
       "name": "finem-frontend-mobile",
       "source": "./plugins/finem-frontend-mobile",
       "description": "Implement the interface in the project's actual web or mobile framework, connecting state, navigation and API boundaries.",
-      "version": "0.7.2",
+      "version": "0.8.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"
@@ -96,7 +96,7 @@
       "name": "finem-backend-data",
       "source": "./plugins/finem-backend-data",
       "description": "Build services, persistence and background processing around explicit business rules and data contracts.",
-      "version": "0.7.2",
+      "version": "0.8.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"
@@ -113,7 +113,7 @@
       "name": "finem-infrastructure-devops",
       "source": "./plugins/finem-infrastructure-devops",
       "description": "Provision reproducible environments and operate the build, release, deployment and rollback path with visible infrastructure costs.",
-      "version": "0.7.2",
+      "version": "0.8.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"
@@ -130,7 +130,7 @@
       "name": "finem-security-privacy",
       "source": "./plugins/finem-security-privacy",
       "description": "Protect identity, permissions, secrets and personal data, and assess concrete security risks in the implementation.",
-      "version": "0.7.2",
+      "version": "0.8.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"
@@ -147,7 +147,7 @@
       "name": "finem-testing-quality",
       "source": "./plugins/finem-testing-quality",
       "description": "Verify behavior, integrations and performance and review whether the change is correct and maintainable.",
-      "version": "0.7.2",
+      "version": "0.8.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"
@@ -164,7 +164,7 @@
       "name": "finem-observability-reliability",
       "source": "./plugins/finem-observability-reliability",
       "description": "Make system health measurable, design for failure and support incident diagnosis and recovery.",
-      "version": "0.7.2",
+      "version": "0.8.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"
@@ -181,7 +181,7 @@
       "name": "finem-maintenance-documentation",
       "source": "./plugins/finem-maintenance-documentation",
       "description": "Keep the system understandable and support safe dependency changes, deprecation and eventual retirement.",
-      "version": "0.7.2",
+      "version": "0.8.0",
       "author": {
         "name": "Finem Group",
         "url": "https://github.com/Finem-Group"

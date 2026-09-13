@@ -35,7 +35,7 @@ class AreaSelectionTests(unittest.TestCase):
             metadata = read_json(ROOT / 'plugins' / ('finem-' + area) / 'capabilities.json')
             self.assertEqual(metadata['kind'], 'area')
             self.assertEqual(metadata['area'], area)
-            self.assertEqual(metadata['dependencies'], ['finem-core'])
+            self.assertEqual(metadata['dependencies'], [] if area == 'ui-ux' else ['finem-core'])
             self.assertTrue(all(cap['phase'] in {'context', 'design', 'build', 'verify', 'deliver', 'operate', 'evolve'} for cap in metadata['capabilities']))
             caps += [cap['id'] for cap in metadata['capabilities']]
         self.assertEqual(len(caps), 43)

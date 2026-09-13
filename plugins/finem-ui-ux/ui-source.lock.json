@@ -1,0 +1,222 @@
+{
+  "repository": "https://github.com/xylex-group/skills",
+  "revision": "53c3a7758bd1e0e5bf6564c77fe3f7d075c91846",
+  "license": "MIT",
+  "files": [
+    {
+      "path": "licenses/XYLEX-LICENSE.txt",
+      "upstreamPath": "LICENSE",
+      "sha256": "e5936b877eccc4dd0feaddfb35bcff1bea7647521e4b522121e0c85a573c7148"
+    },
+    {
+      "path": "skills/agentation/SKILL.md",
+      "upstreamPath": "plugins/ui-plugins/skills/agentation/SKILL.md",
+      "sha256": "78c513d536ccfd70a0940a1210d277a967186c89aad789daa3519ca7f99f807f"
+    },
+    {
+      "path": "skills/anti-ui-slop/SKILL.md",
+      "upstreamPath": "plugins/ui-plugins/skills/anti-ui-slop/SKILL.md",
+      "sha256": "9bfbd86d815c0ad6ea289e895d8112019954383b8bfda8f77a3ba31652520557"
+    },
+    {
+      "path": "skills/extract-design-system/SKILL.md",
+      "upstreamPath": "plugins/ui-plugins/skills/extract-design-system/SKILL.md",
+      "sha256": "e1a08d959b6f6d8d6012bc1dd6b12493dc83f615e32e70117d2fdda33b053c65"
+    },
+    {
+      "path": "skills/extract-design-system/references/outputs.md",
+      "upstreamPath": "plugins/ui-plugins/skills/extract-design-system/references/outputs.md",
+      "sha256": "5fad6484561857beb32e8fd42d90fa7ed3ad5918174ccee3c7caceac97e5a3f6"
+    },
+    {
+      "path": "skills/extract-design-system/references/workflow.md",
+      "upstreamPath": "plugins/ui-plugins/skills/extract-design-system/references/workflow.md",
+      "sha256": "2361195ede7301b1e65c14e3ec133021798ebf6d6e570e731097f20ebcf62950"
+    },
+    {
+      "path": "skills/polish-ui-components/SKILL.md",
+      "upstreamPath": "plugins/ui-plugins/skills/polish-ui-components/SKILL.md",
+      "sha256": "65b074c08bb6effe695d3291adeb59b494553b6a6f39c52fd5e23b45815a5070"
+    },
+    {
+      "path": "skills/polish-ui-components/references/rules.md",
+      "upstreamPath": "plugins/ui-plugins/skills/polish-ui-components/references/rules.md",
+      "sha256": "2d33df163366594c7ea073cfdf24491485e8c7defa75972eb185e7d435914a71"
+    },
+    {
+      "path": "skills/transitions-dev/01-card-resize.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/01-card-resize.md",
+      "sha256": "e464e54fd9bc855c96d1dc3a570227fbe9e97857626fd9ba85035d927a918157"
+    },
+    {
+      "path": "skills/transitions-dev/02-number-pop-in.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/02-number-pop-in.md",
+      "sha256": "723c6318d4c785febeb998326651cbbd04294d7712f8d32dfac85fef9e8bf5d1"
+    },
+    {
+      "path": "skills/transitions-dev/03-notification-badge.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/03-notification-badge.md",
+      "sha256": "f8f58844de1acf988f9437e4e1957478c48c6392939ac161ae3b9f6b55ea02f9"
+    },
+    {
+      "path": "skills/transitions-dev/04-text-states-swap.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/04-text-states-swap.md",
+      "sha256": "d6e2ba7a8c591c4e436303694b981d38bed78dc0c8583173dbdccb192eb390c0"
+    },
+    {
+      "path": "skills/transitions-dev/05-menu-dropdown.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/05-menu-dropdown.md",
+      "sha256": "70048541fd6389cfee736bf15a2bb21b062bc59c022562dc8d19773499630243"
+    },
+    {
+      "path": "skills/transitions-dev/06-modal.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/06-modal.md",
+      "sha256": "55638bf7e92d54d54cd09ad360442d7433e5b7a4b34bea24138643c76c03339a"
+    },
+    {
+      "path": "skills/transitions-dev/07-panel-reveal.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/07-panel-reveal.md",
+      "sha256": "1e6e726ccbbf44a5122200096f9bae7f1484be55fd17c102bfee870fd1a7418f"
+    },
+    {
+      "path": "skills/transitions-dev/08-page-side-by-side.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/08-page-side-by-side.md",
+      "sha256": "535c056bc2029ccf73ba63cfe839a9078c7967b374d2f021dbaa30ef411324f7"
+    },
+    {
+      "path": "skills/transitions-dev/09-icon-swap.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/09-icon-swap.md",
+      "sha256": "46cb518c5ba9d5425fd6a854e337ce2242a82a8d215c00153c6330f239cb610d"
+    },
+    {
+      "path": "skills/transitions-dev/10-success-check.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/10-success-check.md",
+      "sha256": "bd588b8f6039e63184b4161f6ae086f2333ed8a155229da702d7563fee41e610"
+    },
+    {
+      "path": "skills/transitions-dev/11-avatar-group-hover.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/11-avatar-group-hover.md",
+      "sha256": "4f440f0f6e3e2c99631d6cd168e326ea7c41052bedea71331b0db1fc67e82a84"
+    },
+    {
+      "path": "skills/transitions-dev/12-error-state-shake.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/12-error-state-shake.md",
+      "sha256": "f8c14b853e7d1ab1b1d7272d0d9e704e2877df837a44ee7fa58ab7e990a3e102"
+    },
+    {
+      "path": "skills/transitions-dev/13-input-clear-dissolve.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/13-input-clear-dissolve.md",
+      "sha256": "f9795657d72947ea65bb611c0abedf44507b0a4a9866004ca1c228b1e41c2d15"
+    },
+    {
+      "path": "skills/transitions-dev/14-skeleton-reveal.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/14-skeleton-reveal.md",
+      "sha256": "ffa8d66692cb863a05799abab90cdd4f1ad43189833202428ada7385bffcd88f"
+    },
+    {
+      "path": "skills/transitions-dev/15-shimmer-text.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/15-shimmer-text.md",
+      "sha256": "c62243675c39f14f637bde54a4fbd57ba6c799b381cb38f60432dc816d0a33c9"
+    },
+    {
+      "path": "skills/transitions-dev/16-tabs-sliding.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/16-tabs-sliding.md",
+      "sha256": "5d5476da745b58652daba496b309d5293be6f61297968e946c019dc8842f4d17"
+    },
+    {
+      "path": "skills/transitions-dev/17-tooltip.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/17-tooltip.md",
+      "sha256": "eedc3c03c78ed66e8eef2d9bd031d27096d8d612f4444c5cc84f74aa39e94275"
+    },
+    {
+      "path": "skills/transitions-dev/18-texts-reveal.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/18-texts-reveal.md",
+      "sha256": "532a7fc12d94008d38d73e10d384ff8493ac8497505dad32d560f9842185fda7"
+    },
+    {
+      "path": "skills/transitions-dev/19-card-tilt.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/19-card-tilt.md",
+      "sha256": "d64a509bdfbc478647bae4654543babd208e26743839f9ea17a0605951de920f"
+    },
+    {
+      "path": "skills/transitions-dev/20-plus-menu-morph.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/20-plus-menu-morph.md",
+      "sha256": "3dc1ff9409bc70312cb74beca8e93c6255c246510c4fdee3a01ccd4eb59b4bce"
+    },
+    {
+      "path": "skills/transitions-dev/21-accordion.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/21-accordion.md",
+      "sha256": "5b01c4b3db1773e3408bcc8a0b00b86c3dd7c7ed94b08f0cb250bf823969c641"
+    },
+    {
+      "path": "skills/transitions-dev/22-toast.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/22-toast.md",
+      "sha256": "a383f33a69db0fa325bdf3ac51ef2221bd784a6021cabc04c98725b070704343"
+    },
+    {
+      "path": "skills/transitions-dev/23-like-button.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/23-like-button.md",
+      "sha256": "116a03e19fc036036b0bb2d42837f0a8b67b898c1974f5375b3d87f1076e051e"
+    },
+    {
+      "path": "skills/transitions-dev/24-learn-more-hover.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/24-learn-more-hover.md",
+      "sha256": "94f5162e497a9399bca8b57d5b64d03e8545233b8e27b953d8e35108fc33482c"
+    },
+    {
+      "path": "skills/transitions-dev/25-checkbox-check.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/25-checkbox-check.md",
+      "sha256": "a8d879e720691dc70d2396f3819f77be2c384da443dba667eb95a103e6234c4e"
+    },
+    {
+      "path": "skills/transitions-dev/26-spinning-counter.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/26-spinning-counter.md",
+      "sha256": "e34bc3f7bcea2279216acf577f3279df89fb81861879834446482e3412833b49"
+    },
+    {
+      "path": "skills/transitions-dev/27-toggle.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/27-toggle.md",
+      "sha256": "9e4c405e573e1cf3286cc2eadf94c4dea7fa1139a843298db3dfd94fc47d1684"
+    },
+    {
+      "path": "skills/transitions-dev/SKILL.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/SKILL.md",
+      "sha256": "11f9ab398bf7ad2a506d991c4a7ba696755704f15741b419f583d1e94d8c9775"
+    },
+    {
+      "path": "skills/transitions-dev/_root.css",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-dev/_root.css",
+      "sha256": "e74d5b31896e0f839df153e68b737e742b4d38a61ef928be99aee2a14623cf19"
+    },
+    {
+      "path": "skills/transitions-polish/SKILL.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-polish/SKILL.md",
+      "sha256": "365a5bf179c8f53ccd8233d807f5a65a3c4311c90ff645305b7d5f983bb2e33e"
+    },
+    {
+      "path": "skills/transitions-polish/_refine-rules.md",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-polish/_refine-rules.md",
+      "sha256": "9e6b05051ecfbae1c2eacae210b09fd5795557e8f7d1759acfcc106bc88e92c3"
+    },
+    {
+      "path": "skills/transitions-polish/_root.css",
+      "upstreamPath": "plugins/ui-plugins/skills/transitions-polish/_root.css",
+      "sha256": "02e4335077af1433e9722ddc1a2474d83392cc3a81df4b4e69821a094872efaa"
+    },
+    {
+      "path": "skills/ui-design/SKILL.md",
+      "upstreamPath": "plugins/ui-plugins/skills/ui-design/SKILL.md",
+      "sha256": "9ca551e2356358b149055948b3978ff75c6d87ad186cf28c40930e6dc4ec0518"
+    },
+    {
+      "path": "skills/ui-radar/SKILL.md",
+      "upstreamPath": "plugins/ui-plugins/skills/ui-radar/SKILL.md",
+      "sha256": "668bd405a61906b0629123a38a568200e6cd9bc61485cefc606760358b8740dc"
+    },
+    {
+      "path": "skills/ui-slop-score/SKILL.md",
+      "upstreamPath": "plugins/ui-plugins/skills/ui-slop-score/SKILL.md",
+      "sha256": "1c4ca470adee339e0b476402802ea51ad8a1ceac369703a1e4e4066aacab64c8"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "name": "finem-ui-ux",
-  "version": "0.7.2",
+  "version": "0.8.0",
   "description": "Design useful, accessible interfaces with coherent visual language, interaction states and motion.",
   "author": {
     "name": "Finem Group",
@@ -16,8 +16,5 @@
     "design-system",
     "accessibility"
   ],
-  "skills": "./skills",
-  "dependencies": [
-    "finem-core"
-  ]
+  "skills": "./skills"
 }

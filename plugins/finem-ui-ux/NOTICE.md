@@ -1,5 +1,1 @@
-# Third-party notices — finem-ui-ux
-
-Originals referenced by this area are stored in the shared `finem-core` plugin.
-Its `NOTICE.md` and `upstream.lock.json` record the original licenses, source revisions and hashes.
-This area's own entrypoint and metadata are MIT licensed.
+Original UI specialists are bundled under skills/ from XYLEX Group (MIT). See ui-source.lock.json for the Git revision and SHA-256 hashes, and licenses/XYLEX-LICENSE.txt for the original license. Finem entrypoint and metadata are MIT licensed. Core-backed capability mappings are optional and keep their separate upstream notices.

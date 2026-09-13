@@ -2,10 +2,8 @@
   "schemaVersion": 3,
   "plugin": "finem-ui-ux",
   "kind": "area",
-  "version": "0.7.2",
-  "dependencies": [
-    "finem-core"
-  ],
+  "version": "0.8.0",
+  "dependencies": [],
   "area": "ui-ux",
   "title": "UI/UX & Design System",
   "purpose": "Design useful, accessible interfaces with coherent visual language, interaction states and motion.",

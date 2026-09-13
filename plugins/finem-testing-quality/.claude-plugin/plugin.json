@@ -1,6 +1,6 @@
 {
   "name": "finem-testing-quality",
-  "version": "0.7.2",
+  "version": "0.8.0",
   "description": "Verify behavior, integrations and performance and review whether the change is correct and maintainable.",
   "author": {
     "name": "Finem Group",

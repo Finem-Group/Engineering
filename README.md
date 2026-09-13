@@ -4,7 +4,7 @@
 43 capabilities, 180 complete selected original skills,
 50 pinned Git sources and 56 internal technology options.
 
-Version 0.7.2 gives UI/UX, infrastructure, security and the other engineering disciplines
+Version 0.8.0 gives UI/UX, infrastructure, security and the other engineering disciplines
 their own clear scope and expected outcomes. Every original source body is stored **once** in
 `finem-core/upstream/`, with its references, helpers, license, pinned revision and file hashes. Area plugins
 provide scoped entrypoints and metadata. They use the same single coordinator.
@@ -68,7 +68,7 @@ codex plugin add finem-maintenance-documentation@finem
 ```
 
 For local validation, add the path to this checkout as the marketplace instead of the GitHub repository.
-Claude declares the Core dependency for every area. Codex requires Core to be installed explicitly.
+UI Plugins includes nine original XYLEX specialists and works independently of Core. Its ten native skills include the Finem entrypoint. The bundled Git revision, hashes and license are recorded in ui-source.lock.json and licenses/XYLEX-LICENSE.txt. Other areas require Core, explicitly installed in Codex. Core-backed UI capability selection also needs compatible Core and prerequisite areas.
 The full-stack commands install all areas; the coordinator only activates those relevant to the task.
 For a subset, install Core plus the required areas. Capability prerequisites may require another area:
 Frontend & Mobile uses Architecture & API Design and Product & Planning; a missing area is reported by the selection helper.

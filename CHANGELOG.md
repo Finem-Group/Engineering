@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.8.0
+
+- Make UI Plugins standalone with nine complete original XYLEX UI skills plus the Finem entrypoint, including ui-design, ui-radar, anti-ui-slop, ui-slop-score and Agentation.
+- Bundle 43 original files from XYLEX commit 53c3a7758bd1e0e5bf6564c77fe3f7d075c91846 with SHA-256 provenance and MIT attribution. A small UI-local copy is intentional so Core is optional.
+- Preserve the optional Core-backed capability route for Impeccable, Vercel and WCAG specialists, and the existing 180-skill shared library and CLI catalog.
+- Keep specialist selection task-specific, avoid competing design workflows and require explicit task scope for Agentation setup.
+
 ## 0.7.2
 
 - Expand plugin detail pages with capability coverage, expected outputs, original skill identifiers, optional framework packs and integration setup requirements derived from the catalog.

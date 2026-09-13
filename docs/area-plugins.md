@@ -18,15 +18,15 @@ The native marketplace presents **ten engineering disciplines plus one Core**. E
 | Observability & Reliability | Define telemetry, SLOs and resilience; diagnose incidents and record postmortems |
 | Maintenance & Documentation | Maintain dependencies, manage deprecation and retirement, and keep documentation and runbooks useful |
 
-The reviewed assignment lives in `catalog/plugin-areas.json`. Each capability has one area owner. Original lifecycle tags such as `design` and `verify` stay in capability metadata; an area can contribute at several moments in the lifecycle. Cross-cutting skills are referenced by the relevant capability mappings, while original source bodies remain stored once.
+The reviewed assignment lives in `catalog/plugin-areas.json`. Each capability has one area owner. Original lifecycle tags such as `design` and `verify` stay in capability metadata; an area can contribute at several moments in the lifecycle. Cross-cutting skills are referenced by the relevant capability mappings, while the Core-backed original source bodies remain shared. UI Plugins additionally carries a deliberate standalone XYLEX bundle.
 
 Core retains the complete 2,651-file original library. The ten area plugins define direction and provide scoped entrypoints. They return work and evidence to the single coordinator. No skill body, source pin, license, reference file or executable mode changes in this release. Core includes sources for unused frameworks; the coordinator loads originals on demand. The existing L11 CLI provides selective project installation.
 
 ## Selection contract
 
-Native `capabilities.json` uses schema version 3. Core has `kind: core`, `layout: areas`, an `areaPlugins` ownership registry, `legacyPhases`, `technologyOptions`, the unchanged capability registry and source provenance. An area has `kind: area`, `area`, `title`, `purpose`, `deliverables`, `dependencies: [finem-core]`, its capabilities and related option IDs.
+Native `capabilities.json` uses schema version 3. Core has `kind: core`, `layout: areas`, an `areaPlugins` ownership registry, `legacyPhases`, `technologyOptions`, the unchanged capability registry and source provenance. An area has `kind: area`, `area`, `title`, `purpose`, `deliverables`, `dependencies` (empty for standalone UI; `[finem-core]` for other areas), its capabilities and related option IDs.
 
-Every original entrypoint has `plugin: finem-core`; its relative path resolves against the actual installed Core root. Only Core carries originals and a populated source lock. Do not infer sibling paths in host caches.
+Every original entrypoint has `plugin: finem-core`; its relative path resolves against the actual installed Core root. UI Plugins also exposes nine original local skills, with a separate ui-source.lock.json and MIT license. Its install dependencies are empty; the Core-backed route still requires Core and the helper prerequisites. Do not infer sibling paths in host caches.
 
 The read-only helper accepts `--area PATH` for available plugin roots, `--select finem-AREA,...` for task scopes and `--extensions ID,...` for framework/provider choices. It expands exact capability prerequisites, reports a missing area, rejects version or capability drift, resolves option dependencies and conflicts, and applies replacements before additions. An unselected area contributes only a specifically required capability. No selection activates no capabilities.
 
@@ -47,3 +47,7 @@ The migration map lists directly affected areas. Capability prerequisites can re
 ## Verification
 
 Tests cover distinct UI/UX, infrastructure and security ownership; useful direction metadata; narrow frontend and UI selections; every internal option; source integrity; legacy scope preservation; dependency and conflict handling; both native marketplaces and regeneration. Runtime availability, interactive host discovery and live provider execution require separate checks. Original limitations, including partial retirement guidance and the XYLEX Windows metrics caveat, remain documented.
+
+## Standalone UI (0.8.0)
+
+UI Plugins exposes nine complete XYLEX specialists plus one Finem entry skill. It can perform local UI work without Core; the optional Core route retains the 180-skill shared library and original capability prerequisites. Four previously shared UI originals intentionally also ship locally, and five additional UI skills are now available. The library therefore has 185 distinct selected original skills across both bundles, not 189. No other area becomes standalone. Agentation is task opt-in and web motion guidance is not a native-mobile animation implementation.

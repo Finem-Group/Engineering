@@ -1,6 +1,6 @@
 {
   "name": "finem-architecture",
-  "version": "0.7.2",
+  "version": "0.8.0",
   "description": "Define system boundaries, domain rules and clear interfaces so implementation can evolve without spreading coupling.",
   "author": {
     "name": "Finem Group",
