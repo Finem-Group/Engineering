@@ -2,26 +2,12 @@
 
 Define system boundaries, domain rules and clear interfaces so implementation can evolve without spreading coupling.
 
-**Claude Code**
+Covers: Architecture, ADRs, Domain modeling, API contracts.
 
-```bash
-claude plugin install finem-architecture@finem
-```
+Expected outputs: System and module boundaries; Domain model and terminology; Architecture decision records; API contracts and integration boundaries.
 
-**Codex**
+Original specialists: gstack:plan-eng-review, wshobson:architecture-patterns, addy:documentation-and-adrs, addy:api-and-interface-design.
 
-```bash
-codex plugin add finem-core@finem
-codex plugin add finem-architecture@finem
-```
+Local framework and specialist options: agent-engineering, backend-hono, backend-fastify, backend-fastapi, api-graphql, api-contract-testing, xylex-architecture, xylex-code-audit. Choose only options relevant to the project.
 
-**Depends on** `finem-core`. Claude Code installs those automatically; Codex does not resolve dependencies, so the Codex commands above install them in order.
-
-| Capability | Role | Originals |
-| --- | --- | --- |
-| Architecture | area baseline | 2 |
-| ADRs | area baseline | 1 |
-| Domain modeling | area baseline | 1 |
-| API contracts | area baseline | 1 |
-
-Native area entries: 1. Original bodies live in the shared `finem-core` dependency; this plugin contains no copied originals. Internal options: `agent-engineering`, `backend-hono`, `backend-fastify`, `backend-fastapi`, `api-graphql`, `api-contract-testing`, `xylex-architecture`, `xylex-code-audit`.
+Works independently. All mapped original skills, supporting source files, licenses and hashes are bundled locally. Core is not required. The app entry skill loads the relevant originals on demand. External services and runtime dependencies are configured separately.

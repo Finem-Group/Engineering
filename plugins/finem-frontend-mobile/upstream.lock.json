@@ -1,5 +1,4179 @@
 {
   "schemaVersion": 1,
   "plugin": "finem-frontend-mobile",
-  "sources": []
+  "sources": [
+    {
+      "id": "addy",
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "revision": "6ca0cd7db39b41b1c37e26d335c507ee92382c6d",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original upstream skill directories and supporting files. Invoke selected specialists within the single L11 workflow; do not activate source bootstrap routers or global hooks.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "addy:api-and-interface-design",
+          "path": "skills/api-and-interface-design/SKILL.md",
+          "sha256": "5dafd0c44a3aabf11cae5bcb34f6fcc24dfa5c01ba6e0d3176bce997f4d68bc8",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:browser-testing-with-devtools",
+          "path": "skills/browser-testing-with-devtools/SKILL.md",
+          "sha256": "4e3aacd6a380cd25bc6c2d67fdd1c926a9b22535b8a62109ecd33cefd909e3d9",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:ci-cd-and-automation",
+          "path": "skills/ci-cd-and-automation/SKILL.md",
+          "sha256": "a6ed8ed56456b01ff8314c44eefc69897d9905ae4e06bb2b7036286efb79b5f0",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:code-review-and-quality",
+          "path": "skills/code-review-and-quality/SKILL.md",
+          "sha256": "8f3cabca581bbf7cb5f0add3f7454e7a4523f9d4353a6a4a217e6fa515309612",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:code-simplification",
+          "path": "skills/code-simplification/SKILL.md",
+          "sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:constraint-driven-development",
+          "path": "skills/constraint-driven-development/SKILL.md",
+          "sha256": "06479d4305f286d23cfb99f5dc85695896785269664e1f6a8d800e3b71e70c10",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:deprecation-and-migration",
+          "path": "skills/deprecation-and-migration/SKILL.md",
+          "sha256": "6a624f942e09c69863a4219b9bd5d56975026b67b0c70bc83385ffd2120b6142",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:documentation-and-adrs",
+          "path": "skills/documentation-and-adrs/SKILL.md",
+          "sha256": "87ae44a0c7bb3eefc2131a9d11caabcc14e4d8dcb27d66a3a675551ee2ce1671",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:frontend-ui-engineering",
+          "path": "skills/frontend-ui-engineering/SKILL.md",
+          "sha256": "2b74ac4862be3902ec918dceac9366a6fe83b9e003601c0deaf6be09c1766aca",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:git-workflow-and-versioning",
+          "path": "skills/git-workflow-and-versioning/SKILL.md",
+          "sha256": "b7465d187935c52546d39fdc7bd6ac36d94eda25a9500ef8c18b767d2eb116ea",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:idea-refine",
+          "path": "skills/idea-refine/SKILL.md",
+          "sha256": "79e773058963adc7646b0115b4f8a4afc974c5ff95843e4ef1cafff3cb51899e",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:incremental-implementation",
+          "path": "skills/incremental-implementation/SKILL.md",
+          "sha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:observability-and-instrumentation",
+          "path": "skills/observability-and-instrumentation/SKILL.md",
+          "sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:performance-optimization",
+          "path": "skills/performance-optimization/SKILL.md",
+          "sha256": "00694d0c69bbde674d0e39de24052d90afea32d9fef9553eaee21a50a7e9b8cf",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:planning-and-task-breakdown",
+          "path": "skills/planning-and-task-breakdown/SKILL.md",
+          "sha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:security-and-hardening",
+          "path": "skills/security-and-hardening/SKILL.md",
+          "sha256": "4aa7a433a0a8042f47197f05893343bd9d1cc02a9179537ef3437c05c49b385d",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:spec-driven-development",
+          "path": "skills/spec-driven-development/SKILL.md",
+          "sha256": "89411b435fc9f45cec0dd7437419e6bac64b7ddf43108791978647d453010a61",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7",
+          "mode": 420
+        },
+        {
+          "path": "skills/api-and-interface-design/SKILL.md",
+          "sha256": "5dafd0c44a3aabf11cae5bcb34f6fcc24dfa5c01ba6e0d3176bce997f4d68bc8",
+          "mode": 420
+        },
+        {
+          "path": "skills/browser-testing-with-devtools/SKILL.md",
+          "sha256": "4e3aacd6a380cd25bc6c2d67fdd1c926a9b22535b8a62109ecd33cefd909e3d9",
+          "mode": 420
+        },
+        {
+          "path": "skills/ci-cd-and-automation/SKILL.md",
+          "sha256": "a6ed8ed56456b01ff8314c44eefc69897d9905ae4e06bb2b7036286efb79b5f0",
+          "mode": 420
+        },
+        {
+          "path": "skills/code-review-and-quality/SKILL.md",
+          "sha256": "8f3cabca581bbf7cb5f0add3f7454e7a4523f9d4353a6a4a217e6fa515309612",
+          "mode": 420
+        },
+        {
+          "path": "skills/code-simplification/SKILL.md",
+          "sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d",
+          "mode": 420
+        },
+        {
+          "path": "skills/constraint-driven-development/SKILL.md",
+          "sha256": "06479d4305f286d23cfb99f5dc85695896785269664e1f6a8d800e3b71e70c10",
+          "mode": 420
+        },
+        {
+          "path": "skills/constraint-driven-development/references/floor-guard.md",
+          "sha256": "dba15dad8f5a5cbae464ec8457e6dd014a7bcb3ad13a360a6908d54991a5415e",
+          "mode": 420
+        },
+        {
+          "path": "skills/context-engineering/SKILL.md",
+          "sha256": "1392005054efb0a5c9cbbd83811f95ac30d34e5228a1f6837baf59fb7d588017",
+          "mode": 420
+        },
+        {
+          "path": "skills/debugging-and-error-recovery/SKILL.md",
+          "sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220",
+          "mode": 420
+        },
+        {
+          "path": "skills/deprecation-and-migration/SKILL.md",
+          "sha256": "6a624f942e09c69863a4219b9bd5d56975026b67b0c70bc83385ffd2120b6142",
+          "mode": 420
+        },
+        {
+          "path": "skills/documentation-and-adrs/SKILL.md",
+          "sha256": "87ae44a0c7bb3eefc2131a9d11caabcc14e4d8dcb27d66a3a675551ee2ce1671",
+          "mode": 420
+        },
+        {
+          "path": "skills/doubt-driven-development/SKILL.md",
+          "sha256": "6fa1fcd8420c28daf7e53c5b08b0f20b907911efd2a6d9bce0b9740da20a4008",
+          "mode": 420
+        },
+        {
+          "path": "skills/frontend-ui-engineering/SKILL.md",
+          "sha256": "2b74ac4862be3902ec918dceac9366a6fe83b9e003601c0deaf6be09c1766aca",
+          "mode": 420
+        },
+        {
+          "path": "skills/git-workflow-and-versioning/SKILL.md",
+          "sha256": "b7465d187935c52546d39fdc7bd6ac36d94eda25a9500ef8c18b767d2eb116ea",
+          "mode": 420
+        },
+        {
+          "path": "skills/idea-refine/SKILL.md",
+          "sha256": "79e773058963adc7646b0115b4f8a4afc974c5ff95843e4ef1cafff3cb51899e",
+          "mode": 420
+        },
+        {
+          "path": "skills/idea-refine/examples.md",
+          "sha256": "563204bfbf2f80a444151695205af4cb759e722b3d1e5460e08f278a69c89ba1",
+          "mode": 420
+        },
+        {
+          "path": "skills/idea-refine/frameworks.md",
+          "sha256": "161ebc18fdf2d996bc62a87a2d747cf1bf53548354f8925de25c732c27f00309",
+          "mode": 420
+        },
+        {
+          "path": "skills/idea-refine/refinement-criteria.md",
+          "sha256": "1ca2973a4d01b5cb37ab7ddb2eff77fa4e792634a33d0ce44961c068fc88d51a",
+          "mode": 420
+        },
+        {
+          "path": "skills/idea-refine/scripts/idea-refine.sh",
+          "sha256": "f02a52408a4218047c032d221483abfbb48d11f090bb4915965c7419bf2e0e47",
+          "mode": 493
+        },
+        {
+          "path": "skills/incremental-implementation/SKILL.md",
+          "sha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b",
+          "mode": 420
+        },
+        {
+          "path": "skills/interview-me/SKILL.md",
+          "sha256": "1d94741d10d2c826cd0c191aea3981ee94c8abb27ef2a166f6a372117d06448f",
+          "mode": 420
+        },
+        {
+          "path": "skills/observability-and-instrumentation/SKILL.md",
+          "sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87",
+          "mode": 420
+        },
+        {
+          "path": "skills/performance-optimization/SKILL.md",
+          "sha256": "00694d0c69bbde674d0e39de24052d90afea32d9fef9553eaee21a50a7e9b8cf",
+          "mode": 420
+        },
+        {
+          "path": "skills/planning-and-task-breakdown/SKILL.md",
+          "sha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7",
+          "mode": 420
+        },
+        {
+          "path": "skills/security-and-hardening/SKILL.md",
+          "sha256": "4aa7a433a0a8042f47197f05893343bd9d1cc02a9179537ef3437c05c49b385d",
+          "mode": 420
+        },
+        {
+          "path": "skills/shipping-and-launch/SKILL.md",
+          "sha256": "af610cf4892db7eab2e91c899e33feba90e1000bac4528b2f8dde930816ac125",
+          "mode": 420
+        },
+        {
+          "path": "skills/source-driven-development/SKILL.md",
+          "sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9",
+          "mode": 420
+        },
+        {
+          "path": "skills/spec-driven-development/SKILL.md",
+          "sha256": "89411b435fc9f45cec0dd7437419e6bac64b7ddf43108791978647d453010a61",
+          "mode": 420
+        },
+        {
+          "path": "skills/test-driven-development/SKILL.md",
+          "sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca",
+          "mode": 420
+        },
+        {
+          "path": "skills/using-agent-skills/SKILL.md",
+          "sha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/addy"
+    },
+    {
+      "id": "android",
+      "repository": "https://github.com/android/skills",
+      "revision": "bac232fd02b0855df9275281a2a7a47643768719",
+      "license": "Apache-2.0",
+      "licenseFiles": [
+        "LICENSE.txt"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Official targeted Android navigation, insets and View-to-Compose migration coverage. JDK, Gradle wrapper, Android SDK and target-device/emulator; Navigation3 migration only when chosen. Match targetSdk/Compose/Navigation versions. Never auto-migrate a View application merely because Compose references exist. Source nesting triggers Windows MAX_PATH in a deep directory: ingestion/materialization needs long-path-safe I/O. One upstream dead README.md link in a deep-link recipe is absent from the Git tree; document it as upstream defect, not a missing vendored file.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "android:edge-to-edge",
+          "path": "system/edge-to-edge/SKILL.md",
+          "sha256": "4ca04cb6a5330b96e51410bc815f878b4ca642fba46fe5e1ad724c94e04d6eb8",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "android:migrate-xml-views-to-jetpack-compose",
+          "path": "jetpack-compose/migration/migrate-xml-views-to-jetpack-compose/SKILL.md",
+          "sha256": "8b8e4ca4cfd3c6b7ffbee76bed8f58ae78e198f5c602aa9e3be2d2222fd45e29",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE.txt",
+          "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+          "mode": 420
+        },
+        {
+          "path": "jetpack-compose/migration/migrate-xml-views-to-jetpack-compose/SKILL.md",
+          "sha256": "8b8e4ca4cfd3c6b7ffbee76bed8f58ae78e198f5c602aa9e3be2d2222fd45e29",
+          "mode": 420
+        },
+        {
+          "path": "jetpack-compose/migration/migrate-xml-views-to-jetpack-compose/references/analysis-of-the-project-and-layout.md",
+          "sha256": "6c62575a08ac698b33ee41e8806858cc9536669ab83c8a18653a4e086e4fce0a",
+          "mode": 420
+        },
+        {
+          "path": "jetpack-compose/migration/migrate-xml-views-to-jetpack-compose/references/android/develop/ui/compose/designsystems/migrate-xml-theme-to-compose.md",
+          "sha256": "f87dc398550d898fedbd6c5ac382a927013064ed6148fe25d56c518049db1ee1",
+          "mode": 420
+        },
+        {
+          "path": "jetpack-compose/migration/migrate-xml-views-to-jetpack-compose/references/android/develop/ui/compose/migrate/interoperability-apis/compose-in-views.md",
+          "sha256": "0c177f3275584e2a7977eb54e4409af7a0a0ebcb37a536a29a420ac541acfc57",
+          "mode": 420
+        },
+        {
+          "path": "jetpack-compose/migration/migrate-xml-views-to-jetpack-compose/references/android/develop/ui/compose/migrate/interoperability-apis/views-in-compose.md",
+          "sha256": "c11c2ba430b503763b2bc95b27e6b3574e2094070bab829a6aeb9dfaa31c9755",
+          "mode": 420
+        },
+        {
+          "path": "jetpack-compose/migration/migrate-xml-views-to-jetpack-compose/references/android/develop/ui/compose/setup-compose-dependencies-and-compiler.md",
+          "sha256": "6d54e1662c59e478ba221453bd43a4f79053720fcd3a380969dc86f90f3beb36",
+          "mode": 420
+        },
+        {
+          "path": "jetpack-compose/migration/migrate-xml-views-to-jetpack-compose/references/identify-optimal-xml-candidate.md",
+          "sha256": "acd036633dd2c1b0d286be9340f8565143f6700cb2fa8e3c04c0e10d886eb1ba",
+          "mode": 420
+        },
+        {
+          "path": "jetpack-compose/migration/migrate-xml-views-to-jetpack-compose/references/xml-layout-migration.md",
+          "sha256": "c5e41a6b97a963407606d428f273938693ed3da7d4195bb30fd15dd4dc68916f",
+          "mode": 420
+        },
+        {
+          "path": "system/edge-to-edge/SKILL.md",
+          "sha256": "4ca04cb6a5330b96e51410bc815f878b4ca642fba46fe5e1ad724c94e04d6eb8",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/android"
+    },
+    {
+      "id": "angular",
+      "repository": "https://github.com/angular/angular",
+      "revision": "ae33a5f55ec1d31ea4e216b32cd1ddc535a3b331",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Comprehensive first-party Angular app guidance, rather than a third-party kitchen-sink framework skill. Project Angular CLI, matching Angular version, ng build. Signal Forms defaults are gated to Angular 22+; older app conventions retained. Do not include Angular repository contributor .agent skills or additional angular-new-app entrypoint initially; developer already covers setup. New-project latest/global CLI examples are source instructions, not automatic installs; existing project version decides.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "angular:angular-developer",
+          "path": "skills/dev-skills/angular-developer/SKILL.md",
+          "sha256": "ec5e3a0b1ef218c0d7d40e35c40e5255e7319d7d595c5a6036d8bdac2532c782",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "15e77c4692114f87c2020353626c868472c23954a4ed37ecc4c1522d14be1eb7",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/SKILL.md",
+          "sha256": "ec5e3a0b1ef218c0d7d40e35c40e5255e7319d7d595c5a6036d8bdac2532c782",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/angular-animations.md",
+          "sha256": "f21b798ed93e27318527ef7e74e63ef8c71cb74ff2b010d70dbb429883f0dbd0",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/angular-aria.md",
+          "sha256": "fff4cbdf3558beacfeb03a243d874cacb16a24b0c78962c4f9c760fc2cbe5ad8",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/cli.md",
+          "sha256": "39468f1be907a1abff746e79cb9fabd9675956df00c87d9b8bd1517855b9fd7d",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/component-harnesses.md",
+          "sha256": "1761d33a65ecde690ca0c57081ff9d5871cafb8ff724738ccd711b5018e2d894",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/component-styling.md",
+          "sha256": "de3351fdb72174361c6eee150940193f20d148afaceab0f22107758a3cb2d787",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/components.md",
+          "sha256": "35ffb62475d54d7d4ed434b2190882440a77ef76b14260128e6d7e3111122e3b",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/creating-services.md",
+          "sha256": "1fc1d46bd26568d07d1500d0b9ba1a2556ca4a11f4a3dc11036ae5b16dea80cc",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/data-resolvers.md",
+          "sha256": "6525d6f9b90d4ac6bbd58489d6bc57ab024c407673ed0e1e46364a90d0b9b5da",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/define-routes.md",
+          "sha256": "4e80613931ecf4da957f9ff45343869b1651331ff4c8b955f2698b9ac0afc921",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/defining-providers.md",
+          "sha256": "e654c23a080c642cf7031b5cc5de1101b8c75030c15256f7e3b81b0336953c6d",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/di-fundamentals.md",
+          "sha256": "ed5e4004aed214429de091d2b041cfd818c77a0ebfa24c23f01ec9bac7118a78",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/e2e-testing.md",
+          "sha256": "fd11d930ed081ca934fe83df06c9d965257ec817ebef59b918d4d814a65feca6",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/effects.md",
+          "sha256": "5df4759be70248a1f282aff3060b04b694f05ae78093a5caa4eaff455e35a6a3",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/environment-configuration.md",
+          "sha256": "788b62bf5e04d56343f598437f7e3fd7fdfc6efa8ec6727288dc73514b1b5a76",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/hierarchical-injectors.md",
+          "sha256": "967e472a1208c6e1f4b95bf7ee9162165904eb78ac6dab64643c67a9d1dac264",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/host-elements.md",
+          "sha256": "5c2eb324e7b84bd81334b6d262a61b873de208640aabe4be48b73600438bdaed",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/http-client.md",
+          "sha256": "b6a6c92ae71dc98b6cd0e2b840227c7743b3edf288769da3db070fa1815c1adc",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/injection-context.md",
+          "sha256": "4435dfcec91bd9fb68d6c318802cac1b37424d4e76452e6f0f52ed0d2b6536fb",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/inputs.md",
+          "sha256": "f5dcdd2a69e7e5c0aad503b4deaea5cedb682130cc699c669128b8fadcc65ba8",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/linked-signal.md",
+          "sha256": "01f5395e4be4be7c642f4dacd5312d6cc82e641f3ff177f9283b26b79dd07e95",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/loading-strategies.md",
+          "sha256": "4eb2e243425443426d28c6f68c823d501c7b2bf64e4587c96c4c6013d57e7c93",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/mcp.md",
+          "sha256": "e112ece9672d042144bc1aeb1245bd0325bab172398d7129a258be81f9db61aa",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/migrations.md",
+          "sha256": "47983ed2683dc10f692d254cdca9c97fc13dec9ad099b759f5d31886f3cbaa7a",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/naming-conventions.md",
+          "sha256": "f0751d75d12a76ff0415124948ead5ae1a67d14a84360e64526aa8bac7d6c5d3",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/navigate-to-routes.md",
+          "sha256": "ea3c3d53b5db47b4f8d8b05124330e72bea92fc908d42c06aa7edb9e652b425e",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/outputs.md",
+          "sha256": "4d6900ff9ab90168969c3d05b67d88f69bb6a46aa4b74a8a8290ba0643c6d8dd",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/pipes.md",
+          "sha256": "76bd0f2f3ac9096ee511427df6ea73cab75f06a3566ab4595ba4f2ec8c0c6fc9",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/reactive-forms.md",
+          "sha256": "edfc57c191d29a1549e9aa9b4ba0d1111a9792caa65918d62967920647717121",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/rendering-strategies.md",
+          "sha256": "329aa9aa35c85dd2048c899f26025439d3b0244067dbb508e724d291fdad7c97",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/resource.md",
+          "sha256": "2fad5a0aaf85b0b3193a492b706595962e247bc99aec1dcc1755d90d9c303545",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/route-animations.md",
+          "sha256": "eda1452f85ce05f3f28753cc77cd8c31c7a52515d7ccebbb35de0ec1e3beb374",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/route-guards.md",
+          "sha256": "491a93cb49fbcba04f7e8ffcd0f784fce7319ca3e2fe393c553f3d683a68424c",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/router-lifecycle.md",
+          "sha256": "4abc8cb8dfeb2e9f57dc11c117d5f4a5b756b39dc076910d9ced9da640effc2d",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/router-testing.md",
+          "sha256": "4d144577927d3ea93ae498cac7ebd2724873a2de225b75d345abb24759bd62d3",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/show-routes-with-outlets.md",
+          "sha256": "43a2ed62ea2edafa8569bf7045f20928110f8f844d5890bfb6a2f2dde45e754b",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/signal-forms.md",
+          "sha256": "5251585cadf72ab95e31377904db21a597b5e9b982c8e839dc098b48f69ac6b7",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/signals-overview.md",
+          "sha256": "da07c58fdea2ab7d82a28faf9f3d117ccb98ccaf3eec06f103b898f557791146",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/tailwind-css.md",
+          "sha256": "bdb952d0dd2d415560a796ecaf843cacff5ac20d8ef961eaaf75656fef9b9263",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/template-driven-forms.md",
+          "sha256": "52e83e576b0c6dc05f854e903c4cfda1222bcd55c50ddee07344d1e53d02c1df",
+          "mode": 420
+        },
+        {
+          "path": "skills/dev-skills/angular-developer/references/testing-fundamentals.md",
+          "sha256": "8f48c2392d99487934edf977c0d1b87a4e83ff9761db493bbcccc10f574bcb5a",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/angular"
+    },
+    {
+      "id": "antfu",
+      "repository": "https://github.com/antfu/skills",
+      "revision": "a74f281a27dadc02397bc1a174b0f2c97531b6ae",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE.md"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Adds Nuxt 4 app/server/shared layout, SSR-safe fetching, state and Pinia; complements Vue core without copying its rules. Nuxt 4 project; Pinia v3 guidance generated for 3.0.4; installed versions and current docs remain decisive. Nuxt is an alternative primary app framework to Next/Angular/SvelteKit/TanStack Start; Pinia only when already selected. Do not include antfu global preference skill, installation/meta router, or duplicated vendored Vue/web-guideline skills.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "antfu:nuxt",
+          "path": "skills/nuxt/SKILL.md",
+          "sha256": "0c7759f5201fcdd6fc149d14e4f55b29090228800a22b61f96c065b77caaff3a",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "antfu:pinia",
+          "path": "skills/pinia/SKILL.md",
+          "sha256": "fba52570068a715fef7d306e582a5993bf08a838b55465d3c3c7bff8ba70f731",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE.md",
+          "sha256": "2a596f697b619094b6f4067936e0f385027a393bce32211383db0478774c1cb2",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/GENERATION.md",
+          "sha256": "c462576e3a2d3e3ab1214f1d149851a04cde6ceb412c7bcaf983be96bac567b0",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/SKILL.md",
+          "sha256": "0c7759f5201fcdd6fc149d14e4f55b29090228800a22b61f96c065b77caaff3a",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/advanced-hooks.md",
+          "sha256": "e0ff7e1222700686b21134a9a37339746d9eb063700e2ebb77dc07cc13232d05",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/advanced-layers.md",
+          "sha256": "c9c1526503a07da55c8798307b357851ec967cafde2bab5485d914492af24ad0",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/advanced-module-authoring.md",
+          "sha256": "91850423230cdcecb5d84a1e0dbd6e7d41660f74a8c8285f1b58c754fff6aa73",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/best-practices-data-fetching.md",
+          "sha256": "d1c2c558c9b400988937f8ecbbad83c83183ef0ae4ac3da9b5d1c5a4b998d3c7",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/best-practices-ssr.md",
+          "sha256": "e26db2f9629bdee842163b78e9f79dd50ac0bbdc963f7b74ce0e0e48d0d26432",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/core-cli.md",
+          "sha256": "322660789800f525c076c847746eea7d62c9cfba14dcc17e2ea955e52ebed739",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/core-config.md",
+          "sha256": "16eb653e9b2578273dfe43c4a2788a4118d4515ad97cbba3ab9939513b4f8185",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/core-data-fetching.md",
+          "sha256": "eb6e6040b84f6db3a82a203603dd09b548771f69c85d43870491507af25524e8",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/core-deployment.md",
+          "sha256": "d5ed511b454564eb63ab2d5e2f9c07bc5e7d7a21548bb9d9a773e0729f93df2f",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/core-directory-structure.md",
+          "sha256": "0b3940e7e21524091ca6ef86024ac03c4c44e19597575049fec787bfc544d6ab",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/core-modules.md",
+          "sha256": "2a08dac47ba48fc59475b0e63a438e624d14de40e115b5e2bbe05d051b2f02cb",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/core-routing.md",
+          "sha256": "0a7059d56a3111c02631282e62aa5411c11b333ff448d5f985987c5270c21a1c",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/features-components-autoimport.md",
+          "sha256": "6842d81cc97737700542dd8b3833b029f58075fdb8d533845094541b8c817794",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/features-components.md",
+          "sha256": "ecb23d9773988b4e631ebacee85f4b25868ebda3de3649359ffaf56673c3662a",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/features-composables.md",
+          "sha256": "33d0394dc60d611312d76550dbccc598c5505480bbe0d88ff14a01d78e4ea5e7",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/features-server.md",
+          "sha256": "734143f655a8eb24c220933ce932357052bba9c96b02a13845dd8e43322b119a",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/features-state.md",
+          "sha256": "cd7f0c478cbc00b6a30bad893045f17cfea2b571be7164f941cf102fd9b10559",
+          "mode": 420
+        },
+        {
+          "path": "skills/nuxt/references/rendering-modes.md",
+          "sha256": "cd78ae74fcf223711923838e8e55537602892d0028ee475d88d580e64243490c",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/GENERATION.md",
+          "sha256": "90053e5f51c2f060aeef398125da3633ec3dc9a90169379096c7ebe3c514225d",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/SKILL.md",
+          "sha256": "fba52570068a715fef7d306e582a5993bf08a838b55465d3c3c7bff8ba70f731",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/references/advanced-hmr.md",
+          "sha256": "661ff58636eaca335805df317c93848aba710e5957aab5f921eba9b57b69192d",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/references/advanced-nuxt.md",
+          "sha256": "e12dd48df259c97c38722e87b368808188fcbc28208398505624007529b0e3a2",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/references/advanced-ssr.md",
+          "sha256": "9fbc7b11da5cb7b1d4ef8b320935712ba3d356f7847344c56b01e80a3e1e3132",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/references/best-practices-outside-component.md",
+          "sha256": "1354224a5a9e41b2b7dea712b79ec948690a0d65e90dde905298e8b17e7ed49e",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/references/best-practices-testing.md",
+          "sha256": "634ccd1d076c509af0fa9bae4ac428a536c2ba42a2ef11eda7fe7af683fa5252",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/references/core-stores.md",
+          "sha256": "41627453eb019d1755dac787924bde52be162a3bdfc555119f88a8e59dda8f21",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/references/features-composables.md",
+          "sha256": "e218809b50506ca8177eee9e3926a8e3601f636ea13b661c9a432b3af2251653",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/references/features-composing-stores.md",
+          "sha256": "2c4245338e3e3f368c6665775909eef5e062645e0252a6f760817a73f677df7e",
+          "mode": 420
+        },
+        {
+          "path": "skills/pinia/references/features-plugins.md",
+          "sha256": "f5cc105231d80f1fdf5e54369f283fda3acbad7da27f3a0b61c9b0c62fd6c3d7",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/antfu"
+    },
+    {
+      "id": "emil",
+      "repository": "https://github.com/emilkowalski/skills",
+      "revision": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Adds explicit motion decision, accessibility, interruption and CSS/Motion implementation craft with no connected-service dependency. Existing CSS or chosen animation runtime; no runtime for documentation itself. Impeccable remains design owner; animate runs only for a concrete web-motion task. Choose CSS when sufficient and preserve existing tokens; do not activate every motion specialist. Expo uses official expo-animation, avoiding duplicate animate-expo.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "emil:animate",
+          "path": "skills/animate/SKILL.md",
+          "sha256": "f6317335da2662e92270dc0a6128bea95d7216cd751f86628e3ac6b72804e805",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "4ff5bdb7887ec1435c9cab0e8d1a7caee704d894d65c2a008ccc68b1cc2f260b",
+          "mode": 420
+        },
+        {
+          "path": "skills/animate/RECIPES.md",
+          "sha256": "21ff63d84391db8d96ecdf9170095f55a42c836ccc36fd3269c4772bab031ba2",
+          "mode": 420
+        },
+        {
+          "path": "skills/animate/SKILL.md",
+          "sha256": "f6317335da2662e92270dc0a6128bea95d7216cd751f86628e3ac6b72804e805",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/emil"
+    },
+    {
+      "id": "expo",
+      "repository": "https://github.com/expo/skills",
+      "revision": "f27959a9f0ee178def45bc974a26ed9090ac4b17",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE",
+        "plugins/expo/LICENSE",
+        "plugins/expo/skills/expo-animation/LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Completes explicitly missing sibling capabilities of the already bundled project-structure and native-ui skills. Project Expo SDK/packages via expo install; many examples require SDK 56+, Reanimated 4, matching worklets and Gesture Handler. Native iOS-only surfaces, NativeTabs unstable import, iOS 18+/26-specific features must be feature/platform gated. Real device release build needed for motion verification. Retain baseline two Expo entries and pin unchanged. Expo Router owns Expo navigation; do not activate Callstack react-navigation there. Feedback submission commands contact Expo; never execute without explicit messaging authorization. Named optional expo-skill-feedback is not a required source import.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "expo:expo-project-structure",
+          "path": "plugins/expo/skills/expo-project-structure/SKILL.md",
+          "sha256": "96fd0659067e6e44bae2046bbfc779441705de0f31dadfe6d77029006f1bc5b9",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "expo:expo-native-ui",
+          "path": "plugins/expo/skills/expo-native-ui/SKILL.md",
+          "sha256": "52d8c3bdf6d466dda826a89b3d0846b5014233c1e399f01ab193be7b1baccf53",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "expo:expo-router",
+          "path": "plugins/expo/skills/expo-router/SKILL.md",
+          "sha256": "93ff75501eb74e4982a93119ad3145499d400bb613260d2eb39be8008651f500",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "expo:expo-animation",
+          "path": "plugins/expo/skills/expo-animation/SKILL.md",
+          "sha256": "0d7a4cd7189049887db42bf94f0a6bccc231746999ccd9968a4d363089f521f5",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "expo:expo-design-system",
+          "path": "plugins/expo/skills/expo-design-system/SKILL.md",
+          "sha256": "b841a830e70cf06b14ad38f6ccaf7fa1ea60c57b4b7f78de650f3157dbbc3ff0",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "expo:expo-data-fetching",
+          "path": "plugins/expo/skills/expo-data-fetching/SKILL.md",
+          "sha256": "36fd61981bae65d976c630667000176e605cd923916eaae7ff857d92a6f93838",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "49c5f9c7097c9a940ff663a54c27a4c60e379df6cc2b3052df0d37a09a85df93",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/LICENSE",
+          "sha256": "49c5f9c7097c9a940ff663a54c27a4c60e379df6cc2b3052df0d37a09a85df93",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-animation/LICENSE",
+          "sha256": "4ff5bdb7887ec1435c9cab0e8d1a7caee704d894d65c2a008ccc68b1cc2f260b",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-animation/RECIPES.md",
+          "sha256": "1193cb71334da2e2341778dd92bec9ac79d989cb07fd55d661f324ed5871e718",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-animation/SKILL.md",
+          "sha256": "0d7a4cd7189049887db42bf94f0a6bccc231746999ccd9968a4d363089f521f5",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-animation/agents/openai.yaml",
+          "sha256": "7667e1a159300ee640ffb6ed4f81281dfdc0e3a789d4f3e5179c32ab3565795a",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-data-fetching/SKILL.md",
+          "sha256": "36fd61981bae65d976c630667000176e605cd923916eaae7ff857d92a6f93838",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-data-fetching/agents/openai.yaml",
+          "sha256": "50254d420a1db8e631ee24aaf8463708a525049059ac391b0d219dce8ce82e0a",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-data-fetching/references/expo-router-loaders.md",
+          "sha256": "f842c86483a15380c44a4b49db27bf3d41e17b48b1f44b9a2bbacc563a9dcbe6",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-data-fetching/references/offline-and-cancellation.md",
+          "sha256": "750f7f25acc4e6143a6ff4daacffbcd5daf64370540a75e7b3a4f3b4b1aa462c",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-design-system/SKILL.md",
+          "sha256": "b841a830e70cf06b14ad38f6ccaf7fa1ea60c57b4b7f78de650f3157dbbc3ff0",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-design-system/agents/openai.yaml",
+          "sha256": "16d7f7f1bb47bc02fa2a816280403bfaccd24e436672cd1503670fcc2a42fd26",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-design-system/references/audit.md",
+          "sha256": "a0ead76ab904c119a1353d8d91b9138144a97da43fdff683f291f2d45d868915",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-design-system/references/native-slop.md",
+          "sha256": "5662bd04ac2d6367fc4ca3ae355ec1b970752dcd8693a099a5e0792227eb09c1",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-native-ui/SKILL.md",
+          "sha256": "52d8c3bdf6d466dda826a89b3d0846b5014233c1e399f01ab193be7b1baccf53",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-native-ui/agents/openai.yaml",
+          "sha256": "90bf5d66b1038913fea37bd6d57292eb6ecd0e0ee3b2bc3e283facc033f4b2b0",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-native-ui/references/controls.md",
+          "sha256": "6ec427731a65ffd66b745733665bb2c00992750c7d3710893d1bbf70b427d541",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-native-ui/references/gradients.md",
+          "sha256": "63ced0392f67c41bf90e726613d139a389db609799bfcb91124e6e69b9a66e70",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-native-ui/references/icons.md",
+          "sha256": "2c0622d8a3f61626a72fa7829d3044f3391cbd8ca91806f4752926cf4e66be59",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-native-ui/references/media.md",
+          "sha256": "c964182dfbcaa5eef00b947e0425f5a39ee2cfc1b2a4e251ba51fc823e87b0dc",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-native-ui/references/storage.md",
+          "sha256": "265e8bc21adcd698062f18fa442e0e07e99e67868576f18aac2112e5381ffbf1",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-native-ui/references/visual-effects.md",
+          "sha256": "dcdcaa5e0bf5c20341455e39d91312ca5f3034391908f77eb2e577044283adcc",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-native-ui/references/webgpu-three.md",
+          "sha256": "3a247a7740e4bab4aea5dec8b81c7782a5918bb221838a05f6a94c669f145679",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-project-structure/SKILL.md",
+          "sha256": "96fd0659067e6e44bae2046bbfc779441705de0f31dadfe6d77029006f1bc5b9",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-project-structure/agents/openai.yaml",
+          "sha256": "cd7a9387766af254f9d8f691c332606e71273b8dd1c99c949f0934ed693878e0",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-router/SKILL.md",
+          "sha256": "93ff75501eb74e4982a93119ad3145499d400bb613260d2eb39be8008651f500",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-router/agents/openai.yaml",
+          "sha256": "7b76d9331a33e06e61504db9af069bccc8ab4a02e2f8be92727e8e0f9ad7941d",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-router/references/form-sheet.md",
+          "sha256": "947de9cf35a15aacf3f02e96e45942b5e4826e536e529570886e5ddbb7ec8591",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-router/references/route-structure.md",
+          "sha256": "4c3d70edeb7e36d965c4d96fa150f23ee57e01be5f6c57dd3e34c6309aab7e87",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-router/references/search.md",
+          "sha256": "bb4785df4757d84f1aff09d34cdb84043e7099684b9731a24a1d79cc3c0df172",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-router/references/tabs.md",
+          "sha256": "c49081529a200bfc62c95d41229e5dd7368f2e35cd5775ccaaab3289ed1fd7eb",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-router/references/toolbar-and-headers.md",
+          "sha256": "14d9a71dd949bd2b28a5bd531f6b9c1b4f3fa847a86db8c5218fee67b5295769",
+          "mode": 420
+        },
+        {
+          "path": "plugins/expo/skills/expo-router/references/zoom-transitions.md",
+          "sha256": "cacc1665e9f3044762765d2cd55fd1ead9627f06478f12dfa2280c6f9ae88ede",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/expo"
+    },
+    {
+      "id": "gsap",
+      "repository": "https://github.com/greensock/gsap-skills",
+      "revision": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Official library-specific animation API/cleanup/performance guidance for projects choosing GSAP. Chosen project GSAP runtime and @gsap/react when React; matching framework packages. Gate to an actual GSAP project/request: upstream descriptions recommend GSAP generally, so avoid loading for generic motion. Preserve examples outside skills because source refers to examples/react, vue, nuxt and vanilla. All eight skills available, task-relevant entrypoint only.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "gsap:gsap-core",
+          "path": "skills/gsap-core/SKILL.md",
+          "sha256": "3887b47e050ab5afbe2a9a820f23d39fa02ab785e06a343be44c6f91d84d12b3",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "gsap:gsap-react",
+          "path": "skills/gsap-react/SKILL.md",
+          "sha256": "88e2a5312b45e8cc7b3c496637ff5bc9af2ae9c925b555c8b235b34cbc989d74",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "gsap:gsap-frameworks",
+          "path": "skills/gsap-frameworks/SKILL.md",
+          "sha256": "842d9d3659ec3ddc8abbdc524708f8facf81f468ac25d0577f48c759c4fa31e6",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "gsap:gsap-performance",
+          "path": "skills/gsap-performance/SKILL.md",
+          "sha256": "cb5408d6fba707aabcbfe3320317a14c1f8fca6070074e5261047930f50d441e",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "51b04b06556662dd817e8f4aa6d06bc7139dc73739e1319a7233cfde3e147b90",
+          "mode": 420
+        },
+        {
+          "path": "examples/README.md",
+          "sha256": "d755e9ebe4cb8f386a68ffdaa5193d24ecf19f26998de921d6b845fcfaa392ee",
+          "mode": 420
+        },
+        {
+          "path": "examples/nuxt/app/app.vue",
+          "sha256": "60d22e79db83480cb4bb77c7566187fffab1a6d8aa870f27dd061cb8dd5bf336",
+          "mode": 420
+        },
+        {
+          "path": "examples/nuxt/app/composables/useGSAP.ts",
+          "sha256": "cbd3c12d6a8d889017e2d8ff48f914b5237cb9dc58ec52bd2002a48f2c7b09f0",
+          "mode": 420
+        },
+        {
+          "path": "examples/nuxt/app/pages/index.vue",
+          "sha256": "1cd00f9919bf546b138670718acb884541f65c1226ab6fe283f2dd4e77c15fcf",
+          "mode": 420
+        },
+        {
+          "path": "examples/nuxt/nuxt.config.ts",
+          "sha256": "21e3875c7cc220aef71428109184fbe1e4f4445f9ec086385dd4038f42720e41",
+          "mode": 420
+        },
+        {
+          "path": "examples/nuxt/package.json",
+          "sha256": "f94da18c76c9826bf0e0ffc76384917a7f94a7900947991f8a803fb8bd187da3",
+          "mode": 420
+        },
+        {
+          "path": "examples/react/App.jsx",
+          "sha256": "bdad45dafd00c7bb4f34ab2baa33ad9d624a15e9b29162a3c9b0eb2dce86db4b",
+          "mode": 420
+        },
+        {
+          "path": "examples/react/index.html",
+          "sha256": "444b15f8fdd753fcd7a8f9584ba506a255bbc537d12e73acfb7d41b8eb81a37a",
+          "mode": 420
+        },
+        {
+          "path": "examples/react/main.jsx",
+          "sha256": "d23cfbb031f9db286f8d61beba85dbbb8aeca96ac6ab8f9d3b3358fdea22600f",
+          "mode": 420
+        },
+        {
+          "path": "examples/react/package.json",
+          "sha256": "f4fd0f037d82be906000b192878b405dbbc0e6d5bf8c548da7bc323a5b5b4710",
+          "mode": 420
+        },
+        {
+          "path": "examples/react/vite.config.js",
+          "sha256": "bd4a17f9ba1306dd5801e62063f448390d679230c9aa050d1ed930a40ef3774c",
+          "mode": 420
+        },
+        {
+          "path": "examples/vanilla/index.html",
+          "sha256": "b4e4f53c5b59a4bc44e13696ec72df7e0603497416f9220e56135c4b9ca283e6",
+          "mode": 420
+        },
+        {
+          "path": "examples/vanilla/main.js",
+          "sha256": "0c8c3d79a10dad596687b0013aa66b93c28581e42e1c0052e1bcbc265e40b98a",
+          "mode": 420
+        },
+        {
+          "path": "examples/vue/app.vue",
+          "sha256": "fe82f03b53be9b6ec4294c9bd831e31d59ccb2fb1cc4c9d65a7301e91a4f2529",
+          "mode": 420
+        },
+        {
+          "path": "examples/vue/index.html",
+          "sha256": "558fbcbe6e1c4c651899952c2b56e16463b30b03fd3b9b8e8b19c6d741c1c0fc",
+          "mode": 420
+        },
+        {
+          "path": "examples/vue/main.js",
+          "sha256": "524f61ad58f73e8f65068fac257f0dd526e0f8ed29bd654ef0ac9f7cb9b7d686",
+          "mode": 420
+        },
+        {
+          "path": "examples/vue/package.json",
+          "sha256": "8c4ff7a7acfc6808249a8e5921d97da0b9c6593e6f6820a233ffd9b15a5a2d83",
+          "mode": 420
+        },
+        {
+          "path": "examples/vue/vite.config.js",
+          "sha256": "159d5c167f86f273a094a3de1b3165e2db10d9b0b699cd029d06535d28747ca6",
+          "mode": 420
+        },
+        {
+          "path": "skills/gsap-core/SKILL.md",
+          "sha256": "3887b47e050ab5afbe2a9a820f23d39fa02ab785e06a343be44c6f91d84d12b3",
+          "mode": 420
+        },
+        {
+          "path": "skills/gsap-frameworks/SKILL.md",
+          "sha256": "842d9d3659ec3ddc8abbdc524708f8facf81f468ac25d0577f48c759c4fa31e6",
+          "mode": 420
+        },
+        {
+          "path": "skills/gsap-performance/SKILL.md",
+          "sha256": "cb5408d6fba707aabcbfe3320317a14c1f8fca6070074e5261047930f50d441e",
+          "mode": 420
+        },
+        {
+          "path": "skills/gsap-plugins/SKILL.md",
+          "sha256": "5838b856c74c07fbc9fa99b6dfd1eee34ea554c3e530c30e0d58014b707d70a4",
+          "mode": 420
+        },
+        {
+          "path": "skills/gsap-react/SKILL.md",
+          "sha256": "88e2a5312b45e8cc7b3c496637ff5bc9af2ae9c925b555c8b235b34cbc989d74",
+          "mode": 420
+        },
+        {
+          "path": "skills/gsap-scrolltrigger/SKILL.md",
+          "sha256": "9351b6666a4749c0740406ea363aaccb99a087ff45cc5e8b99a0f367facf3ef4",
+          "mode": 420
+        },
+        {
+          "path": "skills/gsap-timeline/SKILL.md",
+          "sha256": "1a8b0f39cc4be3ed3d834b89672e4ae2f151b901dc3450bebf10bbc45379fe02",
+          "mode": 420
+        },
+        {
+          "path": "skills/gsap-utils/SKILL.md",
+          "sha256": "1927bcc4ea95b38203404ad5ea1d060b15c4a886c65ae53e885ff1793aabe0ba",
+          "mode": 420
+        },
+        {
+          "path": "skills/llms.txt",
+          "sha256": "32dab4bde09bc822ac17ebc49ee2ff87ca8c304a1c6e0509aadde7223f78b42f",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/gsap"
+    },
+    {
+      "id": "next",
+      "repository": "https://github.com/vercel/next.js",
+      "revision": "d155ba9ebfffe4742efefda8d68c2e0e8e490924",
+      "license": "MIT",
+      "licenseFiles": [
+        "license.md"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Official deterministic instant-navigation optimizer, scoped to apps already building with Cache Components. Baseline React best practices and installed Next docs retained. Activate only for an existing Next >=16.3 app already building with cacheComponents. Project-local @next/playwright must match the installed Next release line, alongside @playwright/test. npm latest Next and @next/playwright were both 16.3.4; Node >=20.9. Reuse the project Playwright harness and production-like local test build. No agent-browser runtime, global install or deployment is required by the selected optimizer. Do not bundle retired next-best-practices. Installed node_modules/next/dist/docs remains the version authority. Exclude next-cache-components-adoption and next-dev-loop: adoption SKILL.md lines 84-98 requires attempting next-dev-loop and only permits fallback for a real blocker; dev-loop lines 31-50 mandates Next16.3+ Turbopack and agent-browser>=0.31.1, and lines 55-94 require restored headed React-DevTools browser plus /_next/mcp. Existing browser-playwright is not that runtime. Optimizer SKILL.md lines 40-53 explicitly lets the project own its Playwright rig. Lines 140-159 restrict the workflow to an app that already builds with Cache Components. Its adoption link is outside the selected activation scope. Testing API only enabled in explicit test builds and never production. Older apps or cache adoption require a separate migration decision; no automatic framework upgrade through this pack. Advanced optional optimization, not generic Next frontend coverage. Adoption/dev-loop remain reviewed but deferred until a separately pinned, portable, smoke-tested second browser runtime is deliberately selected.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "next:next-cache-components-optimizer",
+          "path": "skills/next-cache-components-optimizer/SKILL.md",
+          "sha256": "f6e9c8deff1ae9864acffc83d8d261d487dcc66afbae1aee1feb4acbb636c30b",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "license.md",
+          "sha256": "ee765244e2d59f5234d474f62e0766fa0c8b99af967fdd4c0cb8dcb0c76ea224",
+          "mode": 420
+        },
+        {
+          "path": "skills/next-cache-components-optimizer/SKILL.md",
+          "sha256": "f6e9c8deff1ae9864acffc83d8d261d487dcc66afbae1aee1feb4acbb636c30b",
+          "mode": 420
+        },
+        {
+          "path": "skills/next-cache-components-optimizer/reference/patterns.md",
+          "sha256": "18342f107289cee068c68b1beae2fa8634864263468518a3d6ceeb400bb78c30",
+          "mode": 420
+        },
+        {
+          "path": "skills/next-cache-components-optimizer/reference/real-app-patterns.md",
+          "sha256": "4beddcc70ee153a0a804e10cd84220901a1ea2efa6d86214b831d84929374890",
+          "mode": 420
+        },
+        {
+          "path": "skills/next-cache-components-optimizer/reference/red-test-robustness.md",
+          "sha256": "71fa3a45a09fcaad676b0fcd6d07a19e92ef8fb587bdc129f71faeb3ddfcda28",
+          "mode": 420
+        },
+        {
+          "path": "skills/next-cache-components-optimizer/rig-template.md",
+          "sha256": "3f3a3bbfc44896cfa7f0ed642d76831e4a3fbd143822feb25882c32e7cc6a0ed",
+          "mode": 420
+        },
+        {
+          "path": "skills/next-cache-components-optimizer/test-template.md",
+          "sha256": "7e58cf538ce3c42dcbc084fa4ae702d5e8a42fc4015a0c1eda2305de4bc614d1",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/next"
+    },
+    {
+      "id": "playwright",
+      "repository": "https://github.com/microsoft/playwright-cli",
+      "revision": "655530f6d0dc71a0d6bf46ae165877d3c7311099",
+      "license": "Apache-2.0",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original complete research-pinned skill and nine references. Git source revision has alpha runtime dependencies; released CLI compatibility is separately documented in docs/upstream-expansion.md. Use the explicitly installed project-local L11 runtime; do not execute upstream global npm installation instructions. Browser binaries are separate.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "playwright:playwright-cli",
+          "path": "skills/playwright-cli/SKILL.md",
+          "sha256": "1a609c93bff3eea9ab99fed93c0334c851fdc39fb6ac5335551bfb87c171d57c",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "9a7110fc2d2f964038e5dc49128f908f29f47a574c961cba16085914e879cbda",
+          "mode": 420
+        },
+        {
+          "path": "skills/playwright-cli/SKILL.md",
+          "sha256": "1a609c93bff3eea9ab99fed93c0334c851fdc39fb6ac5335551bfb87c171d57c",
+          "mode": 420
+        },
+        {
+          "path": "skills/playwright-cli/references/element-attributes.md",
+          "sha256": "bf19aa4671e0a50a0fefa9c790f39124e803060eefe395042b723c29fcb7faa2",
+          "mode": 420
+        },
+        {
+          "path": "skills/playwright-cli/references/playwright-tests.md",
+          "sha256": "c5b0719fef2cfdff50bd744051b2f9afc119775db4b48e9b2882c1cf3886797c",
+          "mode": 420
+        },
+        {
+          "path": "skills/playwright-cli/references/request-mocking.md",
+          "sha256": "54e801c9663fc2b6d68ceb058cb1c360724c2499f42acc7852a68e83e5b5f37c",
+          "mode": 420
+        },
+        {
+          "path": "skills/playwright-cli/references/running-code.md",
+          "sha256": "d95c539a5990b71d02d8bdf1d9414df16191eb6cff95b0063820518b7a13dcb2",
+          "mode": 420
+        },
+        {
+          "path": "skills/playwright-cli/references/session-management.md",
+          "sha256": "cd3e261b8763bf952f1e371b876cb78d054379afec85482f9250633e1b7e6c44",
+          "mode": 420
+        },
+        {
+          "path": "skills/playwright-cli/references/storage-state.md",
+          "sha256": "9ac47f9ae4a1aedcd2077f8ac9ab1ba6bee1962cb83ff51adcd36fb6d83b5ec6",
+          "mode": 420
+        },
+        {
+          "path": "skills/playwright-cli/references/test-generation.md",
+          "sha256": "12f54cfa718d9e559bad918120a4ca4f11c933167713d1b9c5f99872eddaf749",
+          "mode": 420
+        },
+        {
+          "path": "skills/playwright-cli/references/tracing.md",
+          "sha256": "ef73e71bee792e341df9cd4f60529c929ade48b538ac76e033f4f20843e8dbda",
+          "mode": 420
+        },
+        {
+          "path": "skills/playwright-cli/references/video-recording.md",
+          "sha256": "8555ab5400df0d90e66318aacc0a8a4418fbf872e7463824d55d5c41615abd83",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/playwright"
+    },
+    {
+      "id": "redux-toolkit",
+      "repository": "https://github.com/reduxjs/redux-toolkit",
+      "revision": "5b4795b5d3e8a0ab19bf94d8d3413168804ade64",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Fills explicit state-ownership and RTK Query alternative with official package-shipped skills. Existing or explicitly chosen Redux Toolkit2 + React-Redux; project tests. RTK Query is an alternative server-cache owner to TanStack Query/SWR, not an additional default cache. Requires edges: modern-redux -> redux-dataflow; adopt-rtk-query -> modern-redux; slices -> state-ownership. Preserve all eight skills but load relevant path. Slash names require namespaced catalog IDs.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "redux-toolkit:design-state-ownership",
+          "path": "packages/toolkit/skills/model-redux-state/design-state-ownership/SKILL.md",
+          "sha256": "32b4a1d3bc286208ea6a2a05afda68191beb779659af3d8e60b85d021f84dff4",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "redux-toolkit:modern-redux",
+          "path": "packages/toolkit/skills/build-modern-redux-apps/modern-redux/SKILL.md",
+          "sha256": "e4b1f18c4b5958b907e00e7f8fe322f192e6aece89bd78a7d8c3fdf5c40622cb",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "redux-toolkit:adopt-rtk-query",
+          "path": "packages/toolkit/skills/manage-server-data/adopt-rtk-query/SKILL.md",
+          "sha256": "fffda7cd37fd731c429b806de472064c34d880700d3d9631e2ff4b81235af579",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "49784961ec6c4941437b7a2c54d8977d0528076a9e7c73dd40f7d0942b8f106d",
+          "mode": 420
+        },
+        {
+          "path": "packages/toolkit/skills/build-modern-redux-apps/modern-redux/SKILL.md",
+          "sha256": "e4b1f18c4b5958b907e00e7f8fe322f192e6aece89bd78a7d8c3fdf5c40622cb",
+          "mode": 420
+        },
+        {
+          "path": "packages/toolkit/skills/build-modern-redux-apps/modern-redux/references/store-lifetime.md",
+          "sha256": "5fa03c993abecbfb38197a2acbcbe24c7d352182f656669278bb1e5e963c6f32",
+          "mode": 420
+        },
+        {
+          "path": "packages/toolkit/skills/build-modern-redux-apps/redux-dataflow/SKILL.md",
+          "sha256": "4e2a6c2b64e28c789f7f83bd638dc5791070e6303dea7fbf97165360a0b30e7d",
+          "mode": 420
+        },
+        {
+          "path": "packages/toolkit/skills/evolve-and-diagnose-redux-apps/debug-redux-toolkit-apps/SKILL.md",
+          "sha256": "afb5437bf51ed0b824e5eef6cfa33fadf3d0ea3f9fdbf315fc77ff8c55e884da",
+          "mode": 420
+        },
+        {
+          "path": "packages/toolkit/skills/evolve-and-diagnose-redux-apps/migrate-to-modern-redux/SKILL.md",
+          "sha256": "f97a145a09246a216b53af8522edda5bf69027ef0fcd361a7d9f4ea9214c9a72",
+          "mode": 420
+        },
+        {
+          "path": "packages/toolkit/skills/manage-server-data/adopt-rtk-query/SKILL.md",
+          "sha256": "fffda7cd37fd731c429b806de472064c34d880700d3d9631e2ff4b81235af579",
+          "mode": 420
+        },
+        {
+          "path": "packages/toolkit/skills/manage-server-data/adopt-rtk-query/references/endpoint-lifecycle.md",
+          "sha256": "3c6997990a45bbd40fa2fe6bbc822a9e22f2e822a7f11d1d28e8305ebf89c55d",
+          "mode": 420
+        },
+        {
+          "path": "packages/toolkit/skills/model-redux-state/build-slices-and-selectors/SKILL.md",
+          "sha256": "9f22a1cba52e7a1b966f69fcf4211b2afc405618b8e5d26a0d0760585e5bbbc1",
+          "mode": 420
+        },
+        {
+          "path": "packages/toolkit/skills/model-redux-state/build-slices-and-selectors/references/slice-patterns.md",
+          "sha256": "7f3aa4327c4228f49abf263f490ffb1aa83b0194044110d67ffc462c1f92fef7",
+          "mode": 420
+        },
+        {
+          "path": "packages/toolkit/skills/model-redux-state/design-state-ownership/SKILL.md",
+          "sha256": "32b4a1d3bc286208ea6a2a05afda68191beb779659af3d8e60b85d021f84dff4",
+          "mode": 420
+        },
+        {
+          "path": "packages/toolkit/skills/model-redux-state/design-state-ownership/references/state-ownership.md",
+          "sha256": "2a315d32d208643c9248da23483900f9425cf7dc55f7262bb020dd4d4f74868d",
+          "mode": 420
+        },
+        {
+          "path": "packages/toolkit/skills/orchestrate-side-effects/handle-side-effects/SKILL.md",
+          "sha256": "73e1b840e81d1bc55cbee57322e5a852f9789fa56e2397bc91e2a22d0f8ef108",
+          "mode": 420
+        },
+        {
+          "path": "packages/toolkit/skills/orchestrate-side-effects/handle-side-effects/references/listener-workflows.md",
+          "sha256": "74d28a0e65abc9d5b3d7c6869d3348494c931d786f0d720fa223664636e1aae3",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/redux-toolkit"
+    },
+    {
+      "id": "shadcn",
+      "repository": "https://github.com/shadcn-ui/ui",
+      "revision": "3ba91b1cc83e1bbe4ab35a422ff2a694849c5048",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE.md"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original complete shadcn skill, rules, CLI/MCP references, evaluation data and assets. CLI commands require a compatible project-local shadcn runtime and components.json; upstream latest examples do not pin runtime. Agent metadata is inert vendored source.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "shadcn:shadcn",
+          "path": "skills/shadcn/SKILL.md",
+          "sha256": "deba6c5152d9835892fa7dffeb1fedbb689ddac7e59e14e57ec5eaf9463309e4",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE.md",
+          "sha256": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/SKILL.md",
+          "sha256": "deba6c5152d9835892fa7dffeb1fedbb689ddac7e59e14e57ec5eaf9463309e4",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/agents/openai.yml",
+          "sha256": "35db91b1eef58b2abe01da9b88577de5a44e233b740cd93d692ddeeadd2afe4d",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/assets/shadcn-small.png",
+          "sha256": "0ecc62d682727f68fc4937eed19960c706714fa084d44f63028d611ae02bf3d7",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/assets/shadcn.png",
+          "sha256": "7d60ad6fec4d89a0d44ba5a3c9283d2fea0047af5467f9227040e20d927d39b7",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/cli.md",
+          "sha256": "a381e35bf36fe7bb851952c13707e01e82434fd7a4a4e53f6df26c6370838904",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/customization.md",
+          "sha256": "84c1d47168c4b8adb5840e4af30a4e373ae3377c1110478c8974f398dd63f5ba",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/evals/evals.json",
+          "sha256": "58aca2760b0cc5265bb575f76cd8eed344b88544314b8cb2cd53e0b8007dc936",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/mcp.md",
+          "sha256": "8d696b4e45b7d0e337367248513bd9acebe8f3bcfd7b748c775e5a337c8f38c8",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/registry.md",
+          "sha256": "4f239be36bd2b58e17047db1ca80ab7da00e15a8b73242e5e4d50d113c4caa05",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/rules/base-vs-radix.md",
+          "sha256": "2b2deb47d004285220c1fc6b38bb2edc2d0ccbcdafd031b0b189d5d8ed0d1ba8",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/rules/chat.md",
+          "sha256": "de29c12524a27578a59ecf8c95ea939278c1a3572a3706bfc99f6f92cb770b7b",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/rules/composition.md",
+          "sha256": "f282df828d83a91132a846ddb62eea149a7c7c94822e9ca88cfddf85af01aa41",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/rules/forms.md",
+          "sha256": "29593e14381e34626f8e0e9c15c59f3394b92a0623af6a6ec94585400123853c",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/rules/icons.md",
+          "sha256": "d4a58266648872d9ee07d0c2368843a1cb88b8253b7f528dd7bda9d68b6c2535",
+          "mode": 420
+        },
+        {
+          "path": "skills/shadcn/rules/styling.md",
+          "sha256": "f88fbd72dff862805b786dc7d7e4c74c83030fc278c5b97c993e4e665001798c",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/shadcn"
+    },
+    {
+      "id": "svelte",
+      "repository": "https://github.com/sveltejs/ai-tools",
+      "revision": "e7d93fcc168b5f4b3fec57c22f49a36d57e8ee1a",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Official Svelte instructions plus framework-aware analysis and documentation CLI. Svelte 5/SvelteKit project, svelte-check and project build. Optional project-private @sveltejs/mcp 0.1.26 CLI for required autofixer. npm 0.1.26 depends on tmcp 1.20.0-next.1 and eslint ^9.36.0. Pin complete toolchain; released top-level package has prerelease transitive dependency. Use canonical tools/skills originals; omit Claude/Cursor/OpenCode copies and global routers. Prefer file argument to autofixer; original POSIX dollar-escaping examples must not be copied literally into PowerShell. Optional editor subagent advice does not require creating one.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "svelte:svelte-code-writer",
+          "path": "tools/skills/svelte-code-writer/SKILL.md",
+          "sha256": "ccd435bc524f1bdc38f7ca34a3ff279de1e855d3e5165151345d08b85706e95f",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "svelte:svelte-core-bestpractices",
+          "path": "tools/skills/svelte-core-bestpractices/SKILL.md",
+          "sha256": "27582b7f66ec4e599bdacb98126662920548b101a7cbfebef65eb89cec768ba0",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "b94e2313723c4920d2919417a85261d02123a9ee3a0deb79a43c2cd960d5dd1d",
+          "mode": 420
+        },
+        {
+          "path": "tools/skills/svelte-code-writer/SKILL.md",
+          "sha256": "ccd435bc524f1bdc38f7ca34a3ff279de1e855d3e5165151345d08b85706e95f",
+          "mode": 420
+        },
+        {
+          "path": "tools/skills/svelte-core-bestpractices/SKILL.md",
+          "sha256": "27582b7f66ec4e599bdacb98126662920548b101a7cbfebef65eb89cec768ba0",
+          "mode": 420
+        },
+        {
+          "path": "tools/skills/svelte-core-bestpractices/references/attach.md",
+          "sha256": "3c38d00f0274bda6e869fd53c111ab9929a603c58e6dc86641bdc3762a7abc01",
+          "mode": 420
+        },
+        {
+          "path": "tools/skills/svelte-core-bestpractices/references/await-expressions.md",
+          "sha256": "ec1790bdf4519c1b7216d8a47938bb63b65bdb5dbe18f537941711f4bf7581fc",
+          "mode": 420
+        },
+        {
+          "path": "tools/skills/svelte-core-bestpractices/references/bind.md",
+          "sha256": "5ced04c7951c6b11bbc4beedd4887e58569f460147aaa348aa83da1ea574c8af",
+          "mode": 420
+        },
+        {
+          "path": "tools/skills/svelte-core-bestpractices/references/each.md",
+          "sha256": "5ba456d6a1655e361cb37de1575a56e2f04af7be61023e309747ec8a2e1b2c3e",
+          "mode": 420
+        },
+        {
+          "path": "tools/skills/svelte-core-bestpractices/references/hydratable.md",
+          "sha256": "23b7c39345461671ef5ef2568b37f7bd56c354cb96e5ca20f34480edcd4ff2e6",
+          "mode": 420
+        },
+        {
+          "path": "tools/skills/svelte-core-bestpractices/references/inspect.md",
+          "sha256": "935945566e3a7d12ca1db345ff8bfc478ae984f5995dd0d34bb9289f12d8e475",
+          "mode": 420
+        },
+        {
+          "path": "tools/skills/svelte-core-bestpractices/references/render.md",
+          "sha256": "372f1ca7ee3205d7d9e4aaa687b1d4a5e71bcc5937e1cce7f3c98a51d8b1f746",
+          "mode": 420
+        },
+        {
+          "path": "tools/skills/svelte-core-bestpractices/references/snippet.md",
+          "sha256": "b7924dc1babe16e5f938ce257041636e21a0eb585015bde3561aabd1bec3d52b",
+          "mode": 420
+        },
+        {
+          "path": "tools/skills/svelte-core-bestpractices/references/svelte-reactivity.md",
+          "sha256": "962d86eca94fc2377b8ffddbe35c556e23a5b3e941ec04d6320e85828c727487",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/svelte"
+    },
+    {
+      "id": "swiftui",
+      "repository": "https://github.com/twostraws/swiftui-agent-skill",
+      "revision": "be297ff80dddec529af1f9b1f1f114aab6c9d11c",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Adds an actual native Apple UI specialist, covering API modernization, state, navigation, accessibility and performance. macOS/Xcode and matching iOS SDK for builds; source defaults Swift >=6.2 and iOS26 for new apps; preserve existing deployment target. Use root canonical skill plus direct references only. Exclude nested swiftui-pro/skills and plugin registration. Do not label Windows static review a native build. SwiftUI is a separate primary UI framework.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "swiftui:swiftui-pro",
+          "path": "swiftui-pro/SKILL.md",
+          "sha256": "8b58a171afc1dcf9c42d85414af2dc506c8c92bf2c77527adb4d52b884f4d715",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "b9b479e6df9f27cbc8e7abe91f771b396f3f0fa114d070c7c0b02c820c6b74dc",
+          "mode": 420
+        },
+        {
+          "path": "swiftui-pro/SKILL.md",
+          "sha256": "8b58a171afc1dcf9c42d85414af2dc506c8c92bf2c77527adb4d52b884f4d715",
+          "mode": 420
+        },
+        {
+          "path": "swiftui-pro/references/accessibility.md",
+          "sha256": "708d09a35c950fd4c118bbb3cfcab13bb146e7d02084615307bbabc19e00a0e3",
+          "mode": 420
+        },
+        {
+          "path": "swiftui-pro/references/api.md",
+          "sha256": "12fa73d65a19c9d08224f925801db8eec914b1cedf5b2f86a38cdda04a66377a",
+          "mode": 420
+        },
+        {
+          "path": "swiftui-pro/references/data.md",
+          "sha256": "5cc50484c525f748839e12174c065f7ea5fdd4380ce04b6885a906ecd6e6a318",
+          "mode": 420
+        },
+        {
+          "path": "swiftui-pro/references/design.md",
+          "sha256": "03e35d46865cc6807255f3c8481cdbac7b3b0f61924185af84c1913d6c983c69",
+          "mode": 420
+        },
+        {
+          "path": "swiftui-pro/references/hygiene.md",
+          "sha256": "91d96f45f3ffa02f5553c288415f3c3d5f317cab7d8d9c6c60240ea6c44a2b01",
+          "mode": 420
+        },
+        {
+          "path": "swiftui-pro/references/navigation.md",
+          "sha256": "a3adb302455993aff85bbb6b5845ed2fcffa137c8b2ded99c937f3e4b7fcd77b",
+          "mode": 420
+        },
+        {
+          "path": "swiftui-pro/references/performance.md",
+          "sha256": "1b503e3807e216d6b34b45f18bfba89214cea2fa1b88dd7ae8f482ebf0f03616",
+          "mode": 420
+        },
+        {
+          "path": "swiftui-pro/references/swift.md",
+          "sha256": "8c31c5f5f99b3fa9586f0260cd1a4b1688dc7bda5e8de2891eb3f9d6a791125a",
+          "mode": 420
+        },
+        {
+          "path": "swiftui-pro/references/views.md",
+          "sha256": "79a166f6507e86744c0f73cfb583100f61a5da37e313ef4586b3b31136a73627",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/swiftui"
+    },
+    {
+      "id": "tanstack-router",
+      "repository": "https://github.com/TanStack/router",
+      "revision": "f021f6d1c6dce6c9b54d70766f1d636d8fd9e184",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "First-party composable routing, Query integration and Start SSR/server boundaries with explicit dependency links. Matching project @tanstack/react-router, router-plugin and Query when selected; Start only for Start project. Version metadata differs across skill files, so inspect installed types, not only repository HEAD. Preserve full package paths. router-core auth links Start auth-server-primitives; router-plugin links virtual-file-routes. Both support closures included. Names react-router and vue-router belong to TanStack packages here; never confuse with Remix react-router or Vue Router. Prefix IDs. Router/Start are alternative primary routing/app owners to Next, Remix, Nuxt and Expo. Nested specialists load on demand, not all at once.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "tanstack-router:router-core",
+          "path": "packages/router-core/skills/router-core/SKILL.md",
+          "sha256": "03fc990919c2c025704de46ef87ee8efa133f811478a7eb66e04d11714608db0",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "tanstack-router:react-router",
+          "path": "packages/react-router/skills/react-router/SKILL.md",
+          "sha256": "9a08a0e3e647b59213577c846f1516f3070f4759738f1ed3d68afd25fad28d82",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "tanstack-router:router-query",
+          "path": "packages/react-router/skills/compositions/router-query/SKILL.md",
+          "sha256": "83b8c66d29a36df2a174643566570e602fc232c2daf7fab020c26ab7d06e80ae",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "tanstack-router:react-start",
+          "path": "packages/react-start/skills/react-start/SKILL.md",
+          "sha256": "adc77388d71bd0037dbb11c0fc9a0a942f35069f5ad6fbd7588e3378c43f6b53",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "a405ee70c632bb938acb7ac5f210e814409b3760ea9d2329d8ed8ffcfd11a0e7",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-router/skills/compositions/router-query/SKILL.md",
+          "sha256": "83b8c66d29a36df2a174643566570e602fc232c2daf7fab020c26ab7d06e80ae",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-router/skills/react-router/SKILL.md",
+          "sha256": "9a08a0e3e647b59213577c846f1516f3070f4759738f1ed3d68afd25fad28d82",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/SKILL.md",
+          "sha256": "adc77388d71bd0037dbb11c0fc9a0a942f35069f5ad6fbd7588e3378c43f6b53",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/SKILL.md",
+          "sha256": "f5fbf50b30ce6dd1bfee985a60d53090dffc206d69355d435b63d7c8a282af0a",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/docs/architecture.md",
+          "sha256": "6c82356e9dec4c47ce2b2b9632937cc53580f9b5657d2d84a0a5796185b0caf7",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/docs/caching-refresh-ssr.md",
+          "sha256": "78a39fca850ad4ad3cbbafa5404a3bfaa8a83ba502275f8391a8dad5e42aa01d",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/docs/composite-components.md",
+          "sha256": "265ae0a28c58f353ed830fdc9bf162b5dec35fbf917d37a5e0426b920cdcbc56",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/docs/current-api-notes.md",
+          "sha256": "5a1451a7e07f7d1126eadc160f272222976bbb47b31d3978e73a7e10867c3a6b",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/docs/debugging-review.md",
+          "sha256": "f2c341e99417056f47e48f39b9bbf6e991fbcfd2b6f287020ea02d2e28b04849",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/docs/sources.md",
+          "sha256": "4b4bd57dd73a66d23714fc977ac193461861258bfb7ad690ab884f3aba62c92b",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/examples/01-renderable-route-loader.tsx",
+          "sha256": "0e4b929ed6cb8d83c144ae2dbf6ad5e0408015e0e76ff64bf7b0cb8810158e73",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/examples/02-composite-slots.tsx",
+          "sha256": "366810703795f713f39fa77c1db8496277d9d759ab61f8bbc01194bce87ac6db",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/examples/03-query-owned-rsc.tsx",
+          "sha256": "8826fb2c2fbfca624becfc3f6d3286e63688fede465f40ee2ca941cae54162f2",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/examples/04-selective-ssr-data-only.tsx",
+          "sha256": "1580feef5da964cf5b536efc6227c07fe5f9df92865702013c4424c96df92cf1",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/examples/05-ssr-false-browser-loader.tsx",
+          "sha256": "1991b776d7dba8dd16c4f1a30e3d92baf4bc03c8e6a0b257d3875cd4a52a0178",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-start/skills/react-start/server-components/examples/06-low-level-flight-api-route.tsx",
+          "sha256": "7e5e307426e923c2019b15d9054312bf0fc5d64823167744f1d3e56d8db1f7a8",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/SKILL.md",
+          "sha256": "03fc990919c2c025704de46ef87ee8efa133f811478a7eb66e04d11714608db0",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/auth-and-guards/SKILL.md",
+          "sha256": "0a9a9dcad681dbdd52b00b530d64a8f5e4999c6d1950d74f480ccc2b7e2fe632",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/code-splitting/SKILL.md",
+          "sha256": "12604138af8a6c65ceb5f7303453bf2c62eb291bae6e89c7c6a63f789b88caf3",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/data-loading/SKILL.md",
+          "sha256": "9510f3b50763eb6a47db678accf6e25eaad0a865dd8e4658050472043e3cc9dd",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/navigation/SKILL.md",
+          "sha256": "6d024af66514645e81347100f401ba8a1e2457cbe8b5024660ae9e409700ac80",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/not-found-and-errors/SKILL.md",
+          "sha256": "b79f903049856322275bd524de982172790b06416efb54760740ee7a8156f8cb",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/path-params/SKILL.md",
+          "sha256": "caa1abefbf7751beaca3b1b55e5fe217cb56108cc037de757d7c5e8d09218b99",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/search-params/SKILL.md",
+          "sha256": "e886e5c3285309a0e95c52e30e73d4ff52cffc366f0d97d02003b9696e8a8804",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/search-params/references/validation-patterns.md",
+          "sha256": "ebf128309feaf027fbb229feffdd9bc6486bf09dedc224e903ed816abc38a1b2",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/ssr/SKILL.md",
+          "sha256": "b0ab5cc8f4315647c2b74bf5b048b6f436760de9b1dcec5dbe10a34639bd8004",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-core/skills/router-core/type-safety/SKILL.md",
+          "sha256": "ed632376a36d71f4797e855ed9e42e83591a684c4ad0fc33b152f6c10fe3b5ef",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-plugin/skills/_artifacts/domain_map.yaml",
+          "sha256": "71e4a7906afe7b3ed28ca710234df97df55de3560caa25b1dffa9a6814a2d69f",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-plugin/skills/_artifacts/skill_spec.md",
+          "sha256": "61c9c6ca0f7f85eac1a086623de648c66143a5f30332e31b3581cbd42d42292e",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-plugin/skills/_artifacts/skill_tree.yaml",
+          "sha256": "ef98592b9206a36bfa4cd871eef0ede68c309181a0ef0538ca3194c500cef36b",
+          "mode": 420
+        },
+        {
+          "path": "packages/router-plugin/skills/router-plugin/SKILL.md",
+          "sha256": "7e2791ea32e24ab47fce17a2acf1907f9ce3f5cf09e18a62aee6f887fbb0ae39",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/_artifacts/domain_map.yaml",
+          "sha256": "52e0fb5f3f782c2afd94a900368dd4df2a9f49296aa238830881d74f428cf86b",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/_artifacts/skill_spec.md",
+          "sha256": "db4b7c157373e86baa2587e2ff135eaa56201c2d011f642764dfef8a7cd1bf0b",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/_artifacts/skill_tree.yaml",
+          "sha256": "2d1e1ecc575d986c06d80cad0e71ba0e141d79340234b245e5faf35931f87a1a",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/start-core/SKILL.md",
+          "sha256": "471f83a5c2d9033a4569aef264c46d7dc0f7c4b272f4b95831dcfdb7bb725157",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/start-core/auth-server-primitives/SKILL.md",
+          "sha256": "be837d054bb8a45d2303813084207a65607a8735b8d0c9ec0e7b664bb379b3e3",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/start-core/deployment/SKILL.md",
+          "sha256": "d1614371828ccfa8c5c181e686a21bffe42614a6918dbf3544e32240b3cac0c0",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/start-core/execution-model/SKILL.md",
+          "sha256": "b2a463c0bc39317a9b479c9c5f70bc9931b6c1d89f254968907d3e253b9b379e",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/start-core/middleware/SKILL.md",
+          "sha256": "dc06346bebf09b068b2c708cee66bc6d8c0798587d26169c3997d8eb6c21fd16",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/start-core/server-functions/SKILL.md",
+          "sha256": "e76b1a3b73b176dba3c98837fbb50f65bd47f34635e7c4655b522ecffa6519d1",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-client-core/skills/start-core/server-routes/SKILL.md",
+          "sha256": "0284e4446e7ad9a8607fec3b5bd51a163449434e77fdff88ee2cd89b42634b1d",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-server-core/skills/_artifacts/domain_map.yaml",
+          "sha256": "73b5dbd87d46c264ce512f5dc4df38af4a1edad24b15aee138bd948bc779ee55",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-server-core/skills/_artifacts/skill_spec.md",
+          "sha256": "ee00de3b610bfe352f06f6d63d97e2dc23c5d5a38567f9c09d5b0d71e1e81324",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-server-core/skills/_artifacts/skill_tree.yaml",
+          "sha256": "d8a671fdebbcb5dfdef941166db8a876dd1014a796bcad24e24f4bd535d3faf1",
+          "mode": 420
+        },
+        {
+          "path": "packages/start-server-core/skills/start-server-core/SKILL.md",
+          "sha256": "5888595fe053143554516875c9234b0d8d9cc2ad359ce4061982fbaddb7de1fd",
+          "mode": 420
+        },
+        {
+          "path": "packages/virtual-file-routes/skills/_artifacts/domain_map.yaml",
+          "sha256": "fd3c4119cb54594b54517a9c8662f6b948c9316d522fac7c384628b4d8a0544e",
+          "mode": 420
+        },
+        {
+          "path": "packages/virtual-file-routes/skills/_artifacts/skill_spec.md",
+          "sha256": "50343273dc920044a151e6e68d3821348edf77a0742734fa3d1f6f53407c14fc",
+          "mode": 420
+        },
+        {
+          "path": "packages/virtual-file-routes/skills/_artifacts/skill_tree.yaml",
+          "sha256": "8e7e5e0b49106b74ebc96fb404f9d5fd2f783031bcb5251ba0f3cbb713dc80a0",
+          "mode": 420
+        },
+        {
+          "path": "packages/virtual-file-routes/skills/virtual-file-routes/SKILL.md",
+          "sha256": "16e141259bf660676fa0f2b86eea4fdc1b3b99d767125cac1557280900e47d04",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/tanstack-router"
+    },
+    {
+      "id": "tanstack-table",
+      "repository": "https://github.com/TanStack/table",
+      "revision": "ce123bc6651bcbf188f3198627c6bb0b10588162",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Detailed official table behavior and state guidance; optional feature specialists form a coherent dependency graph. @tanstack/react-table 9.x, Node >=20; 9.2.4 published runtime verified. Skills use useTable/tableFeatures, not v8 useReactTable. Version9-only pack: never auto-migrate a v8 consumer. Core and table-features are required before React getting-started. Only React adapter imported initially; do not bulk activate other framework adapters. Preserve all core feature references but route to only task-relevant ones.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "tanstack-table:core-core",
+          "path": "packages/table-core/skills/core/SKILL.md",
+          "sha256": "14ed7647981b04d13d6e0718016834f4871f56cde81278e87a189158a481cded",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "tanstack-table:core-table-features",
+          "path": "packages/table-core/skills/table-features/SKILL.md",
+          "sha256": "da6b8cbbc5dff2c84e42a110a884027a7d4b09f1eba32693a5f17883011e8881",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "tanstack-table:react-getting-started",
+          "path": "packages/react-table/skills/getting-started/SKILL.md",
+          "sha256": "a092088b54e637787a488d5476da5f811025edab53ce25be92d54b0e050cab80",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "9db3f8ddd7031ab264b99bec49c221155d0c8649b53dd4aa007f2041d36cdf5f",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-table/skills/create-table-hook/SKILL.md",
+          "sha256": "8fb52d731ebd039311c7fc56aef32de4d0d9e006989f6cdd0efb0cb44ea11b31",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-table/skills/getting-started/SKILL.md",
+          "sha256": "a092088b54e637787a488d5476da5f811025edab53ce25be92d54b0e050cab80",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-table/skills/migrate-v8-to-v9/SKILL.md",
+          "sha256": "1a8814a389c288d2eabae04215056c0234259794014552c3bb1e17c7f74eae42",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-table/skills/table-state/SKILL.md",
+          "sha256": "524a4e0bdf1e831200ac084e114634d50010d4794938f1a0dc165005ba7388b8",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-table/skills/with-tanstack-query/SKILL.md",
+          "sha256": "2af5bf55de2c2846d0ed6d9606d7596e5db73a1edf8e59a7565fe9095cab4099",
+          "mode": 420
+        },
+        {
+          "path": "packages/react-table/skills/with-tanstack-virtual/SKILL.md",
+          "sha256": "4cf27bea1983718a0cd7f3b8d39f8331032486c27aecdcfb6bcb9aa8c44e8060",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/aggregation/SKILL.md",
+          "sha256": "c58eabf70b911f1e4cdfa5685207115d8d3265304d2457a0cd94b18a1d03b48a",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/api-not-found/SKILL.md",
+          "sha256": "d8d1bfdf28fef1f5f46028b092819a5167bf5d0ec57f8547c685f954eeb9d806",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/cell-selection/SKILL.md",
+          "sha256": "68a4b51e72911bc60deaa30e94adc367e69bf788767d68c06b263a4dda0cd198",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/cell-spanning/SKILL.md",
+          "sha256": "89c4f3d8f704de9633c05d95007723906b96e0aaa64a63f9fb213c9cd2bfb2be",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/client-vs-server/SKILL.md",
+          "sha256": "26455fa74c93c2d5788d609049c0e8e7e9a0224003e3f64c9cfca5b6b0bed824",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/column-faceting/SKILL.md",
+          "sha256": "caf0bf06114b891435772abd4ffbc2577f6ec069bcd511e836240e3a71acbb89",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/column-filtering/SKILL.md",
+          "sha256": "46dfdf492963d01a94740e69453082c97d4e5b3d40d6b58e56d4fbad0c10c3da",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/column-ordering/SKILL.md",
+          "sha256": "e11a3e3821ef1c2f9beba535491286b4f8dfc60bb773591eae1b9d470c09fe33",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/column-pinning/SKILL.md",
+          "sha256": "fae60fa01bc17cfd5a717c6c87314075d79f0e504d29581d18e4fa564628e332",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/column-resizing/SKILL.md",
+          "sha256": "2cd27ba6ee00adab016cec7bada92dbe7196c4d89c9480dd0df2a6f86f52f638",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/column-sizing/SKILL.md",
+          "sha256": "d4a335583fc13c20c249fe90ec14a106c315a76b6e9921d82cea449d4d2779c0",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/column-visibility/SKILL.md",
+          "sha256": "364cb6a60d104530b0a9887a2d2f7a6abb58129f6160e2b75d92239cf80d78d8",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/core/SKILL.md",
+          "sha256": "14ed7647981b04d13d6e0718016834f4871f56cde81278e87a189158a481cded",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/custom-features/SKILL.md",
+          "sha256": "5591215f281408792b72029a716193fb7265bcb53ebff63ee3575177226bbb31",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/expanding/SKILL.md",
+          "sha256": "893e28a788e7312837e719e466ea3cfa4dba03bab139cfa38c5621cb7fa2b6e3",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/global-filtering/SKILL.md",
+          "sha256": "4cc40c79a4d007d654e206a9dfb885708fc6c5b7cd0ba884018404716bc09b3e",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/grouping/SKILL.md",
+          "sha256": "2626d6615ff5b13d962b2e017977acc94fd91741f3106699af41ca115aab08da",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/migrate-v8-to-v9/SKILL.md",
+          "sha256": "c769dbaf36bad5daef585d85bc4a0a7ae64cd5330d03bdeabc61830f141cf80c",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/pagination/SKILL.md",
+          "sha256": "38aa7267d85fc743322802237ccbee8a34177fbd02dff94485942b3c7cc2b6ac",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/row-pinning/SKILL.md",
+          "sha256": "5952b7fe885bbfb079202288f1eae712917196c962b3f4318072d2f6be45e426",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/row-selection/SKILL.md",
+          "sha256": "efc63023afb8986c8b823e404a5fb3fc1cf47fa1645b2069f6a74e8988e2a14e",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/sorting/SKILL.md",
+          "sha256": "9d49320e546aed59ed00c169c6a36533bf83ac56ed7f38878a5ec019183cd0da",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/table-features/SKILL.md",
+          "sha256": "da6b8cbbc5dff2c84e42a110a884027a7d4b09f1eba32693a5f17883011e8881",
+          "mode": 420
+        },
+        {
+          "path": "packages/table-core/skills/typescript/SKILL.md",
+          "sha256": "b426fade460c0ce50d1bdc4af41c53cb695a171d0d180c2d250e867c8980f2df",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/tanstack-table"
+    },
+    {
+      "id": "vercel",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "license": "MIT",
+      "licenseFiles": [
+        "README.md"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original React/Next, composition and web-design skill directories. Repository README and React metadata declare MIT; no standalone upstream LICENSE is tracked. Offline web guidelines are provided by the web-guidelines dependency.",
+      "dependencies": [
+        "web-guidelines"
+      ],
+      "skills": [
+        {
+          "id": "vercel:composition-patterns",
+          "path": "skills/composition-patterns/SKILL.md",
+          "sha256": "e38e0eaa609316b10423a9a138ed95e35099accd3f735585295c8a8f165c28a3",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "vercel:react-best-practices",
+          "path": "skills/react-best-practices/SKILL.md",
+          "sha256": "71ed7794962fa6e803ee83030517b5b93a9f70fbfeb431ec4535c5480a8d8355",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "vercel:web-design-guidelines",
+          "path": "skills/web-design-guidelines/SKILL.md",
+          "sha256": "f4647ca866a3accf763777f83e7682954f0187cd6bea7eea0399796652414e8f",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "sha256": "7c02f64b08fc6c4eef03c01d64f3e2ed478193ccfcbd14edba379abe23304651",
+          "mode": 420
+        },
+        {
+          "path": "skills/composition-patterns/AGENTS.md",
+          "sha256": "89e3ddd58fcf99a53a50e25dfd21b8cde1be5f10b7df6bacd3dfa6796932f516",
+          "mode": 420
+        },
+        {
+          "path": "skills/composition-patterns/README.md",
+          "sha256": "85915a43a6f0b4efe525e3cf6398dd866166da2025837c4460468a24a940da94",
+          "mode": 420
+        },
+        {
+          "path": "skills/composition-patterns/SKILL.md",
+          "sha256": "e38e0eaa609316b10423a9a138ed95e35099accd3f735585295c8a8f165c28a3",
+          "mode": 420
+        },
+        {
+          "path": "skills/composition-patterns/metadata.json",
+          "sha256": "49262ed5cb4186f31ee980cf8d990be0170c51efed4908d0464a1cff9905bd05",
+          "mode": 420
+        },
+        {
+          "path": "skills/composition-patterns/rules/_sections.md",
+          "sha256": "a174213b87e6911e2b766995a2cbaf8d1534057076e82fb79fe3f0ecb38047df",
+          "mode": 420
+        },
+        {
+          "path": "skills/composition-patterns/rules/_template.md",
+          "sha256": "587f7d16b0660eb61fee4a4d3d7df2b3077d6835de170602c7d6e60bee559131",
+          "mode": 420
+        },
+        {
+          "path": "skills/composition-patterns/rules/architecture-avoid-boolean-props.md",
+          "sha256": "007555ebb020f4d552582a2c4db194db71a1fd33094012e5187bcfa4f8c392d5",
+          "mode": 420
+        },
+        {
+          "path": "skills/composition-patterns/rules/architecture-compound-components.md",
+          "sha256": "f246af13dc269b521cf20eb8ad99a0cb645beac381c8c9b117262c34612c8457",
+          "mode": 420
+        },
+        {
+          "path": "skills/composition-patterns/rules/patterns-children-over-render-props.md",
+          "sha256": "7c45a0d21b3c4126a32cba916ee31adeae195386ad1dbbe6634aedb7457aa0ad",
+          "mode": 420
+        },
+        {
+          "path": "skills/composition-patterns/rules/patterns-explicit-variants.md",
+          "sha256": "8c19e596e61807549d01ce8c6954c6358199f97a8511c0c02c625ec0efda8c0e",
+          "mode": 420
+        },
+        {
+          "path": "skills/composition-patterns/rules/react19-no-forwardref.md",
+          "sha256": "881830adb7534c4b2d70db426556646ad9837f5478f744f35641f635ada22227",
+          "mode": 420
+        },
+        {
+          "path": "skills/composition-patterns/rules/state-context-interface.md",
+          "sha256": "09e73afbf9285fa416679cc864a287b9e8b821d0969272ab784295386d8c9bc3",
+          "mode": 420
+        },
+        {
+          "path": "skills/composition-patterns/rules/state-decouple-implementation.md",
+          "sha256": "76a8c1eb29a70d8996ab3f71260345af2f7bc89deab815a421d6c87c6591a9c3",
+          "mode": 420
+        },
+        {
+          "path": "skills/composition-patterns/rules/state-lift-state.md",
+          "sha256": "74c54038a6c554c748fe31cec673b80861b5d920b7553cf78cdf10d18b4b759b",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/AGENTS.md",
+          "sha256": "fc93e7421177bbf869cce892bc60a6c83a4517d974bc3bf65c4e2c1e58a6ccf6",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/README.md",
+          "sha256": "9eafb2123d3b8b2aef41fba0db2648a3f4f49996f8c7c8bb2c86263befd8b48a",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/SKILL.md",
+          "sha256": "71ed7794962fa6e803ee83030517b5b93a9f70fbfeb431ec4535c5480a8d8355",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/metadata.json",
+          "sha256": "c4e18bac3290fbe1b471a605867d4df68b03144ea26b8befdbe8f9d8fd124354",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/_sections.md",
+          "sha256": "01c59969e4e867f0708c8f8ef9c6d87fab9a07d0586244f429ff84013db8a115",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/_template.md",
+          "sha256": "99df2a3ea088c6c22de2484ddc7e964d0e9923846f44c63380343ecc64455442",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/advanced-effect-event-deps.md",
+          "sha256": "55ed8f9f27a1bff803d6fa55828176207714b02123cbb97ddb8a90d88024a723",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/advanced-event-handler-refs.md",
+          "sha256": "a3097edeecfb2ff6851cd66ed8cdf0617c3c88180504bee824aa6e75a215bbbc",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/advanced-init-once.md",
+          "sha256": "3e4dc22173eb0e2b6dcf583e3babd862b8696328f8f59aee7c4d746c5bc05f6c",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/advanced-use-latest.md",
+          "sha256": "8a3f64dfe5a77d1564248faf17fe662ae75b55d497a243cb30b38eb07ccbbf9a",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/async-api-routes.md",
+          "sha256": "523338540d73427dc14c0cbb19f2741ebccdf8b105a7b2c1b33d2905cf237a42",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/async-cheap-condition-before-await.md",
+          "sha256": "03107c1f70a293cd58a8abc5474c5548e20ea4efdf01b6d45aae7ad0ac1cb32c",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/async-defer-await.md",
+          "sha256": "f3c142d090615abdcc99d31c123be37b31f0f1ed8d9ec9f7789a3bc6883ae0fb",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/async-dependencies.md",
+          "sha256": "16ef469f877e30c6b8e1e1b4bc3e527312fa3c6318cb785a4eca186ea236131a",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/async-parallel.md",
+          "sha256": "6d2f841896279e976dfcdc1ac89e70771ac188baadfd43c096b5706cb838b961",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/async-suspense-boundaries.md",
+          "sha256": "de05fedac2eb7ae563b887b5a424464ec3dfaf84e5b7797467ebe2a796ac8afc",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/bundle-analyzable-paths.md",
+          "sha256": "62090b5c815fd71bf1133dce754f51abc16a9456d0ccd025fd627de27726e92a",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/bundle-barrel-imports.md",
+          "sha256": "e648f6d54525f07a691357040ca5bff6ea3424788a91ff63812adb29622a671b",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/bundle-conditional.md",
+          "sha256": "09c8259c3efb04fc0abb8e412ccbda217c222ae8118516283e571c995fe3a7d4",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/bundle-defer-third-party.md",
+          "sha256": "3719fb47b191e8db4fe22686ec88448ad5af9e6838585425abbe103d0b642e37",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/bundle-dynamic-imports.md",
+          "sha256": "401817a7369f315fc5a68a1095742ff7d53d0461906880dc9d64a41495ee1986",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/bundle-preload.md",
+          "sha256": "d1f7cc28da7cd5ab249acd287edc5b761afcfb194e9cb62cd44c5f3543db2de2",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/client-event-listeners.md",
+          "sha256": "242a873349febc1ce685e85617994784dbab92c2eaa68aed7fed5a83e7680e93",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/client-localstorage-schema.md",
+          "sha256": "0fb7cdf9dc93fdf22f87e3669f953fb9d4ac9b0be42eec4a29fe9a2560610b88",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/client-passive-event-listeners.md",
+          "sha256": "1f35016f9053de69e884ee9be00654e37979c2ca85f5e57764dc2626ff7acb4b",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/client-swr-dedup.md",
+          "sha256": "644652c39c6cc00de8d1c77a7273612e868dc3f7edda30764164c12ec0f764a3",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/js-batch-dom-css.md",
+          "sha256": "480b891b9eaf96e929dc1e964274a4828e3a78009b7d00ccd965a0d425215959",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/js-cache-function-results.md",
+          "sha256": "3daaa11d24f4295cb6be8bc6f407f2ce83cc7b5bd1f0e68891ea8ab835721dc7",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/js-cache-property-access.md",
+          "sha256": "73e47431e74878a927061bf0ddc7cd91a7556cb35d2573f3421e82300d9ae311",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/js-cache-storage.md",
+          "sha256": "11b826b0433898c1ece2d3547010d8e77db9fb240185748c45db91493de9b6cc",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/js-combine-iterations.md",
+          "sha256": "71add08aeeb43091d4ff4c0b2842cce8b4bdef8ad3e732cc034bb5a84827e746",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/js-early-exit.md",
+          "sha256": "925ce5ce87f3347186ca62212f29cc6baa2b8c85a96d2720ad07c3d0abf781c0",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/js-flatmap-filter.md",
+          "sha256": "9e5b166a41914d975bef7635467f8fb32cd98b5c3126c0bc6f163490812fb5f0",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/js-hoist-regexp.md",
+          "sha256": "f9e9aef2f7c2307dd7310f283df85dcada45fc43e9bb941b0c3aa414dec21ec4",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/js-index-maps.md",
+          "sha256": "5df1bdc2cfabb2c98abd55d26762e5c18189535c2e686184f426082e62920391",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/js-length-check-first.md",
+          "sha256": "8b54a311c826b299272f29187fc58bc55772a04c4a72eeb29456ee96dc9fc624",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/js-min-max-loop.md",
+          "sha256": "87dfb67e2f39df6ad8bcfb5b78c5fb364d3c07554ad188a202408d99f3763421",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/js-request-idle-callback.md",
+          "sha256": "ee08f83905b4011abbc33d594033157d77561b5bbd9b36b04f0f409581ffec32",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/js-set-map-lookups.md",
+          "sha256": "a7fd781a6ba9ad49065961b6f9a90ef486bf6b648390e1a08704025f98e1642b",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/js-tosorted-immutable.md",
+          "sha256": "d0a5e1b0fec48a0a81397957e2f068e224329f7c42cb5feeed8aae6fa64025e8",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rendering-activity.md",
+          "sha256": "1e5e7eaf3555e61d6a2e900089c676527d26259501db5594f59544b6c664f85a",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rendering-animate-svg-wrapper.md",
+          "sha256": "9c6ae0ca7a51434e803887c64cded760956579a1452ccb80a461a03f9c937c77",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rendering-conditional-render.md",
+          "sha256": "2ec2fa23c4148285144687050c52369adba3da2fbe3d486f8d3e0aad8f06f2bc",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rendering-content-visibility.md",
+          "sha256": "64eee6d5b916fe74df33363994b27fc7f71bea3bcedc7ee04bda23107ca3e6e4",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rendering-hoist-jsx.md",
+          "sha256": "93b229560fae92005ed9a2a829064607b39b2e984e92d221d05b2d41df2b7c0e",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rendering-hydration-no-flicker.md",
+          "sha256": "dc7ab358c67c177bca6e6f360fbc935ebe4efa928c0ba3ebd3f9f3d9e2000ca3",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rendering-hydration-suppress-warning.md",
+          "sha256": "915bacb934e2927d84b37a3f3d225a47b309ac8f9e494ed2bcb66ce07c5676a2",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rendering-resource-hints.md",
+          "sha256": "351b1095d641717b930f1b2253282b7120af3023bc74e06c17675168d4286864",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rendering-script-defer-async.md",
+          "sha256": "4cea07b7875ba7fc2c7465ff23b63a2bb334f90aaf2d9293d38d67b05fdb32ab",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rendering-svg-precision.md",
+          "sha256": "ed468533f6e95f622859c884b122cf21f9f593ed6bb3d500a54de4b9f9bcb9fb",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rendering-usetransition-loading.md",
+          "sha256": "3a1249c3f13026b6f54ab5712c388df219d6af01b12aa542749acd99a46f4bc1",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rerender-defer-reads.md",
+          "sha256": "234050a77faf50cb306be10a9e15bd4421134ab5907e75f13e6d78e2bd262dc9",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rerender-dependencies.md",
+          "sha256": "17eb5830956fb56486fd3cfc7431f5849d39751730c05ad9e77dd4f0c27169c5",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rerender-derived-state-no-effect.md",
+          "sha256": "cb11ec76f50aa7b6847269f02d79b120c889a30d9ecd2c1d578f75144419c77a",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rerender-derived-state.md",
+          "sha256": "1c326bb67b01fb084eb00c8911b0a7cff54681c2315b629f88e49b64eaa6481d",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rerender-functional-setstate.md",
+          "sha256": "5e68df6b2ae8058e67f476ff1ac67bde159f5a9d18df439e46eabcdeb7b52e58",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rerender-lazy-state-init.md",
+          "sha256": "4ae844740f266fc8cbf050701230286624a2440ec5be67b9a63d9edc3c580573",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rerender-memo-with-default-value.md",
+          "sha256": "81c47476564ad8a79fc68fc442734255ca7d6829424359464503fda0a9f9a0dd",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rerender-memo.md",
+          "sha256": "1f258990c2f27ff6256b3cc5c43300631bb3f0d81f749aed08d07fcdcc131dd1",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rerender-move-effect-to-event.md",
+          "sha256": "abc2cbf167bee056743023351e96806a411d3398da8802093620aecf0721f029",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rerender-no-inline-components.md",
+          "sha256": "1cc32907a770272524ba682eef9e7efdd8ad4533b6f89b718a1fcd7d1d0eb6a3",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rerender-simple-expression-in-memo.md",
+          "sha256": "5bdcf2d1558ba5204e643c887b7b4060f89630969425651eb68e96427d97f800",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rerender-split-combined-hooks.md",
+          "sha256": "6f45d703343484ef9acef9388397f3642966ae6a5a258899a0cf1f9977cfbf6c",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rerender-transitions.md",
+          "sha256": "60f4033909a62df5e5b8c601494f9e50a562e2f8c1c2d81eac24f38142265f1c",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rerender-use-deferred-value.md",
+          "sha256": "8c3579576a61a949884167745dcfaf1d5426ba305cc61fd0a79602d70fda4909",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/rerender-use-ref-transient-values.md",
+          "sha256": "f1a649af9d1d0b5c762f6c9c4c1c70c90d7df82aa10296ee87aadb78c1b76c54",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/server-after-nonblocking.md",
+          "sha256": "d0b8d24a3db9f0f65f9e2bddbf230b0e03a5f60e1229d93a4a18f5e7a991c7c2",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/server-auth-actions.md",
+          "sha256": "a2ca8aa102839251c7971ec784560fab943c20b36fe6f80365d4110c13260c23",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/server-cache-lru.md",
+          "sha256": "1924b64561841923b88a657085097a0aeba3e0ba2d5470b9f5c15cc10d6ae70f",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/server-cache-react.md",
+          "sha256": "fddeea6c870bb3da4134b61d54b7d09b83d2603f929b7547cd3dc1dc269edd5c",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/server-dedup-props.md",
+          "sha256": "c2747424cdac46be62f835f245a0aa887b0090b416d28e2ac8676702645eeb37",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/server-hoist-static-io.md",
+          "sha256": "5abea4dd882b13661bd5f7dfb93f9e547d5f08176c61c448ade91b210ed5d49f",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/server-no-shared-module-state.md",
+          "sha256": "4d869bf1cd2f1632e5ca4c0e64b1cf0e71c5f5a0f940bc8a22174d205e735ed7",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/server-parallel-fetching.md",
+          "sha256": "569a2e9fc04f9606686cd75c5894ef8781b502786a7fffe241396846c7733472",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/server-parallel-nested-fetching.md",
+          "sha256": "ad5d9656984d4a959997a2367bf59cc6632297b4634a1dd13a087939d83f30b3",
+          "mode": 420
+        },
+        {
+          "path": "skills/react-best-practices/rules/server-serialization.md",
+          "sha256": "f4c7d68b29c82381baad059c4a7f09e868e71ec9c3115a26ad3ae7d24c0dfe1f",
+          "mode": 420
+        },
+        {
+          "path": "skills/web-design-guidelines/SKILL.md",
+          "sha256": "f4647ca866a3accf763777f83e7682954f0187cd6bea7eea0399796652414e8f",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/vercel"
+    },
+    {
+      "id": "vue",
+      "repository": "https://github.com/vuejs-ai/skills",
+      "revision": "c9d355ff23f654309dd02006be671859df0a134c",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Fills a genuine non-React framework gap with progressive references for implementation, routing, debugging and component tests. Existing Vue 3 project, matching Vue Router/Vitest/Vue Test Utils; vue-tsc and project build. Vue core is the primary Vue skill; do not also activate antfu vue or its copied vue-best-practices. Composition API defaults yield to an existing Options API project. Route testing through established Playwright QA owner; do not activate a second global workflow router.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "vue:vue-best-practices",
+          "path": "skills/vue-best-practices/SKILL.md",
+          "sha256": "05b373713e6bbd216fb3ee9709289b68bcdeb9eac8ffea477e35bdbd8e0f9acd",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "vue:vue-router-best-practices",
+          "path": "skills/vue-router-best-practices/SKILL.md",
+          "sha256": "33889faf631e80bf112a096dfe3e76029447f05f99d6d5c0aea2daddff186d7c",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "vue:vue-testing-best-practices",
+          "path": "skills/vue-testing-best-practices/SKILL.md",
+          "sha256": "376fd21d6adfd37f7d102fa17ca099abddef16943389f37588405b013cef23b8",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "vue:vue-debug-guides",
+          "path": "skills/vue-debug-guides/SKILL.md",
+          "sha256": "c39cee74b0b6a4a8f7e50447ae9fd7494c80e86f50dc75753620e2ebeae22c3f",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "2ea4e714425cf682879c4dea3d0d0a1a379a1418f463063f9eea1aa709ad946d",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/SKILL.md",
+          "sha256": "05b373713e6bbd216fb3ee9709289b68bcdeb9eac8ffea477e35bdbd8e0f9acd",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/animation-class-based-technique.md",
+          "sha256": "d37e4ae4f124454fc5dfa54d23816edb16d337228641a77ec04c8ee9fe5a32fe",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/animation-state-driven-technique.md",
+          "sha256": "9a17a15356b32c8cd8669c3ede28dd890e9a48c03101047738a5c6dec7c716d6",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/component-async.md",
+          "sha256": "e20036c6622a1647d9e1c23f1fe871b2465cf4bab434422e17eb05710c8878f3",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/component-data-flow.md",
+          "sha256": "81277341d7dfe240721c2324548b9d404354d3ce270515acb130e8ac0c7396aa",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/component-fallthrough-attrs.md",
+          "sha256": "62d291508df9997d3b6c5adfde251d6c722926ecf5f7168dea0272564f119919",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/component-keep-alive.md",
+          "sha256": "8738608665ad42baa6d2d7548d46b3ecd318a85f4ec3a0afac5f728948ade3ca",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/component-slots.md",
+          "sha256": "726fdac036fcdb6071e669f1ed90af5b3bdc5fc150ad82ff41afa0af5e39f481",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/component-suspense.md",
+          "sha256": "6a5a98dcc6a2093f038f877eb6fefeedb199aba058a5dea71b139017c557bdd1",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/component-teleport.md",
+          "sha256": "4e48748842262df50c293ab23857c22c107e3e8360c87da482d23f0eb88b2c3f",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/component-transition-group.md",
+          "sha256": "cfdd76e2466a8c0ef8a965674a74924e5cf25e538e75ce97d02213472442ccb2",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/component-transition.md",
+          "sha256": "bc59a19f2e8eed7a228bdb6383d423a57c6dd75704ae11c9596018c9fb1cac42",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/composables.md",
+          "sha256": "8fcb3ede4ecb13f8dc7e4c7db07561652f6d306c85a91bc6736fda4fae2b624d",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/directives.md",
+          "sha256": "70d4c68ea15a961eec6471c42b4c44d37adfeb094f694b6811fb718eab7b2cf7",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/perf-avoid-component-abstraction-in-lists.md",
+          "sha256": "a5fb787065cbaa4731a12d3ab2f40284d058a4d6a45972b48b3052931e4f80da",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/perf-v-once-v-memo-directives.md",
+          "sha256": "066a45e60f6faa702cb75b76724c391d7e560aa6805c9bc379c06f2c64d97677",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/perf-virtualize-large-lists.md",
+          "sha256": "69712f1f296cf03401c47f936e1a9c32481bfd82623f536b1fe08d05c846bada",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/plugins.md",
+          "sha256": "b1583522aca059c4295708517ba987530dd6a13134f6046aed9fd7327fb9c936",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/reactivity.md",
+          "sha256": "48c97831e72f0b82bfae0344cf02a181c7723e1ee4a29a58a85009aab7d60a4b",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/render-functions.md",
+          "sha256": "01b35e671f7890939fa5acda52c5cf0a50b398e153d80cc9fc9f74c19e460357",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/sfc.md",
+          "sha256": "dfe09f28869a2bc44e618068c3b6269f55d925d096714df25e253d2bbb58c28f",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/state-management.md",
+          "sha256": "9e98a1c6d9009c0c8ef7228b6b3bcf10d30be6b713ffcef448ab7db3b419a851",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-best-practices/references/updated-hook-performance.md",
+          "sha256": "ded08ce93f9b23082538846f84e8d159d84af757c27b2c6b43a9283df803a32b",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/SKILL.md",
+          "sha256": "c39cee74b0b6a4a8f7e50447ae9fd7494c80e86f50dc75753620e2ebeae22c3f",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/animation-key-for-rerender.md",
+          "sha256": "e24e3186c65b61def435e2403b69ebeed475313b5cb3a4883a66c15f3269054c",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/animation-transitiongroup-performance.md",
+          "sha256": "22511f2ef32729fe6975b7468b8a4deecb60575fc230357f72332ddb6e3715e6",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/async-component-error-handling.md",
+          "sha256": "6e209485fdd82c77e72faadb1e310388e0e577714f23789a33365e5d1429b66e",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/async-component-keepalive-ref-issue.md",
+          "sha256": "48b988e0e0daac9cee85950dcfcf1d56901b2dac9b6f491c6d95b0380de66238",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/async-component-suspense-control.md",
+          "sha256": "f9c76e8746da300ac2ada30ef6e2e6a9cd99e62892c5fc035e71bcffa14a5061",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/async-component-vue-router.md",
+          "sha256": "59afd935dfc0ce56b1a3138131805c25082cac5eacc84e5a85f0a87776d7888f",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/attrs-event-listener-merging.md",
+          "sha256": "ce086d9bfcb51f34e89a1b4e6c388203de7267552b7edba8015d9559e6da29d7",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/checkbox-true-false-value-form-submission.md",
+          "sha256": "7c7131ffd24d5f35e895f0a37f58d66bed0d45d44a92fdfaa6ee786ac69c5bb0",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/cleanup-side-effects.md",
+          "sha256": "f12f859899e2ff5c5d64c4cdbf165ba3c81ad0c8b3f74cc4ec3ca3ed27d7e770",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/click-events-on-components.md",
+          "sha256": "073b2881a625ff5b90c2e01cae3d87ad701cbea7b6ccb5e42ab30b42d724a992",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/component-naming-conflicts.md",
+          "sha256": "3d05232a10a9ce907820fea21863df76ebd3c5211b51f4554768749e19773cc4",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/component-ref-requires-defineexpose.md",
+          "sha256": "63c099d6796cb8b474666845f24cefb841b70b36ccd85a5817701489f323053b",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/composable-avoid-hidden-side-effects.md",
+          "sha256": "59efc692a91797d44b02eded5ed2bdf8cd39e9ac61283077be88b824b9e38d38",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/composable-call-location-restrictions.md",
+          "sha256": "6281eb3b5fd852d89ed8eaaa49d997e8116bd7ffe9ff14ea9a60c2053ee7a9ac",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/composable-naming-return-pattern.md",
+          "sha256": "6dafc2a17b8631024fe4bcf20db38a82620e4820f6b51ef5f33121a307f2eff9",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/composable-tovalue-inside-watcheffect.md",
+          "sha256": "8facc0b13d779bfe234b61b342e4e59f954422f8a0e474d7bcd99b7faaf087f5",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/composition-api-not-functional-programming.md",
+          "sha256": "92e4c8e3daf00e14deb55ba51eeff89b97dd774329e45aac8ac68b4f48462ba9",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/composition-api-script-setup-async-context.md",
+          "sha256": "1e855e447d595631f3293f6272b84d25b37f543602c0490abe987c4dc0633a98",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/composition-api-vs-react-hooks-differences.md",
+          "sha256": "3883aa11a7ae16321950f2908e271e5cbc8164a5ded50e244bcb2a8b078f12d8",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/computed-array-mutation.md",
+          "sha256": "e7bbbaa119ab4b3e7964f413b56b91bddf83982a06ba760f40326c742bc816fa",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/computed-conditional-dependencies.md",
+          "sha256": "9e12a96270036498cd3f9dc8f87fd47339ce03afbdeb9c6002d27aa413520eaa",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/computed-no-parameters.md",
+          "sha256": "292f97a556ed28a1b135b0321d303548098893684bd1437d173114cd1428b61a",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/computed-no-side-effects.md",
+          "sha256": "7920c5d2aa16e176a813c1752f9867ec0805ae09ee6bf3bfe9e8690224dd35f3",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/computed-return-value-readonly.md",
+          "sha256": "c3ee396b0f23cd00e63ea4bcef6985d84af3c18294e2170c7932d73a8dae1559",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/configure-app-before-mount.md",
+          "sha256": "fb0004c4bf024a27d4947f28f0e069c3c6093cd5c3a96a8ef06ab95b72e8e68e",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/declare-emits-for-documentation.md",
+          "sha256": "0390efba28ff6c8c78efe9f8c92d189a5741b26f8296365a65589b3d785ca7cc",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/define-expose-before-await.md",
+          "sha256": "47eca68f329382ad804e48a02e9fde38d685d9ae3966c9d82504c79221d9f37b",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/define-model-default-value-sync.md",
+          "sha256": "4d99e494b389a66a19da9d655dc30f8f9619628636d1a9b587b4bccc7b3a6f32",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/defineEmits-must-be-top-level.md",
+          "sha256": "624025907b4a8f2503a73b1b3d351bba9d49fe7032fc85670f13b1d98a51e5d1",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/defineEmits-no-runtime-and-type-mixed.md",
+          "sha256": "8ce8f0f6761830aeab7b2543a264a62d9a0427bf7718e8c8b8bab0d77ad53e1c",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/definemodel-object-mutation-no-emit.md",
+          "sha256": "e9adeb8d7c90831ddd08c74c9c9635f28f823316c4518c4e60cfaa77d708fd2f",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/dom-update-timing-nexttick.md",
+          "sha256": "3bf533ddead523a33990c527ee9c3a9c6e50dd0e66b7c562e83b56f84d74302e",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/dynamic-argument-constraints.md",
+          "sha256": "14d54cb245028ffc37d619ec41f3dae84dadfa433abc8594d648d07b98c15fcc",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/dynamic-component-registration-vite.md",
+          "sha256": "2965e1f4eb40b8903f3cd9110424cc8a13794f8055a0a74bed3900a8da416c5a",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/event-modifier-order-matters.md",
+          "sha256": "5f367037a4ba1b121618f63a52ee71b1b51cc462ab66ed0e7fe9169c4cd95e07",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/exact-modifier-for-precise-shortcuts.md",
+          "sha256": "69b3181f228061a94d79166773bf12baa4c62f145b3362f32f2cb21054fa241b",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/fallthrough-attrs-overwrite-vue3.md",
+          "sha256": "8d21dfc8636dd4145f5de021662ed35edb50186be867faa40295408874097fb1",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/in-dom-template-parsing-caveats.md",
+          "sha256": "1c38ef47babef2bc5711a30dc2e049564d125f63e157e276fd66fe284f7c4f72",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/inheritattrs-false-for-wrapper-components.md",
+          "sha256": "1358323fe16330275b2f083a7e9974c5e1c892366aa36f38f3142011226aa3c7",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/keepalive-router-nested-double-mount.md",
+          "sha256": "bf22a3d2a60aeab46470fb8aa171eda935a8fa0b6b8f6d707565724e61f1d498",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/keepalive-transition-memory-leak.md",
+          "sha256": "139c5cccfc6b802d6e24502a95a5ce2763119f95ccb3d3031a9fb7538bb2945f",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/keyup-modifier-timing.md",
+          "sha256": "93928ef2879a23de1e633c4a61e5f35c5195d0d309e74b753843218e5c979887",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/lifecycle-dom-access-timing.md",
+          "sha256": "c75066bca8a42c2109f64dfc8de08b6f998a3672d262011bf4e203cb6d365c2b",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/lifecycle-hooks-synchronous-registration.md",
+          "sha256": "0da713487023ca0efd7477cec699e9c30257264af8f03bd66be8d77828c5a264",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/lifecycle-ssr-awareness.md",
+          "sha256": "e4f4c6addb9bdb6daf58f15c2339820388e7454aba821f2c0603b4b289ac7021",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/local-components-not-in-descendants.md",
+          "sha256": "d97125911a7489593b69c6d54eeafc9593aa11f195c662077c65d1a6c5ddf1f5",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/mount-return-value.md",
+          "sha256": "197b96a76adb7f94be8f07be7702d77c22f9f4ba89aca8c28fb4157410a8369d",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/multi-root-component-class-attrs.md",
+          "sha256": "e709de35a399d9600edc34ac1eddc1bf4fd5cb4b459e66536165222b84aa311c",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/native-event-collision-with-emits.md",
+          "sha256": "297dd173d7cc0cb361dca6e863d0226d7dc00d224803da297177492b26cf05d3",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/no-passive-with-prevent.md",
+          "sha256": "cd2c6838b8687b117d35b16f9811176fc0ff28adc18c0bf2b920a9e4ca3c428d",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/no-v-if-with-v-for.md",
+          "sha256": "3aeea7288875c26ede4b3cbb4306264966eb951316b3618e459b44efbfdcaba3",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/perf-computed-object-stability.md",
+          "sha256": "426b556740972b5a5dd39f795a6da6a445ffafdee4d3dcfea2d96ce65bd8dd29",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/perf-props-stability-update-optimization.md",
+          "sha256": "a2f6e78fdcec95eb3702647d013d708cae275508bc0c2df678b5fc2b40a0f6b9",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/plugin-global-properties-sparingly.md",
+          "sha256": "e557cfb1e9e5a78a1fd6662ecaaba10208b384af3bfdc0a2143e7f1e0cb778b5",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/plugin-install-before-mount.md",
+          "sha256": "e74b13e2b158a475ed7b7cd19a2881c3741a1097a6004202b317f61e6dae6fe2",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/plugin-prefer-provide-inject-over-global-properties.md",
+          "sha256": "0ef397ad5b462d29b768c67ed30b60e484b790015c36a8b846b30ea256b03dad",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/plugin-typescript-type-augmentation.md",
+          "sha256": "89729069f4f87b363a1ddde115147251ea597e959d426394cbf222818da53831",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/prop-defineprops-scope-limitation.md",
+          "sha256": "e0459f5afa14137ef19e70296eff1e4f6fe84150fcb99188151ef2db7ddbd0ae",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/provide-inject-debugging-challenges.md",
+          "sha256": "18f5ee050f9cfee0929e2485ae3a866574e9432c6f03c8167dbbab52f51e4a3e",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/provide-inject-default-value-factory.md",
+          "sha256": "6293b6b7b1a40e9755b87c58f36184e7375628e2c159c721bdc68d365095a08b",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/provide-inject-reactivity-not-automatic.md",
+          "sha256": "126a918b3c67b7aa139ed75d5be2325b9fb8ceeefa209615da42a6e6d156e2ce",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/provide-inject-synchronous-setup.md",
+          "sha256": "deeabc21bdbc7bbbb7cb492366853b43e693130b6ecaeab5384db23923892d22",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/reactive-destructuring.md",
+          "sha256": "58de7b721c69bdf80b5a272d4e0211290defb06cec1da10a38c4c63409403ade",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/reactivity-debugging-hooks.md",
+          "sha256": "9bd2991786bc470ae00e655a7712d67393a6e904152a942b680c7a9d2f987644",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/reactivity-markraw-for-non-reactive.md",
+          "sha256": "e8d6410002563bf66f9dd6921f37c58055080564e8f8933e22996e28b28bad54",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/reactivity-proxy-identity-hazard.md",
+          "sha256": "70e6fb56a9adf53b1043df1bc5a122fe7a4cb4dfb89b22db51ef8e7dcb29b747",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/reactivity-same-tick-batching.md",
+          "sha256": "10dd674dd92fb10cf026fb8f8061a51b2af0d63813ab0edebc26c51e9bc7d74f",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/ref-value-access.md",
+          "sha256": "e797ceee03f65cd0946a2dadfca57c11ed98879f9c30b0e49d41db2e31feddb5",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/refs-in-collections-need-value.md",
+          "sha256": "f6966e60ee948135c44c83d871d3bd0c7cbef2ac58a50f822ae1455616564591",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/render-function-avoid-internal-vnode-properties.md",
+          "sha256": "94626e6391c000b8a9abcfb85bc79757f4fcb962a0cf0739b57b859cb551e90e",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/render-function-vnodes-must-be-unique.md",
+          "sha256": "e1869786235d4a75d9cf125b95361e4aef70f29019fe2d171298ab4db244d1f9",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/rendering-render-function-h-import-vue3.md",
+          "sha256": "bab6c4d78d3b28cce889fac1e3bbca7670b9cca0efe8ad1a1606e061f65bbbc9",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/rendering-render-function-return-from-setup.md",
+          "sha256": "4c510bd41e6387b71326a94fe9ebe039baeabbbdf879bed742f1f98c92bddadb",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/rendering-render-function-slots-as-functions.md",
+          "sha256": "1ad31a7bf16b184e251a73dbedc3918d1c3b60b84e24103857d4d318f50be330",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/rendering-resolve-component-for-string-names.md",
+          "sha256": "a00994f1b667c1ae5cace6170dd0d3b1c32d7b3bebd87af14a1b2d310b6712ea",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/select-initial-value-ios-bug.md",
+          "sha256": "8ba9bd488e3b53bd5c89036d84020a6d408c816ad0e4e783b43f044de8d41420",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/self-referencing-component-name.md",
+          "sha256": "45b7f0e9e376d2427e613424be3d26d60968d6eb87abf0754399ede2383bfad2",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/sfc-named-exports-forbidden.md",
+          "sha256": "6a68b60aac268a6efb586dc226f3390bbe42d206b8ec16feb850a6f7edfabfb1",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/sfc-scoped-css-child-component-styling.md",
+          "sha256": "d59893ee52b94fba4cdd676eb36993127955aff8431f0770af0d092f0c2156bb",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/sfc-scoped-css-dynamic-content.md",
+          "sha256": "07b88cf1aba023f90814eb028fdd81510995670abf3cef01ae1ce150dd839eed",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/sfc-scoped-css-slot-content.md",
+          "sha256": "f4b2054f5246c5825952a98fbe8b209f32b532db7d161c7d90fac16a4f2621cc",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/sfc-script-setup-reactivity.md",
+          "sha256": "7bb5039b3139e84aa2f1f35a266b9ab46b3fd6252f4ea2e7501a94e796e80b2d",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/slot-forwarding-to-child-components.md",
+          "sha256": "96ea34eb0e145ae8f9e26b69f08520c99b3f560d0cce88b729a392810ba71820",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/slot-implicit-default-content.md",
+          "sha256": "b2eeec4e5ab98bc69dbe025d2013a444014e42c9815ab41a297bc1f46ac83346",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/slot-name-reserved-prop.md",
+          "sha256": "5a01afda539a45633243f64d9c559dd96e309bdc7b4ac44d75c06f676652889d",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/slot-named-scoped-explicit-default.md",
+          "sha256": "ced29ade4d9610d355e2e48fe021b9a3f38ca3460cf8cb92f7d1ac40a0d08f26",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/slot-render-scope-parent-only.md",
+          "sha256": "d426b3eec223f7aceb4b798ff168597c081045d1215b67e53a0775b9693d05fd",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/slot-v-slot-on-components-or-templates-only.md",
+          "sha256": "0e10a9e3d2d0801bfe3225fb454c9acaf570496ac4ab06b55e6dd594f01af6b1",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/ssr-hydration-mismatch-causes.md",
+          "sha256": "273da44fe49f3dce36bfc903fa5c305762af540b68734a40eb4b44d70b887dac",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/ssr-platform-specific-apis.md",
+          "sha256": "870a1e2dfe22e8d7279537292fc338c50e2174fdb06a7248bafc1fb24e86fff5",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/state-ssr-cross-request-pollution.md",
+          "sha256": "94353322c23d995a51dcddb160e150fc975e7021ded8e9d9db0cfc06467f5e23",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/suspense-no-builtin-error-handling.md",
+          "sha256": "b6e3738eac5db3aca760a42c4523ab9cff947dab1fbed99f0ca628fb7f887bd4",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/suspense-ssr-hydration-issues.md",
+          "sha256": "2b7470cf1bc2c461bc33d8ccc6b341c89a330645c99768d091001ee1e8586efc",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/tailwind-dynamic-class-generation.md",
+          "sha256": "a50ec8ec0e93b7fbd99ff059741b335b86a5d2abeee4723f3123f7b1de18f331",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/teleport-scoped-styles-limitation.md",
+          "sha256": "2f320612fda2b97d058f2701f027e6f33da5068281d04d413a0e22d60159c815",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/teleport-ssr-hydration.md",
+          "sha256": "4ad6cc20283cb597ddeccabca6b14731aded0400ec7fe283a8c8a7eb1cd2d52b",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/teleport-target-must-exist.md",
+          "sha256": "e392c732bf2282fdd445a7e5c7b18f0251fa0f94bae11617c013927574126ba2",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/template-expressions-restrictions.md",
+          "sha256": "8d7c195e9329f1c9a60318ff74e194145ac4acbc1af50c4cbf84b803b98b344e",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/template-functions-no-side-effects.md",
+          "sha256": "5961cf44f89f1c69e0c686964a08635ed068a22e9cf52ebd3370364c7960349f",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/template-ref-null-with-v-if.md",
+          "sha256": "e76dc8d556fed6546697191a2d4bd5c40804be676d98a9a5edb1f32b99c3c89f",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/template-ref-unwrapping-top-level.md",
+          "sha256": "56d0975c474438466f9dc6507aa800e042df81d8e9aee61ab2268f3054fbfaa4",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/template-ref-v-for-order.md",
+          "sha256": "8c27b04507ac42dfc90aa5cced3eca207b2f0bbd34a9ef08ba917212368c322f",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/textarea-no-interpolation.md",
+          "sha256": "e390e9f3153e572c6470adc81ca74b9efc2ee5227efa169e16fad86761835474",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/transition-group-flip-inline-elements.md",
+          "sha256": "a43c259c374cf74d138ddc7d68a81a4c1a1a098058215e0170460c285825c49c",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/transition-group-move-animation-position-absolute.md",
+          "sha256": "bd43a5cefe668b0d21aba7431d0aa8b0d88f4c5825534c19b23b3b8cdb1a410d",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/transition-group-no-default-wrapper-vue3.md",
+          "sha256": "0dce50e40120a44c26db667d750b973faef38d6603e18fbc8d67ef980bd34976",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/transition-js-hooks-done-callback.md",
+          "sha256": "9797f0f2969e75e23a953abcdae2845efc690f94ab1199f870de980cb8c51d06",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/transition-nested-duration.md",
+          "sha256": "c82bb7d2d968590d38cf213d6a340b5d16db7f73322078a562c77804419e4a33",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/transition-reusable-scoped-style.md",
+          "sha256": "845fbd9945c0558216f92bf593961d0da5ff903cab4a59c2d77350dc2fe39446",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/transition-router-view-appear.md",
+          "sha256": "9749e363f7068d14e152fc114a916e42590a250d6f0b54ffc8bd74d56d6ed3d5",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/transition-type-when-mixed.md",
+          "sha256": "bea7d5ff4c123c720d81e699336167f70ab3e344507fbf3720f57c34b09b93fe",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/transition-unmount-hook-timing.md",
+          "sha256": "2fdaf4ce508332f9a95e90bd2e709595111bc2b9a6e030700a7461821506daaa",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/ts-defineprops-boolean-default-false.md",
+          "sha256": "0154e3b2c39c7eb5870f4ea98d6c12e4890eb6907661c33b79be281ad9845266",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/ts-defineprops-imported-types-limitations.md",
+          "sha256": "cb8542e248f87ccec71dd364f4370911a7e6db192e37349337be175c205d4994",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/ts-event-handler-explicit-typing.md",
+          "sha256": "6748abec2efe99d7c137ab092ba748b6924288c6c2600464697ae0406fba3869",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/ts-reactive-no-generic-argument.md",
+          "sha256": "5cf136dddd50019346e50766ab3e2a88085cdedd9433caf520602b6a9236fbc4",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/ts-shallowref-for-dynamic-components.md",
+          "sha256": "24b347bdc72b4681a50fd729c3fb4869e3bbaa2f846f2b7bd42c63b53f71772a",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/ts-template-ref-null-handling.md",
+          "sha256": "884f8f5d77cc63d274db5df669f98aaad98f54c6cdaa24c560a937d13ec42ef3",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/ts-template-type-casting.md",
+          "sha256": "7837dbad160de8f96a038a450956ccf9b8cf072c27e57790bed60199e25a267f",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/ts-withdefaults-mutable-factory-function.md",
+          "sha256": "7b1b6843b56abcb4569c6103b330efb76cdf0787e4d6c28e84146d3587826970",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/undeclared-emits-double-firing.md",
+          "sha256": "72435cf81d800dfe6937bce49d5a12b387aff1e05a82be3479cd169c8208bddd",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/use-template-ref-vue35.md",
+          "sha256": "51ab6e4fab932cb0c2666f73e55bb04e2c5c64d6b1a84b861ff1559e72977bc3",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/v-else-must-follow-v-if.md",
+          "sha256": "9dc62a6ce390fe1c10f1bac6be05643dfad8240ca810ec668354a6fdd4a0f6b4",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/v-for-component-props.md",
+          "sha256": "941e4091add376c48ae6a088bd09c165e1fe097dd9b5aa89a550a9156716de02",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/v-for-computed-reverse-sort.md",
+          "sha256": "5e9f08e64e503163321ba95ca3654d21fadbe50562f294c0116693d17ad182b6",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/v-for-key-attribute.md",
+          "sha256": "39dfa93bdc995eb8fb7377e9fafab18581e894fd9b37f0e1c9ae47f04438fc05",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/v-for-range-starts-at-one.md",
+          "sha256": "7e6f272c094e4102b229ae02ee70cd9867f435b9140448a374a119465cb3cbbd",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/v-if-null-check-order.md",
+          "sha256": "2922e07c6580341f92fe693a532cab687dbedd0cef64de1c6767ece1af5ec227",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/v-model-ignores-html-attributes.md",
+          "sha256": "6965fafaacbc7243661ee5ae8be662147a61c591c0e7497ca65fb4216b81ef4f",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/v-model-ime-composition.md",
+          "sha256": "97cd9eaf598fbbf401b91d6b9999b026e0250dfd32de6f72cdf5b408e207ef9d",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/v-model-number-modifier-behavior.md",
+          "sha256": "80a88891116515f97fe24f5c75e986d239d0119ed8bddab6d119e5f41860e6a1",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/v-show-template-limitation.md",
+          "sha256": "fedbe3dc15a8e5e12deb171e63b0e8dbd58227d3ff648b6e0a355bd8fd3f5e3b",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/watch-async-cleanup.md",
+          "sha256": "81991bb3e4fa4e44f17d5db5abe50c480af990d623b71070886798e7bc41c999",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/watch-async-creation-memory-leak.md",
+          "sha256": "4e9f0cc37df946c6491a7dbcf3fe80e7fa8d70a5a58b27dfea3127a47710555d",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/watch-deep-same-object-reference.md",
+          "sha256": "62fdf0564dba3793de4e35349e17cd91486cc6b7d5c688caf38a935325f04adc",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/watch-flush-timing.md",
+          "sha256": "6a7663365d7c20bd476e991721e340835b08598d64b1a9b1acdfd78e40c5f6a6",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/watch-reactive-property-getter.md",
+          "sha256": "da6098a4fae1fc58fd8e27c32f62fbb3e684e00fdebcd9bbad808d18cbda73d4",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/watcheffect-async-dependency-tracking.md",
+          "sha256": "a4756c98bd6f54b414f079304561bf3c4c8cd7f59000c40fa01b3919cf3bb082",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-debug-guides/reference/watcheffect-flush-post-for-refs.md",
+          "sha256": "12613421a7e8f32de5844de83eeb3bbdf3e75144add86356ad9cc166348e4ec3",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-router-best-practices/SKILL.md",
+          "sha256": "33889faf631e80bf112a096dfe3e76029447f05f99d6d5c0aea2daddff186d7c",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-router-best-practices/reference/router-beforeenter-no-param-trigger.md",
+          "sha256": "8cf2bd4e3f40cf24b14962ea0b33b31d736d56db891aafdd721e4ca68d82c6ad",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-router-best-practices/reference/router-beforerouteenter-no-this.md",
+          "sha256": "c525231bb699cacb2764e804312df2c601ba9f23d7b81936bbaf418b015d1ced",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-router-best-practices/reference/router-guard-async-await-pattern.md",
+          "sha256": "97521c582a7495e5540c93975737562c41d0eb3aa99c2fb3a6acaa2411ecd69e",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-router-best-practices/reference/router-navigation-guard-infinite-loop.md",
+          "sha256": "38749bac69bc717cb99539f61fa4994c9294acbb795b5b93c80e1775b0c5b2cf",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-router-best-practices/reference/router-navigation-guard-next-deprecated.md",
+          "sha256": "81dee3b480c31f72456fc4a81a67a717c1f96b798fcafb938ac18b92bb7bf8c0",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-router-best-practices/reference/router-param-change-no-lifecycle.md",
+          "sha256": "8813b065391b5467e878935d196eb014d5dd27ee599a128b5194a0dc0da1b557",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-router-best-practices/reference/router-simple-routing-cleanup.md",
+          "sha256": "3ff3b3d102f0312fe53da77d3c54c0a1e938e511ec2588bcc53bc02f35b99374",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-router-best-practices/reference/router-use-vue-router-for-production.md",
+          "sha256": "4212de1b50d1f53d5f831ca6945d53994e8e2cfbfb11b0a0c232bc53c032c8a1",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-testing-best-practices/SKILL.md",
+          "sha256": "376fd21d6adfd37f7d102fa17ca099abddef16943389f37588405b013cef23b8",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-testing-best-practices/reference/async-component-testing.md",
+          "sha256": "75b1c7b3949a5f0211824c525fd7b3f8a6b2cdd4933592ada65f37ecaa4146d3",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-testing-best-practices/reference/teleport-testing-complexity.md",
+          "sha256": "5a42ce8eb5497b5165b09cd758b647ddf4bb537be9cf808a84bee7ae8c3aca39",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-testing-best-practices/reference/testing-async-await-flushpromises.md",
+          "sha256": "2dd5099b32cf2626d19aab2ef4b365cc26102cfb5a0aedc5667efc06d2070cab",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-testing-best-practices/reference/testing-browser-vs-node-runners.md",
+          "sha256": "ffc13da105aadfca0bded6d955f79f9c02c5548ee699f274ff5976cb7484ac98",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-testing-best-practices/reference/testing-component-blackbox-approach.md",
+          "sha256": "16ac94d67addf1cb60177a81a5c5c01318daa310216261ffb2d60b396112f86d",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-testing-best-practices/reference/testing-composables-helper-wrapper.md",
+          "sha256": "57af3ae779cf0770ed53034575d783463d2b9e790c29fbc9bb80f166be3255bd",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-testing-best-practices/reference/testing-e2e-playwright-recommended.md",
+          "sha256": "d415a403c6851cb57666b9143cb3acec6eba53af269cf765918c108dd0c96355",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-testing-best-practices/reference/testing-no-snapshot-only.md",
+          "sha256": "d541b490b8c9c0f822a2ca0d8184d7325b07918e76124d717fb480bc7a488995",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-testing-best-practices/reference/testing-pinia-store-setup.md",
+          "sha256": "005a375c587bd33d1eb3a1b7fe1c89e42daf4c115014e49cf327ab5af5d0ed4e",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-testing-best-practices/reference/testing-suspense-async-components.md",
+          "sha256": "12307929380fcf0e8bcbd6be23a6bc1710904c9462cec945f80ce4b5aa0b7f12",
+          "mode": 420
+        },
+        {
+          "path": "skills/vue-testing-best-practices/reference/testing-vitest-recommended-for-vue.md",
+          "sha256": "acfa0b3986e092f43d4cd8090864860cff07ffa3aaa62a10c5a622770ccaeb6b",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/vue"
+    },
+    {
+      "id": "web-guidelines",
+      "repository": "https://github.com/vercel-labs/web-interface-guidelines",
+      "revision": "e3d624baaf29dc1fc645aff3e38f03e564d2d6b1",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original upstream skill directories and supporting files. Invoke selected specialists within the single L11 workflow; do not activate source bootstrap routers or global hooks.",
+      "dependencies": [],
+      "skills": [],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "6cd1609c9c12233507cdd2ce0d32e9a721e3c27494951be06b90090deeeb7af2",
+          "mode": 420
+        },
+        {
+          "path": "README.md",
+          "sha256": "4c46fee0b386f20e50d5e04fba2a9c5311133f430ade26309c8a2594c144cd3b",
+          "mode": 420
+        },
+        {
+          "path": "command.md",
+          "sha256": "5a775e6411f790f518dbc9c1fa7c50a89e6873502d9a3530a6eb223a590bcfe8",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/web-guidelines"
+    },
+    {
+      "id": "xylex",
+      "repository": "https://github.com/xylex-group/skills",
+      "revision": "53c3a7758bd1e0e5bf6564c77fe3f7d075c91846",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-12",
+      "dependencies": [],
+      "caveat": "Ten complete original XYLEX skill directories, including local references, Python helpers, CSS tokens and the MIT license. Only explicitly selected architecture, code-audit and web UI-polish entrypoints are mapped. No XYLEX root router, hooks, Grok workflows or duplicate TDD/Rust skills are installed. Resolve helpers relative to the original skill directory and run them against the intended project. Python helpers require Python 3; website token extraction requires the separate extract-design-system CLI plus Playwright/Chromium, which these source bundles do not install. Keep existing project design tokens authoritative; invoke the requested specialist without stacking competing motion or review workflows. CSS motion specialists are web-only. The audit helpers also require Git and blast-zone search requires rg. The original blastzone_metrics.py uses POSIX path separators when filtering definitions/test callers: Windows aggregate caller counts can be inaccurate. Verify actual caller files or use a POSIX environment; do not treat those counts as authoritative.",
+      "skills": [
+        {
+          "id": "xylex:codebase-design",
+          "path": "plugins/architecture-plugins/skills/codebase-design/SKILL.md",
+          "sha256": "a8d50abac5a4018f60e1d911d4b6f4e36454ca14d6c390c0695a578c7de65dad",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "xylex:domain-modeling",
+          "path": "plugins/architecture-plugins/skills/domain-modeling/SKILL.md",
+          "sha256": "152e2c97239affb12a60c5f4a7e74ab546a49ae169688c81f4e2ccc42dafa579",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "xylex:audit-duplicate-dead-code",
+          "path": "plugins/audit-code-quality/skills/audit-duplicate-dead-code/SKILL.md",
+          "sha256": "2b4884dc594e1f3047ce4abbe2cc58d36e5386f37cabdc3acd5706d2b8577868",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "xylex:duplicate-blastzone-audit",
+          "path": "plugins/audit-code-quality/skills/duplicate-blastzone-audit/SKILL.md",
+          "sha256": "6c7e76a6ee654f4b229c10b04658322490035541834fc517a82ba89a35e4d90f",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "xylex:reduce-contract-drift",
+          "path": "plugins/audit-code-quality/skills/reduce-contract-drift/SKILL.md",
+          "sha256": "ea1d79e3eddfa4889751e153f7cd7e2b849b0c889852a426ad5a111f77af7c08",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "xylex:document-code-contracts",
+          "path": "plugins/engineering/skills/document-code-contracts/SKILL.md",
+          "sha256": "f91fe1bcdd5f790a7fe6ab03574123f13d4c45c632344b13a27ecc9bad620b88",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "xylex:polish-ui-components",
+          "path": "plugins/ui-plugins/skills/polish-ui-components/SKILL.md",
+          "sha256": "65b074c08bb6effe695d3291adeb59b494553b6a6f39c52fd5e23b45815a5070",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "xylex:transitions-dev",
+          "path": "plugins/ui-plugins/skills/transitions-dev/SKILL.md",
+          "sha256": "11f9ab398bf7ad2a506d991c4a7ba696755704f15741b419f583d1e94d8c9775",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "xylex:transitions-polish",
+          "path": "plugins/ui-plugins/skills/transitions-polish/SKILL.md",
+          "sha256": "365a5bf179c8f53ccd8233d807f5a65a3c4311c90ff645305b7d5f983bb2e33e",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "xylex:extract-design-system",
+          "path": "plugins/ui-plugins/skills/extract-design-system/SKILL.md",
+          "sha256": "e1a08d959b6f6d8d6012bc1dd6b12493dc83f615e32e70117d2fdda33b053c65",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "e5936b877eccc4dd0feaddfb35bcff1bea7647521e4b522121e0c85a573c7148",
+          "mode": 420
+        },
+        {
+          "path": "plugins/architecture-plugins/skills/codebase-design/DEEPENING.md",
+          "sha256": "125e6b77413ad2bc7cf7a772bc74336d580a50f9e797db2178ed133d62333d06",
+          "mode": 420
+        },
+        {
+          "path": "plugins/architecture-plugins/skills/codebase-design/DESIGN-IT-TWICE.md",
+          "sha256": "21c3264953bd30ee87b181a3ccaf0e70649f461e5ffd7dc654acee4ba1788b31",
+          "mode": 420
+        },
+        {
+          "path": "plugins/architecture-plugins/skills/codebase-design/SKILL.md",
+          "sha256": "a8d50abac5a4018f60e1d911d4b6f4e36454ca14d6c390c0695a578c7de65dad",
+          "mode": 420
+        },
+        {
+          "path": "plugins/architecture-plugins/skills/codebase-design/agents/openai.yaml",
+          "sha256": "edebc9e4fcfe102114012575eaa9600b9b5fd08c311664f389c36e7bc717740f",
+          "mode": 420
+        },
+        {
+          "path": "plugins/architecture-plugins/skills/domain-modeling/ADR-FORMAT.md",
+          "sha256": "f1f36cd3f8d3b6474ddd5855da4e233bfc4ae1a1c5024909ccf11871819a41b2",
+          "mode": 420
+        },
+        {
+          "path": "plugins/architecture-plugins/skills/domain-modeling/CONTEXT-FORMAT.md",
+          "sha256": "b8cc318f2a4285b530e908b6bc43901c3c5cd11100362636bbc4216639bef597",
+          "mode": 420
+        },
+        {
+          "path": "plugins/architecture-plugins/skills/domain-modeling/SKILL.md",
+          "sha256": "152e2c97239affb12a60c5f4a7e74ab546a49ae169688c81f4e2ccc42dafa579",
+          "mode": 420
+        },
+        {
+          "path": "plugins/architecture-plugins/skills/domain-modeling/agents/openai.yaml",
+          "sha256": "f6bf2aa996c6e6f53fdd0708e18a0d16a56aed8322cca59fedbe3c0d2c75f06b",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/audit-duplicate-dead-code/SKILL.md",
+          "sha256": "2b4884dc594e1f3047ce4abbe2cc58d36e5386f37cabdc3acd5706d2b8577868",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/audit-duplicate-dead-code/references/cluster-manifest.example.json",
+          "sha256": "777709aafe1bc2e57f2bae94348164f256b13e1b8625ca933db48ff6cb477ef1",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/audit-duplicate-dead-code/references/ranking-rubric.md",
+          "sha256": "d3531c1a9db2c2ebe62ee260fd5e02d4d63018b8b2bb26d585c1de54fcd72049",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/audit-duplicate-dead-code/references/report-template.md",
+          "sha256": "7b99105d406f5004f4b3388d6ff91717ae908216b4c84ef39e8ab4f4578c4d63",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/audit-duplicate-dead-code/scripts/cluster_metrics.py",
+          "sha256": "2608d86eee5afbd29e36eea694307036bf818a31d4792a006493bb2f36842e54",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/duplicate-blastzone-audit/SKILL.md",
+          "sha256": "6c7e76a6ee654f4b229c10b04658322490035541834fc517a82ba89a35e4d90f",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/duplicate-blastzone-audit/references/blastzone-matrix.md",
+          "sha256": "daf995740bf8a10959dda8113d921ef6d01eb00ea71c54f50ba84216be0469b1",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/duplicate-blastzone-audit/references/function-cluster-manifest.example.json",
+          "sha256": "d13cbbd53cf02f2df9b7f82b824d9489951d44436d494acf6a94e833a75a6000",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/duplicate-blastzone-audit/references/report-template.md",
+          "sha256": "bf634fcd0495fc2c8c581773c8305f2f8f7a9baa96fe6e2c34f86f74a9a398fd",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/duplicate-blastzone-audit/references/yield-risk-rubric.md",
+          "sha256": "db4f3e244d8a4bec9fe44a76fe58f09b0e74e1003c7ddc6032d2025b0c7cf286",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/duplicate-blastzone-audit/scripts/blastzone_metrics.py",
+          "sha256": "3438b0e83ca63f6d99ca5c945cc7eebbd7a37adab013c18c7a270f51be265db5",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/reduce-contract-drift/SKILL.md",
+          "sha256": "ea1d79e3eddfa4889751e153f7cd7e2b849b0c889852a426ad5a111f77af7c08",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/reduce-contract-drift/references/api-framework-patterns.md",
+          "sha256": "1fa14a6cd9fbebaa7be5e73bd3c7992868b0c3b649ae68806d4a9f2dd6c38766",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/reduce-contract-drift/references/ci-guardrails.md",
+          "sha256": "3ae77f8e669649011d1fa48693bd51c37ccfe4a2b6f5301156cb3bb5b42545be",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/reduce-contract-drift/references/contract-drift-playbook.md",
+          "sha256": "47c58b8f0aaa64e57dd5f735cd2259a4e7fa70dbc16bcb7e597bb026df821542",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/reduce-contract-drift/references/rust-crate-patterns.md",
+          "sha256": "6aff909ddf7538627a4320f2696349ba283289d6c76958a69db1f5f68cfc04a6",
+          "mode": 420
+        },
+        {
+          "path": "plugins/audit-code-quality/skills/reduce-contract-drift/references/surface-checklists.md",
+          "sha256": "2e23091ba73a4e6ad43a41283df2c34eb31408758827df8ba4590b2642d281fd",
+          "mode": 420
+        },
+        {
+          "path": "plugins/engineering/skills/document-code-contracts/SKILL.md",
+          "sha256": "f91fe1bcdd5f790a7fe6ab03574123f13d4c45c632344b13a27ecc9bad620b88",
+          "mode": 420
+        },
+        {
+          "path": "plugins/engineering/skills/document-code-contracts/references/contract-template.md",
+          "sha256": "73504521c39547786296b71805dbd7a7f618be7acef11693c7b417edb8685577",
+          "mode": 420
+        },
+        {
+          "path": "plugins/engineering/skills/document-code-contracts/scripts/init_contract_doc.py",
+          "sha256": "b0ac3a1a036330aaa4c38cb65eee1921bbefe8c1cca4256350eb5d2ae07c0285",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/extract-design-system/SKILL.md",
+          "sha256": "e1a08d959b6f6d8d6012bc1dd6b12493dc83f615e32e70117d2fdda33b053c65",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/extract-design-system/references/outputs.md",
+          "sha256": "5fad6484561857beb32e8fd42d90fa7ed3ad5918174ccee3c7caceac97e5a3f6",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/extract-design-system/references/workflow.md",
+          "sha256": "2361195ede7301b1e65c14e3ec133021798ebf6d6e570e731097f20ebcf62950",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/polish-ui-components/SKILL.md",
+          "sha256": "65b074c08bb6effe695d3291adeb59b494553b6a6f39c52fd5e23b45815a5070",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/polish-ui-components/references/rules.md",
+          "sha256": "2d33df163366594c7ea073cfdf24491485e8c7defa75972eb185e7d435914a71",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/01-card-resize.md",
+          "sha256": "e464e54fd9bc855c96d1dc3a570227fbe9e97857626fd9ba85035d927a918157",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/02-number-pop-in.md",
+          "sha256": "723c6318d4c785febeb998326651cbbd04294d7712f8d32dfac85fef9e8bf5d1",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/03-notification-badge.md",
+          "sha256": "f8f58844de1acf988f9437e4e1957478c48c6392939ac161ae3b9f6b55ea02f9",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/04-text-states-swap.md",
+          "sha256": "d6e2ba7a8c591c4e436303694b981d38bed78dc0c8583173dbdccb192eb390c0",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/05-menu-dropdown.md",
+          "sha256": "70048541fd6389cfee736bf15a2bb21b062bc59c022562dc8d19773499630243",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/06-modal.md",
+          "sha256": "55638bf7e92d54d54cd09ad360442d7433e5b7a4b34bea24138643c76c03339a",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/07-panel-reveal.md",
+          "sha256": "1e6e726ccbbf44a5122200096f9bae7f1484be55fd17c102bfee870fd1a7418f",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/08-page-side-by-side.md",
+          "sha256": "535c056bc2029ccf73ba63cfe839a9078c7967b374d2f021dbaa30ef411324f7",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/09-icon-swap.md",
+          "sha256": "46cb518c5ba9d5425fd6a854e337ce2242a82a8d215c00153c6330f239cb610d",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/10-success-check.md",
+          "sha256": "bd588b8f6039e63184b4161f6ae086f2333ed8a155229da702d7563fee41e610",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/11-avatar-group-hover.md",
+          "sha256": "4f440f0f6e3e2c99631d6cd168e326ea7c41052bedea71331b0db1fc67e82a84",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/12-error-state-shake.md",
+          "sha256": "f8c14b853e7d1ab1b1d7272d0d9e704e2877df837a44ee7fa58ab7e990a3e102",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/13-input-clear-dissolve.md",
+          "sha256": "f9795657d72947ea65bb611c0abedf44507b0a4a9866004ca1c228b1e41c2d15",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/14-skeleton-reveal.md",
+          "sha256": "ffa8d66692cb863a05799abab90cdd4f1ad43189833202428ada7385bffcd88f",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/15-shimmer-text.md",
+          "sha256": "c62243675c39f14f637bde54a4fbd57ba6c799b381cb38f60432dc816d0a33c9",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/16-tabs-sliding.md",
+          "sha256": "5d5476da745b58652daba496b309d5293be6f61297968e946c019dc8842f4d17",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/17-tooltip.md",
+          "sha256": "eedc3c03c78ed66e8eef2d9bd031d27096d8d612f4444c5cc84f74aa39e94275",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/18-texts-reveal.md",
+          "sha256": "532a7fc12d94008d38d73e10d384ff8493ac8497505dad32d560f9842185fda7",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/19-card-tilt.md",
+          "sha256": "d64a509bdfbc478647bae4654543babd208e26743839f9ea17a0605951de920f",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/20-plus-menu-morph.md",
+          "sha256": "3dc1ff9409bc70312cb74beca8e93c6255c246510c4fdee3a01ccd4eb59b4bce",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/21-accordion.md",
+          "sha256": "5b01c4b3db1773e3408bcc8a0b00b86c3dd7c7ed94b08f0cb250bf823969c641",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/22-toast.md",
+          "sha256": "a383f33a69db0fa325bdf3ac51ef2221bd784a6021cabc04c98725b070704343",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/23-like-button.md",
+          "sha256": "116a03e19fc036036b0bb2d42837f0a8b67b898c1974f5375b3d87f1076e051e",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/24-learn-more-hover.md",
+          "sha256": "94f5162e497a9399bca8b57d5b64d03e8545233b8e27b953d8e35108fc33482c",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/25-checkbox-check.md",
+          "sha256": "a8d879e720691dc70d2396f3819f77be2c384da443dba667eb95a103e6234c4e",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/26-spinning-counter.md",
+          "sha256": "e34bc3f7bcea2279216acf577f3279df89fb81861879834446482e3412833b49",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/27-toggle.md",
+          "sha256": "9e4c405e573e1cf3286cc2eadf94c4dea7fa1139a843298db3dfd94fc47d1684",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/SKILL.md",
+          "sha256": "11f9ab398bf7ad2a506d991c4a7ba696755704f15741b419f583d1e94d8c9775",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-dev/_root.css",
+          "sha256": "e74d5b31896e0f839df153e68b737e742b4d38a61ef928be99aee2a14623cf19",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-polish/SKILL.md",
+          "sha256": "365a5bf179c8f53ccd8233d807f5a65a3c4311c90ff645305b7d5f983bb2e33e",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-polish/_refine-rules.md",
+          "sha256": "9e6b05051ecfbae1c2eacae210b09fd5795557e8f7d1759acfcc106bc88e92c3",
+          "mode": 420
+        },
+        {
+          "path": "plugins/ui-plugins/skills/transitions-polish/_root.css",
+          "sha256": "02e4335077af1433e9722ddc1a2474d83392cc3a81df4b4e69821a094872efaa",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/xylex"
+    }
+  ]
 }

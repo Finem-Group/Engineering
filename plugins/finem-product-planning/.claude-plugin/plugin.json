@@ -1,6 +1,6 @@
 {
   "name": "finem-product-planning",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Turn a product problem into a feasible, prioritized plan and measure whether the outcome creates value.",
   "author": {
     "name": "Finem Group",
@@ -18,8 +18,5 @@
     "planning-task-decomposition",
     "product-analytics-feedback"
   ],
-  "skills": "./skills",
-  "dependencies": [
-    "finem-core"
-  ]
+  "skills": "./skills"
 }

@@ -1,0 +1,1378 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-backend-data",
+  "capabilities": [
+    {
+      "id": "backend",
+      "title": "Backend",
+      "phase": "build",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "context7"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:architecture-patterns",
+          "source": "wshobson",
+          "plugin": "finem-backend-data",
+          "path": "upstream/wshobson/plugins/backend-development/skills/architecture-patterns/SKILL.md"
+        },
+        {
+          "skill": "addy:incremental-implementation",
+          "source": "addy",
+          "plugin": "finem-backend-data",
+          "path": "upstream/addy/skills/incremental-implementation/SKILL.md"
+        },
+        {
+          "skill": "addy:api-and-interface-design",
+          "source": "addy",
+          "plugin": "finem-backend-data",
+          "path": "upstream/addy/skills/api-and-interface-design/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "database",
+      "title": "Database",
+      "phase": "build",
+      "requires": [
+        "domain-modeling"
+      ],
+      "connectors": [
+        "db-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "supabase:supabase-postgres-best-practices",
+          "source": "supabase",
+          "plugin": "finem-backend-data",
+          "path": "upstream/supabase/skills/supabase-postgres-best-practices/SKILL.md"
+        },
+        {
+          "skill": "wshobson:postgresql-table-design",
+          "source": "wshobson",
+          "plugin": "finem-backend-data",
+          "path": "upstream/wshobson/plugins/database-design/skills/postgresql-table-design/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "migrations",
+      "title": "Migrations",
+      "phase": "build",
+      "requires": [
+        "database"
+      ],
+      "connectors": [
+        "db-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:database-migration",
+          "source": "wshobson",
+          "plugin": "finem-backend-data",
+          "path": "upstream/wshobson/plugins/framework-migration/skills/database-migration/SKILL.md"
+        },
+        {
+          "skill": "addy:deprecation-and-migration",
+          "source": "addy",
+          "plugin": "finem-backend-data",
+          "path": "upstream/addy/skills/deprecation-and-migration/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "async-jobs-events",
+      "title": "Async/jobs/events",
+      "phase": "build",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "cloud-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:workflow-orchestration-patterns",
+          "source": "wshobson",
+          "plugin": "finem-backend-data",
+          "path": "upstream/wshobson/plugins/backend-development/skills/workflow-orchestration-patterns/SKILL.md"
+        },
+        {
+          "skill": "wshobson:microservices-patterns",
+          "source": "wshobson",
+          "plugin": "finem-backend-data",
+          "path": "upstream/wshobson/plugins/backend-development/skills/microservices-patterns/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "options": [
+    {
+      "plugin": "finem-cloudflare",
+      "kind": "pack",
+      "extension": "cloudflare",
+      "description": "Cloudflare Workers, Wrangler and Durable Objects",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "infrastructure",
+          "title": "Infrastructure",
+          "phase": "build",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "cloudflare:workers-best-practices",
+              "source": "cloudflare",
+              "plugin": "finem-backend-data",
+              "path": "upstream/cloudflare/skills/workers-best-practices/SKILL.md"
+            },
+            {
+              "skill": "cloudflare:wrangler",
+              "source": "cloudflare",
+              "plugin": "finem-backend-data",
+              "path": "upstream/cloudflare/skills/wrangler/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "deployment",
+          "title": "Deployment",
+          "phase": "deliver",
+          "requires": [
+            "release"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "github"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "cloudflare:wrangler",
+              "source": "cloudflare",
+              "plugin": "finem-backend-data",
+              "path": "upstream/cloudflare/skills/wrangler/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "async-jobs-events",
+          "title": "Async/jobs/events",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "cloudflare:durable-objects",
+              "source": "cloudflare",
+              "plugin": "finem-backend-data",
+              "path": "upstream/cloudflare/skills/durable-objects/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-backend-hono",
+      "kind": "pack",
+      "extension": "backend-hono",
+      "description": "Hono API implementation for a selected project runtime",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "hono:hono",
+              "source": "hono",
+              "plugin": "finem-backend-data",
+              "path": "upstream/hono/skills/hono/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "api-contracts",
+          "title": "API contracts",
+          "phase": "design",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "hono:hono",
+              "source": "hono",
+              "plugin": "finem-backend-data",
+              "path": "upstream/hono/skills/hono/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-backend-fastify",
+      "kind": "pack",
+      "extension": "backend-fastify",
+      "description": "Fastify request lifecycle, schema and plugin isolation",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "fastify:fastify-best-practices",
+              "source": "fastify",
+              "plugin": "finem-backend-data",
+              "path": "upstream/fastify/skills/fastify/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "api-contracts",
+          "title": "API contracts",
+          "phase": "design",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "fastify:fastify-best-practices",
+              "source": "fastify",
+              "plugin": "finem-backend-data",
+              "path": "upstream/fastify/skills/fastify/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "fastify:fastify-best-practices",
+              "source": "fastify",
+              "plugin": "finem-backend-data",
+              "path": "upstream/fastify/skills/fastify/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-backend-fastapi",
+      "kind": "pack",
+      "extension": "backend-fastapi",
+      "description": "FastAPI routing, validation, dependency cleanup and tests",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "fastapi:fastapi",
+              "source": "fastapi",
+              "plugin": "finem-backend-data",
+              "path": "upstream/fastapi/fastapi/.agents/skills/fastapi/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "api-contracts",
+          "title": "API contracts",
+          "phase": "design",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "fastapi:fastapi",
+              "source": "fastapi",
+              "plugin": "finem-backend-data",
+              "path": "upstream/fastapi/fastapi/.agents/skills/fastapi/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "fastapi:fastapi",
+              "source": "fastapi",
+              "plugin": "finem-backend-data",
+              "path": "upstream/fastapi/fastapi/.agents/skills/fastapi/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-backend-django",
+      "kind": "pack",
+      "extension": "backend-django",
+      "description": "Django application conventions compatible with the installed version",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "django:django",
+              "source": "django",
+              "plugin": "finem-backend-data",
+              "path": "upstream/django/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "auth",
+          "title": "Auth",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "django:django",
+              "source": "django",
+              "plugin": "finem-backend-data",
+              "path": "upstream/django/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "database",
+          "title": "Database",
+          "phase": "build",
+          "requires": [
+            "domain-modeling"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "django:django",
+              "source": "django",
+              "plugin": "finem-backend-data",
+              "path": "upstream/django/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "migrations",
+          "title": "Migrations",
+          "phase": "build",
+          "requires": [
+            "database"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "django:django",
+              "source": "django",
+              "plugin": "finem-backend-data",
+              "path": "upstream/django/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "django:django",
+              "source": "django",
+              "plugin": "finem-backend-data",
+              "path": "upstream/django/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-backend-apollo",
+      "kind": "pack",
+      "extension": "backend-apollo",
+      "description": "Apollo Server context, resolvers, authorization and operations",
+      "dependencies": [
+        "finem-api-graphql"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "apollo:apollo-server",
+              "source": "apollo",
+              "plugin": "finem-backend-data",
+              "path": "upstream/apollo/skills/apollo-server/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "apollo:apollo-server",
+              "source": "apollo",
+              "plugin": "finem-backend-data",
+              "path": "upstream/apollo/skills/apollo-server/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-api-graphql",
+      "kind": "pack",
+      "extension": "api-graphql",
+      "description": "GraphQL schema and operation contracts independent of server provider",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "api-contracts",
+          "title": "API contracts",
+          "phase": "design",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "apollo:graphql-schema",
+              "source": "apollo",
+              "plugin": "finem-backend-data",
+              "path": "upstream/apollo/skills/graphql-schema/SKILL.md"
+            },
+            {
+              "skill": "apollo:graphql-operations",
+              "source": "apollo",
+              "plugin": "finem-backend-data",
+              "path": "upstream/apollo/skills/graphql-operations/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-backend-rust",
+      "kind": "pack",
+      "extension": "backend-rust",
+      "description": "Rust ownership, errors, testing and performance conventions",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "apollo:rust-best-practices",
+              "source": "apollo",
+              "plugin": "finem-backend-data",
+              "path": "upstream/apollo/skills/rust-best-practices/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "reliability-resilience",
+          "title": "Reliability/resilience",
+          "phase": "design",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "apollo:rust-best-practices",
+              "source": "apollo",
+              "plugin": "finem-backend-data",
+              "path": "upstream/apollo/skills/rust-best-practices/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "apollo:rust-best-practices",
+              "source": "apollo",
+              "plugin": "finem-backend-data",
+              "path": "upstream/apollo/skills/rust-best-practices/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-data-prisma",
+      "kind": "pack",
+      "extension": "data-prisma",
+      "description": "Prisma database setup, client API and migration commands",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "database",
+          "title": "Database",
+          "phase": "build",
+          "requires": [
+            "domain-modeling"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "prisma:prisma-database-setup",
+              "source": "prisma",
+              "plugin": "finem-backend-data",
+              "path": "upstream/prisma/prisma-database-setup/SKILL.md"
+            },
+            {
+              "skill": "prisma:prisma-client-api",
+              "source": "prisma",
+              "plugin": "finem-backend-data",
+              "path": "upstream/prisma/prisma-client-api/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "migrations",
+          "title": "Migrations",
+          "phase": "build",
+          "requires": [
+            "database"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "prisma:prisma-cli",
+              "source": "prisma",
+              "plugin": "finem-backend-data",
+              "path": "upstream/prisma/prisma-cli/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-migration-prisma-v7",
+      "kind": "pack",
+      "extension": "migration-prisma-v7",
+      "description": "Explicit Prisma v7 upgrade work with project version checks",
+      "dependencies": [
+        "finem-data-prisma"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "migrations",
+          "title": "Migrations",
+          "phase": "build",
+          "requires": [
+            "database"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "prisma:prisma-upgrade-v7",
+              "source": "prisma",
+              "plugin": "finem-backend-data",
+              "path": "upstream/prisma/prisma-upgrade-v7/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "migration-deprecation",
+          "title": "Migration/deprecation",
+          "phase": "evolve",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "github"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "prisma:prisma-upgrade-v7",
+              "source": "prisma",
+              "plugin": "finem-backend-data",
+              "path": "upstream/prisma/prisma-upgrade-v7/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-migration-prisma-mongodb",
+      "kind": "pack",
+      "extension": "migration-prisma-mongodb",
+      "description": "Explicit MongoDB assessment: stay on Prisma 6 or evaluate Prisma Next; scoped separately from SQL projects",
+      "dependencies": [],
+      "conflicts": [
+        "finem-data-prisma",
+        "finem-data-neon",
+        "finem-migration-prisma-v7"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "migrations",
+          "title": "Migrations",
+          "phase": "build",
+          "requires": [
+            "database"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "prisma:prisma-mongodb-upgrade",
+              "source": "prisma",
+              "plugin": "finem-backend-data",
+              "path": "upstream/prisma/prisma-mongodb-upgrade/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "migration-deprecation",
+          "title": "Migration/deprecation",
+          "phase": "evolve",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "github"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "prisma:prisma-mongodb-upgrade",
+              "source": "prisma",
+              "plugin": "finem-backend-data",
+              "path": "upstream/prisma/prisma-mongodb-upgrade/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "database",
+          "title": "Database",
+          "phase": "build",
+          "requires": [
+            "domain-modeling"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "prisma:prisma-mongodb-upgrade",
+              "source": "prisma",
+              "plugin": "finem-backend-data",
+              "path": "upstream/prisma/prisma-mongodb-upgrade/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-data-neon",
+      "kind": "pack",
+      "extension": "data-neon",
+      "description": "Neon Postgres and database branching with the required provider parent",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "database",
+          "title": "Database",
+          "phase": "build",
+          "requires": [
+            "domain-modeling"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "neon:neon",
+              "source": "neon",
+              "plugin": "finem-backend-data",
+              "path": "upstream/neon/plugins/neon-postgres/skills/neon/SKILL.md"
+            },
+            {
+              "skill": "neon:neon-postgres",
+              "source": "neon",
+              "plugin": "finem-backend-data",
+              "path": "upstream/neon/plugins/neon-postgres/skills/neon-postgres/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "migrations",
+          "title": "Migrations",
+          "phase": "build",
+          "requires": [
+            "database"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "neon:neon",
+              "source": "neon",
+              "plugin": "finem-backend-data",
+              "path": "upstream/neon/plugins/neon-postgres/skills/neon/SKILL.md"
+            },
+            {
+              "skill": "neon:neon-postgres-branches",
+              "source": "neon",
+              "plugin": "finem-backend-data",
+              "path": "upstream/neon/plugins/neon-postgres/skills/neon-postgres-branches/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-storage-neon",
+      "kind": "pack",
+      "extension": "storage-neon",
+      "description": "Neon object storage and its provider parent",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "neon:neon",
+              "source": "neon",
+              "plugin": "finem-backend-data",
+              "path": "upstream/neon/plugins/neon-postgres/skills/neon/SKILL.md"
+            },
+            {
+              "skill": "neon:neon-object-storage",
+              "source": "neon",
+              "plugin": "finem-backend-data",
+              "path": "upstream/neon/plugins/neon-postgres/skills/neon-object-storage/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-jobs-inngest",
+      "kind": "pack",
+      "extension": "jobs-inngest",
+      "description": "Inngest durable functions, events, flow control and development tests",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "async-jobs-events",
+          "title": "Async/jobs/events",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "inngest:inngest-setup",
+              "source": "inngest",
+              "plugin": "finem-backend-data",
+              "path": "upstream/inngest/skills/inngest-setup/SKILL.md"
+            },
+            {
+              "skill": "inngest:inngest-durable-functions",
+              "source": "inngest",
+              "plugin": "finem-backend-data",
+              "path": "upstream/inngest/skills/inngest-durable-functions/SKILL.md"
+            },
+            {
+              "skill": "inngest:inngest-events",
+              "source": "inngest",
+              "plugin": "finem-backend-data",
+              "path": "upstream/inngest/skills/inngest-events/SKILL.md"
+            },
+            {
+              "skill": "inngest:inngest-flow-control",
+              "source": "inngest",
+              "plugin": "finem-backend-data",
+              "path": "upstream/inngest/skills/inngest-flow-control/SKILL.md"
+            },
+            {
+              "skill": "inngest:inngest-steps",
+              "source": "inngest",
+              "plugin": "finem-backend-data",
+              "path": "upstream/inngest/skills/inngest-steps/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "reliability-resilience",
+          "title": "Reliability/resilience",
+          "phase": "design",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "inngest:inngest-durable-functions",
+              "source": "inngest",
+              "plugin": "finem-backend-data",
+              "path": "upstream/inngest/skills/inngest-durable-functions/SKILL.md"
+            },
+            {
+              "skill": "inngest:inngest-brownfield-audit",
+              "source": "inngest",
+              "plugin": "finem-backend-data",
+              "path": "upstream/inngest/skills/inngest-brownfield-audit/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "inngest:inngest-cli",
+              "source": "inngest",
+              "plugin": "finem-backend-data",
+              "path": "upstream/inngest/skills/inngest-cli/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-jobs-trigger",
+      "kind": "pack",
+      "extension": "jobs-trigger",
+      "description": "Trigger.dev task authoring and project setup",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "async-jobs-events",
+          "title": "Async/jobs/events",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trigger:trigger-getting-started",
+              "source": "trigger",
+              "plugin": "finem-backend-data",
+              "path": "upstream/trigger/packages/cli-v3/skills/trigger-getting-started/SKILL.md"
+            },
+            {
+              "skill": "trigger:trigger-authoring-tasks",
+              "source": "trigger",
+              "plugin": "finem-backend-data",
+              "path": "upstream/trigger/packages/trigger-sdk/skills/trigger-authoring-tasks/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "reliability-resilience",
+          "title": "Reliability/resilience",
+          "phase": "design",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trigger:trigger-authoring-tasks",
+              "source": "trigger",
+              "plugin": "finem-backend-data",
+              "path": "upstream/trigger/packages/trigger-sdk/skills/trigger-authoring-tasks/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-cache-upstash",
+      "kind": "pack",
+      "extension": "cache-upstash",
+      "description": "Upstash Redis and rate limiting for a selected deployment",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "upstash:upstash-redis-js",
+              "source": "upstash",
+              "plugin": "finem-backend-data",
+              "path": "upstream/upstash/skills/upstash-redis-js/SKILL.md"
+            },
+            {
+              "skill": "upstash:upstash-ratelimit-js",
+              "source": "upstash",
+              "plugin": "finem-backend-data",
+              "path": "upstream/upstash/skills/upstash-ratelimit-js/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-jobs-upstash",
+      "kind": "pack",
+      "extension": "jobs-upstash",
+      "description": "Upstash QStash and durable workflow delivery",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "async-jobs-events",
+          "title": "Async/jobs/events",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "upstash:upstash-qstash-js",
+              "source": "upstash",
+              "plugin": "finem-backend-data",
+              "path": "upstream/upstash/skills/upstash-qstash-js/SKILL.md"
+            },
+            {
+              "skill": "upstash:upstash-workflow-js",
+              "source": "upstash",
+              "plugin": "finem-backend-data",
+              "path": "upstream/upstash/skills/upstash-workflow-js/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "reliability-resilience",
+          "title": "Reliability/resilience",
+          "phase": "design",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "upstash:upstash-workflow-js",
+              "source": "upstash",
+              "plugin": "finem-backend-data",
+              "path": "upstream/upstash/skills/upstash-workflow-js/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-search-upstash",
+      "kind": "pack",
+      "extension": "search-upstash",
+      "description": "Upstash Search indexing and retrieval",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "upstash:upstash-search-js",
+              "source": "upstash",
+              "plugin": "finem-backend-data",
+              "path": "upstream/upstash/skills/upstash-search-js/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-email-resend",
+      "kind": "pack",
+      "extension": "email-resend",
+      "description": "Resend transactional email API and webhook handling",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "resend:resend",
+              "source": "resend",
+              "plugin": "finem-backend-data",
+              "path": "upstream/resend/skills/resend/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "async-jobs-events",
+          "title": "Async/jobs/events",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "resend:resend",
+              "source": "resend",
+              "plugin": "finem-backend-data",
+              "path": "upstream/resend/skills/resend/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-search-algolia",
+      "kind": "pack",
+      "extension": "search-algolia",
+      "description": "Algolia indexing contracts and release quality checks",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "algolia:algolia-data-modeling",
+              "source": "algolia",
+              "plugin": "finem-backend-data",
+              "path": "upstream/algolia/skills/algolia-data-modeling/SKILL.md"
+            },
+            {
+              "skill": "algolia:algolia-index-configuration",
+              "source": "algolia",
+              "plugin": "finem-backend-data",
+              "path": "upstream/algolia/skills/algolia-index-configuration/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "algolia:algolia-release-qa",
+              "source": "algolia",
+              "plugin": "finem-backend-data",
+              "path": "upstream/algolia/skills/algolia-release-qa/SKILL.md"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

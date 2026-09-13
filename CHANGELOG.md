@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.9.0
+
+- Make every engineering area independent, with locally bundled baseline skills, framework option dependencies and supporting source repositories.
+- Add standalone.json to each area and remove mandatory Core install dependencies. Preserve capabilities.json for explicitly requested legacy Core coordination.
+- Instruct area entrypoints to complete work directly and never suggest Core merely because it is absent. UI now also includes its Impeccable, Vercel and WCAG sources locally.
+- Preserve original bytes, pinned licenses and source hashes; intentional per-plugin source duplication trades package size for independent installation.
+
 ## 0.8.0
 
 - Make UI Plugins standalone with nine complete original XYLEX UI skills plus the Finem entrypoint, including ui-design, ui-radar, anti-ui-slop, ui-slop-score and Agentation.

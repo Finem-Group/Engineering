@@ -1,6 +1,6 @@
 {
   "name": "finem-architecture",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Define system boundaries, domain rules and clear interfaces so implementation can evolve without spreading coupling.",
   "author": {
     "name": "Finem Group",
@@ -17,8 +17,5 @@
     "domain-modeling",
     "api-contracts"
   ],
-  "skills": "./skills",
-  "dependencies": [
-    "finem-core"
-  ]
+  "skills": "./skills"
 }

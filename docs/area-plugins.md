@@ -1,4 +1,10 @@
-# Engineering disciplines and direction — Finem 0.7
+# Independent engineering plugins
+
+## Current behavior (0.9.0)
+
+Every area works independently. Each standalone.json points to original sources bundled in that same plugin; framework option dependencies and support-source dependencies are included. Install dependencies are empty. Entry skills must not recommend Core or treat its absence as a limitation. Core remains an optional cross-discipline workflow requested by the user. The source duplication between installable plugins is intentional.
+
+The sections below describe the legacy Core coordination contract, retained for compatibility. Its prerequisite plugin checks do not apply to ordinary standalone tasks.
 
 The native marketplace presents **ten engineering disciplines plus one Core**. Each name describes the work and each plugin declares its purpose, expected deliverables and capability scope. UI/UX, infrastructure and security have dedicated entries. All 43 capabilities, 180 selected original skills, 50 pinned sources and 56 internal technology options remain available.
 

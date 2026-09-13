@@ -54,17 +54,17 @@ class GeneratorTests(unittest.TestCase):
         metadata = json.loads((self.output / 'plugins/finem-core/capabilities.json').read_text())
         self.assertIn('assessment: preserve # hashes and "quotes"', metadata['technologyOptions'][0]['description'])
 
-    def test_transitive_support_sources_ship_once_with_core(self):
+    def test_transitive_support_sources_ship_with_each_independent_plugin(self):
         result = self.generate()
         self.assertEqual(result.returncode, 0, result.stderr)
-        for name in ['finem-core']:
+        for name in ['finem-core', 'finem-frontend-mobile']:
             plugin = self.output / 'plugins' / name
             self.assertEqual((plugin / 'upstream/web-guidelines/command.md').read_bytes(), b'Original offline guidelines.\r\n')
             self.assertEqual((plugin / 'upstream/support/LICENSE').read_bytes(), b'MIT fixture\n')
             sources = json.loads((plugin / 'upstream.lock.json').read_text())['sources']
             self.assertEqual({s['id'] for s in sources}, {'vercel', 'web-guidelines', 'support'})
         phase = self.output / 'plugins/finem-frontend-mobile'
-        self.assertFalse((phase / 'upstream').exists())
+        self.assertTrue((phase / 'upstream').exists())
         metadata = json.loads((phase / 'capabilities.json').read_text())
         self.assertEqual(metadata['capabilities'][0]['entrypoints'][0]['plugin'], 'finem-core')
         self.assertTrue((self.output / 'docs/area-plugins.md').is_file())

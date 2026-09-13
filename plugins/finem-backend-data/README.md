@@ -2,26 +2,12 @@
 
 Build services, persistence and background processing around explicit business rules and data contracts.
 
-**Claude Code**
+Covers: Backend, Database, Migrations, Async/jobs/events.
 
-```bash
-claude plugin install finem-backend-data@finem
-```
+Expected outputs: Service and API implementations; Database schema and queries; Data migrations; Jobs, events and asynchronous processing.
 
-**Codex**
+Original specialists: wshobson:architecture-patterns, addy:incremental-implementation, addy:api-and-interface-design, supabase:supabase-postgres-best-practices, wshobson:postgresql-table-design, wshobson:database-migration, addy:deprecation-and-migration, wshobson:workflow-orchestration-patterns, wshobson:microservices-patterns.
 
-```bash
-codex plugin add finem-core@finem
-codex plugin add finem-backend-data@finem
-```
+Local framework and specialist options: cloudflare, backend-hono, backend-fastify, backend-fastapi, backend-django, backend-apollo, api-graphql, backend-rust, data-prisma, migration-prisma-v7, migration-prisma-mongodb, data-neon, storage-neon, jobs-inngest, jobs-trigger, cache-upstash, jobs-upstash, search-upstash, email-resend, search-algolia. Choose only options relevant to the project.
 
-**Depends on** `finem-core`. Claude Code installs those automatically; Codex does not resolve dependencies, so the Codex commands above install them in order.
-
-| Capability | Role | Originals |
-| --- | --- | --- |
-| Backend | area baseline | 3 |
-| Database | area baseline | 2 |
-| Migrations | area baseline | 2 |
-| Async/jobs/events | area baseline | 2 |
-
-Native area entries: 1. Original bodies live in the shared `finem-core` dependency; this plugin contains no copied originals. Internal options: `cloudflare`, `backend-hono`, `backend-fastify`, `backend-fastapi`, `backend-django`, `backend-apollo`, `backend-rust`, `data-prisma`, `migration-prisma-v7`, `migration-prisma-mongodb`, `data-neon`, `storage-neon`, `jobs-inngest`, `jobs-trigger`, `cache-upstash`, `jobs-upstash`, `search-upstash`, `email-resend`, `search-algolia`.
+Works independently. All mapped original skills, supporting source files, licenses and hashes are bundled locally. Core is not required. The app entry skill loads the relevant originals on demand. External services and runtime dependencies are configured separately.

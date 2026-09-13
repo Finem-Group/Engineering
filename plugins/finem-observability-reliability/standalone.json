@@ -1,0 +1,523 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-observability-reliability",
+  "capabilities": [
+    {
+      "id": "observability",
+      "title": "Observability",
+      "phase": "operate",
+      "requires": [],
+      "connectors": [
+        "sentry"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:observability-and-instrumentation",
+          "source": "addy",
+          "plugin": "finem-observability-reliability",
+          "path": "upstream/addy/skills/observability-and-instrumentation/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "slos",
+      "title": "SLOs",
+      "phase": "operate",
+      "requires": [
+        "observability"
+      ],
+      "connectors": [
+        "sentry"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:slo-implementation",
+          "source": "wshobson",
+          "plugin": "finem-observability-reliability",
+          "path": "upstream/wshobson/plugins/observability-monitoring/skills/slo-implementation/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "incident-response",
+      "title": "Incident response",
+      "phase": "operate",
+      "requires": [
+        "observability"
+      ],
+      "connectors": [
+        "sentry",
+        "cloud-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:incident-runbook-templates",
+          "source": "wshobson",
+          "plugin": "finem-observability-reliability",
+          "path": "upstream/wshobson/plugins/incident-response/skills/incident-runbook-templates/SKILL.md"
+        },
+        {
+          "skill": "superpowers:systematic-debugging",
+          "source": "superpowers",
+          "plugin": "finem-observability-reliability",
+          "path": "upstream/superpowers/skills/systematic-debugging/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "postmortem",
+      "title": "Postmortem",
+      "phase": "operate",
+      "requires": [
+        "incident-response"
+      ],
+      "connectors": [],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:postmortem-writing",
+          "source": "wshobson",
+          "plugin": "finem-observability-reliability",
+          "path": "upstream/wshobson/plugins/incident-response/skills/postmortem-writing/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "reliability-resilience",
+      "title": "Reliability/resilience",
+      "phase": "design",
+      "requires": [
+        "architecture"
+      ],
+      "connectors": [
+        "cloud-provider",
+        "sentry"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:microservices-patterns",
+          "source": "wshobson",
+          "plugin": "finem-observability-reliability",
+          "path": "upstream/wshobson/plugins/backend-development/skills/microservices-patterns/SKILL.md"
+        },
+        {
+          "skill": "wshobson:workflow-orchestration-patterns",
+          "source": "wshobson",
+          "plugin": "finem-observability-reliability",
+          "path": "upstream/wshobson/plugins/backend-development/skills/workflow-orchestration-patterns/SKILL.md"
+        },
+        {
+          "skill": "wshobson:slo-implementation",
+          "source": "wshobson",
+          "plugin": "finem-observability-reliability",
+          "path": "upstream/wshobson/plugins/observability-monitoring/skills/slo-implementation/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "options": [
+    {
+      "plugin": "finem-observability",
+      "kind": "pack",
+      "extension": "observability",
+      "description": "OpenTelemetry and k6",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "observability",
+          "title": "Observability",
+          "phase": "operate",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "grafana:opentelemetry",
+              "source": "grafana",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/grafana/skills/grafana-core/opentelemetry/SKILL.md"
+            },
+            {
+              "skill": "grafana:alerting-irm",
+              "source": "grafana",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/grafana/skills/grafana-core/alerting-irm/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "grafana:k6",
+              "source": "grafana",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/grafana/skills/grafana-k6/k6/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "slos",
+          "title": "SLOs",
+          "phase": "operate",
+          "requires": [
+            "observability"
+          ],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "grafana:alerting-irm",
+              "source": "grafana",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/grafana/skills/grafana-core/alerting-irm/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "incident-response",
+          "title": "Incident response",
+          "phase": "operate",
+          "requires": [
+            "observability"
+          ],
+          "connectors": [
+            "sentry",
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "grafana:alerting-irm",
+              "source": "grafana",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/grafana/skills/grafana-core/alerting-irm/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-backend-rust",
+      "kind": "pack",
+      "extension": "backend-rust",
+      "description": "Rust ownership, errors, testing and performance conventions",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "apollo:rust-best-practices",
+              "source": "apollo",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/apollo/skills/rust-best-practices/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "reliability-resilience",
+          "title": "Reliability/resilience",
+          "phase": "design",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "apollo:rust-best-practices",
+              "source": "apollo",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/apollo/skills/rust-best-practices/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "apollo:rust-best-practices",
+              "source": "apollo",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/apollo/skills/rust-best-practices/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-jobs-inngest",
+      "kind": "pack",
+      "extension": "jobs-inngest",
+      "description": "Inngest durable functions, events, flow control and development tests",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "async-jobs-events",
+          "title": "Async/jobs/events",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "inngest:inngest-setup",
+              "source": "inngest",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/inngest/skills/inngest-setup/SKILL.md"
+            },
+            {
+              "skill": "inngest:inngest-durable-functions",
+              "source": "inngest",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/inngest/skills/inngest-durable-functions/SKILL.md"
+            },
+            {
+              "skill": "inngest:inngest-events",
+              "source": "inngest",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/inngest/skills/inngest-events/SKILL.md"
+            },
+            {
+              "skill": "inngest:inngest-flow-control",
+              "source": "inngest",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/inngest/skills/inngest-flow-control/SKILL.md"
+            },
+            {
+              "skill": "inngest:inngest-steps",
+              "source": "inngest",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/inngest/skills/inngest-steps/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "reliability-resilience",
+          "title": "Reliability/resilience",
+          "phase": "design",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "inngest:inngest-durable-functions",
+              "source": "inngest",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/inngest/skills/inngest-durable-functions/SKILL.md"
+            },
+            {
+              "skill": "inngest:inngest-brownfield-audit",
+              "source": "inngest",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/inngest/skills/inngest-brownfield-audit/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "inngest:inngest-cli",
+              "source": "inngest",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/inngest/skills/inngest-cli/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-jobs-trigger",
+      "kind": "pack",
+      "extension": "jobs-trigger",
+      "description": "Trigger.dev task authoring and project setup",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "async-jobs-events",
+          "title": "Async/jobs/events",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trigger:trigger-getting-started",
+              "source": "trigger",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/trigger/packages/cli-v3/skills/trigger-getting-started/SKILL.md"
+            },
+            {
+              "skill": "trigger:trigger-authoring-tasks",
+              "source": "trigger",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/trigger/packages/trigger-sdk/skills/trigger-authoring-tasks/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "reliability-resilience",
+          "title": "Reliability/resilience",
+          "phase": "design",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trigger:trigger-authoring-tasks",
+              "source": "trigger",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/trigger/packages/trigger-sdk/skills/trigger-authoring-tasks/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-jobs-upstash",
+      "kind": "pack",
+      "extension": "jobs-upstash",
+      "description": "Upstash QStash and durable workflow delivery",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "async-jobs-events",
+          "title": "Async/jobs/events",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "upstash:upstash-qstash-js",
+              "source": "upstash",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/upstash/skills/upstash-qstash-js/SKILL.md"
+            },
+            {
+              "skill": "upstash:upstash-workflow-js",
+              "source": "upstash",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/upstash/skills/upstash-workflow-js/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "reliability-resilience",
+          "title": "Reliability/resilience",
+          "phase": "design",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "upstash:upstash-workflow-js",
+              "source": "upstash",
+              "plugin": "finem-observability-reliability",
+              "path": "upstream/upstash/skills/upstash-workflow-js/SKILL.md"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

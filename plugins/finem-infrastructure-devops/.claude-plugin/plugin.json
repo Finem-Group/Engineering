@@ -1,6 +1,6 @@
 {
   "name": "finem-infrastructure-devops",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Provision reproducible environments and operate the build, release, deployment and rollback path with visible infrastructure costs.",
   "author": {
     "name": "Finem Group",
@@ -21,8 +21,5 @@
     "cost-finops",
     "configuration-environments"
   ],
-  "skills": "./skills",
-  "dependencies": [
-    "finem-core"
-  ]
+  "skills": "./skills"
 }

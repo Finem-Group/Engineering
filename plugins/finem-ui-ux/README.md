@@ -8,6 +8,6 @@ The app exposes these nine specialists plus one Finem entry skill. Every special
 
 Expected outcomes: useful flows, coherent layouts and tokens, responsive components, interaction states, appropriate motion and evidence from rendered checks. Choose the relevant specialist rather than running all workflows for every task.
 
-Optional Engineering Core integration adds the broader requirements and engineering workflow, Impeccable, Vercel web guidelines and WCAG audit patterns. These additional Core-backed skills require compatible Core and prerequisite area plugins; they are not part of the standalone bundle.
+Also includes local Impeccable, Vercel web guidelines, WCAG audit patterns and relevant framework options. The standalone.json map selects these bundled originals without requiring Core or another Finem plugin.
 
 External UI reference research is optional. Website token extraction needs its separate runtime dependencies. Agentation is added to a project only when requested and is kept development-only. Installing this plugin does not connect accounts, install browser runtimes or alter application code.

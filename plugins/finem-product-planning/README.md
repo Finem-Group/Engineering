@@ -2,27 +2,12 @@
 
 Turn a product problem into a feasible, prioritized plan and measure whether the outcome creates value.
 
-**Claude Code**
+Covers: Product discovery, Requirements, Feasibility, Planning/task decomposition, Product analytics/feedback.
 
-```bash
-claude plugin install finem-product-planning@finem
-```
+Expected outputs: Problem statement and target users; Requirements and success measures; Feasibility assessment and implementation plan; Product feedback and experiment findings.
 
-**Codex**
+Original specialists: gstack:office-hours, addy:idea-refine, addy:spec-driven-development, gstack:plan-eng-review, addy:constraint-driven-development, addy:planning-and-task-breakdown, superpowers:writing-plans, posthog:instrument-product-analytics, posthog:querying-posthog-data, posthog:creating-surveys.
 
-```bash
-codex plugin add finem-core@finem
-codex plugin add finem-product-planning@finem
-```
+Local framework and specialist options: discovery, product-validation, product-delivery, product-analytics. Choose only options relevant to the project.
 
-**Depends on** `finem-core`. Claude Code installs those automatically; Codex does not resolve dependencies, so the Codex commands above install them in order.
-
-| Capability | Role | Originals |
-| --- | --- | --- |
-| Product discovery | area baseline | 2 |
-| Requirements | area baseline | 1 |
-| Feasibility | area baseline | 2 |
-| Planning/task decomposition | area baseline | 2 |
-| Product analytics/feedback | area baseline | 3 |
-
-Native area entries: 1. Original bodies live in the shared `finem-core` dependency; this plugin contains no copied originals. Internal options: `discovery`, `product-validation`, `product-delivery`, `product-analytics`.
+Works independently. All mapped original skills, supporting source files, licenses and hashes are bundled locally. Core is not required. The app entry skill loads the relevant originals on demand. External services and runtime dependencies are configured separately.

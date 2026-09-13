@@ -1,6 +1,6 @@
 {
   "name": "finem-observability-reliability",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Make system health measurable, design for failure and support incident diagnosis and recovery.",
   "author": {
     "name": "Finem Group",
@@ -18,8 +18,5 @@
     "postmortem",
     "reliability-resilience"
   ],
-  "skills": "./skills",
-  "dependencies": [
-    "finem-core"
-  ]
+  "skills": "./skills"
 }

@@ -1,0 +1,648 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-infrastructure-devops",
+  "capabilities": [
+    {
+      "id": "infrastructure",
+      "title": "Infrastructure",
+      "phase": "build",
+      "requires": [
+        "architecture"
+      ],
+      "connectors": [
+        "cloud-provider",
+        "context7"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "pulumi:pulumi-best-practices",
+          "source": "pulumi",
+          "plugin": "finem-infrastructure-devops",
+          "path": "upstream/pulumi/pulumi/skills/pulumi-best-practices/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "networking",
+      "title": "Networking",
+      "phase": "build",
+      "requires": [
+        "infrastructure"
+      ],
+      "connectors": [
+        "cloud-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:hybrid-cloud-networking",
+          "source": "wshobson",
+          "plugin": "finem-infrastructure-devops",
+          "path": "upstream/wshobson/plugins/cloud-infrastructure/skills/hybrid-cloud-networking/SKILL.md"
+        },
+        {
+          "skill": "pulumi:pulumi-best-practices",
+          "source": "pulumi",
+          "plugin": "finem-infrastructure-devops",
+          "path": "upstream/pulumi/pulumi/skills/pulumi-best-practices/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "ci",
+      "title": "CI",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "github"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:ci-cd-and-automation",
+          "source": "addy",
+          "plugin": "finem-infrastructure-devops",
+          "path": "upstream/addy/skills/ci-cd-and-automation/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "release",
+      "title": "Release",
+      "phase": "deliver",
+      "requires": [
+        "testing",
+        "code-review-quality-gates"
+      ],
+      "connectors": [
+        "github"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "gstack:ship",
+          "source": "gstack",
+          "plugin": "finem-infrastructure-devops",
+          "path": "upstream/gstack/ship/SKILL.md"
+        },
+        {
+          "skill": "addy:git-workflow-and-versioning",
+          "source": "addy",
+          "plugin": "finem-infrastructure-devops",
+          "path": "upstream/addy/skills/git-workflow-and-versioning/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "deployment",
+      "title": "Deployment",
+      "phase": "deliver",
+      "requires": [
+        "release"
+      ],
+      "connectors": [
+        "cloud-provider",
+        "github"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:deployment-pipeline-design",
+          "source": "wshobson",
+          "plugin": "finem-infrastructure-devops",
+          "path": "upstream/wshobson/plugins/cicd-automation/skills/deployment-pipeline-design/SKILL.md"
+        },
+        {
+          "skill": "pulumi:pulumi-best-practices",
+          "source": "pulumi",
+          "plugin": "finem-infrastructure-devops",
+          "path": "upstream/pulumi/pulumi/skills/pulumi-best-practices/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "rollback",
+      "title": "Rollback",
+      "phase": "deliver",
+      "requires": [
+        "release"
+      ],
+      "connectors": [
+        "cloud-provider",
+        "db-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:deployment-pipeline-design",
+          "source": "wshobson",
+          "plugin": "finem-infrastructure-devops",
+          "path": "upstream/wshobson/plugins/cicd-automation/skills/deployment-pipeline-design/SKILL.md"
+        },
+        {
+          "skill": "wshobson:database-migration",
+          "source": "wshobson",
+          "plugin": "finem-infrastructure-devops",
+          "path": "upstream/wshobson/plugins/framework-migration/skills/database-migration/SKILL.md"
+        },
+        {
+          "skill": "addy:deprecation-and-migration",
+          "source": "addy",
+          "plugin": "finem-infrastructure-devops",
+          "path": "upstream/addy/skills/deprecation-and-migration/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "cost-finops",
+      "title": "Cost/FinOps",
+      "phase": "operate",
+      "requires": [
+        "observability"
+      ],
+      "connectors": [
+        "cloud-provider"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:cost-optimization",
+          "source": "wshobson",
+          "plugin": "finem-infrastructure-devops",
+          "path": "upstream/wshobson/plugins/cloud-infrastructure/skills/cost-optimization/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "configuration-environments",
+      "title": "Configuration/environments",
+      "phase": "build",
+      "requires": [],
+      "connectors": [
+        "cloud-provider"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "pulumi:pulumi-esc",
+          "source": "pulumi",
+          "plugin": "finem-infrastructure-devops",
+          "path": "upstream/pulumi/pulumi/skills/pulumi-esc/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "options": [
+    {
+      "plugin": "finem-cloudflare",
+      "kind": "pack",
+      "extension": "cloudflare",
+      "description": "Cloudflare Workers, Wrangler and Durable Objects",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "infrastructure",
+          "title": "Infrastructure",
+          "phase": "build",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "cloudflare:workers-best-practices",
+              "source": "cloudflare",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/cloudflare/skills/workers-best-practices/SKILL.md"
+            },
+            {
+              "skill": "cloudflare:wrangler",
+              "source": "cloudflare",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/cloudflare/skills/wrangler/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "deployment",
+          "title": "Deployment",
+          "phase": "deliver",
+          "requires": [
+            "release"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "github"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "cloudflare:wrangler",
+              "source": "cloudflare",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/cloudflare/skills/wrangler/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "async-jobs-events",
+          "title": "Async/jobs/events",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "cloudflare:durable-objects",
+              "source": "cloudflare",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/cloudflare/skills/durable-objects/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-terraform",
+      "kind": "pack",
+      "extension": "terraform",
+      "description": "Terraform style and tests",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "infrastructure",
+          "title": "Infrastructure",
+          "phase": "build",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "terraform:terraform-style-guide",
+              "source": "terraform",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/terraform/plugins/terraform/skills/terraform-style-guide/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "terraform:terraform-test",
+              "source": "terraform",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/terraform/plugins/terraform/skills/terraform-test/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-kubernetes",
+      "kind": "pack",
+      "extension": "kubernetes",
+      "description": "Original Kubernetes manifests, policy, Helm and GitOps specialists",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "infrastructure",
+          "title": "Infrastructure",
+          "phase": "build",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "wshobson:k8s-manifest-generator",
+              "source": "wshobson",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/wshobson/plugins/kubernetes-operations/skills/k8s-manifest-generator/SKILL.md"
+            },
+            {
+              "skill": "wshobson:helm-chart-scaffolding",
+              "source": "wshobson",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/wshobson/plugins/kubernetes-operations/skills/helm-chart-scaffolding/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "networking",
+          "title": "Networking",
+          "phase": "build",
+          "requires": [
+            "infrastructure"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "wshobson:k8s-security-policies",
+              "source": "wshobson",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/wshobson/plugins/kubernetes-operations/skills/k8s-security-policies/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "title": "Security",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "wshobson:k8s-security-policies",
+              "source": "wshobson",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/wshobson/plugins/kubernetes-operations/skills/k8s-security-policies/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "deployment",
+          "title": "Deployment",
+          "phase": "deliver",
+          "requires": [
+            "release"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "github"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "wshobson:gitops-workflow",
+              "source": "wshobson",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/wshobson/plugins/kubernetes-operations/skills/gitops-workflow/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "rollback",
+          "title": "Rollback",
+          "phase": "deliver",
+          "requires": [
+            "release"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "wshobson:gitops-workflow",
+              "source": "wshobson",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/wshobson/plugins/kubernetes-operations/skills/gitops-workflow/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-security-audit",
+      "kind": "pack",
+      "extension": "security-audit",
+      "description": "Original agentic workflow, API footgun and SARIF auditors",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "ci",
+          "title": "CI",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trailofbits:agentic-actions-auditor",
+              "source": "trailofbits",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/trailofbits/plugins/agentic-actions-auditor/skills/agentic-actions-auditor/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "title": "Security",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trailofbits:sharp-edges",
+              "source": "trailofbits",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/trailofbits/plugins/sharp-edges/skills/sharp-edges/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "code-review-quality-gates",
+          "title": "Code review/quality gates",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trailofbits:sarif-parsing",
+              "source": "trailofbits",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/trailofbits/plugins/static-analysis/skills/sarif-parsing/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-finops",
+      "kind": "pack",
+      "extension": "finops",
+      "description": "Provider-aware infrastructure cost estimates and generation",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "cost-finops",
+          "title": "Cost/FinOps",
+          "phase": "operate",
+          "requires": [
+            "observability"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "infracost:scan",
+              "source": "infracost",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/infracost/plugins/infracost/skills/scan/SKILL.md"
+            },
+            {
+              "skill": "infracost:price-lookup",
+              "source": "infracost",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/infracost/plugins/infracost/skills/price-lookup/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "infrastructure",
+          "title": "Infrastructure",
+          "phase": "build",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "infracost:iac-generation",
+              "source": "infracost",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/infracost/plugins/infracost/skills/iac-generation/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-aws-containers",
+      "kind": "pack",
+      "extension": "aws-containers",
+      "description": "AWS container selection and infrastructure deployment guidance",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "infrastructure",
+          "title": "Infrastructure",
+          "phase": "build",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "aws:aws-containers",
+              "source": "aws",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/aws/skills/core-skills/aws-containers/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "deployment",
+          "title": "Deployment",
+          "phase": "deliver",
+          "requires": [
+            "release"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "github"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "aws:aws-containers",
+              "source": "aws",
+              "plugin": "finem-infrastructure-devops",
+              "path": "upstream/aws/skills/core-skills/aws-containers/SKILL.md"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

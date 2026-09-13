@@ -4,10 +4,7 @@
 43 capabilities, 180 complete selected original skills,
 50 pinned Git sources and 56 internal technology options.
 
-Version 0.8.0 gives UI/UX, infrastructure, security and the other engineering disciplines
-their own clear scope and expected outcomes. Every original source body is stored **once** in
-`finem-core/upstream/`, with its references, helpers, license, pinned revision and file hashes. Area plugins
-provide scoped entrypoints and metadata. They use the same single coordinator.
+Version 0.9.0 makes every engineering area independent. Each bundles its mapped original sources, support files, licenses and hashes locally. Core is optional for an explicitly requested cross-discipline workflow. Source duplication between installable packages is intentional to avoid installation dependencies.
 
 ## Engineering plugins
 
@@ -68,10 +65,7 @@ codex plugin add finem-maintenance-documentation@finem
 ```
 
 For local validation, add the path to this checkout as the marketplace instead of the GitHub repository.
-UI Plugins includes nine original XYLEX specialists and works independently of Core. Its ten native skills include the Finem entrypoint. The bundled Git revision, hashes and license are recorded in ui-source.lock.json and licenses/XYLEX-LICENSE.txt. Other areas require Core, explicitly installed in Codex. Core-backed UI capability selection also needs compatible Core and prerequisite areas.
-The full-stack commands install all areas; the coordinator only activates those relevant to the task.
-For a subset, install Core plus the required areas. Capability prerequisites may require another area:
-Frontend & Mobile uses Architecture & API Design and Product & Planning; a missing area is reported by the selection helper.
+Install only the area you need. No area requires Core. UI Plugins also exposes nine original XYLEX skills directly; its additional local specialists use standalone.json. The full-stack commands above are a convenience for installing everything.
 
 ## Selection and layout
 
@@ -84,12 +78,14 @@ plugins/finem-core/
   upstream/<source>/...              complete selected originals, stored once
 plugins/finem-<area>/
   skills/finem-<area>/SKILL.md       scoped area entry
-  capabilities.json                 area capabilities + related option IDs
+  standalone.json                   local capabilities and framework options
+  upstream/                         locally bundled original sources
+  capabilities.json                 optional legacy Core coordination mapping
 .claude-plugin/marketplace.json      Claude Code; same plugin files
 .agents/plugins/marketplace.json     Codex; same plugin files
 ```
 
-Use actual host-discovered plugin paths rather than guessing cache siblings:
+For normal work, the area entry reads standalone.json and opens its local original skills. No helper or separate plugin is needed. For an explicitly requested Core workflow only, use actual host-discovered plugin paths:
 
 ```text
 node "<core>/scripts/resolve-packs.js" --core "<core>" --area "<product>" --area "<architecture>" --area "<frontend>" --select finem-frontend-mobile --extensions nuxt,xylex-ui-polish

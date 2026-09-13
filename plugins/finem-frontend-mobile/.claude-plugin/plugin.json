@@ -1,6 +1,6 @@
 {
   "name": "finem-frontend-mobile",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Implement the interface in the project's actual web or mobile framework, connecting state, navigation and API boundaries.",
   "author": {
     "name": "Finem Group",
@@ -14,8 +14,5 @@
     "engineering",
     "frontend"
   ],
-  "skills": "./skills",
-  "dependencies": [
-    "finem-core"
-  ]
+  "skills": "./skills"
 }

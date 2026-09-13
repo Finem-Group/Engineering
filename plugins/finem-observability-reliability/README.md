@@ -2,27 +2,12 @@
 
 Make system health measurable, design for failure and support incident diagnosis and recovery.
 
-**Claude Code**
+Covers: Observability, SLOs, Incident response, Postmortem, Reliability/resilience.
 
-```bash
-claude plugin install finem-observability-reliability@finem
-```
+Expected outputs: Logging, metrics and tracing; SLOs and alert criteria; Resilience and failure-mode analysis; Incident response and postmortems.
 
-**Codex**
+Original specialists: addy:observability-and-instrumentation, wshobson:slo-implementation, wshobson:incident-runbook-templates, superpowers:systematic-debugging, wshobson:postmortem-writing, wshobson:microservices-patterns, wshobson:workflow-orchestration-patterns.
 
-```bash
-codex plugin add finem-core@finem
-codex plugin add finem-observability-reliability@finem
-```
+Local framework and specialist options: observability, backend-rust, jobs-inngest, jobs-trigger, jobs-upstash. Choose only options relevant to the project.
 
-**Depends on** `finem-core`. Claude Code installs those automatically; Codex does not resolve dependencies, so the Codex commands above install them in order.
-
-| Capability | Role | Originals |
-| --- | --- | --- |
-| Observability | area baseline | 1 |
-| SLOs | area baseline | 1 |
-| Incident response | area baseline | 2 |
-| Postmortem | area baseline | 1 |
-| Reliability/resilience | area baseline | 3 |
-
-Native area entries: 1. Original bodies live in the shared `finem-core` dependency; this plugin contains no copied originals. Internal options: `observability`, `backend-rust`, `jobs-inngest`, `jobs-trigger`, `jobs-upstash`.
+Works independently. All mapped original skills, supporting source files, licenses and hashes are bundled locally. Core is not required. The app entry skill loads the relevant originals on demand. External services and runtime dependencies are configured separately.

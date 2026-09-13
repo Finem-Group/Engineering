@@ -1,6 +1,6 @@
 {
   "name": "finem-security-privacy",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Protect identity, permissions, secrets and personal data, and assess concrete security risks in the implementation.",
   "author": {
     "name": "Finem Group",
@@ -21,7 +21,7 @@
   "interface": {
     "displayName": "Security",
     "shortDescription": "Auth, privacy and security reviews.",
-    "longDescription": "Protect identity, permissions, secrets and personal data, and assess concrete security risks in the implementation.\n\nCovers: Auth, Secrets/IAM, Security, Privacy/compliance.\n\nExpected outputs: Authentication and authorization controls; IAM and secret handling; Security findings and mitigations; Privacy, retention and compliance requirements.\n\nOriginal skills used through Engineering Core: wshobson:auth-implementation-patterns, addy:security-and-hardening, pulumi:pulumi-esc, wshobson:secrets-management, wshobson:gdpr-data-handling.\n\nOptional specialist and framework packs: advanced-testing, intent-audit, backend-django, auth-auth0, kubernetes, security-audit. These are selected for the project when relevant; they are not all enabled by default.\n\nDeclared integrations: context7, db-provider, cloud-provider, github. These are integration recipes, not connected services; configure the corresponding tools and accounts separately.\n\nWhy the app shows one skill: this plugin exposes one entry skill which loads the relevant original specialists from Engineering Core on demand. The Skills count in the app is not the size of the shared upstream library.\n\nRequires Engineering Core (finem-core). Tasks spanning multiple disciplines may also require the corresponding area plugins.",
+    "longDescription": "Protect identity, permissions, secrets and personal data, and assess concrete security risks in the implementation.\n\nCovers: Auth, Secrets/IAM, Security, Privacy/compliance.\n\nExpected outputs: Authentication and authorization controls; IAM and secret handling; Security findings and mitigations; Privacy, retention and compliance requirements.\n\nOriginal specialists: wshobson:auth-implementation-patterns, addy:security-and-hardening, pulumi:pulumi-esc, wshobson:secrets-management, wshobson:gdpr-data-handling.\n\nLocal framework and specialist options: advanced-testing, intent-audit, backend-django, auth-auth0, kubernetes, security-audit. Choose only options relevant to the project.\n\nWorks independently. All mapped original skills, supporting source files, licenses and hashes are bundled locally. Core is not required. The app entry skill loads the relevant originals on demand. External services and runtime dependencies are configured separately.",
     "websiteURL": "https://github.com/Finem-Group/Engineering",
     "developerName": "Finem Group",
     "brandColor": "#111111",

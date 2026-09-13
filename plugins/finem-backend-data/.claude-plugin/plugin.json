@@ -1,6 +1,6 @@
 {
   "name": "finem-backend-data",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Build services, persistence and background processing around explicit business rules and data contracts.",
   "author": {
     "name": "Finem Group",
@@ -17,8 +17,5 @@
     "migrations",
     "async-jobs-events"
   ],
-  "skills": "./skills",
-  "dependencies": [
-    "finem-core"
-  ]
+  "skills": "./skills"
 }

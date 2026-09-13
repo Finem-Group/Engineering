@@ -2,23 +2,12 @@
 
 Implement the interface in the project's actual web or mobile framework, connecting state, navigation and API boundaries.
 
-**Claude Code**
+Covers: Frontend.
 
-```bash
-claude plugin install finem-frontend-mobile@finem
-```
+Expected outputs: Web or native screens and components; Application state and navigation; Client integration with API contracts; Framework-specific implementation evidence.
 
-**Codex**
+Original specialists: addy:frontend-ui-engineering, vercel:react-best-practices, vercel:composition-patterns.
 
-```bash
-codex plugin add finem-core@finem
-codex plugin add finem-frontend-mobile@finem
-```
+Local framework and specialist options: react-ui, expo, vue, nuxt, svelte, angular, next-cache, browser-playwright, tanstack-router, tanstack-start, tanstack-table, redux-toolkit, web-animation, gsap, swiftui, android-ui, xylex-ui-polish. Choose only options relevant to the project.
 
-**Depends on** `finem-core`. Claude Code installs those automatically; Codex does not resolve dependencies, so the Codex commands above install them in order.
-
-| Capability | Role | Originals |
-| --- | --- | --- |
-| Frontend | area baseline | 3 |
-
-Native area entries: 1. Original bodies live in the shared `finem-core` dependency; this plugin contains no copied originals. Internal options: `react-ui`, `expo`, `vue`, `nuxt`, `svelte`, `angular`, `next-cache`, `tanstack-router`, `tanstack-start`, `tanstack-table`, `redux-toolkit`, `web-animation`, `gsap`, `swiftui`, `android-ui`, `xylex-ui-polish`.
+Works independently. All mapped original skills, supporting source files, licenses and hashes are bundled locally. Core is not required. The app entry skill loads the relevant originals on demand. External services and runtime dependencies are configured separately.

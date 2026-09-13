@@ -2,30 +2,12 @@
 
 Provision reproducible environments and operate the build, release, deployment and rollback path with visible infrastructure costs.
 
-**Claude Code**
+Covers: Infrastructure, Networking, CI, Release, Deployment, Rollback, Cost/FinOps, Configuration/environments.
 
-```bash
-claude plugin install finem-infrastructure-devops@finem
-```
+Expected outputs: Infrastructure and network configuration; Environment and CI configuration; Release, deployment and rollback plans; Infrastructure cost assessment.
 
-**Codex**
+Original specialists: pulumi:pulumi-best-practices, wshobson:hybrid-cloud-networking, addy:ci-cd-and-automation, gstack:ship, addy:git-workflow-and-versioning, wshobson:deployment-pipeline-design, wshobson:database-migration, addy:deprecation-and-migration, wshobson:cost-optimization, pulumi:pulumi-esc.
 
-```bash
-codex plugin add finem-core@finem
-codex plugin add finem-infrastructure-devops@finem
-```
+Local framework and specialist options: cloudflare, terraform, kubernetes, security-audit, finops, aws-containers. Choose only options relevant to the project.
 
-**Depends on** `finem-core`. Claude Code installs those automatically; Codex does not resolve dependencies, so the Codex commands above install them in order.
-
-| Capability | Role | Originals |
-| --- | --- | --- |
-| Infrastructure | area baseline | 1 |
-| Networking | area baseline | 2 |
-| CI | area baseline | 1 |
-| Release | area baseline | 2 |
-| Deployment | area baseline | 2 |
-| Rollback | area baseline | 3 |
-| Cost/FinOps | area baseline | 1 |
-| Configuration/environments | area baseline | 1 |
-
-Native area entries: 1. Original bodies live in the shared `finem-core` dependency; this plugin contains no copied originals. Internal options: `cloudflare`, `terraform`, `kubernetes`, `security-audit`, `finops`, `aws-containers`.
+Works independently. All mapped original skills, supporting source files, licenses and hashes are bundled locally. Core is not required. The app entry skill loads the relevant originals on demand. External services and runtime dependencies are configured separately.

@@ -35,14 +35,14 @@ class AreaSelectionTests(unittest.TestCase):
             metadata = read_json(ROOT / 'plugins' / ('finem-' + area) / 'capabilities.json')
             self.assertEqual(metadata['kind'], 'area')
             self.assertEqual(metadata['area'], area)
-            self.assertEqual(metadata['dependencies'], [] if area == 'ui-ux' else ['finem-core'])
+            self.assertEqual(metadata['dependencies'], [])
             self.assertTrue(all(cap['phase'] in {'context', 'design', 'build', 'verify', 'deliver', 'operate', 'evolve'} for cap in metadata['capabilities']))
             caps += [cap['id'] for cap in metadata['capabilities']]
         self.assertEqual(len(caps), 43)
         self.assertEqual(len(set(caps)), 43)
 
-    def test_every_original_lives_once_in_shared_library(self):
-        locks = [read_json(p / 'upstream.lock.json') for p in (ROOT / 'plugins').iterdir()]
+    def test_core_retains_complete_canonical_library(self):
+        locks = [read_json(ROOT / 'plugins/finem-core/upstream.lock.json')]
         sources = [source for lock in locks for source in lock['sources']]
         self.assertEqual(len(sources), 50)
         self.assertEqual(len({s['id'] for s in sources}), 50)

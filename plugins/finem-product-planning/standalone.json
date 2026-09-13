@@ -1,0 +1,407 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-product-planning",
+  "capabilities": [
+    {
+      "id": "product-discovery",
+      "title": "Product discovery",
+      "phase": "context",
+      "requires": [],
+      "connectors": [
+        "mobbin"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "gstack:office-hours",
+          "source": "gstack",
+          "plugin": "finem-product-planning",
+          "path": "upstream/gstack/office-hours/SKILL.md"
+        },
+        {
+          "skill": "addy:idea-refine",
+          "source": "addy",
+          "plugin": "finem-product-planning",
+          "path": "upstream/addy/skills/idea-refine/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "requirements",
+      "title": "Requirements",
+      "phase": "context",
+      "requires": [
+        "product-discovery"
+      ],
+      "connectors": [],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:spec-driven-development",
+          "source": "addy",
+          "plugin": "finem-product-planning",
+          "path": "upstream/addy/skills/spec-driven-development/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "feasibility",
+      "title": "Feasibility",
+      "phase": "context",
+      "requires": [
+        "requirements"
+      ],
+      "connectors": [
+        "context7",
+        "cloud-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "gstack:plan-eng-review",
+          "source": "gstack",
+          "plugin": "finem-product-planning",
+          "path": "upstream/gstack/plan-eng-review/SKILL.md"
+        },
+        {
+          "skill": "addy:constraint-driven-development",
+          "source": "addy",
+          "plugin": "finem-product-planning",
+          "path": "upstream/addy/skills/constraint-driven-development/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "planning-task-decomposition",
+      "title": "Planning/task decomposition",
+      "phase": "context",
+      "requires": [
+        "requirements"
+      ],
+      "connectors": [],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:planning-and-task-breakdown",
+          "source": "addy",
+          "plugin": "finem-product-planning",
+          "path": "upstream/addy/skills/planning-and-task-breakdown/SKILL.md"
+        },
+        {
+          "skill": "superpowers:writing-plans",
+          "source": "superpowers",
+          "plugin": "finem-product-planning",
+          "path": "upstream/superpowers/skills/writing-plans/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "product-analytics-feedback",
+      "title": "Product analytics/feedback",
+      "phase": "evolve",
+      "requires": [
+        "product-discovery"
+      ],
+      "connectors": [
+        "posthog"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "posthog:instrument-product-analytics",
+          "source": "posthog",
+          "plugin": "finem-product-planning",
+          "path": "upstream/posthog/skills/omnibus/instrument-product-analytics/SKILL.md"
+        },
+        {
+          "skill": "posthog:querying-posthog-data",
+          "source": "posthog",
+          "plugin": "finem-product-planning",
+          "path": "upstream/posthog/skills/omnibus/querying-posthog-data/SKILL.md"
+        },
+        {
+          "skill": "posthog:creating-surveys",
+          "source": "posthog",
+          "plugin": "finem-product-planning",
+          "path": "upstream/posthog/skills/omnibus/creating-surveys/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "options": [
+    {
+      "plugin": "finem-discovery",
+      "kind": "pack",
+      "extension": "discovery",
+      "description": "Original research interviews and opportunity synthesis",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "product-discovery",
+          "title": "Product discovery",
+          "phase": "context",
+          "requires": [],
+          "connectors": [
+            "mobbin"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:interview-script",
+              "source": "pm",
+              "plugin": "finem-product-planning",
+              "path": "upstream/pm/pm-product-discovery/skills/interview-script/SKILL.md"
+            },
+            {
+              "skill": "pm:summarize-interview",
+              "source": "pm",
+              "plugin": "finem-product-planning",
+              "path": "upstream/pm/pm-product-discovery/skills/summarize-interview/SKILL.md"
+            },
+            {
+              "skill": "pm:opportunity-solution-tree",
+              "source": "pm",
+              "plugin": "finem-product-planning",
+              "path": "upstream/pm/pm-product-discovery/skills/opportunity-solution-tree/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "requirements",
+          "title": "Requirements",
+          "phase": "context",
+          "requires": [
+            "product-discovery"
+          ],
+          "connectors": [],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:create-prd",
+              "source": "pm",
+              "plugin": "finem-product-planning",
+              "path": "upstream/pm/pm-execution/skills/create-prd/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "ux",
+          "title": "UX",
+          "phase": "design",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [
+            "mobbin",
+            "paper",
+            "figma"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:customer-journey-map",
+              "source": "pm",
+              "plugin": "finem-product-planning",
+              "path": "upstream/pm/pm-market-research/skills/customer-journey-map/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-product-validation",
+      "kind": "pack",
+      "extension": "product-validation",
+      "description": "Product hypotheses, lean experiments and launch risk analysis",
+      "dependencies": [
+        "finem-discovery"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "feasibility",
+          "title": "Feasibility",
+          "phase": "context",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [
+            "context7",
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:identify-assumptions-new",
+              "source": "pm",
+              "plugin": "finem-product-planning",
+              "path": "upstream/pm/pm-product-discovery/skills/identify-assumptions-new/SKILL.md"
+            },
+            {
+              "skill": "pm:pre-mortem",
+              "source": "pm",
+              "plugin": "finem-product-planning",
+              "path": "upstream/pm/pm-execution/skills/pre-mortem/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "product-discovery",
+          "title": "Product discovery",
+          "phase": "context",
+          "requires": [],
+          "connectors": [
+            "mobbin"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:brainstorm-experiments-new",
+              "source": "pm",
+              "plugin": "finem-product-planning",
+              "path": "upstream/pm/pm-product-discovery/skills/brainstorm-experiments-new/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-product-delivery",
+      "kind": "pack",
+      "extension": "product-delivery",
+      "description": "Product strategy, outcome roadmaps, user stories and acceptance scenarios",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "product-discovery",
+          "title": "Product discovery",
+          "phase": "context",
+          "requires": [],
+          "connectors": [
+            "mobbin"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:product-strategy",
+              "source": "pm",
+              "plugin": "finem-product-planning",
+              "path": "upstream/pm/pm-product-strategy/skills/product-strategy/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "requirements",
+          "title": "Requirements",
+          "phase": "context",
+          "requires": [
+            "product-discovery"
+          ],
+          "connectors": [],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:user-stories",
+              "source": "pm",
+              "plugin": "finem-product-planning",
+              "path": "upstream/pm/pm-execution/skills/user-stories/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "planning-task-decomposition",
+          "title": "Planning/task decomposition",
+          "phase": "context",
+          "requires": [
+            "requirements"
+          ],
+          "connectors": [],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:outcome-roadmap",
+              "source": "pm",
+              "plugin": "finem-product-planning",
+              "path": "upstream/pm/pm-execution/skills/outcome-roadmap/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:test-scenarios",
+              "source": "pm",
+              "plugin": "finem-product-planning",
+              "path": "upstream/pm/pm-execution/skills/test-scenarios/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-product-analytics",
+      "kind": "pack",
+      "extension": "product-analytics",
+      "description": "Metrics definitions and cohort-based feedback alongside provider instrumentation",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "product-analytics-feedback",
+          "title": "Product analytics/feedback",
+          "phase": "evolve",
+          "requires": [
+            "product-discovery"
+          ],
+          "connectors": [
+            "posthog"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:metrics-dashboard",
+              "source": "pm",
+              "plugin": "finem-product-planning",
+              "path": "upstream/pm/pm-product-discovery/skills/metrics-dashboard/SKILL.md"
+            },
+            {
+              "skill": "pm:cohort-analysis",
+              "source": "pm",
+              "plugin": "finem-product-planning",
+              "path": "upstream/pm/pm-data-analytics/skills/cohort-analysis/SKILL.md"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -2,10 +2,8 @@
   "schemaVersion": 3,
   "plugin": "finem-frontend-mobile",
   "kind": "area",
-  "version": "0.8.0",
-  "dependencies": [
-    "finem-core"
-  ],
+  "version": "0.9.0",
+  "dependencies": [],
   "area": "frontend-mobile",
   "title": "Frontend & Mobile",
   "purpose": "Implement the interface in the project's actual web or mobile framework, connecting state, navigation and API boundaries.",
@@ -69,5 +67,158 @@
       ]
     }
   ],
-  "sources": []
+  "sources": [
+    {
+      "id": "addy",
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "revision": "6ca0cd7db39b41b1c37e26d335c507ee92382c6d",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original upstream skill directories and supporting files. Invoke selected specialists within the single L11 workflow; do not activate source bootstrap routers or global hooks."
+    },
+    {
+      "id": "android",
+      "repository": "https://github.com/android/skills",
+      "revision": "bac232fd02b0855df9275281a2a7a47643768719",
+      "license": "Apache-2.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Official targeted Android navigation, insets and View-to-Compose migration coverage. JDK, Gradle wrapper, Android SDK and target-device/emulator; Navigation3 migration only when chosen. Match targetSdk/Compose/Navigation versions. Never auto-migrate a View application merely because Compose references exist. Source nesting triggers Windows MAX_PATH in a deep directory: ingestion/materialization needs long-path-safe I/O. One upstream dead README.md link in a deep-link recipe is absent from the Git tree; document it as upstream defect, not a missing vendored file."
+    },
+    {
+      "id": "angular",
+      "repository": "https://github.com/angular/angular",
+      "revision": "ae33a5f55ec1d31ea4e216b32cd1ddc535a3b331",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Comprehensive first-party Angular app guidance, rather than a third-party kitchen-sink framework skill. Project Angular CLI, matching Angular version, ng build. Signal Forms defaults are gated to Angular 22+; older app conventions retained. Do not include Angular repository contributor .agent skills or additional angular-new-app entrypoint initially; developer already covers setup. New-project latest/global CLI examples are source instructions, not automatic installs; existing project version decides."
+    },
+    {
+      "id": "antfu",
+      "repository": "https://github.com/antfu/skills",
+      "revision": "a74f281a27dadc02397bc1a174b0f2c97531b6ae",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Adds Nuxt 4 app/server/shared layout, SSR-safe fetching, state and Pinia; complements Vue core without copying its rules. Nuxt 4 project; Pinia v3 guidance generated for 3.0.4; installed versions and current docs remain decisive. Nuxt is an alternative primary app framework to Next/Angular/SvelteKit/TanStack Start; Pinia only when already selected. Do not include antfu global preference skill, installation/meta router, or duplicated vendored Vue/web-guideline skills."
+    },
+    {
+      "id": "emil",
+      "repository": "https://github.com/emilkowalski/skills",
+      "revision": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Adds explicit motion decision, accessibility, interruption and CSS/Motion implementation craft with no connected-service dependency. Existing CSS or chosen animation runtime; no runtime for documentation itself. Impeccable remains design owner; animate runs only for a concrete web-motion task. Choose CSS when sufficient and preserve existing tokens; do not activate every motion specialist. Expo uses official expo-animation, avoiding duplicate animate-expo."
+    },
+    {
+      "id": "expo",
+      "repository": "https://github.com/expo/skills",
+      "revision": "f27959a9f0ee178def45bc974a26ed9090ac4b17",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Completes explicitly missing sibling capabilities of the already bundled project-structure and native-ui skills. Project Expo SDK/packages via expo install; many examples require SDK 56+, Reanimated 4, matching worklets and Gesture Handler. Native iOS-only surfaces, NativeTabs unstable import, iOS 18+/26-specific features must be feature/platform gated. Real device release build needed for motion verification. Retain baseline two Expo entries and pin unchanged. Expo Router owns Expo navigation; do not activate Callstack react-navigation there. Feedback submission commands contact Expo; never execute without explicit messaging authorization. Named optional expo-skill-feedback is not a required source import."
+    },
+    {
+      "id": "gsap",
+      "repository": "https://github.com/greensock/gsap-skills",
+      "revision": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Official library-specific animation API/cleanup/performance guidance for projects choosing GSAP. Chosen project GSAP runtime and @gsap/react when React; matching framework packages. Gate to an actual GSAP project/request: upstream descriptions recommend GSAP generally, so avoid loading for generic motion. Preserve examples outside skills because source refers to examples/react, vue, nuxt and vanilla. All eight skills available, task-relevant entrypoint only."
+    },
+    {
+      "id": "next",
+      "repository": "https://github.com/vercel/next.js",
+      "revision": "d155ba9ebfffe4742efefda8d68c2e0e8e490924",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Official deterministic instant-navigation optimizer, scoped to apps already building with Cache Components. Baseline React best practices and installed Next docs retained. Activate only for an existing Next >=16.3 app already building with cacheComponents. Project-local @next/playwright must match the installed Next release line, alongside @playwright/test. npm latest Next and @next/playwright were both 16.3.4; Node >=20.9. Reuse the project Playwright harness and production-like local test build. No agent-browser runtime, global install or deployment is required by the selected optimizer. Do not bundle retired next-best-practices. Installed node_modules/next/dist/docs remains the version authority. Exclude next-cache-components-adoption and next-dev-loop: adoption SKILL.md lines 84-98 requires attempting next-dev-loop and only permits fallback for a real blocker; dev-loop lines 31-50 mandates Next16.3+ Turbopack and agent-browser>=0.31.1, and lines 55-94 require restored headed React-DevTools browser plus /_next/mcp. Existing browser-playwright is not that runtime. Optimizer SKILL.md lines 40-53 explicitly lets the project own its Playwright rig. Lines 140-159 restrict the workflow to an app that already builds with Cache Components. Its adoption link is outside the selected activation scope. Testing API only enabled in explicit test builds and never production. Older apps or cache adoption require a separate migration decision; no automatic framework upgrade through this pack. Advanced optional optimization, not generic Next frontend coverage. Adoption/dev-loop remain reviewed but deferred until a separately pinned, portable, smoke-tested second browser runtime is deliberately selected."
+    },
+    {
+      "id": "playwright",
+      "repository": "https://github.com/microsoft/playwright-cli",
+      "revision": "655530f6d0dc71a0d6bf46ae165877d3c7311099",
+      "license": "Apache-2.0",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original complete research-pinned skill and nine references. Git source revision has alpha runtime dependencies; released CLI compatibility is separately documented in docs/upstream-expansion.md. Use the explicitly installed project-local L11 runtime; do not execute upstream global npm installation instructions. Browser binaries are separate."
+    },
+    {
+      "id": "redux-toolkit",
+      "repository": "https://github.com/reduxjs/redux-toolkit",
+      "revision": "5b4795b5d3e8a0ab19bf94d8d3413168804ade64",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Fills explicit state-ownership and RTK Query alternative with official package-shipped skills. Existing or explicitly chosen Redux Toolkit2 + React-Redux; project tests. RTK Query is an alternative server-cache owner to TanStack Query/SWR, not an additional default cache. Requires edges: modern-redux -> redux-dataflow; adopt-rtk-query -> modern-redux; slices -> state-ownership. Preserve all eight skills but load relevant path. Slash names require namespaced catalog IDs."
+    },
+    {
+      "id": "shadcn",
+      "repository": "https://github.com/shadcn-ui/ui",
+      "revision": "3ba91b1cc83e1bbe4ab35a422ff2a694849c5048",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original complete shadcn skill, rules, CLI/MCP references, evaluation data and assets. CLI commands require a compatible project-local shadcn runtime and components.json; upstream latest examples do not pin runtime. Agent metadata is inert vendored source."
+    },
+    {
+      "id": "svelte",
+      "repository": "https://github.com/sveltejs/ai-tools",
+      "revision": "e7d93fcc168b5f4b3fec57c22f49a36d57e8ee1a",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Official Svelte instructions plus framework-aware analysis and documentation CLI. Svelte 5/SvelteKit project, svelte-check and project build. Optional project-private @sveltejs/mcp 0.1.26 CLI for required autofixer. npm 0.1.26 depends on tmcp 1.20.0-next.1 and eslint ^9.36.0. Pin complete toolchain; released top-level package has prerelease transitive dependency. Use canonical tools/skills originals; omit Claude/Cursor/OpenCode copies and global routers. Prefer file argument to autofixer; original POSIX dollar-escaping examples must not be copied literally into PowerShell. Optional editor subagent advice does not require creating one."
+    },
+    {
+      "id": "swiftui",
+      "repository": "https://github.com/twostraws/swiftui-agent-skill",
+      "revision": "be297ff80dddec529af1f9b1f1f114aab6c9d11c",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Adds an actual native Apple UI specialist, covering API modernization, state, navigation, accessibility and performance. macOS/Xcode and matching iOS SDK for builds; source defaults Swift >=6.2 and iOS26 for new apps; preserve existing deployment target. Use root canonical skill plus direct references only. Exclude nested swiftui-pro/skills and plugin registration. Do not label Windows static review a native build. SwiftUI is a separate primary UI framework."
+    },
+    {
+      "id": "tanstack-router",
+      "repository": "https://github.com/TanStack/router",
+      "revision": "f021f6d1c6dce6c9b54d70766f1d636d8fd9e184",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "First-party composable routing, Query integration and Start SSR/server boundaries with explicit dependency links. Matching project @tanstack/react-router, router-plugin and Query when selected; Start only for Start project. Version metadata differs across skill files, so inspect installed types, not only repository HEAD. Preserve full package paths. router-core auth links Start auth-server-primitives; router-plugin links virtual-file-routes. Both support closures included. Names react-router and vue-router belong to TanStack packages here; never confuse with Remix react-router or Vue Router. Prefix IDs. Router/Start are alternative primary routing/app owners to Next, Remix, Nuxt and Expo. Nested specialists load on demand, not all at once."
+    },
+    {
+      "id": "tanstack-table",
+      "repository": "https://github.com/TanStack/table",
+      "revision": "ce123bc6651bcbf188f3198627c6bb0b10588162",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Detailed official table behavior and state guidance; optional feature specialists form a coherent dependency graph. @tanstack/react-table 9.x, Node >=20; 9.2.4 published runtime verified. Skills use useTable/tableFeatures, not v8 useReactTable. Version9-only pack: never auto-migrate a v8 consumer. Core and table-features are required before React getting-started. Only React adapter imported initially; do not bulk activate other framework adapters. Preserve all core feature references but route to only task-relevant ones."
+    },
+    {
+      "id": "vercel",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original React/Next, composition and web-design skill directories. Repository README and React metadata declare MIT; no standalone upstream LICENSE is tracked. Offline web guidelines are provided by the web-guidelines dependency."
+    },
+    {
+      "id": "vue",
+      "repository": "https://github.com/vuejs-ai/skills",
+      "revision": "c9d355ff23f654309dd02006be671859df0a134c",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Fills a genuine non-React framework gap with progressive references for implementation, routing, debugging and component tests. Existing Vue 3 project, matching Vue Router/Vitest/Vue Test Utils; vue-tsc and project build. Vue core is the primary Vue skill; do not also activate antfu vue or its copied vue-best-practices. Composition API defaults yield to an existing Options API project. Route testing through established Playwright QA owner; do not activate a second global workflow router."
+    },
+    {
+      "id": "web-guidelines",
+      "repository": "https://github.com/vercel-labs/web-interface-guidelines",
+      "revision": "e3d624baaf29dc1fc645aff3e38f03e564d2d6b1",
+      "license": "MIT",
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original upstream skill directories and supporting files. Invoke selected specialists within the single L11 workflow; do not activate source bootstrap routers or global hooks."
+    },
+    {
+      "id": "xylex",
+      "repository": "https://github.com/xylex-group/skills",
+      "revision": "53c3a7758bd1e0e5bf6564c77fe3f7d075c91846",
+      "license": "MIT",
+      "verifiedAt": "2026-09-12",
+      "caveat": "Ten complete original XYLEX skill directories, including local references, Python helpers, CSS tokens and the MIT license. Only explicitly selected architecture, code-audit and web UI-polish entrypoints are mapped. No XYLEX root router, hooks, Grok workflows or duplicate TDD/Rust skills are installed. Resolve helpers relative to the original skill directory and run them against the intended project. Python helpers require Python 3; website token extraction requires the separate extract-design-system CLI plus Playwright/Chromium, which these source bundles do not install. Keep existing project design tokens authoritative; invoke the requested specialist without stacking competing motion or review workflows. CSS motion specialists are web-only. The audit helpers also require Git and blast-zone search requires rg. The original blastzone_metrics.py uses POSIX path separators when filtering definitions/test callers: Windows aggregate caller counts can be inaccurate. Verify actual caller files or use a POSIX environment; do not treat those counts as authoritative."
+    }
+  ]
 }

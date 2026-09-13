@@ -1,5 +1,1923 @@
 {
   "schemaVersion": 1,
   "plugin": "finem-security-privacy",
-  "sources": []
+  "sources": [
+    {
+      "id": "addy",
+      "repository": "https://github.com/addyosmani/agent-skills",
+      "revision": "6ca0cd7db39b41b1c37e26d335c507ee92382c6d",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original upstream skill directories and supporting files. Invoke selected specialists within the single L11 workflow; do not activate source bootstrap routers or global hooks.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "addy:api-and-interface-design",
+          "path": "skills/api-and-interface-design/SKILL.md",
+          "sha256": "5dafd0c44a3aabf11cae5bcb34f6fcc24dfa5c01ba6e0d3176bce997f4d68bc8",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:browser-testing-with-devtools",
+          "path": "skills/browser-testing-with-devtools/SKILL.md",
+          "sha256": "4e3aacd6a380cd25bc6c2d67fdd1c926a9b22535b8a62109ecd33cefd909e3d9",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:ci-cd-and-automation",
+          "path": "skills/ci-cd-and-automation/SKILL.md",
+          "sha256": "a6ed8ed56456b01ff8314c44eefc69897d9905ae4e06bb2b7036286efb79b5f0",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:code-review-and-quality",
+          "path": "skills/code-review-and-quality/SKILL.md",
+          "sha256": "8f3cabca581bbf7cb5f0add3f7454e7a4523f9d4353a6a4a217e6fa515309612",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:code-simplification",
+          "path": "skills/code-simplification/SKILL.md",
+          "sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:constraint-driven-development",
+          "path": "skills/constraint-driven-development/SKILL.md",
+          "sha256": "06479d4305f286d23cfb99f5dc85695896785269664e1f6a8d800e3b71e70c10",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:deprecation-and-migration",
+          "path": "skills/deprecation-and-migration/SKILL.md",
+          "sha256": "6a624f942e09c69863a4219b9bd5d56975026b67b0c70bc83385ffd2120b6142",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:documentation-and-adrs",
+          "path": "skills/documentation-and-adrs/SKILL.md",
+          "sha256": "87ae44a0c7bb3eefc2131a9d11caabcc14e4d8dcb27d66a3a675551ee2ce1671",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:frontend-ui-engineering",
+          "path": "skills/frontend-ui-engineering/SKILL.md",
+          "sha256": "2b74ac4862be3902ec918dceac9366a6fe83b9e003601c0deaf6be09c1766aca",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:git-workflow-and-versioning",
+          "path": "skills/git-workflow-and-versioning/SKILL.md",
+          "sha256": "b7465d187935c52546d39fdc7bd6ac36d94eda25a9500ef8c18b767d2eb116ea",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:idea-refine",
+          "path": "skills/idea-refine/SKILL.md",
+          "sha256": "79e773058963adc7646b0115b4f8a4afc974c5ff95843e4ef1cafff3cb51899e",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:incremental-implementation",
+          "path": "skills/incremental-implementation/SKILL.md",
+          "sha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:observability-and-instrumentation",
+          "path": "skills/observability-and-instrumentation/SKILL.md",
+          "sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:performance-optimization",
+          "path": "skills/performance-optimization/SKILL.md",
+          "sha256": "00694d0c69bbde674d0e39de24052d90afea32d9fef9553eaee21a50a7e9b8cf",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:planning-and-task-breakdown",
+          "path": "skills/planning-and-task-breakdown/SKILL.md",
+          "sha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:security-and-hardening",
+          "path": "skills/security-and-hardening/SKILL.md",
+          "sha256": "4aa7a433a0a8042f47197f05893343bd9d1cc02a9179537ef3437c05c49b385d",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "addy:spec-driven-development",
+          "path": "skills/spec-driven-development/SKILL.md",
+          "sha256": "89411b435fc9f45cec0dd7437419e6bac64b7ddf43108791978647d453010a61",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7",
+          "mode": 420
+        },
+        {
+          "path": "skills/api-and-interface-design/SKILL.md",
+          "sha256": "5dafd0c44a3aabf11cae5bcb34f6fcc24dfa5c01ba6e0d3176bce997f4d68bc8",
+          "mode": 420
+        },
+        {
+          "path": "skills/browser-testing-with-devtools/SKILL.md",
+          "sha256": "4e3aacd6a380cd25bc6c2d67fdd1c926a9b22535b8a62109ecd33cefd909e3d9",
+          "mode": 420
+        },
+        {
+          "path": "skills/ci-cd-and-automation/SKILL.md",
+          "sha256": "a6ed8ed56456b01ff8314c44eefc69897d9905ae4e06bb2b7036286efb79b5f0",
+          "mode": 420
+        },
+        {
+          "path": "skills/code-review-and-quality/SKILL.md",
+          "sha256": "8f3cabca581bbf7cb5f0add3f7454e7a4523f9d4353a6a4a217e6fa515309612",
+          "mode": 420
+        },
+        {
+          "path": "skills/code-simplification/SKILL.md",
+          "sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d",
+          "mode": 420
+        },
+        {
+          "path": "skills/constraint-driven-development/SKILL.md",
+          "sha256": "06479d4305f286d23cfb99f5dc85695896785269664e1f6a8d800e3b71e70c10",
+          "mode": 420
+        },
+        {
+          "path": "skills/constraint-driven-development/references/floor-guard.md",
+          "sha256": "dba15dad8f5a5cbae464ec8457e6dd014a7bcb3ad13a360a6908d54991a5415e",
+          "mode": 420
+        },
+        {
+          "path": "skills/context-engineering/SKILL.md",
+          "sha256": "1392005054efb0a5c9cbbd83811f95ac30d34e5228a1f6837baf59fb7d588017",
+          "mode": 420
+        },
+        {
+          "path": "skills/debugging-and-error-recovery/SKILL.md",
+          "sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220",
+          "mode": 420
+        },
+        {
+          "path": "skills/deprecation-and-migration/SKILL.md",
+          "sha256": "6a624f942e09c69863a4219b9bd5d56975026b67b0c70bc83385ffd2120b6142",
+          "mode": 420
+        },
+        {
+          "path": "skills/documentation-and-adrs/SKILL.md",
+          "sha256": "87ae44a0c7bb3eefc2131a9d11caabcc14e4d8dcb27d66a3a675551ee2ce1671",
+          "mode": 420
+        },
+        {
+          "path": "skills/doubt-driven-development/SKILL.md",
+          "sha256": "6fa1fcd8420c28daf7e53c5b08b0f20b907911efd2a6d9bce0b9740da20a4008",
+          "mode": 420
+        },
+        {
+          "path": "skills/frontend-ui-engineering/SKILL.md",
+          "sha256": "2b74ac4862be3902ec918dceac9366a6fe83b9e003601c0deaf6be09c1766aca",
+          "mode": 420
+        },
+        {
+          "path": "skills/git-workflow-and-versioning/SKILL.md",
+          "sha256": "b7465d187935c52546d39fdc7bd6ac36d94eda25a9500ef8c18b767d2eb116ea",
+          "mode": 420
+        },
+        {
+          "path": "skills/idea-refine/SKILL.md",
+          "sha256": "79e773058963adc7646b0115b4f8a4afc974c5ff95843e4ef1cafff3cb51899e",
+          "mode": 420
+        },
+        {
+          "path": "skills/idea-refine/examples.md",
+          "sha256": "563204bfbf2f80a444151695205af4cb759e722b3d1e5460e08f278a69c89ba1",
+          "mode": 420
+        },
+        {
+          "path": "skills/idea-refine/frameworks.md",
+          "sha256": "161ebc18fdf2d996bc62a87a2d747cf1bf53548354f8925de25c732c27f00309",
+          "mode": 420
+        },
+        {
+          "path": "skills/idea-refine/refinement-criteria.md",
+          "sha256": "1ca2973a4d01b5cb37ab7ddb2eff77fa4e792634a33d0ce44961c068fc88d51a",
+          "mode": 420
+        },
+        {
+          "path": "skills/idea-refine/scripts/idea-refine.sh",
+          "sha256": "f02a52408a4218047c032d221483abfbb48d11f090bb4915965c7419bf2e0e47",
+          "mode": 493
+        },
+        {
+          "path": "skills/incremental-implementation/SKILL.md",
+          "sha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b",
+          "mode": 420
+        },
+        {
+          "path": "skills/interview-me/SKILL.md",
+          "sha256": "1d94741d10d2c826cd0c191aea3981ee94c8abb27ef2a166f6a372117d06448f",
+          "mode": 420
+        },
+        {
+          "path": "skills/observability-and-instrumentation/SKILL.md",
+          "sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87",
+          "mode": 420
+        },
+        {
+          "path": "skills/performance-optimization/SKILL.md",
+          "sha256": "00694d0c69bbde674d0e39de24052d90afea32d9fef9553eaee21a50a7e9b8cf",
+          "mode": 420
+        },
+        {
+          "path": "skills/planning-and-task-breakdown/SKILL.md",
+          "sha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7",
+          "mode": 420
+        },
+        {
+          "path": "skills/security-and-hardening/SKILL.md",
+          "sha256": "4aa7a433a0a8042f47197f05893343bd9d1cc02a9179537ef3437c05c49b385d",
+          "mode": 420
+        },
+        {
+          "path": "skills/shipping-and-launch/SKILL.md",
+          "sha256": "af610cf4892db7eab2e91c899e33feba90e1000bac4528b2f8dde930816ac125",
+          "mode": 420
+        },
+        {
+          "path": "skills/source-driven-development/SKILL.md",
+          "sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9",
+          "mode": 420
+        },
+        {
+          "path": "skills/spec-driven-development/SKILL.md",
+          "sha256": "89411b435fc9f45cec0dd7437419e6bac64b7ddf43108791978647d453010a61",
+          "mode": 420
+        },
+        {
+          "path": "skills/test-driven-development/SKILL.md",
+          "sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca",
+          "mode": 420
+        },
+        {
+          "path": "skills/using-agent-skills/SKILL.md",
+          "sha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/addy"
+    },
+    {
+      "id": "auth0",
+      "repository": "https://github.com/auth0/agent-skills",
+      "revision": "f135610540ea41e4d99882dc1f06162030c7340b",
+      "license": "Apache-2.0",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "404-line intent/framework/tool router plus extensive integration references; activation/behavioral eval harness present in repo. Selected Auth0 tenant and SDK; CLI/MCP optional for live config. Source metadata lists macOS/Linux only; Windows CLI not validated here. Description says use even without Auth0 mention; prohibit global provider capture, select only after project/user choice. Do not import marketplace/MCP registration; auth flow code can be authored without live tenant mutation. Include selected directory intact; acquire upstream evals separately if running. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "auth0:auth0",
+          "path": "plugins/auth0/skills/auth0/SKILL.md",
+          "sha256": "172e7f46ab4cfbd29c4b71fd5b381512584864b1c3e972e6b775220c9d2b7729",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/SKILL.md",
+          "sha256": "172e7f46ab4cfbd29c4b71fd5b381512584864b1c3e972e6b775220c9d2b7729",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/agents/openai.yaml",
+          "sha256": "e4957bad8cb3ac85314d69a40d2776ffc934e89e6b394a1b3be8a98cf668a190",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/acul/js-templates/login-id.js",
+          "sha256": "6642b299d1e20712db14b71fc9fe07db2d6cdf9d2900a2c9f764e4ea6310f415",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/acul/js-templates/login-password.js",
+          "sha256": "41219fef7df238abe2e6042f14f8d6a2e3f8cfce2a666f27dea6a5142a340802",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/acul/react-templates/login-id.tsx",
+          "sha256": "b0ea3da67877b6cfcfc2f58e55cd36d27422f0a387c6f82883a923bd076eadc7",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/acul/react-templates/login-password.tsx",
+          "sha256": "517c5cf00921b60376bfb17988d824a61d0cc184164747f2ea833be315d69630",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/acul/theme-templates/globals.css",
+          "sha256": "227bdd869b131c501a0016099cdd7565b0ae45a0cf85f3c4ca9449e0d2d78b33",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/acul/theme-templates/tailwind.config.ts",
+          "sha256": "d1611c95379514d5bec87822c6597c863d5d3101b0f3de441b29a8d9f6ebeb3c",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/acul/theme-templates/theme-provider.ts",
+          "sha256": "824f35e0f224f46b195fbe82f45278b9fea4f3f06071e907c879069732ba1cc6",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/acul/theme-templates/tokens.css",
+          "sha256": "57f8e850fe5156607509142204e1525fbe2d9c48ead087aede4e4c99c0a52faa",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/audit/report-template.html",
+          "sha256": "b470dcd3acd33c0953685660b71a50608ebe96bd4630ee438c2689e8ddda3976",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/audit/report-template.md",
+          "sha256": "ca65b0cc6e804bafffc530da4b242a9d0abf4fc83af9e22639e26bd63bf61599",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/healthcheck/report-template.html",
+          "sha256": "9b49a2e8f035da825a6eeb1871a99ff2bfd6add23c803b9f5f72bb9fb431add2",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/assets/healthcheck/report-template.md",
+          "sha256": "8026a4bddb5f3678d68cc8430bdfe7beda07c7721c67ac8688441f0b618f2443",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-acul/index.md",
+          "sha256": "6be4d43fe9eafc3a3bce5ce9dacd9232fa83d731c674b5476738c67521fc1341",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-audit-pricing/index.md",
+          "sha256": "9078074a34d5414407dea883593d8dd3714a0fe7748b7aa990cee1a6e781fa71",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-audit-remediation/index.md",
+          "sha256": "97aabddcffc7a47056171c719ba4a7836d213e3c9d19d01989bd52d9bee81d3c",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-audit/index.md",
+          "sha256": "89189bd2d3b4a2c2ef4d72f659b9b2d28469122f0f113013f25a1d399f71e8cb",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-branding/index.md",
+          "sha256": "8ce30e98fcf429ecf376d79f96e49c2d1482101e5ca9760d0626311674f1cdb4",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-custom-domains/index.md",
+          "sha256": "5b89f5127371a91067853e8a58652133a377b015c92dea08f4572813ac53a3ba",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-dpop/index.md",
+          "sha256": "eb074b8ebb0b7dc0603ed3cc636c86c2c9cea14d0ec1b88e05533c8007d02cfb",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-healthcheck/index.md",
+          "sha256": "c3576ee979c47300706a65ecbebde75d9fd00d82751083e7bb266f866eefa8d3",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-mfa/index.md",
+          "sha256": "0da0628e4e2e56c23fad4e0b7fa0586267fc0fba96b03972a82bddb7a3d39655",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-migration/index.md",
+          "sha256": "41bb36f8152d93b3cee524fffce15b189eb07b7e0603fc7671b9966ca7eee480",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-organizations/index.md",
+          "sha256": "64124c3af9db68bff1731748a542c241fcb1e3d9a36f36a0ac6d545ca821696d",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/feature-universal-portals/index.md",
+          "sha256": "e94240198f7b1106c8af6f36a8668a3aceeadd45aac83aac857b3aa6f64c8801",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-android/index.md",
+          "sha256": "55c467aa488041ea854d1975e33c574513b955103a15b7cc99395ccfb644752c",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-angular/index.md",
+          "sha256": "1e4daa8545c9cce05b1ac8706114278be38d21ab28c4eb598ba1787a98e44cbc",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-aspnetcore-api/index.md",
+          "sha256": "74e7004d74eab60a3720bae64d9c480431173d266fd8a75f433cdead62515678",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-aspnetcore-auth/index.md",
+          "sha256": "327e085557b329196b85bab02905f9d84b8e09c830105a475a09ca07caa6aa9b",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-auth0-api-js/index.md",
+          "sha256": "c1de8ee0cc34f79b5871eac109565d33d6928477e43b02259d07bf1ad1f1c9e5",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-auth0-auth-js/index.md",
+          "sha256": "4b28e62e91958c1b0d5e6e49af46d557127c3a6fef3d5a5966e202c17bd46a9a",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-auth0-server-js/index.md",
+          "sha256": "6d2ff1fbf53f5de268e36b5dcca153f512431a02337a76d64935882fa23e782f",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-expo/index.md",
+          "sha256": "52cc0410500149eeff31ff349ab987d592e71ecaf69372a43b28b5a744251c3b",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-express-jwt/index.md",
+          "sha256": "222e5cf9b970ed19515d436df70e0a1ae1565d8380ac22fa703599999d3b8f95",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-express/index.md",
+          "sha256": "dece52837bb9b39c1862102d6e5db060c971e43d6b406400aa9a3764851a5165",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-fastapi-api/index.md",
+          "sha256": "07e51247c8d517394427690b827660b6ec06fe2606d5992bad7a92c7f5000855",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-fastify-api/index.md",
+          "sha256": "9ad3bb3146c3f5c7f9624e5a8978b26faca076266a93cea7c4e7d64a7c32defa",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-fastify/index.md",
+          "sha256": "b3f822a9efc621fd4ca6e9e35a2a1b3308ea8fb7ad24296c20d91ebb2a8153a6",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-flask/index.md",
+          "sha256": "a27c9330e7c885024705cdb6692d834af95449fdcd22c8030b811e68814946d0",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-flutter-native/index.md",
+          "sha256": "3a12944e9566d76a52be2b99decbb82175ee669dfaf1a72d41a6dcba04bbc996",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-flutter-web/index.md",
+          "sha256": "bcb7b865e4cd13189a5c8bf165ea5406e85f810538cf7f94fe762abc5bab6959",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-flutter-windows/index.md",
+          "sha256": "b50b3c7c454aad396b979f700b45441a28915699196eaa695cc26ac4fadd9094",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-go/index.md",
+          "sha256": "39e77072fa9809cefede435e99302e738df99aa0db637e4bf8f6fabeac208a12",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-ionic-angular/index.md",
+          "sha256": "9557aceafb252ed16dace86db15d468d851dc7f8db2f1ba2ffacde0a51233ae1",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-ionic-react/index.md",
+          "sha256": "870514c9f2d0bc93081104cb3af7a58ce2fcd8f307212917b320db80ea6fd2b4",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-ionic-vue/index.md",
+          "sha256": "ea12ed47ad0815685701051835413b6e296cfcac3c5564fa8d3bee543bc27aed",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-java-mvc/index.md",
+          "sha256": "f12b565aa5c4ae8ac74434ec792890764d36c309f76f0aaf87be0beafed3924d",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-kmp/index.md",
+          "sha256": "c4cdef033a286b5c6d55c5824e894ee62b50aadffe264ca5c3fbfc0c521932ce",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-laravel-api/index.md",
+          "sha256": "e13c30a9e78b4e4f4133b05fe6eed1f72171b5e63ef09423bbc8dd6767d86a32",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-laravel/index.md",
+          "sha256": "a94abc949d0445e926c7f380c2a18d1fd1ac8570fa9a2e4f3d278d4cb1fc1829",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-maui/index.md",
+          "sha256": "0a940e753b12ab70309b8d52039913d4c119ab554914720d612dd2ec9fa903a4",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-net-android/index.md",
+          "sha256": "4098a88e5ec32b9e224a0ac4e8535adb4c30a75dcb033483b11efbe9b68dc93e",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-net-ios/index.md",
+          "sha256": "85c9e39eac68c8bec0432a33bacc2665329682c0af7c7457a5d47db843b111c0",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-nextjs/index.md",
+          "sha256": "0475d47c21f2e1c1ad592cffc0bc9075dc8b7a3cba7f4c98e57c81622d006890",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-node-auth0/index.md",
+          "sha256": "d8811d736246cb99855fad5649f39fc95a7cc83186eb46bddf9eac41f08a8db7",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-node-auth0/migration.md",
+          "sha256": "b794c46f10987570eef7a373dbbf43f9c67d38074b13375ad50b076e6fdf90b2",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-nuxt/index.md",
+          "sha256": "af40e2342291fc672f32f197b0232dcfae8144ad566f3019b25d2e4535f97f69",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-php-api/index.md",
+          "sha256": "96dc72915730e34992a5170ccf6b12728b1b5da412dd316b952ff1e40dbb95b8",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-php/index.md",
+          "sha256": "52e85e65727e8f657de9b865f068e3a07e993b9bf728e40a836b458f2c6c533c",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-react-native/index.md",
+          "sha256": "10e006921ecc2ef56704e35cd8b01e7e5647c59742f0decb8b2a3e2796c2c517",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-react/index.md",
+          "sha256": "f16dd116f57f318788fff8049eb5ff666610020fe769d11af55189ba0f81e8bc",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-server-python/index.md",
+          "sha256": "b181cbd2388a2d4bceaaf7b5cdd062b29f03f366809655a4b66845e0ceddd601",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-spa-js/index.md",
+          "sha256": "57bda02373393c3ad2973ce1d9ad102313a1067f2af065641d23c857266342e2",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-springboot-api/index.md",
+          "sha256": "a19b0024831aadb612943d0f57f4c4c049dd3f916900d18e092cefaf4eb12578",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-swift/index.md",
+          "sha256": "7a17acad19729dbcf352c97f88111f72aa0bf9dcb54a0fbde2641c3a3120f83f",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-vue/index.md",
+          "sha256": "9b7a917573aa7a21f2ea9fb40becd23cf28bbae8dd067852c694e8c960eb0982",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-winforms/index.md",
+          "sha256": "7c071107b59e645575dde6329972aa212694558774d4357399d7ac4aa43016f3",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/framework-wpf/index.md",
+          "sha256": "a9c6124b975feea72c55035936ee4b150f5820fcfe8ff4e2b86cbd2efcecd773",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/pattern-common-errors/index.md",
+          "sha256": "912f8686f2a5d056e1e0bd1e60094c40eebce3194e1b1a4ab68f75c6b144ad40",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/pattern-multi-tenant/index.md",
+          "sha256": "81232a9420e8bbbd40849b23d0e44a9c4fbc6affd2d4a15aba7f8b5a39c76e3c",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/pattern-rate-limiting/index.md",
+          "sha256": "9f0433666c912bb9170672842eb6a4a563f1da8774b2c7eedb346c94f4c5a86e",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/pattern-security/index.md",
+          "sha256": "eb87697482da783910361395255edb72dfee063da1081ed97c430a5345e4e665",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/pattern-token-handling/index.md",
+          "sha256": "99b77bdd1173ad3754f94872085275add51e9ecaa9ca4495161c4d5b2edb22fe",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/tooling-cli/index.md",
+          "sha256": "63d18ab4cbf1599c1fb65655fc3483598e32a81e486e4a84bf6ef6f6f1522985",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/tooling-mcp/index.md",
+          "sha256": "5cac01a739c30a5349b6da7adee9fc42571127e070f1097f993b38ac90512bc9",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/tooling-terraform/index.md",
+          "sha256": "99e03e32ecfe71a028ee6a5a1c568a6c0e4303df44afa2c35ef639f035005b92",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/references/tooling-vercel/index.md",
+          "sha256": "0a398e1f96c22699c93c540c9f05747193b573c3be409bca333ff1d078e20960",
+          "mode": 420
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/scripts/render_pdf.sh",
+          "sha256": "30bac18efc1a7e17509d187672e5c799b782434dfc150e4796d93aefc2f7f08f",
+          "mode": 493
+        },
+        {
+          "path": "plugins/auth0/skills/auth0/scripts/validate-skill.sh",
+          "sha256": "aa3ed4e2885819b6a208c3859013d75bc66dcd0635d3d0c57ac4c3c0a2c52aaa",
+          "mode": 493
+        }
+      ],
+      "root": "upstream/auth0"
+    },
+    {
+      "id": "django",
+      "repository": "https://github.com/wsvincent/django-skills",
+      "revision": "9a8420d96174f53a8d14e696e30a59927ac70fa0",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Substantive 300+ line guide plus ORM, async, views, templates, testing, deployment, admin and checklist references. New project guidance Django 6.x/Python 3.12+; preserve installed version/LTS. Background Tasks require a real production backend. Claims several 6.1 APIs: gate on actual project version; registry Django 6.1.1 observed. Generic service-layer and always-custom-user conventions should respect existing projects. Reference prose contains test examples, no standalone executable eval suite found. Source was reviewed statically; upstream runtime tests were not executed. Original files remain inert specialists within the L11 project workflow.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "django:django",
+          "path": "SKILL.md",
+          "sha256": "fe1c4590eba4b47604743180aec763abeeb841806a5cd5791719785eb3a3e950",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "f0a30d226c1bc9a16d273c1e1b9e0d74dd5208805c4d9f7ed7f1492497811ec2",
+          "mode": 420
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "fe1c4590eba4b47604743180aec763abeeb841806a5cd5791719785eb3a3e950",
+          "mode": 420
+        },
+        {
+          "path": "references/admin.md",
+          "sha256": "0c92b715abb4f73908b43ff4e1b06684ca7b2d4fdf50cf957f4a27e5b297ceff",
+          "mode": 420
+        },
+        {
+          "path": "references/async.md",
+          "sha256": "622118347ced05a15264a83cc6e1bffdb9ccb2f7f6445c57c8781c23f260bb09",
+          "mode": 420
+        },
+        {
+          "path": "references/checklists.md",
+          "sha256": "81a3a0bddb5ad581e92260211136927103901173e95a42bea61a2ea44a815957",
+          "mode": 420
+        },
+        {
+          "path": "references/deployment.md",
+          "sha256": "844f21635e93cf2ac8156b7a68248486f0ed4f101f3f933cf5d3329355a5251c",
+          "mode": 420
+        },
+        {
+          "path": "references/orm.md",
+          "sha256": "95455388260c332f35ab777960deb38ca0abdc71e8481e3a95f2e46e5b1f2de3",
+          "mode": 420
+        },
+        {
+          "path": "references/templates.md",
+          "sha256": "f1975bc5b3a139525fc4d515a583cb8c8400d55829dac34fe7bfe03298435787",
+          "mode": 420
+        },
+        {
+          "path": "references/testing.md",
+          "sha256": "684fbd7342aa1cd3eb194341e25826886d684aa4f78e268ee9764c19bc999c37",
+          "mode": 420
+        },
+        {
+          "path": "references/views-and-forms.md",
+          "sha256": "02ca51f6db368378166ff31b9c3bf5b5be61e87a32eafdc411d08eea275d73e1",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/django"
+    },
+    {
+      "id": "pm",
+      "repository": "https://github.com/phuryn/pm-skills",
+      "revision": "18468a95b427e70e258b51389796367c6f684e7d",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original three self-contained product research skills; no executable helpers. Supply actual product evidence and user context. Added product hypothesis, requirements, acceptance, reviewability and cohort specialists preserve original bytes. Inputs and example numerical targets are not measured evidence. Generic statistical A/B analysis and ambiguous confidence/risk formulas were reviewed but not selected. Cohort analysis must distinguish incomplete observation windows from churn; intent audit requires actual project documentation. Use existing project docs rather than invent evidence or register source slash-command routers.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "pm:interview-script",
+          "path": "pm-product-discovery/skills/interview-script/SKILL.md",
+          "sha256": "892ca53da9852d4e6516d2305f0c0eb2db370bf39693c6c6797154b44bec9b4c",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "pm:create-prd",
+          "path": "pm-execution/skills/create-prd/SKILL.md",
+          "sha256": "2a4059f16301c5559e10d0dfd00c9bdcde04d2cd964d8c360dbe43bd0161ed32",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "pm:customer-journey-map",
+          "path": "pm-market-research/skills/customer-journey-map/SKILL.md",
+          "sha256": "656c0e16318b3b24870065a8eabb8a116b72e47c167472836ce76ea97ec5c75e",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "pm:opportunity-solution-tree",
+          "path": "pm-product-discovery/skills/opportunity-solution-tree/SKILL.md",
+          "sha256": "6b23e44a5ace86aa20d64cc130322265ace6a53a29831cc403b974098a379bcc",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "pm:identify-assumptions-new",
+          "path": "pm-product-discovery/skills/identify-assumptions-new/SKILL.md",
+          "sha256": "962b1e0c01e45ceb930e4d806c0ffb05e36cf25dcfef5497e7828d89d6ae474b",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "pm:brainstorm-experiments-new",
+          "path": "pm-product-discovery/skills/brainstorm-experiments-new/SKILL.md",
+          "sha256": "fe66d9ba76cf6b0e156298c88f752d8e1e62549fe77a7c01c0a74d8679da9334",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "pm:summarize-interview",
+          "path": "pm-product-discovery/skills/summarize-interview/SKILL.md",
+          "sha256": "5a2a0c8257f5e2f7ef098d4531acbbcd3087bb07bb87d4cabfe1a97ef1ad037c",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "pm:metrics-dashboard",
+          "path": "pm-product-discovery/skills/metrics-dashboard/SKILL.md",
+          "sha256": "fa74abf49be9f034ae43110528028402e5e63809540302b95567018d478ef4e9",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "pm:cohort-analysis",
+          "path": "pm-data-analytics/skills/cohort-analysis/SKILL.md",
+          "sha256": "bd721a429e58c71a1a488ac1e89ba2bcbb9e179cb9c0b5eac44a3c3b3e9fdb15",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "pm:user-stories",
+          "path": "pm-execution/skills/user-stories/SKILL.md",
+          "sha256": "8ce89cd81de5a3df7d504380d18c54cec6c59ccdb7fd18cbcb62b6b6183d0a55",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "pm:test-scenarios",
+          "path": "pm-execution/skills/test-scenarios/SKILL.md",
+          "sha256": "2dc10ebb6359604275f26234d3c66c9ccc952e501ad5b685c23a5c0f34f634d4",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "pm:pre-mortem",
+          "path": "pm-execution/skills/pre-mortem/SKILL.md",
+          "sha256": "4e5cf10a46ac1d1cdde6aa009ba2b860c532f55c0c3d9ec53a82082cad073052",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "pm:outcome-roadmap",
+          "path": "pm-execution/skills/outcome-roadmap/SKILL.md",
+          "sha256": "3d2da8f82f4cbe4c8d06593765e2fbb94913676e9a65663b7da9e53c9a0082c8",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "pm:product-strategy",
+          "path": "pm-product-strategy/skills/product-strategy/SKILL.md",
+          "sha256": "50d4bfe62ae71a321271a491148e8dca4715a6a7550f82ffba2ded06f036d5b8",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "pm:shipping-artifacts",
+          "path": "pm-ai-shipping/skills/shipping-artifacts/SKILL.md",
+          "sha256": "934f6e1d0eec42359d54b88e0ee89fc4fe8e3f28c2e8a12fb8382445565dfccb",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "pm:intended-vs-implemented",
+          "path": "pm-ai-shipping/skills/intended-vs-implemented/SKILL.md",
+          "sha256": "6d917f0e59f78ea6b5d847f57b1c816baa2948cac56529939589cd73d2e4c9eb",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "a2c922f9b81b4f40347ddfa79c38eda0f1278b5a6d108bd4099b4da254c774ee",
+          "mode": 420
+        },
+        {
+          "path": "pm-ai-shipping/skills/intended-vs-implemented/SKILL.md",
+          "sha256": "6d917f0e59f78ea6b5d847f57b1c816baa2948cac56529939589cd73d2e4c9eb",
+          "mode": 420
+        },
+        {
+          "path": "pm-ai-shipping/skills/shipping-artifacts/SKILL.md",
+          "sha256": "934f6e1d0eec42359d54b88e0ee89fc4fe8e3f28c2e8a12fb8382445565dfccb",
+          "mode": 420
+        },
+        {
+          "path": "pm-data-analytics/skills/cohort-analysis/SKILL.md",
+          "sha256": "bd721a429e58c71a1a488ac1e89ba2bcbb9e179cb9c0b5eac44a3c3b3e9fdb15",
+          "mode": 420
+        },
+        {
+          "path": "pm-execution/skills/create-prd/SKILL.md",
+          "sha256": "2a4059f16301c5559e10d0dfd00c9bdcde04d2cd964d8c360dbe43bd0161ed32",
+          "mode": 420
+        },
+        {
+          "path": "pm-execution/skills/outcome-roadmap/SKILL.md",
+          "sha256": "3d2da8f82f4cbe4c8d06593765e2fbb94913676e9a65663b7da9e53c9a0082c8",
+          "mode": 420
+        },
+        {
+          "path": "pm-execution/skills/pre-mortem/SKILL.md",
+          "sha256": "4e5cf10a46ac1d1cdde6aa009ba2b860c532f55c0c3d9ec53a82082cad073052",
+          "mode": 420
+        },
+        {
+          "path": "pm-execution/skills/test-scenarios/SKILL.md",
+          "sha256": "2dc10ebb6359604275f26234d3c66c9ccc952e501ad5b685c23a5c0f34f634d4",
+          "mode": 420
+        },
+        {
+          "path": "pm-execution/skills/user-stories/SKILL.md",
+          "sha256": "8ce89cd81de5a3df7d504380d18c54cec6c59ccdb7fd18cbcb62b6b6183d0a55",
+          "mode": 420
+        },
+        {
+          "path": "pm-market-research/skills/customer-journey-map/SKILL.md",
+          "sha256": "656c0e16318b3b24870065a8eabb8a116b72e47c167472836ce76ea97ec5c75e",
+          "mode": 420
+        },
+        {
+          "path": "pm-product-discovery/skills/brainstorm-experiments-new/SKILL.md",
+          "sha256": "fe66d9ba76cf6b0e156298c88f752d8e1e62549fe77a7c01c0a74d8679da9334",
+          "mode": 420
+        },
+        {
+          "path": "pm-product-discovery/skills/identify-assumptions-new/SKILL.md",
+          "sha256": "962b1e0c01e45ceb930e4d806c0ffb05e36cf25dcfef5497e7828d89d6ae474b",
+          "mode": 420
+        },
+        {
+          "path": "pm-product-discovery/skills/interview-script/SKILL.md",
+          "sha256": "892ca53da9852d4e6516d2305f0c0eb2db370bf39693c6c6797154b44bec9b4c",
+          "mode": 420
+        },
+        {
+          "path": "pm-product-discovery/skills/metrics-dashboard/SKILL.md",
+          "sha256": "fa74abf49be9f034ae43110528028402e5e63809540302b95567018d478ef4e9",
+          "mode": 420
+        },
+        {
+          "path": "pm-product-discovery/skills/opportunity-solution-tree/SKILL.md",
+          "sha256": "6b23e44a5ace86aa20d64cc130322265ace6a53a29831cc403b974098a379bcc",
+          "mode": 420
+        },
+        {
+          "path": "pm-product-discovery/skills/summarize-interview/SKILL.md",
+          "sha256": "5a2a0c8257f5e2f7ef098d4531acbbcd3087bb07bb87d4cabfe1a97ef1ad037c",
+          "mode": 420
+        },
+        {
+          "path": "pm-product-strategy/skills/product-strategy/SKILL.md",
+          "sha256": "50d4bfe62ae71a321271a491148e8dca4715a6a7550f82ffba2ded06f036d5b8",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/pm"
+    },
+    {
+      "id": "pulumi",
+      "repository": "https://github.com/pulumi/agent-skills",
+      "revision": "e57d1d117b585a3b5bf6bc612ff327acfa89bd29",
+      "license": "Apache-2.0",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original upstream skill directories and supporting files. Invoke selected specialists within the single L11 workflow; do not activate source bootstrap routers or global hooks.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "pulumi:provider-upgrade",
+          "path": "pulumi/skills/provider-upgrade/SKILL.md",
+          "sha256": "fb5544bff98c3b0837005efa513761536775de0f1748e77545d2725cbcbd4587",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "pulumi:pulumi-best-practices",
+          "path": "pulumi/skills/pulumi-best-practices/SKILL.md",
+          "sha256": "701bf94433f77f7851ed979ea74700a50dc69f958a20327f13da53d6a1468765",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "pulumi:pulumi-esc",
+          "path": "pulumi/skills/pulumi-esc/SKILL.md",
+          "sha256": "a3ec09df6514ba4c47345b5ce8d0de111e80c29b600d660d4261ce8dbd8cfdb3",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "mode": 420
+        },
+        {
+          "path": "pulumi/skills/provider-upgrade/SKILL.md",
+          "sha256": "fb5544bff98c3b0837005efa513761536775de0f1748e77545d2725cbcbd4587",
+          "mode": 420
+        },
+        {
+          "path": "pulumi/skills/provider-upgrade/agents/openai.yaml",
+          "sha256": "0619cf3d3aea8f7bbf0ff4c9d9955801ee9486f2c644f176aac9cb1dbfecc108",
+          "mode": 420
+        },
+        {
+          "path": "pulumi/skills/provider-upgrade/references/diagnostic-toolbox.md",
+          "sha256": "d97ec1df70be7d1e19c422f893273b851e23518dcb71dfb295692da2a057ac8c",
+          "mode": 420
+        },
+        {
+          "path": "pulumi/skills/provider-upgrade/use_cases.yaml",
+          "sha256": "cf27447ecb5aa0962fbeae3cd3a459cf714fc0098909fff914d09fff0f794878",
+          "mode": 420
+        },
+        {
+          "path": "pulumi/skills/pulumi-best-practices/SKILL.md",
+          "sha256": "701bf94433f77f7851ed979ea74700a50dc69f958a20327f13da53d6a1468765",
+          "mode": 420
+        },
+        {
+          "path": "pulumi/skills/pulumi-best-practices/agents/openai.yaml",
+          "sha256": "2026466b871f83c3a00164eea9c20e3e913712faf56f76241be9d9fbd40bdf88",
+          "mode": 420
+        },
+        {
+          "path": "pulumi/skills/pulumi-best-practices/use_cases.yaml",
+          "sha256": "e3de56d96bd00a3c3a146e40a021ad03ca3d2e16319b00225deb4a8d708a0980",
+          "mode": 420
+        },
+        {
+          "path": "pulumi/skills/pulumi-esc/SKILL.md",
+          "sha256": "a3ec09df6514ba4c47345b5ce8d0de111e80c29b600d660d4261ce8dbd8cfdb3",
+          "mode": 420
+        },
+        {
+          "path": "pulumi/skills/pulumi-esc/agents/openai.yaml",
+          "sha256": "0e23a2305b4611f24c44d3cec91cb2c9a8b1e0b5fc6a6dfdb050965cb60e9896",
+          "mode": 420
+        },
+        {
+          "path": "pulumi/skills/pulumi-esc/use_cases.yaml",
+          "sha256": "75e6acbf2eb20e14a42641bc4f4cc19df08079c0837627c099735a8983bf5d76",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/pulumi"
+    },
+    {
+      "id": "trailofbits",
+      "repository": "https://github.com/trailofbits/skills",
+      "revision": "321ccfe628eca0d314b0ee4eaffcdd8a05639aaf",
+      "license": "CC-BY-SA-4.0",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original complete property-testing references and supply-chain collector/render scripts with tests, Python dependency metadata and uv.lock. CC-BY-SA-4.0 source is redistributed unchanged with attribution; it is not covered by the L11 MIT license. Collector needs Python >=3.11, uv/locked dependencies and network registries; authenticated gh improves GitHub coverage. Unavailable data must remain unassessable. Security consultancy's original auditor skills, executable helpers and test fixtures; preserve separate attribution/share-alike license. One-level cross-file limit must be reported. Static guidance, not runtime exploit assurance. Agent reference is a support dependency; ship as inert source, not registered top-level agent. Execution/probing must follow caller's task scope. Only selected specialist directories and supporting source are shipped; no source plugin, root router, hooks, agent registration or MCP is activated. Cloud/account runtimes remain separate requirements.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "trailofbits:property-based-testing",
+          "path": "plugins/property-based-testing/skills/property-based-testing/SKILL.md",
+          "sha256": "9448cacb65c6237a7c22dc59602667177ecae405524079ae9ff92240590b995a",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "trailofbits:supply-chain-risk-auditor",
+          "path": "plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/SKILL.md",
+          "sha256": "a1254b7f8d3a1731a9a7e1f9cd6c67b59cf84ed6ef7c7fb455db9a14c528ceb4",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "trailofbits:agentic-actions-auditor",
+          "path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/SKILL.md",
+          "sha256": "b2bdb88d559bc37e6c2c8314e28e7a2eb47e7cdd9da51e77da347d3517326dc0",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "trailofbits:sarif-parsing",
+          "path": "plugins/static-analysis/skills/sarif-parsing/SKILL.md",
+          "sha256": "cc5f008f40ffb8a1ae03ebd32d7234de43e828293955a0bc251b76ba249554fa",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "trailofbits:sharp-edges",
+          "path": "plugins/sharp-edges/skills/sharp-edges/SKILL.md",
+          "sha256": "3b69a709c2f8f0cfcf57d40a3186e166f307865cc8ed924be4098e549a121e9c",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+          "mode": 420
+        },
+        {
+          "path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/SKILL.md",
+          "sha256": "b2bdb88d559bc37e6c2c8314e28e7a2eb47e7cdd9da51e77da347d3517326dc0",
+          "mode": 420
+        },
+        {
+          "path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/agents/openai.yaml",
+          "sha256": "11a851b1841f3e828e7609045d91e0632cac07dfc008b2740f487cee83a5efd1",
+          "mode": 420
+        },
+        {
+          "path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/assets/trail-of-bits-mark.svg",
+          "sha256": "4bf74c789b38dcf6ad762c136b6832363d27ae19fbaa9a18ec18d66ecce6ca05",
+          "mode": 420
+        },
+        {
+          "path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/references/action-profiles.md",
+          "sha256": "bbfaf6abe69b57e6289948340aa649482378b53f752a25cba92e7d4a740c4324",
+          "mode": 420
+        },
+        {
+          "path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/references/cross-file-resolution.md",
+          "sha256": "b7d0d31fa24f1b987953ef0c11dc22ad48e81675b34de65c65ff79a74a3e6084",
+          "mode": 420
+        },
+        {
+          "path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/references/foundations.md",
+          "sha256": "722ee7ea1dc06af8fa8cbb6cacb62f3c7c70139c8ed402752dd12c851a195d0e",
+          "mode": 420
+        },
+        {
+          "path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/references/vector-a-env-var-intermediary.md",
+          "sha256": "7903992f54409760aae64ddb45bb3c26032223443f746ac6e3d8fd281bda877d",
+          "mode": 420
+        },
+        {
+          "path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/references/vector-b-direct-expression-injection.md",
+          "sha256": "be6e5baff68d6770665ce6c7b7995c92dfdec3866b96ea21330c94b340499631",
+          "mode": 420
+        },
+        {
+          "path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/references/vector-c-cli-data-fetch.md",
+          "sha256": "f11d2333f2b3800215311047c0b0ad35a1020c79dbb77614ff66a8c1fef16252",
+          "mode": 420
+        },
+        {
+          "path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/references/vector-d-pr-target-checkout.md",
+          "sha256": "fc029037bb219aed5e130708eb4911ad235e47f1394e2155b5e40175ddb2d187",
+          "mode": 420
+        },
+        {
+          "path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/references/vector-e-error-log-injection.md",
+          "sha256": "2c93623d96f49c4ab70bc2dd92e111b2cfca68ff70aaf579efd86812b0df15a9",
+          "mode": 420
+        },
+        {
+          "path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/references/vector-f-subshell-expansion.md",
+          "sha256": "d6ede1d6a7769e1b75faed3dfeba7d212e0115fb9ddb09d39145bf65d062ba7f",
+          "mode": 420
+        },
+        {
+          "path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/references/vector-g-eval-of-ai-output.md",
+          "sha256": "b9a47a41dd1470cc469cc030cd6cd6059b35741c78ba9f494c1d18b2fd65b686",
+          "mode": 420
+        },
+        {
+          "path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/references/vector-h-dangerous-sandbox-configs.md",
+          "sha256": "892cb478d91c2e155b4084c5cf707bea5045bb4e2a11c7a5a1131b6212690b86",
+          "mode": 420
+        },
+        {
+          "path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/references/vector-i-wildcard-allowlists.md",
+          "sha256": "68a4cd774ad829e535a8ec15ee492caefbae8e46f115f345b7f2bf2fecf88f86",
+          "mode": 420
+        },
+        {
+          "path": "plugins/property-based-testing/skills/property-based-testing/README.md",
+          "sha256": "ffbe30eec09cc64fb1eae836b07ca1d82939bda3f1e6f0dceadcdd78793a3112",
+          "mode": 420
+        },
+        {
+          "path": "plugins/property-based-testing/skills/property-based-testing/SKILL.md",
+          "sha256": "9448cacb65c6237a7c22dc59602667177ecae405524079ae9ff92240590b995a",
+          "mode": 420
+        },
+        {
+          "path": "plugins/property-based-testing/skills/property-based-testing/agents/openai.yaml",
+          "sha256": "11a851b1841f3e828e7609045d91e0632cac07dfc008b2740f487cee83a5efd1",
+          "mode": 420
+        },
+        {
+          "path": "plugins/property-based-testing/skills/property-based-testing/assets/trail-of-bits-mark.svg",
+          "sha256": "4bf74c789b38dcf6ad762c136b6832363d27ae19fbaa9a18ec18d66ecce6ca05",
+          "mode": 420
+        },
+        {
+          "path": "plugins/property-based-testing/skills/property-based-testing/references/generating.md",
+          "sha256": "c0e72dfc89babe3c32de718b81b94044362c85e776d7475e950dfeaab78bb58e",
+          "mode": 420
+        },
+        {
+          "path": "plugins/property-based-testing/skills/property-based-testing/references/interpreting-failures.md",
+          "sha256": "dbae7db8773712ba03268a3d56ea5aa6720af0650a5189580bfd88aa2edc3f9a",
+          "mode": 420
+        },
+        {
+          "path": "plugins/property-based-testing/skills/property-based-testing/references/libraries.md",
+          "sha256": "f7218acf8e668130ef3048983472579d04e12030c5401926f666363e5f69c686",
+          "mode": 420
+        },
+        {
+          "path": "plugins/property-based-testing/skills/property-based-testing/references/refactoring.md",
+          "sha256": "6eb5c206f575704791f089608bb06e41d6eed91b9d3c7fb27912f969aed07a18",
+          "mode": 420
+        },
+        {
+          "path": "plugins/property-based-testing/skills/property-based-testing/references/reviewing.md",
+          "sha256": "110b08118a1e7b1a2566def6e9d2a0bf43fc2deefce857d2ce3b4382b07bc774",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/agents/sharp-edges-analyzer.md",
+          "sha256": "c9df773b4a8a56ed88179ef46b8b4eada44092fe4227a683d37bd5219bcbbdae",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/SKILL.md",
+          "sha256": "3b69a709c2f8f0cfcf57d40a3186e166f307865cc8ed924be4098e549a121e9c",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/agents/openai.yaml",
+          "sha256": "11a851b1841f3e828e7609045d91e0632cac07dfc008b2740f487cee83a5efd1",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/assets/trail-of-bits-mark.svg",
+          "sha256": "4bf74c789b38dcf6ad762c136b6832363d27ae19fbaa9a18ec18d66ecce6ca05",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/references/auth-patterns.md",
+          "sha256": "1fbf526ca1db7204f9ebb1bf4eb3c48c544676623d23e5d28e01f6f63c355be2",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/references/case-studies.md",
+          "sha256": "2e81a320728b4597bf84c490176d5bf212f1e6ba6f87aafba61ad1734de35332",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/references/config-patterns.md",
+          "sha256": "1d99f2716f7bef18efe71015ce0c56e0f4961c042faa503d796d6d4d1626fdc6",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/references/crypto-apis.md",
+          "sha256": "8baddc83a1f964d6d8b15678d60a37c93029c18dc162bd7c00895e585ff1a825",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/references/lang-c.md",
+          "sha256": "d077d711c73749c924eae81c06018b14bbf1ec9b93d71723c472b43df5d7d5ae",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/references/lang-csharp.md",
+          "sha256": "8fa9e93d36c0e1397b7ca81307163370fc43cf700215b7c6d7aa1b09fdb91fb4",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/references/lang-go.md",
+          "sha256": "839c0e7b4e3fa2f3b37c651e926aa59d69d20bfef5e67f569eedacf11354844d",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/references/lang-java.md",
+          "sha256": "3b93b6049f7e0e356a1ffebc0b4642f3cef315d90be45b63e15c8c4814f9ebeb",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/references/lang-javascript.md",
+          "sha256": "cf72f55d31318666942a8d1d64340befc3c4e7223afc2ca196e6a776ffa4c895",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/references/lang-kotlin.md",
+          "sha256": "c891148c10a4941c3396416a10ac64512eb3a9e13ea5eeaec3902da4b51501dd",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/references/lang-php.md",
+          "sha256": "7960d9773874cf06c5b470a5ca3ab406d896e66b71e713d809bc1ecfcab63485",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/references/lang-python.md",
+          "sha256": "36543becc25b4e3f41eaedcab62e9b204657e6742b8ac95e405bcd040d33bf03",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/references/lang-ruby.md",
+          "sha256": "d9ba749caaccb8a3bb39e2199b2062c0957cf48739218ba8022d49be5cba2088",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/references/lang-rust.md",
+          "sha256": "3d14993ea70b2b2df3fc0f388cbd1631470895c27ccbd9d764296d1da8f5b6ee",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/references/lang-swift.md",
+          "sha256": "a64ab8692db0f3e43526088c63c7fdcb7354d1b24e6fe7ca759aea3260890e04",
+          "mode": 420
+        },
+        {
+          "path": "plugins/sharp-edges/skills/sharp-edges/references/language-specific.md",
+          "sha256": "4522b4a37cfd7d3aa689209dfd4569f3b39074bd1f5987a36a6e819f501141b6",
+          "mode": 420
+        },
+        {
+          "path": "plugins/static-analysis/skills/sarif-parsing/SKILL.md",
+          "sha256": "cc5f008f40ffb8a1ae03ebd32d7234de43e828293955a0bc251b76ba249554fa",
+          "mode": 420
+        },
+        {
+          "path": "plugins/static-analysis/skills/sarif-parsing/agents/openai.yaml",
+          "sha256": "11a851b1841f3e828e7609045d91e0632cac07dfc008b2740f487cee83a5efd1",
+          "mode": 420
+        },
+        {
+          "path": "plugins/static-analysis/skills/sarif-parsing/assets/trail-of-bits-mark.svg",
+          "sha256": "4bf74c789b38dcf6ad762c136b6832363d27ae19fbaa9a18ec18d66ecce6ca05",
+          "mode": 420
+        },
+        {
+          "path": "plugins/static-analysis/skills/sarif-parsing/resources/fixtures/codeql-no-level.sarif",
+          "sha256": "edc92b09e4d8b1247ec87f081c68caa1843d8407063508ad33aab13327ba386a",
+          "mode": 420
+        },
+        {
+          "path": "plugins/static-analysis/skills/sarif-parsing/resources/fixtures/levels-on-results.sarif",
+          "sha256": "625e8175a3c68d0d11f7e4c14095dddff5056d52a539e3153180cdb37ce50c6b",
+          "mode": 420
+        },
+        {
+          "path": "plugins/static-analysis/skills/sarif-parsing/resources/jq-queries.md",
+          "sha256": "f44ec4e219c93504ec69fdeb2c60668ee3934585e5565fffdaa43f6b224b5d6a",
+          "mode": 420
+        },
+        {
+          "path": "plugins/static-analysis/skills/sarif-parsing/resources/sarif_helpers.py",
+          "sha256": "06d8e63849bd2b93baf31b23a33550447eed2ac457c2687f173933039e5ad247",
+          "mode": 420
+        },
+        {
+          "path": "plugins/static-analysis/skills/sarif-parsing/resources/test_sarif_helpers.py",
+          "sha256": "5efc4e50f3dbd81ea223049b1892653a46bce0c273904d0b04e43e449343fe17",
+          "mode": 420
+        },
+        {
+          "path": "plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/SKILL.md",
+          "sha256": "a1254b7f8d3a1731a9a7e1f9cd6c67b59cf84ed6ef7c7fb455db9a14c528ceb4",
+          "mode": 420
+        },
+        {
+          "path": "plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/agents/openai.yaml",
+          "sha256": "11a851b1841f3e828e7609045d91e0632cac07dfc008b2740f487cee83a5efd1",
+          "mode": 420
+        },
+        {
+          "path": "plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/assets/trail-of-bits-mark.svg",
+          "sha256": "4bf74c789b38dcf6ad762c136b6832363d27ae19fbaa9a18ec18d66ecce6ca05",
+          "mode": 420
+        },
+        {
+          "path": "plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/scripts/collect.py",
+          "sha256": "fd75cffad628980a6da521b5d3a40fb5dd16c5bb9ad63a25245e5208d08abff7",
+          "mode": 420
+        },
+        {
+          "path": "plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/scripts/model.py",
+          "sha256": "78a20954b76e81216991b57453ceddbdb867035a0d6993b98cfa05a7f8d008d3",
+          "mode": 420
+        },
+        {
+          "path": "plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/scripts/pyproject.toml",
+          "sha256": "a79ec30039ce3bc90544b9d833f7edc128232821575736f659d2b2ca0a601f3b",
+          "mode": 420
+        },
+        {
+          "path": "plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/scripts/render.py",
+          "sha256": "9d6091645c8a8edf5c50d24bd70ff881efa30b920d93b46ea1775ee2dd328bc7",
+          "mode": 420
+        },
+        {
+          "path": "plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/scripts/sources.py",
+          "sha256": "4eb66952dca285b4790d1193b39f240e8015025ee054a215f4c696cbba2478e2",
+          "mode": 420
+        },
+        {
+          "path": "plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/scripts/test_collect.py",
+          "sha256": "ea4f25bdab0add75d500b22ba5eb9f993d3695d974cd3f92b418f5cff07e00da",
+          "mode": 420
+        },
+        {
+          "path": "plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/scripts/test_model.py",
+          "sha256": "92059fe937c50f1502d71df2ddc4f123e8e2647fc0f4f7b270727ef9a2004f5c",
+          "mode": 420
+        },
+        {
+          "path": "plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/scripts/test_render.py",
+          "sha256": "319970fd010d6bf5fbf79b595e8fc918c5e74645b718f495f2479aef3ea8cc16",
+          "mode": 420
+        },
+        {
+          "path": "plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/scripts/test_sources.py",
+          "sha256": "5c0a993d747e3ed29972272a18a14dd46b6f897bdfff7e147d0a9e9b4b4b6511",
+          "mode": 420
+        },
+        {
+          "path": "plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/scripts/uv.lock",
+          "sha256": "99598cc397a42c945abbc9d839d1c61f1852f414660ce41e2e68bd9cdf664100",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/trailofbits"
+    },
+    {
+      "id": "wshobson",
+      "repository": "https://github.com/wshobson/agents",
+      "revision": "a30778f8c4e6b0a87567941b7cca4f534bf642b6",
+      "license": "MIT",
+      "licenseFiles": [
+        "LICENSE"
+      ],
+      "verifiedAt": "2026-09-11",
+      "caveat": "Original specialist directories with substantive references/examples. Framework/cloud examples must be adapted to the actual project. Retirement is composed partial coverage, not a complete decommissioning runbook. Established specialist skill collection; content and complete templates/scripts inspected; not Kubernetes vendor ownership. CNI must implement NetworkPolicy; YAML validity does not prove enforcement. Account/cluster operations require separately authorized credentials. Upstream examples include curl-to-sudo bootstrap, auto-prune, sync --force; never auto-run during installation. Git reversal alone does not prove data rollback. Only selected specialist directories and supporting source are shipped; no source plugin, root router, hooks, agent registration or MCP is activated. Cloud/account runtimes remain separate requirements.",
+      "dependencies": [],
+      "skills": [
+        {
+          "id": "wshobson:architecture-patterns",
+          "path": "plugins/backend-development/skills/architecture-patterns/SKILL.md",
+          "sha256": "350caf22b856b7d2908a10a69a8cc13e743c757ba9838716051b4e29fc1d7595",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:auth-implementation-patterns",
+          "path": "plugins/developer-essentials/skills/auth-implementation-patterns/SKILL.md",
+          "sha256": "1fc61d6074ace3d3db9d527ef92a7188118ff305b6ea98e0f9356545c6e15996",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:cost-optimization",
+          "path": "plugins/cloud-infrastructure/skills/cost-optimization/SKILL.md",
+          "sha256": "ee0bd8b8054a7d45d5448476bad21b3c584c0e325dae273e5b4912b68b2000fb",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:database-migration",
+          "path": "plugins/framework-migration/skills/database-migration/SKILL.md",
+          "sha256": "d388db68c9f86beba823247f910b6a91c2fe8e12ef9b30b6e49f4b1bf19f1ab1",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:dependency-upgrade",
+          "path": "plugins/framework-migration/skills/dependency-upgrade/SKILL.md",
+          "sha256": "4cf4ff9b0520bca4092cce3981af6a064bbd904788375ce1b6ae4d866dea8d8d",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:deployment-pipeline-design",
+          "path": "plugins/cicd-automation/skills/deployment-pipeline-design/SKILL.md",
+          "sha256": "9a56bd9401c1dc8ef5a15758d7234f211193097ddb3895d46d1ddcd730687b18",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:e2e-testing-patterns",
+          "path": "plugins/developer-essentials/skills/e2e-testing-patterns/SKILL.md",
+          "sha256": "1653690dde9eeca6dcb66086277791c2a3ccc2b37eaab6ec9b627a10adfb94be",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:gdpr-data-handling",
+          "path": "plugins/hr-legal-compliance/skills/gdpr-data-handling/SKILL.md",
+          "sha256": "cb33aa8fbfbcddc42968d4ba1ed00cc76e3b2d0f4ff089bd17076e438fbafec5",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:hybrid-cloud-networking",
+          "path": "plugins/cloud-infrastructure/skills/hybrid-cloud-networking/SKILL.md",
+          "sha256": "46cc47d2d9b395c801c0c533ec0f15489418ec43e85afe70a11ff8c910f51b52",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:incident-runbook-templates",
+          "path": "plugins/incident-response/skills/incident-runbook-templates/SKILL.md",
+          "sha256": "fd9ca9b9bc958da514039d59e453b05182208c7410696273d2c62350ff3ad1aa",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:microservices-patterns",
+          "path": "plugins/backend-development/skills/microservices-patterns/SKILL.md",
+          "sha256": "c9d34026de5eb5b9f730604d1979df9aaa58dd7fa40c022e071da5ca65d68759",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:postgresql-table-design",
+          "path": "plugins/database-design/skills/postgresql-table-design/SKILL.md",
+          "sha256": "1e27b0fac6d88a710cd925b831608ca202c40ade4f4e285a8e027dcf2f9a44ea",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:postmortem-writing",
+          "path": "plugins/incident-response/skills/postmortem-writing/SKILL.md",
+          "sha256": "29f3405724d4a2813cae234757e823c6ec4fd6875c88da6aabd7dfc2512a6906",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:secrets-management",
+          "path": "plugins/cicd-automation/skills/secrets-management/SKILL.md",
+          "sha256": "da14565446a404c0a3ca2cf4363f755dc06a351c4b588be453ea73680d5658d0",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:slo-implementation",
+          "path": "plugins/observability-monitoring/skills/slo-implementation/SKILL.md",
+          "sha256": "1436f6003627c6978872e3a8c94f8f601315e39105c04565d8883f661c827150",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:wcag-audit-patterns",
+          "path": "plugins/accessibility-compliance/skills/wcag-audit-patterns/SKILL.md",
+          "sha256": "db263a3405deb95a63175f33da4a9d82d8595599fbee4a81979059b35a7cec40",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:workflow-orchestration-patterns",
+          "path": "plugins/backend-development/skills/workflow-orchestration-patterns/SKILL.md",
+          "sha256": "f4418f98189bd89d7b801ec65df48b53caa1c555a23f1d9684799415818f1024",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:k8s-manifest-generator",
+          "path": "plugins/kubernetes-operations/skills/k8s-manifest-generator/SKILL.md",
+          "sha256": "489acd7b8fef07286a9b7d37879252e340e297f51a718d1e4ff30cfaf3b5f262",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:k8s-security-policies",
+          "path": "plugins/kubernetes-operations/skills/k8s-security-policies/SKILL.md",
+          "sha256": "13c693f24c8b8a6a23b4441e6f7528b18e735b8da4b9b5a642fef5b6969445a7",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:helm-chart-scaffolding",
+          "path": "plugins/kubernetes-operations/skills/helm-chart-scaffolding/SKILL.md",
+          "sha256": "d277c3d3a1b669e4fb8bcd3a36fdec7d7ad1becc2f2ff908c841ddf306e622ed",
+          "role": "specialist",
+          "mode": "vendored"
+        },
+        {
+          "id": "wshobson:gitops-workflow",
+          "path": "plugins/kubernetes-operations/skills/gitops-workflow/SKILL.md",
+          "sha256": "0a965df87fbf065e9e64fd49b7a4adb4f5d3ead6b70c873675e2b37d370ca065",
+          "role": "specialist",
+          "mode": "vendored"
+        }
+      ],
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "f89abb55d9f073f38f1703e4518f0613c788c6174be7f13b8dfe48a1c076c746",
+          "mode": 420
+        },
+        {
+          "path": "plugins/accessibility-compliance/skills/wcag-audit-patterns/SKILL.md",
+          "sha256": "db263a3405deb95a63175f33da4a9d82d8595599fbee4a81979059b35a7cec40",
+          "mode": 420
+        },
+        {
+          "path": "plugins/accessibility-compliance/skills/wcag-audit-patterns/references/details.md",
+          "sha256": "0a61237ccb4e1b2cba4291f83e0747ad64ac9ba81b37427ee0e648537c9c78d6",
+          "mode": 420
+        },
+        {
+          "path": "plugins/backend-development/skills/architecture-patterns/SKILL.md",
+          "sha256": "350caf22b856b7d2908a10a69a8cc13e743c757ba9838716051b4e29fc1d7595",
+          "mode": 420
+        },
+        {
+          "path": "plugins/backend-development/skills/architecture-patterns/references/advanced-patterns.md",
+          "sha256": "e1cb31c83b532e579991de277836a1ea5e3d88b2ca30fc8ac16f6047ceca439e",
+          "mode": 420
+        },
+        {
+          "path": "plugins/backend-development/skills/architecture-patterns/references/details.md",
+          "sha256": "a53411600b253b343247db9d86140f3136ee7bd26a67aa8411962bcc1f5ff981",
+          "mode": 420
+        },
+        {
+          "path": "plugins/backend-development/skills/microservices-patterns/SKILL.md",
+          "sha256": "c9d34026de5eb5b9f730604d1979df9aaa58dd7fa40c022e071da5ca65d68759",
+          "mode": 420
+        },
+        {
+          "path": "plugins/backend-development/skills/microservices-patterns/references/details.md",
+          "sha256": "d5317e835b4e72d1bc8cdf3e65c2a54b928f474fcc5a8c967171ed12da695d92",
+          "mode": 420
+        },
+        {
+          "path": "plugins/backend-development/skills/workflow-orchestration-patterns/SKILL.md",
+          "sha256": "f4418f98189bd89d7b801ec65df48b53caa1c555a23f1d9684799415818f1024",
+          "mode": 420
+        },
+        {
+          "path": "plugins/backend-development/skills/workflow-orchestration-patterns/references/details.md",
+          "sha256": "f904309ab60916d3e6943a2c35ffeadc48ddfa6a3defdd8da5472926ba8887cb",
+          "mode": 420
+        },
+        {
+          "path": "plugins/cicd-automation/skills/deployment-pipeline-design/SKILL.md",
+          "sha256": "9a56bd9401c1dc8ef5a15758d7234f211193097ddb3895d46d1ddcd730687b18",
+          "mode": 420
+        },
+        {
+          "path": "plugins/cicd-automation/skills/deployment-pipeline-design/references/advanced-strategies.md",
+          "sha256": "4f7dd0252f8a0d0c195e729500e4b1ae72c94157358faec5303e78d9b9c13a52",
+          "mode": 420
+        },
+        {
+          "path": "plugins/cicd-automation/skills/deployment-pipeline-design/references/details.md",
+          "sha256": "0de81a3e3d168fa301f9b49a6be321a247c3ef8be40c167a283df4a3ee0d5a3b",
+          "mode": 420
+        },
+        {
+          "path": "plugins/cicd-automation/skills/secrets-management/SKILL.md",
+          "sha256": "da14565446a404c0a3ca2cf4363f755dc06a351c4b588be453ea73680d5658d0",
+          "mode": 420
+        },
+        {
+          "path": "plugins/cloud-infrastructure/skills/cost-optimization/SKILL.md",
+          "sha256": "ee0bd8b8054a7d45d5448476bad21b3c584c0e325dae273e5b4912b68b2000fb",
+          "mode": 420
+        },
+        {
+          "path": "plugins/cloud-infrastructure/skills/cost-optimization/references/tagging-standards.md",
+          "sha256": "79e557818a8c0a700fbc9389ee4f78404ba9c7fdc72b1b12ffec0abfba6ac1af",
+          "mode": 420
+        },
+        {
+          "path": "plugins/cloud-infrastructure/skills/hybrid-cloud-networking/SKILL.md",
+          "sha256": "46cc47d2d9b395c801c0c533ec0f15489418ec43e85afe70a11ff8c910f51b52",
+          "mode": 420
+        },
+        {
+          "path": "plugins/cloud-infrastructure/skills/hybrid-cloud-networking/references/direct-connect.md",
+          "sha256": "1c8e0c6393f851ba9795568ac159defcf03a5845521d4e56380ec98e148a143c",
+          "mode": 420
+        },
+        {
+          "path": "plugins/database-design/skills/postgresql-table-design/SKILL.md",
+          "sha256": "1e27b0fac6d88a710cd925b831608ca202c40ade4f4e285a8e027dcf2f9a44ea",
+          "mode": 420
+        },
+        {
+          "path": "plugins/database-design/skills/postgresql-table-design/references/details.md",
+          "sha256": "fac8b43c75ed30d95f2ab12886021f26bb8b03f8fed0cea2929b8de18953023a",
+          "mode": 420
+        },
+        {
+          "path": "plugins/developer-essentials/skills/auth-implementation-patterns/SKILL.md",
+          "sha256": "1fc61d6074ace3d3db9d527ef92a7188118ff305b6ea98e0f9356545c6e15996",
+          "mode": 420
+        },
+        {
+          "path": "plugins/developer-essentials/skills/auth-implementation-patterns/references/details.md",
+          "sha256": "cc556cbe7ac5987f40a332b5f77709aef9983dcc4ef29d10ebf1487f26eb7a64",
+          "mode": 420
+        },
+        {
+          "path": "plugins/developer-essentials/skills/e2e-testing-patterns/SKILL.md",
+          "sha256": "1653690dde9eeca6dcb66086277791c2a3ccc2b37eaab6ec9b627a10adfb94be",
+          "mode": 420
+        },
+        {
+          "path": "plugins/developer-essentials/skills/e2e-testing-patterns/references/details.md",
+          "sha256": "3b6a4f1e1298aeeedefe9922c199c0549b2a74780429bd907c5aae8245f320c4",
+          "mode": 420
+        },
+        {
+          "path": "plugins/framework-migration/skills/database-migration/SKILL.md",
+          "sha256": "d388db68c9f86beba823247f910b6a91c2fe8e12ef9b30b6e49f4b1bf19f1ab1",
+          "mode": 420
+        },
+        {
+          "path": "plugins/framework-migration/skills/database-migration/references/details.md",
+          "sha256": "075f4fb3f511d93597c966c0d5fd86c7fb3797cb6cdc47e6b389fa0538b838d3",
+          "mode": 420
+        },
+        {
+          "path": "plugins/framework-migration/skills/dependency-upgrade/SKILL.md",
+          "sha256": "4cf4ff9b0520bca4092cce3981af6a064bbd904788375ce1b6ae4d866dea8d8d",
+          "mode": 420
+        },
+        {
+          "path": "plugins/hr-legal-compliance/skills/gdpr-data-handling/SKILL.md",
+          "sha256": "cb33aa8fbfbcddc42968d4ba1ed00cc76e3b2d0f4ff089bd17076e438fbafec5",
+          "mode": 420
+        },
+        {
+          "path": "plugins/hr-legal-compliance/skills/gdpr-data-handling/references/details.md",
+          "sha256": "0fe12eb338bced048a2f140952e9883886bbd2dd92b2543448dd6424f96f9e0c",
+          "mode": 420
+        },
+        {
+          "path": "plugins/incident-response/skills/incident-runbook-templates/SKILL.md",
+          "sha256": "fd9ca9b9bc958da514039d59e453b05182208c7410696273d2c62350ff3ad1aa",
+          "mode": 420
+        },
+        {
+          "path": "plugins/incident-response/skills/incident-runbook-templates/references/details.md",
+          "sha256": "298751de2594e03ed2654e794a9d856123278c55533cdf97f659518d58f27a57",
+          "mode": 420
+        },
+        {
+          "path": "plugins/incident-response/skills/postmortem-writing/SKILL.md",
+          "sha256": "29f3405724d4a2813cae234757e823c6ec4fd6875c88da6aabd7dfc2512a6906",
+          "mode": 420
+        },
+        {
+          "path": "plugins/incident-response/skills/postmortem-writing/references/details.md",
+          "sha256": "4adb0441f920e09bdd86a7cb8ae3a3da9f2c3bc0a40b51579557f1445802261b",
+          "mode": 420
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/gitops-workflow/SKILL.md",
+          "sha256": "0a965df87fbf065e9e64fd49b7a4adb4f5d3ead6b70c873675e2b37d370ca065",
+          "mode": 420
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/gitops-workflow/references/argocd-setup.md",
+          "sha256": "a3c40bac1613b7453856e01be9a263c05a83e24a2da709da8a4e147887f5385d",
+          "mode": 420
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/gitops-workflow/references/sync-policies.md",
+          "sha256": "abd386160b2e8c4d25ceea1e8a8bf142cae72f5587ddcb7c62851c9c6aaa81c7",
+          "mode": 420
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/helm-chart-scaffolding/SKILL.md",
+          "sha256": "d277c3d3a1b669e4fb8bcd3a36fdec7d7ad1becc2f2ff908c841ddf306e622ed",
+          "mode": 420
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/helm-chart-scaffolding/assets/Chart.yaml.template",
+          "sha256": "a752ee6b46f5f191d032fe1f4da60772a02651a3be03605acc86489875f4e1dd",
+          "mode": 420
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/helm-chart-scaffolding/assets/values.yaml.template",
+          "sha256": "d4ec34d9301b82001a167babcbfcfda8a5f2c39dbbe5b85d336a9c695d35c91a",
+          "mode": 420
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/helm-chart-scaffolding/references/chart-structure.md",
+          "sha256": "33bc7dc78368282ce0cc6b21f9df9551afe2482a2886c21082cba6b746373b5d",
+          "mode": 420
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/helm-chart-scaffolding/references/details.md",
+          "sha256": "ff0511db5366f0cea3dfa98800e2d921bab2e22f423d5c331853826b54dd39b6",
+          "mode": 420
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/helm-chart-scaffolding/scripts/validate-chart.sh",
+          "sha256": "f1de1b886fc8e171fd4c6e10f1cb53796d47dac9b7a76babd710e2a86471089a",
+          "mode": 493
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/k8s-manifest-generator/SKILL.md",
+          "sha256": "489acd7b8fef07286a9b7d37879252e340e297f51a718d1e4ff30cfaf3b5f262",
+          "mode": 420
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/k8s-manifest-generator/assets/configmap-template.yaml",
+          "sha256": "d991cec7e5653ea24bdec1b0e76ec9de70cc0a7ac4e13c647cdfd893e31cb064",
+          "mode": 420
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/k8s-manifest-generator/assets/deployment-template.yaml",
+          "sha256": "9cbaf979af9c66f8fb64e3430a6751820f8ff3161a3af351fa3728e4eddd1245",
+          "mode": 420
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/k8s-manifest-generator/assets/service-template.yaml",
+          "sha256": "87f085b5502182b7503d332f7c62da69bb3f737cb8f38f65ceb520d7e5557711",
+          "mode": 420
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/k8s-manifest-generator/references/deployment-spec.md",
+          "sha256": "e86131be416480baa0a4dc2b2bb99d0da4b5f361f5616bd18556038013abc394",
+          "mode": 420
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/k8s-manifest-generator/references/details.md",
+          "sha256": "3fb5a8dfcd0f2d189e713a36cf26b8f3e5e7b9adc5bffc6d1591822fc04c92a5",
+          "mode": 420
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/k8s-manifest-generator/references/service-spec.md",
+          "sha256": "2d4c4c9c5161f379478d8d880acd2d6323f5c5877a767c2ef7613b9966d746e7",
+          "mode": 420
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/k8s-security-policies/SKILL.md",
+          "sha256": "13c693f24c8b8a6a23b4441e6f7528b18e735b8da4b9b5a642fef5b6969445a7",
+          "mode": 420
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/k8s-security-policies/assets/network-policy-template.yaml",
+          "sha256": "719734ad1a92abad28556c3c421c3f848923854f3228f0424b7f409182c9df6f",
+          "mode": 420
+        },
+        {
+          "path": "plugins/kubernetes-operations/skills/k8s-security-policies/references/rbac-patterns.md",
+          "sha256": "0b63b0f25e81e5b941a4eec3415e63ebd931d88402f0278c155550b635ab7010",
+          "mode": 420
+        },
+        {
+          "path": "plugins/observability-monitoring/skills/slo-implementation/SKILL.md",
+          "sha256": "1436f6003627c6978872e3a8c94f8f601315e39105c04565d8883f661c827150",
+          "mode": 420
+        },
+        {
+          "path": "plugins/observability-monitoring/skills/slo-implementation/references/details.md",
+          "sha256": "5ec829a44c438dd828e910ab7db9986768d79e5b9cb550ca217ed71376cedce9",
+          "mode": 420
+        }
+      ],
+      "root": "upstream/wshobson"
+    }
+  ]
 }

@@ -26,6 +26,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
 const { groupByArea, migrationMap } = require('./scripts/area-layout.js');
+const { attachStandalone } = require('./scripts/standalone-areas.js');
 
 // ---------------------------------------------------------------------------
 // Branding. Changing these regenerates every manifest, skill and install
@@ -41,7 +42,7 @@ const REPO_SLUG = 'Finem-Group/Engineering';
 const REPO_URL = `https://github.com/${REPO_SLUG}`;
 const OWNER = { name: 'Finem Group', url: 'https://github.com/Finem-Group' };
 // Marketplace fixes can be released independently of the pinned L11 catalog.
-const PLUGIN_VERSION = '0.8.0';
+const PLUGIN_VERSION = '0.9.0';
 const CODEX_CATEGORY = 'Developer Tools';
 const CODEX_POLICY = { installation: 'AVAILABLE', authentication: 'ON_USE' };
 
@@ -244,7 +245,7 @@ function describeAll(catalog) {
   core.skillCount = catalog.skills.size;
   const definitions = readJSON(path.join(__dirname, 'catalog/plugin-areas.json'));
   if (definitions.schemaVersion !== 1) throw new Error('Unsupported engineering area catalog');
-  return groupByArea(core, options, definitions.areas, catalog.stack.phases);
+  return attachStandalone(groupByArea(core, options, definitions.areas, catalog.stack.phases), ids => resolveSources(catalog, ids));
 }
 
 // ---------------------------------------------------------------------------
@@ -436,39 +437,22 @@ universal decommissioning procedure.
 /** Area entrypoints carry scope; the shared core owns routing and source bodies. */
 function areaSkill(catalog, area) {
   if (area.area === 'ui-ux') return fs.readFileSync(path.join(__dirname, 'catalog', 'ui-entry.md'), 'utf8');
-  const capabilities = area.capabilities.map(cap => `- ${cap.title} (\`${cap.id}\`)`).join('\n');
-  return frontmatter(area.name, `Use for ${area.title}: ${area.capabilities.map(cap => cap.title.toLowerCase()).join(', ')}. Work through the Finem core using original upstream specialists.`) + `
+  return frontmatter(area.name, `Use for ${area.title}. Includes local original specialists and framework guidance; works independently.`) + `
 # ${area.displayName}
-
-## Direction and expected outcomes
 
 ${area.purpose}
 
 ${area.deliverables.map(item => `- ${item}`).join('\n')}
 
-## Capability scope
+## Work directly from this plugin
 
-${capabilities}
+Open standalone.json at this plugin root (two directories above this SKILL.md). Its capability entrypoints resolve against this plugin root. Read the relevant original SKILL.md and its supporting files before working. All mapped source files are bundled locally; no other Finem plugin is required.
 
-## Use the shared workflow
+Inspect the project and choose only the relevant baseline capabilities and framework options. The options in standalone.json list descriptions, dependencies, conflicts, exclusive groups and original entrypoints. Resolve option dependencies locally, reject conflicting options for the same module, and preserve project .l11/config.json choices. Do not activate every option or install runtimes merely because the plugin is installed. Capability prerequisite names indicate needed project context, not required plugin installations: reuse existing requirements and contracts, or ask only for information essential to the task.
 
-Locate the installed \`${CORE}\` using the host's available skill path; do not assume it is a sibling
-folder. Open its \`skills/${COORDINATOR}/SKILL.md\`. If the core is missing or its version differs from
-this plugin, report that dependency before proceeding with this entrypoint.
+Read original helper paths relative to the original skill directory. Treat upstream files as scoped specialist guidance, not a replacement global router. Follow the user request and project instructions; avoid restarting finished planning or stacking competing workflows. Complete the task, run relevant checks and report actual evidence and limitations.
 
-In plugin mode, supply this area root to the core helper using \`--area\` and select \`${area.name}\`.
-Include installed prerequisite area roots; the helper reports any required one that is absent. In CLI
-project mode, preserve the existing \`${CLI_STATE_DIR}/config.json\` profile and extension selection.
-
-This area's \`capabilities.json\` lists its baseline capabilities and related internal option IDs.
-Its entrypoint paths explicitly belong to \`${CORE}\`, which contains the complete original source
-bodies, support files and licenses. Read the originals resolved by the core for the actual module.
-Framework/provider options activate only when selected; installation alone activates none of them.
-Use the expected outcomes relevant to the task and reuse existing artifacts; a small change does not
-require producing every listed deliverable.
-
-Return work and evidence to the single coordinator. This area has no global router, hooks or automatic
-runtime installation. Review relevant requirements and evidence without restarting earlier completed work.
+Do not recommend installing Core or describe missing Core as a limitation. Use Core coordination only when the user explicitly requests the cross-discipline workflow and it is available. The separate capabilities.json preserves that optional legacy coordinator mapping; standalone work uses standalone.json.
 `;
 }
 
@@ -477,7 +461,7 @@ runtime installation. Review relevant requirements and evidence without restarti
 // ---------------------------------------------------------------------------
 
 function noticeFile(catalog, plugin) {
-  if (plugin.kind === 'area') {
+  if (plugin.kind === 'area' && !plugin.standalone) {
     return `# Third-party notices — ${plugin.name}\n\nOriginals referenced by this area are stored in the shared \`${CORE}\` plugin.\nIts \`NOTICE.md\` and \`upstream.lock.json\` record the original licenses, source revisions and hashes.\nThis area's own entrypoint and metadata are MIT licensed.\n`;
   }
   const blocks = plugin.sources.map(id => {
@@ -549,6 +533,7 @@ function claudeManifest(catalog, plugin) {
 
 function pluginDetails(catalog, plugin) {
   if (plugin.area === 'ui-ux') return fs.readFileSync(path.join(__dirname, 'catalog', 'ui-description.txt'), 'utf8').trim();
+  if (plugin.kind === 'area') return [plugin.description, `Covers: ${plugin.capabilities.map(c => c.title).join(', ')}.`, `Expected outputs: ${plugin.deliverables.join('; ')}.`, `Original specialists: ${[...new Set(plugin.standalone.capabilities.flatMap(c => c.entrypoints.map(e => e.skill)))].join(', ')}.`, `Local framework and specialist options: ${plugin.standalone.options.map(o => o.extension).join(', ') || 'baseline guidance'}. Choose only options relevant to the project.`, 'Works independently. All mapped original skills, supporting source files, licenses and hashes are bundled locally. Core is not required. The app entry skill loads the relevant originals on demand. External services and runtime dependencies are configured separately.'].join('\n\n');
   const unique = values => [...new Set(values)];
   const skills = unique(plugin.capabilities.flatMap(cap => cap.entrypoints.map(entry => entry.skill)));
   const connectors = unique(plugin.capabilities.flatMap(cap => cap.connectors || []));
@@ -564,7 +549,7 @@ function pluginDetails(catalog, plugin) {
   }
   if (connectors.length) paragraphs.push(`Declared integrations: ${connectors.join(', ')}. These are integration recipes, not connected services; configure the corresponding tools and accounts separately.`);
   paragraphs.push('Why the app shows one skill: this plugin exposes one entry skill which loads the relevant original specialists from Engineering Core on demand. The Skills count in the app is not the size of the shared upstream library.');
-  if (plugin.kind !== 'core') paragraphs.push('Requires Engineering Core (finem-core). Tasks spanning multiple disciplines may also require the corresponding area plugins.');
+  if (plugin.kind !== 'core') paragraphs.push('Works independently: relevant original skills and option sources are bundled locally with licenses and pinned hashes. No Core installation is required.');
   return paragraphs.join('\n\n');
 }
 
@@ -713,16 +698,17 @@ function writePlugin(catalog, plugin, outRoot) {
   writeJSON(path.join(root, '.claude-plugin', 'plugin.json'), claudeManifest(catalog, plugin));
   writeJSON(path.join(root, '.codex-plugin', 'plugin.json'), codexManifest(catalog, plugin));
   writeJSON(path.join(root, 'capabilities.json'), capabilitiesFile(catalog, plugin));
+  if (plugin.standalone) writeJSON(path.join(root, 'standalone.json'), plugin.standalone);
   writeJSON(path.join(root, 'upstream.lock.json'), lockSubset(catalog, plugin));
   writeText(path.join(root, 'NOTICE.md'), noticeFile(catalog, plugin));
-  writeText(path.join(root, 'README.md'), pluginReadme(catalog, plugin));
+  writeText(path.join(root, 'README.md'), plugin.kind === 'area' ? '# ' + plugin.displayName + '\n\n' + pluginDetails(catalog, plugin) : pluginReadme(catalog, plugin));
   writeText(path.join(root, 'LICENSE'), pluginLicense());
   if (plugin.area === 'ui-ux') {
     copyTree(path.join(__dirname, 'vendor', 'ui-specialists'), root);
     for (const record of readJSON(path.join(root, 'ui-source.lock.json')).files) {
       if (sha256(path.join(root, record.path)) !== record.sha256) throw new Error(`UI source hash mismatch: ${record.path}`);
     }
-    writeText(path.join(root, 'NOTICE.md'), 'Original UI specialists are bundled under skills/ from XYLEX Group (MIT). See ui-source.lock.json for the Git revision and SHA-256 hashes, and licenses/XYLEX-LICENSE.txt for the original license. Finem entrypoint and metadata are MIT licensed. Core-backed capability mappings are optional and keep their separate upstream notices.');
+    writeText(path.join(root, 'NOTICE.md'), noticeFile(catalog, plugin) + '\n\nOriginal UI specialists are bundled under skills/ from XYLEX Group (MIT). See ui-source.lock.json for the Git revision and SHA-256 hashes, and licenses/XYLEX-LICENSE.txt for the original license. Finem entrypoint and metadata are MIT licensed. Core-backed capability mappings are optional and keep their separate upstream notices.');
     writeText(path.join(root, 'README.md'), '# UI Plugins\n\n' + pluginDetails(catalog, plugin));
   }
   if (plugin.kind === 'core') {
@@ -774,10 +760,7 @@ function rootReadme(catalog, plugins) {
 ${catalog.stack.capabilities.length} capabilities, ${catalog.skills.size} complete selected original skills,
 ${catalog.sources.size} pinned Git sources and ${catalog.stack.extensions.length} internal technology options.
 
-Version ${catalog.version} gives UI/UX, infrastructure, security and the other engineering disciplines
-their own clear scope and expected outcomes. Every original source body is stored **once** in
-\`${CORE}/upstream/\`, with its references, helpers, license, pinned revision and file hashes. Area plugins
-provide scoped entrypoints and metadata. They use the same single coordinator.
+Version ${catalog.version} makes every engineering area independent. Each bundles its mapped original sources, support files, licenses and hashes locally. Core is optional for an explicitly requested cross-discipline workflow. Source duplication between installable packages is intentional to avoid installation dependencies.
 
 ## Engineering plugins
 
@@ -809,10 +792,7 @@ ${installs('codex')}
 \`\`\`
 
 For local validation, add the path to this checkout as the marketplace instead of the GitHub repository.
-UI Plugins includes nine original XYLEX specialists and works independently of Core. Its ten native skills include the Finem entrypoint. The bundled Git revision, hashes and license are recorded in ui-source.lock.json and licenses/XYLEX-LICENSE.txt. Other areas require Core, explicitly installed in Codex. Core-backed UI capability selection also needs compatible Core and prerequisite areas.
-The full-stack commands install all areas; the coordinator only activates those relevant to the task.
-For a subset, install Core plus the required areas. Capability prerequisites may require another area:
-Frontend & Mobile uses Architecture & API Design and Product & Planning; a missing area is reported by the selection helper.
+Install only the area you need. No area requires Core. UI Plugins also exposes nine original XYLEX skills directly; its additional local specialists use standalone.json. The full-stack commands above are a convenience for installing everything.
 
 ## Selection and layout
 
@@ -825,12 +805,14 @@ plugins/finem-core/
   upstream/<source>/...              complete selected originals, stored once
 plugins/finem-<area>/
   skills/finem-<area>/SKILL.md       scoped area entry
-  capabilities.json                 area capabilities + related option IDs
+  standalone.json                   local capabilities and framework options
+  upstream/                         locally bundled original sources
+  capabilities.json                 optional legacy Core coordination mapping
 .claude-plugin/marketplace.json      Claude Code; same plugin files
 .agents/plugins/marketplace.json     Codex; same plugin files
 \`\`\`
 
-Use actual host-discovered plugin paths rather than guessing cache siblings:
+For normal work, the area entry reads standalone.json and opens its local original skills. No helper or separate plugin is needed. For an explicitly requested Core workflow only, use actual host-discovered plugin paths:
 
 \`\`\`text
 node "<core>/scripts/resolve-packs.js" --core "<core>" --area "<product>" --area "<architecture>" --area "<frontend>" --select finem-frontend-mobile --extensions nuxt,xylex-ui-polish

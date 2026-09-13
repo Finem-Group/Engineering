@@ -1,0 +1,586 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-security-privacy",
+  "capabilities": [
+    {
+      "id": "auth",
+      "title": "Auth",
+      "phase": "build",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "context7",
+        "db-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:auth-implementation-patterns",
+          "source": "wshobson",
+          "plugin": "finem-security-privacy",
+          "path": "upstream/wshobson/plugins/developer-essentials/skills/auth-implementation-patterns/SKILL.md"
+        },
+        {
+          "skill": "addy:security-and-hardening",
+          "source": "addy",
+          "plugin": "finem-security-privacy",
+          "path": "upstream/addy/skills/security-and-hardening/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "secrets-iam",
+      "title": "Secrets/IAM",
+      "phase": "build",
+      "requires": [
+        "architecture"
+      ],
+      "connectors": [
+        "cloud-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "pulumi:pulumi-esc",
+          "source": "pulumi",
+          "plugin": "finem-security-privacy",
+          "path": "upstream/pulumi/pulumi/skills/pulumi-esc/SKILL.md"
+        },
+        {
+          "skill": "wshobson:secrets-management",
+          "source": "wshobson",
+          "plugin": "finem-security-privacy",
+          "path": "upstream/wshobson/plugins/cicd-automation/skills/secrets-management/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "title": "Security",
+      "phase": "verify",
+      "requires": [],
+      "connectors": [
+        "github",
+        "context7"
+      ],
+      "coverage": "direct",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:security-and-hardening",
+          "source": "addy",
+          "plugin": "finem-security-privacy",
+          "path": "upstream/addy/skills/security-and-hardening/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "privacy-compliance",
+      "title": "Privacy/compliance",
+      "phase": "design",
+      "requires": [],
+      "connectors": [
+        "db-provider"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "wshobson:gdpr-data-handling",
+          "source": "wshobson",
+          "plugin": "finem-security-privacy",
+          "path": "upstream/wshobson/plugins/hr-legal-compliance/skills/gdpr-data-handling/SKILL.md"
+        },
+        {
+          "skill": "addy:security-and-hardening",
+          "source": "addy",
+          "plugin": "finem-security-privacy",
+          "path": "upstream/addy/skills/security-and-hardening/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "options": [
+    {
+      "plugin": "finem-advanced-testing",
+      "kind": "pack",
+      "extension": "advanced-testing",
+      "description": "Properties and supply-chain analysis",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trailofbits:property-based-testing",
+              "source": "trailofbits",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/trailofbits/plugins/property-based-testing/skills/property-based-testing/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "dependencies",
+          "title": "Dependencies",
+          "phase": "evolve",
+          "requires": [],
+          "connectors": [
+            "github",
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trailofbits:supply-chain-risk-auditor",
+              "source": "trailofbits",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/trailofbits/plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "title": "Security",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trailofbits:supply-chain-risk-auditor",
+              "source": "trailofbits",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/trailofbits/plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-intent-audit",
+      "kind": "pack",
+      "extension": "intent-audit",
+      "description": "Compare documented boundaries to implemented behavior",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "documentation-runbooks",
+          "title": "Documentation/runbooks",
+          "phase": "evolve",
+          "requires": [],
+          "connectors": [],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:shipping-artifacts",
+              "source": "pm",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/pm/pm-ai-shipping/skills/shipping-artifacts/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "code-review-quality-gates",
+          "title": "Code review/quality gates",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:intended-vs-implemented",
+              "source": "pm",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/pm/pm-ai-shipping/skills/intended-vs-implemented/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "title": "Security",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "pm:intended-vs-implemented",
+              "source": "pm",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/pm/pm-ai-shipping/skills/intended-vs-implemented/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-backend-django",
+      "kind": "pack",
+      "extension": "backend-django",
+      "description": "Django application conventions compatible with the installed version",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "backend",
+          "title": "Backend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "django:django",
+              "source": "django",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/django/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "auth",
+          "title": "Auth",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "django:django",
+              "source": "django",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/django/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "database",
+          "title": "Database",
+          "phase": "build",
+          "requires": [
+            "domain-modeling"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "django:django",
+              "source": "django",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/django/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "migrations",
+          "title": "Migrations",
+          "phase": "build",
+          "requires": [
+            "database"
+          ],
+          "connectors": [
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "django:django",
+              "source": "django",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/django/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "django:django",
+              "source": "django",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/django/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-auth-auth0",
+      "kind": "pack",
+      "extension": "auth-auth0",
+      "description": "Auth0 integration only when the project has selected Auth0",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "auth",
+          "title": "Auth",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "auth0:auth0",
+              "source": "auth0",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/auth0/plugins/auth0/skills/auth0/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-kubernetes",
+      "kind": "pack",
+      "extension": "kubernetes",
+      "description": "Original Kubernetes manifests, policy, Helm and GitOps specialists",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "infrastructure",
+          "title": "Infrastructure",
+          "phase": "build",
+          "requires": [
+            "architecture"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "wshobson:k8s-manifest-generator",
+              "source": "wshobson",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/wshobson/plugins/kubernetes-operations/skills/k8s-manifest-generator/SKILL.md"
+            },
+            {
+              "skill": "wshobson:helm-chart-scaffolding",
+              "source": "wshobson",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/wshobson/plugins/kubernetes-operations/skills/helm-chart-scaffolding/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "networking",
+          "title": "Networking",
+          "phase": "build",
+          "requires": [
+            "infrastructure"
+          ],
+          "connectors": [
+            "cloud-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "wshobson:k8s-security-policies",
+              "source": "wshobson",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/wshobson/plugins/kubernetes-operations/skills/k8s-security-policies/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "title": "Security",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "wshobson:k8s-security-policies",
+              "source": "wshobson",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/wshobson/plugins/kubernetes-operations/skills/k8s-security-policies/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "deployment",
+          "title": "Deployment",
+          "phase": "deliver",
+          "requires": [
+            "release"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "github"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "wshobson:gitops-workflow",
+              "source": "wshobson",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/wshobson/plugins/kubernetes-operations/skills/gitops-workflow/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "rollback",
+          "title": "Rollback",
+          "phase": "deliver",
+          "requires": [
+            "release"
+          ],
+          "connectors": [
+            "cloud-provider",
+            "db-provider"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "wshobson:gitops-workflow",
+              "source": "wshobson",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/wshobson/plugins/kubernetes-operations/skills/gitops-workflow/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-security-audit",
+      "kind": "pack",
+      "extension": "security-audit",
+      "description": "Original agentic workflow, API footgun and SARIF auditors",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "ci",
+          "title": "CI",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trailofbits:agentic-actions-auditor",
+              "source": "trailofbits",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/trailofbits/plugins/agentic-actions-auditor/skills/agentic-actions-auditor/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "security",
+          "title": "Security",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github",
+            "context7"
+          ],
+          "coverage": "direct",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trailofbits:sharp-edges",
+              "source": "trailofbits",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/trailofbits/plugins/sharp-edges/skills/sharp-edges/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "code-review-quality-gates",
+          "title": "Code review/quality gates",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "github"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "trailofbits:sarif-parsing",
+              "source": "trailofbits",
+              "plugin": "finem-security-privacy",
+              "path": "upstream/trailofbits/plugins/static-analysis/skills/sarif-parsing/SKILL.md"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

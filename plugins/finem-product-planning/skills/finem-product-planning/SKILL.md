@@ -1,11 +1,9 @@
 ---
 name: finem-product-planning
-description: "Use for Product & Planning: product discovery, requirements, feasibility, planning/task decomposition, product analytics/feedback. Work through the Finem core using original upstream specialists."
+description: "Use for Product & Planning. Includes local original specialists and framework guidance; works independently."
 ---
 
 # Product & Planning
-
-## Direction and expected outcomes
 
 Turn a product problem into a feasible, prioritized plan and measure whether the outcome creates value.
 
@@ -14,30 +12,12 @@ Turn a product problem into a feasible, prioritized plan and measure whether the
 - Feasibility assessment and implementation plan
 - Product feedback and experiment findings
 
-## Capability scope
+## Work directly from this plugin
 
-- Product discovery (`product-discovery`)
-- Requirements (`requirements`)
-- Feasibility (`feasibility`)
-- Planning/task decomposition (`planning-task-decomposition`)
-- Product analytics/feedback (`product-analytics-feedback`)
+Open standalone.json at this plugin root (two directories above this SKILL.md). Its capability entrypoints resolve against this plugin root. Read the relevant original SKILL.md and its supporting files before working. All mapped source files are bundled locally; no other Finem plugin is required.
 
-## Use the shared workflow
+Inspect the project and choose only the relevant baseline capabilities and framework options. The options in standalone.json list descriptions, dependencies, conflicts, exclusive groups and original entrypoints. Resolve option dependencies locally, reject conflicting options for the same module, and preserve project .l11/config.json choices. Do not activate every option or install runtimes merely because the plugin is installed. Capability prerequisite names indicate needed project context, not required plugin installations: reuse existing requirements and contracts, or ask only for information essential to the task.
 
-Locate the installed `finem-core` using the host's available skill path; do not assume it is a sibling
-folder. Open its `skills/finem-engineering/SKILL.md`. If the core is missing or its version differs from
-this plugin, report that dependency before proceeding with this entrypoint.
+Read original helper paths relative to the original skill directory. Treat upstream files as scoped specialist guidance, not a replacement global router. Follow the user request and project instructions; avoid restarting finished planning or stacking competing workflows. Complete the task, run relevant checks and report actual evidence and limitations.
 
-In plugin mode, supply this area root to the core helper using `--area` and select `finem-product-planning`.
-Include installed prerequisite area roots; the helper reports any required one that is absent. In CLI
-project mode, preserve the existing `.l11/config.json` profile and extension selection.
-
-This area's `capabilities.json` lists its baseline capabilities and related internal option IDs.
-Its entrypoint paths explicitly belong to `finem-core`, which contains the complete original source
-bodies, support files and licenses. Read the originals resolved by the core for the actual module.
-Framework/provider options activate only when selected; installation alone activates none of them.
-Use the expected outcomes relevant to the task and reuse existing artifacts; a small change does not
-require producing every listed deliverable.
-
-Return work and evidence to the single coordinator. This area has no global router, hooks or automatic
-runtime installation. Review relevant requirements and evidence without restarting earlier completed work.
+Do not recommend installing Core or describe missing Core as a limitation. Use Core coordination only when the user explicitly requests the cross-discipline workflow and it is available. The separate capabilities.json preserves that optional legacy coordinator mapping; standalone work uses standalone.json.

@@ -1,0 +1,1132 @@
+{
+  "schemaVersion": 1,
+  "plugin": "finem-frontend-mobile",
+  "capabilities": [
+    {
+      "id": "frontend",
+      "title": "Frontend",
+      "phase": "build",
+      "requires": [
+        "api-contracts"
+      ],
+      "connectors": [
+        "context7",
+        "paper"
+      ],
+      "coverage": "composed",
+      "replace": false,
+      "entrypoints": [
+        {
+          "skill": "addy:frontend-ui-engineering",
+          "source": "addy",
+          "plugin": "finem-frontend-mobile",
+          "path": "upstream/addy/skills/frontend-ui-engineering/SKILL.md"
+        },
+        {
+          "skill": "vercel:react-best-practices",
+          "source": "vercel",
+          "plugin": "finem-frontend-mobile",
+          "path": "upstream/vercel/skills/react-best-practices/SKILL.md"
+        },
+        {
+          "skill": "vercel:composition-patterns",
+          "source": "vercel",
+          "plugin": "finem-frontend-mobile",
+          "path": "upstream/vercel/skills/composition-patterns/SKILL.md"
+        }
+      ]
+    }
+  ],
+  "options": [
+    {
+      "plugin": "finem-react-ui",
+      "kind": "pack",
+      "extension": "react-ui",
+      "description": "shadcn component composition",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "shadcn:shadcn",
+              "source": "shadcn",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/shadcn/skills/shadcn/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "design-system",
+          "title": "Design system",
+          "phase": "design",
+          "requires": [
+            "ux"
+          ],
+          "connectors": [
+            "paper",
+            "mobbin",
+            "figma"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "shadcn:shadcn",
+              "source": "shadcn",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/shadcn/skills/shadcn/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-expo",
+      "kind": "pack",
+      "extension": "expo",
+      "description": "Expo structure, native UI, routing, motion and data fetching",
+      "dependencies": [],
+      "conflicts": [
+        "finem-react-ui",
+        "finem-vue",
+        "finem-svelte",
+        "finem-angular",
+        "finem-next-cache",
+        "finem-tanstack-router",
+        "finem-tanstack-start",
+        "finem-swiftui",
+        "finem-android-ui"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:frontend-ui-engineering",
+              "source": "addy",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/addy/skills/frontend-ui-engineering/SKILL.md"
+            },
+            {
+              "skill": "expo:expo-project-structure",
+              "source": "expo",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/expo/plugins/expo/skills/expo-project-structure/SKILL.md"
+            },
+            {
+              "skill": "expo:expo-native-ui",
+              "source": "expo",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/expo/plugins/expo/skills/expo-native-ui/SKILL.md"
+            },
+            {
+              "skill": "expo:expo-router",
+              "source": "expo",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/expo/plugins/expo/skills/expo-router/SKILL.md"
+            },
+            {
+              "skill": "expo:expo-animation",
+              "source": "expo",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/expo/plugins/expo/skills/expo-animation/SKILL.md"
+            },
+            {
+              "skill": "expo:expo-design-system",
+              "source": "expo",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/expo/plugins/expo/skills/expo-design-system/SKILL.md"
+            },
+            {
+              "skill": "expo:expo-data-fetching",
+              "source": "expo",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/expo/plugins/expo/skills/expo-data-fetching/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:performance-optimization",
+              "source": "addy",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/addy/skills/performance-optimization/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "design-system",
+          "title": "Design system",
+          "phase": "design",
+          "requires": [
+            "ux"
+          ],
+          "connectors": [
+            "paper",
+            "mobbin",
+            "figma"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "expo:expo-design-system",
+              "source": "expo",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/expo/plugins/expo/skills/expo-design-system/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-vue",
+      "kind": "pack",
+      "extension": "vue",
+      "description": "Vue 3 application implementation, routing and tests",
+      "dependencies": [],
+      "conflicts": [
+        "finem-react-ui",
+        "finem-expo"
+      ],
+      "exclusiveGroup": "web-framework",
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:frontend-ui-engineering",
+              "source": "addy",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/addy/skills/frontend-ui-engineering/SKILL.md"
+            },
+            {
+              "skill": "vue:vue-best-practices",
+              "source": "vue",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/vue/skills/vue-best-practices/SKILL.md"
+            },
+            {
+              "skill": "vue:vue-router-best-practices",
+              "source": "vue",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/vue/skills/vue-router-best-practices/SKILL.md"
+            },
+            {
+              "skill": "vue:vue-testing-best-practices",
+              "source": "vue",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/vue/skills/vue-testing-best-practices/SKILL.md"
+            },
+            {
+              "skill": "vue:vue-debug-guides",
+              "source": "vue",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/vue/skills/vue-debug-guides/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:performance-optimization",
+              "source": "addy",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/addy/skills/performance-optimization/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "testing",
+          "title": "Testing",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "context7"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "vue:vue-testing-best-practices",
+              "source": "vue",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/vue/skills/vue-testing-best-practices/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-nuxt",
+      "kind": "pack",
+      "extension": "nuxt",
+      "description": "Nuxt 4 server rendering and Pinia state",
+      "dependencies": [
+        "finem-vue"
+      ],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "antfu:nuxt",
+              "source": "antfu",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/antfu/skills/nuxt/SKILL.md"
+            },
+            {
+              "skill": "antfu:pinia",
+              "source": "antfu",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/antfu/skills/pinia/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-svelte",
+      "kind": "pack",
+      "extension": "svelte",
+      "description": "Svelte 5 and SvelteKit implementation and analysis",
+      "dependencies": [],
+      "conflicts": [
+        "finem-react-ui",
+        "finem-expo"
+      ],
+      "exclusiveGroup": "web-framework",
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:frontend-ui-engineering",
+              "source": "addy",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/addy/skills/frontend-ui-engineering/SKILL.md"
+            },
+            {
+              "skill": "svelte:svelte-code-writer",
+              "source": "svelte",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/svelte/tools/skills/svelte-code-writer/SKILL.md"
+            },
+            {
+              "skill": "svelte:svelte-core-bestpractices",
+              "source": "svelte",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/svelte/tools/skills/svelte-core-bestpractices/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:performance-optimization",
+              "source": "addy",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/addy/skills/performance-optimization/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-angular",
+      "kind": "pack",
+      "extension": "angular",
+      "description": "Version-aware Angular application implementation",
+      "dependencies": [],
+      "conflicts": [
+        "finem-react-ui",
+        "finem-expo"
+      ],
+      "exclusiveGroup": "web-framework",
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:frontend-ui-engineering",
+              "source": "addy",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/addy/skills/frontend-ui-engineering/SKILL.md"
+            },
+            {
+              "skill": "angular:angular-developer",
+              "source": "angular",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/angular/skills/dev-skills/angular-developer/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:performance-optimization",
+              "source": "addy",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/addy/skills/performance-optimization/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "accessibility",
+          "title": "Accessibility",
+          "phase": "verify",
+          "requires": [
+            "ux"
+          ],
+          "connectors": [],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "angular:angular-developer",
+              "source": "angular",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/angular/skills/dev-skills/angular-developer/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-next-cache",
+      "kind": "pack",
+      "extension": "next-cache",
+      "description": "Next 16.3+ instant-navigation tests for apps already building with Cache Components",
+      "dependencies": [
+        "finem-browser-playwright"
+      ],
+      "conflicts": [
+        "finem-vue",
+        "finem-svelte",
+        "finem-angular",
+        "finem-expo",
+        "finem-tanstack-start"
+      ],
+      "exclusiveGroup": "web-framework",
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "next:next-cache-components-optimizer",
+              "source": "next",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/next/skills/next-cache-components-optimizer/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "next:next-cache-components-optimizer",
+              "source": "next",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/next/skills/next-cache-components-optimizer/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-browser-playwright",
+      "kind": "pack",
+      "extension": "browser-playwright",
+      "description": "Use Playwright as the browser execution backend",
+      "dependencies": [],
+      "conflicts": [],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "browser-qa",
+          "title": "Browser QA",
+          "phase": "verify",
+          "requires": [
+            "frontend"
+          ],
+          "connectors": [],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "playwright:playwright-cli",
+              "source": "playwright",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/playwright/skills/playwright-cli/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-tanstack-router",
+      "kind": "pack",
+      "extension": "tanstack-router",
+      "description": "TanStack React Router and Query composition",
+      "dependencies": [],
+      "conflicts": [
+        "finem-vue",
+        "finem-svelte",
+        "finem-angular",
+        "finem-expo",
+        "finem-next-cache"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "tanstack-router:router-core",
+              "source": "tanstack-router",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/tanstack-router/packages/router-core/skills/router-core/SKILL.md"
+            },
+            {
+              "skill": "tanstack-router:react-router",
+              "source": "tanstack-router",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/tanstack-router/packages/react-router/skills/react-router/SKILL.md"
+            },
+            {
+              "skill": "tanstack-router:router-query",
+              "source": "tanstack-router",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/tanstack-router/packages/react-router/skills/compositions/router-query/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-tanstack-start",
+      "kind": "pack",
+      "extension": "tanstack-start",
+      "description": "TanStack Start React full-stack rendering",
+      "dependencies": [
+        "finem-tanstack-router"
+      ],
+      "conflicts": [
+        "finem-vue",
+        "finem-svelte",
+        "finem-angular",
+        "finem-expo",
+        "finem-next-cache"
+      ],
+      "exclusiveGroup": "web-framework",
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "tanstack-router:react-start",
+              "source": "tanstack-router",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/tanstack-router/packages/react-start/skills/react-start/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-tanstack-table",
+      "kind": "pack",
+      "extension": "tanstack-table",
+      "description": "TanStack Table 9 core and React table bindings",
+      "dependencies": [],
+      "conflicts": [
+        "finem-vue",
+        "finem-svelte",
+        "finem-angular",
+        "finem-expo"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "tanstack-table:core-core",
+              "source": "tanstack-table",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/tanstack-table/packages/table-core/skills/core/SKILL.md"
+            },
+            {
+              "skill": "tanstack-table:core-table-features",
+              "source": "tanstack-table",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/tanstack-table/packages/table-core/skills/table-features/SKILL.md"
+            },
+            {
+              "skill": "tanstack-table:react-getting-started",
+              "source": "tanstack-table",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/tanstack-table/packages/react-table/skills/getting-started/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-redux-toolkit",
+      "kind": "pack",
+      "extension": "redux-toolkit",
+      "description": "Redux Toolkit state ownership and RTK Query",
+      "dependencies": [],
+      "conflicts": [
+        "finem-tanstack-router"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "redux-toolkit:design-state-ownership",
+              "source": "redux-toolkit",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/redux-toolkit/packages/toolkit/skills/model-redux-state/design-state-ownership/SKILL.md"
+            },
+            {
+              "skill": "redux-toolkit:modern-redux",
+              "source": "redux-toolkit",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/redux-toolkit/packages/toolkit/skills/build-modern-redux-apps/modern-redux/SKILL.md"
+            },
+            {
+              "skill": "redux-toolkit:adopt-rtk-query",
+              "source": "redux-toolkit",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/redux-toolkit/packages/toolkit/skills/manage-server-data/adopt-rtk-query/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-web-animation",
+      "kind": "pack",
+      "extension": "web-animation",
+      "description": "Purposeful CSS and chosen-library web motion",
+      "dependencies": [],
+      "conflicts": [
+        "finem-expo"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "emil:animate",
+              "source": "emil",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/emil/skills/animate/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-gsap",
+      "kind": "pack",
+      "extension": "gsap",
+      "description": "GSAP API, lifecycle and performance specialists",
+      "dependencies": [],
+      "conflicts": [
+        "finem-expo"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "gsap:gsap-core",
+              "source": "gsap",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/gsap/skills/gsap-core/SKILL.md"
+            },
+            {
+              "skill": "gsap:gsap-react",
+              "source": "gsap",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/gsap/skills/gsap-react/SKILL.md"
+            },
+            {
+              "skill": "gsap:gsap-frameworks",
+              "source": "gsap",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/gsap/skills/gsap-frameworks/SKILL.md"
+            },
+            {
+              "skill": "gsap:gsap-performance",
+              "source": "gsap",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/gsap/skills/gsap-performance/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "gsap:gsap-performance",
+              "source": "gsap",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/gsap/skills/gsap-performance/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-swiftui",
+      "kind": "pack",
+      "extension": "swiftui",
+      "description": "SwiftUI API, state, navigation and accessibility",
+      "dependencies": [],
+      "conflicts": [
+        "finem-react-ui",
+        "finem-expo",
+        "finem-android-ui",
+        "finem-vue",
+        "finem-svelte",
+        "finem-angular",
+        "finem-next-cache",
+        "finem-tanstack-start",
+        "finem-tanstack-router",
+        "finem-tanstack-table",
+        "finem-gsap",
+        "finem-web-animation",
+        "finem-react-native-performance"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:frontend-ui-engineering",
+              "source": "addy",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/addy/skills/frontend-ui-engineering/SKILL.md"
+            },
+            {
+              "skill": "swiftui:swiftui-pro",
+              "source": "swiftui",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/swiftui/swiftui-pro/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:performance-optimization",
+              "source": "addy",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/addy/skills/performance-optimization/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "accessibility",
+          "title": "Accessibility",
+          "phase": "verify",
+          "requires": [
+            "ux"
+          ],
+          "connectors": [],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "swiftui:swiftui-pro",
+              "source": "swiftui",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/swiftui/swiftui-pro/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-android-ui",
+      "kind": "pack",
+      "extension": "android-ui",
+      "description": "Android edge-to-edge and incremental XML-to-Compose migration",
+      "dependencies": [],
+      "conflicts": [
+        "finem-react-ui",
+        "finem-expo",
+        "finem-swiftui",
+        "finem-vue",
+        "finem-svelte",
+        "finem-angular",
+        "finem-next-cache",
+        "finem-tanstack-start",
+        "finem-tanstack-router",
+        "finem-tanstack-table",
+        "finem-gsap",
+        "finem-web-animation",
+        "finem-react-native-performance"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:frontend-ui-engineering",
+              "source": "addy",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/addy/skills/frontend-ui-engineering/SKILL.md"
+            },
+            {
+              "skill": "android:edge-to-edge",
+              "source": "android",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/android/system/edge-to-edge/SKILL.md"
+            },
+            {
+              "skill": "android:migrate-xml-views-to-jetpack-compose",
+              "source": "android",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/android/jetpack-compose/migration/migrate-xml-views-to-jetpack-compose/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "performance",
+          "title": "Performance",
+          "phase": "verify",
+          "requires": [],
+          "connectors": [
+            "sentry"
+          ],
+          "coverage": "composed",
+          "replace": true,
+          "entrypoints": [
+            {
+              "skill": "addy:performance-optimization",
+              "source": "addy",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/addy/skills/performance-optimization/SKILL.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "plugin": "finem-xylex-ui-polish",
+      "kind": "pack",
+      "extension": "xylex-ui-polish",
+      "description": "Original XYLEX web component polish, CSS transition recipes and website token extraction",
+      "dependencies": [],
+      "conflicts": [
+        "finem-expo",
+        "finem-swiftui",
+        "finem-android-ui"
+      ],
+      "exclusiveGroup": null,
+      "capabilities": [
+        {
+          "id": "frontend",
+          "title": "Frontend",
+          "phase": "build",
+          "requires": [
+            "api-contracts"
+          ],
+          "connectors": [
+            "context7",
+            "paper"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "xylex:polish-ui-components",
+              "source": "xylex",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/xylex/plugins/ui-plugins/skills/polish-ui-components/SKILL.md"
+            },
+            {
+              "skill": "xylex:transitions-dev",
+              "source": "xylex",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/xylex/plugins/ui-plugins/skills/transitions-dev/SKILL.md"
+            },
+            {
+              "skill": "xylex:transitions-polish",
+              "source": "xylex",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/xylex/plugins/ui-plugins/skills/transitions-polish/SKILL.md"
+            }
+          ]
+        },
+        {
+          "id": "design-system",
+          "title": "Design system",
+          "phase": "design",
+          "requires": [
+            "ux"
+          ],
+          "connectors": [
+            "paper",
+            "mobbin",
+            "figma"
+          ],
+          "coverage": "composed",
+          "replace": false,
+          "entrypoints": [
+            {
+              "skill": "xylex:extract-design-system",
+              "source": "xylex",
+              "plugin": "finem-frontend-mobile",
+              "path": "upstream/xylex/plugins/ui-plugins/skills/extract-design-system/SKILL.md"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

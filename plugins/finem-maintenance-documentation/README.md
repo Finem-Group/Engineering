@@ -2,27 +2,12 @@
 
 Keep the system understandable and support safe dependency changes, deprecation and eventual retirement.
 
-**Claude Code**
+Covers: Maintenance, Dependencies, Migration/deprecation, Retirement, Documentation/runbooks.
 
-```bash
-claude plugin install finem-maintenance-documentation@finem
-```
+Expected outputs: Maintenance and dependency updates; Migration and deprecation plans; Documentation and operational runbooks; Retirement assessment with explicit coverage limits.
 
-**Codex**
+Original specialists: superpowers:systematic-debugging, addy:code-simplification, wshobson:dependency-upgrade, pulumi:provider-upgrade, addy:deprecation-and-migration, wshobson:gdpr-data-handling, wshobson:cost-optimization, addy:documentation-and-adrs, wshobson:incident-runbook-templates.
 
-```bash
-codex plugin add finem-core@finem
-codex plugin add finem-maintenance-documentation@finem
-```
+Local framework and specialist options: advanced-testing, intent-audit, kotlin-mobile, migration-prisma-v7, data-prisma, migration-prisma-mongodb, xylex-code-audit. Choose only options relevant to the project.
 
-**Depends on** `finem-core`. Claude Code installs those automatically; Codex does not resolve dependencies, so the Codex commands above install them in order.
-
-| Capability | Role | Originals |
-| --- | --- | --- |
-| Maintenance | area baseline | 2 |
-| Dependencies | area baseline | 2 |
-| Migration/deprecation | area baseline | 1 |
-| Retirement | area baseline | 3 |
-| Documentation/runbooks | area baseline | 2 |
-
-Native area entries: 1. Original bodies live in the shared `finem-core` dependency; this plugin contains no copied originals. Internal options: `advanced-testing`, `intent-audit`, `kotlin-mobile`, `migration-prisma-v7`, `migration-prisma-mongodb`, `xylex-code-audit`.
+Works independently. All mapped original skills, supporting source files, licenses and hashes are bundled locally. Core is not required. The app entry skill loads the relevant originals on demand. External services and runtime dependencies are configured separately.

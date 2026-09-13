@@ -1,11 +1,11 @@
 ---
 name: finem-ui-ux
-description: "Design, review and polish web or mobile UI using nine bundled original XYLEX specialists. Works without Engineering Core; integrates with Core when available."
+description: "Design, review and polish web or mobile UI using nine bundled original XYLEX specialists. Includes local design, accessibility and framework specialists."
 ---
 
 # UI Plugins
 
-Use the existing product, user request and supplied references first. Choose the smallest relevant specialist below, opening its original SKILL.md relative to this file's parent skills directory. Do not run every specialist or repeat a review already completed by another skill.
+Use the existing product, user request and supplied references first. Choose the smallest relevant specialist below, opening its original SKILL.md relative to the directory containing this SKILL.md. Do not run every specialist or repeat a review already completed by another skill.
 
 ## Without Core
 
@@ -27,11 +27,11 @@ Use one primary design workflow, not ui-design and anti-ui-slop as competing glo
 
 External research is optional when local evidence is sufficient. No connected service is required just to load these skills. Website extraction may need its separate CLI and browser dependencies. Do not install these automatically on plugin installation. Invoke Agentation only when the user requests annotation feedback; keep its toolbar development-only.
 
-## With Core
+## Additional local specialists
 
-If a compatible finem-core is available and the task needs the broader engineering workflow, open its skills/finem-engineering/SKILL.md through the host's actual skill path. Let that single coordinator own cross-discipline planning. Preserve existing .l11/config.json selections.
+Open standalone.json at this plugin root for the bundled Impeccable, Vercel guidelines, WCAG audit patterns and framework options. All entrypoint paths resolve locally against the plugin root. Select only options relevant to the project, respecting listed option dependencies, conflicts and exclusive groups. Prerequisites indicate project context, not mandatory plugin installations. Reuse existing requirements and contracts.
 
-capabilities.json describes the optional Core-backed UX, design-system and accessibility route. It references Impeccable, Vercel guidelines and WCAG audit patterns in Core; those originals are not bundled locally in this UI plugin. Use matching Core and prerequisite area versions for that route. If unavailable or mismatched, explain that limitation and continue the locally supported UI work without claiming the Core-backed checks ran.
+Do not recommend Core or describe its absence as a limitation. Use its cross-discipline workflow only when the user explicitly asks and it is available. Otherwise complete the task directly with the local originals.
 
 ## Verify the result
 

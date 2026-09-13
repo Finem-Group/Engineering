@@ -2,26 +2,12 @@
 
 Protect identity, permissions, secrets and personal data, and assess concrete security risks in the implementation.
 
-**Claude Code**
+Covers: Auth, Secrets/IAM, Security, Privacy/compliance.
 
-```bash
-claude plugin install finem-security-privacy@finem
-```
+Expected outputs: Authentication and authorization controls; IAM and secret handling; Security findings and mitigations; Privacy, retention and compliance requirements.
 
-**Codex**
+Original specialists: wshobson:auth-implementation-patterns, addy:security-and-hardening, pulumi:pulumi-esc, wshobson:secrets-management, wshobson:gdpr-data-handling.
 
-```bash
-codex plugin add finem-core@finem
-codex plugin add finem-security-privacy@finem
-```
+Local framework and specialist options: advanced-testing, intent-audit, backend-django, auth-auth0, kubernetes, security-audit. Choose only options relevant to the project.
 
-**Depends on** `finem-core`. Claude Code installs those automatically; Codex does not resolve dependencies, so the Codex commands above install them in order.
-
-| Capability | Role | Originals |
-| --- | --- | --- |
-| Auth | area baseline | 2 |
-| Secrets/IAM | area baseline | 2 |
-| Security | area baseline | 1 |
-| Privacy/compliance | area baseline | 2 |
-
-Native area entries: 1. Original bodies live in the shared `finem-core` dependency; this plugin contains no copied originals. Internal options: `advanced-testing`, `intent-audit`, `backend-django`, `auth-auth0`, `kubernetes`, `security-audit`.
+Works independently. All mapped original skills, supporting source files, licenses and hashes are bundled locally. Core is not required. The app entry skill loads the relevant originals on demand. External services and runtime dependencies are configured separately.

@@ -2,26 +2,12 @@
 
 Verify behavior, integrations and performance and review whether the change is correct and maintainable.
 
-**Claude Code**
+Covers: Testing, Browser QA, Performance, Code review/quality gates.
 
-```bash
-claude plugin install finem-testing-quality@finem
-```
+Expected outputs: Test strategy and automated checks; Browser QA evidence; Performance measurements; Code review and quality-gate findings.
 
-**Codex**
+Original specialists: superpowers:test-driven-development, wshobson:e2e-testing-patterns, gstack:qa-only, addy:browser-testing-with-devtools, addy:performance-optimization, vercel:react-best-practices, addy:code-review-and-quality, superpowers:verification-before-completion.
 
-```bash
-codex plugin add finem-core@finem
-codex plugin add finem-testing-quality@finem
-```
+Local framework and specialist options: browser-playwright, advanced-testing, terraform, observability, expo, product-delivery, intent-audit, agent-engineering, vue, svelte, angular, next-cache, gsap, react-native-performance, swiftui, android-ui, kotlin-mobile, backend-fastify, backend-fastapi, backend-django, backend-apollo, api-graphql, backend-rust, jobs-inngest, api-contract-testing, search-algolia, security-audit, xylex-code-audit. Choose only options relevant to the project.
 
-**Depends on** `finem-core`. Claude Code installs those automatically; Codex does not resolve dependencies, so the Codex commands above install them in order.
-
-| Capability | Role | Originals |
-| --- | --- | --- |
-| Testing | area baseline | 2 |
-| Browser QA | area baseline | 2 |
-| Performance | area baseline | 2 |
-| Code review/quality gates | area baseline | 2 |
-
-Native area entries: 1. Original bodies live in the shared `finem-core` dependency; this plugin contains no copied originals. Internal options: `browser-playwright`, `advanced-testing`, `terraform`, `observability`, `expo`, `product-delivery`, `intent-audit`, `agent-engineering`, `vue`, `svelte`, `angular`, `next-cache`, `gsap`, `react-native-performance`, `swiftui`, `android-ui`, `kotlin-mobile`, `backend-fastify`, `backend-fastapi`, `backend-django`, `backend-apollo`, `backend-rust`, `jobs-inngest`, `api-contract-testing`, `search-algolia`, `security-audit`, `xylex-code-audit`.
+Works independently. All mapped original skills, supporting source files, licenses and hashes are bundled locally. Core is not required. The app entry skill loads the relevant originals on demand. External services and runtime dependencies are configured separately.
