@@ -2,7 +2,7 @@
   "schemaVersion": 3,
   "plugin": "finem-architecture",
   "kind": "area",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "dependencies": [],
   "area": "architecture",
   "title": "Architecture & API Design",

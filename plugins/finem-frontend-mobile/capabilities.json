@@ -2,7 +2,7 @@
   "schemaVersion": 3,
   "plugin": "finem-frontend-mobile",
   "kind": "area",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "dependencies": [],
   "area": "frontend-mobile",
   "title": "Frontend & Mobile",

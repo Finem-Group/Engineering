@@ -29,6 +29,8 @@ External research is optional when local evidence is sufficient. No connected se
 
 ## Additional local specialists
 
+For requests specifically naming Libraries.dev or the latest official Transitions.dev skills, read ../../references/official-ui-sources.md first. It distinguishes the bundled XYLEX snapshot from official installation routes and unavailable Pro skill files.
+
 Open standalone.json at this plugin root for the bundled Impeccable, Vercel guidelines, WCAG audit patterns and framework options. All entrypoint paths resolve locally against the plugin root. Select only options relevant to the project, respecting listed option dependencies, conflicts and exclusive groups. Prerequisites indicate project context, not mandatory plugin installations. Reuse existing requirements and contracts.
 
 Do not recommend Core or describe its absence as a limitation. Use its cross-discipline workflow only when the user explicitly asks and it is available. Otherwise complete the task directly with the local originals.

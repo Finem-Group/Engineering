@@ -1,6 +1,6 @@
 {
   "name": "finem-maintenance-documentation",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Keep the system understandable and support safe dependency changes, deprecation and eventual retirement.",
   "author": {
     "name": "Finem Group",

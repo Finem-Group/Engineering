@@ -42,7 +42,7 @@ const REPO_SLUG = 'Finem-Group/Engineering';
 const REPO_URL = `https://github.com/${REPO_SLUG}`;
 const OWNER = { name: 'Finem Group', url: 'https://github.com/Finem-Group' };
 // Marketplace fixes can be released independently of the pinned L11 catalog.
-const PLUGIN_VERSION = '0.9.0';
+const PLUGIN_VERSION = '0.9.1';
 const CODEX_CATEGORY = 'Developer Tools';
 const CODEX_POLICY = { installation: 'AVAILABLE', authentication: 'ON_USE' };
 
@@ -704,6 +704,7 @@ function writePlugin(catalog, plugin, outRoot) {
   writeText(path.join(root, 'README.md'), plugin.kind === 'area' ? '# ' + plugin.displayName + '\n\n' + pluginDetails(catalog, plugin) : pluginReadme(catalog, plugin));
   writeText(path.join(root, 'LICENSE'), pluginLicense());
   if (plugin.area === 'ui-ux') {
+    writeText(path.join(root, 'references', 'official-ui-sources.md'), fs.readFileSync(path.join(__dirname, 'catalog', 'official-ui-sources.md'), 'utf8'));
     copyTree(path.join(__dirname, 'vendor', 'ui-specialists'), root);
     for (const record of readJSON(path.join(root, 'ui-source.lock.json')).files) {
       if (sha256(path.join(root, record.path)) !== record.sha256) throw new Error(`UI source hash mismatch: ${record.path}`);

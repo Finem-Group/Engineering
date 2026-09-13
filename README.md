@@ -4,7 +4,7 @@
 43 capabilities, 180 complete selected original skills,
 50 pinned Git sources and 56 internal technology options.
 
-Version 0.9.0 makes every engineering area independent. Each bundles its mapped original sources, support files, licenses and hashes locally. Core is optional for an explicitly requested cross-discipline workflow. Source duplication between installable packages is intentional to avoid installation dependencies.
+Version 0.9.1 makes every engineering area independent. Each bundles its mapped original sources, support files, licenses and hashes locally. Core is optional for an explicitly requested cross-discipline workflow. Source duplication between installable packages is intentional to avoid installation dependencies.
 
 ## Engineering plugins
 
