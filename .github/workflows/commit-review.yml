@@ -1,0 +1,38 @@
+name: Commit review
+
+# Every push: commits go to Slack #git-commits, 3 Haiku reviewers reply in the thread.
+# Skip a commit? Put [skip review] in the commit message.
+
+on:
+  push:
+    branches: ['**']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: commit-review-${{ github.repository }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  review:
+    if: ${{ !github.event.deleted && !endsWith(github.actor, '[bot]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: .github/scripts
+          persist-credentials: false
+
+      - name: Post commits + Haiku review to Slack
+        run: node .github/scripts/commit-review.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          # #git-commits in the Finem Group workspace. Override with repo variable SLACK_CHANNEL_ID.
+          SLACK_CHANNEL_ID: ${{ vars.SLACK_CHANNEL_ID || 'C0C8LGRG44A' }}
+          GITHUB_TOKEN: ${{ github.token }}
+          REVIEW_MODEL: claude-haiku-5-5
+          REVIEW_LANG: English
+          MAX_COMMITS: '10'
