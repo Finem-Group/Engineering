@@ -1,0 +1,51 @@
+name: Claude review
+
+# Every push is reviewed by Claude Code with the whole repository checked out.
+#  - GitHub: a "Claude review" check on the pushed commit, findings on their lines.
+#  - Slack:  one reply in the thread under the GitHub app's message in #git-commits.
+#  - Important findings start "Claude fix", which opens a fix pull request into the pushed branch.
+# Skip a commit: put [skip review] in its message. Tune the reviewer: add a REVIEW.md to the repo root.
+# Optional repo variables: CLAUDE_AUTOFIX = important (default) | all | off,
+# CLAUDE_REVIEW_MODEL (default claude-sonnet-5-5), SLACK_CHANNEL_ID.
+
+on:
+  push:
+    branches: ['**']
+
+permissions:
+  contents: read
+  checks: write # the "Claude review" check run
+  actions: write # to start "Claude fix"
+
+jobs:
+  review:
+    # Not for bot pushes or Claude's own fix branches, so fixes never trigger fixes.
+    if: ${{ !github.event.deleted && !endsWith(github.actor, '[bot]') && !startsWith(github.ref_name, 'claude/') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Install Claude Code
+        run: npm install --global --no-fund --no-audit @anthropic-ai/claude-code
+
+      - name: Claude reviews the push
+        run: node .github/scripts/claude-review.mjs
+        env:
+          # A Claude subscription token (claude setup-token) is used first, otherwise the API key.
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN == '' && secrets.ANTHROPIC_API_KEY || '' }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          # #git-commits in the Finem Group workspace.
+          SLACK_CHANNEL_ID: ${{ vars.SLACK_CHANNEL_ID || 'C0C8LGRG44A' }}
+          GITHUB_TOKEN: ${{ github.token }}
+          REVIEW_MODEL: ${{ vars.CLAUDE_REVIEW_MODEL || 'claude-sonnet-5-5' }}
+          CLAUDE_AUTOFIX: ${{ vars.CLAUDE_AUTOFIX || 'important' }}
+          DISABLE_AUTOUPDATER: '1'

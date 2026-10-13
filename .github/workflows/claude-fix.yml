@@ -1,0 +1,88 @@
+name: Claude fix
+
+# Started by "Claude review" when a push has Important findings.
+# Claude Code fixes them and runs the project's checks; the workflow pushes the result to
+# claude/fix-<sha> and opens a pull request into the branch that was pushed.
+# Nothing lands on your branch until you merge the pull request.
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_branch:
+        description: Branch that was pushed; the pull request goes into it
+        required: true
+        type: string
+      sha:
+        description: Pushed commit to start from
+        required: true
+        type: string
+      thread_ts:
+        description: Slack thread of the push
+        required: false
+        type: string
+      review_ts:
+        description: Slack message with the review
+        required: false
+        type: string
+      prompt:
+        description: Findings for Claude
+        required: true
+        type: string
+
+permissions:
+  contents: write # push claude/fix-<sha>
+  pull-requests: write # open the pull request
+
+concurrency:
+  group: claude-fix-${{ github.repository }}-${{ inputs.sha }}
+  cancel-in-progress: false
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      # The script comes from this workflow's commit, not from the (possibly older) pushed code.
+      - name: Get the fix script
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          REF: ${{ github.sha }}
+        run: |
+          gh api "repos/$REPO/contents/.github/scripts/claude-review.mjs?ref=$REF" \
+            -H "Accept: application/vnd.github.raw" > "$RUNNER_TEMP/claude-review.mjs"
+
+      - uses: pnpm/action-setup@v4
+        if: ${{ hashFiles('pnpm-lock.yaml') != '' }}
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: ${{ hashFiles('.nvmrc') != '' && '.nvmrc' || '' }}
+          node-version: ${{ hashFiles('.nvmrc') == '' && '22' || '' }}
+
+      - name: Install Claude Code
+        run: npm install --global --no-fund --no-audit @anthropic-ai/claude-code
+
+      - name: Claude fixes the findings, the workflow opens a pull request
+        run: node "$RUNNER_TEMP/claude-review.mjs"
+        env:
+          MODE: fix
+          # A Claude subscription token (claude setup-token) is used first, otherwise the API key.
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN == '' && secrets.ANTHROPIC_API_KEY || '' }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ vars.SLACK_CHANNEL_ID || 'C0C8LGRG44A' }}
+          GITHUB_TOKEN: ${{ github.token }}
+          FIX_MODEL: ${{ vars.CLAUDE_FIX_MODEL || vars.CLAUDE_REVIEW_MODEL || 'claude-sonnet-5-5' }}
+          SHA: ${{ inputs.sha }}
+          BASE_BRANCH: ${{ inputs.base_branch }}
+          THREAD_TS: ${{ inputs.thread_ts }}
+          REVIEW_TS: ${{ inputs.review_ts }}
+          FIX_PROMPT: ${{ inputs.prompt }}
+          DISABLE_AUTOUPDATER: '1'
